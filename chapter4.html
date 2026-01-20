@@ -40,7 +40,7 @@
         <a href="chapter3.html">III. Network-Source AI</a>
         <a href="chapter4.html" class="active">IV. Broad Listening</a>
         <a href="chapter5.html">V. Conclusion</a>
-        <a href="about.html">About</a>
+        <a href="https://andrewtrask.com">About</a>
         <a href="appendix1.html">Appendix I</a>
         <a href="appendix2.html">Appendix II</a>
     </nav>
@@ -308,7 +308,9 @@
 
                 <p>Consider data owners. As Chapter 2 documented, 6+ orders of magnitude of data remains siloed because data owners do not trust institutional intermediaries with their information. This resistance is rational. Data owners are one of millions; the institution has no particular stake in protecting any single owner's interests. Without mutual stakes, data owners have no mechanism to hold institutions accountable, only the hope that the institution will behave well.</p>
 
-                <p>Consider governments. Privacy regulation made certain levels of trust evaluation illegal by making certain levels of surveillance illegal. GDPR is not a local legislation targeted at specific companies, it is a European wide paradigm shift in privacy expectations, inspiring similar legislation around the world.</p>
+                <p>Consider governments. The company Klout processed forty-five billion social interactions daily to score 750 million users, attracted $200 million in acquisition value, and served over two thousand business partners. Western society shut it down anyway... the day GDPR took effect. Privacy regulation made Klout's level of trust evaluation illegal by making its level of surveillance illegal. Yet, GDPR is not a local legislation targeted at specific companies like Klout, it is a European wide paradigm shift in privacy expectations, inspiring similar legislation around the world.</p>
+
+                <p>Or consider accountability generally within western society. General trust evaluation at scale requires significant surveillance and likely a significant power imbalance between the surveiller and surveilled. Yet, democratic values prohibit comprehensive surveillance. There is no policy that satisfies both constraints, or a widely deployed technology that circumvents them. Caught between these imperatives, Western societies pay the costs of both while achieving the full benefits of neither.</p>
 
                 <p>The result is visible in current online infrastructure. A handful of social media platforms observe approximately 8.5% of all waking human experience on earth... four trillion hours annually. This is surveillance at civilizational scale, yet the online trust verification problem remains woefully unsolved: half of web traffic is bots, up to 30% of online reviews remain fraudulent, and state actors operate troll factories at scale.</p>
 
@@ -387,9 +389,17 @@
                 <p>The Third Hypothesis established that recursive networks can achieve global reach without high-branching nodes, but mathematical possibility does not guarantee practical implementation. The question is whether recursive trust propagation can avoid centralizing under competitive pressure.</p>
 
                 <h3>The Propagation Mechanism</h3>
-                <p>Each participant maintains trust assessments w<sub>u,v</sub><sup>d</sup> &isin; [0,1] for direct contacts, where d indexes the domain. Trust propagates via iterated computation. Let T<sub>h</sub>(n) denote participant n's trust score at hop h. Trust originates with the querying user and propagates as each participant distributes to contacts.</p>
+                <p>Each participant maintains trust assessments $w_{u,v}^d \in [0,1]$ for direct contacts, where $d$ indexes the domain. Trust propagates via iterated computation. Let $T_h(n)$ denote participant $n$'s trust score at hop $h$. Trust originates with the querying user and propagates as each participant distributes to contacts:</p>
 
-                <p>After H iterations, trust scores determine how much each source influences the response.</p>
+                <p style="text-align: center;">$$\text{Map}_n(T_h(n)) = \{(v, T_h(n) \cdot w_{n,v}^d) : v \in \text{contacts}(n)\}$$</p>
+
+                <p>Recipients aggregate incoming trust via probabilistic OR:</p>
+
+                <p style="text-align: center;">$$T_{h+1}(m) = 1 - \prod_{i=1}^{k}(1 - T_h(n_i) \cdot w_{n_i,m}^d)$$</p>
+
+                <p>After $H$ iterations, trust scores determine how much each source influences the response. The final budget allocation normalizes these scores:</p>
+
+                <p style="text-align: center;">$$B(s) = \frac{T_H(s)}{\sum_{s'} T_H(s')}$$</p>
 
                 <h3>Why It Scales</h3>
                 <p>The mechanism requires O(k · H) operations per participant per query, where k is the number of contacts and H is the number of hops. With k ≈ 50 and H ≈ 6, each participant performs roughly 300 operations regardless of total network size. The computational cost of reaching billions of sources through recursive propagation does not require any participant to perform billions of operations.</p>

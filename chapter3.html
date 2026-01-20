@@ -40,7 +40,7 @@
         <a href="chapter3.html" class="active">III. Network-Source AI</a>
         <a href="chapter4.html">IV. Broad Listening</a>
         <a href="chapter5.html">V. Conclusion</a>
-        <a href="about.html">About</a>
+        <a href="https://andrewtrask.com">About</a>
         <a href="appendix1.html">Appendix I</a>
         <a href="appendix2.html">Appendix II</a>
     </nav>
@@ -208,6 +208,11 @@
             </div>
 
             <figure class="full-width">
+                <img src="1411.3146/abc_ch3_1_v6.png" alt="ABC and the copy problem">
+                <figcaption>The lack of ABC creates problems which are underpinned by the overuse of copying within deep learning systems.</figcaption>
+            </figure>
+
+            <figure class="full-width">
                 <img src="1411.3146/deep_voting_to_network_source_ai_v2.png" alt="Deep Voting to Network-Source AI">
                 <figcaption>Deep voting (left) preserves attribution but whoever holds a copy of the model has unilateral control. Network-source AI (right) uses structured transparency to ensure data sources retain control even during inference.</figcaption>
             </figure>
@@ -239,6 +244,11 @@
             <section id="problem">
                 <h2>The Problem: Deep Voting Alone Is Insufficient</h2>
 
+                <figure class="full-width">
+                    <img src="1411.3146/nsai_3_3_v5.png" alt="First Why concept graph">
+                    <figcaption>Subset of conceptual graph highlighting the First Why and the focus of this section: unilateral control averts attribution-based control.</figcaption>
+                </figure>
+
                 <p>The previous chapter offered a vision to unlock 6+ orders of magnitude more data and compute for AI training through deep voting. Yet a fundamental problem threatens to undermine its vision. Even with perfect implementation of intelligence budgets and attribution guarantees, deep voting alone cannot ensure true attribution-based <em>control</em>.</p>
 
                 <p>The reason is structural: a deep voting model, like any AI system today, is unilaterally controlled by whoever possesses a copy. For ABC to occur, the owner of an AI model would have to voluntarily choose to uphold the wishes of data sources. Deep voting's careful attribution mechanisms are not a system of control&mdash;they are mere suggestions to give credit to data sources for predictions.</p>
@@ -266,7 +276,13 @@
 
                 <p><strong>Bias and Representation:</strong> Closed source teams promise careful curation to prevent bias. Open source suggests community oversight ensures fair representation. Yet ABC shows how both approaches fail to give communities ongoing control over how their perspectives inform AI decisions.</p>
 
-                <p>This pattern reveals why neither approach can deliver true attribution-based control. The very centralization that supposedly enables control actually undermines it, replacing genuine ABC with a hope that power will be used wisely. Open source trades one form of unilateral control for another. But ABC requires a collective bargaining between data sources and AI users, not total ownership by either.</p>
+                <p>This pattern reveals why neither approach can deliver true attribution-based control. Consider first the closed source approach. Proponents argue that centralized control ensures responsible development and deployment of AI systems. A company operating a closed source model can implement deep voting's attribution mechanisms and maintain them intact. Yet this merely transforms ABC into corporate benevolence&mdash;exactly the kind of centralized control that has already failed to unlock the world's data and compute resources. Medical institutions withhold valuable research data, publishers restrict access to their work precisely because they reject this model of centralized corporate control. The very centralization that supposedly enables control actually undermines it, replacing genuine ABC with a hope that power will be used wisely.</p>
+
+                <p>The open source approach appears to solve this by eliminating centralized control entirely. If anyone can inspect and modify the code, surely this enables true collective control? Yet this intuition breaks down precisely because of unrestricted copying. Once a model is open sourced, anyone can modify it to bypass attribution tracking entirely. The same problems that plague closed source systems (hallucination, disinformation, misuse of data, etc.) remain hard to address when control is abdicated to any AI user. Open source trades one form of unilateral control for another (from centralized corporate control to uncontrolled proliferation). But ABC requires a collective bargaining between data sources and AI users, not total ownership by either (or by an AI creator).</p>
+
+                <p>This reveals a deeper issue: our current paradigms of software distribution make true ABC impossible by design. Open source sacrifices control for transparency, while closed source sacrifices transparency for control. Neither approach can provide both. Yet ABC requires exactly this combination: transparent verification that attribution mechanisms are working as intended, while ensuring those mechanisms cannot be bypassed.</p>
+
+                <p>The AI community has largely accepted this dichotomy as inevitable, debating the relative merits of open versus closed source as though these were our only options. But what if this frame is fundamentally wrong? What if the very premise that AI systems must exist as copyable software is the root of our problem?</p>
             </section>
 
             <section id="third-why">
@@ -389,6 +405,12 @@
                 </div>
 
                 <p>This resolves the choice between open and closed source AI by creating a third option: AI systems that are simultaneously transparent (through verification) and controlled (through cryptography). The key insight is that by preventing copying through structured transparency's guarantees, we can maintain both visibility into how systems operate and precise control over how information is used.</p>
+
+                <p><strong>Copyright and Attribution Resolution:</strong> Rather than consolidating control under corporations or eliminating it entirely, network-source AI provides creators with ongoing cryptographic control over how their work informs AI outputs. Intelligence budgets and attribution mechanisms become technically enforced rather than merely promised.</p>
+
+                <p><strong>Safety and Misuse Transformation:</strong> Safety and misuse prevention transform as well. Instead of relying on corporate oversight or community scrutiny, network-source AI enables data sources to cryptographically withdraw support if their information enables harmful outcomes. This provides a mechanism for ongoing consent that neither open nor closed source can offer.</p>
+
+                <p><strong>Bias and Representation:</strong> Even bias and representation concerns find some resolution. Rather than centralizing decisions about representation or allowing unrestricted modification, network-source AI gives communities ongoing cryptographic control over how their perspectives inform AI decisions. Communities can adjust their participation based on how the system behaves, creating feedback loops impossible in current paradigms.</p>
 
                 <figure class="full-width">
                     <img src="1411.3146/nsai_3_8_v5.png" alt="First Hypothesis concept graph">

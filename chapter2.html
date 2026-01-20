@@ -40,7 +40,7 @@
         <a href="chapter3.html">III. Network-Source AI</a>
         <a href="chapter4.html">IV. Broad Listening</a>
         <a href="chapter5.html">V. Conclusion</a>
-        <a href="about.html">About</a>
+        <a href="https://andrewtrask.com">About</a>
         <a href="appendix1.html">Appendix I</a>
         <a href="appendix2.html">Appendix II</a>
     </nav>
@@ -569,11 +569,35 @@
 
                 <p>The previous sections revealed how addition in deep learning creates a fundamental barrier to attribution. Yet examining why addition fails suggests a testable hypothesis: can we significantly reduce the use of addition, perhaps swapping it with concatenation?</p>
 
-                <p>Some information patterns appear ubiquitously: basic rules of grammar that structure language, logical operations that appear in reasoning, morphological patterns which make up words, edges and corners in images, etc. Such dense patterns suggest unrestricted mixing through addition may be appropriate for a core subset of features.</p>
+                <p>Some information patterns appear ubiquitously: basic rules of grammar that structure language, logical operations that appear in reasoning, morphological patterns which make up words, edges and corners in images, etc. Such dense patterns suggest unrestricted mixing through addition may be appropriate for a core subset of features. Their ubiquity also makes attribution less critical; they represent shared computational tools rather than source-specific claims about the world. While perhaps not formally stated, noted researcher Andrej Karpathy recently suggested a similar concept when referring to a future LLM "cognitive core":</p>
+
+                <div class="callout" style="background: #f5f5f5; border-left: 3px solid #888;">
+                    <p style="font-style: italic;">The race for LLM "cognitive core"—a few billion param model that maximally sacrifices encyclopedic knowledge for capability. It lives always-on and by default on every computer as the kernel of LLM personal computing. Its features are slowly crystalizing:</p>
+                    <ul style="font-style: italic;">
+                        <li>Natively multimodal text/vision/audio at both input and output.</li>
+                        <li>Matryoshka-style architecture allowing a dial of capability up and down at test time.</li>
+                        <li>Reasoning, also with a dial. (system 2)</li>
+                        <li>Aggressively tool-using.</li>
+                        <li>On-device finetuning LoRA slots for test-time training, personalization and customization.</li>
+                        <li>Delegates and double checks just the right parts with the oracles in the cloud if internet is available.</li>
+                    </ul>
+                    <p style="font-style: italic;">It doesn't know that William the Conqueror's reign ended in September 9 1087, but it vaguely recognizes the name and can look up the date. It can't recite the SHA-256 of empty string as e3b0c442..., but it can calculate it quickly should you really want it.</p>
+                    <p style="font-style: italic;">What LLM personal computing lacks in broad world knowledge and top tier problem-solving capability it will make up in super low interaction latency (especially as multimodal matures), direct / private access to data and state, offline continuity, sovereignty ("not your weights not your brain"). i.e. many of the same reasons we like, use and buy personal computers instead of having thin clients access a cloud via remote desktop or so.</p>
+                    <p style="text-align: right;">— Andrej Karpathy<sup><a href="https://x.com/karpathy/status/1938626382248149433">[link]</a></sup></p>
+                </div>
 
                 <p>In contrast, perhaps most information is encyclopedic and appears sparsely: specific facts about the world, domain expertise in particular fields, claims made by individual sources, etc. The capital of France, the rules of chess, statistics about pizza... each appears in distinct contexts with limited overlap.</p>
 
-                <p>A key insight of this chapter is that techniques from privacy-preserving machine learning, particularly differential privacy (DP), provide a principled way to measure and control which features benefit from dense mixing versus sparse representation.</p>
+                <p>A key insight of this chapter is that techniques from privacy-preserving machine learning, particularly differential privacy (DP), provide a principled way to measure and control which features benefit from dense mixing versus sparse representation. Differential privacy quantifies how much a model's outputs depend on any individual training example:</p>
+
+                <div class="definition-box">
+                    <h3>(ε, δ)-Differential Privacy</h3>
+                    <p>A randomized mechanism $\mathcal{M}: \mathcal{D} \to \mathcal{R}$ satisfies (ε, δ)-differential privacy if for all adjacent datasets $D, D' \in \mathcal{D}$ (differing in one example) and all subsets of outputs $S \subseteq \mathcal{R}$:</p>
+                    <p style="text-align: center;">$\Pr[\mathcal{M}(D) \in S] \leq e^\epsilon \cdot \Pr[\mathcal{M}(D') \in S] + \delta$</p>
+                    <p>where small ε indicates strong privacy—outputs barely depend on any individual example.</p>
+                </div>
+
+                <p>The parameter ε provides a quantitative measure of individual example influence on outputs. This same measure can serve three distinct control objectives:</p>
 
                 <div class="definition-box">
                     <h3>Three Regimes of Influence Control</h3>
@@ -593,7 +617,60 @@
                     <figcaption>Subset of concept graph highlighting the Second Hypothesis and focus of this section.</figcaption>
                 </figure>
 
-                <p>The previous section revealed how privacy mechanisms might naturally separate dense from sparse information patterns. Yet this theoretical insight raises a practical question: how do we actually <em>implement</em> the measurement and control regimes we defined?</p>
+                <p>The previous section revealed how privacy mechanisms might naturally separate dense from sparse information patterns. Yet this theoretical insight raises a practical question: how do we actually <em>implement</em> the measurement and control regimes we defined? The definitions in the previous section assumed worst-case bounds (requiring that ε constraints hold for <em>all</em> pairs of neighboring datasets). But attribution-based control requires the opposite: not uniform bounds across all sources, but <em>source-specific</em> control where each source can have different influence levels matching different stakeholder needs.</p>
+
+                <h3>From Worst-Case to Individual Differential Privacy</h3>
+                <p>Standard differential privacy enforces worst-case bounds across all possible pairs of neighboring datasets. Consider a dataset where most individuals' data appears in common patterns, but one individual has highly unique data. Worst-case differential privacy must constrain the entire mechanism based on that one outlier, reducing utility for everyone—even though the mechanism only ever operates on the <em>actual</em> dataset, not all possible datasets. Individual differential privacy provides a more nuanced approach by focusing privacy guarantees on the <em>actual</em> dataset rather than all possible datasets:</p>
+
+                <div class="definition-box">
+                    <h3>Individual Differential Privacy</h3>
+                    <p>Given a dataset $D$, a response mechanism $\mathcal{M}(\cdot)$ satisfies ε-individual differential privacy (ε-iDP) if, for any dataset $D'$ that is a neighbor of $D$ (differing in one example), and any $S \subset \text{Range}(\mathcal{M})$:</p>
+                    <p style="text-align: center;">$\exp(-\epsilon) \cdot \Pr[\mathcal{M}(D') \in S] \leq \Pr[\mathcal{M}(D) \in S] \leq \exp(\epsilon) \cdot \Pr[\mathcal{M}(D') \in S]$</p>
+                </div>
+
+                <p>The crucial difference from standard DP: $D$ refers to the <em>actual</em> dataset being protected, while $D'$ ranges over $D$'s neighbors. Standard DP requires indistinguishability for <em>any</em> pair of neighbors; individual DP requires indistinguishability only between the actual dataset and its neighbors.</p>
+
+                <h3>From Individual Privacy to Individual Attribution</h3>
+                <p>Just as we extended standard differential privacy to define attribution regimes in the previous section, we can extend individual differential privacy to define individual attribution. The key insight remains the same: privacy and attribution are opposite ends of the same ε spectrum, now applied to the actual dataset rather than worst-case bounds.</p>
+
+                <div class="definition-box">
+                    <h3>Individual Differential Privacy vs. Attribution</h3>
+                    <p>For a mechanism $\mathcal{M}$, actual dataset $D$, and threshold $\tau > 0$:</p>
+                    <ul>
+                        <li><strong>Individual Privacy:</strong> Enforce $\epsilon < \tau$ for all neighbors $D'$ of $D$, guaranteeing that any individual's data in the dataset cannot be distinguished through its influence on outputs.</li>
+                        <li><strong>Individual Measurement:</strong> Compute $\epsilon$ for the actual dataset, enabling quantification of influence without enforcing bounds.</li>
+                        <li><strong>Individual Attribution:</strong> Enforce $\epsilon > \tau$ for the actual dataset, guaranteeing that individuals in the actual dataset have measurable influence on outputs.</li>
+                    </ul>
+                </div>
+
+                <h3>From Examples to Sources: Group Differential Privacy</h3>
+                <p>But attribution-based control requires more than individual-level bounds, it requires <em>source-level</em> control. Individual differential privacy protects single examples in the actual dataset, but data sources typically contribute many examples. Consider a medical AI trained on data from 100 hospitals: each hospital contributes thousands of patient records. ABC needs to measure and control influence at the hospital level, not just the individual patient level. The differential privacy literature addresses this through group differential privacy, which extends privacy guarantees from individuals to groups of records:</p>
+
+                <div class="definition-box">
+                    <h3>Group Differential Privacy</h3>
+                    <p>A randomized mechanism $\mathcal{M}: \mathcal{D} \to \mathcal{R}$ satisfies ε-group differential privacy for groups of size $k$ if for all datasets $D, D'$ differing in at most $k$ records and all subsets of outputs $S \subseteq \mathcal{R}$:</p>
+                    <p style="text-align: center;">$\Pr[\mathcal{M}(D) \in S] \leq e^\epsilon \cdot \Pr[\mathcal{M}(D') \in S]$</p>
+                </div>
+
+                <p>We can combine group differential privacy with individual differential privacy to obtain source-level control calibrated to the actual dataset. When we partition a dataset by sources $D = \bigcup_{s \in S} D_s$, we treat each source as a group and apply individual DP at the group level:</p>
+
+                <div class="definition-box">
+                    <h3>Source-Level Individual Differential Privacy</h3>
+                    <p>Given a dataset $D$ partitioned by sources $D = \bigcup_{s \in S} D_s$, a response mechanism $\mathcal{M}(\cdot)$ satisfies $\epsilon_s$-individual differential privacy for source $s$ if, for any dataset $D'$ differing from $D$ only in source $s$'s data (i.e., $D' = D_{-s} \cup D'_s$ where $|D'_s| = |D_s|$), and any $S \subset \text{Range}(\mathcal{M})$:</p>
+                    <p style="text-align: center;">$\exp(-\epsilon_s) \cdot \Pr[\mathcal{M}(D') \in S] \leq \Pr[\mathcal{M}(D) \in S] \leq \exp(\epsilon_s) \cdot \Pr[\mathcal{M}(D') \in S]$</p>
+                </div>
+
+                <h3>From Source-Level Privacy to Source-Level Attribution</h3>
+                <p>Just as individual DP extends to attribution regimes (privacy, measurement, attribution), source-level individual DP extends to source-level attribution. We can quantitatively measure each source's influence on the actual dataset:</p>
+
+                <div class="definition-box">
+                    <h3>Source-Level Individual Differential Attribution</h3>
+                    <p>Let $\mathcal{A}$ be a randomized algorithm and let $D$ be a dataset partitioned by sources $D = \bigcup_{s \in S} D_s$. For any source $s$ and prediction $f$, the individual differential attribution of source $s$ on function $f$ is:</p>
+                    <p style="text-align: center;">$\text{Attribution}_\alpha(s, f) = D_\alpha^\leftrightarrow(\mathcal{A}(D)\|\mathcal{A}(D^{-s})) = \max\{D_\alpha(\mathcal{A}(D)\|\mathcal{A}(D^{-s})), D_\alpha(\mathcal{A}(D^{-s})\|\mathcal{A}(D))\}$</p>
+                    <p>where $D_\alpha$ is the Rényi divergence of order $\alpha$, $D^{-s} = D \setminus D_s$ represents the dataset with source $s$ removed, and $\mathcal{A}(D)$ represents the output distribution of algorithm $\mathcal{A}$ on dataset $D$.</p>
+                </div>
+
+                <p>This measures each source's attribution relative to the actual dataset $D$ by quantifying how predictions change when that specific source is included versus excluded. This enables the diverse source-level control ABC requires.</p>
 
                 <h3>Intelligence Budgets: Implementing Individual Source Control</h3>
                 <p>This source-level individual attribution measure enables a practical control mechanism: <em>intelligence budgets</em>. Rather than simply measuring influence after the fact, we can actively control how much each source influences predictions through architectural routing decisions.</p>
@@ -601,16 +678,44 @@
                 <div class="definition-box">
                     <h3>Intelligence Budgets via Forward Pass Weighting</h3>
                     <p>The model has two types of parameterized functions:</p>
-                    <ul>
-                        <li>g<sub>s</sub>(&middot;): source-specific function for source s</li>
-                        <li>f(&middot;): shared function across all sources</li>
-                    </ul>
-                    <p>The intelligence budget B(s) bounds source s's influence. Setting &gamma;[s] &asymp; 0 enforces small B(s) (privacy regime). Setting &gamma;[s] &asymp; 1 allows large B(s) (attribution regime).</p>
+                    <p style="text-align: center;">$g_s(\cdot; \Theta_{\text{semantic}}[s])$: source-specific function for source $s$</p>
+                    <p style="text-align: center;">$f(\cdot; \Theta_{\text{syntactic}})$: shared function across all sources</p>
+                    <p>Information flows through two stages:</p>
+                    <p style="text-align: center;">Stage 1 (Semantic): $s_s = g_s(x_s; \Theta_{\text{semantic}}[s])$</p>
+                    <p style="text-align: center;">Stage 2 (Syntactic): $h(x) = f\left([x_1, \ldots, x_{|S|}, \gamma[1] \cdot s_1, \ldots, \gamma[|S|] \cdot s_{|S|}]; \Theta_{\text{syntactic}}\right)$</p>
+                    <p>where $\gamma[s] \in [0,1]$ is a per-source scaling weight and $[\cdot]$ denotes concatenation of all inputs.</p>
+                    <p>The intelligence budget $B(s)$ bounds source $s$'s influence:</p>
+                    <p style="text-align: center;">$\text{Attribution}_\alpha(s, h) \leq B(s)$</p>
+                    <p>Setting $\gamma[s] \approx 0$ enforces small $B(s)$ (privacy regime) by preventing semantic contributions. Setting $\gamma[s] \approx 1$ allows large $B(s)$ (attribution regime) by preserving semantic identity.</p>
+                </div>
+
+                <h3>From Concatenation and IDP to Deep Voting</h3>
+                <p>The deep voting framework reveals a two-dimensional spectrum in machine learning architectures by introducing a second control parameter $\lambda \in [0,1]$ that governs the overall balance between semantic and syntactic capacity:</p>
+
+                <div class="definition-box">
+                    <h3>Capacity Allocation (λ)</h3>
+                    <p>The parameter λ determines what fraction of total model capacity is allocated to each function:</p>
+                    <p style="text-align: center;">$|\Theta_{\text{syntactic}}| = \lambda \cdot |\Theta_{\text{total}}|$</p>
+                    <p style="text-align: center;">$\sum_{s} |\Theta_{\text{semantic}}[s]| = (1-\lambda) \cdot |\Theta_{\text{total}}|$</p>
+                    <p>where $|\Theta|$ denotes parameter count.</p>
                 </div>
 
                 <div class="callout">
+                    <p class="callout-title">Deep Voting Analogy: Individual Differential Privacy via Adaptive Filtering</p>
+                    <p>Feldman and Zrnic's individual differential privacy framework provides a concrete example of intelligence budgets implemented through adaptive filtering rather than architectural routing.</p>
+                    <p><strong>Architecture:</strong> Their approach uses $\lambda = 1$ (pure syntactic processing) with all capacity in shared parameters $\Theta_{\text{syntactic}}$. No semantic section exists ($\Theta_{\text{semantic}}[s] = \emptyset$), meaning all sources contribute only through raw inputs: $h(x) = f([x_1, \ldots, x_n]; \Theta_{\text{syntactic}})$ where $f$ adds Gaussian noise for privacy.</p>
+                    <p><strong>Intelligence Budgets via Filtering:</strong> Rather than controlling $\gamma[s]$ continuously, they implement binary filtering. At each time step $t$, compute the individual privacy loss $\rho_t^{(i)} = \frac{\alpha \|\bar{g}_t(X_i)\|_2^2}{2\sigma^2}$ where $\bar{g}_t(X_i)$ is the clipped gradient. Source $i$ remains active while $\sum_{j=1}^t \rho_t^{(i)} \leq B$, then gets dropped (equivalent to setting $\gamma[i] = 0$ for all future steps).</p>
+                    <p><strong>Key Insight:</strong> The intelligence budget $B(i)$ is implicitly determined by realized gradient norms. For Lipschitz functions with coordinate sensitivity $L_i$, the bound becomes $B(i) \approx \frac{\alpha L_i^2 \|\phi(X_i)\|^2}{2\sigma^2}$. Sources with small gradients (low sensitivity) can participate longer before exceeding their budget.</p>
+                    <p><strong>Contrast with Deep Voting:</strong> Feldman & Zrnic achieve privacy (small ε) by dropping high-influence examples entirely, routing all remaining examples through privacy-constrained shared processing. Deep voting generalizes this by: (1) introducing a semantic section ($\lambda < 1$) that preserves source identity, (2) allowing continuous control ($\gamma[s] \in [0,1]$) rather than binary drop/keep decisions, and (3) enabling attribution regime where large ε is desirable. Individual DP represents the special case where $\lambda = 1$, $\gamma[s] \in \{0,1\}$ (binary), and all sources demand privacy.</p>
+                    <p><strong>Adaptive Composition:</strong> The Feldman & Zrnic result on adaptive composition with data-dependent privacy parameters ($\sum_t \rho_t^{(i)} \leq B \Rightarrow (\alpha, B)$-RDP) directly parallels our intelligence budget composition: both handle the challenge that influence parameters depend on previous outputs, enabling provable bounds even under adaptive computation.</p>
+                </div>
+
+                <p>With these mechanisms in place, we can return to the implications of such a system for providing attribution-based control: the potential to dramatically increase the amount of data and compute available for training AI systems. By providing clear mechanisms for measuring source influence ($\text{Attribution}_\alpha(s, h)$), bounding influence when needed ($\gamma[s] = 0$ for privacy), and guaranteeing influence when required ($\gamma[s] = 1$ for attribution), deep voting might enable the safe use of orders of magnitude more training data.</p>
+
+                <div class="callout">
                     <p class="callout-title">A Library Analogy</p>
-                    <p>Following the analogy, differential attribution ensures that each strip of numbers remains separated (instead of added) into each other strip, preserved within the same book as before, partitioning information in a way which might be indexed by source (or topic). It further provides a staff of librarians who know how to read relevant information and synthesize them, each according to a topic that librarian happens to be familiar with.</p>
+                    <p>Consider a library wherein all of the books have had their covers removed, their table of contents erased, and individual sentences on each page torn out into their own strips. Now imagine that each word in each strip is converted into a number "aardvark = 1", "abernathe = 2", and so forth. And then imagine that each of these strips from the whole library is shuffled around, and groups of strips are placed back in the coverless books. Yet, instead of each strip being glued in place, it is first combined with many other strips, adding their respective numbers together. Consequently, when someone wants to answer a specific question, they have to read through the entire library searching for relevant information for their query—first by converting their query into numbers and then attempting to match it to numbers found in the books.</p>
+                    <p>Following the analogy, differential attribution ensures that each strip of numbers remains separated (instead of added) into each other strip, preserved within the same book as before, partitioning information in a way which might be indexed by source (or topic). It further provides a staff of librarians who know how to read relevant information and synthesize them, each according to a topic that librarian happens to be familiar with. Taken together, a customer of a library can leverage one librarian to index into the appropriate shelf, identify the right book, and the right snippets of that book, and then ask a subset of the staff of librarians who are experts on that topic to properly interpret those snippets.</p>
                 </div>
             </section>
 
@@ -631,6 +736,11 @@
 
             <section id="empirical-evidence">
                 <h2>Empirical Evidence: Does the Pareto-Tradeoff Move?</h2>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_9_0_v4.png" alt="Empirical evidence concept graph">
+                    <figcaption>Subset of concept graph highlighting the First Hypothesis and focus of this section.</figcaption>
+                </figure>
 
                 <h3>The First Crack: RETRO and ATLAS</h3>
                 <p>Recent architectures challenge baseline tradeoffs. RETRO outperforms GPT-3 on the Pile (0.670 vs 0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3's 175B:</p>
@@ -656,9 +766,15 @@
                             <tr><td>github</td><td>0.420</td><td>0.645</td><td>0.358</td><td>0.367</td><td><strong>0.199</strong></td></tr>
                             <tr><td>gutenberg_pg_19</td><td>0.803</td><td>1.163</td><td>0.890</td><td>0.652</td><td><strong>0.400</strong></td></tr>
                             <tr><td>hackernews</td><td>0.971</td><td>0.975</td><td>0.869</td><td>0.888</td><td><strong>0.860</strong></td></tr>
+                            <tr><td>nih_exporter</td><td>0.650</td><td>0.612</td><td><strong>0.590</strong></td><td>0.590</td><td>0.635</td></tr>
+                            <tr><td>opensubtitles</td><td>0.974</td><td>0.932</td><td><strong>0.879</strong></td><td>0.894</td><td>0.930</td></tr>
+                            <tr><td>philpapers</td><td>0.760</td><td>0.723</td><td>0.742</td><td><strong>0.682</strong></td><td>0.699</td></tr>
                             <tr><td>pile_cc</td><td>0.771</td><td>0.698</td><td>0.669</td><td>0.688</td><td><strong>0.626</strong></td></tr>
+                            <tr><td>pubmed_abstracts</td><td>0.639</td><td>0.625</td><td>0.587</td><td>0.578</td><td><strong>0.542</strong></td></tr>
                             <tr><td>pubmed_central</td><td>0.588</td><td>0.690</td><td>0.579</td><td>0.512</td><td><strong>0.419</strong></td></tr>
                             <tr><td>stackexchange</td><td>0.714</td><td>0.773</td><td>0.655</td><td>0.638</td><td><strong>0.624</strong></td></tr>
+                            <tr><td>ubuntu_irc</td><td>1.200</td><td>0.946</td><td><strong>0.857</strong></td><td>1.081</td><td>1.178</td></tr>
+                            <tr><td>uspto_backgrounds</td><td>0.603</td><td>0.566</td><td><strong>0.537</strong></td><td>0.545</td><td>0.583</td></tr>
                             <tr class="highlight"><td><strong>Average</strong></td><td>0.774</td><td>0.811</td><td>0.705</td><td>0.694</td><td><strong>0.670</strong></td></tr>
                         </tbody>
                     </table>
