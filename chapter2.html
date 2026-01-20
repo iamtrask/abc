@@ -248,6 +248,37 @@
 
                 <p>DeepMind's RETRO achieves comparable performance to GPT-3 while using 1/25th of the parameters through retrieval from a large-scale vector database. Similarly, Meta's ATLAS demonstrates that models can be reduced to 1/50th their original size while maintaining or exceeding baseline performance through database-augmented inference.</p>
 
+                <p>Recent work demonstrates that current architectures contain redundant and underutilized parameters. Guo et al. achieve 5-10x reduction in parameter count through lossless compression while maintaining accuracy:</p>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <caption>Table: Comparison with previous dataset distillation methods on CIFAR-10, CIFAR-100 and Tiny ImageNet. Highlighted results indicate lossless distillation. (From Guo et al., 2023)</caption>
+                        <thead>
+                            <tr>
+                                <th>Dataset</th>
+                                <th colspan="5">CIFAR-10</th>
+                                <th colspan="4">CIFAR-100</th>
+                                <th colspan="3">Tiny ImageNet</th>
+                            </tr>
+                            <tr>
+                                <th>IPC</th>
+                                <th>1</th><th>10</th><th>50</th><th>500</th><th>1000</th>
+                                <th>1</th><th>10</th><th>50</th><th>100</th>
+                                <th>1</th><th>10</th><th>50</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Random</td><td>15.4</td><td>31.0</td><td>50.6</td><td>73.2</td><td>78.4</td><td>4.2</td><td>14.6</td><td>33.4</td><td>42.8</td><td>1.4</td><td>5.0</td><td>15.0</td></tr>
+                            <tr><td>DC</td><td>28.3</td><td>44.9</td><td>53.9</td><td>72.1</td><td>76.6</td><td>12.8</td><td>25.2</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                            <tr><td>DM</td><td>26.0</td><td>48.9</td><td>63.0</td><td>75.1</td><td>78.8</td><td>11.4</td><td>29.7</td><td>43.6</td><td>-</td><td>3.9</td><td>12.9</td><td>24.1</td></tr>
+                            <tr><td>MTT</td><td>46.2</td><td>65.4</td><td>71.6</td><td>-</td><td>-</td><td>24.3</td><td>39.7</td><td>47.7</td><td>49.2</td><td>8.8</td><td>23.2</td><td>28.0</td></tr>
+                            <tr><td>RCIG</td><td>53.9</td><td>69.1</td><td>73.5</td><td>-</td><td>-</td><td>39.3</td><td>44.1</td><td>46.7</td><td>-</td><td>25.6</td><td>29.4</td><td>-</td></tr>
+                            <tr class="highlight"><td><strong>DATM (Ours)</strong></td><td>46.9</td><td><strong>66.8</strong></td><td><strong>76.1</strong></td><td><strong>83.5</strong></td><td class="lossless"><strong>85.5</strong></td><td><strong>27.9</strong></td><td><strong>47.2</strong></td><td><strong>55.0</strong></td><td class="lossless"><strong>57.5</strong></td><td><strong>17.1</strong></td><td><strong>31.1</strong></td><td class="lossless"><strong>39.7</strong></td></tr>
+                            <tr class="baseline"><td>Full Dataset</td><td colspan="5">84.8</td><td colspan="4">56.2</td><td colspan="3">37.6</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <p>We adopt RETRO/ATLAS-style parameter efficiency as a conservative lower bound on current compute waste. These results suggest that at least 96-98% of parameters activated during dense inference are unnecessary for individual queries.</p>
 
                 <h4>6 OOM: Underutilized and Inefficient Compute in AI Learning</h4>
@@ -257,12 +288,93 @@
                     <p>As before, consider a library. When a library adds or removes a significant number of books to/from their collection, they don't <em>rebuild the entire building and re-print all of their books from scratch</em>, they simply add/remove books, shelves, or rooms. These practices stand in stark contrast to how AI systems process information. To add or remove a significant portion of knowledge from a deep learning system, AI researchers <em>retrain them from scratch</em> (i.e., tear down the entire library, burn all the books, rebuild the library, and re-print all the books from scratch).</p>
                 </div>
 
-                <p>Analysis of the largest AI firms reveals that pre-training their most capable models consumes less than 1% of quarterly compute budgets. Yet these same firms continue expanding computational infrastructure to support larger models, suggesting that remaining compute capacity is allocated to other training activities rather than final model production.</p>
+                <p>Analysis of the largest AI firms reveals that pre-training their most capable models consumes less than 1% of quarterly compute budgets (see table below). Yet these same firms continue expanding computational infrastructure to support larger models, suggesting that remaining compute capacity is allocated to other training activities rather than final model production.</p>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <caption>Table: Model Compute Summary. The far right columns present the estimated compute usage by large AI models relative to their parent organization's capacity.</caption>
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Organization</th>
+                                <th>Training FLOPs</th>
+                                <th>Parent Org Peak Annual FLOPs</th>
+                                <th>Model/Peak Annual (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Gemini 1.0 Ultra</td><td>Google DeepMind</td><td>$5.00 \times 10^{25}$</td><td>$3.87 \times 10^{28}$</td><td>0.129</td></tr>
+                            <tr><td>Claude 3.5 Sonnet</td><td>Anthropic</td><td>$4.98 \times 10^{25}$</td><td>$2.27 \times 10^{28}$</td><td>0.220</td></tr>
+                            <tr><td>GPT-4o</td><td>OpenAI</td><td>$3.81 \times 10^{25}$</td><td>$4.35 \times 10^{28}$</td><td>0.088</td></tr>
+                            <tr><td>Llama 3.1-405B</td><td>Meta AI</td><td>$3.80 \times 10^{25}$</td><td>$5.65 \times 10^{28}$</td><td>0.067</td></tr>
+                            <tr><td>GPT-4</td><td>OpenAI</td><td>$2.10 \times 10^{25}$</td><td>$4.35 \times 10^{28}$</td><td>0.048</td></tr>
+                            <tr><td>Gemini 1.0 Pro</td><td>Google DeepMind</td><td>$1.83 \times 10^{25}$</td><td>$3.87 \times 10^{28}$</td><td>0.047</td></tr>
+                            <tr><td>Claude 3 Opus</td><td>Anthropic</td><td>$1.64 \times 10^{25}$</td><td>$2.27 \times 10^{28}$</td><td>0.072</td></tr>
+                            <tr><td>Llama 3-70B</td><td>Meta AI</td><td>$7.86 \times 10^{24}$</td><td>$5.65 \times 10^{28}$</td><td>0.014</td></tr>
+                            <tr><td>GPT-4o mini</td><td>OpenAI</td><td>$7.36 \times 10^{24}$</td><td>$4.35 \times 10^{28}$</td><td>0.017</td></tr>
+                            <tr><td>PaLM 2</td><td>Google</td><td>$7.34 \times 10^{24}$</td><td>$3.87 \times 10^{28}$</td><td>0.019</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <caption>Table: Estimated Total Worldwide AI Computing Capacity (Q4 2024)</caption>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Computing Power (FLOP/s)</th>
+                                <th>Share (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="3"><em>Cloud/AI Providers</em></td></tr>
+                            <tr><td>Meta</td><td>$1.79 \times 10^{21}$</td><td>5.57</td></tr>
+                            <tr><td>Microsoft/OpenAI</td><td>$1.38 \times 10^{21}$</td><td>4.29</td></tr>
+                            <tr><td>Google/DeepMind</td><td>$1.23 \times 10^{21}$</td><td>3.81</td></tr>
+                            <tr><td>Amazon/Anthropic</td><td>$7.19 \times 10^{20}$</td><td>2.23</td></tr>
+                            <tr><td colspan="3"><em>Consumer Computing</em></td></tr>
+                            <tr><td>Smartphones</td><td>$7.48 \times 10^{21}$</td><td>23.23</td></tr>
+                            <tr><td>PC CPUs/GPUs</td><td>$2.23 \times 10^{21}$</td><td>6.92</td></tr>
+                            <tr><td>Game Consoles</td><td>$8.64 \times 10^{20}$</td><td>2.68</td></tr>
+                            <tr><td>Other Cloud/Pre-2023</td><td>$1.65 \times 10^{22}$</td><td>51.28</td></tr>
+                            <tr class="baseline"><td><strong>Total</strong></td><td>$3.22 \times 10^{22}$</td><td>100.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <div class="callout">
                     <p class="callout-title">A Full Picture of Compute Waste</p>
                     <p>Consider first how an AI system would operate as a librarian. When someone asks about the rules of chess, this librarian doesn't merely consult the games section. Instead, they read <em>every single book in the library</em>. Not just once, they do this for <em>every single query</em>. When this AI librarian needs to add a new book to their collection, they don't simply locate an appropriate shelf using a catalog system. Instead they first read <em>every book in the library</em>, then displace existing books onto the floor to make space, then must <em>re-read everything</em> to determine where to relocate those displaced books. This process repeats, sometimes <em>trillions of times</em>, until the library reaches a new equilibrium.</p>
                     <p>Now consider how human librarians process information. When someone inquires about chess, they navigate directly to the games section, select a relevant text, and locate the rules. When adding a new book, they utilize the Dewey Decimal system to identify the appropriate shelf and place it there. The process is direct, efficient, and purposeful.</p>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <caption>Table: Summary of Major AI System Inefficiencies</caption>
+                        <thead>
+                            <tr>
+                                <th>Inefficiency Type</th>
+                                <th>Range</th>
+                                <th>Evidence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="3"><em>Inference Inefficiencies:</em></td></tr>
+                            <tr><td>Full Forward Propagation</td><td>25-50x+</td><td>RETRO/ATLAS</td></tr>
+                            <tr><td>Parameter Redundancy</td><td>5-10x+</td><td>Compression</td></tr>
+                            <tr><td>Catastrophic Forgetting</td><td>40x</td><td>Size Heuristic</td></tr>
+                            <tr><td colspan="3"><em>Training Inefficiencies:</em></td></tr>
+                            <tr><td>Re-training from Scratch</td><td>68x+</td><td>Industry Analysis</td></tr>
+                            <tr><td>Full Forward Propagation</td><td>25-50x+</td><td>RETRO/ATLAS</td></tr>
+                            <tr><td>Parameter Redundancy</td><td>5-10x+</td><td>Compression</td></tr>
+                            <tr><td>Siloed Compute</td><td>~17.95x</td><td>Global Compute</td></tr>
+                            <tr><td>Catastrophic Forgetting</td><td>40x</td><td>Size Heuristic</td></tr>
+                            <tr><td colspan="3"><em>Combined Effects:</em></td></tr>
+                            <tr class="highlight"><td>Inference Total</td><td>5,000-20,000x+</td><td>Multiplicative</td></tr>
+                            <tr class="highlight"><td>Training Total</td><td>6,103,000-24,412,000x+</td><td>Multiplicative</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <h3 id="siloed-data">6+ OOM: Siloed Data</h3>
@@ -280,7 +392,71 @@
                     <p>This mirrors the current state of AI training. When frontier models like GPT-4 (trained on 6.5 trillion tokens), and Qwen2.5-72B (18 trillion tokens), LLama 4 (30 trillion tokens) report hitting data limits, they're really hitting access limits. They're not running out of data, they're running out of data they can freely collect.</p>
                 </div>
 
-                <p>The scale of untapped data is staggering. Stored email and instant messages alone contain over 1,850 trillion tokens, approximately 60 times the largest known training dataset. Daily human communication generates approximately 150 trillion tokens, accumulating to roughly 55 quadrillion tokens annually.</p>
+                <p>The scale of untapped data is staggering:</p>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <caption>Table: Estimated Volume of Public Digital Text Content (relative size uses Llama 3 = 1 as reference)</caption>
+                        <thead>
+                            <tr>
+                                <th>Category &amp; Source</th>
+                                <th>Words (T)</th>
+                                <th>Tokens (T)</th>
+                                <th>Rel. Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="4"><em>Web Data</em></td></tr>
+                            <tr><td>FineWeb</td><td>11</td><td>15</td><td>1.0</td></tr>
+                            <tr><td>Non-English Common Crawl (high quality)</td><td>13.5</td><td>18</td><td>1.0</td></tr>
+                            <tr><td>All high quality web text</td><td>45-120</td><td>60-160</td><td>4.0-11.0</td></tr>
+                            <tr><td colspan="4"><em>Code</em></td></tr>
+                            <tr><td>Public code</td><td>-</td><td>0.78</td><td>0.05</td></tr>
+                            <tr><td>Private Code</td><td>-</td><td>20</td><td>1.3</td></tr>
+                            <tr><td colspan="4"><em>Academic &amp; Legal</em></td></tr>
+                            <tr><td>Academic articles</td><td>0.8</td><td>1</td><td>0.07</td></tr>
+                            <tr><td>Patents</td><td>0.15</td><td>0.2</td><td>0.01</td></tr>
+                            <tr><td colspan="4"><em>Books</em></td></tr>
+                            <tr><td>Google Books</td><td>3.6</td><td>4.8</td><td>0.3</td></tr>
+                            <tr><td>Anna's Archive</td><td>2.8</td><td>3.9</td><td>0.25</td></tr>
+                            <tr><td>Every unique book</td><td>16</td><td>21</td><td>1.4</td></tr>
+                            <tr><td>US federal court documents</td><td>2</td><td>2.7</td><td>0.2</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <caption>Table: Estimated Volume of Social Media, Audio, and Private Data (relative size uses Llama 3 = 1 as reference)</caption>
+                        <thead>
+                            <tr>
+                                <th>Category &amp; Source</th>
+                                <th>Words (T)</th>
+                                <th>Tokens (T)</th>
+                                <th>Rel. Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="4"><em>Social Media</em></td></tr>
+                            <tr><td>Twitter / X</td><td>8</td><td>11</td><td>0.7</td></tr>
+                            <tr><td>Weibo</td><td>29</td><td>38</td><td>2.5</td></tr>
+                            <tr><td>Facebook</td><td>105</td><td>140</td><td>10.0</td></tr>
+                            <tr><td colspan="4"><em>Audio (Transcribed)</em></td></tr>
+                            <tr><td>YouTube</td><td>5.2</td><td>7</td><td>0.5</td></tr>
+                            <tr><td>TikTok</td><td>3.7</td><td>4.9</td><td>0.3</td></tr>
+                            <tr><td>All podcasts</td><td>0.56</td><td>0.75</td><td>0.05</td></tr>
+                            <tr><td colspan="4"><em>Private Data</em></td></tr>
+                            <tr class="highlight"><td>All stored instant messages</td><td>500</td><td>650</td><td>45.0</td></tr>
+                            <tr class="highlight"><td>All stored email</td><td>900</td><td>1200</td><td>80.0</td></tr>
+                            <tr><td colspan="4"><em>Total Human Communication</em></td></tr>
+                            <tr><td>Daily</td><td>115</td><td>150</td><td>10</td></tr>
+                            <tr><td>Since 1800</td><td>3,000,000</td><td>4,000,000</td><td>$10^5$</td></tr>
+                            <tr><td>All time</td><td>6,000,000</td><td>8,000,000</td><td>$10^5$</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Stored email and instant messages alone contain over 1,850 trillion tokens, approximately 60 times the largest known training dataset. Daily human communication generates approximately 150 trillion tokens, accumulating to roughly 55 quadrillion tokens annually.</p>
 
                 <p>Yet even this vast sea of text represents merely a drop in the ocean of total digital data. While frontier AI models train on curated web scrapes such as Common Crawl (454 TB as of December 2023), the Internet Archive's Wayback Machine alone stores approximately 100 petabytes. Meanwhile, global digital data is projected to reach 180 zettabytes by 2025, six orders of magnitude larger than The Internet Archive and nine orders of magnitude larger than the largest known training datasets.</p>
             </section>
@@ -457,9 +633,62 @@
                 <h2>Empirical Evidence: Does the Pareto-Tradeoff Move?</h2>
 
                 <h3>The First Crack: RETRO and ATLAS</h3>
-                <p>Recent architectures challenge baseline tradeoffs. RETRO outperforms GPT-3 on the Pile (0.670 vs 0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3's 175B. This constitutes a 25x reduction in parameter count while achieving superior performance and maintaining clear attribution paths through its retrieval mechanism.</p>
+                <p>Recent architectures challenge baseline tradeoffs. RETRO outperforms GPT-3 on the Pile (0.670 vs 0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3's 175B:</p>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <caption>Table: RETRO results on the Pile, measured in bits-per-byte. (From Borgeaud et al., 2022)</caption>
+                        <thead>
+                            <tr>
+                                <th>Subset</th>
+                                <th>7B Baseline</th>
+                                <th>GPT-3</th>
+                                <th>Jurassic-1</th>
+                                <th>Gopher</th>
+                                <th>7.5B RETRO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>arxiv</td><td>0.742</td><td>0.838</td><td>0.680</td><td><strong>0.641</strong></td><td>0.714</td></tr>
+                            <tr><td>books3</td><td>0.792</td><td>0.802</td><td>0.835</td><td>0.706</td><td><strong>0.653</strong></td></tr>
+                            <tr><td>dm_mathematics</td><td>1.177</td><td>1.371</td><td><strong>1.037</strong></td><td>1.135</td><td>1.164</td></tr>
+                            <tr><td>freelaw</td><td>0.576</td><td>0.612</td><td>0.514</td><td>0.506</td><td><strong>0.499</strong></td></tr>
+                            <tr><td>github</td><td>0.420</td><td>0.645</td><td>0.358</td><td>0.367</td><td><strong>0.199</strong></td></tr>
+                            <tr><td>gutenberg_pg_19</td><td>0.803</td><td>1.163</td><td>0.890</td><td>0.652</td><td><strong>0.400</strong></td></tr>
+                            <tr><td>hackernews</td><td>0.971</td><td>0.975</td><td>0.869</td><td>0.888</td><td><strong>0.860</strong></td></tr>
+                            <tr><td>pile_cc</td><td>0.771</td><td>0.698</td><td>0.669</td><td>0.688</td><td><strong>0.626</strong></td></tr>
+                            <tr><td>pubmed_central</td><td>0.588</td><td>0.690</td><td>0.579</td><td>0.512</td><td><strong>0.419</strong></td></tr>
+                            <tr><td>stackexchange</td><td>0.714</td><td>0.773</td><td>0.655</td><td>0.638</td><td><strong>0.624</strong></td></tr>
+                            <tr class="highlight"><td><strong>Average</strong></td><td>0.774</td><td>0.811</td><td>0.705</td><td>0.694</td><td><strong>0.670</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>This constitutes a 25x reduction in parameter count while achieving superior performance and maintaining clear attribution paths through its retrieval mechanism.</p>
 
                 <p>ATLAS demonstrates similar gains: 25-50x parameter efficiency improvements while maintaining or exceeding baseline performance. Both systems achieve these results through a fundamental architectural shift: rather than compressing all knowledge into dense parameters, they maintain explicit connections to source documents through retrieval.</p>
+
+                <p>Federated RAG systems demonstrate concurrent improvements in attribution and performance:</p>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <caption>Table: Performance Metrics on MMLU Tasks (Federated RAG vs Baseline RAG)</caption>
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Federated RAG Accuracy (%)</th>
+                                <th>Baseline RAG Accuracy (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Task 1</td><td>78</td><td>70</td></tr>
+                            <tr><td>Task 2</td><td>82</td><td>75</td></tr>
+                            <tr><td>Task 3</td><td>74</td><td>68</td></tr>
+                            <tr><td>Task 4</td><td>88</td><td>80</td></tr>
+                            <tr><td>Task 5</td><td>81</td><td>76</td></tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h3>Deep Voting: Formalizing the Pattern</h3>
                 <p>These architectures (RETRO, ATLAS, PATE, federated RAG, and Git Re-Basin) share a common technical mechanism: they replace addition operations during training with concatenation, deferring synthesis until inference time. We formalize this pattern as <em>deep voting</em>.</p>
