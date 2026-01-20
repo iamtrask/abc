@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter I: From Deep Learning to Deep Voting | ABC in AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Introduction</a>
+        <a href="chapter2.html" class="active">I. Deep Voting</a>
+        <a href="chapter3.html">II. Network-Source AI</a>
+        <a href="chapter4.html">III. Broad Listening</a>
+        <a href="chapter5.html">IV. Conclusion</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <div class="page-container">
+        <aside class="toc-sidebar">
+            <h4>On This Page</h4>
+            <ul>
+                <li class="toc-h3"><a href="#chapter-summary">Chapter Summary</a></li>
+                <li class="toc-h3"><a href="#symptom">The Symptom: Underutilization</a></li>
+                <li class="toc-h4"><a href="#underutilized-compute">Underutilized Compute</a></li>
+                <li class="toc-h4"><a href="#siloed-data">Siloed Data</a></li>
+                <li class="toc-h4"><a href="#root-causes">Root Causes (Three Whys)</a></li>
+                <li class="toc-h3"><a href="#first-why">First Why: ABC</a></li>
+                <li class="toc-h3"><a href="#second-why">Second Why: Feature Mixing</a></li>
+                <li class="toc-h3"><a href="#third-why">Third Why: Addition</a></li>
+                <li class="toc-h3"><a href="#third-hypothesis">Third Hypothesis: Concatenation</a></li>
+                <li class="toc-h3"><a href="#second-hypothesis">Second Hypothesis: Deep Voting</a></li>
+                <li class="toc-h3"><a href="#first-hypothesis">First Hypothesis: 6+ OOM</a></li>
+                <li class="toc-h3"><a href="#empirical-evidence">Empirical Evidence</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="chapter-header">
+                <p class="chapter-number">Chapter I</p>
+                <h1>From Deep Learning to Deep Voting</h1>
+            </div>
+
+            <figure class="full-width">
+                <img src="1411.3146/abc_ch2_2_v8.png" alt="The lack of ABC creates problems for data-owning institutions">
+                <figcaption>The lack of ABC creates problems for data-owning institutions, problems which avert their sharing of data and compute for AI training, problems which are underpinned&mdash;at their core&mdash;by the overuse of addition within deep learning systems.</figcaption>
+            </figure>
+
+            <section id="chapter-summary" class="abstract">
+                <h2>Chapter Summary</h2>
+                <p>Estimates below suggest that models are trained using less than 1/1,000,000th of the world's data and AI compute productivity. Consequently, following AI's scaling laws, AI models possess capabilities which are insignificant compared to what existing data, compute, and algorithms could create.</p>
+                <p>Yet, if AI models (and their capabilities) are the lifeblood of the AI industry, why are data and compute so underutilized? Why is AI capability so constrained? This chapter unpacks the cause of such a drastic resource under-utilization. It begins by linking resource utilization to attribution-based control (ABC). It then breaks attribution-based control into problems with attribution and control, which are themselves underpinned by deep learning's core philosophy of mixing dense features. This mixing is only problematic because of a specific technical choice: the use of addition to update model weights, which erases provenance information during gradient descent.</p>
+            </section>
+
+            <figure class="full-width">
+                <img src="1411.3146/deep_learning_to_deep_voting_v3.png" alt="Deep Learning vs Deep Voting">
+                <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a deep learning model (i.e. by adding weight updates) which is later used for predictions, while deep voting systems (right) learn weight parameters which remain partitioned by source (i.e. concatenated), but which are learned in a way that they can be rapidly synthesized on the fly.</figcaption>
+            </figure>
+
+            <section>
+                <p>The chapter then explores alternatives to addition during the training process, revealing a fundamental trade off between three factors: AI capability (driven by unrestricted feature learning), attribution (tracking where features came from), and computational complexity (tracking the path of feature mixing). It proposes a key innovation, a re-purposing of differential privacy for attribution: <em>differential attribution</em>, using the natural boundaries of training documents to identify which concepts must mix freely and vice versa, thereby pushing this Pareto frontier by providing a data-driven approach to balance addition and concatenation.</p>
+                <p>Building on this insight, the chapter develops a specific form of concatenation to replace addition in key sections of the deep learning training process. This transformation&mdash;from deep learning to <strong>deep voting</strong>&mdash;cascades upward through the aforementioned hierarchy of problems, reducing the need for dense feature mixing across data sources, enabling attribution-based control, and unlocking a viable path towards another 6+ orders of magnitude of training data and compute productivity.</p>
+            </section>
+
+            <section id="symptom">
+                <h2>The Symptom: Data/Compute Underutilization</h2>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_2_v9.png" alt="Problem tree">
+                    <figcaption>The lack of ABC creates problems for data-owning institutions, problems which avert their sharing of data and compute for AI training, problems which are underpinned by the overuse of addition within deep learning systems.</figcaption>
+                </figure>
+
+                <p>As of NeurIPS 2024, leading AI researchers have reported that available compute and data reserves are approaching saturation, creating constraints on both computational resources and pre-training scale. However, this assessment overlooks approximately six orders of magnitude of underutilized compute productivity and siloed data. Rather than absolute scarcity, the industry faces structural problems of data and compute access and productivity.</p>
+
+                <h3 id="underutilized-compute">6+ OOM: Underutilized Training Compute Productivity</h3>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_2_1_v8.png" alt="Compute inefficiency tree">
+                    <figcaption>A tree of sub-problems regarding inefficient training compute productivity.</figcaption>
+                </figure>
+
+                <p>The AI industry's computational requirements have driven significant economic and geopolitical consequences, including NVIDIA's rise to become the world's most valuable company, U.S. export restrictions on AI chips to China, and intense competition for latest-generation hardware among startups, enterprises, and major technology firms. However, recent evidence suggests that current AI training and inference processes utilize less than 0.0002% of available compute productivity, indicating that perceived compute scarcity may reflect inefficiency rather than absolute resource limits.</p>
+
+                <h4>2-3 OOM: Inefficient AI inference</h4>
+
+                <div class="callout">
+                    <p class="callout-title">A Library Analogy</p>
+                    <p>Consider a library. When someone asks a librarian about the rules of chess, the librarian doesn't subsequently read <em>every book in the library</em> to find the answer. Instead, they use the catalog system to find a relevant bookshelf, the titles of books on that shelf to find the relevant book, and the table of contents of that book to find the relevant section. This practice stands in stark contrast to how AI systems process information. To make an AI prediction with a model like GPT-3, AI users forward propagate <em>through the entire model and all of its knowledge</em> (i.e., read every book in the library). And in the case of large language models, they don't just do this once per answer, they do this <em>for every token they predict</em>.</p>
+                </div>
+
+                <p>DeepMind's RETRO achieves comparable performance to GPT-3 while using 1/25th of the parameters through retrieval from a large-scale vector database. Similarly, Meta's ATLAS demonstrates that models can be reduced to 1/50th their original size while maintaining or exceeding baseline performance through database-augmented inference.</p>
+
+                <p>We adopt RETRO/ATLAS-style parameter efficiency as a conservative lower bound on current compute waste. These results suggest that at least 96-98% of parameters activated during dense inference are unnecessary for individual queries.</p>
+
+                <h4>6 OOM: Underutilized and Inefficient Compute in AI Learning</h4>
+
+                <div class="callout">
+                    <p class="callout-title">A Library Analogy</p>
+                    <p>As before, consider a library. When a library adds or removes a significant number of books to/from their collection, they don't <em>rebuild the entire building and re-print all of their books from scratch</em>, they simply add/remove books, shelves, or rooms. These practices stand in stark contrast to how AI systems process information. To add or remove a significant portion of knowledge from a deep learning system, AI researchers <em>retrain them from scratch</em> (i.e., tear down the entire library, burn all the books, rebuild the library, and re-print all the books from scratch).</p>
+                </div>
+
+                <p>Analysis of the largest AI firms reveals that pre-training their most capable models consumes less than 1% of quarterly compute budgets. Yet these same firms continue expanding computational infrastructure to support larger models, suggesting that remaining compute capacity is allocated to other training activities rather than final model production.</p>
+
+                <div class="callout">
+                    <p class="callout-title">A Full Picture of Compute Waste</p>
+                    <p>Consider first how an AI system would operate as a librarian. When someone asks about the rules of chess, this librarian doesn't merely consult the games section. Instead, they read <em>every single book in the library</em>. Not just once, they do this for <em>every single query</em>. When this AI librarian needs to add a new book to their collection, they don't simply locate an appropriate shelf using a catalog system. Instead they first read <em>every book in the library</em>, then displace existing books onto the floor to make space, then must <em>re-read everything</em> to determine where to relocate those displaced books. This process repeats, sometimes <em>trillions of times</em>, until the library reaches a new equilibrium.</p>
+                    <p>Now consider how human librarians process information. When someone inquires about chess, they navigate directly to the games section, select a relevant text, and locate the rules. When adding a new book, they utilize the Dewey Decimal system to identify the appropriate shelf and place it there. The process is direct, efficient, and purposeful.</p>
+                </div>
+
+                <h3 id="siloed-data">6+ OOM: Siloed Data</h3>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_2_2_v5.png" alt="Data siloing tree">
+                    <figcaption>A tree of sub-problems regarding data siloing.</figcaption>
+                </figure>
+
+                <p>Following growing rumors across the AI research community that data is becoming a major bottleneck, OpenAI's former chief scientist, Ilya Sutskever, announced during his test of time award speech at NeurIPS 2024 that data for training AI has peaked, "We've achieved peak data and there'll be no more". However, while this may be true for the AI industry, Ilya's statement does not reflect the reality of what data exists in the world.</p>
+
+                <div class="callout">
+                    <p class="callout-title">A Library Analogy</p>
+                    <p>Consider a world where libraries could only acquire books through anonymous donations left on their doorstep. No matter how many valuable books exist in private collections, university archives, or government repositories, libraries would be limited to what people voluntarily abandon. In such a world, librarians might reasonably conclude they're "running out of books", even while surrounded by vast, inaccessible collections within surrounding businesses and homes.</p>
+                    <p>This mirrors the current state of AI training. When frontier models like GPT-4 (trained on 6.5 trillion tokens), and Qwen2.5-72B (18 trillion tokens), LLama 4 (30 trillion tokens) report hitting data limits, they're really hitting access limits. They're not running out of data, they're running out of data they can freely collect.</p>
+                </div>
+
+                <p>The scale of untapped data is staggering. Stored email and instant messages alone contain over 1,850 trillion tokens, approximately 60 times the largest known training dataset. Daily human communication generates approximately 150 trillion tokens, accumulating to roughly 55 quadrillion tokens annually.</p>
+
+                <p>Yet even this vast sea of text represents merely a drop in the ocean of total digital data. While frontier AI models train on curated web scrapes such as Common Crawl (454 TB as of December 2023), the Internet Archive's Wayback Machine alone stores approximately 100 petabytes. Meanwhile, global digital data is projected to reach 180 zettabytes by 2025, six orders of magnitude larger than The Internet Archive and nine orders of magnitude larger than the largest known training datasets.</p>
+            </section>
+
+            <section id="root-causes">
+                <h3>The Search for Root Causes (Three "Whys")</h3>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_2_3_v6.png" alt="Cascade of causes">
+                    <figcaption>The cascade of causes between the addition problem and ABC.</figcaption>
+                </figure>
+
+                <p>The previous section revealed a paradox: despite widespread beliefs of data and compute scarcity, AI systems access less than one millionth of digital resources. This under-utilization raises a critical question: if more data and compute directly improves AI capabilities through scaling laws, why do AI systems use such a tiny fraction of what's available? The answer lies in a cascade of technical and institutional barriers:</p>
+
+                <ul>
+                    <li><strong>First Why:</strong> Attribution-based Control</li>
+                    <li><strong>Second Why:</strong> Deep Learning's Feature Mixing Precludes Partitioning</li>
+                    <li><strong>Third Why (Root Cause):</strong> Addition of Source-Separable Concepts</li>
+                </ul>
+            </section>
+
+            <section id="first-why">
+                <h2>First Why: Attribution-based Control</h2>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_3_0_v5.png" alt="First Why graph">
+                    <figcaption>Subset of conceptual graph regarding Section 2.3</figcaption>
+                </figure>
+
+                <p>The previous section revealed significant inefficiencies in the training of AI systems: 6+ orders of magnitude in underutilized data and compute. While there may be multiple contributing factors to these constraints, this thesis examines one particular root cause: AI's inability to provide attribution-based control (ABC). An AI model possesses attribution-based control when two properties are true: data sources control which AI predictions they support, AI users control which data sources they rely upon for an AI prediction.</p>
+
+                <p>ABC implies certain architectural properties as novel requirements:</p>
+
+                <ul>
+                    <li><strong>Source-Partitionable Representations:</strong> Knowledge within an AI system is partition-able by source</li>
+                    <li><strong>Rapid Partition Synthesis:</strong> Partitions are rapidly synthesize-able during inference</li>
+                </ul>
+
+                <h3>ABC and Compute Productivity (6+ OOM)</h3>
+                <p>ABC would address compute productivity issues along two dimensions: access and learning structure. Regarding structure, successful ABC would necessarily provide a means to structure the learning and representation process, reducing re-training, forward propagation, redundancy, and catastrophic forgetting.</p>
+
+                <p>RETRO and ATLAS demonstrate the minimum scale of such a breakthrough. By maintaining source-based partitions through their database architecture, they achieve equal performance while activating only 2-4% of the parameters of similarly performant dense models.</p>
+
+                <h3>How Failing ABC Siloes Data (6 OOM)</h3>
+                <p>Recall that current AI models can only train on data they can access. Consequently, AI models almost certainly train on less than 1/1,000,000th of the digitized information in the world because they cannot access the other 99.9999%, which remains hidden amongst the world's 360 million companies, 8+ billion citizens, etc.</p>
+
+                <p>Successful ABC would necessarily enable one particularly compelling form of data sharing. The ability for a data source to decide which AI predictions to support is (almost tautologically) the ability for a data source to enable uses while averting mis-uses. One could argue that truly successful ABC would constitute an incentive shift attracting all of the world's data to be pulled into at least some AI predictions.</p>
+            </section>
+
+            <section id="second-why">
+                <h2>Second Why: Deep Learning's Feature Mixing Precludes Partitioning</h2>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_4_0_v5.png" alt="Second Why graph">
+                    <figcaption>Subset of conceptual graph highlighting the Second Why and focus of this section.</figcaption>
+                </figure>
+
+                <p>The previous section revealed how solving attribution-based control would necessarily enable massive data and compute gains in AI systems. Yet this raises a deeper question: why do current AI systems fail to maintain attribution in the first place? The answer lies in deep learning's foundational premise: algorithms should learn everything from scratch through layers of (largely) unrestricted feature mixing on raw data.</p>
+
+                <p>This commitment to unrestricted learning manifests in how neural networks fundamentally process information. Through operations that combine and mix information at every step (from layer computations to weight updates to knowledge accumulation) neural networks create increasingly complex representations of patterns in their training data. While this flexibility enables powerful pattern recognition, it creates a fundamental problem: features become stored in a disorganized, obfuscated way within the deep learning model... a black box.</p>
+
+                <div class="callout">
+                    <p class="callout-title">A Library Analogy</p>
+                    <p>Consider a library wherein all of the books have had their covers removed, their table of contents erased, and their chapters torn out and shuffled amongst all the books. Consequently, when someone wants to answer a specific question, they have to read through the entire library searching for relevant information for their query.</p>
+                    <p>Deep learning stores information in a similar way, with so-called <em>distributed representations</em> spreading concepts across many neurons... each of which is unlabeled (i.e. "hidden"). Far from an accident, this form of learning is at the center of deep learning's core philosophy, the unrestricted learning of dense, hidden features.</p>
+                </div>
+            </section>
+
+            <section id="third-why">
+                <h2>Third Why (Root Cause): Addition of Source-Separable Concepts</h2>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_5_0_v5.png" alt="Third Why graph">
+                    <figcaption>Subset of conceptual graph highlighting the Third Why and the focus of this section.</figcaption>
+                </figure>
+
+                <p>The previous section revealed how deep learning's feature mixing precludes the partitioning required for attribution-based control. Yet this raises our final "why": what makes this mixing fundamentally irreversible? The answer lies in deep learning's most basic mathematical operation: addition.</p>
+
+                <p>Addition might seem like an implementation detail, but it fundamentally prevents recovering source information. When values combine through addition, the result does not uniquely determine its inputs&mdash;multiple distinct source combinations produce identical outputs:</p>
+
+                <div class="definition-box">
+                    <h3>Non-Injectivity of Addition</h3>
+                    <p>Addition is not injective: for any sum y, there exist infinitely many distinct pairs (x<sub>1</sub>, x<sub>2</sub>) and (x'<sub>1</sub>, x'<sub>2</sub>) such that x<sub>1</sub> + x<sub>2</sub> = y = x'<sub>1</sub> + x'<sub>2</sub> where (x<sub>1</sub>, x<sub>2</sub>) &ne; (x'<sub>1</sub>, x'<sub>2</sub>).</p>
+                </div>
+
+                <div class="definition-box">
+                    <h3>Concatenation vs Addition</h3>
+                    <p><strong>Concatenation preserves sources:</strong><br>
+                    "1" &oplus; "6" = "16"<br>
+                    "2" &oplus; "5" = "25"<br>
+                    (distinct inputs &rarr; distinct outputs)</p>
+                    <p><strong>Addition erases them:</strong><br>
+                    1 + 6 = 7<br>
+                    2 + 5 = 7<br>
+                    (distinct inputs &rarr; identical outputs)</p>
+                </div>
+
+                <p>When partitions are known, concatenation of numbers is injective; different inputs produce different outputs, allowing source recovery. Addition is not; the output 7 could arise from 1+6, 2+5, 3+4, 0+7, or infinitely many other combinations. This non-injectivity is the mechanism through which deep neural networks erase attribution information: once gradients from different sources are summed into shared parameters, no function of those parameters can recover which sources contributed what information.</p>
+
+                <p><strong>The Root Problem:</strong> Without the ability to track sources through training, we cannot provide the attribution that ABC requires. Without attribution, we cannot enable the partitioned sharing and use of data and compute that could unlock orders of magnitude more AI resources. Addition itself blocks the very data and compute gains described earlier in this chapter.</p>
+            </section>
+
+            <section id="third-hypothesis">
+                <h2>Third Hypothesis: Concatenating Along Natural Boundaries Enables Attribution</h2>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_6_0_v6.png" alt="Third Hypothesis graph">
+                    <figcaption>Subset of concept graph highlighting the Third Hypothesis and focus of this section.</figcaption>
+                </figure>
+
+                <p>The previous sections revealed how addition in deep learning creates a fundamental barrier to attribution. Yet examining why addition fails suggests a testable hypothesis: can we significantly reduce the use of addition, perhaps swapping it with concatenation?</p>
+
+                <p>Some information patterns appear ubiquitously: basic rules of grammar that structure language, logical operations that appear in reasoning, morphological patterns which make up words, edges and corners in images, etc. Such dense patterns suggest unrestricted mixing through addition may be appropriate for a core subset of features.</p>
+
+                <p>In contrast, perhaps most information is encyclopedic and appears sparsely: specific facts about the world, domain expertise in particular fields, claims made by individual sources, etc. The capital of France, the rules of chess, statistics about pizza... each appears in distinct contexts with limited overlap.</p>
+
+                <p>A key insight of this chapter is that techniques from privacy-preserving machine learning, particularly differential privacy (DP), provide a principled way to measure and control which features benefit from dense mixing versus sparse representation.</p>
+
+                <div class="definition-box">
+                    <h3>Three Regimes of Influence Control</h3>
+                    <ul>
+                        <li><strong>Privacy (constrain influence):</strong> Enforce &epsilon;<sub>e</sub> &lt; &tau;<sub>min</sub> for all examples</li>
+                        <li><strong>Measurement (track influence):</strong> Compute &epsilon;<sub>e</sub> for each example</li>
+                        <li><strong>Attribution (ensure influence):</strong> Enforce &epsilon;<sub>e</sub> &gt; &tau;<sub>max</sub> for specified examples</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="second-hypothesis">
+                <h2>Second Hypothesis: Deep Voting with Intelligence Budgets</h2>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_7_0_v5.png" alt="Second Hypothesis graph">
+                    <figcaption>Subset of concept graph highlighting the Second Hypothesis and focus of this section.</figcaption>
+                </figure>
+
+                <p>The previous section revealed how privacy mechanisms might naturally separate dense from sparse information patterns. Yet this theoretical insight raises a practical question: how do we actually <em>implement</em> the measurement and control regimes we defined?</p>
+
+                <h3>Intelligence Budgets: Implementing Individual Source Control</h3>
+                <p>This source-level individual attribution measure enables a practical control mechanism: <em>intelligence budgets</em>. Rather than simply measuring influence after the fact, we can actively control how much each source influences predictions through architectural routing decisions.</p>
+
+                <div class="definition-box">
+                    <h3>Intelligence Budgets via Forward Pass Weighting</h3>
+                    <p>The model has two types of parameterized functions:</p>
+                    <ul>
+                        <li>g<sub>s</sub>(&middot;): source-specific function for source s</li>
+                        <li>f(&middot;): shared function across all sources</li>
+                    </ul>
+                    <p>The intelligence budget B(s) bounds source s's influence. Setting &gamma;[s] &asymp; 0 enforces small B(s) (privacy regime). Setting &gamma;[s] &asymp; 1 allows large B(s) (attribution regime).</p>
+                </div>
+
+                <div class="callout">
+                    <p class="callout-title">A Library Analogy</p>
+                    <p>Following the analogy, differential attribution ensures that each strip of numbers remains separated (instead of added) into each other strip, preserved within the same book as before, partitioning information in a way which might be indexed by source (or topic). It further provides a staff of librarians who know how to read relevant information and synthesize them, each according to a topic that librarian happens to be familiar with.</p>
+                </div>
+            </section>
+
+            <section id="first-hypothesis">
+                <h2>First Hypothesis: ABC and 6+ Orders of Magnitude more Data/Compute</h2>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch2_8_0_v5.png" alt="First Hypothesis graph">
+                    <figcaption>Subset of concept graph highlighting the First Hypothesis and focus of this section.</figcaption>
+                </figure>
+
+                <p>The deep voting framework reveals a two-dimensional spectrum in machine learning architectures. Consider how different parameter settings affect the model's behavior:</p>
+
+                <p>At (&lambda;,&gamma;) = (1,0), we find pure deep learning with maximum compression. These systems, like GPT-4, use only shared parameters with basic bounds on attribution. At (&lambda;,&gamma;) = (0,1), we find pure partition-based learning, like federated systems, which maintain group privacy but limit cross-source learning. At (&lambda;,&gamma;) = (0,0), we find pure source-specific learning systems like k-nearest neighbors.</p>
+
+                <p>The stakes are significant. If deep voting succeeds, it could unlock another 6+ orders of magnitude of training data and compute productivity. If it fails, we may remain constrained by the fundamental limitations of current architectures.</p>
+            </section>
+
+            <section id="empirical-evidence">
+                <h2>Empirical Evidence: Does the Pareto-Tradeoff Move?</h2>
+
+                <h3>The First Crack: RETRO and ATLAS</h3>
+                <p>Recent architectures challenge baseline tradeoffs. RETRO outperforms GPT-3 on the Pile (0.670 vs 0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3's 175B. This constitutes a 25x reduction in parameter count while achieving superior performance and maintaining clear attribution paths through its retrieval mechanism.</p>
+
+                <p>ATLAS demonstrates similar gains: 25-50x parameter efficiency improvements while maintaining or exceeding baseline performance. Both systems achieve these results through a fundamental architectural shift: rather than compressing all knowledge into dense parameters, they maintain explicit connections to source documents through retrieval.</p>
+
+                <h3>Deep Voting: Formalizing the Pattern</h3>
+                <p>These architectures (RETRO, ATLAS, PATE, federated RAG, and Git Re-Basin) share a common technical mechanism: they replace addition operations during training with concatenation, deferring synthesis until inference time. We formalize this pattern as <em>deep voting</em>.</p>
+
+                <figure class="full-width">
+                    <img src="1411.3146/deep_learning_to_deep_voting_v3.png" alt="Deep Learning to Deep Voting">
+                    <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a deep learning model (i.e. by adding weight updates) which is later used for predictions, while deep voting systems (right) learn weight parameters which remain partitioned by source (i.e. concatenated), but which are learned in a way that they can be rapidly synthesized on the fly.</figcaption>
+                </figure>
+
+                <p>Deep voting addresses the addition problem that blocks access to 6+ orders of magnitude of data and compute. By preserving source attribution through concatenated representations while enabling cross-source learning through shared components, deep voting architectures demonstrate that the baseline tradeoffs between attribution, efficiency, and performance reflect architectural choices rather than fundamental constraints.</p>
+
+                <p>However, solving the addition problem reveals a deeper challenge: the copy problem. Even if one achieved perfect attribution through deep voting, data sources cannot enforce how their contributions are used because whoever possesses a copy of the model retains unilateral control. Chapter 2 addresses this challenge, introducing techniques that enable attribution-based <em>control</em> rather than mere attribution-based <em>suggestions</em>.</p>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="index.html" class="prev">Introduction</a>
+                <a href="chapter3.html" class="next">Chapter II: Network-Source AI</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>Andrew Trask &middot; St. Hugh's College &middot; University of Oxford</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.toc-sidebar a');
+            const sections = [];
+            tocLinks.forEach(link => {
+                const id = link.getAttribute('href').substring(1);
+                const section = document.getElementById(id);
+                if (section) sections.push({ id, element: section, link });
+            });
+            function updateActiveLink() {
+                const scrollPos = window.scrollY + 100;
+                let currentSection = sections[0];
+                for (const section of sections) {
+                    if (section.element.offsetTop <= scrollPos) currentSection = section;
+                }
+                tocLinks.forEach(link => link.classList.remove('active'));
+                if (currentSection) currentSection.link.classList.add('active');
+            }
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink();
+        });
+    </script>
+</body>
+</html>

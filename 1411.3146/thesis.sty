@@ -1,0 +1,147 @@
+% bibliography
+
+
+% don't box citations, separate with ; and a space
+% Replaced for multiple citations (pj)
+% don't box citations and also add space, semicolon between multiple citations
+\def\@citex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+  \def\@citea{}\@cite{\@for\@citeb:=#2\do
+     {\@citea\def\@citea{; }\@ifundefined
+%   {\@citea\def\@citea{;\penalty\@citeseppen\ }\@ifundefined
+       {b@\@citeb}{{\bf ?}\@warning
+        {Citation `\@citeb' on page \thepage \space undefined}}%
+ {\csname b@\@citeb\endcsname}}}{#1}}
+
+% Allow short (name-less) citations, when used in
+% conjunction with a bibliography style that creates labels like
+%       \citename{<names>, }<year>
+%
+\let\@internalcite\cite
+\def\cite{\def\citename##1{##1}\@internalcite}
+\def\egcite{\def\citename##1{##1, }(e.g. \@internalcitec}
+\def\shortcite{\def\citename##1{}\@internalcite}
+\def\newcite{\def\citename##1{{\frenchspacing##1} (}\@internalciteb}
+
+% Macros for \newcite, which leaves name in running text, and is
+% otherwise like \shortcite.
+\def\@citexb[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+  \def\@citea{}\@newcite{\@for\@citeb:=#2\do
+    {\@citea\def\@citea{;\penalty\@m\ }\@ifundefined
+       {b@\@citeb}{{\bf ?}\@warning
+       {Citation `\@citeb' on page \thepage \space undefined}}%
+{\csname b@\@citeb\endcsname}}}{#1}}
+
+% I have no idea what I'm doing here, but it seems to work. \egcite for the win
+\def\@citexc[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+  \def\@citea{}\@egcite{\@for\@citeb:=#2\do
+    {\@citea\def\@citea{;\penalty\@m\ }\@ifundefined
+       {b@\@citeb}{{\bf ?}\@warning
+       {Citation `\@citeb' on page \thepage \space undefined}}%
+{\csname b@\@citeb\endcsname}}}{#1}}
+
+\def\@internalciteb{\@ifnextchar [{\@tempswatrue\@citexb}{\@tempswafalse\@citexb[]}}
+\def\@internalcitec{\@ifnextchar [{\@tempswatrue\@citexc}{\@tempswafalse\@citexb[]}}
+
+\def\@newcite#1#2{{#1\if@tempswa, #2\fi)}}
+
+\def\@biblabel#1{\def\citename##1{##1}[#1]\hfill}
+
+%%% More changes made by SMS (originals in latex.tex)
+% Use parentheses instead of square brackets in the text.
+\def\@cite#1#2{({#1\if@tempswa , #2\fi})}
+
+% \def\@up#1{\raise.2ex\hbox{#1}}
+
+% Don't put a label in the bibliography at all.  Just use the unlabeled format
+% instead.
+\def\thebibliography#1{\vskip\parskip%
+\vskip\baselineskip%
+\def\baselinestretch{1}%
+\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi%
+\vskip-\parskip%
+\vskip-\baselineskip%
+\section*{References\@mkboth
+ {References}{References}}\list
+ {}{\setlength{\labelwidth}{0pt}\setlength{\leftmargin}{\parindent}
+ \setlength{\itemindent}{-\parindent}}
+ \def\newblock{\hskip .11em plus .33em minus -.07em}
+ \sloppy\clubpenalty4000\widowpenalty4000
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+
+% Allow for a bibliography of sources of attested examples
+\def\thesourcebibliography#1{\vskip\parskip%
+\vskip\baselineskip%
+\def\baselinestretch{1}%
+\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi%
+\vskip-\parskip%
+\vskip-\baselineskip%
+\section*{Sources of Attested Examples\@mkboth
+ {Sources of Attested Examples}{Sources of Attested Examples}}\list
+ {}{\setlength{\labelwidth}{0pt}\setlength{\leftmargin}{\parindent}
+ \setlength{\itemindent}{-\parindent}}
+ \def\newblock{\hskip .11em plus .33em minus -.07em}
+ \sloppy\clubpenalty4000\widowpenalty4000
+ \sfcode`\.=1000\relax}
+\let\endthesourcebibliography=\endlist
+
+\def\@lbibitem[#1]#2{\item[]\if@filesw
+      { \def\protect##1{\string ##1\space}\immediate
+        \write\@auxout{\string\bibcite{#2}{#1}}\fi\ignorespaces}}
+
+\def\@bibitem#1{\item\if@filesw \immediate\write\@auxout
+       {\string\bibcite{#1}{\the\c@enumi}}\fi\ignorespaces}
+
+
+
+% ARTICLE ABSTRACT
+%
+\makeatletter
+\newenvironment{chapterabstract}{%
+    \begin{center}%
+      \bfseries Chapter Abstract
+    \end{center}\begin{quote}\begin{itshape}}%
+   {\end{itshape}\end{quote}\begin{center}%
+      \par%
+      \noindent\rule[0.5ex]{0.75\linewidth}{1pt}%
+     \end{center}}
+\makeatother
+
+%
+% AQUOTE ENVIRONMENT \begin{aquote}{Name} ... \end{aquote}
+%
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+{\savebox\mybox{#1}\begin{quote}\itshape}
+{\signed{\usebox\mybox}\end{quote}}
+
+
+% SPECIAL CELL (allows linebreak)
+\newcommand{\specialcell}[2][c]{%
+\begin{tabular}[h]{@{}#1@{}}#2\end{tabular}}
+
+% \newcommand\kmh[1]{}
+% \newcommand\margin[1]{}
+% \newcommand\expand{}
+\newcommand\kmh[1]{\textcolor{blue}{[TODO: #1]}}
+\newcommand\margin[1]{\mbox{}\marginpar{\raggedright\hspace{0pt}\small\textcolor{blue}{#1}}}
+\newcommand\expand{\margin{expand}}
+
+\newcommand\wordnet{WordNet\xspace}
+
+% Footnote without marker
+\newcommand\emptyfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+  }
+
+% Table centered column with defined width
+
+\newcolumntype{x}[1]{>{\centering\hspace{0pt}\arraybackslash}p{#1}}

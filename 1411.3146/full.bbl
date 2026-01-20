@@ -1,0 +1,1224 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Al-Rfou' \bgroup et al.\egroup }2013]{Al-Rfou:2013}
+R.~Al-Rfou', B.~Perozzi, and S.~Skiena.
+\newblock 2013.
+\newblock {Polyglot: Distributed Word Representations for Multilingual {NLP}}.
+\newblock In {\em Proceedings of the Seventeenth Conference on Computational
+  Natural Language Learning}, pages 183--192, Sofia, Bulgaria, August.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Andrews \bgroup et al.\egroup }2009]{Andrews:2009}
+M.~Andrews, G.~Vigliocco, and D.~Vinson.
+\newblock 2009.
+\newblock {Integrating experiential and distributional data to learn semantic
+  representations.}
+\newblock {\em Psychological Review}, 116(3):463--498, Jul.
+
+\bibitem[\protect\citename{Baker \bgroup et al.\egroup }1998]{Baker:1998}
+C.~F. Baker, C.~J. Fillmore, and J.~B. Lowe.
+\newblock 1998.
+\newblock {The Berkeley FrameNet Project}.
+\newblock In {\em Proceedings of the 36th Annual Meeting of the Association for
+  Computational Linguistics and 17th International Conference on Computational
+  Linguistics - Volume 1}, ACL '98, pages 86--90, Montreal, Quebec, Canada.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Baker \bgroup et al.\egroup }2007]{Baker:2007}
+C.~Baker, M.~Ellsworth, and K.~Erk.
+\newblock 2007.
+\newblock {{SemEval-2007} {T}ask 19: Frame Semantic Structure Extraction}.
+\newblock In {\em Proceedings of the Fourth International Workshop on Semantic
+  Evaluations (SemEval-2007)}, pages 99--104, Prague, Czech Republic, June.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Bangalore and Joshi}1999]{Bangalore:1999}
+S.~Bangalore and A.~K. Joshi.
+\newblock 1999.
+\newblock {Supertagging: An Approach to Almost Parsing}.
+\newblock {\em Computational Linguistics}, 25(2):237--265, June.
+
+\bibitem[\protect\citename{Bannard \bgroup et al.\egroup }2003]{Bannard:2003}
+C.~Bannard, T.~Baldwin, and A.~Lascarides.
+\newblock 2003.
+\newblock {A Statistical Approach to the Semantics of Verb-particles}.
+\newblock In {\em Proceedings of the ACL 2003 Workshop on Multiword
+  Expressions: Analysis, Acquisition and Treatment - Volume 18}, MWE '03, pages
+  65--72, Sapporo, Japan. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Baroni and Zamparelli}2010]{Baroni:2010}
+M.~Baroni and R.~Zamparelli.
+\newblock 2010.
+\newblock {Nouns Are Vectors, Adjectives Are Matrices: Representing
+  Adjective-noun Constructions in Semantic Space}.
+\newblock In {\em Proceedings of the 2010 Conference on Empirical Methods in
+  Natural Language Processing}, EMNLP '10, pages 1183--1193, Cambridge,
+  Massachusetts. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Basile \bgroup et al.\egroup }2012]{Basile:2012}
+V.~Basile, J.~Bos, K.~Evang, and N.~Venhuizen.
+\newblock 2012.
+\newblock {Developing a large semantically annotated corpus}.
+\newblock In {\em Proceedings of the Eight International Conference on Language
+  Resources and Evaluation (LREC'12)}, pages 3196--3200, Istanbul, Turkey, may.
+  European Language Resources Association (ELRA).
+
+\bibitem[\protect\citename{Bengio \bgroup et al.\egroup }2003]{Bengio:2003}
+Y.~Bengio, R.~Ducharme, P.~Vincent, and C.~Jauvin.
+\newblock 2003.
+\newblock {A Neural Probabilistic Language Model}.
+\newblock {\em Journal of Machine Learning Research}, 3:1137--1155, March.
+
+\bibitem[\protect\citename{Bengio \bgroup et al.\egroup }2007]{Bengio:2007}
+Y.~Bengio, P.~Lamblin, D.~Popovici, and H.~Larochelle.
+\newblock 2007.
+\newblock {Greedy Layer-Wise Training of Deep Networks}.
+\newblock In B.~Sch\"{o}lkopf, J.~Platt, and T.~Hoffman, editors, {\em Advances
+  in Neural Information Processing Systems 19}, pages 153--160. MIT Press,
+  Cambridge, MA.
+
+\bibitem[\protect\citename{Bengio}2009]{Bengio:2009}
+Y.~Bengio.
+\newblock 2009.
+\newblock {Learning deep architectures for {AI}}.
+\newblock {\em Foundations and Trends in Machine Learning}, 2(1):1--127,
+  January.
+
+\bibitem[\protect\citename{Biemann and Giesbrecht}2011]{Biemann:2011}
+C.~Biemann and E.~Giesbrecht, editors.
+\newblock 2011.
+\newblock {\em {Proceedings of the Workshop on Distributional Semantics and
+  Compositionality}}.
+\newblock Association for Computational Linguistics, Portland, Oregon, USA,
+  June.
+
+\bibitem[\protect\citename{Blacoe and Lapata}2012]{Blacoe:2012}
+W.~Blacoe and M.~Lapata.
+\newblock 2012.
+\newblock {A Comparison of Vector-based Representations for Semantic
+  Composition}.
+\newblock In {\em Proceedings of the 2012 Joint Conference on Empirical Methods
+  in Natural Language Processing and Computational Natural Language Learning},
+  EMNLP-CoNLL '12, pages 546--556, Jeju Island, Korea. Association for
+  Computational Linguistics.
+
+\bibitem[\protect\citename{Blei \bgroup et al.\egroup }2003]{Blei:2003}
+D.~M. Blei, A.~Y. Ng, and M.~I. Jordan.
+\newblock 2003.
+\newblock {Latent dirichlet allocation}.
+\newblock {\em Journal of Machine Learning Research}, 3:993--1022, March.
+
+\bibitem[\protect\citename{Bloom}2001]{Bloom:2001}
+P.~Bloom.
+\newblock 2001.
+\newblock {Precis of How Children Learn the Meanings of Words}.
+\newblock {\em Behavioral and Brain Sciences}, 24:1095--1103.
+
+\bibitem[\protect\citename{Blunsom \bgroup et al.\egroup }2013]{Philtalk:2013}
+P.~Blunsom, K.~M. Hermann, and N.~Kalchbrenner.
+\newblock 2013.
+\newblock {Compositional Semantics, Deep Learning, and Machine Translation}.
+\newblock In {\em Keynote Talk by Phil Blunsom at the 2013 MT Marathon},
+  Prague, Czech Republic, September.
+
+\bibitem[\protect\citename{Bottou}2010]{Bottou:2010}
+L.~Bottou.
+\newblock 2010.
+\newblock {Large-Scale Machine Learning with Stochastic Gradient Descent}.
+\newblock In Y.~Lechevallier and G.~Saporta, editors, {\em Proceedings of the
+  19th International Conference on Computational Statistics (COMPSTAT'2010)},
+  pages 177--187, Paris, France, August. Springer.
+
+\bibitem[\protect\citename{Carreras and M\`{a}rquez}2004]{Carreras:2004}
+X.~Carreras and L.~M\`{a}rquez.
+\newblock 2004.
+\newblock {Introduction to the {CoNLL}-2004 Shared Task: Semantic Role
+  Labeling}.
+\newblock In H.~T. Ng and E.~Riloff, editors, {\em HLT-NAACL 2004 Workshop:
+  Eighth Conference on Computational Natural Language Learning (CoNLL-2004)},
+  pages 89--97, Boston, Massachusetts, USA, May 6 - May 7. Association for
+  Computational Linguistics.
+
+\bibitem[\protect\citename{Carreras and M{\`a}rquez}2005]{Carreras:2005}
+X.~Carreras and L.~M{\`a}rquez.
+\newblock 2005.
+\newblock {Introduction to the {CoNLL}-2005 Shared Task: Semantic Role
+  Labeling}.
+\newblock In {\em Proceedings of the Ninth Conference on Computational Natural
+  Language Learning (CoNLL-2005)}, pages 152--164, Ann Arbor, Michigan, June.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Cettolo \bgroup et al.\egroup }2012]{Cettolo:2012}
+M.~Cettolo, C.~Girardi, and M.~Federico.
+\newblock 2012.
+\newblock {{WIT}$^3$: Web Inventory of Transcribed and Translated Talks}.
+\newblock In {\em Proceedings of the 16$^{th}$ Conference of the European
+  Association for Machine Translation (EAMT)}, pages 261--268, May.
+
+\bibitem[\protect\citename{Cha}2007]{Cha:2007}
+S.-H. Cha.
+\newblock 2007.
+\newblock {Comprehensive Survey on Distance/Similarity Measures between
+  Probability Density Functions}.
+\newblock {\em International Journal of Mathematical Models and Methods in
+  Applied Sciences}, 1(4):300--307.
+
+\bibitem[\protect\citename{Chiang \bgroup et al.\egroup }2013]{ISI:2013}
+D.~Chiang, J.~Andreas, D.~Bauer, K.~M. Hermann, B.~Jones, and K.~Knight.
+\newblock 2013.
+\newblock {Parsing Graphs with Hyperedge Replacement Grammars}.
+\newblock In {\em Proceedings of the 51st Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, Sofia, Bulgaria, August.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Ciaramita and Johnson}2003]{Ciaramita:2003}
+M.~Ciaramita and M.~Johnson.
+\newblock 2003.
+\newblock {Supersense tagging of unknown nouns in WordNet}.
+\newblock In {\em Proceedings of the 2003 conference on Empirical methods in
+  natural language processing}, EMNLP '03, pages 168--175, Sapporo, Japan.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Clark and Curran}2007]{Clark:2007}
+S.~Clark and J.~R. Curran.
+\newblock 2007.
+\newblock {Wide-coverage efficient statistical parsing with {CCG} and
+  log-linear models}.
+\newblock {\em Computational Linguistics}, 33(4):493--552, December.
+
+\bibitem[\protect\citename{Clark and Pulman}2007]{Clark:2007a}
+S.~Clark and S.~Pulman.
+\newblock 2007.
+\newblock {Combining Symbolic and Distributional Models of Meaning}.
+\newblock In {\em Proceedings of AAAI Spring Symposium on Quantum Interaction}.
+  AAAI Press.
+
+\bibitem[\protect\citename{Clark \bgroup et al.\egroup }2008]{Clark:2008}
+S.~Clark, B.~Coecke, and M.~Sadrzadeh.
+\newblock 2008.
+\newblock {A compositional distributional model of meaning}.
+\newblock In {\em Proceedings of the Second Quantum Interaction Symposium
+  (QI-2008)}, pages 133--140.
+
+\bibitem[\protect\citename{Clark}2013]{Clark:2013}
+S.~Clark.
+\newblock 2013.
+\newblock {Type-Driven Syntax and Semantics for Composing Meaning Vectors}.
+\newblock In C.~Heunen, M.~Sadrzadeh, and E.~Grefenstette, editors, {\em
+  Quantum Physics and Linguistics: A Compositional, Diagrammatic Discourse},
+  pages 359--377. Oxford University Press.
+
+\bibitem[\protect\citename{Coecke \bgroup et al.\egroup }2010]{Coecke:2010}
+B.~Coecke, M.~Sadrzadeh, and S.~Clark.
+\newblock 2010.
+\newblock {Mathematical Foundations for a Compositional Distributional Model of
+  Meaning}.
+\newblock {\em Lambek Festschrift. Linguistic Analysis}, 36:345--384.
+
+\bibitem[\protect\citename{Cohn and Lapata}2007]{Cohn:2007}
+T.~Cohn and M.~Lapata.
+\newblock 2007.
+\newblock {Machine Translation by Triangulation: Making Effective Use of
+  Multi-Parallel Corpora}.
+\newblock In {\em Proceedings of the 45th Annual Meeting of the Association of
+  Computational Linguistics}, pages 728--735, Prague, Czech Republic, June.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Collins and Quillian}1969]{Collins:1969}
+A.~Collins and M.~Quillian.
+\newblock 1969.
+\newblock {{Retrieval time from semantic memory}}.
+\newblock {\em Journal of Verbal Learning and Verbal Behavior}, 8(2):240--247,
+  April.
+
+\bibitem[\protect\citename{Collins}2002]{Collins:2002}
+M.~Collins.
+\newblock 2002.
+\newblock {Discriminative Training Methods for Hidden Markov Models: Theory and
+  Experiments with Perceptron Algorithms}.
+\newblock In {\em Proceedings of the ACL-02 Conference on Empirical Methods in
+  Natural Language Processing - Volume 10}, EMNLP '02, pages 1--8,
+  Philadelphia, PA. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Collobert and Weston}2008]{Collobert:2008}
+R.~Collobert and J.~Weston.
+\newblock 2008.
+\newblock {A Unified Architecture for Natural Language Processing: Deep Neural
+  Networks with Multitask Learning}.
+\newblock In {\em Proceedings of the 25th International Conference on Machine
+  Learning}, ICML '08, pages 160--167, New York, NY, USA. ACM.
+
+\bibitem[\protect\citename{Collobert \bgroup et al.\egroup
+  }2011]{Collobert:2011}
+R.~Collobert, J.~Weston, L.~Bottou, M.~Karlen, K.~Kavukcuoglu, and P.~Kuksa.
+\newblock 2011.
+\newblock {Natural Language Processing (Almost) from Scratch}.
+\newblock {\em Journal of Machine Learning Research}, 12:2493--2537, November.
+
+\bibitem[\protect\citename{Curran \bgroup et al.\egroup }2007]{Curran:2007}
+J.~R. Curran, S.~Clark, and J.~Bos.
+\newblock 2007.
+\newblock {Linguistically Motivated Large-scale {NLP} with {C\&C} and {B}oxer}.
+\newblock In {\em Proceedings of the 45th Annual Meeting of the ACL on
+  Interactive Poster and Demonstration Sessions}, ACL '07, pages 33--36,
+  Prague, Czech Republic. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Curran}2004]{Curran:2004}
+J.~R. Curran.
+\newblock 2004.
+\newblock {\em {{From distributional to semantic similarity}}}.
+\newblock {Ph.D.} thesis.
+
+\bibitem[\protect\citename{Curran}2005]{Curran:2005}
+J.~R. Curran.
+\newblock 2005.
+\newblock {Supersense tagging of unknown nouns using semantic similarity}.
+\newblock In {\em Proceedings of the 43rd Annual Meeting on Association for
+  Computational Linguistics}, ACL '05, pages 26--33, Ann Arbor, Michigan.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Das \bgroup et al.\egroup }2010]{Das:2010}
+D.~Das, N.~Schneider, D.~Chen, and N.~A. Smith.
+\newblock 2010.
+\newblock {Probabilistic Frame-semantic Parsing}.
+\newblock In {\em Human Language Technologies: The 2010 Annual Conference of
+  the North American Chapter of the Association for Computational Linguistics},
+  HLT '10, pages 948--956, Los Angeles, California. Association for
+  Computational Linguistics.
+
+\bibitem[\protect\citename{Das \bgroup et al.\egroup }2014]{Das:2014}
+D.~Das, D.~Chen, A.~F.~T. Martins, N.~Schneider, and N.~A. Smith.
+\newblock 2014.
+\newblock {Frame-Semantic Parsing}.
+\newblock {\em Computational Linguistics}, 40(1).
+
+\bibitem[\protect\citename{de Marneffe and Manning}2013]{Marneffe:2013}
+M.-C. de~Marneffe and C.~D. Manning, 2013.
+\newblock {\em {Stanford typed dependencies manual}}.
+
+\bibitem[\protect\citename{Duchi \bgroup et al.\egroup }2011]{Duchi:2011}
+J.~Duchi, E.~Hazan, and Y.~Singer.
+\newblock 2011.
+\newblock {Adaptive Subgradient Methods for Online Learning and Stochastic
+  Optimization}.
+\newblock {\em Journal of Machine Learning Research}, 12:2121--2159, July.
+
+\bibitem[\protect\citename{Duffy \bgroup et al.\egroup }1989]{Duffy:1989}
+S.~A. Duffy, J.~M. Henderson, and R.~K. Morris.
+\newblock 1989.
+\newblock {Semantic facilitation of lexical access during sentence processing.}
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 15(5):791--801.
+
+\bibitem[\protect\citename{Dumais \bgroup et al.\egroup }1988]{Dumais:1988}
+S.~T. Dumais, G.~W. Furnas, T.~K. Landauer, S.~Deerwester, and R.~Harshman.
+\newblock 1988.
+\newblock {Using Latent Semantic Analysis to Improve Access to Textual
+  Information}.
+\newblock In {\em Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, CHI '88, pages 281--285, New York, NY, USA. ACM.
+
+\bibitem[\protect\citename{Dyer \bgroup et al.\egroup }2010]{Dyer:2010}
+C.~Dyer, J.~Weese, H.~Setiawan, A.~Lopez, F.~Ture, V.~Eidelman,
+  J.~Ganitkevitch, P.~Blunsom, and P.~Resnik.
+\newblock 2010.
+\newblock {Cdec: A Decoder, Alignment, and Learning Framework for Finite-state
+  and Context-free Translation Models}.
+\newblock In {\em Proceedings of the ACL 2010 System Demonstrations}, ACLDemos
+  '10, pages 7--12, Uppsala, Sweden. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Erk and Pad\'{o}}2008]{Erk:2008}
+K.~Erk and S.~Pad\'{o}.
+\newblock 2008.
+\newblock {A Structured Vector Space Model for Word Meaning in Context}.
+\newblock pages 897--906.
+
+\bibitem[\protect\citename{Fellbaum}1998]{Fellbaum:1998}
+C.~Fellbaum, editor.
+\newblock 1998.
+\newblock {\em {{WordNet:} an electronic lexical database}}.
+\newblock MIT Press.
+
+\bibitem[\protect\citename{Fillmore \bgroup et al.\egroup }2003]{Fillmore:2003}
+C.~J. Fillmore, C.~R. Johnson, and M.~R. Petruck.
+\newblock 2003.
+\newblock {Background to {FrameNet}}.
+\newblock {\em International Journal of Lexicography}, 16(3).
+
+\bibitem[\protect\citename{Fillmore}1982]{Fillmore:1982}
+C.~J. Fillmore.
+\newblock 1982.
+\newblock {Frame {S}emantics}.
+\newblock In {\em Linguistics in the Morning Calm}, pages 111--137. Hanshin
+  Publishing Co., Seoul, South Korea.
+
+\bibitem[\protect\citename{Firth}1957]{Firth:1957}
+J.~R. Firth.
+\newblock 1957.
+\newblock {A synopsis of linguistic theory 1930-55.}
+\newblock 1952-59:1--32.
+
+\bibitem[\protect\citename{Foltz \bgroup et al.\egroup }1998]{Foltz:1998}
+P.~W. Foltz, W.~Kintsch, and T.~K. Landauer.
+\newblock 1998.
+\newblock {The measurement of textual Coherence with Latent Semantic Analysis}.
+\newblock {\em Discourse Processes}, 25:285--307.
+
+\bibitem[\protect\citename{Frege}1892]{Frege:1892}
+G.~Frege.
+\newblock 1892.
+\newblock {{\"{U}ber Sinn und Bedeutung}}.
+\newblock In M.~Textor, editor, {\em Funktion - Begriff - Bedeutung}, volume~4
+  of {\em Sammlung Philosophie}. Vandenhoeck \& Ruprecht, G\"{o}ttingen.
+
+\bibitem[\protect\citename{Gildea and Jurafsky}2002]{Gildea:2002}
+D.~Gildea and D.~Jurafsky.
+\newblock 2002.
+\newblock {Automatic Labeling of Semantic Roles}.
+\newblock {\em Computational Linguistics}, 28(3):245--288.
+
+\bibitem[\protect\citename{Goller and K\"{u}chler}1996]{Goller:1996}
+C.~Goller and A.~K\"{u}chler.
+\newblock 1996.
+\newblock {Learning Task-Dependent Distributed Representations by
+  Backpropagation Through Structure}.
+\newblock In {\em Proceedings of the ICNN-96}, pages 347--352. IEEE.
+
+\bibitem[\protect\citename{Grefenstette and Sadrzadeh}2011]{Grefenstette:2011}
+E.~Grefenstette and M.~Sadrzadeh.
+\newblock 2011.
+\newblock {Experimental Support for a Categorical Compositional Distributional
+  Model of Meaning}.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing}, EMNLP '11, pages 1394--1404, Edinburgh, United Kingdom.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Grefenstette \bgroup et al.\egroup
+  }2013]{Grefenstette:2013}
+E.~Grefenstette, G.~Dinu, Y.-Z. Zhang, M.~Sadrzadeh, and M.~Baroni.
+\newblock 2013.
+\newblock {Multi-Step Regression Learning for Compositional Distributional
+  Semantics}.
+\newblock In {\em Proceedings of the 10th International Conference on
+  Computational Semantics (IWCS 2013) -- Long Papers}, pages 131--142, Potsdam,
+  Germany, March. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Grefenstette}1994]{Grefenstette:1994}
+G.~Grefenstette.
+\newblock 1994.
+\newblock {\em {Explorations in Automatic Thesaurus Discovery}}.
+\newblock Kluwer Academic Publishers, Norwell, MA, USA.
+
+\bibitem[\protect\citename{Grefenstette}2013a]{Grefenstette:2013b}
+E.~Grefenstette.
+\newblock 2013a.
+\newblock {\em {Category-Theoretic Quantitative Compositional Distributional
+  Models of Natural Language Semantics}}.
+\newblock {Ph.D.} thesis.
+
+\bibitem[\protect\citename{Grefenstette}2013b]{Grefenstette:2013a}
+E.~Grefenstette.
+\newblock 2013b.
+\newblock {Towards a Formal Distributional Semantics: Simulating Logical
+  Calculi with Tensors}.
+\newblock In {\em Second Joint Conference on Lexical and Computational
+  Semantics (*SEM), Volume 1: Proceedings of the Main Conference and the Shared
+  Task: Semantic Textual Similarity}, pages 1--10, Atlanta, Georgia, USA, June.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Griffiths \bgroup et al.\egroup
+  }2007]{Griffiths:2007}
+T.~L. Griffiths, J.~B. Tenenbaum, and M.~Steyvers.
+\newblock 2007.
+\newblock {Topics in semantic representation}.
+\newblock {\em Psychological Review}, 114:2007.
+
+\bibitem[\protect\citename{Guevara}2010]{Guevara:2010}
+E.~Guevara.
+\newblock 2010.
+\newblock {A Regression Model of Adjective-Noun Compositionality in
+  Distributional Semantics}.
+\newblock In {\em Proceedings of the 2010 Workshop on GEometrical Models of
+  Natural Language Semantics}, pages 33--37, Uppsala, Sweden, July. Association
+  for Computational Linguistics.
+
+\bibitem[\protect\citename{Guevara}2011]{Guevara:2011}
+E.~Guevara.
+\newblock 2011.
+\newblock {Computing Semantic Compositionality in Distributional Semantics}.
+\newblock In {\em Proceedings of the Ninth International Conference on
+  Computational Semantics}, IWCS '11, pages 135--144, Oxford, United Kingdom.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Haghighi \bgroup et al.\egroup }2008]{Haghighi:2008}
+A.~Haghighi, P.~Liang, T.~Berg-Kirkpatrick, and D.~Klein.
+\newblock 2008.
+\newblock {Learning Bilingual Lexicons from Monolingual Corpora}.
+\newblock In {\em Proceedings of ACL-08: HLT}, pages 771--779, Columbus, Ohio,
+  June. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Hermann and Blunsom}2013]{Hermann:2013:ACL}
+K.~M. Hermann and P.~Blunsom.
+\newblock 2013.
+\newblock {The Role of Syntax in Vector Space Models of Compositional
+  Semantics}.
+\newblock In {\em Proceedings of the 51st Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, Sofia, Bulgaria, August.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Hermann and Blunsom}2014a]{Hermann:2014:ICLR}
+K.~M. Hermann and P.~Blunsom.
+\newblock 2014a.
+\newblock {Multilingual Distributed Representations without Word Alignment}.
+\newblock In {\em Proceedings of the 2nd International Conference on Learning
+  Representations}, Banff, Canada, April.
+
+\bibitem[\protect\citename{Hermann and Blunsom}2014b]{Hermann:2014:ACLphil}
+K.~M. Hermann and P.~Blunsom.
+\newblock 2014b.
+\newblock {Multilingual Models for Compositional Distributional Semantics}.
+\newblock In {\em Proceedings of the 52nd Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, Baltimore, USA, June.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Hermann \bgroup et al.\egroup
+  }2012a]{Hermann:2012:Ranking}
+K.~M. Hermann, P.~Blunsom, and S.~Pulman.
+\newblock 2012a.
+\newblock {An Unsupervised Ranking Model for Noun-Noun Compositionality}.
+\newblock In {\em {*SEM 2012}: The First Joint Conference on Lexical and
+  Computational Semantics -- Volume 1: Proceedings of the main conference and
+  the shared task, and Volume 2: Proceedings of the Sixth International
+  Workshop on Semantic Evaluation {(SemEval 2012)}}, pages 132--141,
+  Montr\'{e}al, Canada, 7-8 June. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Hermann \bgroup et al.\egroup
+  }2012b]{Hermann:2012:SelPref}
+K.~M. Hermann, C.~Dyer, P.~Blunsom, and S.~Pulman.
+\newblock 2012b.
+\newblock {Learning Semantics and Selectional Preference of Adjective-Noun
+  Pairs}.
+\newblock In {\em {*SEM 2012}: The First Joint Conference on Lexical and
+  Computational Semantics -- Volume 1: Proceedings of the main conference and
+  the shared task, and Volume 2: Proceedings of the Sixth International
+  Workshop on Semantic Evaluation {(SemEval 2012)}}, pages 70--74,
+  Montr\'{e}al, Canada, 7-8 June. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Hermann \bgroup et al.\egroup
+  }2013]{Hermann:2013:CVSC}
+K.~M. Hermann, E.~Grefenstette, and P.~Blunsom.
+\newblock 2013.
+\newblock "not not bad" is not "bad": A distributional account of negation.
+\newblock {\em Proceedings of the 2013 Workshop on Continuous Vector Space
+  Models and their Compositionality}, August.
+
+\bibitem[\protect\citename{Hermann \bgroup et al.\egroup
+  }2014]{Hermann:2014:ACLgoogle}
+K.~M. Hermann, D.~Das, J.~Weston, and K.~Ganchev.
+\newblock 2014.
+\newblock {Semantic Frame Identification with Distributed Word
+  Representations}.
+\newblock In {\em Proceedings of the 52nd Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, Baltimore, USA, June.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Hinton and Salakhutdinov}2006]{Hinton:2006a}
+G.~E. Hinton and R.~R. Salakhutdinov.
+\newblock 2006.
+\newblock {Reducing the Dimensionality of Data with Neural Networks}.
+\newblock {\em Science}, 313(5786):504--507.
+
+\bibitem[\protect\citename{Hinton \bgroup et al.\egroup }2006]{Hinton:2006}
+G.~E. Hinton, S.~Osindero, M.~Welling, and Y.~W. Teh.
+\newblock 2006.
+\newblock {Unsupervised Discovery of Nonlinear Structure Using Contrastive
+  Backpropagation}.
+\newblock {\em Cognitive Science}, 30(4):725--731.
+
+\bibitem[\protect\citename{Hockenmaier and Steedman}2007]{Hockenmaier:2007}
+J.~Hockenmaier and M.~Steedman.
+\newblock 2007.
+\newblock {CCGbank: A Corpus of CCG Derivations and Dependency Structures
+  Extracted from the Penn Treebank}.
+\newblock {\em Computational Linguistics}, 33(3):355--396, September.
+
+\bibitem[\protect\citename{Hovy \bgroup et al.\egroup }2006]{Hovy:2006}
+E.~Hovy, M.~Marcus, M.~Palmer, L.~Ramshaw, and R.~Weischedel.
+\newblock 2006.
+\newblock {{O}nto{N}otes: The 90\% Solution}.
+\newblock In {\em Proceedings of the Human Language Technology Conference of
+  the NAACL, Companion Volume: Short Papers}, NAACL-Short '06, pages 57--60,
+  New York, NY. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Huang and Yates}2009]{Huang:2009}
+F.~Huang and A.~Yates.
+\newblock 2009.
+\newblock {Distributional Representations for Handling Sparsity in Supervised
+  Sequence-labeling}.
+\newblock In {\em Proceedings of the Joint Conference of the 47th Annual
+  Meeting of the ACL and the 4th International Joint Conference on Natural
+  Language Processing of the AFNLP: Volume 1 - Volume 1}, ACL '09, pages
+  495--503, Suntec, Singapore. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Hubel and Wiesel}1968]{Hubel:1968}
+D.~H. Hubel and T.~N. Wiesel.
+\newblock 1968.
+\newblock {Receptive Fields and Functional Architecture of Monkey Striate
+  Cortex}.
+\newblock {\em Journal of Physiology (London)}, 195:215--243.
+
+\bibitem[\protect\citename{Jackendoff}1972]{Jackendoff:1972}
+R.~Jackendoff.
+\newblock 1972.
+\newblock {\em {{Semantic Interpretation in Generative Grammar}}}.
+\newblock MIT Press, Cambridge, MA.
+
+\bibitem[\protect\citename{Johansson and Nugues}2007]{Johansson:2007}
+R.~Johansson and P.~Nugues.
+\newblock 2007.
+\newblock {{LTH}: Semantic Structure Extraction using Nonprojective Dependency
+  Trees}.
+\newblock In {\em Proceedings of the Fourth International Workshop on Semantic
+  Evaluations (SemEval-2007)}, pages 227--230, Prague, Czech Republic, June.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Jones and Mewhort}2007]{Jones:2007}
+M.~N. Jones and D.~J.~K. Mewhort.
+\newblock 2007.
+\newblock {Representing Word Meaning and Order Information in a Composite
+  Holographic Lexicon}.
+\newblock {\em psychological Review}, 114(1):1--37.
+
+\bibitem[\protect\citename{Jones \bgroup et al.\egroup }2012]{ISI:2012}
+B.~Jones, J.~Andreas, D.~Bauer, K.~M. Hermann, and K.~Knight.
+\newblock 2012.
+\newblock {Semantics-Based Machine Translation with Hyperedge Replacement
+  Grammars}.
+\newblock In {\em Proceedings of COLING 2012}, pages 1359--1376, Mumbai, India,
+  December. The COLING 2012 Organizing Committee.
+\newblock First four are joint first author in randomized order.
+
+\bibitem[\protect\citename{Kalchbrenner and Blunsom}2013]{Kalchbrenner:2013}
+N.~Kalchbrenner and P.~Blunsom.
+\newblock 2013.
+\newblock {Recurrent Convolutional Neural Networks for Discourse
+  Compositionality}.
+\newblock In {\em Proceedings of the Workshop on Continuous Vector Space Models
+  and their Compositionality}, pages 119--126, Sofia, Bulgaria, August.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Kalchbrenner \bgroup et al.\egroup
+  }2014]{Kalchbrenner:2014}
+N.~Kalchbrenner, E.~Grefenstette, and P.~Blunsom.
+\newblock 2014.
+\newblock {A Convolutional Neural Network for Modelling Sentences}.
+\newblock In {\em Proceedings of the 52nd Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, Baltimore, USA, June.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Kartsaklis \bgroup et al.\egroup
+  }2012]{Kartsaklis:2012}
+D.~Kartsaklis, M.~Sadrzadeh, and S.~Pulman.
+\newblock 2012.
+\newblock {A Unified Sentence Space for Categorical
+  Distributional-Compositional Semantics: Theory and Experiments}.
+\newblock In {\em Proceedings of 24th International Conference on Computational
+  Linguistics (COLING 2012): Posters}, pages 549--558, Mumbai, India, December.
+
+\bibitem[\protect\citename{Kintsch}2001]{Kintsch:2001}
+W.~Kintsch.
+\newblock 2001.
+\newblock {Predication}.
+\newblock {\em Cognitive Science}, 25:173--202.
+
+\bibitem[\protect\citename{Klementiev \bgroup et al.\egroup
+  }2012]{Klementiev:2012}
+A.~Klementiev, I.~Titov, and B.~Bhattarai.
+\newblock 2012.
+\newblock {Inducing Crosslingual Distributed Representations of Words}.
+\newblock In {\em Proceedings of COLING 2012}, pages 1459--1474, Mumbai, India,
+  December. The COLING 2012 Organizing Committee.
+
+\bibitem[\protect\citename{Koehn}2005]{Koehn:2005}
+P.~Koehn.
+\newblock 2005.
+\newblock {{Europarl: A Parallel Corpus for Statistical Machine Translation}}.
+\newblock In {\em {Conference Proceedings: the tenth Machine Translation
+  Summit}}, pages 79--86, Phuket, Thailand. AAMT, AAMT.
+
+\bibitem[\protect\citename{Kracht}2008]{Kracht:2008}
+M.~Kracht.
+\newblock 2008.
+\newblock {{Compositionality in Montague Grammar}}.
+\newblock In W.~Hinzen, E.~Machery, and M.~Werning, editors, {\em {Handbook of
+  Compositionality}}, pages 47 -- 63. Oxford University Press.
+
+\bibitem[\protect\citename{Lafferty \bgroup et al.\egroup }2001]{Lafferty:2001}
+J.~D. Lafferty, A.~McCallum, and F.~C.~N. Pereira.
+\newblock 2001.
+\newblock {Conditional Random Fields: Probabilistic Models for Segmenting and
+  Labeling Sequence Data}.
+\newblock In {\em Proceedings of the Eighteenth International Conference on
+  Machine Learning}, ICML '01, pages 282--289, San Francisco, CA, USA. Morgan
+  Kaufmann Publishers Inc.
+
+\bibitem[\protect\citename{Landauer and Dumais}1997]{Landauer:1997}
+T.~K. Landauer and S.~T. Dumais.
+\newblock 1997.
+\newblock {A solution to {Plato's} problem: The latent semantic analysis theory
+  of acquisition, induction, and representation of knowledge.}
+\newblock {\em Psychological review}, 104(2):211--240.
+
+\bibitem[\protect\citename{Lauly \bgroup et al.\egroup }2013]{Lauly:2013}
+S.~Lauly, A.~Boulanger, and H.~Larochelle.
+\newblock 2013.
+\newblock Learning multilingual word representations using a bag-of-words
+  autoencoder.
+\newblock In {\em Deep Learning Workshop at NIPS}.
+
+\bibitem[\protect\citename{LeCun \bgroup et al.\egroup }1998a]{LeCun:1998b}
+Y.~LeCun, L.~Bottou, Y.~Bengio, and P.~Haffner.
+\newblock 1998a.
+\newblock {Gradient-Based Learning Applied to Document Recognition}.
+\newblock {\em Proceedings of the IEEE}, 86(11):2278--2324, November.
+
+\bibitem[\protect\citename{LeCun \bgroup et al.\egroup }1998b]{LeCun:1998}
+Y.~LeCun, L.~Bottou, G.~Orr, and K.-R. Muller.
+\newblock 1998b.
+\newblock {Efficient BackProp}.
+\newblock In G.~Orr and M.~K., editors, {\em Neural Networks: Tricks of the
+  trade}. Springer.
+
+\bibitem[\protect\citename{Lewis \bgroup et al.\egroup }2004]{Lewis:2004}
+D.~D. Lewis, Y.~Yang, T.~G. Rose, and F.~Li.
+\newblock 2004.
+\newblock {{RCV1}: A New Benchmark Collection for Text Categorization
+  Research}.
+\newblock {\em Journal of Machine Learning Research}, 5:361--397, December.
+
+\bibitem[\protect\citename{Li and Fukushima}2000]{Li:2000}
+D.-H. Li and M.~Fukushima.
+\newblock 2000.
+\newblock {On the Global Convergence of the {BFGS} Method for Nonconvex
+  Unconstrained Optimization Problems}.
+\newblock {\em SIAM J. on Optimization}, 11(4):1054--1064, April.
+
+\bibitem[\protect\citename{Lin}1999]{Lin:1999}
+D.~Lin.
+\newblock 1999.
+\newblock {Automatic Identification of Non-compositional Phrases}.
+\newblock In {\em Proceedings of the 37th Annual Meeting of the Association for
+  Computational Linguistics on Computational Linguistics}, ACL '99, pages
+  317--324, College Park, Maryland. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Liu and Nocedal}1989]{Liu:1989}
+D.~C. Liu and J.~Nocedal.
+\newblock 1989.
+\newblock {On the limited memory {BFGS} method for large scale optimization}.
+\newblock {\em Mathematical Programming}, 45(3).
+
+\bibitem[\protect\citename{Maillard \bgroup et al.\egroup }2014]{Maillard:2014}
+J.~Maillard, S.~Clark, and E.~Grefenstette.
+\newblock 2014.
+\newblock {A Type-Driven Tensor-Based Semantics for {CCG}}.
+\newblock In {\em EACL 2014 Type Theory and Natural Language Semantics
+  Workshop}.
+
+\bibitem[\protect\citename{M\`{a}rquez \bgroup et al.\egroup
+  }2008]{Marquez:2008}
+L.~M\`{a}rquez, X.~Carreras, K.~C. Litkowski, and S.~Stevenson.
+\newblock 2008.
+\newblock {Semantic role labeling: an introduction to the special issue}.
+\newblock {\em Computational Linguistics}, 34(2).
+
+\bibitem[\protect\citename{Masterman}2005]{Masterman:2005}
+M.~Masterman.
+\newblock 2005.
+\newblock {Language, Cohesion and Form}.
+\newblock In Y.~Wilks, editor, {\em {Studies in Natural Language Processing}}.
+  Cambridge University Press, Cambridge, UK.
+
+\bibitem[\protect\citename{Matsubayashi \bgroup et al.\egroup
+  }2009]{Matsubayashi:2009}
+Y.~Matsubayashi, N.~Okazaki, and J.~Tsujii.
+\newblock 2009.
+\newblock {A Comparative Study on Generalization of Semantic Roles in
+  {FrameNet}}.
+\newblock In {\em Proceedings of the Joint Conference of the 47th Annual
+  Meeting of the ACL and the 4th International Joint Conference on Natural
+  Language Processing of the AFNLP}, pages 19--27, Suntec, Singapore, August.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{McCallum}2002]{McCallum:2002}
+A.~K. McCallum.
+\newblock 2002.
+\newblock {MALLET: A Machine Learning for Language Toolkit}.
+\newblock http://mallet.cs.umass.edu.
+
+\bibitem[\protect\citename{McDonald}2000]{McDonald:2000}
+S.~A. McDonald.
+\newblock 2000.
+\newblock {{Environmental determinants of lexical processing effort}}.
+
+\bibitem[\protect\citename{McRae \bgroup et al.\egroup }1997]{McRae:1997}
+K.~McRae, V.~R. de~Sa, and M.~S. Seidenberg.
+\newblock 1997.
+\newblock {On the nature and scope of featural representations of word
+  meaning.}
+\newblock {\em Journal of Experimental Psychology: General}, 126(2):99--130,
+  06.
+
+\bibitem[\protect\citename{Meyers \bgroup et al.\egroup }2004]{Meyers:2004}
+A.~Meyers, R.~Reeves, C.~Macleod, R.~Szekely, V.~Zielinska, B.~Young, and
+  R.~Grishman.
+\newblock 2004.
+\newblock {The {NomBank} Project: An Interim Report}.
+\newblock In A.~Meyers, editor, {\em HLT-NAACL 2004 Workshop: Frontiers in
+  Corpus Annotation}, pages 24--31, Boston, Massachusetts, USA, May 2 - May 7.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Mikolov \bgroup et al.\egroup }2010]{Mikolov:2010}
+T.~Mikolov, M.~Karafi\'{a}t, L.~Burget, J.~\v{C}ernock\'{y}, and S.~Khudanpur.
+\newblock 2010.
+\newblock {Recurrent neural network based language model}.
+\newblock In {\em Proceedings of the 11th Annual Conference of the
+  International Speech Communication Association (INTERSPEECH 2010)}, volume
+  2010, pages 1045--1048. International Speech Communication Association.
+
+\bibitem[\protect\citename{Mikolov \bgroup et al.\egroup }2013a]{Mikolov:2013}
+T.~Mikolov, K.~Chen, G.~Corrado, and J.~Dean.
+\newblock 2013a.
+\newblock {Efficient Estimation of Word Representations in Vector Space}.
+\newblock In {\em Proceedings of the Workshop at the 1st International
+  Conference on Learning Representations}, Scottsdale, Arizona, USA, May.
+
+\bibitem[\protect\citename{Mikolov \bgroup et al.\egroup }2013b]{Mikolov:2013a}
+T.~Mikolov, Q.~V. Le, and I.~Sutskever.
+\newblock 2013b.
+\newblock {Exploiting Similarities among Languages for Machine Translation}.
+\newblock {\em CoRR}.
+
+\bibitem[\protect\citename{Mitchell and Lapata}2008]{Mitchell:2008}
+J.~Mitchell and M.~Lapata.
+\newblock 2008.
+\newblock {Vector-based Models of Semantic Composition}.
+\newblock In {\em Proceedings of ACL-08: HLT}, pages 236--244, Columbus, Ohio,
+  June. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Mitchell and Lapata}2009]{Mitchell:2009}
+J.~Mitchell and M.~Lapata.
+\newblock 2009.
+\newblock {{Language models based on semantic composition}}.
+\newblock In {\em Proceedings of the 2009 Conference on Empirical Methods in
+  Natural Language Processing: Volume 1}, pages 430--439. Association for
+  Computational Linguistics.
+
+\bibitem[\protect\citename{Mitchell and Lapata}2010]{Mitchell:2010}
+J.~Mitchell and M.~Lapata.
+\newblock 2010.
+\newblock {Composition in Distributional Models of Semantics}.
+\newblock {\em Cognitive Science}, 34(8):1388--1429.
+
+\bibitem[\protect\citename{Mitchell}2011]{Mitchell:2011}
+J.~Mitchell.
+\newblock 2011.
+\newblock {\em {Composition in distributional models of semantics}}.
+\newblock {Ph.D.} thesis.
+
+\bibitem[\protect\citename{Mnih and Hinton}2009]{Mnih:2009}
+A.~Mnih and G.~Hinton.
+\newblock 2009.
+\newblock A scalable hierarchical distributed language model.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~21, pages 1081--1088.
+
+\bibitem[\protect\citename{Montague}1970]{Montague:1970}
+R.~Montague.
+\newblock 1970.
+\newblock {Universal Grammar}.
+\newblock {\em Theoria}, 36(3):373--398.
+
+\bibitem[\protect\citename{Montague}1974]{Montague:1974}
+R.~Montague.
+\newblock 1974.
+\newblock {{English as a Formal Language}}.
+\newblock {\em Formal Semantics: The Essential Readings}.
+
+\bibitem[\protect\citename{Morris and Harris}2002]{Morris:2002}
+A.~L. Morris and C.~L. Harris.
+\newblock 2002.
+\newblock {Sentence context, word recognition, and repetition blindness}.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, pages 962--982.
+
+\bibitem[\protect\citename{Morris}1994]{Morris:1994}
+R.~K. Morris.
+\newblock 1994.
+\newblock {Lexical and message-level sentence context effects on fixation times
+  in reading.}
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 20(1):92--103.
+
+\bibitem[\protect\citename{Nakagawa \bgroup et al.\egroup }2010]{Nakagawa:2010}
+T.~Nakagawa, K.~Inui, and S.~Kurohashi.
+\newblock 2010.
+\newblock {Dependency Tree-based Sentiment Classification Using CRFs with
+  Hidden Variables}.
+\newblock In {\em Human Language Technologies: The 2010 Annual Conference of
+  the North American Chapter of the Association for Computational Linguistics},
+  HLT '10, pages 786--794, Los Angeles, California. Association for
+  Computational Linguistics.
+
+\bibitem[\protect\citename{Ngiam \bgroup et al.\egroup }2011]{Ngiam:2011}
+J.~Ngiam, A.~Khosla, M.~Kim, J.~Nam, H.~Lee, and A.~Y. Ng.
+\newblock 2011.
+\newblock Multimodal deep learning.
+\newblock In {\em Proceedings of the 29th International Conference on Machine
+  Learning}, ICML '11.
+
+\bibitem[\protect\citename{Nocedal and Wright}2006]{Nocedal:2006}
+J.~Nocedal and S.~J. Wright.
+\newblock 2006.
+\newblock {\em {Numerical Optimization}}.
+\newblock Springer, New York, 2nd edition.
+
+\bibitem[\protect\citename{Pad\'{o} and Lapata}2007]{Pado:2007}
+S.~Pad\'{o} and M.~Lapata.
+\newblock 2007.
+\newblock {Dependency-Based Construction of Semantic Space Models}.
+\newblock {\em Computational Linguistics}, 33(2):161--199, June.
+
+\bibitem[\protect\citename{Palmer \bgroup et al.\egroup }2005]{Palmer:2005}
+M.~Palmer, D.~Gildea, and P.~Kingsbury.
+\newblock 2005.
+\newblock {The {Proposition} Bank: An Annotated Corpus of Semantic Roles}.
+\newblock {\em Computational Linguistics}, 31(1):71--106.
+
+\bibitem[\protect\citename{Pang and Lee}2005]{Pang:2005}
+B.~Pang and L.~Lee.
+\newblock 2005.
+\newblock {Seeing Stars: Exploiting Class Relationships for Sentiment
+  Categorization with Respect to Rating Scales}.
+\newblock In {\em Proceedings of the 43rd Annual Meeting on Association for
+  Computational Linguistics}, ACL '05, pages 115--124, Ann Arbor, Michigan.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Peirce}1931]{Peirce:1931}
+C.~S. Peirce.
+\newblock 1931.
+\newblock {\em {{Collected Papers of Charles Sanders Peirce}}}.
+\newblock Harvard University Press.
+
+\bibitem[\protect\citename{Pelletier}1994]{Pelletier:1994}
+F.~J. Pelletier.
+\newblock 1994.
+\newblock {The Principle of Semantic Compositionality}.
+\newblock {\em Topoi}, 13:11--24.
+
+\bibitem[\protect\citename{Pereira \bgroup et al.\egroup }1993]{Pereira:1993}
+F.~Pereira, N.~Tishby, and L.~Lee.
+\newblock 1993.
+\newblock {Distributional Clustering of {E}nglish Words}.
+\newblock In {\em Proceedings of the 31st Annual Meeting on Association for
+  Computational Linguistics}, ACL '93, pages 183--190, Columbus, Ohio.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Pollack}1990]{Pollack:1990}
+J.~B. Pollack.
+\newblock 1990.
+\newblock {Recursive Distributed Representations}.
+\newblock {\em Artificial Intelligence}, 46:77--105.
+
+\bibitem[\protect\citename{Punyakanok \bgroup et al.\egroup
+  }2008]{Punyakanok:2008}
+V.~Punyakanok, D.~Roth, and W.-T. Yih.
+\newblock 2008.
+\newblock {The Importance of Syntactic Parsing and Inference in Semantic Role
+  Labeling}.
+\newblock {\em Computational Linguistics}, 34(2).
+
+\bibitem[\protect\citename{Richens}1956]{Richens:1956}
+R.~H. Richens.
+\newblock 1956.
+\newblock {Preprogramming for machine translation}.
+\newblock {\em Mechanical Translation}, 3(1):20--25.
+
+\bibitem[\protect\citename{Richens}1958]{Richens:1958}
+R.~H. Richens.
+\newblock 1958.
+\newblock {Interlingual machine translation}.
+\newblock {\em The Computer Journal}, 1(3):144--147.
+
+\bibitem[\protect\citename{Riedel \bgroup et al.\egroup }2013]{Riedel:2013}
+S.~Riedel, L.~Yao, A.~McCallum, and B.~M. Marlin.
+\newblock 2013.
+\newblock {Relation Extraction with Matrix Factorization and Universal
+  Schemas}.
+\newblock In {\em Proceedings of the 2013 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 74--84, Atlanta, Georgia, June. Association for
+  Computational Linguistics.
+
+\bibitem[\protect\citename{Roy}2003]{Roy:2003}
+D.~Roy.
+\newblock 2003.
+\newblock {Grounded Spoken Language Acquisition: Experiments in Word Learning}.
+\newblock {\em IEEE Transactions on Multimedia}, 5(2):197--209, June.
+
+\bibitem[\protect\citename{Sarath~Chandar \bgroup et al.\egroup
+  }2013]{SarathChandar:2013}
+A.~P. Sarath~Chandar, M.~K. Mitesh, B.~Ravindran, V.~Raykar, and A.~Saha.
+\newblock 2013.
+\newblock {Multilingual Deep Learning}.
+\newblock In {\em Deep Learning Workshop at NIPS}.
+
+\bibitem[\protect\citename{Scheible and Sch{\"u}tze}2013]{Scheible:2013}
+C.~Scheible and H.~Sch{\"u}tze.
+\newblock 2013.
+\newblock {Cutting Recursive Autoencoder Trees}.
+\newblock In {\em Proceedings of the 1st International Conference on Learning
+  Representations}, Scottsdale, Arizona, USA, May.
+
+\bibitem[\protect\citename{Sch{\"u}tze}1998]{Schutze:1998}
+H.~Sch{\"u}tze.
+\newblock 1998.
+\newblock {Automatic word sense discrimination}.
+\newblock {\em Computational Linguistics}, 24(1):97--123.
+
+\bibitem[\protect\citename{Smolensky and Legendre}2006]{Smolensky:2006}
+P.~Smolensky and G.~Legendre.
+\newblock 2006.
+\newblock {\em {{The Harmonic Mind: From Neural Computation to
+  Optimality-Theoretic Grammar Volume I: Cognitive Architecture}}}.
+
+\bibitem[\protect\citename{Smolensky}1990]{Smolensky:1990}
+P.~Smolensky.
+\newblock 1990.
+\newblock {{Tensor product variable binding and the representation of symbolic
+  structures in connectionist systems}}.
+\newblock {\em Artificial intelligence}, 46(1-2):159--216.
+
+\bibitem[\protect\citename{Socher \bgroup et al.\egroup }2011a]{Socher:2011a}
+R.~Socher, E.~H. Huang, J.~Pennin, C.~D. Manning, and A.~Y. Ng.
+\newblock 2011a.
+\newblock Dynamic pooling and unfolding recursive autoencoders for paraphrase
+  detection.
+\newblock In J.~Shawe-Taylor, R.~Zemel, P.~Bartlett, F.~Pereira, and
+  K.~Weinberger, editors, {\em Advances in Neural Information Processing
+  Systems 24}, pages 801--809. Curran Associates, Inc.
+
+\bibitem[\protect\citename{Socher \bgroup et al.\egroup }2011b]{Socher:2011}
+R.~Socher, J.~Pennington, E.~H. Huang, A.~Y. Ng, and C.~D. Manning.
+\newblock 2011b.
+\newblock {Semi-supervised Recursive Autoencoders for Predicting Sentiment
+  Distributions}.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing}, EMNLP '11, pages 151--161, Edinburgh, United Kingdom.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Socher \bgroup et al.\egroup }2012a]{Socher:2012}
+R.~Socher, B.~Huval, B.~Bath, C.~D. Manning, and A.~Y. Ng.
+\newblock 2012a.
+\newblock Convolutional-recursive deep learning for 3d object classification.
+\newblock In F.~Pereira, C.~Burges, L.~Bottou, and K.~Weinberger, editors, {\em
+  Advances in Neural Information Processing Systems 25}, pages 656--664. Curran
+  Associates, Inc.
+
+\bibitem[\protect\citename{Socher \bgroup et al.\egroup }2012b]{Socher:2012a}
+R.~Socher, B.~Huval, C.~D. Manning, and A.~Y. Ng.
+\newblock 2012b.
+\newblock {Semantic Compositionality Through Recursive Matrix-vector Spaces}.
+\newblock In {\em Proceedings of the 2012 Joint Conference on Empirical Methods
+  in Natural Language Processing and Computational Natural Language Learning},
+  EMNLP-CoNLL '12, pages 1201--1211, Jeju Island, Korea. Association for
+  Computational Linguistics.
+
+\bibitem[\protect\citename{Socher \bgroup et al.\egroup }2013]{Socher:2013}
+R.~Socher, A.~Perelygin, J.~Wu, J.~Chuang, C.~D. Manning, A.~Y. Ng, and
+  C.~Potts.
+\newblock 2013.
+\newblock {Recursive Deep Models for Semantic Compositionality Over a Sentiment
+  Treebank}.
+\newblock In {\em Proceedings of the 2013 Conference on Empirical Methods in
+  Natural Language Processing}, EMNLP '13, pages 1631--1642, Seattle, WA,
+  October. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Sp\"{a}rck~Jones}1988]{SparckJones:1988}
+K.~Sp\"{a}rck~Jones.
+\newblock 1988.
+\newblock {A Statistical Interpretation of Term Specificity and Its Application
+  in Retrieval}.
+\newblock In P.~Willett, editor, {\em Document Retrieval Systems}, pages
+  132--142. Taylor Graham Publishing, London, UK, UK.
+
+\bibitem[\protect\citename{Srivastava and Salakhutdinov}2012]{Srivastava:2012}
+N.~Srivastava and R.~Salakhutdinov.
+\newblock 2012.
+\newblock Multimodal learning with deep boltzmann machines.
+\newblock In F.~Pereira, C.~Burges, L.~Bottou, and K.~Weinberger, editors, {\em
+  Advances in Neural Information Processing Systems 25}, pages 2222--2230.
+  Curran Associates, Inc.
+
+\bibitem[\protect\citename{Steedman and Baldridge}2011]{Steedman:2011}
+M.~Steedman and J.~Baldridge.
+\newblock 2011.
+\newblock {Combinatory Categorial Grammar}.
+\newblock In {\em Non-Transformational Syntax}, pages 181--224.
+  Wiley-Blackwell.
+
+\bibitem[\protect\citename{Steyvers and Griffiths}2005]{Steyvers:2005}
+M.~Steyvers and T.~Griffiths.
+\newblock 2005.
+\newblock {Probabilistic topic models}.
+\newblock In T.~Landauer, D.~Mcnamara, S.~Dennis, and W.~Kintsch, editors, {\em
+  Latent Semantic Analysis: A Road to Meaning}. Laurence Erlbaum.
+
+\bibitem[\protect\citename{Szabolcsi}1989]{Szabolcsi:1989}
+A.~Szabolcsi.
+\newblock 1989.
+\newblock {{Bound Variables in Syntax: Are There Any?}}
+\newblock In R.~Bartsch, J.~van Benthem, and P.~van Emde~Boas, editors, {\em
+  Semantics and Contextual Expression}, pages 295--318. Foris, Dordrecht.
+
+\bibitem[\protect\citename{Turian \bgroup et al.\egroup }2010]{Turian:2010}
+J.~Turian, L.-A. Ratinov, and Y.~Bengio.
+\newblock 2010.
+\newblock {Word Representations: A Simple and General Method for
+  Semi-Supervised Learning}.
+\newblock In {\em Proceedings of the 48th Annual Meeting of the Association for
+  Computational Linguistics}, pages 384--394, Uppsala, Sweden, July.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Turney}2012]{Turney:2012}
+P.~D. Turney.
+\newblock 2012.
+\newblock {Domain and Function: A Dual-Space Model of Semantic Relations and
+  Compositions}.
+\newblock {\em Journal of Artificial Intelligence Research}, 44:533--585.
+
+\bibitem[\protect\citename{Usunier \bgroup et al.\egroup }2009]{Usunier:2009}
+N.~Usunier, D.~Buffoni, and P.~Gallinari.
+\newblock 2009.
+\newblock {Ranking with Ordered Weighted Pairwise Classification}.
+\newblock In {\em Proceedings of the 26th Annual International Conference on
+  Machine Learning}, ICML '09, pages 1057--1064, New York, NY, USA. ACM.
+
+\bibitem[\protect\citename{Uszkoreit and Brants}2008]{Uszkoreit:2008}
+J.~Uszkoreit and T.~Brants.
+\newblock 2008.
+\newblock {Distributed Word Clustering for Large Scale Class-Based Language
+  Modeling in Machine Translation}.
+\newblock In {\em Proceedings of ACL-08: HLT}, pages 755--762, Columbus, Ohio,
+  June. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Vincent \bgroup et al.\egroup }2008]{Vincent:2008}
+P.~Vincent, H.~Larochelle, Y.~Bengio, and P.-A. Manzagol.
+\newblock 2008.
+\newblock {Extracting and Composing Robust Features with Denoising
+  Autoencoders}.
+\newblock In {\em Proceedings of the 25th International Conference on Machine
+  Learning}, ICML '08, pages 1096--1103, New York, NY, USA. ACM.
+
+\bibitem[\protect\citename{Wager \bgroup et al.\egroup }2013]{Wager:2013}
+S.~Wager, S.~Wang, and P.~Liang.
+\newblock 2013.
+\newblock {Dropout Training as Adaptive Regularization}.
+\newblock In C.~J.~C. Burges, L.~Bottou, Z.~Ghahramani, and K.~Q. Weinberger,
+  editors, {\em Advances in Neural Information Processing Systems 26}, pages
+  351--359.
+
+\bibitem[\protect\citename{Wang and Manning}2012]{Wang:2012}
+S.~Wang and C.~D. Manning.
+\newblock 2012.
+\newblock {Baselines and Bigrams: Simple, Good Sentiment and Topic
+  Classification}.
+\newblock In {\em Proceedings of the 50th Annual Meeting of the Association for
+  Computational Linguistics: Short Papers - Volume 2}, ACL '12, pages 90--94,
+  Jeju Island, Korea. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Weinberger and Saul}2009]{Weinberger:2009}
+K.~Q. Weinberger and L.~K. Saul.
+\newblock 2009.
+\newblock {Distance Metric Learning for Large Margin Nearest Neighbor
+  Classification}.
+\newblock {\em Journal of Machine Learning Research}, 10:207--244.
+
+\bibitem[\protect\citename{Weston \bgroup et al.\egroup }2011]{Weston:2011}
+J.~Weston, S.~Bengio, and N.~Usunier.
+\newblock 2011.
+\newblock {{WSABIE}: Scaling Up to Large Vocabulary Image Annotation}.
+\newblock In {\em Proceedings of the Twenty-Second International Joint
+  Conference on Artificial Intelligence - Volume Three}, IJCAI'11, pages
+  2764--2770. AAAI Press.
+
+\bibitem[\protect\citename{Widdows}2004]{Widdows:2004}
+D.~Widdows.
+\newblock 2004.
+\newblock {\em {{Geometry and Meaning}}}.
+\newblock CSLI Publications, Stanford, California, USA, November.
+
+\bibitem[\protect\citename{Widdows}2008]{Widdows:2008}
+D.~Widdows.
+\newblock 2008.
+\newblock {Semantic Vector Products: Some Initial Investigations}.
+\newblock In {\em Proceedings of the Second AAAI Symposium on Quantum
+  Interaction}. College Publications.
+
+\bibitem[\protect\citename{Wiebe \bgroup et al.\egroup }2005]{Wiebe:2005}
+J.~Wiebe, T.~Wilson, and C.~Cardie.
+\newblock 2005.
+\newblock {Annotating Expressions of Opinions and Emotions in Language}.
+\newblock {\em Language Resources and Evaluation}, 39(2-3):165--210.
+
+\bibitem[\protect\citename{Wilson \bgroup et al.\egroup }2005]{Wilson:2005}
+T.~Wilson, J.~Wiebe, and P.~Hoffmann.
+\newblock 2005.
+\newblock {Recognizing Contextual Polarity in Phrase-level Sentiment Analysis}.
+\newblock In {\em Proceedings of the Conference on Human Language Technology
+  and Empirical Methods in Natural Language Processing}, HLT '05, pages
+  347--354, Vancouver, British Columbia, Canada. Association for Computational
+  Linguistics.
+
+\bibitem[\protect\citename{Xue and Palmer}2004]{Xue:2004}
+N.~Xue and M.~Palmer.
+\newblock 2004.
+\newblock {Calibrating Features for Semantic Role Labeling }.
+\newblock In D.~Lin and D.~Wu, editors, {\em Proceedings of the Conference on
+  Empirical Methods in Natural Language Processing}, EMNLP '04, pages 88--94,
+  Barcelona, Spain, July. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Yih \bgroup et al.\egroup }2011]{Yih:2011}
+W.-T. Yih, K.~Toutanova, J.~C. Platt, and C.~Meek.
+\newblock 2011.
+\newblock {Learning Discriminative Projections for Text Similarity Measures}.
+\newblock In {\em Proceedings of the Fifteenth Conference on Computational
+  Natural Language Learning}, CoNLL '11, pages 247--256, Portland, Oregon.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Zanzotto \bgroup et al.\egroup }2010]{Zanzotto:2010}
+F.~M. Zanzotto, I.~Korkontzelos, F.~Fallucchi, and S.~Manandhar.
+\newblock 2010.
+\newblock {Estimating Linear Models for Compositional Distributional
+  Semantics}.
+\newblock In {\em Proceedings of the 23rd International Conference on
+  Computational Linguistics}, COLING '10, pages 1263--1271, Beijing, China.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Zhang and Nivre}2011]{Zhang:2011}
+Y.~Zhang and J.~Nivre.
+\newblock 2011.
+\newblock {Transition-based Dependency Parsing with Rich Non-local Features}.
+\newblock In {\em Proceedings of the 49th Annual Meeting of the Association for
+  Computational Linguistics: Human Language Technologies: Short Papers - Volume
+  2}, HLT '11, pages 188--193, Portland, Oregon. Association for Computational
+  Linguistics.
+
+\bibitem[\protect\citename{Zou \bgroup et al.\egroup }2013]{Zou:2013}
+W.~Y. Zou, R.~Socher, D.~Cer, and C.~D. Manning.
+\newblock 2013.
+\newblock {Bilingual Word Embeddings for Phrase-Based Machine Translation}.
+\newblock In {\em Proceedings of the 2013 Conference on Empirical Methods in
+  Natural Language Processing}, pages 1393--1398, Seattle, Washington, USA,
+  October. Association for Computational Linguistics.
+
+\end{thebibliography}
