@@ -8,6 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
     <nav>
@@ -17,6 +27,8 @@
         <a href="chapter4.html">IV. Broad Listening</a>
         <a href="chapter5.html">V. Conclusion</a>
         <a href="about.html">About</a>
+        <a href="appendix1.html">Appendix I</a>
+        <a href="appendix2.html">Appendix II</a>
     </nav>
 
     <div class="page-container">
@@ -77,6 +89,97 @@
         </div>
 
         <main>
+            <!-- Margin ASCII Art - positioned absolutely, scrolls with content -->
+            <div class="ascii-art float" style="top: 50px;">
+   DEEP LEARNING
+      ┌─┐┌─┐┌─┐
+      │A││B││C│
+      └┬┘└┬┘└┬┘
+       └──┼──┘
+          ▼
+      ┌───────┐
+      │ A+B+C │
+      └───────┘
+     sources lost
+<span class="caption">addition erases</span>
+            </div>
+
+            <div class="ascii-art pulse" style="top: 700px;">
+   DEEP VOTING
+      ┌─┐┌─┐┌─┐
+      │A││B││C│
+      └│┘└│┘└│┘
+       │  │  │
+       ▼  ▼  ▼
+    ┌──┬──┬──┐
+    │A │B │C │
+    └──┴──┴──┘
+    sources kept
+<span class="caption">concatenate preserves</span>
+            </div>
+
+            <div class="ascii-art breathe" style="top: 1400px;">
+     ·───·───·───·
+     │   │   │   │
+     ·───·───·───·
+     sparse params
+
+    ████████████
+    dense params
+
+   96% wasted!
+<span class="caption">retrieval wins</span>
+            </div>
+
+            <div class="ascii-art float" style="top: 2100px;">
+  📊 Available Data:
+  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+
+  📊 Data Used:
+  ░
+
+  &lt;0.0001% used
+<span class="caption">6 OOM untapped</span>
+            </div>
+
+            <div class="ascii-art pulse" style="top: 2800px;">
+   ε small → privacy
+   ε measured → track
+   ε large → attribute
+
+    ┌─────────────┐
+    │ differential│
+    │ attribution │
+    └─────────────┘
+<span class="caption">DP repurposed</span>
+            </div>
+
+            <div class="ascii-art breathe" style="top: 3500px;">
+   intelligence
+     budgets:
+
+   γ[s]≈0 → hide
+   γ[s]≈1 → show
+
+   ╭──────────────╮
+   │source control│
+   ╰──────────────╯
+<span class="caption">fine-grained control</span>
+            </div>
+
+            <div class="ascii-art float" style="top: 4200px;">
+   RETRO: 25x fewer
+   ATLAS: 50x fewer
+       params!
+
+    ┌────────────┐
+    │ retrieval  │
+    │   beats    │
+    │ memorizing │
+    └────────────┘
+<span class="caption">the evidence</span>
+            </div>
+
             <div class="chapter-header">
                 <p class="chapter-number">Chapter II</p>
                 <h1>From Deep Learning to Deep Voting</h1>
@@ -92,24 +195,6 @@
                 <p>Estimates below suggest that models are trained using less than 1/1,000,000th of the world's data and AI compute productivity. Consequently, following AI's scaling laws, AI models possess capabilities which are insignificant compared to what existing data, compute, and algorithms could create.</p>
                 <p>Yet, if AI models (and their capabilities) are the lifeblood of the AI industry, why are data and compute so underutilized? Why is AI capability so constrained? This chapter unpacks the cause of such a drastic resource under-utilization. It begins by linking resource utilization to attribution-based control (ABC). It then breaks attribution-based control into problems with attribution and control, which are themselves underpinned by deep learning's core philosophy of mixing dense features. This mixing is only problematic because of a specific technical choice: the use of addition to update model weights, which erases provenance information during gradient descent.</p>
             </section>
-
-            <div class="ascii-art pulse">
-        DEEP LEARNING              DEEP VOTING
-       (addition)                (concatenation)
-
-      ┌─┐ ┌─┐ ┌─┐               ┌─┐ ┌─┐ ┌─┐
-      │A│ │B│ │C│               │A│ │B│ │C│
-      └┬┘ └┬┘ └┬┘               └│┘ └│┘ └│┘
-       └───┼───┘                 │   │   │
-           ▼                     ▼   ▼   ▼
-       ┌───────┐            ┌───────────────┐
-       │ A+B+C │            │ A │ B │ C │
-       │ (7?)  │            │(1)│(2)│(4)│
-       └───────┘            └───────────────┘
-          │                        │
-     sources lost            sources kept
-<span class="caption">the key transformation</span>
-            </div>
 
             <figure class="full-width">
                 <img src="1411.3146/deep_learning_to_deep_voting_v3.png" alt="Deep Learning vs Deep Voting">
@@ -411,7 +496,7 @@
     </div>
 
     <footer>
-        <p>Andrew Trask &middot; St. Hugh's College &middot; University of Oxford</p>
+        <p>Andrew Trask &middot; University of Oxford</p>
     </footer>
 
     <script>

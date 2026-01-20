@@ -8,6 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
     <nav>
@@ -17,6 +27,8 @@
         <a href="chapter4.html" class="active">IV. Broad Listening</a>
         <a href="chapter5.html">V. Conclusion</a>
         <a href="about.html">About</a>
+        <a href="appendix1.html">Appendix I</a>
+        <a href="appendix2.html">Appendix II</a>
     </nav>
 
     <div class="page-container">
@@ -80,6 +92,125 @@
         </div>
 
         <main>
+            <!-- Margin ASCII Art - positioned absolutely, scrolls with content -->
+            <div class="ascii-art float" style="top: 50px;">
+  DUNBAR'S NUMBER
+
+  ☺☺☺☺☺☺☺☺☺☺
+  ☺☺☺☺☺☺☺☺☺☺
+  ☺☺☺☺☺ ...
+      ~150
+
+  human limit
+<span class="caption">cognitive cap</span>
+            </div>
+
+            <div class="ascii-art pulse" style="top: 600px;">
+   THE GAP
+
+  need: ~10⁹
+  have: ~10²
+  ─────────
+  gap: 10⁷x
+<span class="caption">7 orders of magnitude</span>
+            </div>
+
+            <div class="ascii-art breathe" style="top: 1200px;">
+  BRANCHING
+
+       ·
+      /│\
+     / │ \
+    /  │  \
+   ·   ·   ·
+  /|\ /|\ /|\
+
+   too many!
+<span class="caption">exponential paths</span>
+            </div>
+
+            <div class="ascii-art float" style="top: 1800px;">
+ DELEGATION
+
+  me ─▶ friends
+         │
+         ▼
+       their
+       friends
+         │
+         ▼
+        ...
+<span class="caption">trust chains</span>
+            </div>
+
+            <div class="ascii-art pulse" style="top: 2400px;">
+  6 DEGREES
+
+  ☺─☺─☺─☺─☺─☺─☺
+  1  2  3  4  5  6
+
+   50⁶ = 15.6B
+   sources!
+<span class="caption">exponential reach</span>
+            </div>
+
+            <div class="ascii-art breathe" style="top: 3000px;">
+  RECURSIVE TRUST
+
+    me
+    │
+  ┌─┼─┐
+  A B C    (my picks)
+  │ │ │
+  ┌┼┐┌┼┐┌┼┐
+  ······   (their picks)
+<span class="caption">trust propagates</span>
+            </div>
+
+            <div class="ascii-art float" style="top: 3600px;">
+  WORD OF MOUTH
+  @ MACHINE SPEED
+
+  ☺ "trust her"
+   \
+    ☺ "trust him"
+     \
+      ☺ ...
+
+  ancient pattern
+  modern speed
+<span class="caption">the insight</span>
+            </div>
+
+            <div class="ascii-art pulse" style="top: 4200px;">
+ BROAD LISTENING
+
+  ·───·───·───·
+  │ \ │ / │ \ │
+  ·───·───·───·
+  │ / │ \ │ / │
+  ·───·───·───·
+
+  everyone hears
+  everyone
+<span class="caption">the vision</span>
+            </div>
+
+            <div class="ascii-art breathe" style="top: 4800px;">
+  ALIGNMENT
+
+  contributors
+      │
+   withdraw
+      │
+      ▼
+  system adapts
+
+  structural
+  not imposed
+<span class="caption">built-in values</span>
+            </div>
+
             <div class="chapter-header">
                 <p class="chapter-number">Chapter IV</p>
                 <h1>From Network-Source AI to Broad Listening</h1>
@@ -312,7 +443,7 @@
     </div>
 
     <footer>
-        <p>Andrew Trask &middot; St. Hugh's College &middot; University of Oxford</p>
+        <p>Andrew Trask &middot; University of Oxford</p>
     </footer>
 
     <script>

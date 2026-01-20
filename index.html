@@ -8,6 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
     <nav>
@@ -17,6 +27,8 @@
         <a href="chapter4.html">IV. Broad Listening</a>
         <a href="chapter5.html">V. Conclusion</a>
         <a href="about.html">About</a>
+        <a href="appendix1.html">Appendix I</a>
+        <a href="appendix2.html">Appendix II</a>
     </nav>
 
     <div class="page-container">
@@ -81,25 +93,83 @@
         </div>
 
         <main>
+        <!-- Margin ASCII Art - positioned absolutely, scrolls with content -->
+        <div class="ascii-art float" style="top: 100px;">
+    ╭────────╮
+    │ ░░░░░░ │
+    │ ░DATA░ │──?──╮
+    │ ░░░░░░ │     │
+    ╰────────╯     ▼
+              who gets it?
+<span class="caption">the flow problem</span>
+        </div>
+
+        <div class="ascii-art pulse" style="top: 800px;">
+      ·───·───·
+      │   │   │
+      ·───◉───·
+      │   │   │
+      ·───·───·
+<span class="caption">central control</span>
+        </div>
+
+        <div class="ascii-art breathe" style="top: 1600px;">
+   ┌─────────┐
+   │ source? │
+   └────┬────┘
+        │
+        ▼
+   ┌─────────┐
+   │ ??????? │
+   └─────────┘
+<span class="caption">hallucination</span>
+        </div>
+
+        <div class="ascii-art float" style="top: 2400px;">
+    1 + 6 = 7
+      (lost)
+
+   "1"+"6"="16"
+     (kept)
+<span class="caption">addition erases</span>
+        </div>
+
+        <div class="ascii-art pulse" style="top: 3200px;">
+   [A]──copy──▶[A]
+              [A]
+               │
+           control
+             lost
+<span class="caption">copy problem</span>
+        </div>
+
+        <div class="ascii-art breathe" style="top: 4000px;">
+       ·
+      /│\
+     / │ \
+    /  │  \
+   ·   ·   ·
+<span class="caption">high branching</span>
+        </div>
+
+        <div class="ascii-art float" style="top: 4800px;">
+  II ─▶ III ─▶ IV
+  │      │      │
+  ▼      ▼      ▼
+ add   copy  branch
+<span class="caption">thesis path</span>
+        </div>
+
         <header>
-            <h1>Attribution-Based Control in AI Systems</h1>
+            <h1 style="white-space: nowrap;">Attribution-Based Control in AI Systems</h1>
             <p class="author">Andrew Trask</p>
-            <p class="affiliation">St. Hugh's College, University of Oxford</p>
+            <p class="affiliation">University of Oxford</p>
         </header>
 
         <section class="abstract" id="abstract">
             <h2>Abstract</h2>
             <p>Many of AI's risks in areas like privacy, value alignment, copyright, concentration of power, and hallucinations can be reduced to the problem of attribution-based control (ABC) in AI systems, which itself can be reduced to the overuse of addition, copying, and branching within gradient descent. This thesis synthesizes a handful of recently proposed techniques in deep learning, cryptography, and distributed systems, revealing a viable path to reduce addition, copying, and branching; provide ABC; and address many of AI's primary risks while accelerating its benefits by unlocking 6+ orders of magnitude more data, compute, and associated AI capability.</p>
         </section>
-
-        <div class="ascii-art float">
-       ╭────────────╮
-       │  ░░░░░░░░  │
-       │  ░ DATA ░  │──────?────── │ USER │
-       │  ░░░░░░░░  │               ╰──────╯
-       ╰────────────╯
-<span class="caption">who controls the flow?</span>
-        </div>
 
         <figure class="full-width">
             <img src="1411.3146/broad_listening_v4.png" alt="Traditional AI vs ABC-enabled AI systems">
@@ -139,19 +209,6 @@
             <p>This design decision triggers a cascade of consequences, consequences which are felt uniquely at each level of society: individual, institutional, societal, and geo-political. And as a result, each level of society is incubating deep desires for something more than today's AI has to offer. The next four subsections survey this increasing demand for ABC in AI by surveying the felt consequences of the lack of ABC in AI.</p>
         </section>
 
-        <div class="ascii-art breathe">
-            ┌─────────────────────────────────┐
-            │     CONSEQUENCES CASCADE        │
-            └───────────────┬─────────────────┘
-                            │
-          ┌─────────────────┼─────────────────┐
-          ▼                 ▼                 ▼
-    ┌──────────┐     ┌──────────┐     ┌──────────┐
-    │Individual│     │Societal  │     │ Global   │
-    └──────────┘     └──────────┘     └──────────┘
-<span class="caption">problems at every level</span>
-        </div>
-
         <section>
             <h3 id="individual-consequences">Individual Consequences</h3>
 
@@ -174,18 +231,6 @@
 
             <p>However, as this thesis will soon show, when neural networks combine information through addition operations during training, they irreversibly compress the relationship between sources and predictions. No amount of post-training intervention (e.g. fine-tuning, auditing, influence functions, etc.) can fully restore these lost connections, solve the lack of ABC, and empower AI users to better avoid and address AI hallucinations, disinformation, or deepfakes. Yet, if attribution was solved, while it would still be possible to compel an AI to produce false information, it may become difficult (if not impossible) to do so without also revealing the inappropriate sources used to generate such false statements. Altogether, AI needs a bibliography.</p>
         </section>
-
-        <div class="ascii-art pulse">
-         "Is this true?"      "Where did this come from?"
-               │                        │
-               ▼                        ▼
-          ┌─────────┐             ┌─────────┐
-          │ ????? │──── AI ────│ ????? │
-          └─────────┘   output   └─────────┘
-               │                        │
-               └────── no source ───────┘
-<span class="caption">the hallucination problem</span>
-        </div>
 
         <section>
             <h3 id="institutional-consequences">Institutional Consequences</h3>
@@ -271,25 +316,6 @@
             <p>Yet these challenges also reveal an opportunity. By reformulating how AI systems process information (shifting from operations that break ABC to ones that preserve it) society is actively overcoming the perception of AI as a tool of central intelligence, revealing it to be a communication paradigm of great magnitude. And as described above, this change will not just solve technical problems; it could realign AI development with democratic values. The path to this transformation begins with the mathematical operations which preserve or destroy ABC in AI.</p>
         </section>
 
-        <div class="ascii-art breathe">
-           ╔═══════════════════════════════════════╗
-           ║     WHAT'S CAUSING THESE PROBLEMS?    ║
-           ╚═══════════════════════════════════════╝
-
-                    ┌──────────┐
-                    │   ABC    │
-                    │ MISSING  │
-                    └────┬─────┘
-                         │
-        ┌────────────────┼────────────────┐
-        ▼                ▼                ▼
-   ┌─────────┐     ┌──────────┐     ┌──────────┐
-   │ADDITION │     │  COPY    │     │ BRANCHING│
-   │ problem │     │ problem  │     │ problem  │
-   └─────────┘     └──────────┘     └──────────┘
-<span class="caption">three root causes</span>
-        </div>
-
         <section>
             <h2 id="underlying-causes">Underlying Causes and Contributing Factors</h2>
 
@@ -343,23 +369,6 @@
 
             <p>This relationship to ABC reflects a deeper tension in AI development: the choice between transparency and mystique. In the case that ABC provides precise, controllable, and attributable intelligence, many influential voices may prefer the allure and profitability of black-box systems that more closely mirror a specific conception of biological cognition. Yet, this dichotomy does not just shape technical decisions, but who retains power over AI, and the future of AI's role in society. As readers proceed through this thesis, they might consider: what if this preference for black-box AI systems stems not from technical necessity, from safety maximization, or from economic/political incentive, but from deeply held assumptions about what artificial intelligence should be? For now, the thesis will overlook such concerns, returning to them in closing notes.</p>
         </section>
-
-        <div class="ascii-art float">
-   ╭─────────────────────────────────────────────╮
-   │           THE PATH FORWARD                  │
-   ╰─────────────────────────────────────────────╯
-
-   Ch II          Ch III           Ch IV          Ch V
-  ┌────┐        ┌────────┐       ┌──────┐      ┌──────┐
-  │DEEP│   ──▶  │NETWORK │  ──▶  │BROAD │  ──▶ │CONCL-│
-  │VOTE│        │ SOURCE │       │LISTEN│      │USION │
-  └────┘        └────────┘       └──────┘      └──────┘
-    │               │               │
-    ▼               ▼               ▼
- addition        copying        branching
-  solved         solved          solved
-<span class="caption">thesis roadmap</span>
-        </div>
 
         <section>
             <h2 id="thesis-outline">Thesis Outline</h2>
@@ -508,7 +517,7 @@
     </div>
 
     <footer>
-        <p>Andrew Trask &middot; St. Hugh's College &middot; University of Oxford</p>
+        <p>Andrew Trask &middot; University of Oxford</p>
     </footer>
 
     <script>

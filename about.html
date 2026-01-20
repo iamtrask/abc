@@ -8,6 +8,158 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <style>
+        .about-header {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        .about-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+        .about-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .about-header .subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+        }
+        .social-icons a {
+            color: #333;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #0066cc;
+        }
+
+        /* Timeline styles */
+        .timeline-section {
+            padding: 2rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Main roles - vertical timeline */
+        .main-roles {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .role-card {
+            flex: 1;
+            position: relative;
+            padding-top: 1rem;
+        }
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, #2563eb, #2563eb 80%, transparent);
+        }
+        .role-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 14px;
+            width: 15px;
+            height: 15px;
+            background: #2563eb;
+            border-radius: 50%;
+        }
+        .role-card .now-label {
+            position: absolute;
+            top: -5px;
+            left: 35px;
+            font-size: 0.75rem;
+            color: #2563eb;
+            font-weight: 600;
+        }
+        .role-card .year-label {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .role-card .content {
+            margin-left: 45px;
+            padding-bottom: 2rem;
+        }
+        .role-badge {
+            display: inline-block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        .role-badge.om { background: #1e293b; }
+        .role-badge.dm { background: #2563eb; }
+        .role-badge.ox { background: #1e3a5f; }
+        .role-badge.gdl { background: #dc2626; }
+        .role-badge.dr { background: #16a34a; }
+
+        .role-card h3 {
+            font-size: 1rem;
+            margin: 0 0 0.5rem 0;
+        }
+        .role-card p {
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .role-card a {
+            color: #2563eb;
+        }
+
+        /* Other roles - horizontal items */
+        .other-roles {
+            border-top: 1px solid #eee;
+            padding-top: 2rem;
+        }
+        .other-role {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+        }
+        .other-role .year {
+            min-width: 100px;
+            font-size: 0.85rem;
+            color: #666;
+            text-align: right;
+            padding-top: 0.5rem;
+        }
+        .other-role .dot {
+            width: 12px;
+            height: 12px;
+            background: #2563eb;
+            border-radius: 50%;
+            margin-top: 0.6rem;
+            flex-shrink: 0;
+        }
+        .other-role .content {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -17,19 +169,73 @@
         <a href="chapter4.html">IV. Broad Listening</a>
         <a href="chapter5.html">V. Conclusion</a>
         <a href="about.html" class="active">About</a>
+        <a href="appendix1.html">Appendix I</a>
+        <a href="appendix2.html">Appendix II</a>
     </nav>
 
-    <main>
-        <header>
-            <h1>About</h1>
-        </header>
+    <main style="max-width: 100%; padding: 0;">
+        <div class="about-header">
+            <img src="https://pbs.twimg.com/profile_images/1676383912462204929/7aXuDhbT_400x400.jpg" alt="Andrew Trask">
+            <h1>Andrew Trask</h1>
+            <p class="subtitle">Privacy-Preserving AI Researcher</p>
+            <div class="social-icons">
+                <a href="https://twitter.com/iaborotnik" title="X/Twitter">&#x1D54F;</a>
+                <a href="https://github.com/iamtrask" title="GitHub">&#x2B24;</a>
+                <a href="https://linkedin.com/in/andrew-trask" title="LinkedIn">in</a>
+            </div>
+        </div>
 
-        <section>
-            <h2>The Author</h2>
-            <p><strong>Andrew Trask</strong> is a doctoral candidate at St. Hugh's College, University of Oxford. His research focuses on the intersection of deep learning, cryptography, and distributed systems, with particular emphasis on how these technologies can be combined to create AI systems that preserve attribution and control.</p>
-        </section>
+        <div class="timeline-section">
+            <div class="main-roles">
+                <div class="role-card">
+                    <span class="now-label">Now</span>
+                    <div class="content">
+                        <span class="role-badge om">OM</span>
+                        <p>I am founder at <a href="https://openmined.org">OpenMined</a>, an open-source community of 12,000+ researchers building tools for privacy-preserving AI. We created <a href="https://github.com/OpenMined/PySyft">PySyft</a> for federated learning and run free <a href="https://courses.openmined.org">courses</a> on privacy tech.</p>
+                    </div>
+                    <span class="year-label">2017</span>
+                </div>
 
-        <section>
+                <div class="role-card">
+                    <span class="now-label">Now</span>
+                    <div class="content">
+                        <span class="role-badge dm">DM</span>
+                        <p>I am a Senior Research Scientist at <a href="https://deepmind.google">Google DeepMind</a>, studying privacy and AI&mdash;federated learning, differential privacy, and secure multi-party computation.</p>
+                    </div>
+                    <span class="year-label">2019</span>
+                </div>
+
+                <div class="role-card" style="padding-bottom: 2rem;">
+                    <div class="content" style="padding-top: 0.5rem;">
+                        <span class="role-badge ox">Ox</span>
+                        <p>I completed my PhD at the <a href="https://ox.ac.uk">University of Oxford</a>, focusing on privacy-preserving machine learning. Affiliated with <a href="https://www.fhi.ox.ac.uk/">FHI</a> and <a href="https://www.governance.ai/">GovAI</a>.</p>
+                    </div>
+                    <span class="year-label">2020 - 2023</span>
+                </div>
+            </div>
+
+            <div class="other-roles">
+                <div class="other-role">
+                    <span class="year">2019</span>
+                    <span class="dot"></span>
+                    <div class="content">
+                        <span class="role-badge gdl">GDL</span>
+                        <p>I wrote <a href="https://www.manning.com/books/grokking-deep-learning">Grokking Deep Learning</a> (Manning), teaching neural networks from scratch with just Python and NumPy. 10,000+ copies sold. I also teach in <a href="https://www.udacity.com/course/deep-learning-nanodegree--nd101">Udacity's Deep Learning Nanodegree</a> (12K+ students).</p>
+                    </div>
+                </div>
+
+                <div class="other-role">
+                    <span class="year">2014 - 2017</span>
+                    <span class="dot"></span>
+                    <div class="content">
+                        <span class="role-badge dr">DR</span>
+                        <p>I was a researcher at <a href="https://digitalreasoning.com">Digital Reasoning</a>, where I trained one of the world's largest neural networks (160B+ parameters) and helped guide the analytics roadmap for the Synthesys cognitive computing platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section style="max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem;">
             <h2>About This Thesis</h2>
             <p>This thesis, <em>Attribution-Based Control in AI Systems</em>, synthesizes recent breakthroughs across multiple fields to propose a new paradigm for AI development. It argues that many of AI's most pressing problems&mdash;hallucination, privacy, copyright, concentration of power, and value alignment&mdash;share a common technical root: the absence of attribution-based control.</p>
 
@@ -39,23 +245,16 @@
                 <li><strong>Structured transparency</strong> frameworks using cryptography to enable sharing without loss of control</li>
                 <li><strong>Recursive delegation</strong> mechanisms that enable trust propagation at scale without centralization</li>
             </ul>
-        </section>
 
-        <section>
             <h2>The Vision</h2>
             <p>The thesis proposes that AI can be transformed from a tool of central intelligence into a communication technology for <em>broad listening</em>&mdash;enabling each person to synthesize information from billions of sources, weighted through local trust relationships, and verified at each hop.</p>
 
             <p>This transformation could unlock 6+ orders of magnitude more data and compute for AI systems while aligning AI development with democratic values.</p>
         </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>For questions about this research, please contact the author through St. Hugh's College, University of Oxford.</p>
-        </section>
     </main>
 
     <footer>
-        <p>Andrew Trask &middot; St. Hugh's College &middot; University of Oxford</p>
+        <p>Andrew Trask &middot; University of Oxford</p>
     </footer>
 </body>
 </html>

@@ -56,6 +56,7 @@ nav a.active {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    overflow: visible;
 }
 
 /* Table of Contents Sidebar */
@@ -462,35 +463,43 @@ em {
     }
 }
 
-/* ASCII Art Decorations */
+/* ASCII Art Decorations - Margin Style */
 
-/* Inline ASCII art between sections */
+/* Container for margin art - position relative to enable absolute children */
+main {
+    position: relative;
+    overflow: visible;
+}
+
+/* Margin ASCII art - scrolls with content, positioned in right margin */
 .ascii-art {
-    text-align: center;
+    position: absolute;
+    left: calc(100% + 30px);
+    width: 140px;
     font-family: 'Courier New', Consolas, monospace;
-    font-size: 13px;
-    line-height: 1.4;
-    color: #7a9aaa;
+    font-size: 8px;
+    line-height: 1.15;
+    color: #a0b0c0;
     white-space: pre;
-    margin: 3rem auto;
-    padding: 2rem;
-    opacity: 0.9;
+    text-align: left;
+    opacity: 0.5;
     transition: all 0.4s ease;
+    pointer-events: none;
+    z-index: 10;
 }
 
 .ascii-art:hover {
-    color: #4a7a8a;
+    color: #5a7a8a;
     opacity: 1;
-    transform: scale(1.02);
 }
 
 .ascii-art .caption {
     display: block;
-    margin-top: 1rem;
-    font-size: 11px;
-    letter-spacing: 0.15em;
+    margin-top: 0.5rem;
+    font-size: 9px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #8ab;
+    color: #9ab;
     font-family: 'Source Serif 4', Georgia, serif;
 }
 
@@ -501,7 +510,7 @@ em {
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
 }
 
 /* Pulse animation */
@@ -510,8 +519,8 @@ em {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.75; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.9; }
 }
 
 /* Gentle breathing for diagrams */
@@ -520,47 +529,18 @@ em {
 }
 
 @keyframes breathe {
-    0%, 100% { transform: scale(1); opacity: 0.85; }
-    50% { transform: scale(1.04); opacity: 1; }
+    0%, 100% { transform: scale(1); opacity: 0.65; }
+    50% { transform: scale(1.02); opacity: 0.9; }
 }
 
-/* Blink for data points */
-.ascii-art.blink span.dot {
-    animation: blink 2s ease-in-out infinite;
+/* Left margin variant */
+.ascii-art.left {
+    right: auto;
+    left: -280px;
+    text-align: right;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
-
-/* Sequential reveal */
-.ascii-art.cascade span {
-    opacity: 0;
-    animation: cascadeIn 0.5s ease-out forwards;
-}
-
-.ascii-art.cascade span:nth-child(1) { animation-delay: 0.1s; }
-.ascii-art.cascade span:nth-child(2) { animation-delay: 0.2s; }
-.ascii-art.cascade span:nth-child(3) { animation-delay: 0.3s; }
-.ascii-art.cascade span:nth-child(4) { animation-delay: 0.4s; }
-.ascii-art.cascade span:nth-child(5) { animation-delay: 0.5s; }
-
-@keyframes cascadeIn {
-    to { opacity: 1; }
-}
-
-/* Wave animation for network lines */
-.ascii-art.wave {
-    animation: wave 3s ease-in-out infinite;
-}
-
-@keyframes wave {
-    0%, 100% { letter-spacing: 0; }
-    50% { letter-spacing: 1px; }
-}
-
-/* Hide old margin art */
+/* Hide old fixed margin art */
 .ascii-margin {
     display: none;
 }
@@ -571,22 +551,30 @@ em {
     padding-top: 1rem;
     border-top: 1px solid #ddd;
     font-family: 'Courier New', monospace;
-    font-size: 11px;
-    line-height: 1.3;
-    color: #7a9aaa;
+    font-size: 10px;
+    line-height: 1.2;
+    color: #8a9fb0;
     white-space: pre;
     text-align: center;
     animation: pulse 5s ease-in-out infinite;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive - hide margin art on smaller screens */
+@media (max-width: 1600px) {
     .ascii-art {
-        font-size: 11px;
-        padding: 1.5rem;
-        margin: 2rem auto;
+        left: calc(100% + 15px);
+        width: 120px;
+        font-size: 7px;
     }
+}
 
+@media (max-width: 1200px) {
+    .ascii-art {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
     .toc-sidebar .ascii-decoration {
         display: none;
     }

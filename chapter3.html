@@ -8,6 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
     <nav>
@@ -17,6 +27,8 @@
         <a href="chapter4.html">IV. Broad Listening</a>
         <a href="chapter5.html">V. Conclusion</a>
         <a href="about.html">About</a>
+        <a href="appendix1.html">Appendix I</a>
+        <a href="appendix2.html">Appendix II</a>
     </nav>
 
     <div class="page-container">
@@ -80,6 +92,102 @@
         </div>
 
         <main>
+            <!-- Margin ASCII Art - positioned absolutely, scrolls with content -->
+            <div class="ascii-art float" style="top: 50px;">
+  COPY PROBLEM
+
+  [data]──copy──▶[copy]
+                  │
+              control
+                lost
+<span class="caption">copying = losing</span>
+            </div>
+
+            <div class="ascii-art pulse" style="top: 600px;">
+   OPEN vs CLOSED
+
+  open:    closed:
+  [····]   [████]
+  anyone   one co.
+  controls controls
+<span class="caption">neither works</span>
+            </div>
+
+            <div class="ascii-art breathe" style="top: 1200px;">
+  FEDERATED
+
+   [A]    [B]    [C]
+    │      │      │
+    └──────┼──────┘
+           ▼
+       [result]
+   data stays home
+<span class="caption">compute moves</span>
+            </div>
+
+            <div class="ascii-art float" style="top: 1800px;">
+   ENCRYPTION
+   ╭─────────╮
+   │ ░░░░░░░ │
+   │ ░DATA░░ │
+   │ ░░░░░░░ │
+   ╰─────────╯
+      │
+    [🔐]
+      │
+   ╭─────────╮
+   │ ▓▓▓▓▓▓▓ │
+   ╰─────────╯
+<span class="caption">data protected</span>
+            </div>
+
+            <div class="ascii-art pulse" style="top: 2400px;">
+ ZERO KNOWLEDGE
+
+  "I know X"
+       │
+     [ZKP]
+       │
+  ✓ verified
+  ✗ X hidden
+<span class="caption">prove w/o showing</span>
+            </div>
+
+            <div class="ascii-art breathe" style="top: 3000px;">
+  GPU ENCLAVE
+  ┌─────────┐
+  │ ▒▒▒▒▒▒▒ │
+  │ ▒decrypt│
+  │ ▒compute│
+  │ ▒encrypt│
+  │ ▒▒▒▒▒▒▒ │
+  └─────────┘
+   only inside
+<span class="caption">secure compute</span>
+            </div>
+
+            <div class="ascii-art float" style="top: 3600px;">
+ NETWORK-SOURCE
+
+  ☺──query──▶[  ]
+       ◀────result
+
+   no copy made
+   control kept
+<span class="caption">the solution</span>
+            </div>
+
+            <div class="ascii-art pulse" style="top: 4200px;">
+   VERIFY
+
+   input ──▶ [fn] ──▶ output
+               │
+            proof
+               │
+          ✓ correct
+<span class="caption">trust but verify</span>
+            </div>
+
             <div class="chapter-header">
                 <p class="chapter-number">Chapter III</p>
                 <h1>From Deep Voting to Network-Source AI</h1>
@@ -314,7 +422,7 @@
     </div>
 
     <footer>
-        <p>Andrew Trask &middot; St. Hugh's College &middot; University of Oxford</p>
+        <p>Andrew Trask &middot; University of Oxford</p>
     </footer>
 
     <script>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix II: Model Compute Rankings | ABC in AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <style>
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.75rem;
+        }
+        .data-table th, .data-table td {
+            padding: 0.4rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .data-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+            font-size: 0.7rem;
+            position: sticky;
+            top: 60px;
+        }
+        .data-table tr:hover {
+            background: #fafafa;
+        }
+        .data-table .numeric {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+        }
+        .table-caption {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .model-name {
+            font-weight: 500;
+        }
+        .org-name {
+            color: #555;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">I. Introduction</a>
+        <a href="chapter2.html">II. Deep Voting</a>
+        <a href="chapter3.html">III. Network-Source AI</a>
+        <a href="chapter4.html">IV. Broad Listening</a>
+        <a href="chapter5.html">V. Conclusion</a>
+        <a href="about.html">About</a>
+        <a href="appendix1.html">Appendix I</a>
+        <a href="appendix2.html" class="active">Appendix II</a>
+    </nav>
+
+    <div class="page-container">
+        <aside class="toc-sidebar">
+            <h4>On This Page</h4>
+            <ul>
+                <li class="toc-h3"><a href="#overview">Overview</a></li>
+                <li class="toc-h3"><a href="#frontier-models">Frontier Models</a></li>
+                <li class="toc-h3"><a href="#large-models">Large Models</a></li>
+                <li class="toc-h3"><a href="#medium-models">Medium Models</a></li>
+                <li class="toc-h3"><a href="#key-findings">Key Findings</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="chapter-header">
+                <p class="chapter-number">Appendix II</p>
+                <h1>Large Model Compute Rankings and GPU Capacity Utilization</h1>
+            </div>
+
+            <section id="overview">
+                <p>This appendix presents a comprehensive ranking of notable AI models, combining data from Epoch AI's "Notable AI Models" database with organizational compute capacity estimates from Appendix I. For each model, we track:</p>
+                <ul>
+                    <li>Model name and developing organization(s)</li>
+                    <li>Training compute requirements (FLOPs)</li>
+                    <li>Lab/Cloud provider responsible for training</li>
+                    <li>Parent organization's 2024 estimated peak annual FLOP capacity</li>
+                    <li>Share of organization's publicly known models</li>
+                    <li>Share of peak annual FLOP budget</li>
+                </ul>
+            </section>
+
+            <section id="frontier-models">
+                <h2>Frontier Models ($10^{24}$+ FLOPs)</h2>
+                <p class="table-caption">Table 1: AI Model Training Compute Requirements - Frontier Scale</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Organization</th>
+                            <th>Lab/Cloud</th>
+                            <th class="numeric">Train FLOPs</th>
+                            <th class="numeric">Model/Peak Annual (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="model-name">Gemini 1.0 Ultra</td><td class="org-name">Google DeepMind</td><td>Google DeepMind</td><td class="numeric">$5.00 \times 10^{25}$</td><td class="numeric">0.129</td></tr>
+                        <tr><td class="model-name">Claude 3.5 Sonnet</td><td class="org-name">Anthropic</td><td>Anthropic/Amazon</td><td class="numeric">$4.98 \times 10^{25}$</td><td class="numeric">0.220</td></tr>
+                        <tr><td class="model-name">GPT-4o</td><td class="org-name">OpenAI</td><td>Microsoft/OpenAI</td><td class="numeric">$3.81 \times 10^{25}$</td><td class="numeric">0.088</td></tr>
+                        <tr><td class="model-name">Llama 3.1-405B</td><td class="org-name">Meta AI</td><td>Meta AI</td><td class="numeric">$3.80 \times 10^{25}$</td><td class="numeric">0.067</td></tr>
+                        <tr><td class="model-name">GPT-4</td><td class="org-name">OpenAI</td><td>Microsoft/OpenAI</td><td class="numeric">$2.10 \times 10^{25}$</td><td class="numeric">0.048</td></tr>
+                        <tr><td class="model-name">Gemini 1.0 Pro</td><td class="org-name">Google DeepMind</td><td>Google DeepMind</td><td class="numeric">$1.83 \times 10^{25}$</td><td class="numeric">0.047</td></tr>
+                        <tr><td class="model-name">Claude 3 Opus</td><td class="org-name">Anthropic</td><td>Anthropic/Amazon</td><td class="numeric">$1.64 \times 10^{25}$</td><td class="numeric">0.072</td></tr>
+                        <tr><td class="model-name">Gemini 1.5 Pro</td><td class="org-name">Google DeepMind</td><td>Google DeepMind</td><td class="numeric">$1.58 \times 10^{25}$</td><td class="numeric">0.041</td></tr>
+                        <tr><td class="model-name">Llama 3-70B</td><td class="org-name">Meta AI</td><td>Meta AI</td><td class="numeric">$7.86 \times 10^{24}$</td><td class="numeric">0.014</td></tr>
+                        <tr><td class="model-name">GPT-4o mini</td><td class="org-name">OpenAI</td><td>Microsoft/OpenAI</td><td class="numeric">$7.36 \times 10^{24}$</td><td class="numeric">0.017</td></tr>
+                        <tr><td class="model-name">PaLM 2</td><td class="org-name">Google</td><td>Google DeepMind</td><td class="numeric">$7.34 \times 10^{24}$</td><td class="numeric">0.019</td></tr>
+                        <tr><td class="model-name">Llama 3.3</td><td class="org-name">Meta AI</td><td>Meta AI</td><td class="numeric">$6.86 \times 10^{24}$</td><td class="numeric">0.012</td></tr>
+                        <tr><td class="model-name">Amazon Nova Pro</td><td class="org-name">Amazon</td><td>Anthropic/Amazon</td><td class="numeric">$6.00 \times 10^{24}$</td><td class="numeric">0.026</td></tr>
+                        <tr><td class="model-name">Amazon Titan</td><td class="org-name">Amazon</td><td>Anthropic/Amazon</td><td class="numeric">$4.80 \times 10^{24}$</td><td class="numeric">0.021</td></tr>
+                        <tr><td class="model-name">Claude 2</td><td class="org-name">Anthropic</td><td>Anthropic/Amazon</td><td class="numeric">$3.87 \times 10^{24}$</td><td class="numeric">0.017</td></tr>
+                        <tr><td class="model-name">Minerva (540B)</td><td class="org-name">Google</td><td>Google DeepMind</td><td class="numeric">$2.74 \times 10^{24}$</td><td class="numeric">0.007</td></tr>
+                        <tr><td class="model-name">GPT-3.5</td><td class="org-name">OpenAI</td><td>Microsoft/OpenAI</td><td class="numeric">$2.58 \times 10^{24}$</td><td class="numeric">0.006</td></tr>
+                        <tr><td class="model-name">PaLM (540B)</td><td class="org-name">Google Research</td><td>Google DeepMind</td><td class="numeric">$2.53 \times 10^{24}$</td><td class="numeric">0.007</td></tr>
+                        <tr><td class="model-name">FLAN 137B</td><td class="org-name">Google Research</td><td>Google DeepMind</td><td class="numeric">$2.05 \times 10^{24}$</td><td class="numeric">0.005</td></tr>
+                        <tr><td class="model-name">Meta Movie Gen Video</td><td class="org-name">Meta AI</td><td>Meta AI</td><td class="numeric">$1.65 \times 10^{24}$</td><td class="numeric">0.003</td></tr>
+                        <tr><td class="model-name">Megatron-Turing NLG 530B</td><td class="org-name">Microsoft, NVIDIA</td><td>Microsoft/OpenAI</td><td class="numeric">$1.17 \times 10^{24}$</td><td class="numeric">0.003</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="large-models">
+                <h2>Large Models ($10^{22}$ - $10^{24}$ FLOPs)</h2>
+                <p class="table-caption">Table 2: AI Model Training Compute Requirements - Large Scale</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Organization</th>
+                            <th>Lab/Cloud</th>
+                            <th class="numeric">Train FLOPs</th>
+                            <th class="numeric">Model/Peak Annual (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="model-name">Llama 2-70B</td><td class="org-name">Meta AI</td><td>Meta AI</td><td class="numeric">$8.10 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">Gopher (280B)</td><td class="org-name">DeepMind</td><td>Google DeepMind</td><td class="numeric">$6.31 \times 10^{23}$</td><td class="numeric">0.002</td></tr>
+                        <tr><td class="model-name">Chinchilla</td><td class="org-name">DeepMind</td><td>Google DeepMind</td><td class="numeric">$5.76 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">LLaMA-65B</td><td class="org-name">Meta AI</td><td>Meta AI</td><td class="numeric">$5.50 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">OPT-175B</td><td class="org-name">Meta AI</td><td>Meta AI</td><td class="numeric">$4.30 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">Parti</td><td class="org-name">Google Research</td><td>Google DeepMind</td><td class="numeric">$3.96 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">GLaM</td><td class="org-name">Google</td><td>Google DeepMind</td><td class="numeric">$3.64 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">LaMDA</td><td class="org-name">Google</td><td>Google DeepMind</td><td class="numeric">$3.55 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">AlphaGo Zero</td><td class="org-name">DeepMind</td><td>Google DeepMind</td><td class="numeric">$3.41 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">Galactica</td><td class="org-name">Meta AI</td><td>Meta AI</td><td class="numeric">$3.24 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">InstructGPT 175B</td><td class="org-name">OpenAI</td><td>Microsoft/OpenAI</td><td class="numeric">$3.19 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">GPT-3 175B</td><td class="org-name">OpenAI</td><td>Microsoft/OpenAI</td><td class="numeric">$3.14 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">Flamingo</td><td class="org-name">DeepMind</td><td>Google DeepMind</td><td class="numeric">$2.19 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">AlexaTM 20B</td><td class="org-name">Amazon</td><td>Anthropic/Amazon</td><td class="numeric">$2.04 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">AlphaGo Master</td><td class="org-name">DeepMind</td><td>Google DeepMind</td><td class="numeric">$2.00 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">ViT-22B</td><td class="org-name">Google</td><td>Google DeepMind</td><td class="numeric">$1.93 \times 10^{23}$</td><td class="numeric">0.001</td></tr>
+                        <tr><td class="model-name">AlphaCode</td><td class="org-name">DeepMind</td><td>Google DeepMind</td><td class="numeric">$1.64 \times 10^{23}$</td><td class="numeric">&lt;0.001</td></tr>
+                        <tr><td class="model-name">Llama 2-7B</td><td class="org-name">Meta AI</td><td>Meta AI</td><td class="numeric">$8.40 \times 10^{22}$</td><td class="numeric">&lt;0.001</td></tr>
+                        <tr><td class="model-name">Codex</td><td class="org-name">OpenAI</td><td>Microsoft/OpenAI</td><td class="numeric">$7.34 \times 10^{22}$</td><td class="numeric">&lt;0.001</td></tr>
+                        <tr><td class="model-name">OpenAI Five</td><td class="org-name">OpenAI</td><td>Microsoft/OpenAI</td><td class="numeric">$6.70 \times 10^{22}$</td><td class="numeric">&lt;0.001</td></tr>
+                        <tr><td class="model-name">AlphaStar</td><td class="org-name">DeepMind</td><td>Google DeepMind</td><td class="numeric">$5.93 \times 10^{22}$</td><td class="numeric">&lt;0.001</td></tr>
+                        <tr><td class="model-name">GraphCast</td><td class="org-name">Google DeepMind</td><td>Google DeepMind</td><td class="numeric">$2.10 \times 10^{22}$</td><td class="numeric">&lt;0.001</td></tr>
+                        <tr><td class="model-name">RETRO-7B</td><td class="org-name">DeepMind</td><td>Google DeepMind</td><td class="numeric">$1.68 \times 10^{22}$</td><td class="numeric">&lt;0.001</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="medium-models">
+                <h2>Medium Models ($10^{20}$ - $10^{22}$ FLOPs)</h2>
+                <p class="table-caption">Table 3: AI Model Training Compute Requirements - Medium Scale</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Organization</th>
+                            <th class="numeric">Train FLOPs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="model-name">Imagen</td><td class="org-name">Google Brain</td><td class="numeric">$1.46 \times 10^{22}$</td></tr>
+                        <tr><td class="model-name">CLIP (ViT L/14)</td><td class="org-name">OpenAI</td><td class="numeric">$1.05 \times 10^{22}$</td></tr>
+                        <tr><td class="model-name">T5-3B</td><td class="org-name">Google</td><td class="numeric">$9.00 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">Segment Anything</td><td class="org-name">Meta AI</td><td class="numeric">$7.80 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">ADM</td><td class="org-name">OpenAI</td><td class="numeric">$6.20 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">XLNet</td><td class="org-name">CMU, Google Brain</td><td class="numeric">$6.19 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">AlphaFold-Multimer</td><td class="org-name">Google DeepMind</td><td class="numeric">$4.35 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">Whisper</td><td class="org-name">OpenAI</td><td class="numeric">$4.21 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">Gato</td><td class="org-name">DeepMind</td><td class="numeric">$4.02 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">AlphaFold 2</td><td class="org-name">DeepMind</td><td class="numeric">$2.99 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">GPT-2 (1.5B)</td><td class="org-name">OpenAI</td><td class="numeric">$1.92 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">AlphaGo Lee</td><td class="org-name">DeepMind</td><td class="numeric">$1.90 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">BigGAN-deep</td><td class="org-name">DeepMind</td><td class="numeric">$1.80 \times 10^{21}$</td></tr>
+                        <tr><td class="model-name">AlphaGo Fan</td><td class="org-name">DeepMind</td><td class="numeric">$3.80 \times 10^{20}$</td></tr>
+                        <tr><td class="model-name">BERT-Large</td><td class="org-name">Google</td><td class="numeric">$2.85 \times 10^{20}$</td></tr>
+                        <tr><td class="model-name">AlphaFold</td><td class="org-name">DeepMind</td><td class="numeric">$1.00 \times 10^{20}$</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="key-findings">
+                <h2>Key Findings</h2>
+
+                <h3>Compute Concentration</h3>
+                <p>The data reveals that even the largest AI models consume less than 1% of their parent organization's estimated peak annual FLOP capacity. For example:</p>
+                <ul>
+                    <li><strong>Gemini 1.0 Ultra</strong> ($5 \times 10^{25}$ FLOPs) represents only 0.129% of Google DeepMind's annual capacity</li>
+                    <li><strong>Claude 3.5 Sonnet</strong> ($4.98 \times 10^{25}$ FLOPs) represents 0.220% of Anthropic/Amazon's capacity</li>
+                    <li><strong>GPT-4o</strong> ($3.81 \times 10^{25}$ FLOPs) represents 0.088% of Microsoft/OpenAI's capacity</li>
+                </ul>
+
+                <h3>Implications for ABC</h3>
+                <p>These findings support the thesis argument that current AI training dramatically underutilizes available computing resources. If organizations are using less than 1% of their compute for their flagship models, this suggests:</p>
+                <ul>
+                    <li>Significant compute overhead for experimentation and hyperparameter tuning (potentially 100x the final training run)</li>
+                    <li>Large amounts of compute dedicated to inference rather than training</li>
+                    <li>Substantial untapped capacity that could be unlocked through better coordination mechanisms like ABC</li>
+                </ul>
+
+                <h3>Scaling Trends</h3>
+                <p>The most recent frontier models (2024) train at approximately $10^{25}$ FLOPs, representing a roughly 100x increase from GPT-3's $3 \times 10^{23}$ FLOPs in 2020. This exponential scaling continues to validate the importance of access to compute resources for AI capability development.</p>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="appendix1.html" class="prev">Appendix I: Compute Distribution</a>
+                <a href="index.html" class="next">Back to Introduction</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>Andrew Trask &middot; University of Oxford</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.toc-sidebar a');
+            const sections = [];
+            tocLinks.forEach(link => {
+                const id = link.getAttribute('href').substring(1);
+                const section = document.getElementById(id);
+                if (section) sections.push({ id, element: section, link });
+            });
+            function updateActiveLink() {
+                const scrollPos = window.scrollY + 100;
+                let currentSection = sections[0];
+                for (const section of sections) {
+                    if (section.element.offsetTop <= scrollPos) currentSection = section;
+                }
+                tocLinks.forEach(link => link.classList.remove('active'));
+                if (currentSection) currentSection.link.classList.add('active');
+            }
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink();
+        });
+    </script>
+</body>
+</html>
