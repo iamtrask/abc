@@ -462,70 +462,131 @@ em {
     }
 }
 
-/* ASCII Art Margin Decorations */
-.ascii-margin {
-    position: fixed;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: 'Courier New', monospace;
-    font-size: 10px;
-    line-height: 1.2;
-    color: #ddd;
+/* ASCII Art Decorations */
+
+/* Inline ASCII art between sections */
+.ascii-art {
+    text-align: center;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #7a9aaa;
     white-space: pre;
-    pointer-events: none;
-    z-index: 10;
-    transition: opacity 0.5s ease;
+    margin: 3rem auto;
+    padding: 2rem;
+    opacity: 0.9;
+    transition: all 0.4s ease;
 }
 
-.ascii-margin .art-piece {
-    margin-bottom: 2rem;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-
-.ascii-margin .art-piece:hover {
+.ascii-art:hover {
+    color: #4a7a8a;
     opacity: 1;
-    color: #999;
+    transform: scale(1.02);
+}
+
+.ascii-art .caption {
+    display: block;
+    margin-top: 1rem;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8ab;
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+/* Floating animation */
+.ascii-art.float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Pulse animation */
+.ascii-art.pulse {
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.75; }
+    50% { opacity: 1; }
+}
+
+/* Gentle breathing for diagrams */
+.ascii-art.breathe {
+    animation: breathe 5s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.85; }
+    50% { transform: scale(1.04); opacity: 1; }
+}
+
+/* Blink for data points */
+.ascii-art.blink span.dot {
+    animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Sequential reveal */
+.ascii-art.cascade span {
+    opacity: 0;
+    animation: cascadeIn 0.5s ease-out forwards;
+}
+
+.ascii-art.cascade span:nth-child(1) { animation-delay: 0.1s; }
+.ascii-art.cascade span:nth-child(2) { animation-delay: 0.2s; }
+.ascii-art.cascade span:nth-child(3) { animation-delay: 0.3s; }
+.ascii-art.cascade span:nth-child(4) { animation-delay: 0.4s; }
+.ascii-art.cascade span:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes cascadeIn {
+    to { opacity: 1; }
+}
+
+/* Wave animation for network lines */
+.ascii-art.wave {
+    animation: wave 3s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% { letter-spacing: 0; }
+    50% { letter-spacing: 1px; }
+}
+
+/* Hide old margin art */
+.ascii-margin {
+    display: none;
 }
 
 /* ASCII art in sidebar below TOC */
 .toc-sidebar .ascii-decoration {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #eee;
-    font-family: 'Courier New', monospace;
-    font-size: 9px;
-    line-height: 1.1;
-    color: #ccc;
-    white-space: pre;
-    text-align: center;
-}
-
-/* Section break ASCII decorations */
-.ascii-break {
-    text-align: center;
+    border-top: 1px solid #ddd;
     font-family: 'Courier New', monospace;
     font-size: 11px;
     line-height: 1.3;
-    color: #ddd;
+    color: #7a9aaa;
     white-space: pre;
-    margin: 2rem 0;
-    padding: 1rem 0;
+    text-align: center;
+    animation: pulse 5s ease-in-out infinite;
 }
 
-.ascii-break:hover {
-    color: #aaa;
-}
-
-/* Hide margin art on smaller screens */
-@media (max-width: 1400px) {
-    .ascii-margin {
-        display: none;
-    }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
+    .ascii-art {
+        font-size: 11px;
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+
     .toc-sidebar .ascii-decoration {
         display: none;
     }

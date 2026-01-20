@@ -11,11 +11,11 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">Introduction</a>
-        <a href="chapter2.html">I. Deep Voting</a>
-        <a href="chapter3.html">II. Network-Source AI</a>
-        <a href="chapter4.html" class="active">III. Broad Listening</a>
-        <a href="chapter5.html">IV. Conclusion</a>
+        <a href="index.html">I. Introduction</a>
+        <a href="chapter2.html">II. Deep Voting</a>
+        <a href="chapter3.html">III. Network-Source AI</a>
+        <a href="chapter4.html" class="active">IV. Broad Listening</a>
+        <a href="chapter5.html">V. Conclusion</a>
         <a href="about.html">About</a>
     </nav>
 
@@ -35,11 +35,53 @@
                 <li class="toc-h3"><a href="#first-hypothesis">First Hypothesis: The Machinery Exists</a></li>
                 <li class="toc-h3"><a href="#conclusion">Conclusion</a></li>
             </ul>
+            <div class="ascii-decoration">
+  ☺─☺─☺─☺─☺
+    ╲│╱
+     ☺
+    ╱│╲
+  ☺─☺─☺─☺─☺
+
+   6 degrees
+  of listening
+            </div>
         </aside>
+
+        <!-- Floating margin art -->
+        <div class="ascii-margin">
+            <div class="art-piece">
+  Dunbar:
+    150
+
+  ☺☺☺☺☺☺☺☺
+  ☺☺☺☺☺☺☺☺
+  ☺☺☺ ...
+            </div>
+            <div class="art-piece">
+   high
+  branch:
+       ·
+    ╱╱│╲╲
+   ·····
+      ↓
+  bottleneck
+            </div>
+            <div class="art-piece">
+    low
+  branch:
+   ·─·─·
+   │ │ │
+   ·─·─·
+   │ │ │
+   ·─·─·
+     ↓
+   reach
+            </div>
+        </div>
 
         <main>
             <div class="chapter-header">
-                <p class="chapter-number">Chapter III</p>
+                <p class="chapter-number">Chapter IV</p>
                 <h1>From Network-Source AI to Broad Listening</h1>
             </div>
 
@@ -53,6 +95,23 @@
                 <p>Chapters 2 and 3 developed the technical machinery to deliver ABC, but a close reading will surface that the machinery has a flaw which must be addressed: trust at scale. As individuals, AI users and data sources can evaluate perhaps 150 counter-parties by cultivating strong-tie relationships with them. Yet, owing to scaling laws, NSAI requires evaluating millions of data sources in order to curate as much data as standard AI systems.</p>
                 <p>Delegation of trust evaluation is therefore necessary, but it too has a fatal flaw: if AI users and data sources delegate trust evaluation to a small collection of central parties, NSAI collapses back into the system it was meant to replace. This chapter identifies the root issue as high-branching nodes; any node connecting to millions cannot cultivate the strong-tie relationships that trust evaluation requires. The chapter then prescribes recursive delegation through low-branching networks as the remedy, yielding a new paradigm: <strong>broad listening</strong>.</p>
             </section>
+
+            <div class="ascii-art breathe">
+                    DUNBAR'S NUMBER: ~150
+
+         ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺
+         ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺
+         ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺ ☺
+                 ... × 10 rows
+
+       ▲                              ▲
+       │ strong ties                  │ needed
+       │ you can                      │ for ABC
+       │ maintain                     │
+       └────────────────────────────────┘
+              vs  10⁹ sources
+<span class="caption">the trust scale problem</span>
+            </div>
 
             <figure class="full-width">
                 <img src="1411.3146/network_source_ai_to_broad_listening_v2.png" alt="Network-source AI to Broad Listening">
@@ -230,24 +289,24 @@
             <section class="references">
                 <h2>References</h2>
                 <ol>
-                    <li><span class="authors">Dunbar, R. I. M.</span> (1993). <span class="title">Coevolution of neocortical size, group size and language in humans.</span> <span class="venue">Behavioral and Brain Sciences</span>, 16(4), 681–735.</li>
-                    <li><span class="authors">Granovetter, M. S.</span> (1973). <span class="title">The Strength of Weak Ties.</span> <span class="venue">American Journal of Sociology</span>, 78(6), 1360–1380.</li>
-                    <li><span class="authors">Granovetter, M.</span> (1985). <span class="title">Economic Action and Social Structure: The Problem of Embeddedness.</span> <span class="venue">American Journal of Sociology</span>, 91(3), 481–510.</li>
-                    <li><span class="authors">Centola, D., & Macy, M.</span> (2007). <span class="title">Complex Contagions and the Weakness of Long Ties.</span> <span class="venue">American Journal of Sociology</span>, 113(3), 702–734.</li>
-                    <li><span class="authors">Coleman, J. S.</span> (1988). <span class="title">Social Capital in the Creation of Human Capital.</span> <span class="venue">American Journal of Sociology</span>, 94, S95–S120.</li>
-                    <li><span class="authors">Backstrom, L., et al.</span> (2012). <span class="title">Four Degrees of Separation.</span> <span class="venue">ACM Web Science 2012</span>, 33–42.</li>
-                    <li><span class="authors">Goldhaber, M. H.</span> (1997). <span class="title">The Attention Economy and the Net.</span> <span class="venue">First Monday</span>, 2(4).</li>
-                    <li><span class="authors">Hootsuite.</span> (2024). <span class="title">Digital 2024: Global Overview Report.</span> <span class="venue">Hootsuite & We Are Social</span>.</li>
-                    <li><span class="authors">Imperva.</span> (2024). <span class="title">2024 Bad Bot Report.</span> <span class="venue">Imperva Research Labs</span>.</li>
+                    <li><span class="authors">Dunbar, R. I. M.</span> (1993). <a href="https://doi.org/10.1017/S0140525X00032325"><span class="title">Coevolution of neocortical size, group size and language in humans.</span></a> <span class="venue">Behavioral and Brain Sciences</span>, 16(4), 681–735.</li>
+                    <li><span class="authors">Granovetter, M. S.</span> (1973). <a href="https://doi.org/10.1086/225469"><span class="title">The Strength of Weak Ties.</span></a> <span class="venue">American Journal of Sociology</span>, 78(6), 1360–1380.</li>
+                    <li><span class="authors">Granovetter, M.</span> (1985). <a href="https://doi.org/10.1086/228311"><span class="title">Economic Action and Social Structure: The Problem of Embeddedness.</span></a> <span class="venue">American Journal of Sociology</span>, 91(3), 481–510.</li>
+                    <li><span class="authors">Centola, D., & Macy, M.</span> (2007). <a href="https://doi.org/10.1086/521848"><span class="title">Complex Contagions and the Weakness of Long Ties.</span></a> <span class="venue">American Journal of Sociology</span>, 113(3), 702–734.</li>
+                    <li><span class="authors">Coleman, J. S.</span> (1988). <a href="https://doi.org/10.1086/228943"><span class="title">Social Capital in the Creation of Human Capital.</span></a> <span class="venue">American Journal of Sociology</span>, 94, S95–S120.</li>
+                    <li><span class="authors">Backstrom, L., et al.</span> (2012). <a href="https://arxiv.org/abs/1111.4570"><span class="title">Four Degrees of Separation.</span></a> <span class="venue">ACM Web Science 2012</span>, 33–42.</li>
+                    <li><span class="authors">Goldhaber, M. H.</span> (1997). <a href="https://firstmonday.org/article/view/519/440"><span class="title">The Attention Economy and the Net.</span></a> <span class="venue">First Monday</span>, 2(4).</li>
+                    <li><span class="authors">Hootsuite.</span> (2024). <a href="https://www.hootsuite.com/resources/digital-trends"><span class="title">Digital 2024: Global Overview Report.</span></a> <span class="venue">Hootsuite & We Are Social</span>.</li>
+                    <li><span class="authors">Imperva.</span> (2024). <a href="https://www.imperva.com/resources/resource-library/reports/bad-bot-report/"><span class="title">2024 Bad Bot Report.</span></a> <span class="venue">Imperva Research Labs</span>.</li>
                     <li><span class="authors">Simmons, R.</span> (2022). <span class="title">The GDPR and Its Influence on Global Data Privacy Legislation.</span> <span class="venue">Journal of Data Protection & Privacy</span>.</li>
-                    <li><span class="authors">Rao, A.</span> (2015). <span class="title">Klout and Social Scoring.</span> <span class="venue">Wired</span>.</li>
-                    <li><span class="authors">Axelrod, R., & Hamilton, W. D.</span> (1981). <span class="title">The Evolution of Cooperation.</span> <span class="venue">Science</span>, 211(4489), 1390–1396.</li>
+                    <li><span class="authors">Rao, A.</span> (2015). <a href="https://www.wired.com/2012/04/klout-score/"><span class="title">Klout and Social Scoring.</span></a> <span class="venue">Wired</span>.</li>
+                    <li><span class="authors">Axelrod, R., & Hamilton, W. D.</span> (1981). <a href="https://doi.org/10.1126/science.7466396"><span class="title">The Evolution of Cooperation.</span></a> <span class="venue">Science</span>, 211(4489), 1390–1396.</li>
                 </ol>
             </section>
 
             <nav class="chapter-nav">
-                <a href="chapter3.html" class="prev">Chapter II: Network-Source AI</a>
-                <a href="chapter5.html" class="next">Chapter IV: Conclusion</a>
+                <a href="chapter3.html" class="prev">Chapter III: Network-Source AI</a>
+                <a href="chapter5.html" class="next">Chapter V: Conclusion</a>
             </nav>
         </main>
     </div>

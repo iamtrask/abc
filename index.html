@@ -11,11 +11,11 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="active">Introduction</a>
-        <a href="chapter2.html">I. Deep Voting</a>
-        <a href="chapter3.html">II. Network-Source AI</a>
-        <a href="chapter4.html">III. Broad Listening</a>
-        <a href="chapter5.html">IV. Conclusion</a>
+        <a href="index.html" class="active">I. Introduction</a>
+        <a href="chapter2.html">II. Deep Voting</a>
+        <a href="chapter3.html">III. Network-Source AI</a>
+        <a href="chapter4.html">IV. Broad Listening</a>
+        <a href="chapter5.html">V. Conclusion</a>
         <a href="about.html">About</a>
     </nav>
 
@@ -92,6 +92,15 @@
             <p>Many of AI's risks in areas like privacy, value alignment, copyright, concentration of power, and hallucinations can be reduced to the problem of attribution-based control (ABC) in AI systems, which itself can be reduced to the overuse of addition, copying, and branching within gradient descent. This thesis synthesizes a handful of recently proposed techniques in deep learning, cryptography, and distributed systems, revealing a viable path to reduce addition, copying, and branching; provide ABC; and address many of AI's primary risks while accelerating its benefits by unlocking 6+ orders of magnitude more data, compute, and associated AI capability.</p>
         </section>
 
+        <div class="ascii-art float">
+       ╭────────────╮
+       │  ░░░░░░░░  │
+       │  ░ DATA ░  │──────?────── │ USER │
+       │  ░░░░░░░░  │               ╰──────╯
+       ╰────────────╯
+<span class="caption">who controls the flow?</span>
+        </div>
+
         <figure class="full-width">
             <img src="1411.3146/broad_listening_v4.png" alt="Traditional AI vs ABC-enabled AI systems">
             <figcaption>Traditional open/closed-source AI systems (left) centralize data collection and decision-making, while ABC-enabled AI systems (right) enable direct communication between data sources and AI users, preserving attribution and control.</figcaption>
@@ -130,6 +139,19 @@
             <p>This design decision triggers a cascade of consequences, consequences which are felt uniquely at each level of society: individual, institutional, societal, and geo-political. And as a result, each level of society is incubating deep desires for something more than today's AI has to offer. The next four subsections survey this increasing demand for ABC in AI by surveying the felt consequences of the lack of ABC in AI.</p>
         </section>
 
+        <div class="ascii-art breathe">
+            ┌─────────────────────────────────┐
+            │     CONSEQUENCES CASCADE        │
+            └───────────────┬─────────────────┘
+                            │
+          ┌─────────────────┼─────────────────┐
+          ▼                 ▼                 ▼
+    ┌──────────┐     ┌──────────┐     ┌──────────┐
+    │Individual│     │Societal  │     │ Global   │
+    └──────────┘     └──────────┘     └──────────┘
+<span class="caption">problems at every level</span>
+        </div>
+
         <section>
             <h3 id="individual-consequences">Individual Consequences</h3>
 
@@ -152,6 +174,18 @@
 
             <p>However, as this thesis will soon show, when neural networks combine information through addition operations during training, they irreversibly compress the relationship between sources and predictions. No amount of post-training intervention (e.g. fine-tuning, auditing, influence functions, etc.) can fully restore these lost connections, solve the lack of ABC, and empower AI users to better avoid and address AI hallucinations, disinformation, or deepfakes. Yet, if attribution was solved, while it would still be possible to compel an AI to produce false information, it may become difficult (if not impossible) to do so without also revealing the inappropriate sources used to generate such false statements. Altogether, AI needs a bibliography.</p>
         </section>
+
+        <div class="ascii-art pulse">
+         "Is this true?"      "Where did this come from?"
+               │                        │
+               ▼                        ▼
+          ┌─────────┐             ┌─────────┐
+          │ ????? │──── AI ────│ ????? │
+          └─────────┘   output   └─────────┘
+               │                        │
+               └────── no source ───────┘
+<span class="caption">the hallucination problem</span>
+        </div>
 
         <section>
             <h3 id="institutional-consequences">Institutional Consequences</h3>
@@ -237,6 +271,25 @@
             <p>Yet these challenges also reveal an opportunity. By reformulating how AI systems process information (shifting from operations that break ABC to ones that preserve it) society is actively overcoming the perception of AI as a tool of central intelligence, revealing it to be a communication paradigm of great magnitude. And as described above, this change will not just solve technical problems; it could realign AI development with democratic values. The path to this transformation begins with the mathematical operations which preserve or destroy ABC in AI.</p>
         </section>
 
+        <div class="ascii-art breathe">
+           ╔═══════════════════════════════════════╗
+           ║     WHAT'S CAUSING THESE PROBLEMS?    ║
+           ╚═══════════════════════════════════════╝
+
+                    ┌──────────┐
+                    │   ABC    │
+                    │ MISSING  │
+                    └────┬─────┘
+                         │
+        ┌────────────────┼────────────────┐
+        ▼                ▼                ▼
+   ┌─────────┐     ┌──────────┐     ┌──────────┐
+   │ADDITION │     │  COPY    │     │ BRANCHING│
+   │ problem │     │ problem  │     │ problem  │
+   └─────────┘     └──────────┘     └──────────┘
+<span class="caption">three root causes</span>
+        </div>
+
         <section>
             <h2 id="underlying-causes">Underlying Causes and Contributing Factors</h2>
 
@@ -290,6 +343,23 @@
 
             <p>This relationship to ABC reflects a deeper tension in AI development: the choice between transparency and mystique. In the case that ABC provides precise, controllable, and attributable intelligence, many influential voices may prefer the allure and profitability of black-box systems that more closely mirror a specific conception of biological cognition. Yet, this dichotomy does not just shape technical decisions, but who retains power over AI, and the future of AI's role in society. As readers proceed through this thesis, they might consider: what if this preference for black-box AI systems stems not from technical necessity, from safety maximization, or from economic/political incentive, but from deeply held assumptions about what artificial intelligence should be? For now, the thesis will overlook such concerns, returning to them in closing notes.</p>
         </section>
+
+        <div class="ascii-art float">
+   ╭─────────────────────────────────────────────╮
+   │           THE PATH FORWARD                  │
+   ╰─────────────────────────────────────────────╯
+
+   Ch II          Ch III           Ch IV          Ch V
+  ┌────┐        ┌────────┐       ┌──────┐      ┌──────┐
+  │DEEP│   ──▶  │NETWORK │  ──▶  │BROAD │  ──▶ │CONCL-│
+  │VOTE│        │ SOURCE │       │LISTEN│      │USION │
+  └────┘        └────────┘       └──────┘      └──────┘
+    │               │               │
+    ▼               ▼               ▼
+ addition        copying        branching
+  solved         solved          solved
+<span class="caption">thesis roadmap</span>
+        </div>
 
         <section>
             <h2 id="thesis-outline">Thesis Outline</h2>
@@ -405,34 +475,34 @@
         <section class="references">
             <h2>References</h2>
             <ol>
-                <li><span class="authors">Dziri, N., Milton, S., Yu, M., Zaiane, O., & Reddy, S.</span> (2022). <span class="title">On the Origin of Hallucinations in Conversational Models: Is it the Datasets or the Models?</span> <span class="venue">Proceedings of NAACL 2022</span>, 5271–5285.</li>
-                <li><span class="authors">Vaccari, C., & Chadwick, A.</span> (2020). <span class="title">Deepfakes and Disinformation: Exploring the Impact of Synthetic Political Video on Deception, Uncertainty, and Trust in News.</span> <span class="venue">Social Media + Society</span>, 6(1).</li>
-                <li><span class="authors">Zuccon, G., Koopman, B., & Shaik, R.</span> (2023). <span class="title">ChatGPT Hallucinates when Attributing Answers.</span> <span class="venue">SIGIR-AP '23</span>, 46–51.</li>
-                <li><span class="authors">Gravel, J., D'Amours-Gravel, M., & Osmanlliu, E.</span> (2023). <span class="title">Learning to Fake It: Limited Responses and Fabricated References Provided by ChatGPT for Medical Questions.</span> <span class="venue">Mayo Clinic Proceedings: Digital Health</span>, 1(3), 226–234.</li>
-                <li><span class="authors">Xu, Z., Jain, S., & Kankanhalli, M.</span> (2024). <span class="title">Hallucination is Inevitable: An Innate Limitation of Large Language Models.</span> <span class="venue">arXiv:2401.11817</span>.</li>
-                <li><span class="authors">Yu, L., Cao, M., Cheung, J. C., & Dong, Y.</span> (2024). <span class="title">Mechanistic Understanding and Mitigation of Language Model Non-Factual Hallucinations.</span> <span class="venue">Findings of EMNLP 2024</span>, 7943–7956.</li>
-                <li><span class="authors">Trask, A., Bluemke, E., Garfinkel, B., Ghezzou Cuervas-Mons, C., & Dafoe, A.</span> (2020). <span class="title">Beyond Privacy Trade-offs with Structured Transparency.</span> <span class="venue">arXiv:2012.08347</span>.</li>
-                <li><span class="authors">Youssef, A., et al.</span> (2023). <span class="title">Organizational Factors in Clinical Data Sharing for Artificial Intelligence in Health Care.</span> <span class="venue">JAMA Network Open</span>, 6, e2348422.</li>
-                <li><span class="authors">McMahan, H. B., Moore, E., Ramage, D., & Agüera y Arcas, B.</span> (2016). <span class="title">Federated Learning of Deep Networks using Model Averaging.</span> <span class="venue">arXiv:1602.05629</span>.</li>
-                <li><span class="authors">Rieke, N., et al.</span> (2020). <span class="title">The future of digital health with federated learning.</span> <span class="venue">npj Digital Medicine</span>, 3(1).</li>
-                <li><span class="authors">Nguyen, T. T., et al.</span> (2024). <span class="title">A Survey of Machine Unlearning.</span> <span class="venue">arXiv:2209.02299</span>.</li>
-                <li><span class="authors">Amodei, D., et al.</span> (2016). <span class="title">Concrete Problems in AI Safety.</span> <span class="venue">arXiv:1606.06565</span>.</li>
-                <li><span class="authors">Gabriel, I.</span> (2020). <span class="title">Artificial intelligence, values, and alignment.</span> <span class="venue">Minds and Machines</span>, 30(3), 411–437.</li>
-                <li><span class="authors">Ntoutsi, E., et al.</span> (2020). <span class="title">Bias in data-driven artificial intelligence systems—An introductory survey.</span> <span class="venue">WIREs Data Mining and Knowledge Discovery</span>, 10(3), e1356.</li>
-                <li><span class="authors">Kaplan, J., et al.</span> (2020). <span class="title">Scaling Laws for Neural Language Models.</span> <span class="venue">arXiv:2001.08361</span>.</li>
-                <li><span class="authors">Hoffmann, J., et al.</span> (2022). <span class="title">Training Compute-Optimal Large Language Models.</span> <span class="venue">arXiv:2203.15556</span>.</li>
-                <li><span class="authors">Sutton, R.</span> (2019). <span class="title">The Bitter Lesson.</span> <span class="venue">Incomplete Ideas (blog)</span>.</li>
-                <li><span class="authors">Goodfellow, I., Bengio, Y., & Courville, A.</span> (2016). <span class="title">Deep Learning.</span> <span class="venue">MIT Press</span>.</li>
-                <li><span class="authors">Dunbar, R. I. M.</span> (1993). <span class="title">Coevolution of neocortical size, group size and language in humans.</span> <span class="venue">Behavioral and Brain Sciences</span>, 16(4), 681–735.</li>
-                <li><span class="authors">Freeman, L. C.</span> (1977). <span class="title">A set of measures of centrality based on betweenness.</span> <span class="venue">Sociometry</span>, 35–41.</li>
-                <li><span class="authors">Gabriel, I., et al.</span> (2024). <span class="title">The Ethics of Advanced AI Assistants.</span> <span class="venue">arXiv:2404.16244</span>.</li>
-                <li><span class="authors">Mouton, C. A., Lucas, C., & Guest, E.</span> (2023). <span class="title">The Operational Risks of AI in Large-Scale Biological Attacks: A Red-Team Approach.</span> <span class="venue">RAND Corporation</span>.</li>
+                <li><span class="authors">Dziri, N., Milton, S., Yu, M., Zaiane, O., & Reddy, S.</span> (2022). <a href="https://aclanthology.org/2022.naacl-main.387"><span class="title">On the Origin of Hallucinations in Conversational Models: Is it the Datasets or the Models?</span></a> <span class="venue">Proceedings of NAACL 2022</span>, 5271–5285.</li>
+                <li><span class="authors">Vaccari, C., & Chadwick, A.</span> (2020). <a href="https://doi.org/10.1177/2056305120903408"><span class="title">Deepfakes and Disinformation: Exploring the Impact of Synthetic Political Video on Deception, Uncertainty, and Trust in News.</span></a> <span class="venue">Social Media + Society</span>, 6(1).</li>
+                <li><span class="authors">Zuccon, G., Koopman, B., & Shaik, R.</span> (2023). <a href="https://doi.org/10.1145/3624918.3625329"><span class="title">ChatGPT Hallucinates when Attributing Answers.</span></a> <span class="venue">SIGIR-AP '23</span>, 46–51.</li>
+                <li><span class="authors">Gravel, J., D'Amours-Gravel, M., & Osmanlliu, E.</span> (2023). <a href="https://doi.org/10.1016/j.mcpdig.2023.05.004"><span class="title">Learning to Fake It: Limited Responses and Fabricated References Provided by ChatGPT for Medical Questions.</span></a> <span class="venue">Mayo Clinic Proceedings: Digital Health</span>, 1(3), 226–234.</li>
+                <li><span class="authors">Xu, Z., Jain, S., & Kankanhalli, M.</span> (2024). <a href="https://arxiv.org/abs/2401.11817"><span class="title">Hallucination is Inevitable: An Innate Limitation of Large Language Models.</span></a> <span class="venue">arXiv:2401.11817</span>.</li>
+                <li><span class="authors">Yu, L., Cao, M., Cheung, J. C., & Dong, Y.</span> (2024). <a href="https://aclanthology.org/2024.findings-emnlp.466"><span class="title">Mechanistic Understanding and Mitigation of Language Model Non-Factual Hallucinations.</span></a> <span class="venue">Findings of EMNLP 2024</span>, 7943–7956.</li>
+                <li><span class="authors">Trask, A., Bluemke, E., Garfinkel, B., Ghezzou Cuervas-Mons, C., & Dafoe, A.</span> (2020). <a href="https://arxiv.org/abs/2012.08347"><span class="title">Beyond Privacy Trade-offs with Structured Transparency.</span></a> <span class="venue">arXiv:2012.08347</span>.</li>
+                <li><span class="authors">Youssef, A., et al.</span> (2023). <a href="https://doi.org/10.1001/jamanetworkopen.2023.48422"><span class="title">Organizational Factors in Clinical Data Sharing for Artificial Intelligence in Health Care.</span></a> <span class="venue">JAMA Network Open</span>, 6, e2348422.</li>
+                <li><span class="authors">McMahan, H. B., Moore, E., Ramage, D., & Agüera y Arcas, B.</span> (2016). <a href="https://arxiv.org/abs/1602.05629"><span class="title">Federated Learning of Deep Networks using Model Averaging.</span></a> <span class="venue">arXiv:1602.05629</span>.</li>
+                <li><span class="authors">Rieke, N., et al.</span> (2020). <a href="https://doi.org/10.1038/s41746-020-00323-1"><span class="title">The future of digital health with federated learning.</span></a> <span class="venue">npj Digital Medicine</span>, 3(1).</li>
+                <li><span class="authors">Nguyen, T. T., et al.</span> (2024). <a href="https://arxiv.org/abs/2209.02299"><span class="title">A Survey of Machine Unlearning.</span></a> <span class="venue">arXiv:2209.02299</span>.</li>
+                <li><span class="authors">Amodei, D., et al.</span> (2016). <a href="https://arxiv.org/abs/1606.06565"><span class="title">Concrete Problems in AI Safety.</span></a> <span class="venue">arXiv:1606.06565</span>.</li>
+                <li><span class="authors">Gabriel, I.</span> (2020). <a href="https://doi.org/10.1007/s11023-020-09539-2"><span class="title">Artificial intelligence, values, and alignment.</span></a> <span class="venue">Minds and Machines</span>, 30(3), 411–437.</li>
+                <li><span class="authors">Ntoutsi, E., et al.</span> (2020). <a href="https://doi.org/10.1002/widm.1356"><span class="title">Bias in data-driven artificial intelligence systems—An introductory survey.</span></a> <span class="venue">WIREs Data Mining and Knowledge Discovery</span>, 10(3), e1356.</li>
+                <li><span class="authors">Kaplan, J., et al.</span> (2020). <a href="https://arxiv.org/abs/2001.08361"><span class="title">Scaling Laws for Neural Language Models.</span></a> <span class="venue">arXiv:2001.08361</span>.</li>
+                <li><span class="authors">Hoffmann, J., et al.</span> (2022). <a href="https://arxiv.org/abs/2203.15556"><span class="title">Training Compute-Optimal Large Language Models.</span></a> <span class="venue">arXiv:2203.15556</span>.</li>
+                <li><span class="authors">Sutton, R.</span> (2019). <a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html"><span class="title">The Bitter Lesson.</span></a> <span class="venue">Incomplete Ideas (blog)</span>.</li>
+                <li><span class="authors">Goodfellow, I., Bengio, Y., & Courville, A.</span> (2016). <a href="https://www.deeplearningbook.org/"><span class="title">Deep Learning.</span></a> <span class="venue">MIT Press</span>.</li>
+                <li><span class="authors">Dunbar, R. I. M.</span> (1993). <a href="https://doi.org/10.1017/S0140525X00032325"><span class="title">Coevolution of neocortical size, group size and language in humans.</span></a> <span class="venue">Behavioral and Brain Sciences</span>, 16(4), 681–735.</li>
+                <li><span class="authors">Freeman, L. C.</span> (1977). <a href="https://www.jstor.org/stable/3033543"><span class="title">A set of measures of centrality based on betweenness.</span></a> <span class="venue">Sociometry</span>, 35–41.</li>
+                <li><span class="authors">Gabriel, I., et al.</span> (2024). <a href="https://arxiv.org/abs/2404.16244"><span class="title">The Ethics of Advanced AI Assistants.</span></a> <span class="venue">arXiv:2404.16244</span>.</li>
+                <li><span class="authors">Mouton, C. A., Lucas, C., & Guest, E.</span> (2023). <a href="https://www.rand.org/pubs/research_reports/RRA2977-1.html"><span class="title">The Operational Risks of AI in Large-Scale Biological Attacks: A Red-Team Approach.</span></a> <span class="venue">RAND Corporation</span>.</li>
             </ol>
         </section>
 
         <nav class="chapter-nav">
             <span></span>
-            <a href="chapter2.html" class="next">Chapter I: From Deep Learning to Deep Voting</a>
+            <a href="chapter2.html" class="next">Chapter II: From Deep Learning to Deep Voting</a>
         </nav>
     </main>
     </div>
