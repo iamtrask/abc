@@ -206,7 +206,7 @@
 
             <section id="chapter-summary" class="abstract">
                 <h2>Chapter Summary</h2>
-                <p>Estimates below suggest that models are trained using less than 1/1,000,000th of the world's data and AI compute productivity. Consequently, following AI's scaling laws, AI models possess capabilities which are insignificant compared to what existing data, compute, and algorithms could create.</p>
+                <p>Estimates below suggest that models are trained using less than 1/1,000,000th of the world's data and AI compute productivity. Consequently, following AI's scaling laws [<a href="#ref-1" class="cite">1</a>,<a href="#ref-2" class="cite">2</a>], AI models possess capabilities which are insignificant compared to what existing data, compute, and algorithms could create.</p>
                 <p>Yet, if AI models (and their capabilities) are the lifeblood of the AI industry, why are data and compute so underutilized? Why is AI capability so constrained? This chapter unpacks the cause of such a drastic resource under-utilization. It begins by linking resource utilization to attribution-based control (ABC). It then breaks attribution-based control into problems with attribution and control, which are themselves underpinned by deep learning's core philosophy of mixing dense features. This mixing is only problematic because of a specific technical choice: the use of addition to update model weights, which erases provenance information during gradient descent.</p>
             </section>
 
@@ -228,7 +228,7 @@
                     <figcaption>The lack of ABC creates problems for data-owning institutions, problems which avert their sharing of data and compute for AI training, problems which are underpinned by the overuse of addition within deep learning systems.</figcaption>
                 </figure>
 
-                <p>As of NeurIPS 2024, leading AI researchers have reported that available compute and data reserves are approaching saturation, creating constraints on both computational resources and pre-training scale. However, this assessment overlooks approximately six orders of magnitude of underutilized compute productivity and siloed data. Rather than absolute scarcity, the industry faces structural problems of data and compute access and productivity.</p>
+                <p>As of NeurIPS 2024, leading AI researchers have reported that available compute and data reserves are approaching saturation, creating constraints on both computational resources and pre-training scale [<a href="#ref-3" class="cite">3</a>]. However, this assessment overlooks approximately six orders of magnitude of underutilized compute productivity and siloed data. Rather than absolute scarcity, the industry faces structural problems of data and compute access and productivity.</p>
 
                 <h3 id="underutilized-compute">6+ OOM: Underutilized Training Compute Productivity</h3>
 
@@ -246,9 +246,9 @@
                     <p>Consider a library. When someone asks a librarian about the rules of chess, the librarian doesn't subsequently read <em>every book in the library</em> to find the answer. Instead, they use the catalog system to find a relevant bookshelf, the titles of books on that shelf to find the relevant book, and the table of contents of that book to find the relevant section. This practice stands in stark contrast to how AI systems process information. To make an AI prediction with a model like GPT-3, AI users forward propagate <em>through the entire model and all of its knowledge</em> (i.e., read every book in the library). And in the case of large language models, they don't just do this once per answer, they do this <em>for every token they predict</em>.</p>
                 </div>
 
-                <p>DeepMind's RETRO achieves comparable performance to GPT-3 while using 1/25th of the parameters through retrieval from a large-scale vector database. Similarly, Meta's ATLAS demonstrates that models can be reduced to 1/50th their original size while maintaining or exceeding baseline performance through database-augmented inference.</p>
+                <p>DeepMind's RETRO achieves comparable performance to GPT-3 while using 1/25th of the parameters through retrieval from a large-scale vector database [<a href="#ref-4" class="cite">4</a>]. Similarly, Meta's ATLAS demonstrates that models can be reduced to 1/50th their original size while maintaining or exceeding baseline performance through database-augmented inference [<a href="#ref-5" class="cite">5</a>].</p>
 
-                <p>Recent work demonstrates that current architectures contain redundant and underutilized parameters. Guo et al. achieve 5-10x reduction in parameter count through lossless compression while maintaining accuracy:</p>
+                <p>Recent work demonstrates that current architectures contain redundant and underutilized parameters. Guo et al. achieve 5-10x reduction in parameter count through lossless compression while maintaining accuracy [<a href="#ref-6" class="cite">6</a>]:</p>
 
                 <div class="table-container">
                     <table class="data-table">
@@ -288,7 +288,7 @@
                     <p>As before, consider a library. When a library adds or removes a significant number of books to/from their collection, they don't <em>rebuild the entire building and re-print all of their books from scratch</em>, they simply add/remove books, shelves, or rooms. These practices stand in stark contrast to how AI systems process information. To add or remove a significant portion of knowledge from a deep learning system, AI researchers <em>retrain them from scratch</em> (i.e., tear down the entire library, burn all the books, rebuild the library, and re-print all the books from scratch).</p>
                 </div>
 
-                <p>Analysis of the largest AI firms reveals that pre-training their most capable models consumes less than 1% of quarterly compute budgets (see table below). Yet these same firms continue expanding computational infrastructure to support larger models, suggesting that remaining compute capacity is allocated to other training activities rather than final model production.</p>
+                <p>Analysis of the largest AI firms reveals that pre-training their most capable models consumes less than 1% of quarterly compute budgets (see table below) [<a href="#ref-7" class="cite">7</a>]. Yet these same firms continue expanding computational infrastructure to support larger models, suggesting that remaining compute capacity is allocated to other training activities rather than final model production.</p>
 
                 <div class="table-container">
                     <table class="data-table">
@@ -384,12 +384,12 @@
                     <figcaption>A tree of sub-problems regarding data siloing.</figcaption>
                 </figure>
 
-                <p>Following growing rumors across the AI research community that data is becoming a major bottleneck, OpenAI's former chief scientist, Ilya Sutskever, announced during his test of time award speech at NeurIPS 2024 that data for training AI has peaked, "We've achieved peak data and there'll be no more". However, while this may be true for the AI industry, Ilya's statement does not reflect the reality of what data exists in the world.</p>
+                <p>Following growing rumors across the AI research community that data is becoming a major bottleneck, OpenAI's former chief scientist, Ilya Sutskever, announced during his test of time award speech at NeurIPS 2024 that data for training AI has peaked, "We've achieved peak data and there'll be no more" [<a href="#ref-3" class="cite">3</a>]. However, while this may be true for the AI industry, Ilya's statement does not reflect the reality of what data exists in the world.</p>
 
                 <div class="callout">
                     <p class="callout-title">A Library Analogy</p>
                     <p>Consider a world where libraries could only acquire books through anonymous donations left on their doorstep. No matter how many valuable books exist in private collections, university archives, or government repositories, libraries would be limited to what people voluntarily abandon. In such a world, librarians might reasonably conclude they're "running out of books", even while surrounded by vast, inaccessible collections within surrounding businesses and homes.</p>
-                    <p>This mirrors the current state of AI training. When frontier models like GPT-4 (trained on 6.5 trillion tokens), and Qwen2.5-72B (18 trillion tokens), LLama 4 (30 trillion tokens) report hitting data limits, they're really hitting access limits. They're not running out of data, they're running out of data they can freely collect.</p>
+                    <p>This mirrors the current state of AI training. When frontier models like GPT-4 (trained on 6.5 trillion tokens), and Qwen2.5-72B (18 trillion tokens), LLama 4 (30 trillion tokens) [<a href="#ref-7" class="cite">7</a>] report hitting data limits, they're really hitting access limits. They're not running out of data, they're running out of data they can freely collect.</p>
                 </div>
 
                 <p>The scale of untapped data is staggering:</p>
@@ -456,7 +456,7 @@
                     </table>
                 </div>
 
-                <p>Stored email and instant messages alone contain over 1,850 trillion tokens, approximately 60 times the largest known training dataset. Daily human communication generates approximately 150 trillion tokens, accumulating to roughly 55 quadrillion tokens annually.</p>
+                <p>Stored email and instant messages alone contain over 1,850 trillion tokens, approximately 60 times the largest known training dataset [<a href="#ref-10" class="cite">10</a>]. Daily human communication generates approximately 150 trillion tokens, accumulating to roughly 55 quadrillion tokens annually.</p>
 
                 <p>Yet even this vast sea of text represents merely a drop in the ocean of total digital data. While frontier AI models train on curated web scrapes such as Common Crawl (454 TB as of December 2023), the Internet Archive's Wayback Machine alone stores approximately 100 petabytes. Meanwhile, global digital data is projected to reach 180 zettabytes by 2025, six orders of magnitude larger than The Internet Archive and nine orders of magnitude larger than the largest known training datasets.</p>
             </section>
@@ -496,9 +496,9 @@
                 </ul>
 
                 <h3>ABC and Compute Productivity (6+ OOM)</h3>
-                <p>ABC would address compute productivity issues along two dimensions: access and learning structure. Regarding structure, successful ABC would necessarily provide a means to structure the learning and representation process, reducing re-training, forward propagation, redundancy, and catastrophic forgetting.</p>
+                <p>ABC would address compute productivity issues along two dimensions: access and learning structure. Regarding structure, successful ABC would necessarily provide a means to structure the learning and representation process, reducing re-training, forward propagation, redundancy, and catastrophic forgetting [<a href="#ref-9" class="cite">9</a>].</p>
 
-                <p>RETRO and ATLAS demonstrate the minimum scale of such a breakthrough. By maintaining source-based partitions through their database architecture, they achieve equal performance while activating only 2-4% of the parameters of similarly performant dense models.</p>
+                <p>RETRO and ATLAS demonstrate the minimum scale of such a breakthrough. By maintaining source-based partitions through their database architecture, they achieve equal performance while activating only 2-4% of the parameters of similarly performant dense models [<a href="#ref-4" class="cite">4</a>,<a href="#ref-5" class="cite">5</a>].</p>
 
                 <h3>How Failing ABC Siloes Data (6 OOM)</h3>
                 <p>Recall that current AI models can only train on data they can access. Consequently, AI models almost certainly train on less than 1/1,000,000th of the digitized information in the world because they cannot access the other 99.9999%, which remains hidden amongst the world's 360 million companies, 8+ billion citizens, etc.</p>
@@ -514,7 +514,7 @@
                     <figcaption>Subset of conceptual graph highlighting the Second Why and focus of this section.</figcaption>
                 </figure>
 
-                <p>The previous section revealed how solving attribution-based control would necessarily enable massive data and compute gains in AI systems. Yet this raises a deeper question: why do current AI systems fail to maintain attribution in the first place? The answer lies in deep learning's foundational premise: algorithms should learn everything from scratch through layers of (largely) unrestricted feature mixing on raw data.</p>
+                <p>The previous section revealed how solving attribution-based control would necessarily enable massive data and compute gains in AI systems. Yet this raises a deeper question: why do current AI systems fail to maintain attribution in the first place? The answer lies in deep learning's foundational premise: algorithms should learn everything from scratch through layers of (largely) unrestricted feature mixing on raw data [<a href="#ref-8" class="cite">8</a>].</p>
 
                 <p>This commitment to unrestricted learning manifests in how neural networks fundamentally process information. Through operations that combine and mix information at every step (from layer computations to weight updates to knowledge accumulation) neural networks create increasingly complex representations of patterns in their training data. While this flexibility enables powerful pattern recognition, it creates a fundamental problem: features become stored in a disorganized, obfuscated way within the deep learning model... a black box.</p>
 
@@ -588,7 +588,7 @@
 
                 <p>In contrast, perhaps most information is encyclopedic and appears sparsely: specific facts about the world, domain expertise in particular fields, claims made by individual sources, etc. The capital of France, the rules of chess, statistics about pizza... each appears in distinct contexts with limited overlap.</p>
 
-                <p>A key insight of this chapter is that techniques from privacy-preserving machine learning, particularly differential privacy (DP), provide a principled way to measure and control which features benefit from dense mixing versus sparse representation. Differential privacy quantifies how much a model's outputs depend on any individual training example:</p>
+                <p>A key insight of this chapter is that techniques from privacy-preserving machine learning, particularly differential privacy (DP) [<a href="#ref-15" class="cite">15</a>], provide a principled way to measure and control which features benefit from dense mixing versus sparse representation. Differential privacy quantifies how much a model's outputs depend on any individual training example:</p>
 
                 <div class="definition-box">
                     <h3>(ε, δ)-Differential Privacy</h3>
@@ -702,7 +702,7 @@
 
                 <div class="callout">
                     <p class="callout-title">Deep Voting Analogy: Individual Differential Privacy via Adaptive Filtering</p>
-                    <p>Feldman and Zrnic's individual differential privacy framework provides a concrete example of intelligence budgets implemented through adaptive filtering rather than architectural routing.</p>
+                    <p>Feldman and Zrnic's individual differential privacy framework [<a href="#ref-17" class="cite">17</a>] provides a concrete example of intelligence budgets implemented through adaptive filtering rather than architectural routing.</p>
                     <p><strong>Architecture:</strong> Their approach uses $\lambda = 1$ (pure syntactic processing) with all capacity in shared parameters $\Theta_{\text{syntactic}}$. No semantic section exists ($\Theta_{\text{semantic}}[s] = \emptyset$), meaning all sources contribute only through raw inputs: $h(x) = f([x_1, \ldots, x_n]; \Theta_{\text{syntactic}})$ where $f$ adds Gaussian noise for privacy.</p>
                     <p><strong>Intelligence Budgets via Filtering:</strong> Rather than controlling $\gamma[s]$ continuously, they implement binary filtering. At each time step $t$, compute the individual privacy loss $\rho_t^{(i)} = \frac{\alpha \|\bar{g}_t(X_i)\|_2^2}{2\sigma^2}$ where $\bar{g}_t(X_i)$ is the clipped gradient. Source $i$ remains active while $\sum_{j=1}^t \rho_t^{(i)} \leq B$, then gets dropped (equivalent to setting $\gamma[i] = 0$ for all future steps).</p>
                     <p><strong>Key Insight:</strong> The intelligence budget $B(i)$ is implicitly determined by realized gradient norms. For Lipschitz functions with coordinate sensitivity $L_i$, the bound becomes $B(i) \approx \frac{\alpha L_i^2 \|\phi(X_i)\|^2}{2\sigma^2}$. Sources with small gradients (low sensitivity) can participate longer before exceeding their budget.</p>
@@ -743,7 +743,7 @@
                 </figure>
 
                 <h3>The First Crack: RETRO and ATLAS</h3>
-                <p>Recent architectures challenge baseline tradeoffs. RETRO outperforms GPT-3 on the Pile (0.670 vs 0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3's 175B:</p>
+                <p>Recent architectures challenge baseline tradeoffs. RETRO outperforms GPT-3 on the Pile (0.670 vs 0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3's 175B [<a href="#ref-4" class="cite">4</a>]:</p>
 
                 <div class="table-container">
                     <table class="data-table">
@@ -782,7 +782,7 @@
 
                 <p>This constitutes a 25x reduction in parameter count while achieving superior performance and maintaining clear attribution paths through its retrieval mechanism.</p>
 
-                <p>ATLAS demonstrates similar gains: 25-50x parameter efficiency improvements while maintaining or exceeding baseline performance. Both systems achieve these results through a fundamental architectural shift: rather than compressing all knowledge into dense parameters, they maintain explicit connections to source documents through retrieval.</p>
+                <p>ATLAS demonstrates similar gains: 25-50x parameter efficiency improvements while maintaining or exceeding baseline performance [<a href="#ref-5" class="cite">5</a>]. Both systems achieve these results through a fundamental architectural shift: rather than compressing all knowledge into dense parameters, they maintain explicit connections to source documents through retrieval.</p>
 
                 <p>Federated RAG systems demonstrate concurrent improvements in attribution and performance:</p>
 
@@ -807,7 +807,7 @@
                 </div>
 
                 <h3>Deep Voting: Formalizing the Pattern</h3>
-                <p>These architectures (RETRO, ATLAS, PATE, federated RAG, and Git Re-Basin) share a common technical mechanism: they replace addition operations during training with concatenation, deferring synthesis until inference time. We formalize this pattern as <em>deep voting</em>.</p>
+                <p>These architectures (RETRO, ATLAS, PATE [<a href="#ref-18" class="cite">18</a>], federated RAG [<a href="#ref-19" class="cite">19</a>], and Git Re-Basin [<a href="#ref-20" class="cite">20</a>]) share a common technical mechanism: they replace addition operations during training with concatenation, deferring synthesis until inference time. We formalize this pattern as <em>deep voting</em>.</p>
 
                 <figure class="full-width">
                     <img src="1411.3146/deep_learning_to_deep_voting_v3.png" alt="Deep Learning to Deep Voting">
@@ -822,28 +822,28 @@
             <section class="references">
                 <h2>References</h2>
                 <ol>
-                    <li><span class="authors">Kaplan, J., et al.</span> (2020). <a href="https://arxiv.org/abs/2001.08361"><span class="title">Scaling Laws for Neural Language Models.</span></a> <span class="venue">arXiv:2001.08361</span>.</li>
-                    <li><span class="authors">Hoffmann, J., et al.</span> (2022). <a href="https://arxiv.org/abs/2203.15556"><span class="title">Training Compute-Optimal Large Language Models.</span></a> <span class="venue">arXiv:2203.15556</span>.</li>
-                    <li><span class="authors">Robison, K.</span> (2024). <a href="https://www.theverge.com/2024/12/13/24320811/openai-ilya-sutskever-agi-data-training"><span class="title">OpenAI cofounder Ilya Sutskever says the way AI is built is about to change.</span></a> <span class="venue">The Verge</span>.</li>
-                    <li><span class="authors">Borgeaud, S., et al.</span> (2022). <a href="https://arxiv.org/abs/2112.04426"><span class="title">Improving language models by retrieving from trillions of tokens.</span></a> <span class="venue">ICML 2022</span>, 2206–2240.</li>
-                    <li><span class="authors">Izacard, G., et al.</span> (2023). <a href="https://arxiv.org/abs/2208.03299"><span class="title">Atlas: Few-shot Learning with Retrieval Augmented Language Models.</span></a> <span class="venue">Journal of Machine Learning Research</span>, 24, 1–43.</li>
-                    <li><span class="authors">Guo, Z., et al.</span> (2023). <a href="https://arxiv.org/abs/2310.05773"><span class="title">Towards lossless dataset distillation via difficulty-aligned trajectory matching.</span></a> <span class="venue">arXiv:2310.05773</span>.</li>
-                    <li><span class="authors">Epoch AI.</span> (2024). <a href="https://epoch.ai/data/notable-ai-models"><span class="title">Data on Notable AI Models.</span></a> <span class="venue">epoch.ai/data/notable-ai-models</span>.</li>
-                    <li><span class="authors">Goodfellow, I., Bengio, Y., & Courville, A.</span> (2016). <a href="https://www.deeplearningbook.org/"><span class="title">Deep Learning.</span></a> <span class="venue">MIT Press</span>.</li>
-                    <li><span class="authors">Kemker, R., et al.</span> (2018). <a href="https://arxiv.org/abs/1708.02072"><span class="title">Measuring Catastrophic Forgetting in Neural Networks.</span></a> <span class="venue">AAAI 2018</span>.</li>
-                    <li><span class="authors">Cummins, M.</span> (2024). <a href="https://educatingsilicon.substack.com/p/how-much-llm-training-data-is-there"><span class="title">How much LLM training data is there, in the limit?</span></a> <span class="venue">Educating Silicon</span>.</li>
-                    <li><span class="authors">Le, Q. V., et al.</span> (2013). <a href="https://arxiv.org/abs/1112.6209"><span class="title">Building high-level features using large scale unsupervised learning.</span></a> <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence</span>.</li>
-                    <li><span class="authors">Krizhevsky, A., Sutskever, I., & Hinton, G. E.</span> (2012). <a href="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"><span class="title">ImageNet Classification with Deep Convolutional Neural Networks.</span></a> <span class="venue">NeurIPS 2012</span>.</li>
-                    <li><span class="authors">Zeiler, M. D., & Fergus, R.</span> (2014). <a href="https://arxiv.org/abs/1311.2901"><span class="title">Visualizing and Understanding Convolutional Networks.</span></a> <span class="venue">ECCV 2014</span>.</li>
-                    <li><span class="authors">Chomsky, N.</span> (2014). <a href="https://mitpress.mit.edu/9780262527408/aspects-of-the-theory-of-syntax/"><span class="title">Aspects of the Theory of Syntax.</span></a> <span class="venue">MIT Press</span>.</li>
-                    <li><span class="authors">Dwork, C., et al.</span> (2006). <a href="https://doi.org/10.1007/11681878_14"><span class="title">Calibrating noise to sensitivity in private data analysis.</span></a> <span class="venue">TCC 2006</span>.</li>
-                    <li><span class="authors">Abadi, M., et al.</span> (2016). <a href="https://arxiv.org/abs/1607.00133"><span class="title">Deep Learning with Differential Privacy.</span></a> <span class="venue">CCS 2016</span>.</li>
-                    <li><span class="authors">Feldman, V., & Zrnic, T.</span> (2020). <a href="https://arxiv.org/abs/2008.11193"><span class="title">Individual Privacy Accounting via a Renyi Filter.</span></a> <span class="venue">arXiv:2008.11193</span>.</li>
-                    <li><span class="authors">Papernot, N., et al.</span> (2018). <a href="https://arxiv.org/abs/1802.08908"><span class="title">Scalable Private Learning with PATE.</span></a> <span class="venue">ICLR 2018</span>.</li>
-                    <li><span class="authors">Zhao, Y., et al.</span> (2018). <a href="https://arxiv.org/abs/1806.00582"><span class="title">Federated Learning with Non-IID Data.</span></a> <span class="venue">arXiv:1806.00582</span>.</li>
-                    <li><span class="authors">Ainsworth, S. K., et al.</span> (2022). <a href="https://arxiv.org/abs/2209.04836"><span class="title">Git Re-Basin: Merging Models modulo Permutation Symmetries.</span></a> <span class="venue">arXiv:2209.04836</span>.</li>
-                    <li><span class="authors">Nguyen, T. T., et al.</span> (2024). <a href="https://arxiv.org/abs/2209.02299"><span class="title">A Survey of Machine Unlearning.</span></a> <span class="venue">arXiv:2209.02299</span>.</li>
-                    <li><span class="authors">Hochreiter, S., & Schmidhuber, J.</span> (1997). <a href="https://doi.org/10.1162/neco.1997.9.8.1735"><span class="title">Long Short-Term Memory.</span></a> <span class="venue">Neural Computation</span>, 9(8), 1735–1780.</li>
+                    <li id="ref-1"><span class="authors">Kaplan, J., et al.</span> (2020). <a href="https://arxiv.org/abs/2001.08361"><span class="title">Scaling Laws for Neural Language Models.</span></a> <span class="venue">arXiv:2001.08361</span>.</li>
+                    <li id="ref-2"><span class="authors">Hoffmann, J., et al.</span> (2022). <a href="https://arxiv.org/abs/2203.15556"><span class="title">Training Compute-Optimal Large Language Models.</span></a> <span class="venue">arXiv:2203.15556</span>.</li>
+                    <li id="ref-3"><span class="authors">Robison, K.</span> (2024). <a href="https://www.theverge.com/2024/12/13/24320811/openai-ilya-sutskever-agi-data-training"><span class="title">OpenAI cofounder Ilya Sutskever says the way AI is built is about to change.</span></a> <span class="venue">The Verge</span>.</li>
+                    <li id="ref-4"><span class="authors">Borgeaud, S., et al.</span> (2022). <a href="https://arxiv.org/abs/2112.04426"><span class="title">Improving language models by retrieving from trillions of tokens.</span></a> <span class="venue">ICML 2022</span>, 2206–2240.</li>
+                    <li id="ref-5"><span class="authors">Izacard, G., et al.</span> (2023). <a href="https://arxiv.org/abs/2208.03299"><span class="title">Atlas: Few-shot Learning with Retrieval Augmented Language Models.</span></a> <span class="venue">Journal of Machine Learning Research</span>, 24, 1–43.</li>
+                    <li id="ref-6"><span class="authors">Guo, Z., et al.</span> (2023). <a href="https://arxiv.org/abs/2310.05773"><span class="title">Towards lossless dataset distillation via difficulty-aligned trajectory matching.</span></a> <span class="venue">arXiv:2310.05773</span>.</li>
+                    <li id="ref-7"><span class="authors">Epoch AI.</span> (2024). <a href="https://epoch.ai/data/notable-ai-models"><span class="title">Data on Notable AI Models.</span></a> <span class="venue">epoch.ai/data/notable-ai-models</span>.</li>
+                    <li id="ref-8"><span class="authors">Goodfellow, I., Bengio, Y., & Courville, A.</span> (2016). <a href="https://www.deeplearningbook.org/"><span class="title">Deep Learning.</span></a> <span class="venue">MIT Press</span>.</li>
+                    <li id="ref-9"><span class="authors">Kemker, R., et al.</span> (2018). <a href="https://arxiv.org/abs/1708.02072"><span class="title">Measuring Catastrophic Forgetting in Neural Networks.</span></a> <span class="venue">AAAI 2018</span>.</li>
+                    <li id="ref-10"><span class="authors">Cummins, M.</span> (2024). <a href="https://educatingsilicon.substack.com/p/how-much-llm-training-data-is-there"><span class="title">How much LLM training data is there, in the limit?</span></a> <span class="venue">Educating Silicon</span>.</li>
+                    <li id="ref-11"><span class="authors">Le, Q. V., et al.</span> (2013). <a href="https://arxiv.org/abs/1112.6209"><span class="title">Building high-level features using large scale unsupervised learning.</span></a> <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence</span>.</li>
+                    <li id="ref-12"><span class="authors">Krizhevsky, A., Sutskever, I., & Hinton, G. E.</span> (2012). <a href="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"><span class="title">ImageNet Classification with Deep Convolutional Neural Networks.</span></a> <span class="venue">NeurIPS 2012</span>.</li>
+                    <li id="ref-13"><span class="authors">Zeiler, M. D., & Fergus, R.</span> (2014). <a href="https://arxiv.org/abs/1311.2901"><span class="title">Visualizing and Understanding Convolutional Networks.</span></a> <span class="venue">ECCV 2014</span>.</li>
+                    <li id="ref-14"><span class="authors">Chomsky, N.</span> (2014). <a href="https://mitpress.mit.edu/9780262527408/aspects-of-the-theory-of-syntax/"><span class="title">Aspects of the Theory of Syntax.</span></a> <span class="venue">MIT Press</span>.</li>
+                    <li id="ref-15"><span class="authors">Dwork, C., et al.</span> (2006). <a href="https://doi.org/10.1007/11681878_14"><span class="title">Calibrating noise to sensitivity in private data analysis.</span></a> <span class="venue">TCC 2006</span>.</li>
+                    <li id="ref-16"><span class="authors">Abadi, M., et al.</span> (2016). <a href="https://arxiv.org/abs/1607.00133"><span class="title">Deep Learning with Differential Privacy.</span></a> <span class="venue">CCS 2016</span>.</li>
+                    <li id="ref-17"><span class="authors">Feldman, V., & Zrnic, T.</span> (2020). <a href="https://arxiv.org/abs/2008.11193"><span class="title">Individual Privacy Accounting via a Renyi Filter.</span></a> <span class="venue">arXiv:2008.11193</span>.</li>
+                    <li id="ref-18"><span class="authors">Papernot, N., et al.</span> (2018). <a href="https://arxiv.org/abs/1802.08908"><span class="title">Scalable Private Learning with PATE.</span></a> <span class="venue">ICLR 2018</span>.</li>
+                    <li id="ref-19"><span class="authors">Zhao, Y., et al.</span> (2018). <a href="https://arxiv.org/abs/1806.00582"><span class="title">Federated Learning with Non-IID Data.</span></a> <span class="venue">arXiv:1806.00582</span>.</li>
+                    <li id="ref-20"><span class="authors">Ainsworth, S. K., et al.</span> (2022). <a href="https://arxiv.org/abs/2209.04836"><span class="title">Git Re-Basin: Merging Models modulo Permutation Symmetries.</span></a> <span class="venue">arXiv:2209.04836</span>.</li>
+                    <li id="ref-21"><span class="authors">Nguyen, T. T., et al.</span> (2024). <a href="https://arxiv.org/abs/2209.02299"><span class="title">A Survey of Machine Unlearning.</span></a> <span class="venue">arXiv:2209.02299</span>.</li>
+                    <li id="ref-22"><span class="authors">Hochreiter, S., & Schmidhuber, J.</span> (1997). <a href="https://doi.org/10.1162/neco.1997.9.8.1735"><span class="title">Long Short-Term Memory.</span></a> <span class="venue">Neural Computation</span>, 9(8), 1735–1780.</li>
                 </ol>
             </section>
 
