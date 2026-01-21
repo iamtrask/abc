@@ -580,6 +580,88 @@ main {
     }
 }
 
+/* Data Tables */
+.table-container {
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 0 auto;
+}
+
+.data-table caption {
+    font-style: italic;
+    text-align: center;
+    padding: 0.75rem;
+    color: #555;
+    caption-side: top;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.data-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.data-table td {
+    white-space: nowrap;
+}
+
+.data-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.data-table tr.highlight {
+    background-color: #e8f4e8 !important;
+}
+
+.data-table tr.baseline {
+    background-color: #f0f0f0;
+    font-weight: 500;
+}
+
+.data-table td.lossless {
+    background-color: #d4edda;
+    font-weight: 600;
+}
+
+.data-table td strong {
+    color: #0a0a0a;
+}
+
+/* Responsive tables */
+@media (max-width: 768px) {
+    .data-table {
+        font-size: 0.8rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 0.4rem 0.5rem;
+    }
+}
+
 /* References/Citations section */
 .references {
     margin-top: 3rem;

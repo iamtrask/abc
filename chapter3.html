@@ -213,8 +213,8 @@
             </figure>
 
             <figure class="full-width">
-                <img src="1411.3146/deep_voting_to_network_source_ai_v2.png" alt="Deep Voting to Network-Source AI">
-                <figcaption>Deep voting (left) preserves attribution but whoever holds a copy of the model has unilateral control. Network-source AI (right) uses structured transparency to ensure data sources retain control even during inference.</figcaption>
+                <img src="1411.3146/deep_voting_to_network_source_ai_v3.png" alt="Deep Voting to Network-Source AI">
+                <figcaption>Deep voting systems (left) require the copying of data from source to the holder of an AI model, while network-source AI systems (right) leverage cryptography and distributed systems to enable data holders to retain control over the only copy of their information (and the predictive capability that information lends to an AI system). In network-source AI, AI users directly query vast numbers of data owners requesting predictive capability for a single prediction, learning only the output of their prediction in the process. AI system partitions (as in source-separated parameters from Deep Voting... pictured above as pie slices) are rapidly synthesized to form a model used for a specific prediction. Darker lines/slices indicate syntactic and semantic information being used for a particular prediction. Lighter lines/slices indicate information not being used for a particular prediction. The circle on top of the slices represents a dense model capable of rapidly synthesizing slices and semantic information in practice (which itself must be trained to do so). Metadata (which tracks the synthesis and subsequent use of semantic queries and syntactic slices for an AI prediction) enables ABC.</figcaption>
             </figure>
 
             <section id="chapter-summary" class="abstract">
@@ -255,9 +255,19 @@
 
                 <div class="callout">
                     <p class="callout-title">A Library Analogy</p>
-                    <p>Consider a bookstore which purchases books once but then allows customers to print copies without tracking. Authors would be hesitant to sell their books there because they make far less money than if they sold to a store which does not enable copies.</p>
-                    <p>Deep voting offers a way for attribution metadata to be revealed and configured, but because of an inherent information asymmetry, the original author still struggles to control pricing and usage. Instead, to maximize incentives for authors, they should be able to sell their books one copy at a time.</p>
+                    <p>Consider a bookstore which purchases books once but then allows customers to come in and print copies of the books for sale in their store (without tracking how many copies people make). Naturally, authors of books might be hesitant to sell their books to the store because they presumably make far less money than if they sell to a store which does not enable copies.</p>
+                    <p>This book store analogy corresponds closely to the current practice of deep learning models, which offer unmeasured, unrestricted copying of information due to their inability to offer attribution with their predictions. Fortunately, deep voting offers a way for attribution metadata to be revealed and configured, but does this solve the issue?</p>
+                    <p>Not necessarily, because of an inherent information asymmetry: in a bookstore where the bookstore owner knows how many copies are made, the bookstore owner has far more information on whether their clientele are likely to purchase copies of the book than the author of the book does. Thus, even if the author tries to raise their prices to make up for the bookstore making copies, the original author still struggles to know what the true price might be relative to the bookstore owner.</p>
+                    <p>Instead, to maximize incentives for the authors of books (and maximize the number of books being offered in stores), authors should instead be able to sell their books one copy at a time. In this way, the author can set their price and will make more money if more books are sold. Not only will this better motivate authors to sell their books in more stores, but it will also serve to attract more people to become book authors.</p>
                 </div>
+
+                <p>This unilateral control problem reflects a deeper pattern that has constrained information systems throughout history. When one party gives information to another, the giver loses control over how that information will be used. AI systems, despite their sophistication, remain bound by this same fundamental limitation. Organizations sharing their data with an AI system have no technical mechanism to enforce their attribution preferences; they must simply trust the model's operator to honor them.</p>
+
+                <p>Consider how this manifests in practice. A deep voting model might faithfully track attribution and maintain intelligence budgets, but these mechanisms remain under unilateral control. The model's owner can simply choose to ignore or override these constraints at will.</p>
+
+                <p>This creates a trust barrier that blocks deep voting's potential. Medical institutions, for example, cite exactly these control and attribution concerns as primary barriers to sharing their vast repositories of valuable data. Without a way to technically enforce how their information will be used and attributed, they cannot safely contribute to AI training. This pattern repeats across domains, from scientific research to financial data to government records; vast stores of valuable information remain siloed because we lack mechanisms to ensure attribution-based control, and the corresponding incentives for collaboration that ABC would bring to AI systems.</p>
+
+                <p>The challenge before us is clear: we need more than just better attribution mechanisms; we need a fundamentally new approach to how AI systems are controlled. We need techniques that transcend the limitations of unilateral control that have constrained information systems throughout history. The next sections examine why current approaches fundamentally fail to solve this problem, and introduce a new paradigm that could deliver on deep voting's promise.</p>
             </section>
 
             <section id="second-why">
@@ -352,11 +362,23 @@
                 <p>Input verification addresses this problem through cryptographic techniques like zero-knowledge proofs and attestation chains. These allow data sources to prove properties about their data without revealing the data itself. For example:</p>
 
                 <ul>
-                    <li>A news organization could prove their articles were published on specific dates</li>
-                    <li>A scientific journal could prove their papers passed peer review</li>
-                    <li>A social media platform could prove their content meets certain quality thresholds</li>
-                    <li>An expert could prove their credentials without revealing their identity</li>
+                    <li>A news organization could prove their articles were published on specific dates, because a hash of the data was signed by someone who is a trusted timekeeper</li>
+                    <li>A scientific journal could prove their papers passed peer review, because the paper was cryptographically signed by the reviewers or journal (e.g. hosted on an HTTPS website)</li>
+                    <li>A social media platform could prove their content meets certain quality thresholds, because the data is cryptographically signed by a trusted auditor</li>
+                    <li>An expert could prove their credentials without revealing their identity, because the issuer of those credentials has cryptographically signed a statement</li>
                 </ul>
+
+                <p>Input verification comes in roughly two styles: internal consistency and external validation. One can think of internal consistency as the type of verification a barkeep might do when inspecting a driver's license. They might check that the license contains all its requisite parts, that the photos are in the right places, and that the document appears to be untampered and whole.</p>
+
+                <p>Meanwhile, external validation is all about reputation, the degree to which others have claimed that a document is true. To continue with the barkeep analogy, this would be like if a bartender called the local government to check that a government document was indeed genuine, "Hi yes — does the State of Nevada have a person named James Brown with the driver's license number 23526436?" The claim is verified not because of an internal property, but because a credible source has claimed that something is true.</p>
+
+                <p>For internal consistency, verified computation enables one to send a function to inspect data and check whether it has properties it should. For example, an AI user who is leveraging MRI scans might send in a classifier to check whether the MRI scans actually contain "pictures of a human head", receiving back summary statistics validating that the data they cannot see is, in fact, the right type of data.</p>
+
+                <p>Meanwhile, input verification techniques can also enable the external validation form of verification. Parties who believe something about a piece of data (i.e. "According to me... this statement is true"), can use public-key cryptography to hash and sign the underlying data with their cryptographic signature. For example, a journalist might sign their article as being true. A doctor might sign their diagnosis as being their genuine opinion. Or an eye witness to an event might sign their iPhone video as being something they genuinely saw.</p>
+
+                <p>Note that while it might sound far-fetched for everyone to be cryptographically signing all their information, it is noteworthy that every website loadable by HTTPS gets signed by the web server hosting it. Thus, there is actually a rather robustly deployed chain of signatures already deployed in the world. For example, if I needed to prove to you that I have a certain amount of money in my bank account, I could load a webpage of my bank, download the page with the signed hash, and show it to you. The generality of this technology being deployed at web scale is one source of optimism around the DID:WEB movement for self-sovereign identity.</p>
+
+                <p>In the context of deep voting, these proofs would be integrated into the input privacy system. When an AI user queries encrypted data sources through homomorphic encryption or secure enclaves, each source would provide not just encrypted data but also cryptographic proofs about that data's properties. The enclaves would verify these proofs before incorporating the data into computations. And in this way, an AI user can know that they are relying upon information which has properties they desire and which is signed as genuine from sources they elect to trust.</p>
 
                 <h3 id="output-verification">Output Verification: Verifiable Computation and Attestation Chains</h3>
                 <p>While input verification ensures the quality of source data, we still need to verify that our privacy-preserving computations are computing using the code and inputs that have been requested. Only then can an AI user trust that the aforementioned input/output privacy and input verification techniques are properly enforcing deep voting's intelligence budgets.</p>
