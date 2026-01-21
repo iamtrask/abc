@@ -672,11 +672,28 @@ main {
     }
 }
 
+/* Inline citations */
+.cite {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.cite:hover {
+    text-decoration: underline;
+}
+
 /* References/Citations section */
 .references {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid #ddd;
+}
+
+.references li:target {
+    background-color: #ffffd0;
+    padding: 0.25rem;
+    margin-left: -0.25rem;
+    border-radius: 3px;
 }
 
 .references h2 {
