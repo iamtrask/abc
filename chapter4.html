@@ -284,13 +284,13 @@
 
                 <p>Trust requires observation. If no one has ever observed a party perform, no one can trust that party to perform well, one can only <em>hope</em>. One might be tempted to argue that everyday life involves trusting many people one has not directly observed (e.g., taxi drivers, baristas) because they are credentialed in some way. But credentials, ratings, and recommendations do not create trust; they transfer it. At the origin of every trust chain, someone watched.</p>
 
-                <p>Consider the CV of the oncologist from the example above. It represents layers of transferred trust from medical schools that observed her learn, residency programs that observed her practice, and credentialing boards that reviewed her record. Patients who trust the CV are trusting these institutions to have done the observation on their behalf. But after treatment, successful patients hold something stronger: trust built through their own time with her, perhaps through diagnoses that proved correct or through her listening when they were afraid. While the CV offers borrowed trust, the relationship offers earned trust.</p>
+                <p>Consider the CV of the oncologist from the example above. It represents layers of transferred trust from medical schools that observed her learn, residency programs that observed her practice, and credentialing boards that reviewed her record. Patients who trust the CV are trusting these institutions to have done the observation on their behalf. But after treatment, successful patients hold something stronger: trust built through their own time with her, perhaps through diagnoses that proved correct or through her listening when they were afraid. While the CV offers borrowed trust, the relationship offers earned trust. And crucially, the relationship is mutual. Because the oncologist depends on her patients for referrals and reputation, if she misleads her patients, she loses something she values. This mutual dependency helps to make the trust enforceable.</p>
 
                 <p>Sociologists call these high-trust relationships "strong ties": relationships characterized by sustained interaction, emotional investment, and mutual obligation. The last element is crucial. Mutual obligation means both parties have stakes in the relationship's continuation... and therefore both bear costs if they betray it. This is what makes strong-tie trust enforceable rather than merely hopeful.</p>
 
                 <p>The problem is that building strong-tie relationships requires attention, and attention is finite. Dunbar's research establishes the constraint as universal across humans: approximately 150 stable relationships... a limit traced to neocortex size itself.</p>
 
-                <p>Meanwhile, NSAI requires trust assessments for millions of sources. If competitive systems require data at thirty-trillion-token scale from millions of sources, and individuals can maintain at most 150 strong ties, the gap spans 4+ orders of magnitude. That gap will not close through individual effort, and delegation is therefore necessary.</p>
+                <p>Meanwhile, NSAI requires trust assessments for millions of sources. If competitive systems require data at thirty-trillion-token scale from millions of sources (see Chapter 2 for details), and individuals can maintain at most 150 strong ties, the gap spans 4+ orders of magnitude. That gap will not close through individual effort, and delegation is therefore necessary. The question is whether delegated trust can preserve what makes strong ties work: the observation, sustained interaction, emotional investment, and mutual obligation that makes accountability possible.</p>
             </section>
 
             <section id="second-why">
@@ -378,15 +378,20 @@
                 <p>This is mathematical possibility, not a claim about actual social networks, but the pattern has precedent. Word of mouth has operated this way for thousands of years; the spread of fire-making, agriculture, and religious ideas all propagated through peer networks without central coordination. Academic citation networks, PageRank, and Wikipedia exhibit similar structure: researchers cite dozens of sources, pages link to dozens of others, editors assess within their capacity, and no central node determines outcomes.</p>
 
                 <h3>Reframing the Problem</h3>
-                <p>This perspective reframes the problems documented in the three Whys as one of scaling existing word-of-mouth mechanisms. Word of mouth involves several operations: sharing information with contacts, filtering what to pass along, aggregating responses, and weighting sources by trust. Communication infrastructure has upgraded word of mouth's mechanisms unevenly for centuries. The printing press scaled sharing while leaving filtering and aggregation at human speed. Digital infrastructure continued it... sharing now operates instantly, but filtering, aggregating, and trust-weighting still require human attention at each hop.</p>
+                <p>This perspective reframes the problems documented in the three Whys as one of scaling existing word-of-mouth mechanisms. Word of mouth involves several operations: sharing information with contacts, filtering what to pass along, aggregating responses, and weighting sources by trust. Communication infrastructure has upgraded word of mouth's mechanisms unevenly for centuries. The printing press scaled sharing while leaving filtering and aggregation at human speed. Radio and television extended this pattern. Digital infrastructure continued it... sharing now operates instantly, but filtering, aggregating, and trust-weighting still require human attention at each hop.</p>
 
                 <p>And when sharing scales but aggregation does not, bottlenecks form at whoever can aggregate, concentrating power into an attention economy. The branching problem and the corresponding collapse of mutual stakes trace to the uneven development of communication infrastructure.</p>
+
+                <h3>The Requirement</h3>
+                <p>The mathematics establish that reach without branching is possible in principle. Two questions remain before this possibility becomes useful. First, does trust survive recursive depth? Information passing through six hops might degrade at each link&mdash;the telephone game. If the chain corrupts what it carries, reach is worthless. The Second Hypothesis addresses this question. Second, can coordination costs be reduced enough to compete with platforms? Real networks impose costs at every hop: phone calls, explanations, waiting for callbacks. A chain that could theoretically reach a relevant expert in four hops might take weeks in practice. Word of mouth has the right structure but the wrong speed. The First Hypothesis addresses this question.</p>
             </section>
 
             <section id="second-hypothesis">
                 <h2>Second Hypothesis: Delegation Without Concentration</h2>
 
-                <p>The Third Hypothesis established that recursive networks can achieve global reach without high-branching nodes, but mathematical possibility does not guarantee practical implementation. The question is whether recursive trust propagation can avoid centralizing under competitive pressure.</p>
+                <p>The Third Hypothesis established that recursive networks can achieve global reach without high-branching nodes, but mathematical possibility does not guarantee practical implementation. The Second Why documented a historical pattern: delegation systems either centralize under competitive pressure or fail to reach useful scale. The question is whether recursive trust propagation can avoid this pattern.</p>
+
+                <p>The mechanism described below scales without concentrating because no node can substitute its judgment for another's. Whether this architectural property proves sufficient against competitive dynamics is an empirical question that this thesis does not resolve, but the structure differs from previous delegation systems in ways worth examining.</p>
 
                 <h3>The Propagation Mechanism</h3>
                 <p>Each participant maintains trust assessments $w_{u,v}^d \in [0,1]$ for direct contacts, where $d$ indexes the domain. Trust propagates via iterated computation. Let $T_h(n)$ denote participant $n$'s trust score at hop $h$. Trust originates with the querying user and propagates as each participant distributes to contacts:</p>
@@ -406,6 +411,11 @@
 
                 <h3>Why It Decentralizes</h3>
                 <p>Each participant controls only their own weights (the assessments they maintain about their own contacts) and no participant controls anyone else's. When trust propagates through a chain, each node applies its own assessments, but those assessments affect only the next hop. No node observes the full chain from query to response, and no node substitutes its judgment for the judgment of other participants in the network.</p>
+
+                <p>Path redundancy reinforces this distribution if network structure approximates the mathematics from the Third Hypothesis. Whether real adoption produces such structure, or whether clustering creates de facto bottlenecks despite the architecture, remains an empirical question. The architecture makes concentration structurally difficult by ensuring that influence over outcomes requires controlling weights across many independent participants. It does not make concentration impossible, and competitive dynamics could produce outcomes the architecture alone cannot prevent.</p>
+
+                <h3>The Requirement</h3>
+                <p>The mechanism scales and decentralizes in principle. After $H$ iterations, each source has a trust score $T_H(s)$ reflecting the paths through which trust reached it. Two requirements remain before this mechanism becomes practically useful: the trust scores must convert into a synthesized response, and participation must be cheap and secure enough that people actually use the system. The First Hypothesis addresses these requirements.</p>
             </section>
 
             <section id="first-hypothesis">
@@ -469,6 +479,8 @@
     <footer>
         <p>Andrew Trask &middot; University of Oxford</p>
     </footer>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCa5kJX0IfZqgsgGUg5LB470wWtz3nfi_DuQ&s" alt="University of Oxford" class="oxford-logo-fixed">
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

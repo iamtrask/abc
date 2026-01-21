@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter I: From Deep Learning to Deep Voting | ABC in AI</title>
+    <title>Chapter II: From Deep Learning to Deep Voting | ABC in AI</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -212,7 +212,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/deep_learning_to_deep_voting_v3.png" alt="Deep Learning vs Deep Voting">
-                <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a deep learning model (i.e. by adding weight updates) which is later used for predictions, while deep voting systems (right) learn weight parameters which remain partitioned by source (i.e. concatenated), but which are learned in a way that they can be rapidly synthesized on the fly.</figcaption>
+                <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a deep learning model (i.e. by adding weight updates) which is later used for predictions, while deep voting systems (right) learn weight parameters which remain partitioned by source (i.e. concatenated), but which are learned in a way that they can be rapidly synthesized on the fly. Partitions (pictured above as pie slices) are rapidly synthesized to form a model used for a specific prediction. Darker lines/slices indicate information being used for a particular prediction. Lighter lines/slices indicate information not being used for a particular prediction. The circle on top of the slices represents a dense model capable of rapidly synthesizing slices in practice. The combination of concatenated weights and concatenated metadata with inference predictions (which tracks the synthesis and subsequent use of slices for an AI prediction) enables ABC.</figcaption>
             </figure>
 
             <section>
@@ -811,7 +811,7 @@
 
                 <figure class="full-width">
                     <img src="1411.3146/deep_learning_to_deep_voting_v3.png" alt="Deep Learning to Deep Voting">
-                    <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a deep learning model (i.e. by adding weight updates) which is later used for predictions, while deep voting systems (right) learn weight parameters which remain partitioned by source (i.e. concatenated), but which are learned in a way that they can be rapidly synthesized on the fly.</figcaption>
+                    <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a deep learning model (i.e. by adding weight updates) which is later used for predictions, while deep voting systems (right) learn weight parameters which remain partitioned by source (i.e. concatenated), but which are learned in a way that they can be rapidly synthesized on the fly. Partitions (pictured above as pie slices) are rapidly synthesized to form a model used for a specific prediction. Darker lines/slices indicate information being used for a particular prediction. Lighter lines/slices indicate information not being used for a particular prediction. The circle on top of the slices represents a dense model capable of rapidly synthesizing slices in practice. The combination of concatenated weights and concatenated metadata with inference predictions (which tracks the synthesis and subsequent use of slices for an AI prediction) enables ABC.</figcaption>
                 </figure>
 
                 <p>Deep voting addresses the addition problem that blocks access to 6+ orders of magnitude of data and compute. By preserving source attribution through concatenated representations while enabling cross-source learning through shared components, deep voting architectures demonstrate that the baseline tradeoffs between attribution, efficiency, and performance reflect architectural choices rather than fundamental constraints.</p>
@@ -857,6 +857,8 @@
     <footer>
         <p>Andrew Trask &middot; University of Oxford</p>
     </footer>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCa5kJX0IfZqgsgGUg5LB470wWtz3nfi_DuQ&s" alt="University of Oxford" class="oxford-logo-fixed">
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

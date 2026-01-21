@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:andrewtrask.substack.com)"
+      "WebFetch(domain:andrewtrask.substack.com)",
+      "Bash(grep:*)"
     ]
   }
 }

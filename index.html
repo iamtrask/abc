@@ -228,7 +228,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/individual_consequences_v3.png" alt="Traditional AI systems delete attribution information">
-                <figcaption>Traditional open/closed-source AI systems (left) mathematically delete information linking source and prediction. Once this information is deleted, there is no post-hoc method capable of restoring it.</figcaption>
+                <figcaption>Traditional open/closed-source AI systems (left) mathematically delete information linking source and prediction. Once this information is gone, neither adding more data (RLHF), looking for source information (influence functions), nor providing oversight over AI systems addresses the core issue. Instead, ABC-enabled AI systems (right) enable direct communication between those with data and those seeking insights. In ABC-enabled AI, attribution and control flow with the information, enabling verification of sources and protection of contributor interests.</figcaption>
             </figure>
 
             <p>The lack of ABC presents AI users with a basic authenticity problem, discussed publicly using phrases like hallucination, deepfake, and disinformation. When an AI generates a response, users often cannot verify its sources; unlike a Google search where one can examine original documents. Consider a medical student using AI to research rare diseases. They cannot tell whether an AI's detailed symptom description comes from high-quality sources (e.g., peer-reviewed journals) or less qualified sources. Meanwhile, the researchers who authored medical papers feeding the AI lose control over how their work is used, dis-incentivizing them to share information. This mutual blindness creates the opportunity for hallucination and disinformation.</p>
@@ -256,7 +256,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/institutional_consequences.png" alt="Traditional AI systems copy data to providers">
-                <figcaption>Traditional open/closed-source AI systems (left) copy data to AI providers, giving them unilateral control over the resulting model. ABC-enabled systems (right) enable data owners to contribute while maintaining control.</figcaption>
+                <figcaption>Traditional open/closed-source AI systems (left) copy data to AI providers, giving them unilateral control over the resulting model and its predictions. Instead, ABC-enabled AI systems (right) enable direct communication between those with data and those seeking insights. In ABC-enabled AI, attribution and control flow with the information, enabling data sources to retain control over which predictions they seek to support.</figcaption>
             </figure>
 
             <p>The lack of ABC creates a basic incentive problem at the institutional level. Data-owning institutions can either share data to create AI, or they can decline and maintain control over their data, a dilemma discussed publicly using words like copyright, privacy, transparency, and misuse. Leading cancer centers, for example, struggle to train AI to detect breast cancer using more than 3-4 million mammograms. Yet hundreds of millions of mammograms are produced annually worldwide.</p>
@@ -288,7 +288,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/societal_challenges.png" alt="AI model trained on regional data used by others">
-                <figcaption>A fictional illustration of an AI model trained on data from people across the US Pacific coast, and used by people in the eastern US. Society must accept governance by the data providers or the AI model/owner over systems trained on collective knowledge.</figcaption>
+                <figcaption>A fictional illustration of an AI model trained on data from people across the US Pacific coast, and used by people in the eastern half of the United States. However, irrespective of where the training data comes from or the predictions go to, a handful of people at the AI organization retains centralized control over the AI model's capability and use. This calls into question how/whether the AI or its creators will forego selfish incentives and use the AI's intelligence to serve society broadly.</figcaption>
             </figure>
 
             <p>The lack of ABC creates a governance crisis unprecedented in scale at the societal level. This crisis manifests publicly as concerns about AI safety, value alignment, and algorithmic bias. Crisis arises because AI systems can derive their capabilities from millions of contributors yet remain controlled by whomever possesses a copy of an AI. This control structure sparks concern that either the AI or its owner will use the AI's intelligence in ways that conflict with society's values or interests. An LLM trained on chemistry research papers, for example, could be fine-tuned to generate instructions for bioweapons, with no way for the training data creators to prevent this misuse.</p>
@@ -316,7 +316,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/geopolitical_consequences.png" alt="Traditional AI training across nations">
-                <figcaption>A fictional illustration of a traditional AI model trained within organizations across the US (left) and trained across all organizations within China (right). Democratic nations face a choice: compromise principles by centralizing, or cede AI leadership.</figcaption>
+                <figcaption>A fictional illustration of a traditional AI model trained within organizations across the US (left) and trained across all organizations in China (right). It is meant to illustrate the difference between resources acquired at the corporation level and at the nation level.</figcaption>
             </figure>
 
             <p>The lack of ABC creates tension between AI capability and democratic values at the geopolitical level. AI systems become more powerful with more data and compute, as described by so-called "Scaling Laws" and implied by the "Bitter Lesson". But without ABC, acquiring data (and compute) means acquiring a copy of it within a company, and acquiring a copy means centralizing unilateral control... over the data, over the compute, and over the AI systems this centralization creates.</p>
@@ -409,7 +409,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/abc_8_v4.png" alt="The addition, branching, and copy problems addressed in chapters 2, 3, and 4">
-                <figcaption>The addition, branching, and copy problems addressed in chapters 2, 3, and 4 through the use of concatenation, encryption, and recursion.</figcaption>
+                <figcaption>The addition, branching, and copy problems addressed in chapters 2, 3, and 4 through the use of concatenation, encryption, and recursion to provide attribution-based control.</figcaption>
             </figure>
 
             <p>Across three chapters, this thesis progressively constructs a new paradigm for AI development and deployment by describing how breakthroughs in deep learning, distributed systems, and cryptography might: avert the addition, branching, and copy problems, provide a means for AI systems with attribution-based control, and better align AI with free and democratic society.</p>
@@ -418,7 +418,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/deep_learning_to_deep_voting_v2.png" alt="Deep learning to deep voting transformation">
-                <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a deep learning model (i.e. by adding weight updates), while deep voting systems (right) learn weight parameters which remain partitioned by source (i.e. concatenated), but which are learned in a way that they can be rapidly synthesized on the fly.</figcaption>
+                <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a deep learning model (i.e. by adding weight updates) which is later used for predictions, while deep voting systems (right) learn source-specific model parameters which remain partitioned until prediction time, at which point they can be rapidly synthesized to make a prediction. In such rapid synthesis, attribution metadata flows (concatenated) with predictions, enabling source verification. Darker lines indicate information flow being used for training or prediction. Lighter lines indicate data sources which could have participated in the prediction, but were excluded.</figcaption>
             </figure>
 
             <p>The thesis begins at the mathematical center of modern AI, artificial neural networks. Chapter 2 reveals how reliance on addition operations in deep learning averts attribution and promotes centralized control into AI systems.</p>
@@ -431,7 +431,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/deep_voting_to_network_source_ai_v2.png" alt="Deep voting to network source AI">
-                <figcaption>Deep voting systems (left) require the copying of data from source to the holder of an AI model, while network-source AI systems (right) enable data sources to retain control over their data through structured transparency.</figcaption>
+                <figcaption>Deep voting systems (left) require the copying of data from source to the holder of an AI model, while network-source AI systems (right) leverage cryptography and distributed systems to enable data holders to retain control over the only copy of their information... and the predictive capability that information lends to an AI system. In network-source AI, AI users directly query vast numbers of data owners requesting predictive capability for a single prediction, learning only the output of their prediction in the process. Darker lines indicate sources being used for a prediction.</figcaption>
             </figure>
 
             <p>While Chapter 2 synthesizes techniques for AI with attribution, it surfaces a deeper challenge: how can we enable selective sharing of information without losing control through copying? Chapter 3 surveys recent cryptographic breakthroughs and reframes them in an end-to-end framework: <em>structured transparency</em>, describing how combinations of cryptographic algorithms can allow data owners to collectively enable some uses of their data without enabling other uses.</p>
@@ -457,7 +457,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/breadth_assumption_v2.png" alt="Breadth criterion for trust evaluation">
-                <figcaption>Coordinating deception becomes harder as the number of independent sources increases, but only when those sources can be independently weighted.</figcaption>
+                <figcaption>Coordinating deception becomes harder as the number of independent sources increases, but only when those sources can be independently weighted without passing through centralized bottlenecks. Aggregating from few sources (left) reduces coordination difficulty, while aggregating from many independent sources (right) makes coordination harder to achieve undetected. Darker lines indicate sources being used for a prediction.</figcaption>
             </figure>
 
             <p>To address this scale problem while preserving ABC's distributed authority, Chapter 4 identifies two criteria that any delegation architecture must satisfy. The first is the <em>breadth criterion</em>. Truth-finding requires aggregating from many independent sources because coordinated deception becomes logistically harder when information must be consistent across many independently-weighted witnesses. However, filtering through centralized bottlenecks reduces this advantage. If all sources must pass through a single institution, coordination difficulty decreases since fewer parties must align their story to coordinate a compelling deception.</p>
@@ -466,7 +466,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/depth_assumption_v2.png" alt="Depth criterion for trust evaluation">
-                <figcaption>Trust evaluation requires sustained relationships that enable observation over time, verification of independence, and maintenance of accountability.</figcaption>
+                <figcaption>Trust evaluation requires sustained relationships that enable observation over time, verification of independence, and reputational consequences through social closure. Aggregating from untrusted relationships (left) reduces information authenticity relative to aggregating from trusted relationships (right), because relationships create mutual stakes... co-dependence on truthful information exchange now and in the future. Darker lines indicate sources being used for a prediction. Line sparsity indicates trust level.</figcaption>
             </figure>
 
             <p>The second criterion is the <em>depth criterion</em>. Trust evaluation requires sustained relationships that enable: observing behavior over repeated interactions, understanding context to verify independence, experiencing consequences through social closure, and maintaining accountability through ongoing reciprocity. This cannot be achieved through weak ties or at web-scale per evaluator; trust assessment requires strong ties maintained within bounded relationship capacity.</p>
@@ -483,7 +483,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/scale_assumption.png" alt="High-branching vs low-branching delegation">
-                <figcaption>High-branching delegation (left) connects directly to many sources but creates bottlenecks and exceeds evaluation capacity. Low-branching recursive delegation (right) achieves exponential reach through recursive trust propagation.</figcaption>
+                <figcaption>High-branching delegation (left) connects directly to many sources but creates bottlenecks and exceeds evaluation capacity. Low-branching recursion (right) achieves exponential reach through depth while preserving evaluation capacity at each hop. Each person maintains ~50 verifiable connections; over 6 hops this reaches 50<sup>6</sup> = 15.6 billion sources. Darker lines indicate sources being used for a prediction. The architecture leverages small-world network properties where people are connected through short paths.</figcaption>
             </figure>
 
             <p>Chapter 4 proposes low-branching recursive delegation as an alternative architecture that satisfies both criteria by achieving exponential reach, propagating trust recursively over H hops. For example, if H=6 (e.g. six degrees of separation), this approach would achieve exponential reach of 50<sup>6</sup> = 15.6 billion sources.</p>
@@ -503,7 +503,7 @@
 
             <figure class="full-width">
                 <img src="1411.3146/network_source_ai_to_broad_listening_v2.png" alt="Network source AI to broad listening">
-                <figcaption>Network-source AI (left) sources information directly from eye-witnesses while broad listening (right) leverages information from eye-witnesses and recursively from friends-of-friends.</figcaption>
+                <figcaption>Network-source AI (left) sources information directly from eye-witnesses while broad listening (right) leverages information from the same sources weighted through a social graph. Darker lines indicate sources being used for a prediction. Dotted sparsity indicates trust.</figcaption>
             </figure>
 
             <h3 id="chapter-5-outline">Chapter 5: Conclusion&mdash;AI as a Communication Tool</h3>
@@ -563,6 +563,8 @@
     <footer>
         <p>Andrew Trask &middot; University of Oxford</p>
     </footer>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCa5kJX0IfZqgsgGUg5LB470wWtz3nfi_DuQ&s" alt="University of Oxford" class="oxford-logo-fixed">
 
     <script>
         // Scroll spy for TOC
