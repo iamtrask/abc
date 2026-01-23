@@ -876,8 +876,8 @@ main {
     left: calc(100% + 20px);
     width: 260px;
     background-color: #fff;
-    border: 1px solid #0a0a0a;
-    padding: 10px;
+    border: 1px solid #ddd;
+    padding: 16px;
     font-size: 12px;
     transition: top 0.3s ease-out, opacity 0.2s ease;
 }
@@ -937,21 +937,21 @@ main {
 
 .cite-box-title {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: normal;
     line-height: 1.35;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     color: #0a0a0a;
 }
 
 .cite-box-avatars {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
 }
 
 .cite-box-avatars img {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #fff;
@@ -967,12 +967,12 @@ main {
     display: flex;
     gap: 14px;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .cite-box-author-photo {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
@@ -985,25 +985,25 @@ main {
 
 .cite-box-author-name {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: #0a0a0a;
 }
 
 .cite-box-author-affiliation {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 13px;
+    font-size: 14px;
     color: #333;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     line-height: 1.4;
 }
 
 .cite-box-author-verified {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 12px;
+    font-size: 13px;
     color: #333;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .cite-box-author-verified a {
@@ -1013,15 +1013,15 @@ main {
 
 .cite-box-author-topics {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 13px;
+    font-size: 15px;
     color: #1a0dab;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .cite-box-scholar {
     text-align: center;
-    padding-top: 16px;
-    font-size: 16px;
+    padding-top: 20px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: -0.5px;
 }
