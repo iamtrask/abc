@@ -58,9 +58,8 @@ window.addEventListener('resize', updateHeader);
 
 /**
  * Unified margin item positioning system.
- * Phase 1: Sidenotes only. Cards will be added in Phase 2.
  */
-const MARGIN_GAP = 16;
+const MARGIN_GAP = 20;
 
 function collectMarginItems(section) {
     // Phase 2: Collect both sidenotes and cite-boxes
