@@ -287,6 +287,9 @@ function initializeCiteBoxes() {
                 clearTimeout(resetTimeout);
                 resetTimeout = null;
             }
+            // Clear other highlights first
+            document.querySelectorAll('.cite-box.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
+            document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
             ref.classList.add('is-highlighted');
             box.classList.add('is-highlighted');
         });
