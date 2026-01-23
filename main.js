@@ -257,14 +257,14 @@ function setActiveCite(refId) {
 }
 
 function clearActiveCite() {
-    // Small delay to allow moving between citation and box
+    // Delay to allow moving between citation and box
     resetTimeout = setTimeout(() => {
         activeCiteRef = null;
         positionCiteBoxes();
         // Remove all highlights
         document.querySelectorAll('.cite-box.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
         document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
-    }, 100);
+    }, 10000);
 }
 
 function initializeCiteBoxes() {
