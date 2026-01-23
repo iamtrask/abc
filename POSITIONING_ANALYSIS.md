@@ -269,3 +269,528 @@ Both systems operate independently and are **completely unaware of each other**.
    - If focused card's target overlaps a sidenote, position it just below the sidenote
    - If no room exists, cards stack at the bottom of available space
    - Minimum gap should be consistent (suggest 16px as compromise between 12px and 20px)
+
+---
+
+## 6. Detailed Design: Strategy A with Modal Behavior
+
+This section provides a comprehensive design for the unified positioning system with responsive modal behavior on narrow screens.
+
+### Design Goals
+
+1. **Wide screens**: All margin items (sidenotes + cards) position in the right margin using unified collision avoidance
+2. **Narrow screens**: Margin items become modals that open on click and close on click-outside
+3. **Unified codebase**: Single system handles both behaviors based on viewport width
+4. **Smooth transitions**: Clean switch between modes on resize
+
+---
+
+### Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     MarginItemManager                        │
+├─────────────────────────────────────────────────────────────┤
+│  - items: MarginItem[]                                       │
+│  - mode: 'margin' | 'modal'                                  │
+│  - focusedItem: MarginItem | null                            │
+│  - activeModal: MarginItem | null                            │
+├─────────────────────────────────────────────────────────────┤
+│  + initialize()                                              │
+│  + collectItems()                                            │
+│  + updateMode()        // Check viewport, switch modes       │
+│  + positionAll()       // Margin mode: position in margin    │
+│  + openModal(item)     // Modal mode: show as modal          │
+│  + closeModal()        // Modal mode: hide modal             │
+│  + setFocus(item)      // Margin mode: prioritize item       │
+│  + clearFocus()                                              │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                       MarginItem                             │
+├─────────────────────────────────────────────────────────────┤
+│  - element: HTMLElement                                      │
+│  - refElement: HTMLElement     // The trigger (sup, span)    │
+│  - type: 'sidenote' | 'cite-box'                            │
+│  - section: HTMLElement                                      │
+│  - targetTop: number                                         │
+│  - currentTop: number                                        │
+│  - height: number                                            │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Mode Switching
+
+```javascript
+const MARGIN_BREAKPOINT = 1100; // px - matches existing CSS breakpoint
+
+function updateMode() {
+    const newMode = window.innerWidth > MARGIN_BREAKPOINT ? 'margin' : 'modal';
+
+    if (newMode !== this.mode) {
+        // Clean up old mode
+        if (this.mode === 'margin') {
+            this.clearFocus();
+            this.hideAllInMargin();
+        } else if (this.mode === 'modal') {
+            this.closeModal();
+        }
+
+        // Switch to new mode
+        this.mode = newMode;
+
+        // Initialize new mode
+        if (this.mode === 'margin') {
+            this.showAllInMargin();
+            this.positionAll();
+        } else {
+            this.hideAllInMargin();
+            this.setupModalTriggers();
+        }
+    }
+}
+```
+
+---
+
+### Margin Mode Behavior
+
+**When**: `window.innerWidth > 1100px`
+
+**Display**: All items visible in right margin, absolutely positioned
+
+**Interactions**:
+- **Hover on reference** → Item slides to align with reference, others shift to avoid overlap
+- **Hover on item** → Item highlighted, reference highlighted
+- **Hover on card avatar** → Author info swaps, items reposition if height changes
+
+**Positioning Algorithm**:
+```
+function positionAll(focusedItem = null) {
+    // 1. Collect all items in each section
+    for each section:
+        items = collectItemsInSection(section)
+
+        // 2. Calculate target positions (relative to section)
+        for each item:
+            item.targetTop = item.refElement.offsetTop
+
+        // 3. Sort by target position
+        items.sort((a, b) => a.targetTop - b.targetTop)
+
+        // 4. If focused item, position it first at its target
+        if (focusedItem && items.includes(focusedItem)):
+            focusedItem.currentTop = focusedItem.targetTop
+            focusedIndex = items.indexOf(focusedItem)
+
+            // Position items above (push up if needed)
+            ceiling = focusedItem.currentTop - GAP
+            for i = focusedIndex - 1 down to 0:
+                items[i].currentTop = min(items[i].targetTop, ceiling - items[i].height)
+                ceiling = items[i].currentTop - GAP
+
+            // Position items below (push down if needed)
+            floor = focusedItem.currentTop + focusedItem.height + GAP
+            for i = focusedIndex + 1 to items.length:
+                items[i].currentTop = max(items[i].targetTop, floor)
+                floor = items[i].currentTop + items[i].height + GAP
+
+        // 5. If no focus, simple top-down collision avoidance
+        else:
+            floor = -Infinity
+            for each item:
+                item.currentTop = max(item.targetTop, floor)
+                floor = item.currentTop + item.height + GAP
+
+        // 6. Apply positions
+        for each item:
+            item.element.style.top = item.currentTop + 'px'
+}
+```
+
+---
+
+### Modal Mode Behavior
+
+**When**: `window.innerWidth <= 1100px`
+
+**Display**: Items hidden by default, shown as centered modal on click
+
+**Interactions**:
+- **Click on reference** → Modal opens with that item's content
+- **Click outside modal** → Modal closes
+- **Click on different reference while modal open** → Switch to new item
+- **Escape key** → Modal closes
+
+**Modal Structure**:
+```html
+<div class="margin-item-modal-overlay" aria-hidden="true">
+    <div class="margin-item-modal" role="dialog" aria-modal="true">
+        <button class="margin-item-modal-close" aria-label="Close">×</button>
+        <div class="margin-item-modal-content">
+            <!-- Cloned or moved item content -->
+        </div>
+    </div>
+</div>
+```
+
+**Modal CSS**:
+```css
+.margin-item-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.margin-item-modal-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.margin-item-modal {
+    background: #fff;
+    border: 1px solid #0a0a0a;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+    position: relative;
+}
+
+.margin-item-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+```
+
+**Modal JavaScript**:
+```javascript
+function openModal(item) {
+    if (this.activeModal === item) return;
+
+    // Close existing modal if open
+    if (this.activeModal) {
+        this.closeModal();
+    }
+
+    // Create or show overlay
+    let overlay = document.querySelector('.margin-item-modal-overlay');
+    if (!overlay) {
+        overlay = this.createModalOverlay();
+        document.body.appendChild(overlay);
+    }
+
+    // Clone item content into modal
+    const content = overlay.querySelector('.margin-item-modal-content');
+    content.innerHTML = '';
+    content.appendChild(item.element.cloneNode(true));
+
+    // Show overlay
+    overlay.classList.add('is-active');
+    overlay.setAttribute('aria-hidden', 'false');
+
+    // Focus management
+    overlay.querySelector('.margin-item-modal-close').focus();
+
+    // Track active modal
+    this.activeModal = item;
+
+    // Highlight reference
+    item.refElement.classList.add('is-highlighted');
+}
+
+function closeModal() {
+    const overlay = document.querySelector('.margin-item-modal-overlay');
+    if (!overlay) return;
+
+    overlay.classList.remove('is-active');
+    overlay.setAttribute('aria-hidden', 'true');
+
+    // Remove highlight from reference
+    if (this.activeModal) {
+        this.activeModal.refElement.classList.remove('is-highlighted');
+    }
+
+    this.activeModal = null;
+}
+
+function setupModalTriggers() {
+    // Click on reference opens modal
+    this.items.forEach(item => {
+        item.refElement.addEventListener('click', (e) => {
+            if (this.mode !== 'modal') return;
+            e.preventDefault();
+            this.openModal(item);
+        });
+    });
+
+    // Click outside closes modal
+    document.addEventListener('click', (e) => {
+        if (this.mode !== 'modal') return;
+        if (!this.activeModal) return;
+
+        const overlay = document.querySelector('.margin-item-modal-overlay');
+        const modal = overlay?.querySelector('.margin-item-modal');
+
+        if (overlay && !modal.contains(e.target) && !this.isRefElement(e.target)) {
+            this.closeModal();
+        }
+    });
+
+    // Escape key closes modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.activeModal) {
+            this.closeModal();
+        }
+    });
+}
+```
+
+---
+
+### Event Handling Summary
+
+| Event | Margin Mode | Modal Mode |
+|-------|-------------|------------|
+| **Click on reference** | No action (hover-based) | Open modal |
+| **Hover on reference** | Focus item, reposition all | No action |
+| **Hover on item** | Highlight both | N/A (items hidden) |
+| **Click outside** | No action | Close modal |
+| **Escape key** | No action | Close modal |
+| **Window resize** | Reposition all | Check for mode switch |
+| **Avatar hover (card)** | Swap content, reposition | Swap content in modal |
+
+---
+
+### CSS Changes Required
+
+```css
+/* Unified margin item base styles */
+.margin-item {
+    position: absolute;
+    left: calc(100% + 20px);
+    width: 260px;
+    transition: top 0.2s ease-out;
+}
+
+/* Apply to both sidenotes and cite-boxes */
+.sidenote,
+.cite-box {
+    /* Inherit from .margin-item or duplicate styles */
+}
+
+/* Modal mode: hide items in margin */
+@media (max-width: 1100px) {
+    .sidenote,
+    .cite-box {
+        display: none !important;
+    }
+}
+
+/* Remove wrapper positioning (cards position relative to section) */
+.cite-box-wrapper {
+    position: static;
+}
+```
+
+---
+
+### Migration Path: Step-by-Step Implementation
+
+The following steps are ordered to minimize breaking changes and allow testing at each stage.
+
+#### Phase 1: Unify Positioning Context (Non-Breaking)
+
+**Step 1.1**: Create new unified data collection function
+```javascript
+// Add alongside existing code, don't replace yet
+function collectMarginItems(section) {
+    const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
+    const citeBoxes = Array.from(section.querySelectorAll('.cite-box'));
+
+    return [...sidenotes, ...citeBoxes].map(element => ({
+        element,
+        type: element.classList.contains('sidenote') ? 'sidenote' : 'cite-box',
+        refElement: findRefForItem(element),
+        section,
+        targetTop: 0,
+        currentTop: 0,
+        height: element.offsetHeight
+    }));
+}
+```
+
+**Step 1.2**: Create new unified positioning function
+```javascript
+// Add alongside existing code, don't replace yet
+function positionMarginItems(items, focusedItem = null) {
+    // Implementation as described above
+}
+```
+
+**Step 1.3**: Test new functions work correctly
+- Call new functions manually in console
+- Verify items position correctly
+- Verify no regressions with existing code
+
+---
+
+#### Phase 2: Switch to Unified System (Breaking for Cards)
+
+**Step 2.1**: Update CSS
+```css
+/* Remove positioning context from wrapper */
+.cite-box-wrapper {
+    position: static; /* Was: position: relative */
+}
+```
+
+**Step 2.2**: Replace card positioning calls
+```javascript
+// OLD:
+positionCiteBoxes(focusedRefId);
+
+// NEW:
+const section = /* find section */;
+const items = collectMarginItems(section);
+const focused = focusedRefId ? items.find(i => i.refElement.id === focusedRefId) : null;
+positionMarginItems(items, focused);
+```
+
+**Step 2.3**: Replace sidenote positioning calls
+```javascript
+// OLD:
+alignSidenotes();
+
+// NEW:
+document.querySelectorAll('section').forEach(section => {
+    const items = collectMarginItems(section);
+    positionMarginItems(items);
+});
+```
+
+**Step 2.4**: Test thoroughly
+- Sidenotes still position correctly
+- Cards still position correctly
+- Sidenotes and cards don't overlap
+- Hover behavior works for cards
+
+---
+
+#### Phase 3: Add Mode Management (Non-Breaking)
+
+**Step 3.1**: Create MarginItemManager class
+```javascript
+class MarginItemManager {
+    constructor() {
+        this.items = [];
+        this.mode = 'margin';
+        this.focusedItem = null;
+        this.activeModal = null;
+    }
+
+    initialize() {
+        this.collectItems();
+        this.updateMode();
+        this.setupEventListeners();
+    }
+
+    // ... rest of implementation
+}
+```
+
+**Step 3.2**: Initialize on page load
+```javascript
+const marginManager = new MarginItemManager();
+document.addEventListener('DOMContentLoaded', () => marginManager.initialize());
+```
+
+**Step 3.3**: Test margin mode still works identically
+
+---
+
+#### Phase 4: Add Modal Mode (New Feature)
+
+**Step 4.1**: Add modal HTML structure (empty, populated by JS)
+```html
+<!-- Add before </body> -->
+<div class="margin-item-modal-overlay" aria-hidden="true">
+    <div class="margin-item-modal" role="dialog" aria-modal="true">
+        <button class="margin-item-modal-close" aria-label="Close">&times;</button>
+        <div class="margin-item-modal-content"></div>
+    </div>
+</div>
+```
+
+**Step 4.2**: Add modal CSS
+
+**Step 4.3**: Implement modal open/close methods
+
+**Step 4.4**: Implement mode switching logic
+
+**Step 4.5**: Test on narrow viewport
+- References become clickable
+- Modal opens with correct content
+- Modal closes on outside click
+- Modal closes on Escape
+
+---
+
+#### Phase 5: Cleanup (Final)
+
+**Step 5.1**: Remove old positioning functions
+- Delete `alignSidenotes()`
+- Delete `positionCiteBoxes()`
+- Delete `getCiteBoxData()`
+
+**Step 5.2**: Remove old event listeners
+- Consolidate into MarginItemManager
+
+**Step 5.3**: Update initialization
+- Single entry point via MarginItemManager
+
+**Step 5.4**: Final testing across all breakpoints
+
+---
+
+### Files to Modify
+
+| File | Changes |
+|------|---------|
+| `styles.css` | Remove wrapper positioning, add modal styles, add margin-item base class |
+| `main.js` | Replace positioning functions with MarginItemManager class |
+| `index.html` | Add modal overlay element (or create via JS) |
+
+### Estimated Complexity
+
+| Phase | Difficulty | Risk | Can Test Independently |
+|-------|------------|------|------------------------|
+| Phase 1 | Low | None | Yes |
+| Phase 2 | Medium | Medium (cards might break) | Yes |
+| Phase 3 | Low | Low | Yes |
+| Phase 4 | Medium | Low | Yes |
+| Phase 5 | Low | Low | Yes |
+
+### Rollback Points
+
+- After Phase 1: No changes to behavior, safe
+- After Phase 2: `git revert` to restore old positioning
+- After Phase 3: Remove MarginItemManager, restore direct calls
+- After Phase 4: Remove modal code, keep unified positioning
+- After Phase 5: Full rollback to pre-migration commit
