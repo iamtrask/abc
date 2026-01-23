@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function updateActiveLink() {
-        const OFFSET = 120;
-
+        const header = document.querySelector('nav');
+        const OFFSET = header ? header.offsetHeight + 20 : 120;
         let currentSection = sections[0];
 
         for (const section of sections) {
@@ -45,7 +45,8 @@ function updateHeader() {
     const shouldHide = scrollTop > lastScrollTop && scrollTop > 100;
 
     header.classList.toggle('is-hide', shouldHide);
-
+    const headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
     lastScrollTop = scrollTop;
 }
 
@@ -129,9 +130,40 @@ function resizeSidenotes() {
     });
 }
 
+function setupSidenoteHover() {
+    document.querySelectorAll('.sidenote-ref').forEach((ref) => {
+        const targetId = ref.getAttribute('href');
+        if (!targetId || !targetId.startsWith('#')) return;
+
+        const sidenote = document.querySelector(targetId);
+        if (!sidenote) return;
+
+        ref.addEventListener('mouseenter', () => {
+            sidenote.classList.add('is-highlighted');
+            ref.classList.add('is-highlighted');
+        });
+
+        ref.addEventListener('mouseleave', () => {
+            sidenote.classList.remove('is-highlighted');
+            ref.classList.remove('is-highlighted');
+        });
+
+        sidenote.addEventListener('mouseenter', () => {
+            sidenote.classList.add('is-highlighted');
+            ref.classList.add('is-highlighted');
+        });
+
+        sidenote.addEventListener('mouseleave', () => {
+            sidenote.classList.remove('is-highlighted');
+            ref.classList.remove('is-highlighted');
+        });
+    });
+}
+
 function initializeSidenotes() {
     resizeSidenotes();
     alignSidenotes();
+    setupSidenoteHover();
 }
 
 if (document.readyState === 'loading') {

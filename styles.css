@@ -25,7 +25,7 @@ h3,
 h4,
 h5,
 h6 {
-    scroll-margin-block: 6rem;
+    scroll-margin-block: calc(var(--header-height) + 14px);
 }
 
 /* Navigation */
@@ -716,6 +716,10 @@ main {
     text-decoration: none;
 }
 
+.cite sup {
+    font-size: 16px;
+}
+
 .cite:hover {
     text-decoration: underline;
 }
@@ -732,6 +736,7 @@ main {
     padding: 0.25rem;
     margin-left: -0.25rem;
     border-radius: 3px;
+    scroll-margin-block: 2rem;
 }
 
 .references h2 {
@@ -801,6 +806,11 @@ main {
     position: relative;
     left: -2px;
     text-underline-offset: -4px;
+    outline-offset: 2px;
+}
+
+.sidenote-ref.is-highlighted {
+    outline: 1px solid currentColor;
 }
 
 /* Sidenote */
@@ -811,12 +821,46 @@ main {
     font-size: 12px;
     width: 260px;
     max-width: 320px;
-    scroll-margin-block: 6rem;
+    scroll-margin-block: var(--header-height);
+    padding-left: 5px;
+}
+
+.sidenote:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 20%;
+    height: 1px;
+    background-color: currentColor;
+    transition: width .2s;
+}
+
+.sidenote:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 40%;
+    background-color: currentColor;
+    transition: height .2s;
+}
+
+.sidenote.is-highlighted:before {
+    width: 100%;
+}
+
+.sidenote.is-highlighted:after {
+    height: 100%;
 }
 
 @media(max-width: 1399px) {
     .sidenote {
-        position: static;
+        position: relative;
+        transform: none;
+        left: unset !important;
+        top: unset !important;
         width: 100% !important;
         max-width: 100% !important;
     }
