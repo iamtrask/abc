@@ -180,8 +180,9 @@ if (document.fonts) {
 
 window.addEventListener('resize', initializeSidenotes);
 
-// Cite-box hover highlighting
+// Cite-box hover highlighting (bidirectional)
 document.addEventListener('DOMContentLoaded', function () {
+    // Hover on box -> highlight citation
     document.querySelectorAll('.cite-box[data-ref]').forEach((box) => {
         const refId = box.getAttribute('data-ref');
         const ref = document.getElementById(refId);
@@ -193,6 +194,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
         box.addEventListener('mouseleave', () => {
             ref.classList.remove('is-highlighted');
+        });
+    });
+
+    // Hover on citation -> highlight box
+    document.querySelectorAll('.cite-box-ref[data-box]').forEach((ref) => {
+        const boxId = ref.getAttribute('data-box');
+        const box = document.getElementById(boxId);
+        if (!box) return;
+
+        ref.addEventListener('mouseenter', () => {
+            box.classList.add('is-highlighted');
+        });
+
+        ref.addEventListener('mouseleave', () => {
+            box.classList.remove('is-highlighted');
         });
     });
 });
