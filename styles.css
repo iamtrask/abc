@@ -983,9 +983,9 @@ main {
 }
 
 .cite-box-author-name {
-    font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     color: #000;
     margin-bottom: 8px;
 }
