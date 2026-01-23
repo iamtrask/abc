@@ -1040,12 +1040,22 @@ main {
 
 /* Phase 4: Modal mode for narrow screens */
 @media (max-width: 1100px) {
-    .sidenote,
-    .cite-box {
-        /* Hide in margin but keep in DOM for modal content */
+    .sidenote {
+        /* Hide but keep in DOM for modal content */
         position: fixed !important;
         left: -9999px !important;
-        visibility: hidden;
+        top: 0 !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    .cite-box {
+        /* Hide but keep in DOM for modal content */
+        position: fixed !important;
+        left: -9999px !important;
+        top: 0 !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
     }
 }
 
