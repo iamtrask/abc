@@ -452,7 +452,8 @@ function closeMarginModal() {
 
 // Click handlers for modal mode (capture phase to intercept before anchor default)
 document.addEventListener('click', (e) => {
-    if (!isModalMode()) return;
+    // DEBUG: Temporarily removed isModalMode() check to test if handler fires
+    // if (!isModalMode()) return;
 
     // Check if clicked a sidenote ref
     const sidenoteRef = e.target.closest('.sidenote-ref');
