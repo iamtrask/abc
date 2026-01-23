@@ -877,7 +877,7 @@ main {
     width: 260px;
     background-color: #fff;
     border: 1px solid #0a0a0a;
-    padding: 16px;
+    padding: 20px;
     font-size: 12px;
     transition: top 0.3s ease-out, opacity 0.2s ease;
 }
