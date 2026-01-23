@@ -359,10 +359,45 @@ function initializeAvatarHover() {
             if (authorVerified) authorVerified.innerHTML = verified;
             if (authorTopics) authorTopics.innerHTML = topics;
 
-            // Reposition boxes after content change
-            requestAnimationFrame(() => positionCiteBoxes(activeCiteRef));
+            // Reposition other boxes after content change, keeping this one fixed
+            requestAnimationFrame(() => positionCiteBoxesKeepingFixed(citeBox));
         });
     });
+}
+
+// Position boxes while keeping one fixed in place
+function positionCiteBoxesKeepingFixed(fixedBox) {
+    const boxes = Array.from(document.querySelectorAll('.cite-box[data-ref]'));
+    const fixedTop = parseFloat(fixedBox.style.top) || 0;
+    const fixedHeight = fixedBox.offsetHeight;
+    const fixedIndex = boxes.indexOf(fixedBox);
+
+    // Sort by current top position
+    const boxData = boxes.map(box => ({
+        box,
+        currentTop: parseFloat(box.style.top) || 0,
+        height: box.offsetHeight
+    })).sort((a, b) => a.currentTop - b.currentTop);
+
+    const fixedDataIndex = boxData.findIndex(d => d.box === fixedBox);
+
+    // Position boxes above the fixed one (going upward)
+    let nextBottom = fixedTop - MIN_BOX_GAP;
+    for (let i = fixedDataIndex - 1; i >= 0; i--) {
+        const item = boxData[i];
+        const itemTop = Math.min(item.currentTop, nextBottom - item.height);
+        item.box.style.top = `${Math.max(0, itemTop)}px`;
+        nextBottom = Math.max(0, itemTop) - MIN_BOX_GAP;
+    }
+
+    // Position boxes below the fixed one (going downward)
+    let lastBottom = fixedTop + fixedHeight;
+    for (let i = fixedDataIndex + 1; i < boxData.length; i++) {
+        const item = boxData[i];
+        const itemTop = Math.max(item.currentTop, lastBottom + MIN_BOX_GAP);
+        item.box.style.top = `${itemTop}px`;
+        lastBottom = itemTop + item.height;
+    }
 }
 
 document.addEventListener('DOMContentLoaded', initializeAvatarHover);
