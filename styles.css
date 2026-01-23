@@ -1111,7 +1111,9 @@ main {
 .margin-item-modal-content .cite-box {
     position: static !important;
     left: auto !important;
+    top: auto !important;
     visibility: visible !important;
+    opacity: 1 !important;
     width: 100% !important;
     max-width: 400px;
 }
