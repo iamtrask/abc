@@ -377,6 +377,61 @@ function initializeAvatarHover() {
 
 document.addEventListener('DOMContentLoaded', initializeAvatarHover);
 
+// Click handlers for paper and author links
+function initializeCiteBoxLinks() {
+    // Track current scholar URL for author section
+    document.querySelectorAll('.cite-box').forEach((citeBox) => {
+        // Store the first author's scholar URL as default
+        const firstAvatar = citeBox.querySelector('.cite-box-avatars img[data-scholar-url]');
+        if (firstAvatar) {
+            citeBox.dataset.currentScholarUrl = firstAvatar.getAttribute('data-scholar-url');
+        }
+    });
+
+    // Update scholar URL when hovering avatars
+    document.querySelectorAll('.cite-box-avatars img').forEach((avatar) => {
+        avatar.addEventListener('mouseenter', () => {
+            const citeBox = avatar.closest('.cite-box');
+            const scholarUrl = avatar.getAttribute('data-scholar-url');
+            if (citeBox && scholarUrl) {
+                citeBox.dataset.currentScholarUrl = scholarUrl;
+            }
+        });
+
+        // Click avatar to go to their Google Scholar
+        avatar.addEventListener('click', (e) => {
+            const scholarUrl = avatar.getAttribute('data-scholar-url');
+            if (scholarUrl) {
+                window.open(scholarUrl, '_blank');
+            }
+        });
+    });
+
+    // Click paper section to go to paper
+    document.querySelectorAll('.cite-box-paper').forEach((paperSection) => {
+        paperSection.addEventListener('click', () => {
+            const citeBox = paperSection.closest('.cite-box');
+            const paperUrl = citeBox?.getAttribute('data-paper-url');
+            if (paperUrl) {
+                window.open(paperUrl, '_blank');
+            }
+        });
+    });
+
+    // Click author section to go to current author's Google Scholar
+    document.querySelectorAll('.cite-box-author').forEach((authorSection) => {
+        authorSection.addEventListener('click', () => {
+            const citeBox = authorSection.closest('.cite-box');
+            const scholarUrl = citeBox?.dataset.currentScholarUrl;
+            if (scholarUrl) {
+                window.open(scholarUrl, '_blank');
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeCiteBoxLinks);
+
 // Check if we're in modal mode by seeing if margin items are hidden by CSS
 function isModalMode() {
     // Check if a cite-box or sidenote is hidden (visibility: hidden from CSS)

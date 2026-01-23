@@ -1038,6 +1038,19 @@ main {
     height: 18px;
 }
 
+/* Clickable elements in cite-box */
+.cite-box-paper {
+    cursor: pointer;
+}
+
+.cite-box-avatars img {
+    cursor: pointer;
+}
+
+.cite-box-author {
+    cursor: pointer;
+}
+
 /* Modal mode - hide items when not in margin (click to open modal instead) */
 @media (max-width: 1399px) {
     .sidenote {
