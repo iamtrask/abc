@@ -109,9 +109,10 @@ function alignAllMarginItems(fixedItem = null) {
         const fixedIndex = itemData.findIndex(d => d.isFixed);
 
         if (fixedIndex >= 0) {
-            // Keep fixed item in place, adjust others around it
+            // Position fixed item at its target, then adjust others around it
             const fixed = itemData[fixedIndex];
-            const fixedTop = parseFloat(fixed.item.style.top) || fixed.targetTop;
+            const fixedTop = fixed.targetTop;
+            fixed.item.style.top = `${fixedTop}px`;
 
             // Position items above fixed (going upward)
             let nextBottom = fixedTop - MARGIN_GAP;
