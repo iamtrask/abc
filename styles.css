@@ -915,7 +915,9 @@ main {
     object-fit: cover;
     object-position: top;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 2px solid #333;
+    box-shadow: -3px 0 6px rgba(0,0,0,0.12), 3px 0 6px rgba(0,0,0,0.12), 0 -3px 6px rgba(0,0,0,0.12);
     margin-bottom: 16px;
 }
 
