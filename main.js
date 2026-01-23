@@ -111,20 +111,29 @@ function positionMarginItems(items, focusedItem = null) {
     const focusedIndex = focusedItem ? items.indexOf(focusedItem) : -1;
 
     if (focusedIndex >= 0) {
-        // Position focused item at its target
         const focused = items[focusedIndex];
-        focused.element.style.top = `${focused.targetTop}px`;
 
-        // Position items above (push up if needed)
-        let ceiling = focused.targetTop - MARGIN_GAP;
+        // First, calculate how much space items above need
+        let spaceNeededAbove = 0;
+        for (let i = 0; i < focusedIndex; i++) {
+            spaceNeededAbove += items[i].height + MARGIN_GAP;
+        }
+
+        // Position focused item - push down if items above need more space
+        const focusedTop = Math.max(focused.targetTop, spaceNeededAbove);
+        focused.element.style.top = `${focusedTop}px`;
+
+        // Position items above (push up from focused item)
+        let ceiling = focusedTop - MARGIN_GAP;
         for (let i = focusedIndex - 1; i >= 0; i--) {
             const top = Math.min(items[i].targetTop, ceiling - items[i].height);
-            items[i].element.style.top = `${Math.max(0, top)}px`;
-            ceiling = Math.max(0, top) - MARGIN_GAP;
+            const clampedTop = Math.max(0, top);
+            items[i].element.style.top = `${clampedTop}px`;
+            ceiling = clampedTop - MARGIN_GAP;
         }
 
         // Position items below (push down if needed)
-        let floor = focused.targetTop + focused.height + MARGIN_GAP;
+        let floor = focusedTop + focused.height + MARGIN_GAP;
         for (let i = focusedIndex + 1; i < items.length; i++) {
             const top = Math.max(items[i].targetTop, floor);
             items[i].element.style.top = `${top}px`;
