@@ -57,56 +57,60 @@ document.addEventListener('scroll', updateHeader);
 window.addEventListener('resize', updateHeader);
 
 /**
- * Align side notes.
+ * Unified margin item positioning system.
+ * Phase 1: Sidenotes only. Cards will be added in Phase 2.
+ */
+const MARGIN_GAP = 16;
+
+function collectMarginItems(section) {
+    // Phase 1: Only collect sidenotes
+    // Phase 2 will add: const citeBoxes = Array.from(section.querySelectorAll('.cite-box'));
+    const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
+
+    return sidenotes.map(element => ({
+        element,
+        type: 'sidenote',
+        refElement: document.querySelector(`a[href="#${element.id}"]`),
+        section,
+        targetTop: 0,
+        height: element.offsetHeight
+    }));
+}
+
+function positionMarginItems(items, focusedItem = null) {
+    if (items.length === 0) return;
+
+    // Calculate target positions (relative to section)
+    items.forEach(item => {
+        if (item.refElement) {
+            const refRect = item.refElement.getBoundingClientRect();
+            const sectionRect = item.section.getBoundingClientRect();
+            item.targetTop = refRect.top - sectionRect.top;
+        }
+    });
+
+    // Sort by target position
+    items.sort((a, b) => a.targetTop - b.targetTop);
+
+    // Phase 1: Simple collision avoidance (no focus support yet)
+    // Phase 3 will add focus-aware positioning
+    let lastBottom = -Infinity;
+    items.forEach(item => {
+        const adjustedTop = Math.max(item.targetTop, lastBottom + MARGIN_GAP);
+        item.element.style.top = `${adjustedTop}px`;
+        lastBottom = adjustedTop + item.height;
+    });
+}
+
+/**
+ * Align side notes using unified positioning system.
  */
 function alignSidenotes() {
     if (window.matchMedia('(max-width: 1024px)').matches) return;
 
-    document.querySelectorAll('.sidenote-ref').forEach((ref) => {
-        const targetId = ref.getAttribute('href');
-        if (!targetId || !targetId.startsWith('#')) return;
-
-        const sidenote = document.querySelector(targetId);
-        if (!sidenote) return;
-
-        const block = ref.closest('.sidenote') || ref.closest('section');
-        if (!block) return;
-
-        const refRect = ref.getBoundingClientRect();
-        const blockRect = block.getBoundingClientRect();
-
-        const top = refRect.top - blockRect.top;
-
-        sidenote.style.top = `${top}px`;
-    });
-
-    document.querySelectorAll('section').forEach((section) => {
-        const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
-
-        if (sidenotes.length <= 1) return;
-
-        const GAP = 12;
-
-        sidenotes.sort((a, b) => {
-            const topA = parseFloat(a.style.top) || 0;
-            const topB = parseFloat(b.style.top) || 0;
-            return topA - topB;
-        });
-
-        let lastBottom = -Infinity;
-
-        sidenotes.forEach((sn) => {
-            let top = parseFloat(sn.style.top) || 0;
-
-            const height = sn.getBoundingClientRect().height;
-
-            if (top < lastBottom + GAP) {
-                top = lastBottom + GAP;
-                sn.style.top = `${top}px`;
-            }
-
-            lastBottom = top + height;
-        });
+    document.querySelectorAll('section').forEach(section => {
+        const items = collectMarginItems(section);
+        positionMarginItems(items);
     });
 }
 
