@@ -878,9 +878,10 @@ main {
     min-height: 200px;
     background-color: #fff;
     border: 1px solid #ddd;
+    border-left: 3px solid #333;
     padding: 12px;
     font-size: 12px;
-    transition: top 0.3s ease-out;
+    transition: top 0.3s ease-out, opacity 0.2s ease;
 }
 
 
@@ -891,14 +892,17 @@ main {
 }
 
 .cite-box-ref.is-highlighted {
-    background-color: #fff3cd;
-    outline: 2px solid #ffc107;
-    outline-offset: 2px;
+    background-color: #e8f4fc;
+    border-radius: 2px;
 }
 
 .cite-box.is-highlighted {
-    background-color: #d4d4d4;
-    outline: 2px solid #ffc107;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Dim non-highlighted boxes when one is active */
+.cite-box-wrapper:has(.cite-box.is-highlighted) .cite-box:not(.is-highlighted) {
+    opacity: 0.4;
 }
 
 /* Cite-box content styling */
