@@ -292,8 +292,7 @@ function initializeCiteBoxes() {
             document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
             ref.classList.add('is-highlighted');
             box.classList.add('is-highlighted');
-            // Keep this box focused
-            focusedMarginElement = box;
+            // Don't change focusedMarginElement here - only citation hover should change focus
         });
 
         box.addEventListener('mouseleave', () => {
