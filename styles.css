@@ -69,13 +69,22 @@ nav a.active {
     border-bottom-color: #0a0a0a;
 }
 
-/* Layout with sidebar */
+/* Layout with sidebar - asymmetric margins to preserve right margin space for sidenotes */
 .page-container {
     display: flex;
     max-width: 1200px;
-    margin: 0 auto;
+    margin-left: 20px;
+    margin-right: 20px;
     position: relative;
     overflow: visible;
+}
+
+/* When there's extra space, shift content left to give right margin priority */
+@media (min-width: 1240px) {
+    .page-container {
+        margin-left: calc((100vw - 1200px) * 0.25);
+        margin-right: calc((100vw - 1200px) * 0.75);
+    }
 }
 
 /* Table of Contents Sidebar */
@@ -152,6 +161,14 @@ main {
     padding: 3rem 1.5rem 4rem;
     flex-grow: 1;
     min-width: 0;
+}
+
+/* Reduce left padding at intermediate widths to preserve right margin space */
+@media (max-width: 1399px) and (min-width: 1025px) {
+    main {
+        padding-left: 0.5rem;
+        margin-left: 0;
+    }
 }
 
 /* Header */
@@ -435,15 +452,33 @@ em {
     font-style: italic;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+/* Responsive - shrink TOC early to preserve right margin for sidenotes */
+@media (max-width: 1399px) {
     .toc-sidebar {
-        width: 200px;
-        padding: 1.5rem 0.75rem 1.5rem 1rem;
+        width: 180px;
+        padding: 1.5rem 0.5rem 1.5rem 0.75rem;
     }
 
     .toc-sidebar a {
         font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .toc-sidebar {
+        width: 160px;
+        padding: 1.5rem 0.25rem 1.5rem 0.5rem;
+    }
+
+    .toc-sidebar a {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .toc-sidebar {
+        width: 140px;
+        padding: 1.5rem 0.25rem 1.5rem 0.5rem;
     }
 }
 
