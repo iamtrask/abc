@@ -613,184 +613,469 @@ function setupModalTriggers() {
 
 ### Migration Path: Step-by-Step Implementation
 
-The following steps are ordered to minimize breaking changes and allow testing at each stage.
+Each phase ends with a **visual checkpoint** you can verify in the browser before proceeding.
 
-#### Phase 1: Unify Positioning Context (Non-Breaking)
+---
 
-**Step 1.1**: Create new unified data collection function
+#### Phase 1: Sidenotes Position via Unified System
+
+**Goal**: Replace sidenote positioning with new unified function. Cards unchanged.
+
+**Changes**:
+1. Add new `collectMarginItems()` and `positionMarginItems()` functions
+2. Replace `alignSidenotes()` calls with new unified function
+3. Keep all card code unchanged for now
+
+**Code**:
 ```javascript
-// Add alongside existing code, don't replace yet
+function collectMarginItems(section) {
+    const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
+    // Note: NOT including cite-boxes yet
+
+    return sidenotes.map(element => ({
+        element,
+        type: 'sidenote',
+        refElement: document.querySelector(`a[href="#${element.id}"]`),
+        section,
+        targetTop: 0,
+        height: element.offsetHeight
+    }));
+}
+
+function positionMarginItems(items, focusedItem = null) {
+    const GAP = 16;
+
+    // Calculate target positions
+    items.forEach(item => {
+        if (item.refElement) {
+            const refRect = item.refElement.getBoundingClientRect();
+            const sectionRect = item.section.getBoundingClientRect();
+            item.targetTop = refRect.top - sectionRect.top;
+        }
+    });
+
+    // Sort by target position
+    items.sort((a, b) => a.targetTop - b.targetTop);
+
+    // Simple collision avoidance (no focus yet)
+    let lastBottom = -Infinity;
+    items.forEach(item => {
+        const adjustedTop = Math.max(item.targetTop, lastBottom + GAP);
+        item.element.style.top = `${adjustedTop}px`;
+        lastBottom = adjustedTop + item.height;
+    });
+}
+
+// Replace old alignSidenotes calls:
+function alignSidenotes() {
+    if (window.matchMedia('(max-width: 1024px)').matches) return;
+
+    document.querySelectorAll('section').forEach(section => {
+        const items = collectMarginItems(section);
+        positionMarginItems(items);
+    });
+}
+```
+
+**✅ Visual Checkpoint 1**:
+| Test | Expected Result |
+|------|-----------------|
+| Load page on wide screen | Sidenotes appear in right margin |
+| Sidenotes near their references | Each sidenote aligns with its superscript number |
+| Multiple sidenotes don't overlap | Sidenotes stack with gaps between them |
+| Cards still work | Cards position and hover as before (unchanged) |
+| Resize window | Sidenotes reposition correctly |
+
+---
+
+#### Phase 2: Cards Join Unified System (No Hover Yet)
+
+**Goal**: Cards position via unified system alongside sidenotes. Hover disabled temporarily.
+
+**Changes**:
+1. Remove `position: relative` from `.cite-box-wrapper`
+2. Add cite-boxes to `collectMarginItems()`
+3. Disable card hover repositioning temporarily
+4. All items (sidenotes + cards) avoid overlapping
+
+**CSS Change**:
+```css
+.cite-box-wrapper {
+    /* Remove: position: relative; */
+}
+```
+
+**Code Change**:
+```javascript
 function collectMarginItems(section) {
     const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
     const citeBoxes = Array.from(section.querySelectorAll('.cite-box'));
 
-    return [...sidenotes, ...citeBoxes].map(element => ({
-        element,
-        type: element.classList.contains('sidenote') ? 'sidenote' : 'cite-box',
-        refElement: findRefForItem(element),
-        section,
-        targetTop: 0,
-        currentTop: 0,
-        height: element.offsetHeight
-    }));
+    const items = [];
+
+    sidenotes.forEach(element => {
+        items.push({
+            element,
+            type: 'sidenote',
+            refElement: document.querySelector(`a[href="#${element.id}"]`),
+            section,
+            targetTop: 0,
+            height: element.offsetHeight
+        });
+    });
+
+    citeBoxes.forEach(element => {
+        const refId = element.getAttribute('data-ref');
+        items.push({
+            element,
+            type: 'cite-box',
+            refElement: document.getElementById(refId),
+            section,
+            targetTop: 0,
+            height: element.offsetHeight
+        });
+    });
+
+    return items;
 }
+
+// Temporarily disable card hover repositioning
+// (Comment out setActiveCite calls)
 ```
 
-**Step 1.2**: Create new unified positioning function
-```javascript
-// Add alongside existing code, don't replace yet
-function positionMarginItems(items, focusedItem = null) {
-    // Implementation as described above
-}
-```
-
-**Step 1.3**: Test new functions work correctly
-- Call new functions manually in console
-- Verify items position correctly
-- Verify no regressions with existing code
+**✅ Visual Checkpoint 2**:
+| Test | Expected Result |
+|------|-----------------|
+| Load page on wide screen | Both sidenotes AND cards appear in margin |
+| Sidenotes and cards don't overlap | All items stack with gaps, no overlapping |
+| Cards near their citation references | Each card aligns with its (A) superscript |
+| Scroll down page | Items stay aligned with their references |
+| Card hover highlighting works | Hovering card highlights its reference (but no repositioning) |
 
 ---
 
-#### Phase 2: Switch to Unified System (Breaking for Cards)
+#### Phase 3: Card Hover Focus Restored
 
-**Step 2.1**: Update CSS
-```css
-/* Remove positioning context from wrapper */
-.cite-box-wrapper {
-    position: static; /* Was: position: relative */
+**Goal**: Restore card hover behavior - hovered card gets priority positioning.
+
+**Changes**:
+1. Add `focusedItem` parameter support to `positionMarginItems()`
+2. Re-enable hover event handlers
+3. Focused card moves to its target, others shift around it
+
+**Code Change**:
+```javascript
+function positionMarginItems(items, focusedItem = null) {
+    const GAP = 16;
+
+    // Calculate target positions
+    items.forEach(item => {
+        if (item.refElement) {
+            const refRect = item.refElement.getBoundingClientRect();
+            const sectionRect = item.section.getBoundingClientRect();
+            item.targetTop = refRect.top - sectionRect.top;
+        }
+    });
+
+    // Sort by target position
+    items.sort((a, b) => a.targetTop - b.targetTop);
+
+    // Find focused item index
+    const focusedIndex = focusedItem ? items.indexOf(focusedItem) : -1;
+
+    if (focusedIndex >= 0) {
+        // Position focused item at its target
+        const focused = items[focusedIndex];
+        focused.element.style.top = `${focused.targetTop}px`;
+
+        // Position items above (push up if needed)
+        let ceiling = focused.targetTop - GAP;
+        for (let i = focusedIndex - 1; i >= 0; i--) {
+            const top = Math.min(items[i].targetTop, ceiling - items[i].height);
+            items[i].element.style.top = `${Math.max(0, top)}px`;
+            ceiling = Math.max(0, top) - GAP;
+        }
+
+        // Position items below (push down if needed)
+        let floor = focused.targetTop + focused.height + GAP;
+        for (let i = focusedIndex + 1; i < items.length; i++) {
+            const top = Math.max(items[i].targetTop, floor);
+            items[i].element.style.top = `${top}px`;
+            floor = top + items[i].height + GAP;
+        }
+    } else {
+        // No focus: simple top-down collision avoidance
+        let lastBottom = -Infinity;
+        items.forEach(item => {
+            const adjustedTop = Math.max(item.targetTop, lastBottom + GAP);
+            item.element.style.top = `${adjustedTop}px`;
+            lastBottom = adjustedTop + item.height;
+        });
+    }
 }
 ```
 
-**Step 2.2**: Replace card positioning calls
-```javascript
-// OLD:
-positionCiteBoxes(focusedRefId);
+**✅ Visual Checkpoint 3**:
+| Test | Expected Result |
+|------|-----------------|
+| Hover on citation (A) in text | Associated card slides to align with citation |
+| Other items shift | Sidenotes and other cards move to avoid overlap |
+| Hover on different citation | New card gets focus, items re-arrange |
+| Stop hovering | Items return to default positions (after timeout) |
+| Avatar hover on card | Author swaps, card resizes, other items adjust |
 
-// NEW:
-const section = /* find section */;
-const items = collectMarginItems(section);
-const focused = focusedRefId ? items.find(i => i.refElement.id === focusedRefId) : null;
-positionMarginItems(items, focused);
+---
+
+#### Phase 4: Modal Mode for Narrow Screens
+
+**Goal**: On narrow screens, hide margin items and show them as modals on click.
+
+**Changes**:
+1. Add CSS to hide margin items below breakpoint
+2. Add modal overlay HTML/CSS
+3. Add click handlers for references
+4. Implement open/close modal functions
+
+**CSS**:
+```css
+/* Hide margin items on narrow screens */
+@media (max-width: 1100px) {
+    .sidenote,
+    .cite-box {
+        /* Don't use display:none - we need them for modal content */
+        position: fixed !important;
+        left: -9999px !important;
+        visibility: hidden;
+    }
+}
+
+/* Modal styles */
+.margin-item-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.margin-item-modal-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.margin-item-modal {
+    background: #fff;
+    border: 1px solid #0a0a0a;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+    position: relative;
+}
+
+.margin-item-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+}
 ```
 
-**Step 2.3**: Replace sidenote positioning calls
+**JavaScript**:
 ```javascript
-// OLD:
-alignSidenotes();
+const MODAL_BREAKPOINT = 1100;
 
-// NEW:
-document.querySelectorAll('section').forEach(section => {
-    const items = collectMarginItems(section);
-    positionMarginItems(items);
+function isModalMode() {
+    return window.innerWidth <= MODAL_BREAKPOINT;
+}
+
+function openMarginModal(item) {
+    let overlay = document.querySelector('.margin-item-modal-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'margin-item-modal-overlay';
+        overlay.innerHTML = `
+            <div class="margin-item-modal" role="dialog" aria-modal="true">
+                <button class="margin-item-modal-close" aria-label="Close">&times;</button>
+                <div class="margin-item-modal-content"></div>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Close on overlay click
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeMarginModal();
+        });
+
+        // Close button
+        overlay.querySelector('.margin-item-modal-close').addEventListener('click', closeMarginModal);
+    }
+
+    // Clone content into modal
+    const content = overlay.querySelector('.margin-item-modal-content');
+    content.innerHTML = '';
+    const clone = item.element.cloneNode(true);
+    clone.style.cssText = 'position:static;visibility:visible;left:auto;';
+    content.appendChild(clone);
+
+    overlay.classList.add('is-active');
+    item.refElement?.classList.add('is-highlighted');
+
+    // Store active item for cleanup
+    overlay.dataset.activeItemId = item.element.id;
+}
+
+function closeMarginModal() {
+    const overlay = document.querySelector('.margin-item-modal-overlay');
+    if (!overlay) return;
+
+    overlay.classList.remove('is-active');
+
+    // Remove highlight
+    const itemId = overlay.dataset.activeItemId;
+    if (itemId) {
+        const item = document.getElementById(itemId);
+        const refSelector = item?.classList.contains('sidenote')
+            ? `a[href="#${itemId}"]`
+            : `#${item?.getAttribute('data-ref')}`;
+        document.querySelector(refSelector)?.classList.remove('is-highlighted');
+    }
+}
+
+// Add click handlers for modal mode
+document.addEventListener('click', (e) => {
+    if (!isModalMode()) return;
+
+    // Check if clicked a sidenote ref
+    const sidenoteRef = e.target.closest('.sidenote-ref');
+    if (sidenoteRef) {
+        e.preventDefault();
+        const targetId = sidenoteRef.getAttribute('href');
+        const sidenote = document.querySelector(targetId);
+        if (sidenote) {
+            openMarginModal({
+                element: sidenote,
+                refElement: sidenoteRef
+            });
+        }
+        return;
+    }
+
+    // Check if clicked a cite-box ref
+    const citeRef = e.target.closest('.cite-box-ref');
+    if (citeRef) {
+        e.preventDefault();
+        const boxId = citeRef.getAttribute('data-box');
+        const box = document.getElementById(boxId);
+        if (box) {
+            openMarginModal({
+                element: box,
+                refElement: citeRef
+            });
+        }
+        return;
+    }
+});
+
+// Escape to close
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMarginModal();
 });
 ```
 
-**Step 2.4**: Test thoroughly
-- Sidenotes still position correctly
-- Cards still position correctly
-- Sidenotes and cards don't overlap
-- Hover behavior works for cards
+**✅ Visual Checkpoint 4**:
+| Test | Expected Result |
+|------|-----------------|
+| Narrow window (< 1100px) | Sidenotes and cards NOT visible in margin |
+| Click footnote superscript | Modal opens with sidenote content |
+| Click citation (A) | Modal opens with card content |
+| Click outside modal | Modal closes |
+| Press Escape | Modal closes |
+| Click different reference while modal open | Modal switches to new content |
+| Widen window (> 1100px) | Margin items reappear, click does nothing |
 
 ---
 
-#### Phase 3: Add Mode Management (Non-Breaking)
+#### Phase 5: Polish and Cleanup
 
-**Step 3.1**: Create MarginItemManager class
-```javascript
-class MarginItemManager {
-    constructor() {
-        this.items = [];
-        this.mode = 'margin';
-        this.focusedItem = null;
-        this.activeModal = null;
-    }
+**Goal**: Remove old code, ensure smooth transitions, final polish.
 
-    initialize() {
-        this.collectItems();
-        this.updateMode();
-        this.setupEventListeners();
-    }
+**Changes**:
+1. Delete old `alignSidenotes()`, `positionCiteBoxes()`, `getCiteBoxData()`
+2. Delete old hover event handlers (consolidated into new system)
+3. Add smooth transitions for margin mode
+4. Ensure avatar hover works in modal mode too
 
-    // ... rest of implementation
+**CSS Polish**:
+```css
+/* Smooth transitions for margin items */
+.sidenote,
+.cite-box {
+    transition: top 0.2s ease-out;
+}
+
+/* Prevent transition on page load */
+.no-transition .sidenote,
+.no-transition .cite-box {
+    transition: none;
 }
 ```
 
-**Step 3.2**: Initialize on page load
-```javascript
-const marginManager = new MarginItemManager();
-document.addEventListener('DOMContentLoaded', () => marginManager.initialize());
-```
-
-**Step 3.3**: Test margin mode still works identically
-
----
-
-#### Phase 4: Add Modal Mode (New Feature)
-
-**Step 4.1**: Add modal HTML structure (empty, populated by JS)
-```html
-<!-- Add before </body> -->
-<div class="margin-item-modal-overlay" aria-hidden="true">
-    <div class="margin-item-modal" role="dialog" aria-modal="true">
-        <button class="margin-item-modal-close" aria-label="Close">&times;</button>
-        <div class="margin-item-modal-content"></div>
-    </div>
-</div>
-```
-
-**Step 4.2**: Add modal CSS
-
-**Step 4.3**: Implement modal open/close methods
-
-**Step 4.4**: Implement mode switching logic
-
-**Step 4.5**: Test on narrow viewport
-- References become clickable
-- Modal opens with correct content
-- Modal closes on outside click
-- Modal closes on Escape
+**✅ Visual Checkpoint 5 (Final)**:
+| Test | Expected Result |
+|------|-----------------|
+| All Phase 1-4 tests pass | No regressions |
+| Smooth animations | Items slide smoothly when repositioning |
+| No console errors | Clean console on all interactions |
+| Avatar hover in modal | Clicking avatar in modal swaps author info |
+| Resize across breakpoint | Clean switch between margin and modal modes |
+| Page load | No flickering or jumping on initial load |
 
 ---
 
-#### Phase 5: Cleanup (Final)
+### Summary: Visual Checkpoints
 
-**Step 5.1**: Remove old positioning functions
-- Delete `alignSidenotes()`
-- Delete `positionCiteBoxes()`
-- Delete `getCiteBoxData()`
-
-**Step 5.2**: Remove old event listeners
-- Consolidate into MarginItemManager
-
-**Step 5.3**: Update initialization
-- Single entry point via MarginItemManager
-
-**Step 5.4**: Final testing across all breakpoints
-
----
+| Phase | What You'll See |
+|-------|-----------------|
+| **1** | Sidenotes position correctly (cards unchanged) |
+| **2** | Sidenotes + cards both in margin, no overlaps |
+| **3** | Hovering citation makes card slide into position |
+| **4** | Narrow screen: click opens modal, click-out closes |
+| **5** | Smooth animations, no console errors, polished |
 
 ### Files to Modify
 
 | File | Changes |
 |------|---------|
-| `styles.css` | Remove wrapper positioning, add modal styles, add margin-item base class |
-| `main.js` | Replace positioning functions with MarginItemManager class |
-| `index.html` | Add modal overlay element (or create via JS) |
-
-### Estimated Complexity
-
-| Phase | Difficulty | Risk | Can Test Independently |
-|-------|------------|------|------------------------|
-| Phase 1 | Low | None | Yes |
-| Phase 2 | Medium | Medium (cards might break) | Yes |
-| Phase 3 | Low | Low | Yes |
-| Phase 4 | Medium | Low | Yes |
-| Phase 5 | Low | Low | Yes |
+| `styles.css` | Remove wrapper positioning, add modal styles, add transitions |
+| `main.js` | Replace positioning functions, add modal logic |
+| `index.html` | No changes needed (modal created via JS) |
 
 ### Rollback Points
 
-- After Phase 1: No changes to behavior, safe
-- After Phase 2: `git revert` to restore old positioning
-- After Phase 3: Remove MarginItemManager, restore direct calls
-- After Phase 4: Remove modal code, keep unified positioning
-- After Phase 5: Full rollback to pre-migration commit
+Each phase has a git commit. To rollback:
+
+```bash
+# See commits
+git log --oneline
+
+# Rollback to specific phase
+git checkout <commit-hash> -- main.js styles.css
+```
+
+| After Phase | Rollback Command | Result |
+|-------------|------------------|--------|
+| 1 | `git checkout HEAD~1 -- main.js` | Original sidenote code restored |
+| 2 | `git checkout HEAD~1 -- main.js styles.css` | Cards use old positioning |
+| 3 | `git checkout HEAD~1 -- main.js` | No hover focus |
+| 4 | `git checkout HEAD~1 -- main.js styles.css` | No modal mode |
+| 5 | `git checkout HEAD~1 -- main.js styles.css` | Before cleanup |
