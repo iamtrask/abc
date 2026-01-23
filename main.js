@@ -61,29 +61,23 @@ window.addEventListener('resize', updateHeader);
  */
 const MARGIN_GAP = 16;
 
-function getMarginItemTargetTop(item) {
+function getMarginItemTargetTop(item, section) {
+    const sectionRect = section.getBoundingClientRect();
+
     if (item.classList.contains('sidenote')) {
         const refSelector = `a[href="#${item.id}"]`;
         const ref = document.querySelector(refSelector);
         if (!ref) return parseFloat(item.style.top) || 0;
 
-        const section = ref.closest('section');
-        if (!section) return parseFloat(item.style.top) || 0;
-
         const refRect = ref.getBoundingClientRect();
-        const sectionRect = section.getBoundingClientRect();
         return refRect.top - sectionRect.top;
     } else if (item.classList.contains('cite-box')) {
         const refId = item.getAttribute('data-ref');
         const ref = document.getElementById(refId);
         if (!ref) return parseFloat(item.style.top) || 0;
 
-        const wrapper = item.closest('.cite-box-wrapper');
-        if (!wrapper) return parseFloat(item.style.top) || 0;
-
         const refRect = ref.getBoundingClientRect();
-        const wrapperRect = wrapper.getBoundingClientRect();
-        return refRect.top - wrapperRect.top;
+        return refRect.top - sectionRect.top;
     }
     return 0;
 }
@@ -103,7 +97,7 @@ function alignAllMarginItems(fixedItem = null) {
         // Calculate target tops and collect data
         const itemData = allItems.map(item => ({
             item,
-            targetTop: getMarginItemTargetTop(item),
+            targetTop: getMarginItemTargetTop(item, section),
             height: item.offsetHeight,
             isFixed: item === fixedItem
         }));
@@ -232,8 +226,13 @@ window.addEventListener('resize', initializeSidenotes);
 const MIN_BOX_GAP = 20; // Minimum pixels between boxes
 
 function positionCiteBoxes(focusedRefId = null) {
-    // Use unified positioning
-    alignAllMarginItems();
+    // Find the focused box if a ref ID is provided
+    let fixedItem = null;
+    if (focusedRefId) {
+        const box = document.querySelector(`.cite-box[data-ref="${focusedRefId}"]`);
+        if (box) fixedItem = box;
+    }
+    alignAllMarginItems(fixedItem);
 }
 
 let activeCiteRef = null;
