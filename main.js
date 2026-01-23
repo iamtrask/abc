@@ -179,3 +179,20 @@ if (document.fonts) {
 }
 
 window.addEventListener('resize', initializeSidenotes);
+
+// Cite-box hover highlighting
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.cite-box[data-ref]').forEach((box) => {
+        const refId = box.getAttribute('data-ref');
+        const ref = document.getElementById(refId);
+        if (!ref) return;
+
+        box.addEventListener('mouseenter', () => {
+            ref.classList.add('is-highlighted');
+        });
+
+        box.addEventListener('mouseleave', () => {
+            ref.classList.remove('is-highlighted');
+        });
+    });
+});
