@@ -252,6 +252,11 @@ function setActiveCite(refId) {
         clearTimeout(resetTimeout);
         resetTimeout = null;
     }
+    // Clear previous highlights before setting new one
+    if (activeCiteRef && activeCiteRef !== refId) {
+        document.querySelectorAll('.cite-box.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
+        document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
+    }
     activeCiteRef = refId;
     positionCiteBoxes(refId);
 }
