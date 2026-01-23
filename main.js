@@ -470,17 +470,20 @@ function closeMarginModal() {
     }
 }
 
-// Click handlers - always prevent default scroll on citation links
+// Click handlers - prevent default scroll, open modal only on narrow screens
 document.addEventListener('click', (e) => {
     // Check if clicked a sidenote ref
     const sidenoteRef = e.target.closest('.sidenote-ref');
     if (sidenoteRef) {
         e.preventDefault();
         e.stopPropagation();
-        const targetId = sidenoteRef.getAttribute('href');
-        const sidenote = document.querySelector(targetId);
-        if (sidenote) {
-            openMarginModal(sidenote, sidenoteRef);
+        // Only open modal if items are hidden (narrow screen)
+        if (isModalMode()) {
+            const targetId = sidenoteRef.getAttribute('href');
+            const sidenote = document.querySelector(targetId);
+            if (sidenote) {
+                openMarginModal(sidenote, sidenoteRef);
+            }
         }
         return;
     }
@@ -490,10 +493,13 @@ document.addEventListener('click', (e) => {
     if (citeRef) {
         e.preventDefault();
         e.stopPropagation();
-        const boxId = citeRef.getAttribute('data-box');
-        const box = document.getElementById(boxId);
-        if (box) {
-            openMarginModal(box, citeRef);
+        // Only open modal if items are hidden (narrow screen)
+        if (isModalMode()) {
+            const boxId = citeRef.getAttribute('data-box');
+            const box = document.getElementById(boxId);
+            if (box) {
+                openMarginModal(box, citeRef);
+            }
         }
         return;
     }
