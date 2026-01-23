@@ -875,17 +875,17 @@ main {
     position: absolute;
     right: -260px;
     width: 200px;
-    height: 80px;
+    height: 150px;
     background-color: #e8e8e8;
     border: 1px solid #ccc;
 }
 
 .cite-box:nth-of-type(1) {
-    top: 20%;
+    top: 0;
 }
 
 .cite-box:nth-of-type(2) {
-    top: 55%;
+    top: 160px;
 }
 
 .cite-box::before {
