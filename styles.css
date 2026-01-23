@@ -995,8 +995,7 @@ main {
     font-size: 14px;
     font-weight: normal;
     color: #000;
-    line-height: 1.5;
-    margin-bottom: 4px;
+    line-height: 1.2;
 }
 
 .cite-box-author-verified {
@@ -1004,7 +1003,8 @@ main {
     font-size: 14px;
     font-weight: normal;
     color: #000;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+    line-height: 1.2;
 }
 
 .cite-box-author-verified a {
@@ -1017,7 +1017,7 @@ main {
     font-size: 15px;
     font-weight: normal;
     color: #180da4;
-    line-height: 1.6;
+    line-height: 1.2;
 }
 
 .cite-box-scholar {
