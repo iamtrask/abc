@@ -180,8 +180,42 @@ if (document.fonts) {
 
 window.addEventListener('resize', initializeSidenotes);
 
-// Cite-box hover highlighting (bidirectional)
-document.addEventListener('DOMContentLoaded', function () {
+// Cite-box positioning and hover highlighting
+const MIN_BOX_GAP = 20; // Minimum pixels between boxes
+
+function positionCiteBoxes() {
+    const boxes = Array.from(document.querySelectorAll('.cite-box[data-ref]'));
+    if (boxes.length === 0) return;
+
+    // Sort boxes by their citation's vertical position
+    const boxData = boxes.map(box => {
+        const refId = box.getAttribute('data-ref');
+        const ref = document.getElementById(refId);
+        const wrapper = box.closest('.cite-box-wrapper');
+        if (!ref || !wrapper) return null;
+
+        const refRect = ref.getBoundingClientRect();
+        const wrapperRect = wrapper.getBoundingClientRect();
+        // Target position: align box top with citation, relative to wrapper
+        const targetTop = refRect.top - wrapperRect.top;
+
+        return { box, ref, wrapper, targetTop };
+    }).filter(Boolean).sort((a, b) => a.targetTop - b.targetTop);
+
+    // Position boxes with collision avoidance
+    let lastBottom = -Infinity;
+
+    boxData.forEach(({ box, targetTop }) => {
+        // Ensure minimum gap from previous box
+        const adjustedTop = Math.max(targetTop, lastBottom + MIN_BOX_GAP);
+        box.style.top = `${adjustedTop}px`;
+        lastBottom = adjustedTop + box.offsetHeight;
+    });
+}
+
+function initializeCiteBoxes() {
+    positionCiteBoxes();
+
     // Hover on box -> highlight citation
     document.querySelectorAll('.cite-box[data-ref]').forEach((box) => {
         const refId = box.getAttribute('data-ref');
@@ -211,4 +245,8 @@ document.addEventListener('DOMContentLoaded', function () {
             box.classList.remove('is-highlighted');
         });
     });
-});
+}
+
+document.addEventListener('DOMContentLoaded', initializeCiteBoxes);
+window.addEventListener('load', positionCiteBoxes);
+window.addEventListener('resize', positionCiteBoxes);
