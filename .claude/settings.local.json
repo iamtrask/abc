@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:andrewtrask.substack.com)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(magick:*)"
     ]
   }
 }
