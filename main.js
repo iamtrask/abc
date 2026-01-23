@@ -58,19 +58,107 @@ window.addEventListener('resize', updateHeader);
 
 /**
  * Unified margin item positioning system.
- * Handles both sidenotes and cite-boxes with collision avoidance.
+ * Handles both sidenotes and cite-boxes with collision avoidance across sections.
  */
 const MARGIN_GAP = 20;
 
-function collectMarginItems(section) {
-    const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
-    const citeBoxes = Array.from(section.querySelectorAll('.cite-box[data-ref]'));
+function positionMarginItemsGlobal(items, focusedItem = null) {
+    if (items.length === 0) return;
+
+    const main = document.querySelector('main') || document.body;
+    const mainRect = main.getBoundingClientRect();
+    const scrollTop = window.scrollY;
+
+    // Calculate target positions (relative to main element)
+    items.forEach(item => {
+        if (item.refElement) {
+            const refRect = item.refElement.getBoundingClientRect();
+            // Get the section containing this item for positioning context
+            const section = item.element.closest('section');
+            const sectionRect = section ? section.getBoundingClientRect() : mainRect;
+            // Store both global target (for sorting) and section-relative (for positioning)
+            item.globalTarget = refRect.top + scrollTop;
+            item.sectionOffset = sectionRect.top + scrollTop;
+            item.targetTop = refRect.top - sectionRect.top;
+        }
+        // Refresh height in case content changed
+        item.height = item.element.offsetHeight;
+    });
+
+    // Sort by global target position
+    items.sort((a, b) => a.globalTarget - b.globalTarget);
+
+    // Focus-aware positioning: focused item gets priority, others shift around it
+    const focusedIndex = focusedItem ? items.indexOf(focusedItem) : -1;
+
+    if (focusedIndex >= 0) {
+        const focused = items[focusedIndex];
+
+        // Calculate space needed for items above (in global coordinates)
+        let spaceNeededAbove = 0;
+        for (let i = 0; i < focusedIndex; i++) {
+            spaceNeededAbove += items[i].height + MARGIN_GAP;
+        }
+
+        // Position focused item - push down if items above need more space
+        const focusedGlobalTop = Math.max(focused.globalTarget, spaceNeededAbove);
+        const focusedLocalTop = focusedGlobalTop - focused.sectionOffset;
+        focused.element.style.top = `${focusedLocalTop}px`;
+        focused.currentGlobalTop = focusedGlobalTop;
+
+        // Position items above (push up from focused item)
+        let ceiling = focusedGlobalTop - MARGIN_GAP;
+        for (let i = focusedIndex - 1; i >= 0; i--) {
+            const item = items[i];
+            const idealGlobalTop = item.globalTarget;
+            const globalTop = Math.min(idealGlobalTop, ceiling - item.height);
+            const clampedGlobalTop = Math.max(0, globalTop);
+            const localTop = clampedGlobalTop - item.sectionOffset;
+            item.element.style.top = `${localTop}px`;
+            item.currentGlobalTop = clampedGlobalTop;
+            ceiling = clampedGlobalTop - MARGIN_GAP;
+        }
+
+        // Position items below (push down if needed)
+        let floor = focusedGlobalTop + focused.height + MARGIN_GAP;
+        for (let i = focusedIndex + 1; i < items.length; i++) {
+            const item = items[i];
+            const idealGlobalTop = item.globalTarget;
+            const globalTop = Math.max(idealGlobalTop, floor);
+            const localTop = globalTop - item.sectionOffset;
+            item.element.style.top = `${localTop}px`;
+            item.currentGlobalTop = globalTop;
+            floor = globalTop + item.height + MARGIN_GAP;
+        }
+    } else {
+        // No focus: simple top-down collision avoidance
+        let lastGlobalBottom = -Infinity;
+        items.forEach(item => {
+            const idealGlobalTop = item.globalTarget;
+            const globalTop = Math.max(idealGlobalTop, lastGlobalBottom + MARGIN_GAP);
+            const localTop = globalTop - item.sectionOffset;
+            item.element.style.top = `${localTop}px`;
+            lastGlobalBottom = globalTop + item.height;
+        });
+    }
+}
+
+// Track focused margin item for hover behavior
+let focusedMarginElement = null;
+let focusResetTimeout = null;
+
+/**
+ * Collect all margin items from the entire document.
+ */
+function collectAllMarginItems() {
+    const main = document.querySelector('main') || document.body;
+    const sidenotes = Array.from(main.querySelectorAll('.sidenote'));
+    const citeBoxes = Array.from(main.querySelectorAll('.cite-box[data-ref]'));
 
     const sidenoteItems = sidenotes.map(element => ({
         element,
         type: 'sidenote',
         refElement: document.querySelector(`a[href="#${element.id}"]`),
-        section,
         targetTop: 0,
         height: element.offsetHeight
     }));
@@ -81,7 +169,6 @@ function collectMarginItems(section) {
             element,
             type: 'cite-box',
             refElement: document.getElementById(refId),
-            section,
             targetTop: 0,
             height: element.offsetHeight
         };
@@ -90,70 +177,6 @@ function collectMarginItems(section) {
     return [...sidenoteItems, ...citeBoxItems];
 }
 
-function positionMarginItems(items, focusedItem = null) {
-    if (items.length === 0) return;
-
-    // Calculate target positions (relative to section)
-    items.forEach(item => {
-        if (item.refElement) {
-            const refRect = item.refElement.getBoundingClientRect();
-            const sectionRect = item.section.getBoundingClientRect();
-            item.targetTop = refRect.top - sectionRect.top;
-        }
-        // Refresh height in case content changed
-        item.height = item.element.offsetHeight;
-    });
-
-    // Sort by target position
-    items.sort((a, b) => a.targetTop - b.targetTop);
-
-    // Focus-aware positioning: focused item gets priority, others shift around it
-    const focusedIndex = focusedItem ? items.indexOf(focusedItem) : -1;
-
-    if (focusedIndex >= 0) {
-        const focused = items[focusedIndex];
-
-        // First, calculate how much space items above need
-        let spaceNeededAbove = 0;
-        for (let i = 0; i < focusedIndex; i++) {
-            spaceNeededAbove += items[i].height + MARGIN_GAP;
-        }
-
-        // Position focused item - push down if items above need more space
-        const focusedTop = Math.max(focused.targetTop, spaceNeededAbove);
-        focused.element.style.top = `${focusedTop}px`;
-
-        // Position items above (push up from focused item)
-        let ceiling = focusedTop - MARGIN_GAP;
-        for (let i = focusedIndex - 1; i >= 0; i--) {
-            const top = Math.min(items[i].targetTop, ceiling - items[i].height);
-            const clampedTop = Math.max(0, top);
-            items[i].element.style.top = `${clampedTop}px`;
-            ceiling = clampedTop - MARGIN_GAP;
-        }
-
-        // Position items below (push down if needed)
-        let floor = focusedTop + focused.height + MARGIN_GAP;
-        for (let i = focusedIndex + 1; i < items.length; i++) {
-            const top = Math.max(items[i].targetTop, floor);
-            items[i].element.style.top = `${top}px`;
-            floor = top + items[i].height + MARGIN_GAP;
-        }
-    } else {
-        // No focus: simple top-down collision avoidance
-        let lastBottom = -Infinity;
-        items.forEach(item => {
-            const adjustedTop = Math.max(item.targetTop, lastBottom + MARGIN_GAP);
-            item.element.style.top = `${adjustedTop}px`;
-            lastBottom = adjustedTop + item.height;
-        });
-    }
-}
-
-// Track focused margin item for hover behavior
-let focusedMarginElement = null;
-let focusResetTimeout = null;
-
 /**
  * Align margin items using unified positioning system.
  * @param {HTMLElement|null} focusedElement - Element to focus (gets priority positioning)
@@ -161,18 +184,15 @@ let focusResetTimeout = null;
 function alignMarginItems(focusedElement = null) {
     if (window.matchMedia('(max-width: 1024px)').matches) return;
 
-    document.querySelectorAll('section').forEach(section => {
-        const items = collectMarginItems(section);
-        // Find the focused item in this section's items
-        const focusedItem = focusedElement
-            ? items.find(item => item.element === focusedElement)
-            : null;
-        positionMarginItems(items, focusedItem);
-    });
+    const items = collectAllMarginItems();
+    const focusedItem = focusedElement
+        ? items.find(item => item.element === focusedElement)
+        : null;
+    positionMarginItemsGlobal(items, focusedItem);
 }
 
 /**
- * Align side notes using unified positioning system (legacy name for compatibility).
+ * Align all margin items (sidenotes + cards) using unified positioning system.
  */
 function alignSidenotes() {
     alignMarginItems(focusedMarginElement);
