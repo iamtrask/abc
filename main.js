@@ -244,6 +244,29 @@ function positionCiteBoxes(focusedRefId = null) {
     }
 }
 
+let activeCiteRef = null;
+let resetTimeout = null;
+
+function setActiveCite(refId) {
+    if (resetTimeout) {
+        clearTimeout(resetTimeout);
+        resetTimeout = null;
+    }
+    activeCiteRef = refId;
+    positionCiteBoxes(refId);
+}
+
+function clearActiveCite() {
+    // Small delay to allow moving between citation and box
+    resetTimeout = setTimeout(() => {
+        activeCiteRef = null;
+        positionCiteBoxes();
+        // Remove all highlights
+        document.querySelectorAll('.cite-box.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
+        document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
+    }, 100);
+}
+
 function initializeCiteBoxes() {
     positionCiteBoxes();
 
@@ -255,12 +278,12 @@ function initializeCiteBoxes() {
 
         box.addEventListener('mouseenter', () => {
             ref.classList.add('is-highlighted');
-            positionCiteBoxes(refId);
+            box.classList.add('is-highlighted');
+            setActiveCite(refId);
         });
 
         box.addEventListener('mouseleave', () => {
-            ref.classList.remove('is-highlighted');
-            positionCiteBoxes();
+            clearActiveCite();
         });
     });
 
@@ -272,12 +295,12 @@ function initializeCiteBoxes() {
 
         ref.addEventListener('mouseenter', () => {
             box.classList.add('is-highlighted');
-            positionCiteBoxes(ref.id);
+            ref.classList.add('is-highlighted');
+            setActiveCite(ref.id);
         });
 
         ref.addEventListener('mouseleave', () => {
-            box.classList.remove('is-highlighted');
-            positionCiteBoxes();
+            clearActiveCite();
         });
     });
 }
