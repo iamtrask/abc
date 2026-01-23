@@ -865,3 +865,34 @@ main {
         max-width: 100% !important;
     }
 }
+
+/* Citation box with connecting line */
+.cite-box-anchor {
+    position: relative;
+}
+
+.cite-box {
+    position: absolute;
+    left: calc(100% + 40px);
+    top: 0;
+    width: 200px;
+    height: 180px;
+    background-color: #e8e8e8;
+    border: 1px solid #ccc;
+}
+
+.cite-box::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background-color: #0a0a0a;
+}
+
+@media(max-width: 1399px) {
+    .cite-box {
+        display: none;
+    }
+}
