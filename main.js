@@ -448,19 +448,20 @@ function closeMarginModal() {
     }
 }
 
-// Click handlers for modal mode (capture phase to intercept before anchor default)
+// Click handlers - always prevent default scroll on citation links
 document.addEventListener('click', (e) => {
-    if (!isModalMode()) return;
-
     // Check if clicked a sidenote ref
     const sidenoteRef = e.target.closest('.sidenote-ref');
     if (sidenoteRef) {
         e.preventDefault();
         e.stopPropagation();
-        const targetId = sidenoteRef.getAttribute('href');
-        const sidenote = document.querySelector(targetId);
-        if (sidenote) {
-            openMarginModal(sidenote, sidenoteRef);
+        // Only open modal in modal mode
+        if (isModalMode()) {
+            const targetId = sidenoteRef.getAttribute('href');
+            const sidenote = document.querySelector(targetId);
+            if (sidenote) {
+                openMarginModal(sidenote, sidenoteRef);
+            }
         }
         return;
     }
@@ -470,10 +471,13 @@ document.addEventListener('click', (e) => {
     if (citeRef) {
         e.preventDefault();
         e.stopPropagation();
-        const boxId = citeRef.getAttribute('data-box');
-        const box = document.getElementById(boxId);
-        if (box) {
-            openMarginModal(box, citeRef);
+        // Only open modal in modal mode
+        if (isModalMode()) {
+            const boxId = citeRef.getAttribute('data-box');
+            const box = document.getElementById(boxId);
+            if (box) {
+                openMarginModal(box, citeRef);
+            }
         }
         return;
     }
