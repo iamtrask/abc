@@ -891,7 +891,7 @@ main {
     height: 100%;
 }
 
-@media(max-width: 1399px) {
+@media(max-width: 1024px) {
     .sidenote {
         position: relative;
         transform: none;
@@ -917,7 +917,7 @@ main {
     transition: top 0.3s ease-out, opacity 0.2s ease;
 }
 
-@media(max-width: 1399px) {
+@media(max-width: 1024px) {
     .cite-box {
         position: relative;
         left: unset !important;
@@ -1087,7 +1087,7 @@ main {
 }
 
 /* Modal mode - hide items when not in margin (click to open modal instead) */
-@media (max-width: 1399px) {
+@media (max-width: 1024px) {
     .sidenote {
         /* Hide but keep in DOM for modal content */
         position: fixed !important;
