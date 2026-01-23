@@ -867,14 +867,15 @@ main {
 }
 
 /* Citation box with connecting line */
-.cite-box-anchor {
+.cite-box-wrapper {
     position: relative;
 }
 
 .cite-box {
     position: absolute;
-    left: calc(100% + 40px);
-    top: 0;
+    right: -260px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 200px;
     height: 180px;
     background-color: #e8e8e8;
