@@ -936,26 +936,26 @@ main {
 
 .cite-box-title {
     font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
-    font-size: 12px;
+    font-size: 17px;
     font-weight: normal;
-    line-height: 1.4;
-    margin-bottom: 16px;
+    line-height: 1.35;
+    margin-bottom: 20px;
     padding: 16px 16px 0 16px;
     color: #000;
 }
 
 .cite-box-avatars {
     display: flex;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     padding: 0 16px;
 }
 
 .cite-box-avatars img {
-    width: 22px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
     border-radius: 100px;
     object-fit: cover;
-    margin-right: -5px;
+    margin-right: -8px;
 }
 
 .cite-box-avatars img:last-child {
@@ -964,14 +964,14 @@ main {
 
 .cite-box-author {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     align-items: flex-start;
     padding: 0 16px;
 }
 
 .cite-box-author-photo {
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     border-radius: 100px;
     object-fit: cover;
     flex-shrink: 0;
@@ -980,31 +980,31 @@ main {
 .cite-box-author-info {
     flex: 1;
     min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
 }
 
 .cite-box-author-name {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 12px;
-    font-weight: 500;
+    font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
     color: #000;
+    margin-bottom: 8px;
 }
 
 .cite-box-author-affiliation {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 10px;
+    font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
     font-weight: normal;
     color: #000;
-    line-height: 1.4;
+    line-height: 1.5;
+    margin-bottom: 4px;
 }
 
 .cite-box-author-verified {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 10px;
+    font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
     font-weight: normal;
     color: #000;
+    margin-bottom: 12px;
 }
 
 .cite-box-author-verified a {
@@ -1013,15 +1013,16 @@ main {
 }
 
 .cite-box-author-topics {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 10px;
+    font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
     font-weight: normal;
     color: #180da4;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .cite-box-scholar {
     padding: 6px 16px 16px 16px;
+    text-align: center;
 }
 
 .cite-box-scholar img {
