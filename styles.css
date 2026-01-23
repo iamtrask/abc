@@ -991,7 +991,7 @@ main {
 }
 
 .cite-box-author-affiliation {
-    font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 14px;
     font-weight: normal;
     color: #000;
@@ -999,7 +999,7 @@ main {
 }
 
 .cite-box-author-verified {
-    font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 14px;
     font-weight: normal;
     color: #000;
@@ -1013,7 +1013,7 @@ main {
 }
 
 .cite-box-author-topics {
-    font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 15px;
     font-weight: normal;
     color: #180da4;
