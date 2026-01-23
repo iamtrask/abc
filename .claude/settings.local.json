@@ -10,7 +10,8 @@
       "WebSearch",
       "WebFetch(domain:acdlite.github.io)",
       "WebFetch(domain:gwern.net)",
-      "WebFetch(domain:gist.github.com)"
+      "WebFetch(domain:gist.github.com)",
+      "Bash(node --check:*)"
     ]
   }
 }

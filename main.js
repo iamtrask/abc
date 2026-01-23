@@ -450,7 +450,7 @@ function closeMarginModal() {
     }
 }
 
-// Click handlers for modal mode
+// Click handlers for modal mode (capture phase to intercept before anchor default)
 document.addEventListener('click', (e) => {
     if (!isModalMode()) return;
 
@@ -458,6 +458,7 @@ document.addEventListener('click', (e) => {
     const sidenoteRef = e.target.closest('.sidenote-ref');
     if (sidenoteRef) {
         e.preventDefault();
+        e.stopPropagation();
         const targetId = sidenoteRef.getAttribute('href');
         const sidenote = document.querySelector(targetId);
         if (sidenote) {
@@ -470,6 +471,7 @@ document.addEventListener('click', (e) => {
     const citeRef = e.target.closest('.cite-box-ref');
     if (citeRef) {
         e.preventDefault();
+        e.stopPropagation();
         const boxId = citeRef.getAttribute('data-box');
         const box = document.getElementById(boxId);
         if (box) {
@@ -477,7 +479,7 @@ document.addEventListener('click', (e) => {
         }
         return;
     }
-});
+}, true); // Use capture phase
 
 // Escape to close modal
 document.addEventListener('keydown', (e) => {
