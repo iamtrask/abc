@@ -357,11 +357,13 @@ function initializeAvatarHover() {
 
 document.addEventListener('DOMContentLoaded', initializeAvatarHover);
 
-// Modal mode when items aren't in margin (matches CSS breakpoint)
-const MODAL_BREAKPOINT = 1399;
-
+// Check if we're in modal mode by seeing if margin items are hidden by CSS
 function isModalMode() {
-    return window.innerWidth <= MODAL_BREAKPOINT;
+    // Check if a cite-box or sidenote is hidden (visibility: hidden from CSS)
+    const testItem = document.querySelector('.cite-box') || document.querySelector('.sidenote');
+    if (!testItem) return false;
+    const style = window.getComputedStyle(testItem);
+    return style.visibility === 'hidden';
 }
 
 function openMarginModal(element, refElement) {
