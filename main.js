@@ -369,8 +369,8 @@ function initializeAvatarHover() {
             if (authorVerified) authorVerified.innerHTML = verified;
             if (authorTopics) authorTopics.innerHTML = topics;
 
-            // Reposition keeping this box focused
-            requestAnimationFrame(() => alignMarginItems(citeBox));
+            // Reposition to handle height change, but keep current focus (don't override it)
+            requestAnimationFrame(() => alignMarginItems(focusedMarginElement));
         });
     });
 }
