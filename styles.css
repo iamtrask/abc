@@ -868,7 +868,7 @@ main {
 
 /* Citation box with connecting line */
 .cite-box-wrapper {
-    /* No position: relative so cite-boxes position relative to section */
+    position: relative;
 }
 
 .cite-box {
