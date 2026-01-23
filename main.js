@@ -94,14 +94,22 @@ function positionMarginItemsGlobal(items, focusedItem = null) {
     if (focusedIndex >= 0) {
         const focused = items[focusedIndex];
 
-        // Calculate space needed for items above (in global coordinates)
-        let spaceNeededAbove = 0;
-        for (let i = 0; i < focusedIndex; i++) {
-            spaceNeededAbove += items[i].height + MARGIN_GAP;
+        // Use locked position if available (preserves position during height changes)
+        let focusedGlobalTop;
+        if (focusedElementLockedTop !== null) {
+            focusedGlobalTop = focusedElementLockedTop;
+        } else {
+            // Calculate space needed for items above (in global coordinates)
+            let spaceNeededAbove = 0;
+            for (let i = 0; i < focusedIndex; i++) {
+                spaceNeededAbove += items[i].height + MARGIN_GAP;
+            }
+            // Position focused item - push down if items above need more space
+            focusedGlobalTop = Math.max(focused.globalTarget, spaceNeededAbove);
+            // Lock this position for subsequent repositions
+            focusedElementLockedTop = focusedGlobalTop;
         }
 
-        // Position focused item - push down if items above need more space
-        const focusedGlobalTop = Math.max(focused.globalTarget, spaceNeededAbove);
         const focusedLocalTop = focusedGlobalTop - focused.sectionOffset;
         focused.element.style.top = `${focusedLocalTop}px`;
         focused.currentGlobalTop = focusedGlobalTop;
@@ -146,6 +154,7 @@ function positionMarginItemsGlobal(items, focusedItem = null) {
 // Track focused margin item for hover behavior
 let focusedMarginElement = null;
 let focusResetTimeout = null;
+let focusedElementLockedTop = null; // Lock the focused element's position
 
 /**
  * Collect all margin items from the entire document.
@@ -301,6 +310,7 @@ function initializeCiteBoxes() {
                 ref.classList.remove('is-highlighted');
                 box.classList.remove('is-highlighted');
                 focusedMarginElement = null;
+                focusedElementLockedTop = null;
                 alignMarginItems();
             }, 2000);
         });
@@ -322,8 +332,9 @@ function initializeCiteBoxes() {
             document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
             box.classList.add('is-highlighted');
             ref.classList.add('is-highlighted');
-            // Focus this box and reposition
+            // Focus this box and reposition - clear locked position for fresh calculation
             focusedMarginElement = box;
+            focusedElementLockedTop = null;
             alignMarginItems(box);
         });
 
@@ -333,6 +344,7 @@ function initializeCiteBoxes() {
                 box.classList.remove('is-highlighted');
                 ref.classList.remove('is-highlighted');
                 focusedMarginElement = null;
+                focusedElementLockedTop = null;
                 alignMarginItems();
             }, 2000);
         });
