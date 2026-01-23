@@ -183,12 +183,9 @@ window.addEventListener('resize', initializeSidenotes);
 // Cite-box positioning and hover highlighting
 const MIN_BOX_GAP = 20; // Minimum pixels between boxes
 
-function positionCiteBoxes() {
+function getCiteBoxData() {
     const boxes = Array.from(document.querySelectorAll('.cite-box[data-ref]'));
-    if (boxes.length === 0) return;
-
-    // Sort boxes by their citation's vertical position
-    const boxData = boxes.map(box => {
+    return boxes.map(box => {
         const refId = box.getAttribute('data-ref');
         const ref = document.getElementById(refId);
         const wrapper = box.closest('.cite-box-wrapper');
@@ -196,27 +193,61 @@ function positionCiteBoxes() {
 
         const refRect = ref.getBoundingClientRect();
         const wrapperRect = wrapper.getBoundingClientRect();
-        // Target position: align box top with citation, relative to wrapper
         const targetTop = refRect.top - wrapperRect.top;
 
-        return { box, ref, wrapper, targetTop };
+        return { box, ref, wrapper, targetTop, height: box.offsetHeight };
     }).filter(Boolean).sort((a, b) => a.targetTop - b.targetTop);
+}
 
-    // Position boxes with collision avoidance
-    let lastBottom = -Infinity;
+function positionCiteBoxes(focusedRefId = null) {
+    const boxData = getCiteBoxData();
+    if (boxData.length === 0) return;
 
-    boxData.forEach(({ box, targetTop }) => {
-        // Ensure minimum gap from previous box
-        const adjustedTop = Math.max(targetTop, lastBottom + MIN_BOX_GAP);
-        box.style.top = `${adjustedTop}px`;
-        lastBottom = adjustedTop + box.offsetHeight;
-    });
+    // Find the focused box index (if any)
+    const focusedIndex = focusedRefId
+        ? boxData.findIndex(d => d.ref.id === focusedRefId)
+        : -1;
+
+    if (focusedIndex >= 0) {
+        // Position focused box at its ideal spot, shift others around it
+        const focused = boxData[focusedIndex];
+        const focusedTop = focused.targetTop;
+
+        // Position focused box
+        focused.box.style.top = `${focusedTop}px`;
+
+        // Position boxes above the focused one (going upward)
+        let nextBottom = focusedTop - MIN_BOX_GAP;
+        for (let i = focusedIndex - 1; i >= 0; i--) {
+            const item = boxData[i];
+            const itemTop = Math.min(item.targetTop, nextBottom - item.height);
+            item.box.style.top = `${itemTop}px`;
+            nextBottom = itemTop - MIN_BOX_GAP;
+        }
+
+        // Position boxes below the focused one (going downward)
+        let lastBottom = focusedTop + focused.height;
+        for (let i = focusedIndex + 1; i < boxData.length; i++) {
+            const item = boxData[i];
+            const itemTop = Math.max(item.targetTop, lastBottom + MIN_BOX_GAP);
+            item.box.style.top = `${itemTop}px`;
+            lastBottom = itemTop + item.height;
+        }
+    } else {
+        // Default positioning: collision avoidance from top
+        let lastBottom = -Infinity;
+        boxData.forEach(({ box, targetTop, height }) => {
+            const adjustedTop = Math.max(targetTop, lastBottom + MIN_BOX_GAP);
+            box.style.top = `${adjustedTop}px`;
+            lastBottom = adjustedTop + height;
+        });
+    }
 }
 
 function initializeCiteBoxes() {
     positionCiteBoxes();
 
-    // Hover on box -> highlight citation
+    // Hover on box -> highlight citation and reposition
     document.querySelectorAll('.cite-box[data-ref]').forEach((box) => {
         const refId = box.getAttribute('data-ref');
         const ref = document.getElementById(refId);
@@ -224,14 +255,16 @@ function initializeCiteBoxes() {
 
         box.addEventListener('mouseenter', () => {
             ref.classList.add('is-highlighted');
+            positionCiteBoxes(refId);
         });
 
         box.addEventListener('mouseleave', () => {
             ref.classList.remove('is-highlighted');
+            positionCiteBoxes();
         });
     });
 
-    // Hover on citation -> highlight box
+    // Hover on citation -> highlight box and reposition
     document.querySelectorAll('.cite-box-ref[data-box]').forEach((ref) => {
         const boxId = ref.getAttribute('data-box');
         const box = document.getElementById(boxId);
@@ -239,14 +272,16 @@ function initializeCiteBoxes() {
 
         ref.addEventListener('mouseenter', () => {
             box.classList.add('is-highlighted');
+            positionCiteBoxes(ref.id);
         });
 
         ref.addEventListener('mouseleave', () => {
             box.classList.remove('is-highlighted');
+            positionCiteBoxes();
         });
     });
 }
 
 document.addEventListener('DOMContentLoaded', initializeCiteBoxes);
-window.addEventListener('load', positionCiteBoxes);
-window.addEventListener('resize', positionCiteBoxes);
+window.addEventListener('load', () => positionCiteBoxes());
+window.addEventListener('resize', () => positionCiteBoxes());
