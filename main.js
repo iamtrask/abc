@@ -303,7 +303,7 @@ function initializeCiteBoxes() {
                 box.classList.remove('is-highlighted');
                 focusedMarginElement = null;
                 alignMarginItems();
-            }, 150);
+            }, 2000);
         });
     });
 
@@ -335,7 +335,7 @@ function initializeCiteBoxes() {
                 ref.classList.remove('is-highlighted');
                 focusedMarginElement = null;
                 alignMarginItems();
-            }, 150);
+            }, 2000);
         });
     });
 }
