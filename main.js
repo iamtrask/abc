@@ -282,13 +282,23 @@ function initializeCiteBoxes() {
         if (!ref) return;
 
         box.addEventListener('mouseenter', () => {
-            setActiveCite(refId);
+            // Only highlight, don't reposition
+            if (resetTimeout) {
+                clearTimeout(resetTimeout);
+                resetTimeout = null;
+            }
             ref.classList.add('is-highlighted');
             box.classList.add('is-highlighted');
         });
 
         box.addEventListener('mouseleave', () => {
-            clearActiveCite();
+            // Only clear highlight if not actively focused from citation
+            if (activeCiteRef !== refId) {
+                ref.classList.remove('is-highlighted');
+                box.classList.remove('is-highlighted');
+            } else {
+                clearActiveCite();
+            }
         });
     });
 
