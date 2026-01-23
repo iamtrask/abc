@@ -457,13 +457,10 @@ document.addEventListener('click', (e) => {
     if (sidenoteRef) {
         e.preventDefault();
         e.stopPropagation();
-        // Only open modal in modal mode
-        if (isModalMode()) {
-            const targetId = sidenoteRef.getAttribute('href');
-            const sidenote = document.querySelector(targetId);
-            if (sidenote) {
-                openMarginModal(sidenote, sidenoteRef);
-            }
+        const targetId = sidenoteRef.getAttribute('href');
+        const sidenote = document.querySelector(targetId);
+        if (sidenote) {
+            openMarginModal(sidenote, sidenoteRef);
         }
         return;
     }
@@ -473,13 +470,10 @@ document.addEventListener('click', (e) => {
     if (citeRef) {
         e.preventDefault();
         e.stopPropagation();
-        // Only open modal in modal mode
-        if (isModalMode()) {
-            const boxId = citeRef.getAttribute('data-box');
-            const box = document.getElementById(boxId);
-            if (box) {
-                openMarginModal(box, citeRef);
-            }
+        const boxId = citeRef.getAttribute('data-box');
+        const box = document.getElementById(boxId);
+        if (box) {
+            openMarginModal(box, citeRef);
         }
         return;
     }
