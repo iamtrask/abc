@@ -873,8 +873,8 @@ main {
 
 .cite-box {
     position: absolute;
-    right: -260px;
-    width: 220px;
+    left: calc(100% + 20px);
+    width: 260px;
     min-height: 200px;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -884,10 +884,15 @@ main {
     transition: top 0.3s ease-out, opacity 0.2s ease;
 }
 
-
 @media(max-width: 1399px) {
     .cite-box {
-        display: none;
+        position: relative;
+        left: unset !important;
+        top: unset !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 }
 

@@ -128,6 +128,11 @@ function resizeSidenotes() {
     document.querySelectorAll('.sidenote').forEach((sn) => {
         sn.style.width = `${sidenoteWidth}px`;
     });
+
+    // Apply same width to cite-boxes
+    document.querySelectorAll('.cite-box').forEach((box) => {
+        box.style.width = `${sidenoteWidth}px`;
+    });
 }
 
 function setupSidenoteHover() {
