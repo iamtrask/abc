@@ -823,6 +823,7 @@ main {
     max-width: 320px;
     scroll-margin-block: var(--header-height);
     padding-left: 5px;
+    transition: top 0.2s ease-out;
 }
 
 .sidenote:before {
@@ -866,9 +867,8 @@ main {
     }
 }
 
-/* Citation box with connecting line */
+/* Citation box wrapper - no positioning so cite-boxes position relative to section */
 .cite-box-wrapper {
-    /* Phase 2: Removed position:relative so cite-boxes position relative to section */
 }
 
 .cite-box {

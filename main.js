@@ -58,11 +58,11 @@ window.addEventListener('resize', updateHeader);
 
 /**
  * Unified margin item positioning system.
+ * Handles both sidenotes and cite-boxes with collision avoidance.
  */
 const MARGIN_GAP = 20;
 
 function collectMarginItems(section) {
-    // Phase 2: Collect both sidenotes and cite-boxes
     const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
     const citeBoxes = Array.from(section.querySelectorAll('.cite-box[data-ref]'));
 
@@ -107,7 +107,7 @@ function positionMarginItems(items, focusedItem = null) {
     // Sort by target position
     items.sort((a, b) => a.targetTop - b.targetTop);
 
-    // Phase 3: Focus-aware positioning
+    // Focus-aware positioning: focused item gets priority, others shift around it
     const focusedIndex = focusedItem ? items.indexOf(focusedItem) : -1;
 
     if (focusedIndex >= 0) {
@@ -150,7 +150,7 @@ function positionMarginItems(items, focusedItem = null) {
     }
 }
 
-// Phase 3: Track focused margin item for hover behavior
+// Track focused margin item for hover behavior
 let focusedMarginElement = null;
 let focusResetTimeout = null;
 
@@ -253,9 +253,8 @@ if (document.fonts) {
 
 window.addEventListener('resize', initializeSidenotes);
 
-// Cite-box hover highlighting (Phase 3: positioning via unified system)
+// Cite-box hover highlighting and focus positioning
 function initializeCiteBoxes() {
-    // Phase 3: Positioning with focus support
 
     // Hover on box -> highlight citation, maintain focus
     document.querySelectorAll('.cite-box[data-ref]').forEach((box) => {
@@ -322,7 +321,6 @@ function initializeCiteBoxes() {
 }
 
 document.addEventListener('DOMContentLoaded', initializeCiteBoxes);
-// Phase 2: Removed load/resize handlers - unified system handles positioning
 
 // Avatar hover to swap author info
 function initializeAvatarHover() {
@@ -351,7 +349,7 @@ function initializeAvatarHover() {
             if (authorVerified) authorVerified.innerHTML = verified;
             if (authorTopics) authorTopics.innerHTML = topics;
 
-            // Phase 3: Reposition keeping this box focused
+            // Reposition keeping this box focused
             requestAnimationFrame(() => alignMarginItems(citeBox));
         });
     });
@@ -359,7 +357,7 @@ function initializeAvatarHover() {
 
 document.addEventListener('DOMContentLoaded', initializeAvatarHover);
 
-// Phase 4: Modal mode for narrow screens
+// Modal mode for narrow screens (< 1100px)
 const MODAL_BREAKPOINT = 1100;
 
 function isModalMode() {
@@ -452,8 +450,7 @@ function closeMarginModal() {
 
 // Click handlers for modal mode (capture phase to intercept before anchor default)
 document.addEventListener('click', (e) => {
-    // DEBUG: Temporarily removed isModalMode() check to test if handler fires
-    // if (!isModalMode()) return;
+    if (!isModalMode()) return;
 
     // Check if clicked a sidenote ref
     const sidenoteRef = e.target.closest('.sidenote-ref');
