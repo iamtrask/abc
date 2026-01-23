@@ -916,8 +916,7 @@ main {
     object-position: top;
     border: 1px solid #ccc;
     border-radius: 6px 6px 0 0;
-    border-bottom: 2px solid #333;
-    box-shadow: -3px 0 6px rgba(0,0,0,0.12), 3px 0 6px rgba(0,0,0,0.12), 0 -3px 6px rgba(0,0,0,0.12);
+    box-shadow: -2px 0 3px rgba(0,0,0,0.06), 2px 0 3px rgba(0,0,0,0.06), 0 -2px 3px rgba(0,0,0,0.06);
     margin-bottom: 16px;
 }
 
