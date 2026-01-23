@@ -357,8 +357,8 @@ function initializeAvatarHover() {
 
 document.addEventListener('DOMContentLoaded', initializeAvatarHover);
 
-// Modal mode for narrow screens (< 1100px)
-const MODAL_BREAKPOINT = 1100;
+// Modal mode when items aren't in margin (matches CSS breakpoint)
+const MODAL_BREAKPOINT = 1399;
 
 function isModalMode() {
     return window.innerWidth <= MODAL_BREAKPOINT;

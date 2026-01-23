@@ -1038,8 +1038,8 @@ main {
     height: 18px;
 }
 
-/* Phase 4: Modal mode for narrow screens */
-@media (max-width: 1100px) {
+/* Modal mode - hide items when not in margin (click to open modal instead) */
+@media (max-width: 1399px) {
     .sidenote {
         /* Hide but keep in DOM for modal content */
         position: fixed !important;
