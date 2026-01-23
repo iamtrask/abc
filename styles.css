@@ -956,6 +956,15 @@ main {
     border-radius: 100px;
     object-fit: cover;
     margin-right: -8px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cite-box-avatars img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+    position: relative;
 }
 
 .cite-box-avatars img:last-child {

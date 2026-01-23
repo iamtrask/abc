@@ -331,3 +331,35 @@ function initializeCiteBoxes() {
 document.addEventListener('DOMContentLoaded', initializeCiteBoxes);
 window.addEventListener('load', () => positionCiteBoxes());
 window.addEventListener('resize', () => positionCiteBoxes());
+
+// Avatar hover to swap author info
+function initializeAvatarHover() {
+    document.querySelectorAll('.cite-box-avatars img').forEach((avatar) => {
+        avatar.addEventListener('mouseenter', () => {
+            const citeBox = avatar.closest('.cite-box');
+            if (!citeBox) return;
+
+            const name = avatar.getAttribute('data-name');
+            const affiliation = avatar.getAttribute('data-affiliation');
+            const verified = avatar.getAttribute('data-verified');
+            const topics = avatar.getAttribute('data-topics');
+            const photoSrc = avatar.src;
+
+            if (!name) return;
+
+            const authorPhoto = citeBox.querySelector('.cite-box-author-photo');
+            const authorName = citeBox.querySelector('.cite-box-author-name');
+            const authorAffiliation = citeBox.querySelector('.cite-box-author-affiliation');
+            const authorVerified = citeBox.querySelector('.cite-box-author-verified');
+            const authorTopics = citeBox.querySelector('.cite-box-author-topics');
+
+            if (authorPhoto) authorPhoto.src = photoSrc;
+            if (authorName) authorName.textContent = name;
+            if (authorAffiliation) authorAffiliation.textContent = affiliation;
+            if (authorVerified) authorVerified.innerHTML = verified;
+            if (authorTopics) authorTopics.innerHTML = topics;
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeAvatarHover);
