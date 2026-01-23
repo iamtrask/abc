@@ -57,57 +57,100 @@ document.addEventListener('scroll', updateHeader);
 window.addEventListener('resize', updateHeader);
 
 /**
- * Align side notes.
+ * Unified positioning for sidenotes and cite-boxes.
  */
-function alignSidenotes() {
-    if (window.matchMedia('(max-width: 1024px)').matches) return;
+const MARGIN_GAP = 16;
 
-    document.querySelectorAll('.sidenote-ref').forEach((ref) => {
-        const targetId = ref.getAttribute('href');
-        if (!targetId || !targetId.startsWith('#')) return;
+function getMarginItemTargetTop(item) {
+    if (item.classList.contains('sidenote')) {
+        const refSelector = `a[href="#${item.id}"]`;
+        const ref = document.querySelector(refSelector);
+        if (!ref) return parseFloat(item.style.top) || 0;
 
-        const sidenote = document.querySelector(targetId);
-        if (!sidenote) return;
-
-        const block = ref.closest('.sidenote') || ref.closest('section');
-        if (!block) return;
+        const section = ref.closest('section');
+        if (!section) return parseFloat(item.style.top) || 0;
 
         const refRect = ref.getBoundingClientRect();
-        const blockRect = block.getBoundingClientRect();
+        const sectionRect = section.getBoundingClientRect();
+        return refRect.top - sectionRect.top;
+    } else if (item.classList.contains('cite-box')) {
+        const refId = item.getAttribute('data-ref');
+        const ref = document.getElementById(refId);
+        if (!ref) return parseFloat(item.style.top) || 0;
 
-        const top = refRect.top - blockRect.top;
+        const wrapper = item.closest('.cite-box-wrapper');
+        if (!wrapper) return parseFloat(item.style.top) || 0;
 
-        sidenote.style.top = `${top}px`;
-    });
+        const refRect = ref.getBoundingClientRect();
+        const wrapperRect = wrapper.getBoundingClientRect();
+        return refRect.top - wrapperRect.top;
+    }
+    return 0;
+}
 
+function alignAllMarginItems(fixedItem = null) {
+    if (window.matchMedia('(max-width: 1024px)').matches) return;
+
+    // Collect all margin items (sidenotes and cite-boxes) within each section
     document.querySelectorAll('section').forEach((section) => {
         const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
+        const citeBoxWrapper = section.querySelector('.cite-box-wrapper');
+        const citeBoxes = citeBoxWrapper ? Array.from(citeBoxWrapper.querySelectorAll('.cite-box')) : [];
 
-        if (sidenotes.length <= 1) return;
+        const allItems = [...sidenotes, ...citeBoxes];
+        if (allItems.length === 0) return;
 
-        const GAP = 12;
+        // Calculate target tops and collect data
+        const itemData = allItems.map(item => ({
+            item,
+            targetTop: getMarginItemTargetTop(item),
+            height: item.offsetHeight,
+            isFixed: item === fixedItem
+        }));
 
-        sidenotes.sort((a, b) => {
-            const topA = parseFloat(a.style.top) || 0;
-            const topB = parseFloat(b.style.top) || 0;
-            return topA - topB;
-        });
+        // Sort by target top position
+        itemData.sort((a, b) => a.targetTop - b.targetTop);
 
-        let lastBottom = -Infinity;
+        // Find fixed item index if any
+        const fixedIndex = itemData.findIndex(d => d.isFixed);
 
-        sidenotes.forEach((sn) => {
-            let top = parseFloat(sn.style.top) || 0;
+        if (fixedIndex >= 0) {
+            // Keep fixed item in place, adjust others around it
+            const fixed = itemData[fixedIndex];
+            const fixedTop = parseFloat(fixed.item.style.top) || fixed.targetTop;
 
-            const height = sn.getBoundingClientRect().height;
-
-            if (top < lastBottom + GAP) {
-                top = lastBottom + GAP;
-                sn.style.top = `${top}px`;
+            // Position items above fixed (going upward)
+            let nextBottom = fixedTop - MARGIN_GAP;
+            for (let i = fixedIndex - 1; i >= 0; i--) {
+                const d = itemData[i];
+                const itemTop = Math.min(d.targetTop, nextBottom - d.height);
+                d.item.style.top = `${Math.max(0, itemTop)}px`;
+                nextBottom = Math.max(0, itemTop) - MARGIN_GAP;
             }
 
-            lastBottom = top + height;
-        });
+            // Position items below fixed (going downward)
+            let lastBottom = fixedTop + fixed.height;
+            for (let i = fixedIndex + 1; i < itemData.length; i++) {
+                const d = itemData[i];
+                const itemTop = Math.max(d.targetTop, lastBottom + MARGIN_GAP);
+                d.item.style.top = `${itemTop}px`;
+                lastBottom = itemTop + d.height;
+            }
+        } else {
+            // Standard collision avoidance from top
+            let lastBottom = -Infinity;
+            itemData.forEach(({ item, targetTop, height }) => {
+                const adjustedTop = Math.max(targetTop, lastBottom + MARGIN_GAP);
+                item.style.top = `${adjustedTop}px`;
+                lastBottom = adjustedTop + height;
+            });
+        }
     });
+}
+
+// Legacy function name for compatibility
+function alignSidenotes() {
+    alignAllMarginItems();
 }
 
 function resizeSidenotes() {
@@ -188,65 +231,9 @@ window.addEventListener('resize', initializeSidenotes);
 // Cite-box positioning and hover highlighting
 const MIN_BOX_GAP = 20; // Minimum pixels between boxes
 
-function getCiteBoxData() {
-    const boxes = Array.from(document.querySelectorAll('.cite-box[data-ref]'));
-    return boxes.map(box => {
-        const refId = box.getAttribute('data-ref');
-        const ref = document.getElementById(refId);
-        const wrapper = box.closest('.cite-box-wrapper');
-        if (!ref || !wrapper) return null;
-
-        const refRect = ref.getBoundingClientRect();
-        const wrapperRect = wrapper.getBoundingClientRect();
-        const targetTop = refRect.top - wrapperRect.top;
-
-        return { box, ref, wrapper, targetTop, height: box.offsetHeight };
-    }).filter(Boolean).sort((a, b) => a.targetTop - b.targetTop);
-}
-
 function positionCiteBoxes(focusedRefId = null) {
-    const boxData = getCiteBoxData();
-    if (boxData.length === 0) return;
-
-    // Find the focused box index (if any)
-    const focusedIndex = focusedRefId
-        ? boxData.findIndex(d => d.ref.id === focusedRefId)
-        : -1;
-
-    if (focusedIndex >= 0) {
-        // Position focused box at its ideal spot, shift others around it
-        const focused = boxData[focusedIndex];
-        const focusedTop = focused.targetTop;
-
-        // Position focused box
-        focused.box.style.top = `${focusedTop}px`;
-
-        // Position boxes above the focused one (going upward)
-        let nextBottom = focusedTop - MIN_BOX_GAP;
-        for (let i = focusedIndex - 1; i >= 0; i--) {
-            const item = boxData[i];
-            const itemTop = Math.min(item.targetTop, nextBottom - item.height);
-            item.box.style.top = `${itemTop}px`;
-            nextBottom = itemTop - MIN_BOX_GAP;
-        }
-
-        // Position boxes below the focused one (going downward)
-        let lastBottom = focusedTop + focused.height;
-        for (let i = focusedIndex + 1; i < boxData.length; i++) {
-            const item = boxData[i];
-            const itemTop = Math.max(item.targetTop, lastBottom + MIN_BOX_GAP);
-            item.box.style.top = `${itemTop}px`;
-            lastBottom = itemTop + item.height;
-        }
-    } else {
-        // Default positioning: collision avoidance from top
-        let lastBottom = -Infinity;
-        boxData.forEach(({ box, targetTop, height }) => {
-            const adjustedTop = Math.max(targetTop, lastBottom + MIN_BOX_GAP);
-            box.style.top = `${adjustedTop}px`;
-            lastBottom = adjustedTop + height;
-        });
-    }
+    // Use unified positioning
+    alignAllMarginItems();
 }
 
 let activeCiteRef = null;
@@ -359,45 +346,10 @@ function initializeAvatarHover() {
             if (authorVerified) authorVerified.innerHTML = verified;
             if (authorTopics) authorTopics.innerHTML = topics;
 
-            // Reposition other boxes after content change, keeping this one fixed
-            requestAnimationFrame(() => positionCiteBoxesKeepingFixed(citeBox));
+            // Reposition all margin items after content change, keeping this one fixed
+            requestAnimationFrame(() => alignAllMarginItems(citeBox));
         });
     });
-}
-
-// Position boxes while keeping one fixed in place
-function positionCiteBoxesKeepingFixed(fixedBox) {
-    const boxes = Array.from(document.querySelectorAll('.cite-box[data-ref]'));
-    const fixedTop = parseFloat(fixedBox.style.top) || 0;
-    const fixedHeight = fixedBox.offsetHeight;
-    const fixedIndex = boxes.indexOf(fixedBox);
-
-    // Sort by current top position
-    const boxData = boxes.map(box => ({
-        box,
-        currentTop: parseFloat(box.style.top) || 0,
-        height: box.offsetHeight
-    })).sort((a, b) => a.currentTop - b.currentTop);
-
-    const fixedDataIndex = boxData.findIndex(d => d.box === fixedBox);
-
-    // Position boxes above the fixed one (going upward)
-    let nextBottom = fixedTop - MIN_BOX_GAP;
-    for (let i = fixedDataIndex - 1; i >= 0; i--) {
-        const item = boxData[i];
-        const itemTop = Math.min(item.currentTop, nextBottom - item.height);
-        item.box.style.top = `${Math.max(0, itemTop)}px`;
-        nextBottom = Math.max(0, itemTop) - MIN_BOX_GAP;
-    }
-
-    // Position boxes below the fixed one (going downward)
-    let lastBottom = fixedTop + fixedHeight;
-    for (let i = fixedDataIndex + 1; i < boxData.length; i++) {
-        const item = boxData[i];
-        const itemTop = Math.max(item.currentTop, lastBottom + MIN_BOX_GAP);
-        item.box.style.top = `${itemTop}px`;
-        lastBottom = itemTop + item.height;
-    }
 }
 
 document.addEventListener('DOMContentLoaded', initializeAvatarHover);
