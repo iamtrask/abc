@@ -100,17 +100,8 @@ function positionMarginItemsGlobal(items, focusedItem = null) {
             spaceNeededAbove += items[i].height + MARGIN_GAP;
         }
 
-        // Check if focused item already has a position (keep it there)
-        const currentTop = parseFloat(focused.element.style.top);
-        let focusedGlobalTop;
-        if (!isNaN(currentTop) && currentTop > 0) {
-            // Keep current position, only adjust if items above need more space
-            const currentGlobal = currentTop + focused.sectionOffset;
-            focusedGlobalTop = Math.max(currentGlobal, spaceNeededAbove);
-        } else {
-            // Initial positioning - use target
-            focusedGlobalTop = Math.max(focused.globalTarget, spaceNeededAbove);
-        }
+        // Position focused item - push down if items above need more space
+        const focusedGlobalTop = Math.max(focused.globalTarget, spaceNeededAbove);
         const focusedLocalTop = focusedGlobalTop - focused.sectionOffset;
         focused.element.style.top = `${focusedLocalTop}px`;
         focused.currentGlobalTop = focusedGlobalTop;
