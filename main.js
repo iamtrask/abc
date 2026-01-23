@@ -358,6 +358,9 @@ function initializeAvatarHover() {
             if (authorAffiliation) authorAffiliation.textContent = affiliation;
             if (authorVerified) authorVerified.innerHTML = verified;
             if (authorTopics) authorTopics.innerHTML = topics;
+
+            // Reposition boxes after content change
+            requestAnimationFrame(() => positionCiteBoxes(activeCiteRef));
         });
     });
 }
