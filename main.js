@@ -282,9 +282,9 @@ function initializeCiteBoxes() {
         if (!ref) return;
 
         box.addEventListener('mouseenter', () => {
+            setActiveCite(refId);
             ref.classList.add('is-highlighted');
             box.classList.add('is-highlighted');
-            setActiveCite(refId);
         });
 
         box.addEventListener('mouseleave', () => {
@@ -299,9 +299,9 @@ function initializeCiteBoxes() {
         if (!box) return;
 
         ref.addEventListener('mouseenter', () => {
+            setActiveCite(ref.id);
             box.classList.add('is-highlighted');
             ref.classList.add('is-highlighted');
-            setActiveCite(ref.id);
         });
 
         ref.addEventListener('mouseleave', () => {
