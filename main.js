@@ -369,10 +369,8 @@ function initializeAvatarHover() {
             if (authorVerified) authorVerified.innerHTML = verified;
             if (authorTopics) authorTopics.innerHTML = topics;
 
-            // Only reposition if this card is already focused (don't steal focus)
-            if (focusedMarginElement === citeBox) {
-                requestAnimationFrame(() => alignMarginItems(citeBox));
-            }
+            // Reposition keeping this box focused
+            requestAnimationFrame(() => alignMarginItems(citeBox));
         });
     });
 }
