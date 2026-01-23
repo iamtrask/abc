@@ -903,3 +903,8 @@ main {
     outline: 2px solid #ffc107;
     outline-offset: 2px;
 }
+
+.cite-box.is-highlighted {
+    background-color: #d4d4d4;
+    outline: 2px solid #ffc107;
+}
