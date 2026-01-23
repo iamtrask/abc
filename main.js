@@ -358,3 +358,128 @@ function initializeAvatarHover() {
 }
 
 document.addEventListener('DOMContentLoaded', initializeAvatarHover);
+
+// Phase 4: Modal mode for narrow screens
+const MODAL_BREAKPOINT = 1100;
+
+function isModalMode() {
+    return window.innerWidth <= MODAL_BREAKPOINT;
+}
+
+function openMarginModal(element, refElement) {
+    let overlay = document.querySelector('.margin-item-modal-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'margin-item-modal-overlay';
+        overlay.innerHTML = `
+            <div class="margin-item-modal" role="dialog" aria-modal="true">
+                <button class="margin-item-modal-close" aria-label="Close">&times;</button>
+                <div class="margin-item-modal-content"></div>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Close on overlay click (but not modal content)
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeMarginModal();
+        });
+
+        // Close button
+        overlay.querySelector('.margin-item-modal-close').addEventListener('click', closeMarginModal);
+    }
+
+    // Clone content into modal
+    const content = overlay.querySelector('.margin-item-modal-content');
+    content.innerHTML = '';
+    const clone = element.cloneNode(true);
+    clone.style.cssText = 'position:static !important; visibility:visible !important; left:auto !important;';
+    content.appendChild(clone);
+
+    // Set up avatar hover in cloned content
+    clone.querySelectorAll('.cite-box-avatars img').forEach((avatar) => {
+        avatar.addEventListener('mouseenter', () => {
+            const name = avatar.getAttribute('data-name');
+            const affiliation = avatar.getAttribute('data-affiliation');
+            const verified = avatar.getAttribute('data-verified');
+            const topics = avatar.getAttribute('data-topics');
+            const photoSrc = avatar.src;
+
+            if (!name) return;
+
+            const authorPhoto = clone.querySelector('.cite-box-author-photo');
+            const authorName = clone.querySelector('.cite-box-author-name');
+            const authorAffiliation = clone.querySelector('.cite-box-author-affiliation');
+            const authorVerified = clone.querySelector('.cite-box-author-verified');
+            const authorTopics = clone.querySelector('.cite-box-author-topics');
+
+            if (authorPhoto) authorPhoto.src = photoSrc;
+            if (authorName) authorName.textContent = name;
+            if (authorAffiliation) authorAffiliation.textContent = affiliation;
+            if (authorVerified) authorVerified.innerHTML = verified;
+            if (authorTopics) authorTopics.innerHTML = topics;
+        });
+    });
+
+    overlay.classList.add('is-active');
+    refElement?.classList.add('is-highlighted');
+
+    // Store for cleanup
+    overlay.dataset.activeItemId = element.id;
+    overlay.dataset.activeRefId = refElement?.id || '';
+}
+
+function closeMarginModal() {
+    const overlay = document.querySelector('.margin-item-modal-overlay');
+    if (!overlay) return;
+
+    overlay.classList.remove('is-active');
+
+    // Remove highlight from ref
+    const refId = overlay.dataset.activeRefId;
+    if (refId) {
+        document.getElementById(refId)?.classList.remove('is-highlighted');
+    }
+
+    // Also try data-ref for cite-boxes
+    const itemId = overlay.dataset.activeItemId;
+    if (itemId) {
+        const item = document.getElementById(itemId);
+        if (item?.classList.contains('sidenote')) {
+            document.querySelector(`a[href="#${itemId}"]`)?.classList.remove('is-highlighted');
+        }
+    }
+}
+
+// Click handlers for modal mode
+document.addEventListener('click', (e) => {
+    if (!isModalMode()) return;
+
+    // Check if clicked a sidenote ref
+    const sidenoteRef = e.target.closest('.sidenote-ref');
+    if (sidenoteRef) {
+        e.preventDefault();
+        const targetId = sidenoteRef.getAttribute('href');
+        const sidenote = document.querySelector(targetId);
+        if (sidenote) {
+            openMarginModal(sidenote, sidenoteRef);
+        }
+        return;
+    }
+
+    // Check if clicked a cite-box ref
+    const citeRef = e.target.closest('.cite-box-ref');
+    if (citeRef) {
+        e.preventDefault();
+        const boxId = citeRef.getAttribute('data-box');
+        const box = document.getElementById(boxId);
+        if (box) {
+            openMarginModal(box, citeRef);
+        }
+        return;
+    }
+});
+
+// Escape to close modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMarginModal();
+});

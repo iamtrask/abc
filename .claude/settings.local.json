@@ -6,7 +6,11 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(magick:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "WebSearch",
+      "WebFetch(domain:acdlite.github.io)",
+      "WebFetch(domain:gwern.net)",
+      "WebFetch(domain:gist.github.com)"
     ]
   }
 }
