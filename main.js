@@ -63,11 +63,11 @@ window.addEventListener('resize', updateHeader);
 const MARGIN_GAP = 16;
 
 function collectMarginItems(section) {
-    // Phase 1: Only collect sidenotes
-    // Phase 2 will add: const citeBoxes = Array.from(section.querySelectorAll('.cite-box'));
+    // Phase 2: Collect both sidenotes and cite-boxes
     const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
+    const citeBoxes = Array.from(section.querySelectorAll('.cite-box[data-ref]'));
 
-    return sidenotes.map(element => ({
+    const sidenoteItems = sidenotes.map(element => ({
         element,
         type: 'sidenote',
         refElement: document.querySelector(`a[href="#${element.id}"]`),
@@ -75,6 +75,20 @@ function collectMarginItems(section) {
         targetTop: 0,
         height: element.offsetHeight
     }));
+
+    const citeBoxItems = citeBoxes.map(element => {
+        const refId = element.getAttribute('data-ref');
+        return {
+            element,
+            type: 'cite-box',
+            refElement: document.getElementById(refId),
+            section,
+            targetTop: 0,
+            height: element.offsetHeight
+        };
+    });
+
+    return [...sidenoteItems, ...citeBoxItems];
 }
 
 function positionMarginItems(items, focusedItem = null) {
@@ -282,16 +296,16 @@ function clearActiveCite() {
 }
 
 function initializeCiteBoxes() {
-    positionCiteBoxes();
+    // Phase 2: Positioning now handled by unified system in alignSidenotes()
+    // Only set up highlighting here
 
-    // Hover on box -> highlight citation and reposition
+    // Hover on box -> highlight citation (no repositioning in Phase 2)
     document.querySelectorAll('.cite-box[data-ref]').forEach((box) => {
         const refId = box.getAttribute('data-ref');
         const ref = document.getElementById(refId);
         if (!ref) return;
 
         box.addEventListener('mouseenter', () => {
-            // Only highlight, don't reposition
             if (resetTimeout) {
                 clearTimeout(resetTimeout);
                 resetTimeout = null;
@@ -304,37 +318,38 @@ function initializeCiteBoxes() {
         });
 
         box.addEventListener('mouseleave', () => {
-            // Only clear highlight if not actively focused from citation
-            if (activeCiteRef !== refId) {
-                ref.classList.remove('is-highlighted');
-                box.classList.remove('is-highlighted');
-            } else {
-                clearActiveCite();
-            }
+            ref.classList.remove('is-highlighted');
+            box.classList.remove('is-highlighted');
         });
     });
 
-    // Hover on citation -> highlight box and reposition
+    // Hover on citation -> highlight box (no repositioning in Phase 2)
     document.querySelectorAll('.cite-box-ref[data-box]').forEach((ref) => {
         const boxId = ref.getAttribute('data-box');
         const box = document.getElementById(boxId);
         if (!box) return;
 
         ref.addEventListener('mouseenter', () => {
-            setActiveCite(ref.id);
+            if (resetTimeout) {
+                clearTimeout(resetTimeout);
+                resetTimeout = null;
+            }
+            // Clear other highlights first
+            document.querySelectorAll('.cite-box.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
+            document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
             box.classList.add('is-highlighted');
             ref.classList.add('is-highlighted');
         });
 
         ref.addEventListener('mouseleave', () => {
-            clearActiveCite();
+            box.classList.remove('is-highlighted');
+            ref.classList.remove('is-highlighted');
         });
     });
 }
 
 document.addEventListener('DOMContentLoaded', initializeCiteBoxes);
-window.addEventListener('load', () => positionCiteBoxes());
-window.addEventListener('resize', () => positionCiteBoxes());
+// Phase 2: Removed load/resize handlers - unified system handles positioning
 
 // Avatar hover to swap author info
 function initializeAvatarHover() {
@@ -363,8 +378,8 @@ function initializeAvatarHover() {
             if (authorVerified) authorVerified.innerHTML = verified;
             if (authorTopics) authorTopics.innerHTML = topics;
 
-            // Reposition other boxes after content change, keeping this one fixed
-            requestAnimationFrame(() => positionCiteBoxesKeepingFixed(citeBox));
+            // Phase 2: Reposition all margin items after content change
+            requestAnimationFrame(() => alignSidenotes());
         });
     });
 }
