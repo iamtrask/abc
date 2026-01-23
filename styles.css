@@ -897,3 +897,9 @@ main {
         display: none;
     }
 }
+
+.cite-box-ref.is-highlighted {
+    background-color: #fff3cd;
+    outline: 2px solid #ffc107;
+    outline-offset: 2px;
+}
