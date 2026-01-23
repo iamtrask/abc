@@ -874,10 +874,12 @@ main {
 .cite-box {
     position: absolute;
     right: -260px;
-    width: 200px;
-    height: 150px;
-    background-color: #e8e8e8;
-    border: 1px solid #ccc;
+    width: 220px;
+    min-height: 200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 12px;
 }
 
 .cite-box:nth-of-type(1) {
@@ -885,17 +887,7 @@ main {
 }
 
 .cite-box:nth-of-type(2) {
-    top: 160px;
-}
-
-.cite-box::before {
-    content: "";
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    width: 40px;
-    height: 1px;
-    background-color: #0a0a0a;
+    top: 220px;
 }
 
 @media(max-width: 1399px) {
