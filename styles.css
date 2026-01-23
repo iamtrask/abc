@@ -900,7 +900,6 @@ main {
 }
 
 .cite-box.is-highlighted {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 /* Dim non-highlighted boxes when one is active */
