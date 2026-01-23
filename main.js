@@ -101,31 +101,73 @@ function positionMarginItems(items, focusedItem = null) {
             const sectionRect = item.section.getBoundingClientRect();
             item.targetTop = refRect.top - sectionRect.top;
         }
+        // Refresh height in case content changed
+        item.height = item.element.offsetHeight;
     });
 
     // Sort by target position
     items.sort((a, b) => a.targetTop - b.targetTop);
 
-    // Phase 1: Simple collision avoidance (no focus support yet)
-    // Phase 3 will add focus-aware positioning
-    let lastBottom = -Infinity;
-    items.forEach(item => {
-        const adjustedTop = Math.max(item.targetTop, lastBottom + MARGIN_GAP);
-        item.element.style.top = `${adjustedTop}px`;
-        lastBottom = adjustedTop + item.height;
-    });
+    // Phase 3: Focus-aware positioning
+    const focusedIndex = focusedItem ? items.indexOf(focusedItem) : -1;
+
+    if (focusedIndex >= 0) {
+        // Position focused item at its target
+        const focused = items[focusedIndex];
+        focused.element.style.top = `${focused.targetTop}px`;
+
+        // Position items above (push up if needed)
+        let ceiling = focused.targetTop - MARGIN_GAP;
+        for (let i = focusedIndex - 1; i >= 0; i--) {
+            const top = Math.min(items[i].targetTop, ceiling - items[i].height);
+            items[i].element.style.top = `${Math.max(0, top)}px`;
+            ceiling = Math.max(0, top) - MARGIN_GAP;
+        }
+
+        // Position items below (push down if needed)
+        let floor = focused.targetTop + focused.height + MARGIN_GAP;
+        for (let i = focusedIndex + 1; i < items.length; i++) {
+            const top = Math.max(items[i].targetTop, floor);
+            items[i].element.style.top = `${top}px`;
+            floor = top + items[i].height + MARGIN_GAP;
+        }
+    } else {
+        // No focus: simple top-down collision avoidance
+        let lastBottom = -Infinity;
+        items.forEach(item => {
+            const adjustedTop = Math.max(item.targetTop, lastBottom + MARGIN_GAP);
+            item.element.style.top = `${adjustedTop}px`;
+            lastBottom = adjustedTop + item.height;
+        });
+    }
 }
 
+// Phase 3: Track focused margin item for hover behavior
+let focusedMarginElement = null;
+let focusResetTimeout = null;
+
 /**
- * Align side notes using unified positioning system.
+ * Align margin items using unified positioning system.
+ * @param {HTMLElement|null} focusedElement - Element to focus (gets priority positioning)
  */
-function alignSidenotes() {
+function alignMarginItems(focusedElement = null) {
     if (window.matchMedia('(max-width: 1024px)').matches) return;
 
     document.querySelectorAll('section').forEach(section => {
         const items = collectMarginItems(section);
-        positionMarginItems(items);
+        // Find the focused item in this section's items
+        const focusedItem = focusedElement
+            ? items.find(item => item.element === focusedElement)
+            : null;
+        positionMarginItems(items, focusedItem);
     });
+}
+
+/**
+ * Align side notes using unified positioning system (legacy name for compatibility).
+ */
+function alignSidenotes() {
+    alignMarginItems(focusedMarginElement);
 }
 
 function resizeSidenotes() {
@@ -203,147 +245,70 @@ if (document.fonts) {
 
 window.addEventListener('resize', initializeSidenotes);
 
-// Cite-box positioning and hover highlighting
-const MIN_BOX_GAP = 20; // Minimum pixels between boxes
-
-function getCiteBoxData() {
-    const boxes = Array.from(document.querySelectorAll('.cite-box[data-ref]'));
-    return boxes.map(box => {
-        const refId = box.getAttribute('data-ref');
-        const ref = document.getElementById(refId);
-        const wrapper = box.closest('.cite-box-wrapper');
-        if (!ref || !wrapper) return null;
-
-        const refRect = ref.getBoundingClientRect();
-        const wrapperRect = wrapper.getBoundingClientRect();
-        const targetTop = refRect.top - wrapperRect.top;
-
-        return { box, ref, wrapper, targetTop, height: box.offsetHeight };
-    }).filter(Boolean).sort((a, b) => a.targetTop - b.targetTop);
-}
-
-function positionCiteBoxes(focusedRefId = null) {
-    const boxData = getCiteBoxData();
-    if (boxData.length === 0) return;
-
-    // Find the focused box index (if any)
-    const focusedIndex = focusedRefId
-        ? boxData.findIndex(d => d.ref.id === focusedRefId)
-        : -1;
-
-    if (focusedIndex >= 0) {
-        // Position focused box at its ideal spot, shift others around it
-        const focused = boxData[focusedIndex];
-        const focusedTop = focused.targetTop;
-
-        // Position focused box
-        focused.box.style.top = `${focusedTop}px`;
-
-        // Position boxes above the focused one (going upward)
-        let nextBottom = focusedTop - MIN_BOX_GAP;
-        for (let i = focusedIndex - 1; i >= 0; i--) {
-            const item = boxData[i];
-            const itemTop = Math.min(item.targetTop, nextBottom - item.height);
-            item.box.style.top = `${itemTop}px`;
-            nextBottom = itemTop - MIN_BOX_GAP;
-        }
-
-        // Position boxes below the focused one (going downward)
-        let lastBottom = focusedTop + focused.height;
-        for (let i = focusedIndex + 1; i < boxData.length; i++) {
-            const item = boxData[i];
-            const itemTop = Math.max(item.targetTop, lastBottom + MIN_BOX_GAP);
-            item.box.style.top = `${itemTop}px`;
-            lastBottom = itemTop + item.height;
-        }
-    } else {
-        // Default positioning: collision avoidance from top
-        let lastBottom = -Infinity;
-        boxData.forEach(({ box, targetTop, height }) => {
-            const adjustedTop = Math.max(targetTop, lastBottom + MIN_BOX_GAP);
-            box.style.top = `${adjustedTop}px`;
-            lastBottom = adjustedTop + height;
-        });
-    }
-}
-
-let activeCiteRef = null;
-let resetTimeout = null;
-
-function setActiveCite(refId) {
-    if (resetTimeout) {
-        clearTimeout(resetTimeout);
-        resetTimeout = null;
-    }
-    // Clear previous highlights before setting new one
-    if (activeCiteRef && activeCiteRef !== refId) {
-        document.querySelectorAll('.cite-box.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
-        document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
-    }
-    activeCiteRef = refId;
-    positionCiteBoxes(refId);
-}
-
-function clearActiveCite() {
-    // Delay to allow moving between citation and box
-    resetTimeout = setTimeout(() => {
-        activeCiteRef = null;
-        positionCiteBoxes();
-        // Remove all highlights
-        document.querySelectorAll('.cite-box.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
-        document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
-    }, 10000);
-}
-
+// Cite-box hover highlighting (Phase 3: positioning via unified system)
 function initializeCiteBoxes() {
-    // Phase 2: Positioning now handled by unified system in alignSidenotes()
-    // Only set up highlighting here
+    // Phase 3: Positioning with focus support
 
-    // Hover on box -> highlight citation (no repositioning in Phase 2)
+    // Hover on box -> highlight citation, maintain focus
     document.querySelectorAll('.cite-box[data-ref]').forEach((box) => {
         const refId = box.getAttribute('data-ref');
         const ref = document.getElementById(refId);
         if (!ref) return;
 
         box.addEventListener('mouseenter', () => {
-            if (resetTimeout) {
-                clearTimeout(resetTimeout);
-                resetTimeout = null;
+            if (focusResetTimeout) {
+                clearTimeout(focusResetTimeout);
+                focusResetTimeout = null;
             }
             // Clear other highlights first
             document.querySelectorAll('.cite-box.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
             document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
             ref.classList.add('is-highlighted');
             box.classList.add('is-highlighted');
+            // Keep this box focused
+            focusedMarginElement = box;
         });
 
         box.addEventListener('mouseleave', () => {
-            ref.classList.remove('is-highlighted');
-            box.classList.remove('is-highlighted');
+            // Delay clearing so user can move between citation and box
+            focusResetTimeout = setTimeout(() => {
+                ref.classList.remove('is-highlighted');
+                box.classList.remove('is-highlighted');
+                focusedMarginElement = null;
+                alignMarginItems();
+            }, 150);
         });
     });
 
-    // Hover on citation -> highlight box (no repositioning in Phase 2)
+    // Hover on citation -> highlight box and reposition with focus
     document.querySelectorAll('.cite-box-ref[data-box]').forEach((ref) => {
         const boxId = ref.getAttribute('data-box');
         const box = document.getElementById(boxId);
         if (!box) return;
 
         ref.addEventListener('mouseenter', () => {
-            if (resetTimeout) {
-                clearTimeout(resetTimeout);
-                resetTimeout = null;
+            if (focusResetTimeout) {
+                clearTimeout(focusResetTimeout);
+                focusResetTimeout = null;
             }
             // Clear other highlights first
             document.querySelectorAll('.cite-box.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
             document.querySelectorAll('.cite-box-ref.is-highlighted').forEach(el => el.classList.remove('is-highlighted'));
             box.classList.add('is-highlighted');
             ref.classList.add('is-highlighted');
+            // Focus this box and reposition
+            focusedMarginElement = box;
+            alignMarginItems(box);
         });
 
         ref.addEventListener('mouseleave', () => {
-            box.classList.remove('is-highlighted');
-            ref.classList.remove('is-highlighted');
+            // Delay clearing so user can move between citation and box
+            focusResetTimeout = setTimeout(() => {
+                box.classList.remove('is-highlighted');
+                ref.classList.remove('is-highlighted');
+                focusedMarginElement = null;
+                alignMarginItems();
+            }, 150);
         });
     });
 }
@@ -378,45 +343,10 @@ function initializeAvatarHover() {
             if (authorVerified) authorVerified.innerHTML = verified;
             if (authorTopics) authorTopics.innerHTML = topics;
 
-            // Phase 2: Reposition all margin items after content change
-            requestAnimationFrame(() => alignSidenotes());
+            // Phase 3: Reposition keeping this box focused
+            requestAnimationFrame(() => alignMarginItems(citeBox));
         });
     });
-}
-
-// Position boxes while keeping one fixed in place
-function positionCiteBoxesKeepingFixed(fixedBox) {
-    const boxes = Array.from(document.querySelectorAll('.cite-box[data-ref]'));
-    const fixedTop = parseFloat(fixedBox.style.top) || 0;
-    const fixedHeight = fixedBox.offsetHeight;
-    const fixedIndex = boxes.indexOf(fixedBox);
-
-    // Sort by current top position
-    const boxData = boxes.map(box => ({
-        box,
-        currentTop: parseFloat(box.style.top) || 0,
-        height: box.offsetHeight
-    })).sort((a, b) => a.currentTop - b.currentTop);
-
-    const fixedDataIndex = boxData.findIndex(d => d.box === fixedBox);
-
-    // Position boxes above the fixed one (going upward)
-    let nextBottom = fixedTop - MIN_BOX_GAP;
-    for (let i = fixedDataIndex - 1; i >= 0; i--) {
-        const item = boxData[i];
-        const itemTop = Math.min(item.currentTop, nextBottom - item.height);
-        item.box.style.top = `${Math.max(0, itemTop)}px`;
-        nextBottom = Math.max(0, itemTop) - MIN_BOX_GAP;
-    }
-
-    // Position boxes below the fixed one (going downward)
-    let lastBottom = fixedTop + fixedHeight;
-    for (let i = fixedDataIndex + 1; i < boxData.length; i++) {
-        const item = boxData[i];
-        const itemTop = Math.max(item.currentTop, lastBottom + MIN_BOX_GAP);
-        item.box.style.top = `${itemTop}px`;
-        lastBottom = itemTop + item.height;
-    }
 }
 
 document.addEventListener('DOMContentLoaded', initializeAvatarHover);
