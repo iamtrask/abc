@@ -43,6 +43,11 @@ nav {
     transition: transform 0.3s;
 }
 
+/* Wrapper */
+.wrapper {
+    overflow: clip;
+}
+
 nav.is-hide {
     transform: translateY(-100%);
 }
@@ -177,6 +182,7 @@ header .affiliation {
 /* Sections */
 section {
     margin-bottom: 2.5rem;
+    position: relative;
 }
 
 section h2 {
@@ -786,5 +792,32 @@ main {
 
     .chapter-nav {
         display: none;
+    }
+}
+
+/* Sidenote ref */
+.sidenote-ref {
+    color: #0066cc;
+    position: relative;
+    left: -2px;
+    text-underline-offset: -4px;
+}
+
+/* Sidenote */
+.sidenote {
+    position: absolute;
+    left: calc(100% + 20px);
+    top: 0;
+    font-size: 12px;
+    width: 260px;
+    max-width: 320px;
+    scroll-margin-block: 6rem;
+}
+
+@media(max-width: 1399px) {
+    .sidenote {
+        position: static;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
