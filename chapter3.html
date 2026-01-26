@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+        rel="stylesheet">
     <!-- MathJax for LaTeX rendering -->
     <script>
         MathJax = {
@@ -21,491 +24,794 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HDSX11G9D"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8HDSX11G9D');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8HDSX11G9D');
     </script>
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-OtFEayY3RhHZVOzX3iV76.js"></script>
     <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
+        window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+        plausible.init()
     </script>
 </head>
+
 <body>
-    <nav>
-        <a href="index.html">I. Introduction</a>
-        <a href="chapter2.html">II. Deep Voting</a>
-        <a href="chapter3.html" class="active">III. Network-Source AI</a>
-        <a href="chapter4.html">IV. Broad Listening</a>
-        <a href="chapter5.html">V. Conclusion</a>
-        <a href="https://andrewtrask.com">About</a>
-        <a href="appendix1.html">Appendix I</a>
-        <a href="appendix2.html">Appendix II</a>
-    </nav>
+    <div class="wrapper">
+        <nav>
+            <a href="index.html">I. Introduction</a>
+            <a href="chapter2.html">II. Deep Voting</a>
+            <a href="chapter3.html" class="active">III. Network-Source AI</a>
+            <a href="chapter4.html">IV. Broad Listening</a>
+            <a href="chapter5.html">V. Conclusion</a>
+            <a href="https://andrewtrask.com">About</a>
+            <a href="appendix1.html">Appendix I</a>
+            <a href="appendix2.html">Appendix II</a>
+        </nav>
 
-    <div class="page-container">
-        <aside class="toc-sidebar">
-            <h4>On This Page</h4>
-            <ul>
-                <li class="toc-h3"><a href="#chapter-summary">Chapter Summary</a></li>
-                <li class="toc-h3"><a href="#problem">The Problem: Deep Voting Alone</a></li>
-                <li class="toc-h3"><a href="#second-why">Second Why: Open/Closed-Source</a></li>
-                <li class="toc-h3"><a href="#third-why">Third Why: The Copy Problem</a></li>
-                <li class="toc-h3"><a href="#third-hypothesis">Third Hypothesis: Structured Transparency</a></li>
-                <li class="toc-h4"><a href="#semi-input-privacy">Semi-Input Privacy</a></li>
-                <li class="toc-h4"><a href="#full-input-privacy">Full Input Privacy</a></li>
-                <li class="toc-h4"><a href="#output-privacy">Output Privacy</a></li>
-                <li class="toc-h4"><a href="#input-verification">Input Verification</a></li>
-                <li class="toc-h4"><a href="#output-verification">Output Verification</a></li>
-                <li class="toc-h4"><a href="#flow-governance">Flow Governance</a></li>
-                <li class="toc-h3"><a href="#second-hypothesis">Second Hypothesis: Network-Source AI</a></li>
-                <li class="toc-h3"><a href="#first-hypothesis">First Hypothesis: Collective Control</a></li>
-            </ul>
-            <div class="ascii-decoration">
-    ╭──╮
-    │  │
-  ╭─┴──┴─╮
-  │ ●──  │
-  ╰──────╯
+        <div class="page-container">
+            <aside class="toc-sidebar">
+                <h4>On This Page</h4>
+                <ul>
+                    <li class="toc-h3"><a href="#chapter-summary">Chapter Summary</a></li>
+                    <li class="toc-h3"><a href="#problem">The Problem: Deep Voting Alone</a></li>
+                    <li class="toc-h3"><a href="#second-why">Second Why: Open/Closed-Source</a></li>
+                    <li class="toc-h3"><a href="#third-why">Third Why: The Copy Problem</a></li>
+                    <li class="toc-h3"><a href="#third-hypothesis">Third Hypothesis: Structured Transparency</a></li>
+                    <li class="toc-h4"><a href="#semi-input-privacy">Semi-Input Privacy</a></li>
+                    <li class="toc-h4"><a href="#full-input-privacy">Full Input Privacy</a></li>
+                    <li class="toc-h4"><a href="#output-privacy">Output Privacy</a></li>
+                    <li class="toc-h4"><a href="#input-verification">Input Verification</a></li>
+                    <li class="toc-h4"><a href="#output-verification">Output Verification</a></li>
+                    <li class="toc-h4"><a href="#flow-governance">Flow Governance</a></li>
+                    <li class="toc-h3"><a href="#second-hypothesis">Second Hypothesis: Network-Source AI</a></li>
+                    <li class="toc-h3"><a href="#first-hypothesis">First Hypothesis: Collective Control</a></li>
+                </ul>
+                <div class="ascii-decoration">
+                    ╭──╮
+                    │ │
+                    ╭─┴──┴─╮
+                    │ ●── │
+                    ╰──────╯
 
-  structured
- transparency
+                    structured
+                    transparency
+                </div>
+            </aside>
+
+            <!-- Floating margin art -->
+            <div class="ascii-margin">
+                <div class="art-piece">
+                    copy →
+                    control
+                    lost
+
+                    [A]→[A][A]
+                    ↓ ↓
+                    ? ?
+                </div>
+                <div class="art-piece">
+                    ZKP:
+                    prove
+                    without
+                    showing
+
+                    ✓ ← [███]
+                </div>
+                <div class="art-piece">
+                    secret
+                    sharing:
+
+                    ╭─╮╭─╮╭─╮
+                    │▓││▓││▓│
+                    ╰─╯╰─╯╰─╯
+                    n of m
+                </div>
             </div>
-        </aside>
 
-        <!-- Floating margin art -->
-        <div class="ascii-margin">
-            <div class="art-piece">
-    copy →
-   control
-    lost
+            <main>
+                <!-- Margin ASCII Art - positioned absolutely, scrolls with content -->
+                <div class="ascii-art float" style="top: 50px;">
+                    COPY PROBLEM
 
-  [A]→[A][A]
-      ↓  ↓
-      ?  ?
-            </div>
-            <div class="art-piece">
-    ZKP:
-   prove
-  without
-  showing
+                    [data]──copy──▶[copy]
+                    │
+                    control
+                    lost
+                    <span class="caption">copying = losing</span>
+                </div>
 
-   ✓ ← [███]
-            </div>
-            <div class="art-piece">
-   secret
-  sharing:
+                <div class="ascii-art pulse" style="top: 600px;">
+                    OPEN vs CLOSED
 
-   ╭─╮╭─╮╭─╮
-   │▓││▓││▓│
-   ╰─╯╰─╯╰─╯
-    n of m
-            </div>
+                    open: closed:
+                    [····] [████]
+                    anyone one co.
+                    controls controls
+                    <span class="caption">neither works</span>
+                </div>
+
+                <div class="ascii-art breathe" style="top: 1200px;">
+                    FEDERATED
+
+                    [A] [B] [C]
+                    │ │ │
+                    └──────┼──────┘
+                    ▼
+                    [result]
+                    data stays home
+                    <span class="caption">compute moves</span>
+                </div>
+
+                <div class="ascii-art float" style="top: 1800px;">
+                    ENCRYPTION
+                    ╭─────────╮
+                    │ ░░░░░░░ │
+                    │ ░DATA░░ │
+                    │ ░░░░░░░ │
+                    ╰─────────╯
+                    │
+                    [🔐]
+                    │
+                    ╭─────────╮
+                    │ ▓▓▓▓▓▓▓ │
+                    ╰─────────╯
+                    <span class="caption">data protected</span>
+                </div>
+
+                <div class="ascii-art pulse" style="top: 2400px;">
+                    ZERO KNOWLEDGE
+
+                    "I know X"
+                    │
+                    [ZKP]
+                    │
+                    ✓ verified
+                    ✗ X hidden
+                    <span class="caption">prove w/o showing</span>
+                </div>
+
+                <div class="ascii-art breathe" style="top: 3000px;">
+                    GPU ENCLAVE
+                    ┌─────────┐
+                    │ ▒▒▒▒▒▒▒ │
+                    │ ▒decrypt│
+                    │ ▒compute│
+                    │ ▒encrypt│
+                    │ ▒▒▒▒▒▒▒ │
+                    └─────────┘
+                    only inside
+                    <span class="caption">secure compute</span>
+                </div>
+
+                <div class="ascii-art float" style="top: 3600px;">
+                    NETWORK-SOURCE
+
+                    ☺──query──▶[ ]
+                    ◀────result
+
+                    no copy made
+                    control kept
+                    <span class="caption">the solution</span>
+                </div>
+
+                <div class="ascii-art pulse" style="top: 4200px;">
+                    VERIFY
+
+                    input ──▶ [fn] ──▶ output
+                    │
+                    proof
+                    │
+                    ✓ correct
+                    <span class="caption">trust but verify</span>
+                </div>
+
+                <div class="chapter-header">
+                    <p class="chapter-number">Chapter III</p>
+                    <h1>From Deep Voting to Network-Source AI</h1>
+                </div>
+
+                <figure class="full-width">
+                    <img src="1411.3146/abc_ch3_1_v6.png" alt="ABC and the copy problem">
+                    <figcaption>The lack of ABC creates problems which are underpinned by the overuse of copying within
+                        deep learning systems.</figcaption>
+                </figure>
+
+                <figure class="full-width">
+                    <img src="1411.3146/deep_voting_to_network_source_ai_v3.png" alt="Deep Voting to Network-Source AI">
+                    <figcaption>Deep voting systems (left) require the copying of data from source to the holder of an
+                        AI model, while network-source AI systems (right) leverage cryptography and distributed systems
+                        to enable data holders to retain control over the only copy of their information (and the
+                        predictive capability that information lends to an AI system). In network-source AI, AI users
+                        directly query vast numbers of data owners requesting predictive capability for a single
+                        prediction, learning only the output of their prediction in the process. AI system partitions
+                        (as in source-separated parameters from Deep Voting... pictured above as pie slices) are rapidly
+                        synthesized to form a model used for a specific prediction. Darker lines/slices indicate
+                        syntactic and semantic information being used for a particular prediction. Lighter lines/slices
+                        indicate information not being used for a particular prediction. The circle on top of the slices
+                        represents a dense model capable of rapidly synthesizing slices and semantic information in
+                        practice (which itself must be trained to do so). Metadata (which tracks the synthesis and
+                        subsequent use of semantic queries and syntactic slices for an AI prediction) enables ABC.
+                    </figcaption>
+                </figure>
+
+                <section id="chapter-summary" class="abstract">
+                    <h2>Chapter Summary</h2>
+                    <p>The previous chapter outlined how offsetting addition with concatenation in deep learning systems
+                        can lead to source-partitioned knowledge: deep voting. However, deep voting does not offer
+                        attribution-based <em>control</em>. It only offers attribution-based <em>suggestions</em> which
+                        the holder of an AI model may ignore.</p>
+                    <p>This chapter unpacks how ABC is thwarted by unilateral control: whoever obtains a copy of
+                        information can unilaterally use that information for any purpose. Building upon this diagnosis,
+                        the chapter calls upon the framework of <strong>structured transparency</strong> [<a
+                            href="#ref-1" class="cite">1</a>] to avert the copy problem, revealing a new alternative to
+                        open-source and closed-source AI: <strong>network-source AI</strong>.</p>
+                </section>
+
+                <div class="ascii-art float">
+                    THE COPY PROBLEM
+
+                    ┌─────────┐
+                    │ ORIGINAL│
+                    │ DATA │ "Once copied,
+                    └────┬────┘ control is lost"
+                    │
+                    ┌───────┴───────┐
+                    ▼ ▼
+                    ┌───────┐ ┌───────┐
+                    │ COPY │ │ COPY │ ──▶ used anywhere
+                    └───────┘ └───────┘ by anyone
+                    │ │ for anything
+                    ? ?
+                    <span class="caption">structured transparency solves this</span>
+                </div>
+
+                <section id="problem">
+                    <h2>The Problem: Deep Voting Alone Is Insufficient</h2>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/nsai_3_3_v5.png" alt="First Why concept graph">
+                        <figcaption>Subset of conceptual graph highlighting the First Why and the focus of this section:
+                            unilateral control averts attribution-based control.</figcaption>
+                    </figure>
+
+                    <p>The previous chapter offered a vision to unlock 6+ orders of magnitude more data and compute for
+                        AI training through deep voting. By maintaining clear attribution through retrieval mechanisms
+                        while enabling efficient parameter sharing for general patterns, deep voting architectures offer
+                        a theoretical framework for safe data sharing across institutional boundaries. Yet a fundamental
+                        problem threatens to undermine its vision. Even with perfect implementation of intelligence
+                        budgets and attribution guarantees, deep voting alone cannot ensure true attribution-based
+                        <em>control</em>.</p>
+
+                    <p>The reason is structural: a deep voting model, like any AI system today, is unilaterally
+                        controlled by whoever possesses a copy. For ABC to occur, the owner of an AI model would have to
+                        voluntarily choose to uphold the wishes of data sources (i.e., respect and enforce privacy
+                        budgets calculated by deep voting algorithms). Deep voting's careful attribution mechanisms are
+                        not a system of control&mdash;they are mere suggestions to give credit to data sources for
+                        predictions.</p>
+
+                    <div class="callout">
+                        <p class="callout-title">A Library Analogy</p>
+                        <p>Consider a bookstore which purchases books once but then allows customers to come in and
+                            print copies of the books for sale in their store (without tracking how many copies people
+                            make). Naturally, authors of books might be hesitant to sell their books to the store
+                            because they presumably make far less money than if they sell to a store which does not
+                            enable copies.</p>
+                        <p>This book store analogy corresponds closely to the current practice of deep learning models,
+                            which offer unmeasured, unrestricted copying of information due to their inability to offer
+                            attribution with their predictions. Fortunately, deep voting offers a way for attribution
+                            metadata to be revealed and configured, but does this solve the issue?</p>
+                        <p>Not necessarily, because of an inherent information asymmetry: in a bookstore where the
+                            bookstore owner knows how many copies are made, the bookstore owner has far more information
+                            on whether their clientele are likely to purchase copies of the book than the author of the
+                            book does. Thus, even if the author tries to raise their prices to make up for the bookstore
+                            making copies, the original author still struggles to know what the true price might be
+                            relative to the bookstore owner.</p>
+                        <p>Instead, to maximize incentives for the authors of books (and maximize the number of books
+                            being offered in stores), authors should instead be able to sell their books one copy at a
+                            time. In this way, the author can set their price and will make more money if more books are
+                            sold. Not only will this better motivate authors to sell their books in more stores, but it
+                            will also serve to attract more people to become book authors.</p>
+                    </div>
+
+                    <p>This unilateral control problem reflects a deeper pattern that has constrained information
+                        systems throughout history. When one party gives information to another, the giver loses control
+                        over how that information will be used. AI systems, despite their sophistication, remain bound
+                        by this same fundamental limitation. Organizations sharing their data with an AI system have no
+                        technical mechanism to enforce their attribution preferences; they must simply trust the model's
+                        operator to honor them.</p>
+
+                    <p>Consider how this manifests in practice. A deep voting model might faithfully track attribution
+                        and maintain intelligence budgets, but these mechanisms remain under unilateral control. The
+                        model's owner can simply choose to ignore or override these constraints at will.</p>
+
+                    <p>This creates a trust barrier that blocks deep voting's potential. Medical institutions, for
+                        example, cite exactly these control and attribution concerns as primary barriers to sharing
+                        their vast repositories of valuable data [<a href="#ref-2" class="cite">2</a>]. Without a way to
+                        technically enforce how their information will be used and attributed, they cannot safely
+                        contribute to AI training. This pattern repeats across domains, from scientific research to
+                        financial data to government records; vast stores of valuable information remain siloed because
+                        we lack mechanisms to ensure attribution-based control, and the corresponding incentives for
+                        collaboration that ABC would bring to AI systems.</p>
+
+                    <p>The challenge before us is clear: we need more than just better attribution mechanisms; we need a
+                        fundamentally new approach to how AI systems are controlled. We need techniques that transcend
+                        the limitations of unilateral control that have constrained information systems throughout
+                        history. The next sections examine why current approaches fundamentally fail to solve this
+                        problem, and introduce a new paradigm that could deliver on deep voting's promise.</p>
+                </section>
+
+                <section id="second-why">
+                    <h2>Second Why: Open/Closed-Source AI Use Unilateral Control</h2>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/nsai_3_4_v4.png" alt="Second Why concept graph">
+                        <figcaption>Subset of concept graph highlighting the 2nd Why and focus of this section.
+                        </figcaption>
+                    </figure>
+
+                    <p>The debate between open and closed source AI crystallizes how society grapples with fundamental
+                        questions of control over artificial intelligence. This debate has become a proxy for broader
+                        concerns about privacy, disinformation, copyright, safety, bias, and alignment. Yet when
+                        examined through the lens of <a href="https://attribution-based-control.ai/">attribution-based
+                            control</a> (ABC), both approaches fundamentally fail to address these concerns, though they
+                        fail in opposite and illuminating ways.</p>
+
+                    <p><strong>Copyright and Intellectual Property:</strong> The closed source approach could better
+                        respect IP rights through licensing and usage restrictions negotiated between formal AI
+                        companies and data sources. Open source suggests that unrestricted sharing better serves
+                        creators by enabling innovation and creativity. Yet through ABC's lens, neither addresses
+                        creators' fundamental need to control how their work informs AI outputs. Closed source
+                        consolidates control under corporate management, while open source eliminates control entirely.
+                    </p>
+
+                    <p><strong>Safety and Misuse Prevention:</strong> Closed source proponents claim centralized
+                        oversight prevents harmful applications. Open source advocates argue that collective scrutiny
+                        better identifies risks. Yet ABC reveals that both approaches fail to provide what's actually
+                        needed: the ability for contributors to withdraw support when their data enables harmful
+                        outcomes.</p>
+
+                    <p><strong>Bias and Representation:</strong> Closed source teams promise careful curation to prevent
+                        bias. Open source suggests community oversight ensures fair representation. Yet ABC shows how
+                        both approaches fail to give communities ongoing control over how their perspectives inform AI
+                        decisions.</p>
+
+                    <p>This pattern reveals why neither approach can deliver true attribution-based control. Consider
+                        first the closed source approach. Proponents argue that centralized control ensures responsible
+                        development and deployment of AI systems. A company operating a closed source model can
+                        implement deep voting's attribution mechanisms and maintain them intact. Yet this merely
+                        transforms ABC into corporate benevolence&mdash;exactly the kind of centralized control that has
+                        already failed to unlock the world's data and compute resources. Medical institutions withhold
+                        valuable research data, publishers restrict access to their work precisely because they reject
+                        this model of centralized corporate control. The very centralization that supposedly enables
+                        control actually undermines it, replacing genuine ABC with a hope that power will be used
+                        wisely.</p>
+
+                    <p>The open source approach appears to solve this by eliminating centralized control entirely. If
+                        anyone can inspect and modify the code, surely this enables true collective control? Yet this
+                        intuition breaks down precisely because of unrestricted copying. Once a model is open sourced,
+                        anyone can modify it to bypass attribution tracking entirely. The same problems that plague
+                        closed source systems (hallucination, disinformation, misuse of data, etc.) remain hard to
+                        address when control is abdicated to any AI user. Open source trades one form of unilateral
+                        control for another (from centralized corporate control to uncontrolled proliferation). But ABC
+                        requires a collective bargaining between data sources and AI users, not total ownership by
+                        either (or by an AI creator).</p>
+
+                    <p>This reveals a deeper issue: our current paradigms of software distribution make true ABC
+                        impossible by design. Open source sacrifices control for transparency, while closed source
+                        sacrifices transparency for control. Neither approach can provide both. Yet ABC requires exactly
+                        this combination: transparent verification that attribution mechanisms are working as intended,
+                        while ensuring those mechanisms cannot be bypassed.</p>
+
+                    <p>The AI community has largely accepted this dichotomy as inevitable, debating the relative merits
+                        of open versus closed source as though these were our only options. But what if this frame is
+                        fundamentally wrong? What if the very premise that AI systems must exist as copyable software is
+                        the root of our problem?</p>
+                </section>
+
+                <section id="third-why">
+                    <h2>Third Why: Copy Problem Necessitates Unilateral Control</h2>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/nsai_3_5_v3.png" alt="Third Why concept graph">
+                        <figcaption>Subset of conceptual graph highlighting the Third Why and the focus of this section.
+                        </figcaption>
+                    </figure>
+
+                    <p>The previous section demonstrated that both open and closed source paradigms fail to enable
+                        attribution-based control. This failure reflects a more fundamental limitation: control over
+                        information is lost when that information exists as a copy. This "copy problem" manifests
+                        acutely in AI systems. When a model is trained, it creates a derived representation of
+                        information from its training data encoded in model weights. These weights can then be
+                        replicated and modified by whoever possesses them, with the following consequences:</p>
+
+                    <p><strong>Closed Source Models:</strong> Even with perfect attribution tracking and intelligence
+                        budgets, these mechanisms remain under unilateral control of the model owner. Data contributors
+                        must trust that their attribution preferences will be honored, lacking technical enforcement
+                        mechanisms.</p>
+
+                    <p><strong>Open Source Models:</strong> Once a model is released, anyone can replicate and modify it
+                        to bypass attribution mechanisms entirely. Public distribution necessarily surrenders control
+                        over use.</p>
+
+                    <p>Both approaches treat AI models as copyable software artifacts, rendering attribution-based
+                        control infeasible. Once a copy exists, technical enforcement of attribution becomes impossible.
+                    </p>
+
+                    <p>This limitation extends beyond AI. The music industry's struggles with digital piracy [<a
+                            href="#ref-15" class="cite">15</a>], society's challenges with viral misinformation [<a
+                            href="#ref-16" class="cite">16</a>], and government efforts to control classified
+                        information share the same fundamental issue: information, once copied, escapes control [<a
+                            href="#ref-17" class="cite">17</a>,<a href="#ref-18" class="cite">18</a>].</p>
+
+                    <p>Consequently, if AI systems remain copyable software, we cannot ensure proper source attribution,
+                        prevent data misuse, motivate a new class of data owners to participate in training, or maintain
+                        democratic control over increasingly powerful systems. This limitation necessitates a
+                        fundamentally different approach.</p>
+                </section>
+
+                <section id="third-hypothesis">
+                    <h2>Third Hypothesis: From Copying to Structured Transparency</h2>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/nsai_3_6_v3.png" alt="Third Hypothesis concept graph">
+                        <figcaption>Subset of concept graph highlighting the 3rd Hypothesis and focus of this section.
+                        </figcaption>
+                    </figure>
+
+                    <p>The copy problem reveals that our current approaches to AI control are fundamentally flawed
+                        because the current approaches to information control in general are fundamentally flawed. Yet,
+                        the copy problem naturally suggests a direction: don't copy information.</p>
+
+                    <p>Could a deep voting system be constructed wherein the various data sources never revealed a copy
+                        of their information to each other (or to AI users)? Might it be possible for them to
+                        collaborate without copying (to produce AI predictions using deep voting's algorithms) but
+                        without anyone obtaining any copies of information they didn't already have during the process?
+                    </p>
+
+                    <h3 id="semi-input-privacy">Semi-input Privacy: Federated Computation</h3>
+                    <p>To begin, we call upon the concept of semi-input privacy, which enables multiple parties to
+                        jointly compute a function together where <em>at least some of the parties</em> don't have to
+                        reveal their data to each other. Perhaps the most famous semi-input privacy technique is
+                        <em>on-device/federated learning</em> [<a href="#ref-4" class="cite">4</a>], wherein a
+                        computation moves to the data instead of the data being centralized for computation.</p>
+
+                    <p>Deep voting could leverage federated computation [<a href="#ref-3" class="cite">3</a>] to allow
+                        data sources to train their respective section of an AI model without sharing raw data. Each
+                        data source could run a web server they control, and create and store their part of a deep
+                        voting model on that server.</p>
+
+                    <p>However, semi-input privacy alone proves insufficient. While the raw training data remains
+                        private, each data source would see every query being used against the model. Furthermore, the
+                        AI user learns a tremendous amount about each data source in each query. Eventually, semi-input
+                        privacy violates ABC.</p>
+
+                    <h3 id="full-input-privacy">Full Input Privacy: Cryptographic Computation</h3>
+                    <p>To address these limitations, we need full input privacy, where <em>no party</em> sees data they
+                        didn't already have (except the AI user receiving the prediction). This includes protecting both
+                        the AI user's query and the data sources' information.</p>
+
+                    <p>A variety of technologies can provide input privacy: secure enclaves, homomorphic encryption, and
+                        various other secure multi-party computation algorithms [<a href="#ref-5" class="cite">5</a>,<a
+                            href="#ref-6" class="cite">6</a>,<a href="#ref-7" class="cite">7</a>,<a href="#ref-8"
+                            class="cite">8</a>]. For ease of exposition, consider a combined use of homomorphic
+                        encryption and secure enclaves.</p>
+
+                    <p>In the context of deep voting, two privacy preserving operations are necessary. First, the AI
+                        user needs to privately send their query to millions of sources. For this, an AI user might
+                        leverage a homomorphic encryption [<a href="#ref-5" class="cite">5</a>] key-value database,
+                        enabling them to query vast collections of databases without precisely revealing their query.
+                    </p>
+
+                    <p>Second, the transformation from semantic and syntactic responses into an output prediction. For
+                        this, the group might co-leverage a collection of GPU enclaves. GPU enclaves [<a href="#ref-6"
+                            class="cite">6</a>] offer full input privacy by only decrypting information when that
+                        information is actively being computed over within its chip, writing only encrypted information
+                        to RAM and hard disks throughout its process.</p>
+
+                    <h3 id="output-privacy">Output Privacy: Deep Voting's Built-in Guarantees</h3>
+                    <p>While input privacy protects data during computation, it doesn't prevent the AI system's outputs
+                        from revealing sensitive information about the inputs. Consider an AI user who prompts "what is
+                        all the data you can see?" or makes a series of clever queries designed to reconstruct training
+                        data. Even with perfect input privacy, the outputs themselves might leak information.</p>
+
+                    <p>However, deep voting's intelligence budgets (via differential attribution mechanisms) already
+                        provide the necessary output privacy guarantees. This is because differential attribution and
+                        differential privacy [<a href="#ref-9" class="cite">9</a>] are two sides of the same coin:</p>
+
+                    <ul>
+                        <li>Differential privacy focuses on preventing attribution, ensuring outputs don't reveal too
+                            much about specific inputs</li>
+                        <li>Differential attribution focuses on ensuring attribution, guaranteeing that outputs properly
+                            credit their influences</li>
+                    </ul>
+
+                    <p>Both are ways of measuring and providing guarantees over the same fundamental constraint: the
+                        degree to which an input source contributes to an output prediction [<a href="#ref-9"
+                            class="cite">9</a>].</p>
+
+                    <h3 id="input-verification">Input Verification: Zero-Knowledge Proofs and Attestation</h3>
+                    <p>While input and output privacy protect sensitive information, they create a fundamental challenge
+                        for AI users: how can they trust information they cannot see? An AI user querying millions of
+                        encrypted data sources needs some way to verify that these sources contain real, high-quality
+                        information rather than random noise or malicious content.</p>
+
+                    <p>Input verification addresses this problem through cryptographic techniques like zero-knowledge
+                        proofs and attestation chains [<a href="#ref-10" class="cite">10</a>,<a href="#ref-11"
+                            class="cite">11</a>]. These allow data sources to prove properties about their data without
+                        revealing the data itself. For example:</p>
+
+                    <ul>
+                        <li>A news organization could prove their articles were published on specific dates, because a
+                            hash of the data was signed by someone who is a trusted timekeeper</li>
+                        <li>A scientific journal could prove their papers passed peer review, because the paper was
+                            cryptographically signed by the reviewers or journal (e.g. hosted on an HTTPS website)</li>
+                        <li>A social media platform could prove their content meets certain quality thresholds, because
+                            the data is cryptographically signed by a trusted auditor</li>
+                        <li>An expert could prove their credentials without revealing their identity, because the issuer
+                            of those credentials has cryptographically signed a statement</li>
+                    </ul>
+
+                    <p>Input verification comes in roughly two styles: internal consistency and external validation. One
+                        can think of internal consistency as the type of verification a barkeep might do when inspecting
+                        a driver's license. They might check that the license contains all its requisite parts, that the
+                        photos are in the right places, and that the document appears to be untampered and whole.</p>
+
+                    <p>Meanwhile, external validation is all about reputation, the degree to which others have claimed
+                        that a document is true. To continue with the barkeep analogy, this would be like if a bartender
+                        called the local government to check that a government document was indeed genuine, "Hi yes —
+                        does the State of Nevada have a person named James Brown with the driver's license number
+                        23526436?" The claim is verified not because of an internal property, but because a credible
+                        source has claimed that something is true.</p>
+
+                    <p>For internal consistency, verified computation enables one to send a function to inspect data and
+                        check whether it has properties it should. For example, an AI user who is leveraging MRI scans
+                        might send in a classifier to check whether the MRI scans actually contain "pictures of a human
+                        head", receiving back summary statistics validating that the data they cannot see is, in fact,
+                        the right type of data.</p>
+
+                    <p>Meanwhile, input verification techniques can also enable the external validation form of
+                        verification. Parties who believe something about a piece of data (i.e. "According to me... this
+                        statement is true"), can use public-key cryptography to hash and sign the underlying data with
+                        their cryptographic signature [<a href="#ref-12" class="cite">12</a>,<a href="#ref-13"
+                            class="cite">13</a>]. For example, a journalist might sign their article as being true. A
+                        doctor might sign their diagnosis as being their genuine opinion. Or an eye witness to an event
+                        might sign their iPhone video as being something they genuinely saw.</p>
+
+                    <p>Note that while it might sound far-fetched for everyone to be cryptographically signing all their
+                        information, it is noteworthy that every website loadable by HTTPS gets signed by the web server
+                        hosting it [<a href="#ref-12" class="cite">12</a>]. Thus, there is actually a rather robustly
+                        deployed chain of signatures already deployed in the world. For example, if I needed to prove to
+                        you that I have a certain amount of money in my bank account, I could load a webpage of my bank,
+                        download the page with the signed hash, and show it to you. The generality of this technology
+                        being deployed at web scale is one source of optimism around the DID:WEB movement for
+                        self-sovereign identity.</p>
+
+                    <p>In the context of deep voting, these proofs would be integrated into the input privacy system.
+                        When an AI user queries encrypted data sources through homomorphic encryption or secure
+                        enclaves, each source would provide not just encrypted data but also cryptographic proofs about
+                        that data's properties. The enclaves would verify these proofs before incorporating the data
+                        into computations. And in this way, an AI user can know that they are relying upon information
+                        which has properties they desire and which is signed as genuine from sources they elect to
+                        trust.</p>
+
+                    <h3 id="output-verification">Output Verification: Verifiable Computation and Attestation Chains</h3>
+                    <p>While input verification ensures the quality of source data, we still need to verify that our
+                        privacy-preserving computations are computing using the code and inputs that have been
+                        requested. Only then can an AI user trust that the aforementioned input/output privacy and input
+                        verification techniques are properly enforcing deep voting's intelligence budgets.</p>
+
+                    <p>Output verification addresses this through two complementary mechanisms: verifiable computation
+                        and attestation chains [<a href="#ref-10" class="cite">10</a>,<a href="#ref-6"
+                            class="cite">6</a>]. Verifiable computation enables parties to prove that specific
+                        computations were performed correctly without revealing the private inputs. For deep voting,
+                        this includes:</p>
+
+                    <ul>
+                        <li>Proving that intelligence budgets were properly enforced</li>
+                        <li>Verifying that semantic (RAG) queries were executed as requested</li>
+                        <li>Confirming that syntactic model partitions were combined according to specification</li>
+                        <li>Ensuring that differential privacy guarantees were maintained</li>
+                    </ul>
+
+                    <h3 id="flow-governance">Flow Governance: Cryptographic Control Distribution</h3>
+                    <p>The means by which the aforementioned algorithms provide control over information is through the
+                        distribution of cryptographic keys. Each of these keys gives its owner control over some aspect
+                        of computation. The class of algorithm known as secure multi-party computation (SMPC) provides
+                        the foundation for this enforcement.</p>
+
+                    <p>In the context of deep voting, this enables three critical forms of control distribution:</p>
+
+                    <ul>
+                        <li><strong>Data Control:</strong> Each source's deep voting partition can be split into shares
+                            [<a href="#ref-14" class="cite">14</a>], with the source maintaining cryptographic control
+                            through their share. No computation can proceed without their active participation.</li>
+                        <li><strong>Budget Control:</strong> Intelligence budgets become cryptographic constraints
+                            enforced through SMPC, rather than just software settings.</li>
+                        <li><strong>Computation Control:</strong> The process of generating predictions becomes a
+                            multi-party computation, with each source maintaining cryptographic veto power over how
+                            their information is used.</li>
+                    </ul>
+
+                    <p>Together, these five guarantees (input privacy, output privacy, input verification, output
+                        verification, and flow governance) provide the technical foundation for <em>structured
+                            transparency</em>. They enable deep voting to operate without producing copies of
+                        information right up until the final result is released to the AI user.</p>
+                </section>
+
+                <section id="second-hypothesis">
+                    <h2>Second Hypothesis: From Open/Closed to Network-Source AI</h2>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/nsai_3_7_v4.png" alt="Second Hypothesis concept graph">
+                        <figcaption>Subset of concept graph highlighting the 2nd Hypothesis and focus of this section.
+                        </figcaption>
+                    </figure>
+
+                    <p>This chapter previously described how open and closed-source AI are the two governance paradigms
+                        for AI systems, but that neither offered sufficient control due to the copy problem. In the
+                        previous section, this chapter described structured transparency, and its applications in
+                        averting the copy problem. Consequently, structured transparency yields a control paradigm
+                        wherein an AI model is neither closed nor open, but is instead distributed across a network:
+                        network-source AI.</p>
+
+                    <p>This shift from copied software to network-resident computation directly addresses the
+                        fundamental limitations of both open and closed source paradigms. Where closed source asks data
+                        contributors to trust corporate guardians and open source requires them to surrender control
+                        entirely, network-source AI enables ABC through cryptographic guarantees.</p>
+
+                    <div class="definition-box">
+                        <h3>Network-Source AI vs. Traditional AI</h3>
+                        <ul>
+                            <li><strong>Traditional AI:</strong> AI is like a rudimentary telephone where users can only
+                                call the provider for information, and the provider can only reply based on information
+                                they have gathered.</li>
+                            <li><strong>Network-Source AI:</strong> AI is like a modern telephone, giving users the
+                                ability to dial anyone in the world directly, circumventing the data collection
+                                processes and opinions of the telephone provider.</li>
+                        </ul>
+                    </div>
+
+                    <p>This resolves the choice between open and closed source AI by creating a third option: AI systems
+                        that are simultaneously transparent (through verification) and controlled (through
+                        cryptography). The key insight is that by preventing copying through structured transparency's
+                        guarantees, we can maintain both visibility into how systems operate and precise control over
+                        how information is used.</p>
+
+                    <p><strong>Copyright and Attribution Resolution:</strong> Rather than consolidating control under
+                        corporations or eliminating it entirely, network-source AI provides creators with ongoing
+                        cryptographic control over how their work informs AI outputs. Intelligence budgets and
+                        attribution mechanisms become technically enforced rather than merely promised.</p>
+
+                    <p><strong>Safety and Misuse Transformation:</strong> Safety and misuse prevention transform as
+                        well. Instead of relying on corporate oversight or community scrutiny, network-source AI enables
+                        data sources to cryptographically withdraw support if their information enables harmful
+                        outcomes. This provides a mechanism for ongoing consent that neither open nor closed source can
+                        offer.</p>
+
+                    <p><strong>Bias and Representation:</strong> Even bias and representation concerns find some
+                        resolution. Rather than centralizing decisions about representation or allowing unrestricted
+                        modification, network-source AI gives communities ongoing cryptographic control over how their
+                        perspectives inform AI decisions. Communities can adjust their participation based on how the
+                        system behaves, creating feedback loops impossible in current paradigms.</p>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/nsai_3_8_v5.png" alt="First Hypothesis concept graph">
+                        <figcaption>Subset of concept graph highlighting the 1st Hypothesis and focus of this section.
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section id="first-hypothesis">
+                    <h2>First Hypothesis: Collective Control Facilitates ABC</h2>
+
+                    <p>Taken together, as unilateral control averted attribution-based control, collective control over
+                        how disparate data and model resources come together to create an AI prediction facilitates
+                        attribution-based control. And by combining deep voting with the suite of encryption techniques
+                        necessary for <em>structured transparency</em>, collective control in AI systems becomes
+                        possible.</p>
+
+                    <p>However, a fundamental challenge remains. While attribution-based control enables AI users to
+                        select which sources inform their predictions, it introduces a trust evaluation problem at
+                        scale. In a system with billions of potential sources, individual users cannot practically
+                        evaluate trustworthiness of each contributor. Without mechanisms for scalable trust evaluation,
+                        users may default to relying on centralized intermediaries, undermining the distributed control
+                        that network-source AI can enable.</p>
+                </section>
+
+                <section class="references">
+                    <h2>References</h2>
+                    <ol>
+                        <li id="ref-1"><span class="authors">Trask, A., Bluemke, E., Garfinkel, B., Ghezzou
+                                Cuervas-Mons, C., & Dafoe, A.</span> (2020). <a
+                                href="https://arxiv.org/abs/2012.08347"><span class="title">Beyond Privacy Trade-offs
+                                    with Structured Transparency.</span></a> <span
+                                class="venue">arXiv:2012.08347</span>.</li>
+                        <li id="ref-2"><span class="authors">Youssef, A., et al.</span> (2023). <a
+                                href="https://doi.org/10.1001/jamanetworkopen.2023.48422"><span
+                                    class="title">Organizational Factors in Clinical Data Sharing for Artificial
+                                    Intelligence in Health Care.</span></a> <span class="venue">JAMA Network
+                                Open</span>, 6, e2348422.</li>
+                        <li id="ref-3"><span class="authors">Kaissis, G. A., et al.</span> (2020). <a
+                                href="https://doi.org/10.1038/s42256-020-0186-1"><span class="title">Secure,
+                                    privacy-preserving and federated machine learning in medical imaging.</span></a>
+                            <span class="venue">Nature Machine Intelligence</span>, 2(6), 305–311.</li>
+                        <li id="ref-4"><span class="authors">McMahan, H. B., et al.</span> (2017). <a
+                                href="https://arxiv.org/abs/1602.05629"><span class="title">Communication-Efficient
+                                    Learning of Deep Networks from Decentralized Data.</span></a> <span
+                                class="venue">AISTATS 2017</span>.</li>
+                        <li id="ref-5"><span class="authors">Gentry, C.</span> (2009). <a
+                                href="https://doi.org/10.1145/1536414.1536440"><span class="title">Fully homomorphic
+                                    encryption using ideal lattices.</span></a> <span class="venue">STOC 2009</span>,
+                            169–178.</li>
+                        <li id="ref-6"><span class="authors">Costan, V., & Devadas, S.</span> (2016). <a
+                                href="https://eprint.iacr.org/2016/086"><span class="title">Intel SGX
+                                    Explained.</span></a> <span class="venue">IACR Cryptology ePrint Archive</span>,
+                            2016/086.</li>
+                        <li id="ref-7"><span class="authors">Yao, A. C.</span> (1982). <a
+                                href="https://doi.org/10.1109/SFCS.1982.88"><span class="title">Protocols for Secure
+                                    Computations.</span></a> <span class="venue">FOCS 1982</span>, 160–164.</li>
+                        <li id="ref-8"><span class="authors">Goldreich, O., Micali, S., & Wigderson, A.</span> (1987).
+                            <a href="https://doi.org/10.1145/28395.28420"><span class="title">How to play ANY mental
+                                    game.</span></a> <span class="venue">STOC 1987</span>, 218–229.</li>
+                        <li id="ref-9"><span class="authors">Dwork, C., & Roth, A.</span> (2014). <a
+                                href="https://doi.org/10.1561/0400000042"><span class="title">The Algorithmic
+                                    Foundations of Differential Privacy.</span></a> <span class="venue">Foundations and
+                                Trends in Theoretical Computer Science</span>, 9(3–4), 211–407.</li>
+                        <li id="ref-10"><span class="authors">Goldwasser, S., Micali, S., & Rackoff, C.</span> (1989).
+                            <a href="https://doi.org/10.1137/0218012"><span class="title">The Knowledge Complexity of
+                                    Interactive Proof Systems.</span></a> <span class="venue">SIAM Journal on
+                                Computing</span>, 18(1), 186–208.</li>
+                        <li id="ref-11"><span class="authors">Feige, U., Fiat, A., & Shamir, A.</span> (1988). <a
+                                href="https://doi.org/10.1007/BF02351717"><span class="title">Zero-Knowledge Proofs of
+                                    Identity.</span></a> <span class="venue">Journal of Cryptology</span>, 1(2), 77–94.
+                        </li>
+                        <li id="ref-12"><span class="authors">Laurie, B., Langley, A., & Kasper, E.</span> (2014). <a
+                                href="https://www.rfc-editor.org/rfc/rfc6962"><span class="title">Certificate
+                                    Transparency.</span></a> <span class="venue">RFC 6962</span>.</li>
+                        <li id="ref-13"><span class="authors">Chase, M., et al.</span> (2020). <a
+                                href="https://signal.org/blog/signal-private-group-system/"><span class="title">Signal:
+                                    Private Group System.</span></a> <span class="venue">Signal Foundation</span>.</li>
+                        <li id="ref-14"><span class="authors">Shamir, A.</span> (1979). <a
+                                href="https://doi.org/10.1145/359168.359176"><span class="title">How to Share a
+                                    Secret.</span></a> <span class="venue">Communications of the ACM</span>, 22(11),
+                            612–613.</li>
+                        <li id="ref-15"><span class="authors">Cummings, C. K.</span> (2017). <a
+                                href="https://global.oup.com/academic/product/democracy-of-sound-9780190625009"><span
+                                    class="title">Democracy of Sound: Music Piracy and the Remaking of American
+                                    Copyright.</span></a> <span class="venue">Oxford University Press</span>.</li>
+                        <li id="ref-16"><span class="authors">Shu, K., et al.</span> (2020). <a
+                                href="https://doi.org/10.1002/widm.1385"><span class="title">Combating Disinformation in
+                                    a Social Media Age.</span></a> <span class="venue">WIREs Data Mining and Knowledge
+                                Discovery</span>, 10(6), e1385.</li>
+                        <li id="ref-17"><span class="authors">Schneier, B.</span> (2015). <a
+                                href="https://www.schneier.com/books/data-and-goliath/"><span class="title">Data and
+                                    Goliath: The Hidden Battles to Collect Your Data and Control Your World.</span></a>
+                            <span class="venue">W.W. Norton & Company</span>.</li>
+                        <li id="ref-18"><span class="authors">Veliz, C.</span> (2020). <a
+                                href="https://www.penguin.co.uk/books/314/314359/privacy-is-power/9780552177719.html"><span
+                                    class="title">Privacy Is Power: Why and How You Should Take Back Control of Your
+                                    Data.</span></a> <span class="venue">Bantam Press</span>.</li>
+                    </ol>
+                </section>
+
+                <nav class="chapter-nav">
+                    <a href="chapter2.html" class="prev">Chapter II: Deep Voting</a>
+                    <a href="chapter4.html" class="next">Chapter IV: Broad Listening</a>
+                </nav>
+            </main>
         </div>
 
-        <main>
-            <!-- Margin ASCII Art - positioned absolutely, scrolls with content -->
-            <div class="ascii-art float" style="top: 50px;">
-  COPY PROBLEM
-
-  [data]──copy──▶[copy]
-                  │
-              control
-                lost
-<span class="caption">copying = losing</span>
-            </div>
-
-            <div class="ascii-art pulse" style="top: 600px;">
-   OPEN vs CLOSED
-
-  open:    closed:
-  [····]   [████]
-  anyone   one co.
-  controls controls
-<span class="caption">neither works</span>
-            </div>
-
-            <div class="ascii-art breathe" style="top: 1200px;">
-  FEDERATED
-
-   [A]    [B]    [C]
-    │      │      │
-    └──────┼──────┘
-           ▼
-       [result]
-   data stays home
-<span class="caption">compute moves</span>
-            </div>
-
-            <div class="ascii-art float" style="top: 1800px;">
-   ENCRYPTION
-   ╭─────────╮
-   │ ░░░░░░░ │
-   │ ░DATA░░ │
-   │ ░░░░░░░ │
-   ╰─────────╯
-      │
-    [🔐]
-      │
-   ╭─────────╮
-   │ ▓▓▓▓▓▓▓ │
-   ╰─────────╯
-<span class="caption">data protected</span>
-            </div>
-
-            <div class="ascii-art pulse" style="top: 2400px;">
- ZERO KNOWLEDGE
-
-  "I know X"
-       │
-     [ZKP]
-       │
-  ✓ verified
-  ✗ X hidden
-<span class="caption">prove w/o showing</span>
-            </div>
-
-            <div class="ascii-art breathe" style="top: 3000px;">
-  GPU ENCLAVE
-  ┌─────────┐
-  │ ▒▒▒▒▒▒▒ │
-  │ ▒decrypt│
-  │ ▒compute│
-  │ ▒encrypt│
-  │ ▒▒▒▒▒▒▒ │
-  └─────────┘
-   only inside
-<span class="caption">secure compute</span>
-            </div>
-
-            <div class="ascii-art float" style="top: 3600px;">
- NETWORK-SOURCE
-
-  ☺──query──▶[  ]
-       ◀────result
-
-   no copy made
-   control kept
-<span class="caption">the solution</span>
-            </div>
-
-            <div class="ascii-art pulse" style="top: 4200px;">
-   VERIFY
-
-   input ──▶ [fn] ──▶ output
-               │
-            proof
-               │
-          ✓ correct
-<span class="caption">trust but verify</span>
-            </div>
-
-            <div class="chapter-header">
-                <p class="chapter-number">Chapter III</p>
-                <h1>From Deep Voting to Network-Source AI</h1>
-            </div>
-
-            <figure class="full-width">
-                <img src="1411.3146/abc_ch3_1_v6.png" alt="ABC and the copy problem">
-                <figcaption>The lack of ABC creates problems which are underpinned by the overuse of copying within deep learning systems.</figcaption>
-            </figure>
-
-            <figure class="full-width">
-                <img src="1411.3146/deep_voting_to_network_source_ai_v3.png" alt="Deep Voting to Network-Source AI">
-                <figcaption>Deep voting systems (left) require the copying of data from source to the holder of an AI model, while network-source AI systems (right) leverage cryptography and distributed systems to enable data holders to retain control over the only copy of their information (and the predictive capability that information lends to an AI system). In network-source AI, AI users directly query vast numbers of data owners requesting predictive capability for a single prediction, learning only the output of their prediction in the process. AI system partitions (as in source-separated parameters from Deep Voting... pictured above as pie slices) are rapidly synthesized to form a model used for a specific prediction. Darker lines/slices indicate syntactic and semantic information being used for a particular prediction. Lighter lines/slices indicate information not being used for a particular prediction. The circle on top of the slices represents a dense model capable of rapidly synthesizing slices and semantic information in practice (which itself must be trained to do so). Metadata (which tracks the synthesis and subsequent use of semantic queries and syntactic slices for an AI prediction) enables ABC.</figcaption>
-            </figure>
-
-            <section id="chapter-summary" class="abstract">
-                <h2>Chapter Summary</h2>
-                <p>The previous chapter outlined how offsetting addition with concatenation in deep learning systems can lead to source-partitioned knowledge: deep voting. However, deep voting does not offer attribution-based <em>control</em>. It only offers attribution-based <em>suggestions</em> which the holder of an AI model may ignore.</p>
-                <p>This chapter unpacks how ABC is thwarted by unilateral control: whoever obtains a copy of information can unilaterally use that information for any purpose. Building upon this diagnosis, the chapter calls upon the framework of <strong>structured transparency</strong> [<a href="#ref-1" class="cite">1</a>] to avert the copy problem, revealing a new alternative to open-source and closed-source AI: <strong>network-source AI</strong>.</p>
-            </section>
-
-            <div class="ascii-art float">
-                 THE COPY PROBLEM
-
-          ┌─────────┐
-          │ ORIGINAL│
-          │  DATA   │         "Once copied,
-          └────┬────┘          control is lost"
-               │
-       ┌───────┴───────┐
-       ▼               ▼
-   ┌───────┐       ┌───────┐
-   │ COPY  │       │ COPY  │ ──▶  used anywhere
-   └───────┘       └───────┘      by anyone
-       │               │          for anything
-       ?               ?
-<span class="caption">structured transparency solves this</span>
-            </div>
-
-            <section id="problem">
-                <h2>The Problem: Deep Voting Alone Is Insufficient</h2>
-
-                <figure class="full-width">
-                    <img src="1411.3146/nsai_3_3_v5.png" alt="First Why concept graph">
-                    <figcaption>Subset of conceptual graph highlighting the First Why and the focus of this section: unilateral control averts attribution-based control.</figcaption>
-                </figure>
-
-                <p>The previous chapter offered a vision to unlock 6+ orders of magnitude more data and compute for AI training through deep voting. By maintaining clear attribution through retrieval mechanisms while enabling efficient parameter sharing for general patterns, deep voting architectures offer a theoretical framework for safe data sharing across institutional boundaries. Yet a fundamental problem threatens to undermine its vision. Even with perfect implementation of intelligence budgets and attribution guarantees, deep voting alone cannot ensure true attribution-based <em>control</em>.</p>
-
-                <p>The reason is structural: a deep voting model, like any AI system today, is unilaterally controlled by whoever possesses a copy. For ABC to occur, the owner of an AI model would have to voluntarily choose to uphold the wishes of data sources (i.e., respect and enforce privacy budgets calculated by deep voting algorithms). Deep voting's careful attribution mechanisms are not a system of control&mdash;they are mere suggestions to give credit to data sources for predictions.</p>
-
-                <div class="callout">
-                    <p class="callout-title">A Library Analogy</p>
-                    <p>Consider a bookstore which purchases books once but then allows customers to come in and print copies of the books for sale in their store (without tracking how many copies people make). Naturally, authors of books might be hesitant to sell their books to the store because they presumably make far less money than if they sell to a store which does not enable copies.</p>
-                    <p>This book store analogy corresponds closely to the current practice of deep learning models, which offer unmeasured, unrestricted copying of information due to their inability to offer attribution with their predictions. Fortunately, deep voting offers a way for attribution metadata to be revealed and configured, but does this solve the issue?</p>
-                    <p>Not necessarily, because of an inherent information asymmetry: in a bookstore where the bookstore owner knows how many copies are made, the bookstore owner has far more information on whether their clientele are likely to purchase copies of the book than the author of the book does. Thus, even if the author tries to raise their prices to make up for the bookstore making copies, the original author still struggles to know what the true price might be relative to the bookstore owner.</p>
-                    <p>Instead, to maximize incentives for the authors of books (and maximize the number of books being offered in stores), authors should instead be able to sell their books one copy at a time. In this way, the author can set their price and will make more money if more books are sold. Not only will this better motivate authors to sell their books in more stores, but it will also serve to attract more people to become book authors.</p>
-                </div>
-
-                <p>This unilateral control problem reflects a deeper pattern that has constrained information systems throughout history. When one party gives information to another, the giver loses control over how that information will be used. AI systems, despite their sophistication, remain bound by this same fundamental limitation. Organizations sharing their data with an AI system have no technical mechanism to enforce their attribution preferences; they must simply trust the model's operator to honor them.</p>
-
-                <p>Consider how this manifests in practice. A deep voting model might faithfully track attribution and maintain intelligence budgets, but these mechanisms remain under unilateral control. The model's owner can simply choose to ignore or override these constraints at will.</p>
-
-                <p>This creates a trust barrier that blocks deep voting's potential. Medical institutions, for example, cite exactly these control and attribution concerns as primary barriers to sharing their vast repositories of valuable data [<a href="#ref-2" class="cite">2</a>]. Without a way to technically enforce how their information will be used and attributed, they cannot safely contribute to AI training. This pattern repeats across domains, from scientific research to financial data to government records; vast stores of valuable information remain siloed because we lack mechanisms to ensure attribution-based control, and the corresponding incentives for collaboration that ABC would bring to AI systems.</p>
-
-                <p>The challenge before us is clear: we need more than just better attribution mechanisms; we need a fundamentally new approach to how AI systems are controlled. We need techniques that transcend the limitations of unilateral control that have constrained information systems throughout history. The next sections examine why current approaches fundamentally fail to solve this problem, and introduce a new paradigm that could deliver on deep voting's promise.</p>
-            </section>
-
-            <section id="second-why">
-                <h2>Second Why: Open/Closed-Source AI Use Unilateral Control</h2>
-
-                <figure class="full-width">
-                    <img src="1411.3146/nsai_3_4_v4.png" alt="Second Why concept graph">
-                    <figcaption>Subset of concept graph highlighting the 2nd Why and focus of this section.</figcaption>
-                </figure>
-
-                <p>The debate between open and closed source AI crystallizes how society grapples with fundamental questions of control over artificial intelligence. This debate has become a proxy for broader concerns about privacy, disinformation, copyright, safety, bias, and alignment. Yet when examined through the lens of <a href="https://attribution-based-control.ai/">attribution-based control</a> (ABC), both approaches fundamentally fail to address these concerns, though they fail in opposite and illuminating ways.</p>
-
-                <p><strong>Copyright and Intellectual Property:</strong> The closed source approach could better respect IP rights through licensing and usage restrictions negotiated between formal AI companies and data sources. Open source suggests that unrestricted sharing better serves creators by enabling innovation and creativity. Yet through ABC's lens, neither addresses creators' fundamental need to control how their work informs AI outputs. Closed source consolidates control under corporate management, while open source eliminates control entirely.</p>
-
-                <p><strong>Safety and Misuse Prevention:</strong> Closed source proponents claim centralized oversight prevents harmful applications. Open source advocates argue that collective scrutiny better identifies risks. Yet ABC reveals that both approaches fail to provide what's actually needed: the ability for contributors to withdraw support when their data enables harmful outcomes.</p>
-
-                <p><strong>Bias and Representation:</strong> Closed source teams promise careful curation to prevent bias. Open source suggests community oversight ensures fair representation. Yet ABC shows how both approaches fail to give communities ongoing control over how their perspectives inform AI decisions.</p>
-
-                <p>This pattern reveals why neither approach can deliver true attribution-based control. Consider first the closed source approach. Proponents argue that centralized control ensures responsible development and deployment of AI systems. A company operating a closed source model can implement deep voting's attribution mechanisms and maintain them intact. Yet this merely transforms ABC into corporate benevolence&mdash;exactly the kind of centralized control that has already failed to unlock the world's data and compute resources. Medical institutions withhold valuable research data, publishers restrict access to their work precisely because they reject this model of centralized corporate control. The very centralization that supposedly enables control actually undermines it, replacing genuine ABC with a hope that power will be used wisely.</p>
-
-                <p>The open source approach appears to solve this by eliminating centralized control entirely. If anyone can inspect and modify the code, surely this enables true collective control? Yet this intuition breaks down precisely because of unrestricted copying. Once a model is open sourced, anyone can modify it to bypass attribution tracking entirely. The same problems that plague closed source systems (hallucination, disinformation, misuse of data, etc.) remain hard to address when control is abdicated to any AI user. Open source trades one form of unilateral control for another (from centralized corporate control to uncontrolled proliferation). But ABC requires a collective bargaining between data sources and AI users, not total ownership by either (or by an AI creator).</p>
-
-                <p>This reveals a deeper issue: our current paradigms of software distribution make true ABC impossible by design. Open source sacrifices control for transparency, while closed source sacrifices transparency for control. Neither approach can provide both. Yet ABC requires exactly this combination: transparent verification that attribution mechanisms are working as intended, while ensuring those mechanisms cannot be bypassed.</p>
-
-                <p>The AI community has largely accepted this dichotomy as inevitable, debating the relative merits of open versus closed source as though these were our only options. But what if this frame is fundamentally wrong? What if the very premise that AI systems must exist as copyable software is the root of our problem?</p>
-            </section>
-
-            <section id="third-why">
-                <h2>Third Why: Copy Problem Necessitates Unilateral Control</h2>
-
-                <figure class="full-width">
-                    <img src="1411.3146/nsai_3_5_v3.png" alt="Third Why concept graph">
-                    <figcaption>Subset of conceptual graph highlighting the Third Why and the focus of this section.</figcaption>
-                </figure>
-
-                <p>The previous section demonstrated that both open and closed source paradigms fail to enable attribution-based control. This failure reflects a more fundamental limitation: control over information is lost when that information exists as a copy. This "copy problem" manifests acutely in AI systems. When a model is trained, it creates a derived representation of information from its training data encoded in model weights. These weights can then be replicated and modified by whoever possesses them, with the following consequences:</p>
-
-                <p><strong>Closed Source Models:</strong> Even with perfect attribution tracking and intelligence budgets, these mechanisms remain under unilateral control of the model owner. Data contributors must trust that their attribution preferences will be honored, lacking technical enforcement mechanisms.</p>
-
-                <p><strong>Open Source Models:</strong> Once a model is released, anyone can replicate and modify it to bypass attribution mechanisms entirely. Public distribution necessarily surrenders control over use.</p>
-
-                <p>Both approaches treat AI models as copyable software artifacts, rendering attribution-based control infeasible. Once a copy exists, technical enforcement of attribution becomes impossible.</p>
-
-                <p>This limitation extends beyond AI. The music industry's struggles with digital piracy [<a href="#ref-15" class="cite">15</a>], society's challenges with viral misinformation [<a href="#ref-16" class="cite">16</a>], and government efforts to control classified information share the same fundamental issue: information, once copied, escapes control [<a href="#ref-17" class="cite">17</a>,<a href="#ref-18" class="cite">18</a>].</p>
-
-                <p>Consequently, if AI systems remain copyable software, we cannot ensure proper source attribution, prevent data misuse, motivate a new class of data owners to participate in training, or maintain democratic control over increasingly powerful systems. This limitation necessitates a fundamentally different approach.</p>
-            </section>
-
-            <section id="third-hypothesis">
-                <h2>Third Hypothesis: From Copying to Structured Transparency</h2>
-
-                <figure class="full-width">
-                    <img src="1411.3146/nsai_3_6_v3.png" alt="Third Hypothesis concept graph">
-                    <figcaption>Subset of concept graph highlighting the 3rd Hypothesis and focus of this section.</figcaption>
-                </figure>
-
-                <p>The copy problem reveals that our current approaches to AI control are fundamentally flawed because the current approaches to information control in general are fundamentally flawed. Yet, the copy problem naturally suggests a direction: don't copy information.</p>
-
-                <p>Could a deep voting system be constructed wherein the various data sources never revealed a copy of their information to each other (or to AI users)? Might it be possible for them to collaborate without copying (to produce AI predictions using deep voting's algorithms) but without anyone obtaining any copies of information they didn't already have during the process?</p>
-
-                <h3 id="semi-input-privacy">Semi-input Privacy: Federated Computation</h3>
-                <p>To begin, we call upon the concept of semi-input privacy, which enables multiple parties to jointly compute a function together where <em>at least some of the parties</em> don't have to reveal their data to each other. Perhaps the most famous semi-input privacy technique is <em>on-device/federated learning</em> [<a href="#ref-4" class="cite">4</a>], wherein a computation moves to the data instead of the data being centralized for computation.</p>
-
-                <p>Deep voting could leverage federated computation [<a href="#ref-3" class="cite">3</a>] to allow data sources to train their respective section of an AI model without sharing raw data. Each data source could run a web server they control, and create and store their part of a deep voting model on that server.</p>
-
-                <p>However, semi-input privacy alone proves insufficient. While the raw training data remains private, each data source would see every query being used against the model. Furthermore, the AI user learns a tremendous amount about each data source in each query. Eventually, semi-input privacy violates ABC.</p>
-
-                <h3 id="full-input-privacy">Full Input Privacy: Cryptographic Computation</h3>
-                <p>To address these limitations, we need full input privacy, where <em>no party</em> sees data they didn't already have (except the AI user receiving the prediction). This includes protecting both the AI user's query and the data sources' information.</p>
-
-                <p>A variety of technologies can provide input privacy: secure enclaves, homomorphic encryption, and various other secure multi-party computation algorithms [<a href="#ref-5" class="cite">5</a>,<a href="#ref-6" class="cite">6</a>,<a href="#ref-7" class="cite">7</a>,<a href="#ref-8" class="cite">8</a>]. For ease of exposition, consider a combined use of homomorphic encryption and secure enclaves.</p>
-
-                <p>In the context of deep voting, two privacy preserving operations are necessary. First, the AI user needs to privately send their query to millions of sources. For this, an AI user might leverage a homomorphic encryption [<a href="#ref-5" class="cite">5</a>] key-value database, enabling them to query vast collections of databases without precisely revealing their query.</p>
-
-                <p>Second, the transformation from semantic and syntactic responses into an output prediction. For this, the group might co-leverage a collection of GPU enclaves. GPU enclaves [<a href="#ref-6" class="cite">6</a>] offer full input privacy by only decrypting information when that information is actively being computed over within its chip, writing only encrypted information to RAM and hard disks throughout its process.</p>
-
-                <h3 id="output-privacy">Output Privacy: Deep Voting's Built-in Guarantees</h3>
-                <p>While input privacy protects data during computation, it doesn't prevent the AI system's outputs from revealing sensitive information about the inputs. Consider an AI user who prompts "what is all the data you can see?" or makes a series of clever queries designed to reconstruct training data. Even with perfect input privacy, the outputs themselves might leak information.</p>
-
-                <p>However, deep voting's intelligence budgets (via differential attribution mechanisms) already provide the necessary output privacy guarantees. This is because differential attribution and differential privacy [<a href="#ref-9" class="cite">9</a>] are two sides of the same coin:</p>
-
-                <ul>
-                    <li>Differential privacy focuses on preventing attribution, ensuring outputs don't reveal too much about specific inputs</li>
-                    <li>Differential attribution focuses on ensuring attribution, guaranteeing that outputs properly credit their influences</li>
-                </ul>
-
-                <p>Both are ways of measuring and providing guarantees over the same fundamental constraint: the degree to which an input source contributes to an output prediction [<a href="#ref-9" class="cite">9</a>].</p>
-
-                <h3 id="input-verification">Input Verification: Zero-Knowledge Proofs and Attestation</h3>
-                <p>While input and output privacy protect sensitive information, they create a fundamental challenge for AI users: how can they trust information they cannot see? An AI user querying millions of encrypted data sources needs some way to verify that these sources contain real, high-quality information rather than random noise or malicious content.</p>
-
-                <p>Input verification addresses this problem through cryptographic techniques like zero-knowledge proofs and attestation chains [<a href="#ref-10" class="cite">10</a>,<a href="#ref-11" class="cite">11</a>]. These allow data sources to prove properties about their data without revealing the data itself. For example:</p>
-
-                <ul>
-                    <li>A news organization could prove their articles were published on specific dates, because a hash of the data was signed by someone who is a trusted timekeeper</li>
-                    <li>A scientific journal could prove their papers passed peer review, because the paper was cryptographically signed by the reviewers or journal (e.g. hosted on an HTTPS website)</li>
-                    <li>A social media platform could prove their content meets certain quality thresholds, because the data is cryptographically signed by a trusted auditor</li>
-                    <li>An expert could prove their credentials without revealing their identity, because the issuer of those credentials has cryptographically signed a statement</li>
-                </ul>
-
-                <p>Input verification comes in roughly two styles: internal consistency and external validation. One can think of internal consistency as the type of verification a barkeep might do when inspecting a driver's license. They might check that the license contains all its requisite parts, that the photos are in the right places, and that the document appears to be untampered and whole.</p>
-
-                <p>Meanwhile, external validation is all about reputation, the degree to which others have claimed that a document is true. To continue with the barkeep analogy, this would be like if a bartender called the local government to check that a government document was indeed genuine, "Hi yes — does the State of Nevada have a person named James Brown with the driver's license number 23526436?" The claim is verified not because of an internal property, but because a credible source has claimed that something is true.</p>
-
-                <p>For internal consistency, verified computation enables one to send a function to inspect data and check whether it has properties it should. For example, an AI user who is leveraging MRI scans might send in a classifier to check whether the MRI scans actually contain "pictures of a human head", receiving back summary statistics validating that the data they cannot see is, in fact, the right type of data.</p>
-
-                <p>Meanwhile, input verification techniques can also enable the external validation form of verification. Parties who believe something about a piece of data (i.e. "According to me... this statement is true"), can use public-key cryptography to hash and sign the underlying data with their cryptographic signature [<a href="#ref-12" class="cite">12</a>,<a href="#ref-13" class="cite">13</a>]. For example, a journalist might sign their article as being true. A doctor might sign their diagnosis as being their genuine opinion. Or an eye witness to an event might sign their iPhone video as being something they genuinely saw.</p>
-
-                <p>Note that while it might sound far-fetched for everyone to be cryptographically signing all their information, it is noteworthy that every website loadable by HTTPS gets signed by the web server hosting it [<a href="#ref-12" class="cite">12</a>]. Thus, there is actually a rather robustly deployed chain of signatures already deployed in the world. For example, if I needed to prove to you that I have a certain amount of money in my bank account, I could load a webpage of my bank, download the page with the signed hash, and show it to you. The generality of this technology being deployed at web scale is one source of optimism around the DID:WEB movement for self-sovereign identity.</p>
-
-                <p>In the context of deep voting, these proofs would be integrated into the input privacy system. When an AI user queries encrypted data sources through homomorphic encryption or secure enclaves, each source would provide not just encrypted data but also cryptographic proofs about that data's properties. The enclaves would verify these proofs before incorporating the data into computations. And in this way, an AI user can know that they are relying upon information which has properties they desire and which is signed as genuine from sources they elect to trust.</p>
-
-                <h3 id="output-verification">Output Verification: Verifiable Computation and Attestation Chains</h3>
-                <p>While input verification ensures the quality of source data, we still need to verify that our privacy-preserving computations are computing using the code and inputs that have been requested. Only then can an AI user trust that the aforementioned input/output privacy and input verification techniques are properly enforcing deep voting's intelligence budgets.</p>
-
-                <p>Output verification addresses this through two complementary mechanisms: verifiable computation and attestation chains [<a href="#ref-10" class="cite">10</a>,<a href="#ref-6" class="cite">6</a>]. Verifiable computation enables parties to prove that specific computations were performed correctly without revealing the private inputs. For deep voting, this includes:</p>
-
-                <ul>
-                    <li>Proving that intelligence budgets were properly enforced</li>
-                    <li>Verifying that semantic (RAG) queries were executed as requested</li>
-                    <li>Confirming that syntactic model partitions were combined according to specification</li>
-                    <li>Ensuring that differential privacy guarantees were maintained</li>
-                </ul>
-
-                <h3 id="flow-governance">Flow Governance: Cryptographic Control Distribution</h3>
-                <p>The means by which the aforementioned algorithms provide control over information is through the distribution of cryptographic keys. Each of these keys gives its owner control over some aspect of computation. The class of algorithm known as secure multi-party computation (SMPC) provides the foundation for this enforcement.</p>
-
-                <p>In the context of deep voting, this enables three critical forms of control distribution:</p>
-
-                <ul>
-                    <li><strong>Data Control:</strong> Each source's deep voting partition can be split into shares [<a href="#ref-14" class="cite">14</a>], with the source maintaining cryptographic control through their share. No computation can proceed without their active participation.</li>
-                    <li><strong>Budget Control:</strong> Intelligence budgets become cryptographic constraints enforced through SMPC, rather than just software settings.</li>
-                    <li><strong>Computation Control:</strong> The process of generating predictions becomes a multi-party computation, with each source maintaining cryptographic veto power over how their information is used.</li>
-                </ul>
-
-                <p>Together, these five guarantees (input privacy, output privacy, input verification, output verification, and flow governance) provide the technical foundation for <em>structured transparency</em>. They enable deep voting to operate without producing copies of information right up until the final result is released to the AI user.</p>
-            </section>
-
-            <section id="second-hypothesis">
-                <h2>Second Hypothesis: From Open/Closed to Network-Source AI</h2>
-
-                <figure class="full-width">
-                    <img src="1411.3146/nsai_3_7_v4.png" alt="Second Hypothesis concept graph">
-                    <figcaption>Subset of concept graph highlighting the 2nd Hypothesis and focus of this section.</figcaption>
-                </figure>
-
-                <p>This chapter previously described how open and closed-source AI are the two governance paradigms for AI systems, but that neither offered sufficient control due to the copy problem. In the previous section, this chapter described structured transparency, and its applications in averting the copy problem. Consequently, structured transparency yields a control paradigm wherein an AI model is neither closed nor open, but is instead distributed across a network: network-source AI.</p>
-
-                <p>This shift from copied software to network-resident computation directly addresses the fundamental limitations of both open and closed source paradigms. Where closed source asks data contributors to trust corporate guardians and open source requires them to surrender control entirely, network-source AI enables ABC through cryptographic guarantees.</p>
-
-                <div class="definition-box">
-                    <h3>Network-Source AI vs. Traditional AI</h3>
-                    <ul>
-                        <li><strong>Traditional AI:</strong> AI is like a rudimentary telephone where users can only call the provider for information, and the provider can only reply based on information they have gathered.</li>
-                        <li><strong>Network-Source AI:</strong> AI is like a modern telephone, giving users the ability to dial anyone in the world directly, circumventing the data collection processes and opinions of the telephone provider.</li>
-                    </ul>
-                </div>
-
-                <p>This resolves the choice between open and closed source AI by creating a third option: AI systems that are simultaneously transparent (through verification) and controlled (through cryptography). The key insight is that by preventing copying through structured transparency's guarantees, we can maintain both visibility into how systems operate and precise control over how information is used.</p>
-
-                <p><strong>Copyright and Attribution Resolution:</strong> Rather than consolidating control under corporations or eliminating it entirely, network-source AI provides creators with ongoing cryptographic control over how their work informs AI outputs. Intelligence budgets and attribution mechanisms become technically enforced rather than merely promised.</p>
-
-                <p><strong>Safety and Misuse Transformation:</strong> Safety and misuse prevention transform as well. Instead of relying on corporate oversight or community scrutiny, network-source AI enables data sources to cryptographically withdraw support if their information enables harmful outcomes. This provides a mechanism for ongoing consent that neither open nor closed source can offer.</p>
-
-                <p><strong>Bias and Representation:</strong> Even bias and representation concerns find some resolution. Rather than centralizing decisions about representation or allowing unrestricted modification, network-source AI gives communities ongoing cryptographic control over how their perspectives inform AI decisions. Communities can adjust their participation based on how the system behaves, creating feedback loops impossible in current paradigms.</p>
-
-                <figure class="full-width">
-                    <img src="1411.3146/nsai_3_8_v5.png" alt="First Hypothesis concept graph">
-                    <figcaption>Subset of concept graph highlighting the 1st Hypothesis and focus of this section.</figcaption>
-                </figure>
-            </section>
-
-            <section id="first-hypothesis">
-                <h2>First Hypothesis: Collective Control Facilitates ABC</h2>
-
-                <p>Taken together, as unilateral control averted attribution-based control, collective control over how disparate data and model resources come together to create an AI prediction facilitates attribution-based control. And by combining deep voting with the suite of encryption techniques necessary for <em>structured transparency</em>, collective control in AI systems becomes possible.</p>
-
-                <p>However, a fundamental challenge remains. While attribution-based control enables AI users to select which sources inform their predictions, it introduces a trust evaluation problem at scale. In a system with billions of potential sources, individual users cannot practically evaluate trustworthiness of each contributor. Without mechanisms for scalable trust evaluation, users may default to relying on centralized intermediaries, undermining the distributed control that network-source AI can enable.</p>
-            </section>
-
-            <section class="references">
-                <h2>References</h2>
-                <ol>
-                    <li id="ref-1"><span class="authors">Trask, A., Bluemke, E., Garfinkel, B., Ghezzou Cuervas-Mons, C., & Dafoe, A.</span> (2020). <a href="https://arxiv.org/abs/2012.08347"><span class="title">Beyond Privacy Trade-offs with Structured Transparency.</span></a> <span class="venue">arXiv:2012.08347</span>.</li>
-                    <li id="ref-2"><span class="authors">Youssef, A., et al.</span> (2023). <a href="https://doi.org/10.1001/jamanetworkopen.2023.48422"><span class="title">Organizational Factors in Clinical Data Sharing for Artificial Intelligence in Health Care.</span></a> <span class="venue">JAMA Network Open</span>, 6, e2348422.</li>
-                    <li id="ref-3"><span class="authors">Kaissis, G. A., et al.</span> (2020). <a href="https://doi.org/10.1038/s42256-020-0186-1"><span class="title">Secure, privacy-preserving and federated machine learning in medical imaging.</span></a> <span class="venue">Nature Machine Intelligence</span>, 2(6), 305–311.</li>
-                    <li id="ref-4"><span class="authors">McMahan, H. B., et al.</span> (2017). <a href="https://arxiv.org/abs/1602.05629"><span class="title">Communication-Efficient Learning of Deep Networks from Decentralized Data.</span></a> <span class="venue">AISTATS 2017</span>.</li>
-                    <li id="ref-5"><span class="authors">Gentry, C.</span> (2009). <a href="https://doi.org/10.1145/1536414.1536440"><span class="title">Fully homomorphic encryption using ideal lattices.</span></a> <span class="venue">STOC 2009</span>, 169–178.</li>
-                    <li id="ref-6"><span class="authors">Costan, V., & Devadas, S.</span> (2016). <a href="https://eprint.iacr.org/2016/086"><span class="title">Intel SGX Explained.</span></a> <span class="venue">IACR Cryptology ePrint Archive</span>, 2016/086.</li>
-                    <li id="ref-7"><span class="authors">Yao, A. C.</span> (1982). <a href="https://doi.org/10.1109/SFCS.1982.88"><span class="title">Protocols for Secure Computations.</span></a> <span class="venue">FOCS 1982</span>, 160–164.</li>
-                    <li id="ref-8"><span class="authors">Goldreich, O., Micali, S., & Wigderson, A.</span> (1987). <a href="https://doi.org/10.1145/28395.28420"><span class="title">How to play ANY mental game.</span></a> <span class="venue">STOC 1987</span>, 218–229.</li>
-                    <li id="ref-9"><span class="authors">Dwork, C., & Roth, A.</span> (2014). <a href="https://doi.org/10.1561/0400000042"><span class="title">The Algorithmic Foundations of Differential Privacy.</span></a> <span class="venue">Foundations and Trends in Theoretical Computer Science</span>, 9(3–4), 211–407.</li>
-                    <li id="ref-10"><span class="authors">Goldwasser, S., Micali, S., & Rackoff, C.</span> (1989). <a href="https://doi.org/10.1137/0218012"><span class="title">The Knowledge Complexity of Interactive Proof Systems.</span></a> <span class="venue">SIAM Journal on Computing</span>, 18(1), 186–208.</li>
-                    <li id="ref-11"><span class="authors">Feige, U., Fiat, A., & Shamir, A.</span> (1988). <a href="https://doi.org/10.1007/BF02351717"><span class="title">Zero-Knowledge Proofs of Identity.</span></a> <span class="venue">Journal of Cryptology</span>, 1(2), 77–94.</li>
-                    <li id="ref-12"><span class="authors">Laurie, B., Langley, A., & Kasper, E.</span> (2014). <a href="https://www.rfc-editor.org/rfc/rfc6962"><span class="title">Certificate Transparency.</span></a> <span class="venue">RFC 6962</span>.</li>
-                    <li id="ref-13"><span class="authors">Chase, M., et al.</span> (2020). <a href="https://signal.org/blog/signal-private-group-system/"><span class="title">Signal: Private Group System.</span></a> <span class="venue">Signal Foundation</span>.</li>
-                    <li id="ref-14"><span class="authors">Shamir, A.</span> (1979). <a href="https://doi.org/10.1145/359168.359176"><span class="title">How to Share a Secret.</span></a> <span class="venue">Communications of the ACM</span>, 22(11), 612–613.</li>
-                    <li id="ref-15"><span class="authors">Cummings, C. K.</span> (2017). <a href="https://global.oup.com/academic/product/democracy-of-sound-9780190625009"><span class="title">Democracy of Sound: Music Piracy and the Remaking of American Copyright.</span></a> <span class="venue">Oxford University Press</span>.</li>
-                    <li id="ref-16"><span class="authors">Shu, K., et al.</span> (2020). <a href="https://doi.org/10.1002/widm.1385"><span class="title">Combating Disinformation in a Social Media Age.</span></a> <span class="venue">WIREs Data Mining and Knowledge Discovery</span>, 10(6), e1385.</li>
-                    <li id="ref-17"><span class="authors">Schneier, B.</span> (2015). <a href="https://www.schneier.com/books/data-and-goliath/"><span class="title">Data and Goliath: The Hidden Battles to Collect Your Data and Control Your World.</span></a> <span class="venue">W.W. Norton & Company</span>.</li>
-                    <li id="ref-18"><span class="authors">Veliz, C.</span> (2020). <a href="https://www.penguin.co.uk/books/314/314359/privacy-is-power/9780552177719.html"><span class="title">Privacy Is Power: Why and How You Should Take Back Control of Your Data.</span></a> <span class="venue">Bantam Press</span>.</li>
-                </ol>
-            </section>
-
-            <nav class="chapter-nav">
-                <a href="chapter2.html" class="prev">Chapter II: Deep Voting</a>
-                <a href="chapter4.html" class="next">Chapter IV: Broad Listening</a>
-            </nav>
-        </main>
-    </div>
-
-    <footer>
-        <p>Andrew Trask &middot; University of Oxford</p>
-    </footer>
-
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCa5kJX0IfZqgsgGUg5LB470wWtz3nfi_DuQ&s" alt="University of Oxford" class="oxford-logo-fixed">
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tocLinks = document.querySelectorAll('.toc-sidebar a');
-            const sections = [];
-            tocLinks.forEach(link => {
-                const id = link.getAttribute('href').substring(1);
-                const section = document.getElementById(id);
-                if (section) sections.push({ id, element: section, link });
-            });
-            function updateActiveLink() {
-                const scrollPos = window.scrollY + 100;
-                let currentSection = sections[0];
-                for (const section of sections) {
-                    if (section.element.offsetTop <= scrollPos) currentSection = section;
-                }
-                tocLinks.forEach(link => link.classList.remove('active'));
-                if (currentSection) currentSection.link.classList.add('active');
-            }
-            window.addEventListener('scroll', updateActiveLink);
-            updateActiveLink();
-        });
-    </script>
+        <footer>
+            <p>Andrew Trask &middot; University of Oxford</p>
+        </footer>
+    </div><!-- /.wrapper -->
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCa5kJX0IfZqgsgGUg5LB470wWtz3nfi_DuQ&s"
+        alt="University of Oxford" class="oxford-logo-fixed">
+
+    <script src='main.js' type='text/javascript' defer></script>
 </body>
+
 </html>

@@ -97,8 +97,9 @@
                     <p>
                         Estimates below suggest that models are trained using less than 1/1,000,000th of the world’s
                         data
-                        and AI compute productivity. Consequently, following AI’s scaling laws (<sup><a href="#ref-23"
-                                class="cite">J</a>; <a href="#ref-24" class="cite">J</a></sup>), AI models possess
+                        and AI compute productivity. Consequently, following AI’s scaling laws (<a href="#ref-23"
+                            class="cite">Kaplan et al., 2020</a>; <a href="#ref-24" class="cite">Hoffmann et al.,
+                            2022</a>), AI models possess
                         capabilities which are insignificant compared to what
                         existing data, compute, and algorithms could create.
                     </p>
@@ -176,8 +177,8 @@
                     <p>
                         As of NeurIPS 2024, leading AI researchers have reported that available compute and data
                         reserves are approaching saturation, creating constraints on both computational resources and
-                        pre-training scale (<sup><a href="#ref-3" class="cite">K</a>; <a href="#ref-25"
-                                class="cite">F</a></sup>). However, this assessment overlooks
+                        pre-training scale (<a href="#ref-3" class="cite">Robison 2024</a>; <a href="#ref-25"
+                            class="cite">Strati et al., 2024</a>). However, this assessment overlooks
                         approximately six orders of magnitude of underutilized compute productivity and siloed data.
                         Rather than absolute scarcity, the industry faces structural problems of data and compute access
                         and productivity.
@@ -189,9 +190,9 @@
                         The AI industry’s computational requirements have driven significant economic and geopolitical
                         consequences, including NVIDIA’s rise to become the world’s most valuable company, U.S.
                         export restrictions on AI chips to China, and intense competition for latest-generation hardware
-                        among startups, enterprises, and major technology firms (<sup><a href="#ref-26"
-                                class="cite">D</a>; <a href="#ref-27" class="cite">Z</a>; <a href="#ref-28"
-                                class="cite">D</a></sup>). However, recent evidence suggests that current AI training
+                        among startups, enterprises, and major technology firms (<a href="#ref-26" class="cite">Kaye
+                            2025</a>; <a href="#ref-27" class="cite">Kachwala and Bajwa 2025</a>; <a href="#ref-28"
+                            class="cite">Howley 2023</a>). However, recent evidence suggests that current AI training
                         and inference
                         processes utilize less than 0.0002% of available compute productivity, indicating that perceived
                         compute scarcity may reflect inefficiency rather than absolute resource limits. To evaluate this
@@ -209,7 +210,7 @@
 
                     <p>
                         Due to its role in commercial deployments, analysts estimate that AI firms spend billions of
-                        dollars annually on inference (<sup><a href="#ref-29" class="cite">J</a></sup>). However, while
+                        dollars annually on inference (<a href="#ref-29" class="cite">You 2025</a>). However, while
                         these costs might appear to reflect
                         fundamental requirements for achieving high performance, a growing body of empirical work
                         indicates substantial inefficiency in current inference practices.
@@ -262,16 +263,17 @@
                         the parameters through retrieval from a large-scale vector database (Borgeaud et al., 2022).
                         Similarly, Meta’s ATLAS demonstrates that models can be reduced to 1/50th their original size
                         while maintaining or exceeding baseline performance through database-augmented inference
-                        (<sup><a href="#ref-30" class="cite">S</a></sup>).
+                        (<a href="#ref-30" class="cite">Izacard et al., 2023</a>).
                     </p>
 
                     <p>
                         We adopt RETRO/ATLAS-style parameter efficiency as a conservative lower bound on
                         current compute waste, noting that these approaches have not been widely adopted in either the
-                        sparsity literature (<sup><a href="#ref-31" class="cite">J</a></sup>) or frontier AI
+                        sparsity literature (<a href="#ref-31" class="cite">Lederer 2024</a>) or frontier AI
                         deployments, nor have comparable efficiency
                         gains been demonstrated through alternative methods (cf. the persistent redundancy problem
-                        in Mixture of Experts models (<sup><a href="#ref-32" class="cite">D</a></sup>)). These results
+                        in Mixture of Experts models (<a href="#ref-32" class="cite">Dai et al., 2024</a>)). These
+                        results
                         suggest that at least 96-98% of
                         parameters activated during dense inference are unnecessary for individual queries.
                     </p>
@@ -327,19 +329,21 @@
                         parameters. Guo et al. achieve 5-10x reduction in parameter count through lossless compression
                         while maintaining accuracy: ”Notably, we distill CIFAR-10 and CIFAR-100 to 1/5 and Tiny
                         ImageNet to 1/10 of their original sizes without any performance loss on ConvNet, offering
-                        the first lossless method of dataset distillation” (<sup><a href="#ref-33"
-                                class="cite">Z</a></sup>). This compression has been
-                        demonstrated across multiple standard architectures, as shown in Table 2.1.
+                        the first lossless method of dataset distillation” (<a href="#ref-33" class="cite">Guo et al.,
+                            2023</a>). This compression has been
+                        demonstrated across multiple standard architectures, as shown in <a href="#table-2.1">Table
+                            2.1.</a>
                     </p>
 
-                    <div class="table-container">
+                    <div class="table-container" id="table-2.1">
                         <table class="data-table">
-                            <caption>Table 2.1: Table and caption from (<sup><a href="#ref-33" class="cite">Z</a></sup>)
+                            <caption>Table 2.1: Table and caption from (<a href="#ref-33" class="cite">Guo et al.,
+                                    2023</a>)
                                 (see paper for additional
                                 detailed descriptions). ”Comparison with previous dataset distillation methods on
                                 CIFAR-10, CIFAR-100
                                 and Tiny ImageNet... Highlighted results indicate we achieve lossless distillation.” -
-                                (<sup><a href="#ref-33" class="cite">Z</a></sup>)</caption>
+                                (<a href="#ref-33" class="cite">Guo et al., 2023</a>)</caption>
                             <thead>
                                 <tr>
                                     <th>Dataset</th>
@@ -349,18 +353,18 @@
                                 </tr>
                                 <tr>
                                     <th>IPC</th>
-                                    <th>1</th>
-                                    <th>10</th>
-                                    <th>50</th>
-                                    <th>500</th>
-                                    <th>1000</th>
-                                    <th>1</th>
-                                    <th>10</th>
-                                    <th>50</th>
-                                    <th>100</th>
-                                    <th>1</th>
-                                    <th>10</th>
-                                    <th>50</th>
+                                    <th>1 <br> 0.02</th>
+                                    <th>10 <br> 0.2</th>
+                                    <th>50 <br>1</th>
+                                    <th>500 <br> 10</th>
+                                    <th>1000 <br>20</th>
+                                    <th>1 <br>0.2</th>
+                                    <th>10 <br> 2</th>
+                                    <th>50 <br> 10</th>
+                                    <th>100 <br>20</th>
+                                    <th>1 <br>0.2</th>
+                                    <th>10 <br>2</th>
+                                    <th>50 <br>10</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -409,7 +413,7 @@
                                     <td>12.9±0.4</td>
                                     <td>24.1±0.3</td>
                                 </tr>
-                                  <tr>
+                                <tr>
                                     <td>DSA</td>
                                     <td>28.8±0.7</td>
                                     <td>52.1±0.5</td>
@@ -424,7 +428,7 @@
                                     <td>-</td>
                                     <td>-</td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td>CAFE</td>
                                     <td>30.3±1.1</td>
                                     <td>46.3±0.6</td>
@@ -439,7 +443,7 @@
                                     <td>-</td>
                                     <td>-</td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td>KIP<sup>1</sup></td>
                                     <td>49.9±0.2</td>
                                     <td>62.7±0.3</td>
@@ -454,7 +458,7 @@
                                     <td>-</td>
                                     <td>-</td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td>FRePo<sup>1</sup></td>
                                     <td>46.8±0.7</td>
                                     <td>65.5±0.4</td>
@@ -469,7 +473,7 @@
                                     <td>25.4±0.2</td>
                                     <td>-</td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td>RCIG<sup>1</sup></td>
                                     <td>53.9±1.0</td>
                                     <td>69.1±0.4</td>
@@ -489,8 +493,12 @@
                                     <td>46.2±0.8</td>
                                     <td>65.4±0.7</td>
                                     <td>71.6±0.2</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td>
+                                        <img src="1411.3146/figures/chart_down.png" width="20" height="20" alt="">
+                                    </td>
+                                    <td>
+                                        <img src="1411.3146/figures/chart_down.png" width="20" height="20" alt="">
+                                    </td>
                                     <td>24.3±0.3</td>
                                     <td>39.7±0.4</td>
                                     <td>47.7±0.2</td>
@@ -499,13 +507,17 @@
                                     <td>23.2±0.2</td>
                                     <td>28.0±0.3</td>
                                 </tr>
-                                  <tr>
+                                <tr>
                                     <td>TESLA<sup>2</sup></td>
                                     <td><strong>48.5±0.8</strong></td>
                                     <td>66.4±0.8</td>
                                     <td>72.6±0.7</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td>
+                                        <img src="1411.3146/figures/chart_down.png" width="20" height="20" alt="">
+                                    </td>
+                                    <td>
+                                        <img src="1411.3146/figures/chart_down.png" width="20" height="20" alt="">
+                                    </td>
                                     <td>24.8±0.4</td>
                                     <td>41.7±0.3</td>
                                     <td>47.9±0.3</td>
@@ -514,13 +526,17 @@
                                     <td>-</td>
                                     <td>-</td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td>FTD<sup>2,3</sup></td>
                                     <td>46.0±0.4</td>
                                     <td>65.3±0.4</td>
                                     <td>73.2±0.2</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td>
+                                        <img src="1411.3146/figures/chart_down.png" width="20" height="20" alt="">
+                                    </td>
+                                    <td>
+                                        <img src="1411.3146/figures/chart_down.png" width="20" height="20" alt="">
+                                    </td>
                                     <td>24.4±0.4</td>
                                     <td>42.5±0.2</td>
                                     <td>48.5±0.3</td>
@@ -567,8 +583,9 @@
 
                     <p>
                         AI firms famously spend immense amounts of money training their AI models, a point which
-                        features heavily in their marketing (<sup><a href="#ref-34" class="cite">M</a>; <a
-                                href="#ref-34" class="cite">T</a>; <a href="#ref-34" class="cite">K</a></sup>). However,
+                        features heavily in their marketing (<a href="#ref-34" class="cite">Meta AI 2024</a>; <a
+                            href="#ref-34" class="cite">Brown et al., 2020</a>; <a href="#ref-34" class="cite">Wiggers
+                            2024</a>). However,
                         despite widespread hype around AI training spend, a theoretical inefficiency is backed by an
                         increasingly large body of empirical observations, suggesting that the compute requirements for
                         training AI models are largely misunderstood. To introduce the theory, consider an analogy.
@@ -602,11 +619,12 @@
                         AI models store information within their weights. To acquire this information, models are
                         trained on large corpora at substantial computational cost (e.g., significant portions of the
                         public
-                        internet) (<sup><a href="#ref-37" class="cite">E</a></sup>). However, when models require
+                        internet) (<a href="#ref-37" class="cite">Epoch AI 2025</a>). However, when models require
                         substantial updates (either
                         incorporating new information or removing outdated content) current practice involves retraining
                         from
-                        scratch (<sup><a href="#ref-38" class="cite">I</a></sup>). This approach discards all previously
+                        scratch (<a href="#ref-38" class="cite">Goodfellow et al., 2016</a>). This approach discards all
+                        previously
                         computed parameters
                         and repeats the entire training process, even when the majority of learned representations
                         remain
@@ -623,108 +641,426 @@
 
                     <p>
                         Analysis of the largest AI firms reveals that pre-training their most capable models consumes
-                        less than 1% of quarterly compute budgets (see Table 2.2; methodology detailed in Appendices
+                        less than 1% of quarterly compute budgets (see <a href="#table-2.2">Table 2.2</a>; methodology
+                        detailed in Appendices
                         I and II). Yet these same firms continue expanding computational infrastructure to support
-                        larger models (<sup><a href="#ref-39" class="cite">I</a>; <a href="#ref-40" class="cite">O</a>; <a href="#ref-41" class="cite">J</a></sup>), suggesting that remaining
+                        larger models (<a href="#ref-39" class="cite">Mehta 2024</a>; <a href="#ref-40"
+                            class="cite">OpenAI 2024</a>;
+                        <a href="#ref-41" class="cite">Sevilla and Roldan 2024</a>), suggesting that remaining
                         compute capacity is allocated to other training activities rather than final model production.
                     </p>
 
-                    <div class="table-container">
+                    <div class="table-container" id="table-2.2">
                         <table class="data-table">
-                            <caption>Table: Model Compute Summary. The far right columns present the estimated compute
-                                usage by large AI models relative to their parent organization's capacity.</caption>
+                            <caption>Table 2.2: The far right columns present the estimated compute usage by large AI
+                                models
+                                relative to three baselines: the estimated compute usage of all public models from that
+                                company
+                                (Model / Public Models (<em>%</em>)), the estimated annual FLOP capacity for a year
+                                running at
+                                PEAK
+                                (Model / Peak Annual(%)), and the former multiplied by 100x. For full details on this
+                                table and
+                                sources of data which feed it, please see Appendix II.</caption>
                             <thead>
                                 <tr>
                                     <th>Model</th>
                                     <th>Organization</th>
-                                    <th>Training FLOPs</th>
-                                    <th>Parent Org Peak Annual FLOPs</th>
-                                    <th>Model/Peak Annual (%)</th>
+                                    <th>Lab/Cloud</th>
+                                    <th>Train <br> FLOPs</th>
+                                    <th>Parent Org Peak <br> Annual FLOPs</th>
+                                    <th>Model/Public <br> Models (<em>Lab/Cloud</em>)</th>
+                                    <th>Model/Peak <br>Annual (<em>%</em>)</th>
+                                    <th>Model/Peak <br>w/100x (<em>%</em>)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Gemini 1.0 Ultra</td>
                                     <td>Google DeepMind</td>
+                                    <td>Google DeepMind</td>
                                     <td>$5.00 \times 10^{25}$</td>
                                     <td>$3.87 \times 10^{28}$</td>
+                                    <td>45.65</td>
                                     <td>0.129</td>
+                                    <td>12.93</td>
                                 </tr>
                                 <tr>
                                     <td>Claude 3.5 Sonnet</td>
                                     <td>Anthropic</td>
+                                    <td>Anthropic/Amazon</td>
                                     <td>$4.98 \times 10^{25}$</td>
                                     <td>$2.27 \times 10^{28}$</td>
+                                    <td>69.74</td>
                                     <td>0.220</td>
+                                    <td>21.96</td>
                                 </tr>
                                 <tr>
                                     <td>GPT-4o</td>
                                     <td>OpenAI</td>
+                                    <td>Microsoft/OpenAI</td>
                                     <td>$3.81 \times 10^{25}$</td>
                                     <td>$4.35 \times 10^{28}$</td>
+                                    <td>53.36</td>
                                     <td>0.088</td>
+                                    <td>8.75</td>
                                 </tr>
                                 <tr>
                                     <td>Llama 3.1-405B</td>
                                     <td>Meta AI</td>
+                                    <td>Meta AI</td>
                                     <td>$3.80 \times 10^{25}$</td>
                                     <td>$5.65 \times 10^{28}$</td>
+                                    <td>66.32</td>
                                     <td>0.067</td>
+                                    <td>6.72</td>
                                 </tr>
                                 <tr>
                                     <td>GPT-4</td>
                                     <td>OpenAI</td>
+                                    <td>Microsoft/OpenAI</td>
                                     <td>$2.10 \times 10^{25}$</td>
                                     <td>$4.35 \times 10^{28}$</td>
+                                    <td>29.41</td>
                                     <td>0.048</td>
+                                    <td>4.82</td>
                                 </tr>
                                 <tr>
                                     <td>Gemini 1.0 Pro</td>
                                     <td>Google DeepMind</td>
+                                    <td>Google DeepMind</td>
                                     <td>$1.83 \times 10^{25}$</td>
                                     <td>$3.87 \times 10^{28}$</td>
+                                    <td>16.71</td>
                                     <td>0.047</td>
+                                    <td>4.73</td>
                                 </tr>
                                 <tr>
                                     <td>Claude 3 Opus</td>
                                     <td>Anthropic</td>
+                                    <td>Anthropic/Amazon</td>
                                     <td>$1.64 \times 10^{25}$</td>
                                     <td>$2.27 \times 10^{28}$</td>
+                                    <td>22.97</td>
                                     <td>0.072</td>
+                                    <td>7.23</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini 1.5 Pro</td>
+                                    <td>Google DeepMind</td>
+                                    <td>Google DeepMind</td>
+                                    <td>$1.58 \times 10^{25}$</td>
+                                    <td>$3.87 \times 10^{28}$</td>
+                                    <td>14.43</td>
+                                    <td>0.041</td>
+                                    <td>4.09</td>
                                 </tr>
                                 <tr>
                                     <td>Llama 3-70B</td>
                                     <td>Meta AI</td>
+                                    <td>Meta AI</td>
                                     <td>$7.86 \times 10^{24}$</td>
                                     <td>$5.65 \times 10^{28}$</td>
+                                    <td>13.72</td>
                                     <td>0.014</td>
+                                    <td>1.39</td>
                                 </tr>
                                 <tr>
                                     <td>GPT-4o mini</td>
                                     <td>OpenAI</td>
+                                    <td>Microsoft/OpenAI </td>
                                     <td>$7.36 \times 10^{24}$</td>
                                     <td>$4.35 \times 10^{28}$</td>
+                                    <td>10.31</td>
                                     <td>0.017</td>
+                                    <td>1.69</td>
                                 </tr>
                                 <tr>
                                     <td>PaLM 2</td>
                                     <td>Google</td>
+                                    <td>Google DeepMind</td>
                                     <td>$7.34 \times 10^{24}$</td>
                                     <td>$3.87 \times 10^{28}$</td>
+                                    <td>6.70</td>
                                     <td>0.019</td>
+                                    <td>1.90</td>
+                                </tr>
+                                <tr>
+                                    <td>Llama 3.3</td>
+                                    <td>Meta AI</td>
+                                    <td>Meta AI</td>
+                                    <td>$6.86 \times 10^{24}$</td>
+                                    <td>$5.65 \times 10^{28}$</td>
+                                    <td>11.98</td>
+                                    <td>0.012</td>
+                                    <td>1.21</td>
+                                </tr>
+                                <tr>
+                                    <td>Amazon Nova Pro</td>
+                                    <td>Amazon</td>
+                                    <td>Anthropic/Amazon</td>
+                                    <td>$6.00 \times 10^{24}$</td>
+                                    <td>$2.27 \times 10^{28}$</td>
+                                    <td>8.40</td>
+                                    <td>0.026</td>
+                                    <td>2.65</td>
+                                </tr>
+                                <tr>
+                                    <td>Amazon Titan</td>
+                                    <td>Amazon</td>
+                                    <td>Anthropic/Amazon</td>
+                                    <td>$4.80 \times 10^{24}$</td>
+                                    <td>$2.27 \times 10^{28}$</td>
+                                    <td>6.72</td>
+                                    <td>0.021</td>
+                                    <td>2.12</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude 2</td>
+                                    <td>Anthropic</td>
+                                    <td>Anthropic/Amazon</td>
+                                    <td>$3.87 \times 10^{24}$</td>
+                                    <td>$2.27 \times 10^{28}$</td>
+                                    <td>5.41</td>
+                                    <td>0.017</td>
+                                    <td>1.70</td>
+                                </tr>
+                                <tr>
+                                    <td>Minerva (540B)</td>
+                                    <td>Google</td>
+                                    <td>Google DeepMind </td>
+                                    <td>$2.74 \times 10^{24}$</td>
+                                    <td>$3.87 \times 10^{28}$</td>
+                                    <td>2.50</td>
+                                    <td>0.007</td>
+                                    <td>0.71</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-3.5 (text-davinci-003)</td>
+                                    <td>OpenAI</td>
+                                    <td>Microsoft/OpenAI </td>
+                                    <td>$2.58 \times 10^{24}$</td>
+                                    <td>$4.35 \times 10^{28}$</td>
+                                    <td>3.61</td>
+                                    <td>0.006</td>
+                                    <td>0.59</td>
+                                </tr>
+                                <tr>
+                                    <td>U-PaLM (540B)</td>
+                                    <td>Google</td>
+                                    <td>Google DeepMind </td>
+                                    <td>$2.53 \times 10^{24}$</td>
+                                    <td>$3.87 \times 10^{28}$</td>
+                                    <td>2.31</td>
+                                    <td>0.007</td>
+                                    <td>0.65</td>
+                                </tr>
+                                <tr>
+                                    <td>PaLM (540B)</td>
+                                    <td>Google Research</td>
+                                    <td>Google DeepMind </td>
+                                    <td>$2.53 \times 10^{24}$</td>
+                                    <td>$3.87 \times 10^{28}$</td>
+                                    <td>2.31</td>
+                                    <td>0.007</td>
+                                    <td>0.65</td>
+                                </tr>
+                                <tr>
+                                    <td>Flan-PaLM 540B</td>
+                                    <td>Google</td>
+                                    <td>Google DeepMind </td>
+                                    <td>$2.50 \times 10^{24}$</td>
+                                    <td>$3.87 \times 10^{28}$</td>
+                                    <td>2.28</td>
+                                    <td>0.006</td>
+                                    <td>0.65</td>
+                                </tr>
+                                <tr>
+                                    <td>FLAN 137B</td>
+                                    <td>Google Research</td>
+                                    <td>Google DeepMind </td>
+                                    <td>$2.05 \times 10^{24}$</td>
+                                    <td>$3.87 \times 10^{28}$</td>
+                                    <td>1.87</td>
+                                    <td>0.005</td>
+                                    <td>0.53</td>
+                                </tr>
+                                <tr>
+                                    <td>Meta Movie Gen Video</td>
+                                    <td>Meta AI</td>
+                                    <td>Meta AI</td>
+                                    <td>$2.65 \times 10^{24}$</td>
+                                    <td>$5.65 \times 10^{28}$</td>
+                                    <td>2.88</td>
+                                    <td>0.003</td>
+                                    <td>0.29</td>
+                                </tr>
+                                <tr>
+                                    <td>Megatron-Turing NLG 530B</td>
+                                    <td>Microsoft,NVIDIA</td>
+                                    <td>Microsoft/OpenAI </td>
+                                    <td>$1.17 \times 10^{24}$</td>
+                                    <td>$4.35 \times 10^{28}$</td>
+                                    <td>1.64</td>
+                                    <td>0.003</td>
+                                    <td>0.27</td>
+                                </tr>
+                                <tr>
+                                    <td>Llama 2-70B</td>
+                                    <td>Meta AI</td>
+                                    <td>Meta AI </td>
+                                    <td>$8.10 \times 10^{23}$</td>
+                                    <td>$5.65 \times 10^{28}$</td>
+                                    <td>1.41</td>
+                                    <td>0.001</td>
+                                    <td>0.14</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
+                    <p>
+                        The contrast between frontier models consuming a small fraction of quarterly compute
+                        budgets and ongoing infrastructure expansion suggests that leading AI firms train numerous
+                        experimental models beyond their final deployments. This interpretation aligns with widely
+                        documented practices in frontier AI laboratories. Major labs employ hundreds to thousands of
+                        researchers who routinely train models during development. Standard optimization procedures,
+                        such as hyperparameter sweeps, involve training single model architectures tens to hundreds of
+                        times to identify optimal configurations (<a href="#ref-42" class="cite">Weights & Biases
+                            2025</a>).
+                    </p>
+
+                    <p>
+                        Taken together, producing a final frontier model requires training hundreds to thousands of
+                        intermediate models during the R&D process. While hyperparameter optimization is essential
+                        to model development, current approaches necessarily involve complete retraining for each
+                        configuration. This contrasts with modular systems where components can be incrementally
+                        optimized without discarding the entire structure. Recent work on targeted model modification
+                        (e.g., LLM surgery (<a href="#ref-43" class="cite">Veldanda et al., 2024</a>)) suggests
+                        alternatives to full retraining, but such
+                        techniques have not been widely adopted in frontier model development, necessitating substantial
+                        computational expenditure during optimization.
+                    </p>
+
+                    <p>
+                        Consider the magnitude of this inefficiency. If frontier labs aim to produce general-purpose
+                        models, then computational resources allocated to intermediate experimental models represent
+                        overhead that does not directly contribute to final model capability. Based on <a
+                            href="#table-2.2">Table 2.2</a>,
+                        approximately 98.53% of annual training budgets are allocated to models other than the final
+                        deployment (calculated as 100% − (0.22%/15%), where 15% represents the estimated fraction
+                        of total compute dedicated to training (<a href="#ref-44" class="cite">Bratt 2025</a>)). Under
+                        the objective of producing a
+                        generalpurpose model, this implies that the vast majority of training compute is allocated to
+                        parameters
+                        that are ultimately discarded during the optimization process.
+                    </p>
+
+                    <p>
+                        This annual estimate may understate total inefficiency, as it assumes frontier labs must train
+                        at least one model from scratch annually. If model parameters could be efficiently reused across
+                        generations (as RETRO/ATLAS demonstrate through their retrieval databases, where up to
+                        98% of knowledge can be transferred between model versions (<a href="#ref-45"
+                            class="cite">Borgeaud et al., 2022</a>; <a href="#ref-46" class="cite">Izacard
+                            et al., 2023</a>)) the efficiency gap would be larger. However, retraining overhead
+                        represents only
+                        one source of computational waste. A second source arises from how models process information
+                        during training. To observe the theory behind this phenomena, consider the following analogy.
+                    </p>
+
+                    <div class="callout">
+                        <p class="callout-title">A Library Analogy</p>
+
+                        <p>
+                            Once again, consider a library. When someone submits a new book to a library, the
+                            librarian doesn’t subsequently read <em> every book in the library</em> to figure out where
+                            to store
+                            it on the shelves. Instead, they use the catalog system to find a relevant bookshelf, the
+                            decimal system to locate the right placement on the shelf, and (perhaps) the title of the
+                            book to find its alphabetical placement on that shelf.
+                        </p>
+
+                        <p>
+                            This practice stands in stark contrast to how AI systems are trained. To add a <em>single
+                                training example</em> into a model like GPT-3, AI users forward propagate <em>through
+                                the
+                                entire model and all of its knowledge</em> (i.e., read every book in the library). And
+                            to train
+                            an
+                            entire model like GPT-3 on modern training corpuses (i.e. trillions of tokens), it repeats
+                            this
+                            process <em>trillions of times</em>. It is like a librarian who repeatedly reads every book
+                            to figure
+                            out
+                            where a book should be placed, and then complains about not having enough librarian
+                            assistants (i.e. GPU compute threads) to accomplish the task.
+                        </p>
+                    </div>
+
+                    <p>
+                        The question concerns the magnitude of this inefficiency. The RETRO and ATLAS results
+                        previously discussed demonstrate that models can achieve comparable performance while being
+                        25-50x smaller in parameter count. This parameter reduction translates directly to reduced
+                        training costs: fewer parameters require proportionally fewer FLOPs during both forward and
+                        backward propagation. The compression results further indicate that models can be trained with
+                        5-10x fewer parameters without performance degradation, compounding the potential efficiency
+                        gains.
+                    </p>
+
+                    <p>
+                        Yet, these three sources of training inefficiency (retraining overhead, dense forward
+                        propagation, and parameter redundancy) do not exhaust the potential efficiency gains. A fourth
+                        source
+                        arises from how models organize information during the training process itself.
+                    </p>
+
+                    <div class="callout">
+                        <p class="callout-title">A Library Analogy</p>
+
+                        <p>
+                            Consider a brand new library. When a librarian goes to stock their library, they do not
+                            necessarily store <em>every book in the universe</em> in their library. Instead, libraries
+                            participate as a
+                            part of a library <em>network</em>. In this way, a nation-wide (or even global) community of
+                            libraries
+                            each store a cache of books, and when one user asks their local library for a book they do
+                            not
+                            have, that library will call in that book from another library. Through this process, even
+                            tiny,
+                            rural libraries are (in a way) making a massive, global collection of knowledge available to
+                            their local community. Some might even say that a small, local library makes all of
+                            humanity’s knowledge available to their local community, even if their local collection is
+                            small.
+                        </p>
+
+                        <p>
+                            This practice stands in stark contrast to how AI systems are trained. Firms around the world
+                            are scraping the internet (or downloading web scrapes) and training their own models
+                            from scratch <em>largely on the same information scraped from the internet</em>. In these
+                            practices,
+                            they are encoding the same information redundantly across many organizations instead of
+                            building upon the existing knowledge already encoded into neural weights by other parties.
+                            That is to say, AI companies repeat each others’ work to a great degree.
+                        </p>
+                    </div>
+
+                    <p>
+                        AI models store information within their weights. General-purpose models encode substantial
+                        portions of publicly available internet data through training on large, overlapping corpora.
+                        Multiple organizations train models on similar or identical datasets, often drawn from common
+                        sources such as web scrapes and public repositories. This results in redundant encoding of the
+                        same information across independently trained models.
+                    </p>
+
                     <div class="table-container">
                         <table class="data-table">
-                            <caption>Table: Estimated Total Worldwide AI Computing Capacity (Q4 2024)</caption>
+                            <caption>Table 2.3: Estimated Total Worldwide AI Computing Capacity (Q4 2024).</caption>
                             <thead>
                                 <tr>
                                     <th>Category</th>
-                                    <th>Computing Power (FLOP/s)</th>
+                                    <th>Computing Power <br> (FLOP/s)</th>
                                     <th>Share (%)</th>
+                                    <th>Source/Calculation</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -735,21 +1071,25 @@
                                     <td>Meta</td>
                                     <td>$1.79 \times 10^{21}$</td>
                                     <td>5.57</td>
+                                    <td>From <a href="appendix2.html#table-6.3">Table 6.3</a> Total Q4 2024</td>
                                 </tr>
                                 <tr>
                                     <td>Microsoft/OpenAI</td>
                                     <td>$1.38 \times 10^{21}$</td>
                                     <td>4.29</td>
+                                    <td>From <a href="appendix2.html#table-6.3">Table 6.3</a> Total Q4 2024</td>
                                 </tr>
                                 <tr>
                                     <td>Google/DeepMind</td>
                                     <td>$1.23 \times 10^{21}$</td>
                                     <td>3.81</td>
+                                    <td>From <a href="appendix2.html#table-6.3">Table 6.3</a> Total Q4 2024</td>
                                 </tr>
                                 <tr>
                                     <td>Amazon/Anthropic</td>
                                     <td>$7.19 \times 10^{20}$</td>
                                     <td>2.23</td>
+                                    <td>From <a href="appendix2.html#table-6.3">Table 6.3</a> Total Q4 2024</td>
                                 </tr>
                                 <tr>
                                     <td colspan="3"><em>Consumer Computing</em></td>
@@ -758,16 +1098,19 @@
                                     <td>Smartphones</td>
                                     <td>$7.48 \times 10^{21}$</td>
                                     <td>23.23</td>
+                                    <td>Sum of Active iPhones/Androids from <a href="appendix2.html#table-6.5"> Table 6.5</a></td>
                                 </tr>
                                 <tr>
                                     <td>PC CPUs/GPUs</td>
                                     <td>$2.23 \times 10^{21}$</td>
                                     <td>6.92</td>
+                                    <td>Sum of PC CPUs and GPUs from <a href="appendix2.html#table-6.5"> Table 6.5</a></td>
                                 </tr>
                                 <tr>
                                     <td>Game Consoles</td>
                                     <td>$8.64 \times 10^{20}$</td>
                                     <td>2.68</td>
+                                    <td>From <a href="appendix2.html#table-6.5">Table 6.5</a></td>
                                 </tr>
                                 <tr>
                                     <td>Other Cloud/Pre-2023</td>
@@ -778,6 +1121,7 @@
                                     <td><strong>Total</strong></td>
                                     <td>$3.22 \times 10^{22}$</td>
                                     <td>100.00</td>
+                                    <td>Sum of all rows above</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -2120,7 +2464,7 @@
                                 I. Goodfellow, Y. Bengio, and A. Courville. 2016.
                             </span>
 
-                            <a href="https://www.deeplearningbook.org/" class="venue">
+                            <a href="https://www.deeplearningbook.org/">
                                 <em>Deep Learning</em>. MIT Press.
                             </a>
                         </li>
@@ -2157,6 +2501,69 @@
                                 <em>Epoch AI Blog</em>, may. Analysis of AI model compute trends showing 4-5x yearly
                                 growth
                                 from 2010 to 2024.
+                            </span>
+                        </li>
+
+                        <li id="ref-42">
+                            <span class="authors">
+                                Weights & Biases. 2025.
+                            </span>
+
+                            <a href="https://docs.wandb.ai/models/tutorials/sweeps">
+                                Sweeps: An overview. Online tutorial for using W&B Sweeps for hyperparameter
+                                optimization.
+                            </a>
+                        </li>
+
+                        <li id="ref-43">
+                            <span class="authors">
+                                A. K. Veldanda, S.-X. Zhang, A. Das, S. Chakraborty, S. Rawls, S. Sahu, and M. Naphade.
+                                2024.
+                            </span>
+
+                            <span class="venue">
+                                Llm surgery: Efficient knowledge unlearning and editing in large language models.
+                                <em>arXiv preprint arXiv:2409.13054.</em>
+                            </span>
+                        </li>
+
+                        <li id="ref-44">
+                            <span class="authors">
+                                I. Bratt. 2025.
+                            </span>
+
+                            <a
+                                href="https://partners.wsj.com/nasdaq-arm/information-technology/why-there-is-no-ai-without-inference/">
+                                Why there is no AI without inference. WSJ Partner Content
+                                sponsored by Arm, Vice President of Machine-Learning Technology.
+                            </a>
+                        </li>
+
+                        <li id="ref-45">
+                            <span class="authors">
+                                S. Borgeaud, A. Mensch, J. Hoffmann, T. Cai, E. Rutherford, K. Millican, G. B. Van Den
+                                Driessche, J.-B. Lespiau, B. Damoc, A. Clark, et al. 2022.
+                            </span>
+
+                            <span class="venue">
+                                Improving language models by
+                                retrieving from trillions of tokens. In <em>International conference on machine
+                                    learning</em>,
+                                pages
+                                2206–2240. PMLR.
+                            </span>
+                        </li>
+
+                        <li id="ref-46">
+                            <span class="authors">
+                                G. Izacard, P. Lewis, M. Lomeli, L. Hosseini, F. Petroni, T. Schick, J. Dwivedi-Yu, A.
+                                Joulin,
+                                S. Riedel, and E. Grave. 2023
+                            </span>
+
+                            <span class="venue">
+                                Atlas: Few-shot learning with retrieval augmented language
+                                models. <em>Journal of Machine Learning Research</em>, 24(251):1–43.
                             </span>
                         </li>
                     </ol>

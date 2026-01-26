@@ -657,6 +657,11 @@ main {
     vertical-align: middle;
 }
 
+.data-table td img {
+    display: block;
+    margin: auto;
+}
+
 .data-table th {
     background-color: #f5f5f5;
     font-weight: 600;
