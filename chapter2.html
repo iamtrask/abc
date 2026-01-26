@@ -331,11 +331,11 @@
                         ImageNet to 1/10 of their original sizes without any performance loss on ConvNet, offering
                         the first lossless method of dataset distillation” (<a href="#ref-33" class="cite">Guo et al.,
                             2023</a>). This compression has been
-                        demonstrated across multiple standard architectures, as shown in <a href="#table-2.1">Table
+                        demonstrated across multiple standard architectures, as shown in <a href="#table-2-1">Table
                             2.1.</a>
                     </p>
 
-                    <div class="table-container" id="table-2.1">
+                    <div class="table-container" id="table-2-1">
                         <table class="data-table">
                             <caption>Table 2.1: Table and caption from (<a href="#ref-33" class="cite">Guo et al.,
                                     2023</a>)
@@ -641,7 +641,7 @@
 
                     <p>
                         Analysis of the largest AI firms reveals that pre-training their most capable models consumes
-                        less than 1% of quarterly compute budgets (see <a href="#table-2.2">Table 2.2</a>; methodology
+                        less than 1% of quarterly compute budgets (see <a href="#table-2-2">Table 2.2</a>; methodology
                         detailed in Appendices
                         I and II). Yet these same firms continue expanding computational infrastructure to support
                         larger models (<a href="#ref-39" class="cite">Mehta 2024</a>; <a href="#ref-40"
@@ -650,7 +650,7 @@
                         compute capacity is allocated to other training activities rather than final model production.
                     </p>
 
-                    <div class="table-container" id="table-2.2">
+                    <div class="table-container" id="table-2-2">
                         <table class="data-table">
                             <caption>Table 2.2: The far right columns present the estimated compute usage by large AI
                                 models
@@ -946,7 +946,7 @@
                         Consider the magnitude of this inefficiency. If frontier labs aim to produce general-purpose
                         models, then computational resources allocated to intermediate experimental models represent
                         overhead that does not directly contribute to final model capability. Based on <a
-                            href="#table-2.2">Table 2.2</a>,
+                            href="#table-2-2">Table 2.2</a>,
                         approximately 98.53% of annual training budgets are allocated to models other than the final
                         deployment (calculated as 100% − (0.22%/15%), where 15% represents the estimated fraction
                         of total compute dedicated to training (<a href="#ref-44" class="cite">Bratt 2025</a>)). Under
@@ -1052,7 +1052,7 @@
                         same information across independently trained models.
                     </p>
 
-                    <div class="table-container">
+                    <div class="table-container" id="table-2-3">
                         <table class="data-table">
                             <caption>Table 2.3: Estimated Total Worldwide AI Computing Capacity (Q4 2024).</caption>
                             <thead>
@@ -1098,13 +1098,15 @@
                                     <td>Smartphones</td>
                                     <td>$7.48 \times 10^{21}$</td>
                                     <td>23.23</td>
-                                    <td>Sum of Active iPhones/Androids from <a href="appendix2.html#table-6.5"> Table 6.5</a></td>
+                                    <td>Sum of Active iPhones/Androids from <a href="appendix2.html#table-6.5"> Table
+                                            6.5</a></td>
                                 </tr>
                                 <tr>
                                     <td>PC CPUs/GPUs</td>
                                     <td>$2.23 \times 10^{21}$</td>
                                     <td>6.92</td>
-                                    <td>Sum of PC CPUs and GPUs from <a href="appendix2.html#table-6.5"> Table 6.5</a></td>
+                                    <td>Sum of PC CPUs and GPUs from <a href="appendix2.html#table-6.5"> Table 6.5</a>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Game Consoles</td>
@@ -1127,27 +1129,97 @@
                         </table>
                     </div>
 
+                    <p>
+                        From an information-theoretic perspective, this redundancy is inefficient; the question is:
+                        how much? Comprehensive measurement would require documenting the overlap in training
+                        data and model capabilities across organizations, information that is not systematically
+                        available.
+                    </p>
+
+                    <p>
+                        However, industry analysis provides order-of-magnitude estimates of aggregate underutilization.
+                        The largest AI firm controls less than 5.57% of global computing capacity (<a
+                            href="#table-2-3">Table 2.3</a>).
+                        If training resources could be pooled across organizations (analogous to libraries participating
+                        in a global network rather than maintaining independent collections) available compute
+                        would increase by a factor of approximately 100/5.57 ≈ 17.95x relative to any single firm’s
+                        capacity. This represents the theoretical gain from distributed training architectures that
+                        enable
+                        collaborative model development across organizational boundaries.
+                    </p>
+
+                    <p>
+                        Yet, even these four training inefficiencies may not fully describe the inefficiency present in
+                        modern AI. To observe the theory behind this next problem, consider the following analogy.
+                    </p>
+
                     <div class="callout">
-                        <p class="callout-title">A Full Picture of Compute Waste</p>
-                        <p>Consider first how an AI system would operate as a librarian. When someone asks about the
-                            rules of chess, this librarian doesn't merely consult the games section. Instead, they read
-                            <em>every single book in the library</em>. Not just once, they do this for <em>every single
-                                query</em>. When this AI librarian needs to add a new book to their collection, they
-                            don't simply locate an appropriate shelf using a catalog system. Instead they first read
-                            <em>every book in the library</em>, then displace existing books onto the floor to make
-                            space, then must <em>re-read everything</em> to determine where to relocate those displaced
-                            books. This process repeats, sometimes <em>trillions of times</em>, until the library
-                            reaches a new equilibrium.
+                        <p class="callout-title">A Library Analogy</p>
+
+                        <p>
+                            Consider a brand new library which doesn’t even have any books in it yet. Let’s say the
+                            librarian is in a hurry, and so they take the first book, pick one of the empty shelves, set
+                            the book on that shelf, and then run to get the second book. Then, looking at the second
+                            book, they ask, ”is this similar to the first book... or different”. And if it’s similar to
+                            the first
+                            book, they put it closer to the first book on the shelves, and if it’s different from the
+                            first
+                            book, they put it farther away. This librarian repeats this process over and over until they
+                            encounter a problem. After 10,000 books (out of the millions they have to load), one of the
+                            bookshelves is full. So, because the shelf they need is full, they run to the next shelf and
+                            <em> empty it... throwing books onto the floor</em> to make space for their new book, which
+                            needs to
+                            be in this location. But now, they need to re-stock the books they just threw on the floor!
+                            They then pick up the books from the floor and attempt to find them all new places in the
+                            library, accidentally filling up shelves in the process. They then repeat this process many,
+                            many times... stocking and re-stocking all the books until a sensible organization emerges.
                         </p>
-                        <p>Now consider how human librarians process information. When someone inquires about chess,
-                            they navigate directly to the games section, select a relevant text, and locate the rules.
-                            When adding a new book, they utilize the Dewey Decimal system to identify the appropriate
-                            shelf and place it there. The process is direct, efficient, and purposeful.</p>
+
+                        <p>
+                            Or consider another librarian, who is opening a new library. But before they begin stocking
+                            books, they set up a Dewey Decimal System. They label each book in
+                            the system, count the number of books in each category, and plan their shelf capacity
+                            appropriately. Then, they take each book and load it into its appropriate shelf in a single
+                            pass. This second technique stands in stark contrast to how AI systems are trained. To add
+                            <em> the first training example</em> into an untrained model like GPT-3, AI users forward
+                            propagate
+                            <em>through the entire model and all of its knowledge</em> and store that information in
+                            random
+                            locations throughout the model. Then, as more training examples pile into the model, the
+                            model experiences <em>catastrophic forgetting</em> (<a href="#ref-47"
+                                class="cite">Kirkpatrick et al., 2017</a>) as collisions
+                            occur.
+                            And to train an entire model like GPT-3 on modern training corpuses (i.e. trillions of
+                            tokens), it repeats this process <em>trillions of times</em>.
+                        </p>
                     </div>
 
-                    <div class="table-container">
+                    <p>
+                        Quantifying the computational cost of catastrophic forgetting remains challenging due to
+                        limited empirical work on information segmentation during training. RETRO and ATLAS
+                        provide partial evidence, as does work on curriculum learning and knowledge distillation.
+                        Kemker et al. observe that avoiding catastrophic forgetting requires approximately 40x larger
+                        model capacity (<a href="#ref-48" class="cite">Kemker et al., 2018</a>), though this estimate is
+                        not especially recent. Multiple
+                        sources of training inefficiency compound: full model retraining during updates, dense forward
+                        propagation through all parameters, parameter redundancy from insufficient compression, and
+                        capacity overhead to prevent catastrophic forgetting during sequential training.
+                    </p>
+
+                    <p>
+                        These inefficiencies compound multiplicatively in terms of FLOPs. Parameter reuse across
+                        model generations could increase compute productivity by a factor of 100/(100 − 98.53%) ≈
+                        68x. RETRO/ATLAS-demonstrated parameter efficiency provides 25-50x gains. Lossless
+                        compression techniques offer an additional 5-10x reduction. Catastrophic forgetting avoidance
+                        inflates model sizes by approximately 40x. Combined multiplicatively, these factors suggest
+                        potential efficiency gains ranging from (68 × 25 × 5 × 17.95) ≈ 153,000x to (68 × 50 × 10 ×
+                        17.95 × 40) ≈ 24,400,000x, representing approximately 5-7 orders of magnitude of potential
+                        compute productivity improvement.
+                    </p>
+
+                    <div class="table-container" id="table-2-4">
                         <table class="data-table">
-                            <caption>Table: Summary of Major AI System Inefficiencies</caption>
+                            <caption>Table 2.4: Summary of Major AI System Inefficiencies</caption>
                             <thead>
                                 <tr>
                                     <th>Inefficiency Type</th>
@@ -1219,47 +1291,160 @@
                         </table>
                     </div>
 
-                    <h3 id="siloed-data">6+ OOM: Siloed Data</h3>
+                    <p>
+                        Taken together, these estimates suggest that current inference practices exhibit inefficiency
+                        factors of approximately 5,000-20,000x, while training practices exhibit inefficiency factors
+                        of approximately 150,000-24,000,000x. These bounds support the conclusion that at least six
+                        orders of magnitude of compute productivity remains unexploited in current AI systems.
+                    </p>
+
+                    <p>
+                        Yet even these estimates contain within them one especially conservative estimate, the 25-50x
+                        inefficiency from dense forward propagation. While RETRO/ATLAS provides the only concrete
+                        lower bound on this inefficiency, the true sparsity opportunity is almost certainly
+                        significantly
+                        more. To return to the library analogy, what percentage of the world’s collective library is
+                        needed
+                        to answer a particular question? If one believes that 2-4 percent of all human knowledge is
+                        needed for every question, then perhaps the RETRO/ATLAS estimate is accurate.
+                    </p>
+
+                    <p>
+                        While systematic measurement is lacking, the assumption that any query requires more
+                        than one-millionth of a model’s knowledge base (> 10−6
+                        ) appears conservative, suggesting
+                        these efficiency estimates may understate potential gains by an additional 4 orders of magnitude
+                        (although this is merely conjecture... future empirical work is needed).
+                    </p>
+
+                    <div class="callout">
+                        <p class="callout-title">A Full Picture of Compute Waste: The Library Analogy</p>
+
+                        <p>
+                            Consider first how an AI system would operate as a librarian. When someone asks about
+                            the rules of chess, this librarian doesn’t merely consult the games section. Instead, they
+                            read <em>every single book in the library</em>. Not just once, they do this for <em>every
+                                single query</em>.
+                            When this AI librarian needs to add a new book to their collection, they don’t simply locate
+                            an appropriate shelf using a catalog system. Instead (and this characterizes a fundamental
+                            inefficiency in current AI systems) they first read <em>every book in the library</em>, then
+                            displace
+                            existing books onto the floor to make space, then must <em>re-read everything</em> to
+                            determine
+                            where to relocate those displaced books. This process repeats, sometimes <em>trillions of
+                                times</em>, until the library reaches a new equilibrium. Worse, if a book needs to be
+                            decisively
+                            removed, the entire library must be burned to the ground, all of the books burned, and a
+                            new library constructed from scratch, repeating the entire aformentioned process over again.
+                        </p>
+
+                        <p>
+                            Furthermore, this AI librarian doesn’t participate in an efficient network of libraries.
+                            Instead, they insist on maintaining their own complete copy of <em>every book in
+                                existence</em>,
+                            greatly amplifying the challenge of the aformentioned processes. When other AI librarians
+                            open new libraries, they too download and store the same vast collection, redundantly
+                            encoding identical information in countless separate locations (but also re-paying the cost
+                            of learning how to organize their libraries). And when these AI librarians need to modify
+                            their collections (to add or remove significant knowledge) they don’t merely reorganize
+                            their existing structure. Instead, they <em>retrain from scratch</em>... also equivalent to
+                            burning
+                            their entire library to the ground, demolishing every book, and rebuilding the complete
+                            collection from the ground up (repaying all of the aformentioned costs).
+                        </p>
+
+                        <p>
+                            Now consider how human librarians process information. When someone inquires about
+                            chess, they navigate directly to the games section, select a relevant text, and locate the
+                            rules. When adding a new book, they utilize the Dewey Decimal system to identify
+                            the appropriate shelf and place it there. The process is direct, efficient, and purposeful.
+                            Moreover, human librarians don’t attempt to store every book in existence in their local
+                            library. Instead, they participate in an interconnected system of libraries, each
+                            maintaining
+                            their own cache of books. When a patron requests a book not locally available, the librarian
+                            simply requests it from another library in the network. Through this elegant system, even
+                            the smallest rural library can provide access to humanity’s collective knowledge.
+                        </p>
+                    </div>
+
+                    <p>
+                        The contrast between these approaches illuminates a critical insight about current AI systems.
+                        They operate with a level of inefficiency that we’ve somehow normalized within the field. In
+                        essence, what we’ve built is a global network of millions of librarians who must read their
+                        entire
+                        library just to fetch a single book, read it again to add a new book, and then read it countless
+                        more times to relocate all the books they displaced in the process. And when they’re not doing
+                        this trillions of times over, they’re burning their buildings to the ground, destroying their
+                        entire
+                        collections, and starting over from scratch. And as the world’s AI compute costs approach the
+                        level of a small nation, this practice, despite being ubiquitous within AI research, represents
+                        perhaps the greatest inefficiency in the history of information processing. And via this
+                        chapter,
+                        this thesis will describe existing innovations which could alleviate much of this inefficiency.
+                    </p>
 
                     <figure class="full-width">
                         <img src="1411.3146/abc_ch2_2_2_v5.png" alt="Data siloing tree">
                         <figcaption>A tree of sub-problems regarding data siloing.</figcaption>
                     </figure>
 
-                    <p>Following growing rumors across the AI research community that data is becoming a major
-                        bottleneck, OpenAI's former chief scientist, Ilya Sutskever, announced during his test of time
-                        award speech at NeurIPS 2024 that data for training AI has peaked, "We've achieved peak data and
-                        there'll be no more" [<a href="#ref-3" class="cite">3</a>]. However, while this may be true for
-                        the AI industry, Ilya's statement does not reflect the reality of what data exists in the world.
+                    <h3 id="siloed-data">6+ OOM: Siloed Data</h3>
+
+                    <p>
+                        Following growing rumors across the AI research community that data is becoming a major
+                        bottleneck, OpenAI’s former chief scientist, Ilya Sutskever, announced during his test of time
+                        award speech at NeurIPS 2024 that data for training AI has peaked, ”We’ve achieved peak data
+                        and there’ll be no more” (<a href="#ref-49" class="cite">Robison 2024</a>). However, while this
+                        may be true for the AI industry,
+                        and Ilya (being recent Chief Scientist at OpenAI) is perhaps one of the best people in the world
+                        to know, Ilya’s statement does not reflect the reality of what data exists in the world.
                     </p>
 
                     <div class="callout">
                         <p class="callout-title">A Library Analogy</p>
-                        <p>Consider a world where libraries could only acquire books through anonymous donations left on
-                            their doorstep. No matter how many valuable books exist in private collections, university
-                            archives, or government repositories, libraries would be limited to what people voluntarily
-                            abandon. In such a world, librarians might reasonably conclude they're "running out of
-                            books", even while surrounded by vast, inaccessible collections within surrounding
-                            businesses and homes.</p>
-                        <p>This mirrors the current state of AI training. When frontier models like GPT-4 (trained on
-                            6.5 trillion tokens), and Qwen2.5-72B (18 trillion tokens), LLama 4 (30 trillion tokens) [<a
-                                href="#ref-7" class="cite">7</a>] report hitting data limits, they're really hitting
-                            access limits. They're not running out of data, they're running out of data they can freely
-                            collect.</p>
+
+                        <p>
+                            Consider a world where libraries could only acquire books through anonymous donations
+                            left on their doorstep. No matter how many valuable books exist in private collections,
+                            university archives, or government repositories, libraries would be limited to what people
+                            voluntarily abandon. In such a world, librarians might reasonably conclude they’re
+                            ”running out of books”, even while surrounded by vast, inaccessible collections within
+                            surrounding businesses and homes.
+                        </p>
+
+                        <p>
+                            This mirrors the current state of AI training. When frontier models like GPT-4
+                            (trained on 6.5 trillion tokens), and Qwen2.5-72B (18 trillion tokens), LLama 4 (30 trillion
+                            tokens), (<a href="#ref-50" class="cite">Epo</a>) report hitting data limits, they’re really
+                            hitting access limits. They’re
+                            not
+                            running out of data, they’re running out of data they can freely collect.
+                        </p>
                     </div>
 
-                    <p>The scale of untapped data is staggering:</p>
+                    <h3>2-4 Orders of Magnitude: Text Humans Create By Hand</h3>
 
-                    <div class="table-container">
+                    <p>
+                        Dataset sizes for frontier AI models range from publicly disclosed values to industry estimates.
+                        GPT-4 was trained on approximately 6.5 trillion tokens, while Alibaba’s Qwen2.5-72B used 18
+                        trillion tokens. The largest reported text dataset, used for Meta’s Llama 4, contains 30
+                        trillion
+                        tokens (<a href="#ref-37" class="cite">Epoch AI 2025</a>). Using RedPajama as a reference
+                        (<a href="#ref-51" class="cite">Together 2023</a>), each trillion tokens
+                        requires less than 6TB of storage, implying that the largest known training dataset (Llama 4)
+                        occupies less than 180TB.
+                    </p>
+
+                    <div class="table-container" id="table-2-5">
                         <table class="data-table">
-                            <caption>Table: Estimated Volume of Public Digital Text Content (relative size uses Llama 3
-                                = 1 as reference)</caption>
+                            <caption>Table 2.5: Estimated Volume of Public Digital Text Content (<a href="#ref-52"
+                                    class="cite">Cummins 2024</a>)</caption>
                             <thead>
                                 <tr>
                                     <th>Category &amp; Source</th>
                                     <th>Words (T)</th>
                                     <th>Tokens (T)</th>
-                                    <th>Rel. Size</th>
+                                    <th>Rel. Size*</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1300,7 +1485,7 @@
                                     <td>1.3</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4"><em>Academic &amp; Legal</em></td>
+                                    <td colspan="4"><em>Academic Publications and Patents</em></td>
                                 </tr>
                                 <tr>
                                     <td>Academic articles</td>
@@ -1336,25 +1521,59 @@
                                     <td>1.4</td>
                                 </tr>
                                 <tr>
+                                    <td colspan="4"><em>Court Documents</em></td>
+                                </tr>
+                                <tr>
                                     <td>US federal court documents</td>
                                     <td>2</td>
                                     <td>2.7</td>
                                     <td>0.2</td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4"><small>*Relative size using Llama 3 = 1 as reference</small></td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
 
-                    <div class="table-container">
+                    <p>
+                        The scale of untapped data is staggering. As shown in Tables <a href="#table-2-5">2.5</a> and <a
+                            href="#table-2.6">2.6</a>, stored email and
+                        instant messages alone contain over 1,850 trillion tokens, approximately 60 times the largest
+                        known training dataset (<a href="#ref-53" class="cite">Cummins 2024</a>). Daily human
+                        communication generates approximately
+                        150 trillion tokens, accumulating to roughly 55 quadrillion tokens annually (approximately
+                        1,750 times the scale of frontier training sets).
+                    </p>
+
+                    <h3>6+ Orders of Magnitude: Multi-media data broadly</h3>
+
+                    <p>
+                        Yet even this vast sea of text represents merely a drop in the ocean of total digital data.
+                        While
+                        frontier AI models train on curated web scrapes such as Common Crawl (454 TB as of December
+                        2023) (<a href="#ref-54" class="cite">Wikipedia contributors 2024</a>), the Internet Archive’s
+                        Wayback Machine alone stores
+                        approximately 100 petabytes (<a href="#ref-55" class="cite">Kahle 2024</a>). Meanwhile, global
+                        digital data is projected to reach
+                        180 zettabytes by 2025 (<a href="#ref-56" class="cite">Mider 2024</a>; <a href="#ref-57"
+                            class="cite">Taylor 2024</a>), six orders
+                        of magnitude larger than The
+                        Internet Archive and nine orders of magnitude larger than the largest known training datasets.
+                    </p>
+
+                    <div class="table-container" id="table-2.6">
                         <table class="data-table">
-                            <caption>Table: Estimated Volume of Social Media, Audio, and Private Data (relative size
-                                uses Llama 3 = 1 as reference)</caption>
+                            <caption>Table 2.6: Estimated Volume of Text Data (<a href="#ref-53" class="cite">Cummins
+                                    2024</a>)</caption>
                             <thead>
                                 <tr>
                                     <th>Category &amp; Source</th>
                                     <th>Words (T)</th>
                                     <th>Tokens (T)</th>
-                                    <th>Rel. Size</th>
+                                    <th>Rel. Size*</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1380,7 +1599,7 @@
                                     <td>10.0</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4"><em>Audio (Transcribed)</em></td>
+                                    <td colspan="4"><em>Publicly Available Audio (Transcribed)</em></td>
                                 </tr>
                                 <tr>
                                     <td>YouTube</td>
@@ -1399,6 +1618,18 @@
                                     <td>0.56</td>
                                     <td>0.75</td>
                                     <td>0.05</td>
+                                </tr>
+                                <tr>
+                                    <td>Television archives</td>
+                                    <td>0.05</td>
+                                    <td>0.07</td>
+                                    <td>0.001</td>
+                                </tr>
+                                <tr>
+                                    <td>Radio archives</td>
+                                    <td>0.5</td>
+                                    <td>0.6</td>
+                                    <td>0.04</td>
                                 </tr>
                                 <tr>
                                     <td colspan="4"><em>Private Data</em></td>
@@ -1437,20 +1668,66 @@
                                     <td>$10^5$</td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4"><small>*Relative size using Llama 3 = 1 as reference</small></td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
 
-                    <p>Stored email and instant messages alone contain over 1,850 trillion tokens, approximately 60
-                        times the largest known training dataset [<a href="#ref-10" class="cite">10</a>]. Daily human
-                        communication generates approximately 150 trillion tokens, accumulating to roughly 55
-                        quadrillion tokens annually.</p>
+                    <div class="callout">
+                        <p class="callout-title">A Library Analogy</p>
 
-                    <p>Yet even this vast sea of text represents merely a drop in the ocean of total digital data. While
-                        frontier AI models train on curated web scrapes such as Common Crawl (454 TB as of December
-                        2023), the Internet Archive's Wayback Machine alone stores approximately 100 petabytes.
-                        Meanwhile, global digital data is projected to reach 180 zettabytes by 2025, six orders of
-                        magnitude larger than The Internet Archive and nine orders of magnitude larger than the largest
-                        known training datasets.</p>
+                        <p>
+                            Consider a national library system. While a single library might proudly maintain millions
+                            of books, this represents only a tiny fraction of all written human knowledge. Beyond
+                            its walls lie vast corporate archives, government repositories, university collections, and
+                            personal libraries. To get a sense of scale &mdash; consider the size of a library’s
+                            physical
+                            building, and compare that to the size of the rest of the physical buildings in a city
+                            &mdash;
+                            each
+                            with books and letterboxes and filing cabinets containing all manner of correspondence and
+                            record. Each holds unique and valuable information, yet remains inaccessible to the library
+                            system not because of physical constraints, but because of attribution and control concerns.
+                        </p>
+
+                        <p>
+                            Similarly, when AI companies claim to have ”reached peak data,” they’re really
+                            saying they’ve exhausted what they can freely obtain (often without permission or
+                            attribution). The actual digital data of the world &mdash; in private databases, corporate
+                            systems,
+                            government archives, and personal devices &mdash; remains largely untapped, representing
+                            over
+                            six orders of magnitude more information than current AI systems can access.
+                        </p>
+                    </div>
+
+                    <p>
+                        The magnitude of this disparity is difficult to comprehend. While the largest known AI
+                        dataset (to the awareness of this researcher) is roughly 180 TB of information, and may be
+                        derived from a dataset as big as common crawl (450 TBs of information), or if we were very, very
+                        conservative, might be as big as the full history of the entire publicly indexable internet (and
+                        other
+                        data the Internet Archive keeps) 100 PBs, even this number is <em>6+ orders of magnitude
+                            smaller</em>
+                        than the amount of digital data in the world. Taken together, even under highly conservative
+                        estimates, it is very likely that AI has not yet trained on even one millionth of the amount of
+                        data that humanity has digitized. And beyond what humanity has digitized lies the vast amounts
+                        of information which is not yet encoded into a computer.
+                    </p>
+
+                    <p>
+                        Consider the 150 trillion tokens humans create every day, the zettabytes-worth of
+                        yet-to-bevideoed information going on across the planet and all of its inhabitants which
+                        (despite helping
+                        living creatures get smarter day-in-and-day-out) is completely inaccessible to systems which
+                        only read digital information. This striking disparity between used and available data raises a
+                        crucial question: why, in an era of unprecedented digital abundance, do AI systems train on such
+                        a microscopic fraction of all knowledge? The answer lies not in easily observable symptoms
+                        like data availability, but in fundamental problems underpinned by insufficient ABC.
+                    </p>
                 </section>
 
                 <section id="root-causes">
@@ -1461,17 +1738,28 @@
                         <figcaption>The cascade of causes between the addition problem and ABC.</figcaption>
                     </figure>
 
-                    <p>The previous section revealed a paradox: despite widespread beliefs of data and compute scarcity,
-                        AI systems access less than one millionth of digital resources. This under-utilization raises a
-                        critical question: if more data and compute directly improves AI capabilities through scaling
-                        laws, why do AI systems use such a tiny fraction of what's available? The answer lies in a
-                        cascade of technical and institutional barriers:</p>
+                    <p>
+                        The previous section revealed a paradox: despite widespread beliefs of data and compute
+                        scarcity, AI systems access less than one millionth of digital resources, and an untold
+                        microfraction of the world’s information broadly. This under-utilization raises a critical
+                        question:
+                        if more data and compute directly improves AI capabilities through scaling laws, why do AI
+                        systems use such a tiny fraction of what’s available? The answer lies in a cascade of technical
+                        and institutional barriers, each revealing a deeper ”why” that must be understood:
+                    </p>
 
                     <ul>
                         <li><strong>First Why:</strong> Attribution-based Control</li>
                         <li><strong>Second Why:</strong> Deep Learning's Feature Mixing Precludes Partitioning</li>
                         <li><strong>Third Why (Root Cause):</strong> Addition of Source-Separable Concepts</li>
                     </ul>
+
+                    <p>
+                        As we follow this chain of questions, we’ll see how each answer reveals a deeper technical
+                        challenge. More importantly, we’ll discover how recent breakthroughs in cryptography, deep
+                        learning, and distributed systems have already created solutions to these challenges (solutions
+                        which remain largely unrecognized by the AI community).
+                    </p>
                 </section>
 
                 <section id="first-why">
@@ -1482,50 +1770,422 @@
                         <figcaption>Subset of conceptual graph regarding Section 2.3</figcaption>
                     </figure>
 
-                    <p>The previous section revealed significant inefficiencies in the training of AI systems: 6+ orders
-                        of magnitude in underutilized data and compute. While there may be multiple contributing factors
-                        to these constraints, this thesis examines one particular root cause: AI's inability to provide
-                        <a href="https://attribution-based-control.ai/">attribution-based control</a> (ABC). An AI model
-                        possesses attribution-based control when two properties are true: data sources control which AI
-                        predictions they support, AI users control which data sources they rely upon for an AI
-                        prediction.
+                    <p>
+                        The previous section revealed significant inefficiencies in the training of AI systems: 6+
+                        orders of magnitude in underutilized data and compute. While there may be multiple contributing
+                        factors to these constraints, this thesis and chapter examines one particular root cause: AI’s
+                        inability to provide <a href="https://attribution-based-control.ai/">attribution-based
+                            control</a> (ABC). An AI model possesses attribution-based
+                        control when two properties are true: data sources control which AI predictions they support, AI
+                        users control which data sources they rely upon for an AI prediction. Following this definition
+                        (Definition <a href="index.html#defintion-1-1-1">1.1.1</a>), ABC implies certain architectural
+                        properties as novel requirements:
                     </p>
-
-                    <p>ABC implies certain architectural properties as novel requirements:</p>
 
                     <ul>
                         <li><strong>Source-Partitionable Representations:</strong> Knowledge within an AI system is
-                            partition-able by source</li>
+                            partition-able
+                            by source, otherwise sources lose control when their information is mixed, requiring:
+
+                            <ul>
+                                <li>
+                                    <strong> Source-Partitionable Inference:</strong> Partitions are independently
+                                    usable at inference,
+                                    otherwise users can’t select specific sources and sources can’t participate
+                                    irrespective
+                                    of the decisions of other sources
+                                </li>
+
+                                <li>
+                                    <strong> Source-Partitionable Training: </strong> Partitions are independently
+                                    trainable, otherwise
+                                    sources can’t update their contributions without requiring other sources to do so.
+                                </li>
+                            </ul>
+                        </li>
+
                         <li><strong>Rapid Partition Synthesis:</strong> Partitions are rapidly synthesize-able during
-                            inference</li>
+                            inference,
+                            otherwise collective insights which are only learnable via information from multiple
+                            sources cannot be realized in production AI systems.</li>
                     </ul>
 
+                    <p>
+                        Frontier AI systems lack these properties. Yet, if these properties were achieved, attribution
+                        would be achieved and aforementioned problems regarding data and compute productivity would
+                        be impacted. Let’s examine each in detail, linking each problem to attribution-based control.
+                    </p>
+
                     <h3>ABC and Compute Productivity (6+ OOM)</h3>
-                    <p>ABC would address compute productivity issues along two dimensions: access and learning
+
+                    <p>
+                        ABC would address compute productivity issues along two dimensions: access and learning
                         structure. Regarding structure, successful ABC would necessarily provide a means to structure
                         the learning and representation process, reducing re-training, forward propagation, redundancy,
-                        and catastrophic forgetting [<a href="#ref-9" class="cite">9</a>].</p>
+                        and catastrophic forgetting. Regarding access, ABC would provide a means to overcome
+                        incentive issues presently siloing the world’s compute resources. Let us consider these claims
+                        in
+                        the context of inference and learning.
+                    </p>
 
-                    <p>RETRO and ATLAS demonstrate the minimum scale of such a breakthrough. By maintaining source-based
-                        partitions through their database architecture, they achieve equal performance while activating
-                        only 2-4% of the parameters of similarly performant dense models [<a href="#ref-4"
-                            class="cite">4</a>,<a href="#ref-5" class="cite">5</a>].</p>
+                    <h3>
+                        2-3 OOM: Inefficient AI inference
+                    </h3>
+
+                    <div class="callout">
+                        <p class="callout-title">A Library Analogy</p>
+
+                        <p>
+                            Consider a library wherein a librarian reads every book in the library whenever they need
+                            to answer a question, including reading multiple copies of the same book and pretending to
+                            read an empty book whenever shelves contain empty sections.
+                        </p>
+
+                        <p>
+                            A solution to attribution-based control would necessarily reconfigure the library to
+                            fetch information based on its source (book or author). While such a solution might be
+                            challenging, if it successfully delivered capable predictions, it would necessarily do so
+                            while skipping an enormous amount of wasted computation. This is because ABC is not
+                            actually about selecting the sources one desires (normal full forward propagation already
+                            does this), its actually about <em>ignoring all the books you don’t want</em>. ABC requires
+                            making
+                            an AI inference while skipping an enormous amount of wasted computation, because
+                            (to return to the analogy) it would involve training the librarian on how to skip reading
+                            the entire library when making a prediction... and only fetch information from specific,
+                            relevant sources (i.e. books).
+                        </p>
+
+                        <p>
+                            Thus, while ABC’s definition might not appear to require an increase in computational
+                            efficiency, its definition directly requires that a vast amount of information not be
+                            included in the computational process, reducing the need to compute over that information.
+                        </p>
+                    </div>
+
+                    <p>
+                        Recall that current AI models must activate vast numbers of parameters for every prediction
+                        because they struggle to pre-identify which parameters are storing relevant information to the
+                        present query; they struggle with sparse forward propagation. While various approaches to
+                        sparse AI exist, successful ABC would necessarily enable one particularly compelling form of
+                        sparsity: source-based sparsity (i.e. source-based partitioning). Consequently, if an AI model
+                        could forward predict based on a relevant subset (i.e., the top 10) of many (i.e. billions) of
+                        sources, then it is very likely to also greatly reduce the computational complexity involved in
+                        forward propagating, because it would be forward propagating through vastly less information.
+                    </p>
+
+                    <p>
+                        RETRO and ATLAS demonstrate the minimum scale of such a breakthrough. By maintaining
+                        source-based partitions through their database architecture, they achieve equal performance
+                        while activating only 2-4% of the parameters of similarly performant dense models (<a
+                            href="#ref-30" class="cite">Borgeaud
+                            et al., 2022</a>; <a href="#ref-46" class="cite">Izacard et al., 2023</a>).
+                    </p>
+
+                    <p>
+                        Similarly, recall how current models process some combination of redundant copies of
+                        knowledge and empty regions of parameter space during inference. While there are many
+                        approaches to reducing these forms of waste (e.g., distillation, compression, etc.), successful
+                        ABC would necessarily enable one particularly compelling way to avoid copies or empty space:
+                        source-based partitioning. If an AI model could forward predict based on a relevant subset
+                        (i.e.,
+                        the top 10) of many (i.e., billions) of sources, then tuning the number of sources being relied
+                        upon could also tune the redundancy being used in forward propagation. Meanwhile, ensuring
+                        that the partitions being leveraged for forward propagation were relevant to the query would
+                        combat the risk of forward propagating empty space <a href="#sidenote-2"
+                            class="sidenote-ref"><sup>2</sup></a>.
+                    </p>
+
+                    <p>
+                        RETRO and ATLAS demonstrate these principles through their database architecture, showing how
+                        source-based organization can naturally eliminate redundant processing and avoid
+                        computation on irrelevant parameters while maintaining model capability. They also demonstrate
+                        the ability for such partitioning to increase the number of samples being used against a
+                        dense (i.e. non-partitioned) section of the network, reducing empty space. Yet as significant as
+                        these inference inefficiencies are, they pale in comparison to the waste in how AI systems
+                        learn.
+                    </p>
+
+                    <h3>6+ OOM: Underutilized and Inefficient Compute in AI Learning</h3>
+
+                    <p>
+                        Recall that current AI models must retrain entirely from scratch when updating their knowledge,
+                        because of problems such as catastrophic forgetting (<a href="#ref-48" class="cite">Kemker et
+                            al., 2018</a>). While various
+                        approaches to incremental training exist, successful ABC would necessitate one particular
+                        solution: source-partitioned retraining. Consequently, if an AI model can train source-separated
+                        subsections of its weights, it can re-train them as well, and it is very likely to also greatly
+                        reduce
+                        the computational complexity involved in the re-training process, because it would be
+                        re-training
+                        vastly fewer parameters at a time. RETRO/ATLAS demonstrate one such approach, wherein
+                        re-training can be done with the computational complexity involved in adding or removing
+                        vector-embeddings from a database.
+                    </p>
+
+                    <p>
+                        Similarly, recall how current training processes waste compute in multiple ways: through
+                        redundant copies of the same knowledge, through activation of irrelevant parameters, and
+                        through inefficient parameter density. While various approaches to training efficiency exist,
+                        successful ABC would necessarily enable compelling means to overcome these problems (as
+                        already described in the previous section describing ABC’s impacts on inference).
+                    </p>
+
+                    <p>
+                        Additionally, these ABC opportunities further compound when we consider how compute is
+                        distributed across organizations. Consider our library analogy once more: libraries don’t each
+                        maintain copies of every book ever written; they form networks to share resources efficiently.
+                        In contrast, frontier AI models are created by a host of organizations around the world, each
+                        re-paying the cost of creating an AI model (most of which are trained on largely the same data).
+                    </p>
+
+                    <p>
+                        Successful ABC may activate an economic incentive addressing this waste <a href="#sidenote-3"
+                            class="sidenote-ref"><sup>3</sup></a>
+                        . At the present
+                        moment, frontier AI models are economic bundles, marketed under a story which itself is an
+                        economic bundle: artificial general intelligence. Because of this, if one AI company re-trains
+                        the
+                        capabilities of another company (e.g. spending $200M on compute) and then adds a bit more
+                        to it (e.g., another $10M in data and compute), an end user must then choose between that full
+                        economic bundle and another full economic bundle. This creates a situation wherein companies
+                        effectively have to pay the minimum amount to catch up to the leading position and then extend
+                        some beyond it.
+                    </p>
+
+                    <div class="sidenote" id="sidenote-2">
+                        <p>
+                            <sup>2</sup>
+                            Additionally, if successful ABC reduced the number of parameters being used as a result of
+                            these other
+                            techniques, then it would also increase the number of samples being applied to each set of
+                            dense parameters &mdash; perhaps reducing the opportunity for empty vector space (more on
+                            this later)
+                        </p>
+                    </div>
+
+                    <div class="sidenote" id="sidenote-3">
+                        <p>
+                            <sup>3</sup>
+                            This hypothesis has been somewhat validated by OpenMined in early pilots of ABC-enabled AI
+                            systems with
+                            publishers, but this research is as-of-yet unfinished
+                        </p>
+                    </div>
+
+                    <div class="callout">
+                        <p class="callout-title">A Library Analogy</p>
+
+                        <p>
+                            Consider a new library which doesn’t yet have any books. To load the library in the style of
+                            AI, a librarian would first build tens-of-thousands of libraries and print copies of books
+                            into
+                            each one (i.e. signifying both the redundant training of models by many companies and the
+                            hyperparameter sweeps occurring within each one). Then, within each library, a librarian
+                            would first load all the shelves (of which there are a fixed number) books containing
+                            random strings of letters (i.e., initialize a model randomly). Then, the librarian would
+                            select
+                            the first book to load into the library, pretend to read every word in every one of the
+                            random
+                            books, and after that was done, select which book to replace with the book being loaded
+                            into the library, casting the book being replaced onto the floor. The process would repeat
+                            until all of the books had been loaded... with a catch. Each time the book being thrown
+                            on the floor wasn’t a random book (but was a <em>real</em> book) that real book then needs
+                            to go
+                            through the process again itself. And in the end, if the library wasn’t big enough to
+                            contain
+                            all the books, all the libraries would be destroyed, all the copies of books burned, and
+                            everyone would re-build bigger libraries to hold the vast and growing collection of books.
+                        </p>
+
+                        <p>
+                            A solution to attribution-based control would necessarily reconfigure the library to
+                            load information based on its source (book or author). While such a solution might be
+                            challenging, if it successfully delivered capable predictions, it would necessarily do so
+                            while skipping an enormous amount of wasted computation. Instead of each library
+                            creating a collection big enough to hold the world, the vast collection of the world’s books
+                            could be divided among the libraries (perhaps with some mild redundancy). Each library
+                            could then organize their books by the dewey decimal system, measuring how big each
+                            section in their library needs to be in order to hold the sections they are meant to store.
+                            After these measurements were completed, the building could be constructed, the books
+                            loaded in their proper places, and the job could be completed.
+                        </p>
+
+                        <p>
+                            And in this way, the librarian could avoid storing all the world’s information in
+                            their own library, re-building libraries from scratch, reading all the books in the library
+                            over
+                            and over, loading in many copies of the same book, loading in empty or random books,
+                            and re-loading books which no longer fit on the shelves they’re loading. Taken together,
+                            while ABC’s definition might not appear to require an increase in computational efficiency,
+                            its definition directly requires that a vast amount of information not be processed during
+                            iterative steps in the training process, reducing the need to compute over that information.
+                            In some cases, ABC implies the elimination of iterative processes altogether.
+                        </p>
+                    </div>
+
+                    <p>
+                        However, successful ABC would modularize the initial capability, such that some percentage
+                        of the original $200M could be inherited from previous models and then extended with new
+                        capabilities. Given the immense costs involved, such a modularization breakthrough would
+                        constitute an enormous economic pressure. If firms pedantically chose to re-pay the cost to
+                        train
+                        their own from scratch, recreating 90% of the modules which already exist in the market, they
+                        would incur very high costs which must correspond with very high prices to recoup those costs.
+                        Inversely, a startup which came along and inherited the 90% produced by others, paying only for
+                        their specialization, would (all else equal) be able to charge lower prices, and win in the
+                        market.
+                    </p>
+
+                    <p>
+                        From a compute efficiency standpoint, the prospect of cross-market weight-reuse translates
+                        directly into the sharing of compute costs for training AI systems. Industry analysis reveals
+                        the
+                        potential impact: no single AI provider controls more than 5.57% of global compute capacity.
+                        Thus, since source-based partitioning could unlock this siloed compute by enabling controlled
+                        sharing of specialized knowledge, it could increase effective compute by 17.95x (100/5.57)
+                        or more because organizations would waste fewer resources re-computing features which are
+                        already commoditized in the market. Taken together, economic unbundling would plausibly
+                        drive specialization and more efficient use of compute resources in the market.
+                    </p>
+
+                    <p>
+                        While various approaches to these inefficiencies exist, solving ABC would necessarily
+                        enable one comprehensive solution path. Note that this is not saying that ABC is the solution,
+                        merely that ABC is difficult because it would involve solving these other difficult
+                        challenges...
+                        because ABC requires that sources maintain control over their contributions while enabling
+                        rapid synthesis. Taken together, any solution to ABC solution must provide:
+                    </p>
+
+                    <ul>
+                        <li>
+                            Selective retraining instead of full rebuilding (68x+ improvement)
+                        </li>
+
+                        <li>
+                            Efficient computation during training (25-50x+ improvement)
+                        </li>
+
+                        <li>
+                            Reduced parameter redundancy through source-based organization (5-10x+ improvement)
+                        </li>
+
+                        <li>
+                            Specialization with controlled sharing (17.95x+ improvement)
+                        </li>
+
+                        <li>
+                            Organization averting catastrophic forgetting (17.95x+ improvement)
+                        </li>
+                    </ul>
+
+                    <p>
+                        Industry analysis and empirical results suggest the combined impact could be dramatic.
+                        When these improvements compound multiplicatively, they point to potential training efficiency
+                        gains of 6+ orders of magnitude. Yet these numbers, as striking as they are, point to something
+                        more fundamental: our failure to maintain attribution in AI systems coincides with a broader
+                        acceptance of wasteful practices as inevitable. More than a technical issue, the inefficiency of
+                        AI
+                        training is a symptom of how we’ve structured AI computation. While other solutions may exist,
+                        attribution-based control offers one path to reimagining how AI systems learn and compute,
+                        potentially unlocking orders of magnitude more efficiency in the process.
+                    </p>
 
                     <h3>How Failing ABC Siloes Data (6 OOM)</h3>
-                    <p>Recall that current AI models can only train on data they can access. Consequently, AI models
-                        almost certainly train on less than 1/1,000,000th of the digitized information in the world
-                        because they cannot access the other 99.9999%, which remains hidden amongst the world's 360
-                        million companies, 8+ billion citizens, etc.</p>
 
-                    <p>Successful ABC would necessarily enable one particularly compelling form of data sharing. The
-                        ability for a data source to decide which AI predictions to support is (almost tautologically)
-                        the ability for a data source to enable uses while averting mis-uses. One could argue that truly
-                        successful ABC would constitute an incentive shift attracting all of the world's data to be
-                        pulled into at least some AI predictions.</p>
+                    <p>
+                        Recall that current AI models can only train on data they can access, which is dominated by
+                        data available to the public over the internet. Consequently, AI models almost certainly train
+                        on
+                        less than 1/1,000,000th of the digitized information in the world because they cannot access the
+                        other 99.9999%, which remains hidden amongst the world’s 360 million companies, 8+ billion
+                        citizens, etc. (<a href="#ref-58" class="cite">Bogwasi 2025</a>).
+                    </p>
+
+                    <p>
+                        While various approaches to data access exist, successful ABC would necessarily enable
+                        one compelling solution: controlled data sharing. We take as an assumption that the world’s
+                        data owners have some uses in the world they would support (for which their data could be
+                        useful). We take as a second assumption that a significant portion of those sources are hidden
+                        because the incentives are not sufficient for them to support &mdash; or more crucially because
+                        the
+                        negative consequences would be too great, that their data might not just activate the uses they
+                        wish to support, but that it would also activate mis-uses (concerns regarding privacy, security,
+                        IP,
+                        competition, legal risks, etc.).
+                    </p>
+
+                    <p>
+                        Successful ABC would necessarily enable one particularly compelling form of data sharing.
+                        The ability for a data source to decide which AI predictions to support is (almost
+                        tautologically)
+                        the ability for a data source to enable uses while averting mis-uses. Consequently, AI empowered
+                        by ABC may activate vastly more data than is presently available. One could argue that truly
+                        successful ABC would constitute an incentive shift attracting all of the world’s data to be
+                        pulled
+                        into at least some AI predictions.
+                    </p>
+
+                    <p>
+                        The potential impact is staggering. While frontier AI models train on carefully curated
+                        web scrapes on the order of 180 TBs (and the public web plausibly less than common crawl’s
+                        largest copy, 450 TBs) the world’s total digital data is estimated to reach 180 zettabytes by
+                        2025. This six-to-nine orders of magnitude difference represents all the data locked behind
+                        organizational boundaries, including some data of immense value (e.g. financial data, health
+                        data, environmental data, etc.).
+                    </p>
+
+                    <p>
+                        RETRO and ATLAS demonstrate part of potential path forward, demonstrating a type of
+                        partial ABC at scale by training AI models which query from a database. Certain extensions
+                        (such as those suggested in this thesis) could take this further to enable full
+                        attribution-based
+                        control, and the shifting of incentives around data sharing.
+                    </p>
+
+                    <h3>Synthesis: Attribution as a Path Forward</h3>
+
+                    <p>
+                        The previous sections revealed two significant inefficiencies in current AI systems: 6+ orders
+                        of
+                        magnitude waste in compute and 6+ orders of magnitude in untapped data. While there may
+                        be many approaches to addressing these inefficiencies, this thesis focuses on attribution-based
+                        control as one solution path. As we’ve seen, solving ABC (if such a solution exists) would
+                        necessarily enable both efficient compute through source-based partitioning and broad data
+                        access through attribution preservation.
+                    </p>
+
+                    <p>
+                        Yet this raises a deeper question: if ABC offers such compelling benefits, why don’t current
+                        AI systems maintain attribution? The answer, as we’ll see in the next section, lies in how
+                        neural
+                        networks fundamentally process information. The unconstrained mixing of features during
+                        training makes it impossible to partition knowledge by source, revealing our second ”why”:
+                        deep learning’s feature mixing precludes the very partitioning that ABC requires.
+                    </p>
                 </section>
 
                 <section id="second-why">
                     <h2>Second Why: Deep Learning's Feature Mixing Precludes Partitioning</h2>
+
+                    <p>
+                        The previous section revealed how solving attribution-based control would necessarily enable
+                        massive data and compute gains in AI systems. Yet this raises a deeper question: why do current
+                        AI systems fail to maintain attribution in the first place? The answer lies in deep learning’s
+                        foundational premise: algorithms should learn everything from scratch through layers of
+                        (largely)
+                        unrestricted feature mixing on raw data (<a href="#ref-8" class="cite">Goodfellow et al.,
+                            2016</a>).
+                    </p>
+
+                    <p>
+                        This commitment to unrestricted learning manifests in how neural networks fundamentally
+                        process information. Through operations that combine and mix information at every step
+                        (from layer computations to weight updates to knowledge accumulation) neural networks create
+                        increasingly complex representations of patterns in their training data. While this flexibility
+                        enables powerful pattern recognition, it creates a fundamental problem: features become stored
+                        in a disorganized, obfuscated way within the deep learning model... a black box.
+                    </p>
 
                     <figure class="full-width">
                         <img src="1411.3146/abc_ch2_4_0_v5.png" alt="Second Why graph">
@@ -1533,29 +2193,78 @@
                         </figcaption>
                     </figure>
 
-                    <p>The previous section revealed how solving attribution-based control would necessarily enable
-                        massive data and compute gains in AI systems. Yet this raises a deeper question: why do current
-                        AI systems fail to maintain attribution in the first place? The answer lies in deep learning's
-                        foundational premise: algorithms should learn everything from scratch through layers of
-                        (largely) unrestricted feature mixing on raw data [<a href="#ref-8" class="cite">8</a>].</p>
+                    <p>
+                        Consider what happens when a neural network learns to recognize cats. Rather than storing
+                        clear, interpretable features like ”pointy ears” or ”whiskers”, the network distributes this
+                        knowledge across its weights in complex, entangled patterns (<a href="#ref-59" class="cite">Le
+                            2013</a>). This unrestricted mixing
+                        of
+                        features makes post-hoc source-based partitioning impossible (at the present moment):
+                    </p>
 
-                    <p>This commitment to unrestricted learning manifests in how neural networks fundamentally process
-                        information. Through operations that combine and mix information at every step (from layer
-                        computations to weight updates to knowledge accumulation) neural networks create increasingly
-                        complex representations of patterns in their training data. While this flexibility enables
-                        powerful pattern recognition, it creates a fundamental problem: features become stored in a
-                        disorganized, obfuscated way within the deep learning model... a black box.</p>
+                    <ul>
+                        <li>
+                            Features can’t be attributed to specific sources (preventing data control)
+                        </li>
+
+                        <li>
+                            Knowledge can’t be updated independently (requiring full retraining)
+                        </li>
+
+                        <li>
+                            Computation can’t be selectively activated (forcing dense inference)
+                        </li>
+
+                        <li>
+                            Resources can’t be efficiently shared (blocking specialization)
+                        </li>
+                    </ul>
+
+                    <p>
+                        The research community has made extensive efforts to address these limitations. Recent work
+                        has attempted to trace predictions back to training data through influence functions, remove
+                        specific datapoints’ influence through machine unlearning, and develop various attribution
+                        methods to reverse engineer the source-prediction relationship (<a href="#ref-60"
+                            class="cite">Nguyen et al., 2024</a>). Yet
+                        despite these attempts, both influence functions and unlearning remain unsolved challenges in
+                        the literature. So far, the relationship between sources and predictions has been irreversibly
+                        compressed during training, and no amount of post-training intervention has successfully
+                        restored
+                        these lost connections.
+                    </p>
+
+                    <p>
+                        The consequences are severe. New models like GPT-5 cannot inherit features from predecessors
+                        like GPT-4... they must relearn basic patterns from scratch. Even during inference,
+                        models must activate vast parameter spaces for every prediction, unable to pre-identify which
+                        features are relevant (and only forward propagate those features). These inefficiencies aren’t
+                        mere implementation details that clever algorithms might solve. They stem from something
+                        more fundamental about how deep learning processes information.
+                    </p>
+
+                    <p>
+                        Yet this raises an even deeper question: why does feature mixing obfuscate attribution-based
+                        control? The answer, as we’ll see in the next section, traces back to deep learning’s most basic
+                        mathematical operation and how it fundamentally precludes the partitioning that ABC requires.
+                    </p>
 
                     <div class="callout">
                         <p class="callout-title">A Library Analogy</p>
-                        <p>Consider a library wherein all of the books have had their covers removed, their table of
-                            contents erased, and their chapters torn out and shuffled amongst all the books.
-                            Consequently, when someone wants to answer a specific question, they have to read through
-                            the entire library searching for relevant information for their query.</p>
-                        <p>Deep learning stores information in a similar way, with so-called <em>distributed
+
+                        <p>
+                            Consider a library wherein all of the books have had their covers removed, their table
+                            of contents erased, and their chapters torn out and shuffled amongst all the books.
+                            Consequently, when someone wants to answer a specific question, they have to read
+                            through the entire library searching for relevant information for their query.
+                        </p>
+
+                        <p>
+                            Deep learning stores information in a similar way, with so-called <em>distributed
                                 representations</em> spreading concepts across many neurons... each of which is
-                            unlabeled (i.e. "hidden"). Far from an accident, this form of learning is at the center of
-                            deep learning's core philosophy, the unrestricted learning of dense, hidden features.</p>
+                            unlabeled (i.e.
+                            ”hidden”). Far from an accident, this form of learning is at the center of deep learning’s
+                            core philosophy, the unrestricted learning of dense, hidden features.
+                        </p>
                     </div>
                 </section>
 
@@ -1568,14 +2277,18 @@
                         </figcaption>
                     </figure>
 
-                    <p>The previous section revealed how deep learning's feature mixing precludes the partitioning
-                        required for attribution-based control. Yet this raises our final "why": what makes this mixing
-                        fundamentally irreversible? The answer lies in deep learning's most basic mathematical
-                        operation: addition.</p>
+                    <p>
+                        The previous section revealed how deep learning’s feature mixing precludes the partitioning
+                        required for attribution-based control. Yet this raises our final ”why”: what makes this mixing
+                        fundamentally irreversible? The answer lies in deep learning’s most basic mathematical
+                        operation: addition.
+                    </p>
 
-                    <p>Addition might seem like an implementation detail, but it fundamentally prevents recovering
-                        source information. When values combine through addition, the result does not uniquely determine
-                        its inputs&mdash;multiple distinct source combinations produce identical outputs:</p>
+                    <p>
+                        Addition might seem like an implementation detail, but it fundamentally prevents recovering
+                        source information. When values combine through addition, the result does not uniquely
+                        determine its inputs&mdash;multiple distinct source combinations produce identical outputs:
+                    </p>
 
                     <div class="definition-box">
                         <h3>Non-Injectivity of Addition</h3>
@@ -1584,6 +2297,11 @@
                             + x<sub>2</sub> = y = x'<sub>1</sub> + x'<sub>2</sub> where (x<sub>1</sub>, x<sub>2</sub>)
                             &ne; (x'<sub>1</sub>, x'<sub>2</sub>).</p>
                     </div>
+
+                    <p>
+                        This non-injectivity means that observing the sum provides no information about which
+                        specific sources contributed. Consider the contrast with concatenation:
+                    </p>
 
                     <div class="definition-box">
                         <h3>Concatenation vs Addition</h3>
@@ -1597,22 +2315,118 @@
                             (distinct inputs &rarr; identical outputs)</p>
                     </div>
 
-                    <p>When partitions are known, concatenation of numbers is injective; different inputs produce
-                        different outputs, allowing source recovery. Addition is not; the output 7 could arise from 1+6,
-                        2+5, 3+4, 0+7, or infinitely many other combinations. This non-injectivity is the mechanism
+                    <p>
+                        When partitions are known, concatenation of numbers is injective; different inputs produce
+                        different outputs, allowing source recovery. Addition is not; the output 7 could arise from 1 +
+                        6,
+                        2 + 5, 3 + 4, 0 + 7, or infinitely many other combinations. This non-injectivity is the
+                        mechanism
                         through which deep neural networks erase attribution information: once gradients from different
                         sources are summed into shared parameters, no function of those parameters can recover which
-                        sources contributed what information.</p>
+                        sources contributed what information.
+                    </p>
 
-                    <p><strong>The Root Problem:</strong> Without the ability to track sources through training, we
-                        cannot provide the attribution that ABC requires. Without attribution, we cannot enable the
-                        partitioned sharing and use of data and compute that could unlock orders of magnitude more AI
-                        resources. Addition itself blocks the very data and compute gains described earlier in this
-                        chapter.</p>
+                    <p>
+                        And neural networks use addition extensively: combining features between layers, aggregating
+                        gradients during backpropagation, and updating weights during training. Each addition
+                        irreversibly combines information, destroying the provenance of where that information came
+                        from and how it was interpreted.
+                    </p>
+
+                    <p>
+                        A natural solution might seem possible: why not just track every operation during training ...
+                        while also doing these additions? Unfortunately, this approach fails for three fundamental
+                        reasons:
+                    </p>
+
+                    <p>
+                        First, in models like GPT-3, through forward and backward propagation, each example’s
+                        information eventually touches every weight in the network. Even tiny weight changes alter how
+                        future examples flow through the network, creating cascading effects that can amplify initially
+                        small influences (related: vanishing and exploding gradients (<a href="#ref-61"
+                            class="cite">Hochreiter 1998</a>; <a href="#ref-62" class="cite">Hanin 2018</a>)).
+
+                    </p>
+
+                    <p>
+                        Second, these influences compound exponentially and recursively, creating higher order
+                        all-to-all relationships between inputs and weights as they do. Consider the mathematics of
+                        weight updates for a weight update function <em>g</em>, weights and data at time <em>t</em> as
+                        <em>w
+                            <sub>t</sub></em> and <em>x <sub>t</sub></em>
+                        :
+                    </p>
+
+                    <p>
+                        <em>w <sub>t+1</sub> = g(w<sub>t</sub>, x<sub>t</sub>)</em> <br>
+                        <em>w <sub>t+2</sub> = g(g(w<sub>t</sub>, x<sub>t</sub>), x<sub>t+1</sub>)</em> <br>
+                        <em>w <sub>t+3</sub> = g(g(g(w<sub>t</sub>, x<sub>t</sub>), x<sub>t+1</sub>), x<sub>t+2</sub>)
+                        </em>
+                    </p>
+
+                    <p>
+                        The number of potential attribution paths grows as Ω(<em>w · n)<sup>t</sup></em> , where
+                        <em>w</em> is the number of
+                        weights, <em>n</em> is the number of examples, and <em>t</em> is the number of steps.
+                    </p>
+
+                    <p>
+                        Third, this exponential growth makes exact attribution computationally intractable. The most
+                        capable language models frequently leverage just under 1% of their parent organization’s AI
+                        training budget (see Appendix I and II for details). Thus, tracking the full web of dependencies
+                        (every interaction, every update, every influence path) would require many orders of magnitude
+                        more compute than is available to the largest tech firms.
+                    </p>
+
+                    <p>
+                        These three barriers (information loss through addition, exponential propagation of influences,
+                        and computational intractability) combine to create a fundamental limitation. No amount
+                        of clever engineering can fully recover what addition has destroyed. This mathematical reality
+                        explains why attempts at machine unlearning and influence functions remain fundamentally
+                        limited: they try to reconstruct what addition has already erased.
+                    </p>
+
+                    <p>
+                        <strong>The Root Problem</strong>: The implications are significant. Without the ability to
+                        track sources
+                        through training, we cannot provide the attribution that ABC requires. Without attribution, we
+                        cannot enable the partitioned sharing and use of data and compute that could unlock orders of
+                        magnitude more AI resources. Addition itself blocks the very data and compute gains described
+                        earlier in this chapter, and holds up the many problems described in Chapter 1.
+                    </p>
+
+                    <div class="callout">
+                        <p class="callout-title">A Library Analogy</p>
+
+                        <p>
+                            Consider a library wherein all of the books have had their covers removed, their table of
+                            contents erased, and individual sentences on each page torn out into their own strips. Now
+                            imagine that each word in each strip is converted into a number ”aardvark = 1”, ”abernathe
+                            = 2”, and so forth. And then imagine that each of these strips from the whole library is
+                            shuffled around, and groups of strips are placed back in the coverless books. Yet, instead
+                            of
+                            each strip being glued in place, it is first combined with many other strips, adding their
+                            respective numbers together. Consequently, when someone wants to answer a specific
+                            question, they have to read through the entire library searching for relevant information
+                            for
+                            their query, first by converting their query into numbers and then attempting to match it to
+                            numbers found in the books.
+                        </p>
+
+                        <p>
+                            Deep learning stores information in a similar way, with so-called <em>distributed
+                                representations</em> spreading concepts across many neurons... each of which is
+                            unlabeled (i.e.
+                            ”hidden”). Far from an accident, this form of learning is at the center of deep learning’s
+                            core philosophy, the unrestricted learning of dense, hidden features which are formed
+                            through many successive additions.
+                        </p>
+                    </div>
                 </section>
 
                 <section id="third-hypothesis">
-                    <h2>Third Hypothesis: Concatenating Along Natural Boundaries Enables Attribution</h2>
+                    <h2>Third Hypothesis (Root Solution): Concatenating Along Natural Boundaries in Data Sources Enables
+                        Attribution</h2>
 
                     <figure class="full-width">
                         <img src="1411.3146/abc_ch2_6_0_v6.png" alt="Third Hypothesis graph">
@@ -1620,25 +2434,65 @@
                         </figcaption>
                     </figure>
 
-                    <p>The previous sections revealed how addition in deep learning creates a fundamental barrier to
-                        attribution. Yet examining why addition fails suggests a testable hypothesis: can we
-                        significantly reduce the use of addition, perhaps swapping it with concatenation?</p>
+                    <p>
+                        We now continue by constructing a hypothesis (the “Third Hypothesis”) which corresponds
+                        to the Third Why, which will support the Second Hypothesis addressing the Second Why and
+                        so forth. The previous sections revealed how addition in deep learning creates a fundamental
+                        barrier to attribution. Yet examining why addition fails suggests a testable hypothesis: can we
+                        significantly reduce the use of addition, perhaps swapping it with concatenation?
+                    </p>
 
-                    <p>Some information patterns appear ubiquitously: basic rules of grammar that structure language,
-                        logical operations that appear in reasoning, morphological patterns which make up words, edges
-                        and corners in images, etc. Such dense patterns suggest unrestricted mixing through addition may
-                        be appropriate for a core subset of features. Their ubiquity also makes attribution less
-                        critical; they represent shared computational tools rather than source-specific claims about the
-                        world. While perhaps not formally stated, noted researcher Andrej Karpathy recently suggested a
-                        similar concept when referring to a future LLM "cognitive core":</p>
+                    <p>
+                        Deep learning’s central hypothesis would suggest we can’t, that features need to densely mix
+                        (using addition) in order to learn the powerful correlations and representations that give deep
+                        learning its predictive capability. However, presumably deep learning maps multiple distinct
+                        concepts into a shared feature when those two concepts are related (<a href="#ref-63"
+                            class="cite">Krizhevsky et al., 2012</a>).
+                        For
+                        example, a deep learning model which classifies images might have features which detect ears,
+                        fur, and eyes — features which would be useful for modeling many different animals which
+                        possess these related concepts (<a href="#ref-13" class="cite">Zeiler and Fergus 2014</a>).
+                        However, as these features are not laid
+                        out in advance, deep learning needs to densely mix its features in order to discover these
+                        related
+                        patterns across training datapoints. That is to say, perhaps over-zealous dense feature mixing
+                        is
+                        more about training than inference
+                    </p>
+
+                    <p>
+                        Yet, perhaps deep learning is over-zealous in its feature mixing, opening itself to
+                        representation power which could mix any feature with any other when in the real-world not all
+                        concepts
+                        are closely related. That is to say, not all concepts require that level of general
+                        representation
+                        power. Perhaps some concepts are actually unrelated to one another, such that some proportion
+                        of dense feature mixing in deep learning is superfluous
+                    </p>
+
+                    <p>
+                        That said, some concepts are densely mixed, while others are clearly less so. Some information
+                        patterns appear ubiquitously: basic rules of grammar that structure language, logical
+                        operations that appear in reasoning, morphological patterns which make up words, edges and
+                        corners in images, etc. Elements like these are frequently reused across almost every data
+                        point, appearing in many billions of documents, images, audio, and videos. Such dense patterns
+                        suggest unrestricted mixing through addition may be appropriate for a core subset of features.
+                        Their ubiquity also makes attribution less critical; they represent shared computational tools
+                        rather than source-specific claims about the world. While perhaps not formally stated, noted
+                        researcher Andrej Karpathy recently suggested a similar concept when referring to a future LLM
+                        “cognitive core”:
+                    </p>
 
                     <div class="callout" style="background: #f5f5f5; border-left: 3px solid #888;">
-                        <p style="font-style: italic;">The race for LLM "cognitive core"—a few billion param model that
-                            maximally sacrifices encyclopedic knowledge for capability. It lives always-on and by
-                            default on every computer as the kernel of LLM personal computing. Its features are slowly
-                            crystalizing:</p>
+                        <p style="font-style: italic;">
+                            The race for LLM “cognitive core”—a few billion param model that maximally sacrifices
+                            encyclopedic knowledge for capability. It lives always-on and by default on every computer
+                            as the kernel of LLM personal computing. Its features are slowly crystalizing:
+                        </p>
+
                         <ul style="font-style: italic;">
                             <li>Natively multimodal text/vision/audio at both input and output.</li>
+
                             <li>Matryoshka-style architecture allowing a dial of capability up and down at test time.
                             </li>
                             <li>Reasoning, also with a dial. (system 2)</li>
@@ -1646,32 +2500,59 @@
                             <li>On-device finetuning LoRA slots for test-time training, personalization and
                                 customization.</li>
                             <li>Delegates and double checks just the right parts with the oracles in the cloud if
-                                internet is available.</li>
+                                internet is available</li>
                         </ul>
-                        <p style="font-style: italic;">It doesn't know that William the Conqueror's reign ended in
-                            September 9 1087, but it vaguely recognizes the name and can look up the date. It can't
-                            recite the SHA-256 of empty string as e3b0c442..., but it can calculate it quickly should
-                            you really want it.</p>
-                        <p style="font-style: italic;">What LLM personal computing lacks in broad world knowledge and
-                            top tier problem-solving capability it will make up in super low interaction latency
-                            (especially as multimodal matures), direct / private access to data and state, offline
-                            continuity, sovereignty ("not your weights not your brain"). i.e. many of the same reasons
-                            we like, use and buy personal computers instead of having thin clients access a cloud via
-                            remote desktop or so.</p>
+
+                        <p style="font-style: italic;">
+                            It doesn’t know that William the Conqueror’s reign ended in September 9 1087, but it
+                            vaguely recognizes the name and can look up the date. It can’t recite the SHA-256 of
+                            empty string as e3b0c442..., but it can calculate it quickly should you really want it.
+                        </p>
+
+                        <p style="font-style: italic;">
+                            What LLM personal computing lacks in broad world knowledge and top tier problemsolving
+                            capability it will make up in super low interaction latency (especially as multimodal
+                            matures), direct / private access to data and state, offline continuity, sovereignty (“not
+                            your weights not your brain”). i.e. many of the same reasons we like, use and buy personal
+                            computers instead of having thin clients access a cloud via remote desktop or so.
+                        </p>
                         <p style="text-align: right;">— Andrej Karpathy<sup><a
                                     href="https://x.com/karpathy/status/1938626382248149433">[link]</a></sup></p>
                     </div>
 
-                    <p>In contrast, perhaps most information is encyclopedic and appears sparsely: specific facts about
-                        the world, domain expertise in particular fields, claims made by individual sources, etc. The
-                        capital of France, the rules of chess, statistics about pizza... each appears in distinct
-                        contexts with limited overlap.</p>
+                    <p>
+                        In contrast, perhaps most information is encyclopedic and appears sparsely: specific facts
+                        about the world, domain expertise in particular fields, claims made by individual sources, etc.
+                        The capital of France, the rules of chess, statistics about pizza... each appears in distinct
+                        contexts
+                        with limited overlap. As Chomsky noted in linguistics (<a href="#ref-14" class="cite">Chomsky
+                            2014</a>), while we use common
+                        patterns to express all knowledge, the knowledge itself often remains naturally partitioned by
+                        topic, and when documents are topic specific... by source.
+                    </p>
 
-                    <p>A key insight of this chapter is that techniques from privacy-preserving machine learning,
-                        particularly differential privacy (DP) [<a href="#ref-15" class="cite">15</a>], provide a
-                        principled way to measure and control which features benefit from dense mixing versus sparse
-                        representation. Differential privacy quantifies how much a model's outputs depend on any
-                        individual training example:</p>
+                    <p>
+                        Let us assume for a moment that this is true. If so, then in theory some section of a neural
+                        network could be made sparse, namely the part of the neural network which stores concepts
+                        which are largely decoupled from the rest of a neural network’s knowledge (facts, domain
+                        expertise, semantic information, etc.). Perhaps this section could use less addition (and more
+                        concatenation), enabling sparsity which could drive attribution. Meanwhile, another part of
+                        the neural network might need to remain dense, storing and synthesizing concepts which are
+                        ubiquitous across a statistical distribution (logic, reasoning, syntax, etc.).
+                    </p>
+
+                    <p>
+                        The key question: how would one go about training a neural network which successfully
+                        partitioned information into sparse and dense sections?
+                    </p>
+
+                    <p>
+                        A key insight of this chapter is that techniques from privacy-preserving machine learning,
+                        particularly differential privacy (DP) (<a href="#ref-64" class="cite">Dwork et al., 2006</a>),
+                        provide a principled way to measure
+                        and control which features benefit from dense mixing versus sparse representation. Differential
+                        privacy quantifies how much a model’s outputs depend on any individual training example:
+                    </p>
 
                     <div class="definition-box">
                         <h3>(ε, δ)-Differential Privacy</h3>
@@ -1688,14 +2569,105 @@
 
                     <div class="definition-box">
                         <h3>Three Regimes of Influence Control</h3>
+                        <p>For a mechanism <em>M</em>, examples <em>e</em>, and
+                            thresholds 0 < τ<sub>min</sub>
+                                < τ<sub>max</sub>:</p>
                         <ul>
-                            <li><strong>Privacy (constrain influence):</strong> Enforce &epsilon;<sub>e</sub> &lt;
-                                &tau;<sub>min</sub> for all examples</li>
-                            <li><strong>Measurement (track influence):</strong> Compute &epsilon;<sub>e</sub> for each
-                                example</li>
-                            <li><strong>Attribution (ensure influence):</strong> Enforce &epsilon;<sub>e</sub> &gt;
-                                &tau;<sub>max</sub> for specified examples</li>
+                            <li><strong>Privacy (constrain influence):</strong> Enforce &epsilon;<sub>e</sub>
+                                &lt;
+                                &tau;<sub>min</sub> for all examples, guaranteeing that
+                                individual examples cannot be distinguished through their influence on outputs</li>
+                            <li><strong>Measurement (track influence):</strong> Compute &epsilon;<sub>e</sub>
+                                for each
+                                example, enabling quantification
+                                of which examples influence which outputs, without enforcing bounds</li>
+                            <li><strong>Attribution (ensure influence):</strong> Enforce &epsilon;<sub>e</sub>
+                                &gt;
+                                &tau;<sub>max</sub> for specified examples, guaranteeing
+                                that certain examples have measurable influence on outputs</li>
                         </ul>
+                    </div>
+
+                    <p>
+                        These three regimes serve different stakeholder needs. Data owners might seek differential
+                        privacy (ensuring their data cannot be identified in model outputs), <em>differential
+                            measurement</em>
+                        (understanding their data’s contribution), or <em>differential attribution</em> (guaranteeing
+                        their data
+                        influences predictions). Users might seek privacy (preventing their queries from revealing
+                        information) or attribution (ensuring they can identify which sources influenced their results).
+                        The same mathematical framework (DP’s ϵ parameter) enables each form of control.
+                    </p>
+
+                    <p>
+                        Given differential privacy’s use in deep learning (e.g., (<a href="#ref-65" class="cite">Abadi
+                            et al., 2016</a>)), this framework
+                        suggests an architectural insight: a neural network serving diverse stakeholders requires the
+                        capability to enforce different ϵ regimes for different information. Information requiring
+                        privacy
+                        (small <em>ϵ</em>) can pass through privacy-constrained layers with dense mixing via addition.
+                        Information requiring attribution (large <em>ϵ</em>) must route through pathways preserving
+                        source
+                        identity via
+                        sparse concatenation. Information requiring measurement sits between these extremes, with
+                        <em>ϵ</em>
+                        tracked but not bounded. The model’s optimization pressure, when constrained to respect these
+                        different <em>ϵ</em> regimes, might naturally partition information accordingly. This framework
+                        suggests
+                        two testable predictions:
+                    </p>
+
+                    <p>
+                        First, features with high source-specific attribution should cluster naturally by source, while
+                        features with low attribution should appear consistently across sources. Recent work with
+                        RETRO and ATLAS provides initial evidence for this prediction, showing how knowledge
+                        naturally separates into general computational patterns (the Transformer reading from a database
+                        of vectors, similar to Karpathy’s “cognitive core”) and source-specific information (the
+                        database
+                        of vectors).
+                    </p>
+
+                    <p>
+                        Second, respecting these natural boundaries through architectural choices might enable
+                        more efficient computation. If most information is sparsely distributed, then forcing it through
+                        dense addition operations wastes significant compute. Models that preserve sparse patterns
+                        through concatenation while sharing dense patterns through addition should achieve better
+                        computational efficiency. Again RETRO and ATLAS provide early evidence of this ability,
+                        wherein information within their vector database is concatenated (i.e. in different rows of the
+                        database), while information in the neural network consuming from the database is densely
+                        stored within Transformer weights.
+                    </p>
+
+                    <p>
+                        The next section builds on this hypothesis, suggesting how these natural boundaries in
+                        information usage could enable new approaches to AI development. If correct, this could
+                        resolve the tension between deep learning’s powerful pattern recognition and the need for
+                        attribution-based control in AI systems.
+                    </p>
+
+                    <div class="callout">
+                        <p class="callout-title">A Library Analogy</p>
+
+                        <p>
+                            Consider a library wherein all of the books have had their covers removed, their table of
+                            contents erased, and individual sentences on each page torn out into their own strips. Now
+                            imagine that each word in each strip is converted into a number ”aardvark = 1”, ”abernathe
+                            = 2”, and so forth. And then imagine that each of these strips from the whole library is
+                            shuffled around, and groups of strips are placed back in the coverless books. Yet, instead
+                            of
+                            each strip being glued in place, it is first combined with many other strips, adding their
+                            respective numbers together. Consequently, when someone wants to answer a specific
+                            question, they have to read through the entire library searching for relevant information
+                            for
+                            their query, first by converting their query into numbers and then attempting to match it to
+                            numbers found in the books.
+                        </p>
+
+                        <p>
+                            Following the analogy, differential attribution ensures that each strip of numbers
+                            remains separated (instead of added) into each other strip, and preserved within the same
+                            book as before, partitioning data in a way which might be indexed by source or topic.
+                        </p>
                     </div>
                 </section>
 
@@ -2564,6 +3536,243 @@
                             <span class="venue">
                                 Atlas: Few-shot learning with retrieval augmented language
                                 models. <em>Journal of Machine Learning Research</em>, 24(251):1–43.
+                            </span>
+                        </li>
+
+                        <li id="ref-47">
+                            <span class="authors">
+                                J. Kirkpatrick, R. Pascanu, N. Rabinowitz, J. Veness, G. Desjardins, A. A. Rusu, K.
+                                Milan,
+                                J. Quan, T. Ramalho, A. Grabska-Barwinska, D. Hassabis, C. Clopath, D. Kumaran, and
+                                R. Hadsell. 2017
+                            </span>
+
+                            <span class="venue">
+                                Overcoming catastrophic forgetting in neural networks. <em>Proceedings of
+                                    the National Academy of Sciences</em>, 114(13):3521–3526.
+                            </span>
+                        </li>
+
+                        <li id="ref-48">
+                            <span class="authors">
+                                R. Kemker, M. McClure, A. Abitino, T. Hayes, and C. Kanan. 2018.
+                            </span>
+
+                            <span class="venue">
+                                Measuring catastrophic forgetting in neural networks. In <em>Proceedings of the AAAI
+                                    conference on artificial intelligence</em>,
+                                volume 32.
+                            </span>
+                        </li>
+
+                        <li id="ref-49">
+                            <span class="authors">
+                                K. Robison. 2024.
+                            </span>
+
+                            <span class="venue">
+                                OpenAI cofounder Ilya Sutskever says the way AI is built is about to change.
+                                <em>The Verge</em>, December. Accessed: December 31, 2024.
+                            </span>
+                        </li>
+
+                        <li id="ref-50">
+                            <span class="authors">
+                                Epoch AI. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Data on machine learning hardware. Updated December 30, 2024
+                            </span>
+                        </li>
+
+                        <li id="ref-51">
+                            <span class="authors">
+                                Together. 2023.
+                            </span>
+
+                            <span class="venue">
+                                Redpajama-data-v2: An open dataset with 30 trillion tokens for training large
+                                language models, 10. The dataset includes data processing tools for CommonCrawl data,
+                                focusing on five languages: English, French, Spanish, German, and Italian. It provides
+                                over
+                                40 quality annotations for filtering and weighting data, including natural language
+                                indicators,
+                                repetitiveness measures, and content-based signals.
+                            </span>
+                        </li>
+
+                        <li id="ref-52">
+                            <span class="authors">
+                                A. S. Cummings. 2017.
+                            </span>
+
+                            <span class="venue">
+                                <em>Democracy of sound: Music piracy and the remaking of American
+                                    copyright in the twentieth century</em>. Oxford University Press.
+                            </span>
+                        </li>
+
+                        <li id="ref-53">
+                            <span class="authors">
+                                M. Cummins. 2024.
+                            </span>
+
+                            <span class="venue">
+                                How much llm training data is there, in the limit? <em>Educating Silicon</em>,
+                                May. A comprehensive analysis of available text data for LLM training, including web
+                                data,
+                                code, academic publications, books, court documents, social media, transcribed audio,
+                                and
+                                private communications. Estimates suggest current LLM training sets are approaching the
+                                limits of high-quality public text, with approximately 40-90T tokens available in
+                                English
+                                and 100-200T tokens across all languages
+                            </span>
+                        </li>
+
+                        <li id="ref-54">
+                            <span class="authors">
+                                Wikipedia contributors. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Common Crawl. Last edited on 30 December 2024, at 01:48
+                                (UTC).
+                            </span>
+                        </li>
+
+                        <li id="ref-55">
+                            <span class="authors">
+                                B. Kahle. 2024.
+                            </span>
+
+                            <span class="venue">
+                                A message from internet archive founder, brewster kahle. Internet Archive
+                                donation page detailing the organization’s mission, impact, and ways to support. The
+                                Archive
+                                hosts over 99 petabytes of data, including 625 billion webpages, 38 million texts, and
+                                14
+                                million audio recordings. Federal Tax ID: 94-3242767.
+                            </span>
+                        </li>
+
+                        <li id="ref-56">
+                            <span class="authors">
+                                D. Mider. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Open source intelligence on the internet – categorisation and evaluation of
+                                search tools. <em> Internal Security Review</em>, 31:383–412.
+                            </span>
+                        </li>
+
+                        <li id="ref-57">
+                            <span class="authors">
+                                P. Taylor. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Amount of data created, consumed, and stored 2010-2023, with forecasts to
+                                2028, 5. Accessed: December 31, 2024.
+                            </span>
+                        </li>
+
+                        <li id="ref-58">
+                            <span class="authors">
+                                T. Bogwasi. 2025.
+                            </span>
+
+                            <span class="venue">
+                                Business facts: Essential business statistics you should know in 2025.
+                            </span>
+                        </li>
+
+                        <li id="ref-59">
+                            <span class="authors">
+                                Q. V. Le. 2013.
+                            </span>
+
+                            <span class="venue">
+                                Building high-level features using large scale unsupervised learning. In <em>2013
+                                    IEEE international conference on acoustics, speech and signal processing</em>, pages
+                                8595–8598.
+                                IEEE.
+                            </span>
+                        </li>
+
+                        <li id="ref-60">
+                            <span class="authors">
+                                T. T. Nguyen, T. T. Huynh, Z. Ren, P. L. Nguyen, A. W.-C. Liew, H. Yin, and Q. V. H.
+                                Nguyen.
+                                2024.
+                            </span>
+
+                            <span class="venue">
+                                A survey of machine unlearning.
+                            </span>
+                        </li>
+
+                        <li id="ref-61">
+                            <span class="authors">
+                                S. Hochreiter. 1998.
+                            </span>
+
+                            <span class="venue">
+                                The vanishing gradient problem during learning recurrent neural nets and
+                                problem solutions. <em>International Journal of Uncertainty, Fuzziness and
+                                    Knowledge-Based
+                                    Systems</em>, 6(02):107–116.
+                            </span>
+                        </li>
+
+                        <li id="ref-62">
+                            <span class="authors">
+                                B. Hanin. 2018.
+                            </span>
+
+                            <span class="venue">
+                                Which neural net architectures give rise to exploding and vanishing gradients?
+                                <em> Advances in neural information processing systems</em>, 31.
+                            </span>
+                        </li>
+
+                        <li id="ref-63">
+                            <span class="authors">
+                                A. Krizhevsky, I. Sutskever, and G. E. Hinton. 2012.
+                            </span>
+
+                            <span class="venue">
+                                Imagenet classification with deep
+                                convolutional neural networks. <em>Advances in neural information processing
+                                    systems</em>, 25.
+                            </span>
+                        </li>
+
+                        <li id="ref-64">
+                            <span class="authors">
+                                C. Dwork, F. McSherry, K. Nissim, and A. Smith. 2006.
+                            </span>
+
+                            <span class="venue">
+                                Calibrating noise to sensitivity in
+                                private data analysis. In <em>Theory of Cryptography: Third Theory of Cryptography
+                                    Conference,
+                                    TCC 2006, New York, NY, USA, March 4-7, 2006. Proceedings</em> 3, pages 265–284.
+                                Springer
+                            </span>
+                        </li>
+
+                        <li id="ref-65">
+                            <span class="authors">
+                                M. Abadi, A. Chu, I. Goodfellow, H. B. McMahan, I. Mironov, K. Talwar, and L. Zhang.
+                                2016.
+                            </span>
+
+                            <span class="venue">
+                                Deep learning with differential privacy. In <em>Proceedings of the 2016 ACM SIGSAC
+                                    Conference on Computer and Communications Security</em>, CCS’16. ACM, October
                             </span>
                         </li>
                     </ol>

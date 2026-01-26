@@ -183,6 +183,7 @@ header .affiliation {
 section {
     margin-bottom: 2.5rem;
     position: relative;
+    scroll-margin-block: calc(var(--header-height) + 14px);
 }
 
 section h2 {
