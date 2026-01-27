@@ -2908,42 +2908,88 @@
                         <p>
                             <sup>4</sup>
                             Rényi divergence generalizes both KL divergence
-  (\( \alpha \to 1 \)) and max divergence (\( \alpha \to \infty \)),
-  providing tractable computation with tunable sensitivity–privacy tradeoffs.
+                            (\( \alpha \to 1 \)) and max divergence (\( \alpha \to \infty \)),
+                            providing tractable computation with tunable sensitivity–privacy tradeoffs.
                         </p>
                     </div>
 
                     <h3>Intelligence Budgets: Implementing Individual Source Control</h3>
 
-                    <p>This source-level individual attribution measure enables a practical control mechanism:
+                    <p>
+                        This source-level individual attribution measure enables a practical control mechanism:
                         <em>intelligence budgets</em>. Rather than simply measuring influence after the fact, we can
-                        actively control how much each source influences predictions through architectural routing
-                        decisions.
+                        actively
+                        control
+                        how much each source influences predictions through architectural routing decisions.
                     </p>
 
                     <div class="definition-box">
                         <h3>Intelligence Budgets via Forward Pass Weighting</h3>
+
                         <p>The model has two types of parameterized functions:</p>
+
                         <p style="text-align: center;">$g_s(\cdot; \Theta_{\text{semantic}}[s])$: source-specific
                             function for source $s$</p>
+
                         <p style="text-align: center;">$f(\cdot; \Theta_{\text{syntactic}})$: shared function across all
                             sources</p>
+
                         <p>Information flows through two stages:</p>
+
                         <p style="text-align: center;">Stage 1 (Semantic): $s_s = g_s(x_s; \Theta_{\text{semantic}}[s])$
                         </p>
+
                         <p style="text-align: center;">Stage 2 (Syntactic): $h(x) = f\left([x_1, \ldots, x_{|S|},
                             \gamma[1] \cdot s_1, \ldots, \gamma[|S|] \cdot s_{|S|}]; \Theta_{\text{syntactic}}\right)$
                         </p>
+
                         <p>where $\gamma[s] \in [0,1]$ is a per-source scaling weight and $[\cdot]$ denotes
                             concatenation of all inputs.</p>
+
                         <p>The intelligence budget $B(s)$ bounds source $s$'s influence:</p>
+
                         <p style="text-align: center;">$\text{Attribution}_\alpha(s, h) \leq B(s)$</p>
+
                         <p>Setting $\gamma[s] \approx 0$ enforces small $B(s)$ (privacy regime) by preventing semantic
                             contributions. Setting $\gamma[s] \approx 1$ allows large $B(s)$ (attribution regime) by
                             preserving semantic identity.</p>
                     </div>
 
+                    <p>
+                        Each \( g_s \) can be an arbitrary neural network (e.g., a deep learning model)
+                        with parameters \( \Theta_{\text{semantic}}[s] \) specific to source \( s \).
+                        The syntactic function \( f \) can also be an arbitrary neural network
+                        (e.g., a Transformer) with shared parameters
+                        \( \Theta_{\text{syntactic}} \).
+                        The function \( f \) receives all raw inputs and all scaled semantic outputs
+                        concatenated together, and can mix them however it wants.
+                        The parameter \( \gamma[s] \) directly controls source \( s \)’s intelligence
+                        budget by scaling how much of its semantic output
+                        \( s_s = g_s(x_s) \) contributes to the final prediction.
+                    </p>
+
+                    <p>
+                        When \( \gamma[s] = 0 \), source \( s \) contributes only through its raw input
+                        \( x_s \) concatenated with others. The syntactic function \( f \) can mix these
+                        raw inputs however it wants. Differential privacy constraints on \( f \) ensure
+                        this mixing prevents source identification, enforcing the privacy regime.
+                        When \( \gamma[s] = 1 \), source \( s \) contributes its full semantic
+                        representation \( s_s \) with identity preserved through concatenation,
+                        enabling attribution tracking and enforcing the attribution regime.
+                        Intermediate values of \( \gamma[s] \) enable the measurement regime.
+                    </p>
+
+                    <p>
+                        This budgeting mechanism provides flexible, context-dependent control matching
+                        diverse stakeholder needs. A source demanding privacy sets \( \gamma[s] = 0 \).
+                        A source guaranteeing attribution sets \( \gamma[s] = 1 \).
+                        A source tracking contribution uses intermediate \( \gamma[s] \) and measures
+                        resulting influence. The model simultaneously satisfies all these requirements
+                        by setting different \( \gamma[s] \) values for different sources.
+                    </p>
+
                     <h3>From Concatenation and IDP to Deep Voting</h3>
+
                     <p>The deep voting framework reveals a two-dimensional spectrum in machine learning architectures by
                         introducing a second control parameter $\lambda \in [0,1]$ that governs the overall balance
                         between semantic and syntactic capacity:</p>
@@ -2962,36 +3008,56 @@
                     <div class="callout">
                         <p class="callout-title">Deep Voting Analogy: Individual Differential Privacy via Adaptive
                             Filtering</p>
-                        <p>Feldman and Zrnic's individual differential privacy framework [<a href="#ref-17"
-                                class="cite">17</a>] provides a concrete example of intelligence budgets implemented
-                            through adaptive filtering rather than architectural routing.</p>
-                        <p><strong>Architecture:</strong> Their approach uses $\lambda = 1$ (pure syntactic processing)
+
+                        <p>
+                            Feldman and Zrnic’s individual differential privacy framework (<a href="#ref-17"
+                                class="cite">Feldman and Zrnic 2020</a>)
+                            provides a concrete example of intelligence budgets implemented through adaptive filtering
+                            rather than architectural routing.
+                        </p>
+
+                        <p>
+                            <strong>Architecture:</strong> Their approach in Example 2.7 $\lambda = 1$ (pure syntactic
+                            processing)
                             with all capacity in shared parameters $\Theta_{\text{syntactic}}$. No semantic section
                             exists ($\Theta_{\text{semantic}}[s] = \emptyset$), meaning all sources contribute only
                             through raw inputs: $h(x) = f([x_1, \ldots, x_n]; \Theta_{\text{syntactic}})$ where $f$ adds
-                            Gaussian noise for privacy.</p>
-                        <p><strong>Intelligence Budgets via Filtering:</strong> Rather than controlling $\gamma[s]$
+                            Gaussian noise for privacy.
+                        </p>
+
+                        <p>
+                            <strong>Intelligence Budgets via Filtering:</strong> Rather than controlling $\gamma[s]$
                             continuously, they implement binary filtering. At each time step $t$, compute the individual
                             privacy loss $\rho_t^{(i)} = \frac{\alpha \|\bar{g}_t(X_i)\|_2^2}{2\sigma^2}$ where
                             $\bar{g}_t(X_i)$ is the clipped gradient. Source $i$ remains active while $\sum_{j=1}^t
                             \rho_t^{(i)} \leq B$, then gets dropped (equivalent to setting $\gamma[i] = 0$ for all
-                            future steps).</p>
-                        <p><strong>Key Insight:</strong> The intelligence budget $B(i)$ is implicitly determined by
+                            future steps).
+                        </p>
+
+                        <p>
+                            <strong>Key Insight:</strong> The intelligence budget $B(i)$ is implicitly determined by
                             realized gradient norms. For Lipschitz functions with coordinate sensitivity $L_i$, the
                             bound becomes $B(i) \approx \frac{\alpha L_i^2 \|\phi(X_i)\|^2}{2\sigma^2}$. Sources with
-                            small gradients (low sensitivity) can participate longer before exceeding their budget.</p>
-                        <p><strong>Contrast with Deep Voting:</strong> Feldman & Zrnic achieve privacy (small ε) by
+                            small gradients (low sensitivity) can participate longer before exceeding their budget.
+                        </p>
+
+                        <p>
+                            <strong>Contrast with Deep Voting:</strong> Feldman & Zrnic achieve privacy (small ε) by
                             dropping high-influence examples entirely, routing all remaining examples through
                             privacy-constrained shared processing. Deep voting generalizes this by: (1) introducing a
                             semantic section ($\lambda < 1$) that preserves source identity, (2) allowing continuous
                                 control ($\gamma[s] \in [0,1]$) rather than binary drop/keep decisions, and (3) enabling
                                 attribution regime where large ε is desirable. Individual DP represents the special case
-                                where $\lambda=1$, $\gamma[s] \in \{0,1\}$ (binary), and all sources demand privacy.</p>
-                                <p><strong>Adaptive Composition:</strong> The Feldman & Zrnic result on adaptive
+                                where $\lambda=1$, $\gamma[s] \in \{0,1\}$ (binary), and all sources demand privacy.
+                                </p>
+
+                                <p>
+                                    <strong>Adaptive Composition:</strong> The Feldman & Zrnic result on adaptive
                                     composition with data-dependent privacy parameters ($\sum_t \rho_t^{(i)} \leq B
                                     \Rightarrow (\alpha, B)$-RDP) directly parallels our intelligence budget
                                     composition: both handle the challenge that influence parameters depend on previous
-                                    outputs, enabling provable bounds even under adaptive computation.</p>
+                                    outputs, enabling provable bounds even under adaptive computation.
+                                </p>
                     </div>
 
                     <p>With these mechanisms in place, we can return to the implications of such a system for providing
@@ -3003,30 +3069,64 @@
 
                     <div class="callout">
                         <p class="callout-title">A Library Analogy</p>
-                        <p>Consider a library wherein all of the books have had their covers removed, their table of
+
+                        <p>
+                            Consider a library wherein all of the books have had their covers removed, their table of
                             contents erased, and individual sentences on each page torn out into their own strips. Now
-                            imagine that each word in each strip is converted into a number "aardvark = 1", "abernathe =
-                            2", and so forth. And then imagine that each of these strips from the whole library is
+                            imagine that each word in each strip is converted into a number ”aardvark = 1”, ”abernathe
+                            = 2”, and so forth. And then imagine that each of these strips from the whole library is
                             shuffled around, and groups of strips are placed back in the coverless books. Yet, instead
-                            of each strip being glued in place, it is first combined with many other strips, adding
-                            their respective numbers together. Consequently, when someone wants to answer a specific
+                            of
+                            each strip being glued in place, it is first combined with many other strips, adding their
+                            respective numbers together. Consequently, when someone wants to answer a specific
                             question, they have to read through the entire library searching for relevant information
-                            for their query—first by converting their query into numbers and then attempting to match it
-                            to numbers found in the books.</p>
-                        <p>Following the analogy, differential attribution ensures that each strip of numbers remains
-                            separated (instead of added) into each other strip, preserved within the same book as
-                            before, partitioning information in a way which might be indexed by source (or topic). It
-                            further provides a staff of librarians who know how to read relevant information and
+                            for
+                            their query &mdash; first by converting their query into numbers and then attempting to
+                            match it
+                            to numbers found in the books.
+                        </p>
+
+                        <p>
+                            Following the analogy, differential attribution ensures that each strip of numbers
+                            remains separated (instead of added) into each other strip, preserved within the same book
+                            as before, partitioning information in a way which might be indexed by source (or topic).
+                            It further provides a staff of librarians who know how to read relevant information and
                             synthesize them, each according to a topic that librarian happens to be familiar with. Taken
                             together, a customer of a library can leverage one librarian to index into the appropriate
                             shelf, identify the right book, and the right snippets of that book, and then ask a subset
-                            of the staff of librarians who are experts on that topic to properly interpret those
-                            snippets.</p>
+                            of
+                            the staff of librarians who are experts on that topic to properly interpret those snippets.
+                        </p>
                     </div>
                 </section>
 
                 <section id="first-hypothesis">
                     <h2>First Hypothesis: ABC and 6+ Orders of Magnitude more Data/Compute</h2>
+
+                    <p>
+                        The deep voting framework reveals a two-dimensional spectrum in machine learning architectures.
+                        Consider how different parameter settings affect the model’s behavior:
+                    </p>
+
+                    <p>
+                        At (&lambda;,&gamma;) = (1, 0), we find pure deep learning with maximum compression. These
+                        systems,
+                        like GPT-4, use only shared parameters with basic bounds on attribution. They achieve powerful
+                        feature learning but sacrifice attribution clarity. At (&lambda;,&gamma;) = (0, 1), we find pure
+                        partition-based
+                        learning, like federated systems, which maintain group privacy but limit cross-source learning.
+                        At (&lambda;,&gamma;) = (0, 0), we find pure source-specific learning systems like k-nearest
+                        neighbors,
+                        providing perfect attribution through direct tracking but losing the benefits of parameter
+                        sharing.
+                    </p>
+
+                    <p>
+                        Far from being theoretical abstractions, these points represent real systems in production
+                        today, each making explicit tradeoffs between learning power (as measured by model performance),
+                        attribution clarity (as measured by influence tracking), and computational efficiency (as
+                        measured by FLOP counts).
+                    </p>
 
                     <figure class="full-width">
                         <img src="1411.3146/abc_ch2_8_0_v5.png" alt="First Hypothesis graph">
@@ -3034,18 +3134,45 @@
                         </figcaption>
                     </figure>
 
-                    <p>The deep voting framework reveals a two-dimensional spectrum in machine learning architectures.
-                        Consider how different parameter settings affect the model's behavior:</p>
+                    <p>
+                        Current systems tend to choose a fixed point on this spectrum, making an explicit tradeoff
+                        between these competing forces. Deep voting formalizes a more continuous alternative: dynamic
+                        adjustment of these parameters (perhaps based on empirical information). When data shows high
+                        redundancy across sources (like common language patterns), higher &lambda; values enable
+                        efficient
+                        parameter sharing. When sources contain unique information (like proprietary research), lower
+                        values maintain clearer attribution and better reward data owners for their novelty and
+                        innovation.
+                    </p>
 
-                    <p>At (&lambda;,&gamma;) = (1,0), we find pure deep learning with maximum compression. These
-                        systems, like GPT-4, use only shared parameters with basic bounds on attribution. At
-                        (&lambda;,&gamma;) = (0,1), we find pure partition-based learning, like federated systems, which
-                        maintain group privacy but limit cross-source learning. At (&lambda;,&gamma;) = (0,0), we find
-                        pure source-specific learning systems like k-nearest neighbors.</p>
+                    <p>
+                        The empirical evidence presented earlier in this chapter paints a stark picture of current
+                        limitations. AI systems today access less than one millionth of the world’s digital data, 180
+                        zettabytes versus roughly 180 terabytes for the largest known training sets. Even the largest
+                        AI firms utilize less than 5.57% of available compute capacity. Meanwhile, techniques like
+                        RETRO/ATLAS have demonstrated 25-50x parameter efficiency gains while maintaining performance,
+                        recent compression research shows 5-10x reduction in parameter counts without
+                        accuracy loss, and catastrophic forgetting work suggests a 40x drop in model size is attainable.
+                    </p>
 
-                    <p>The stakes are significant. If deep voting succeeds, it could unlock another 6+ orders of
+                    <p>
+                        This tension yields our central empirical question: Can deep voting meaningfully shift
+                        the Pareto frontier between learning power, attribution clarity, and computational efficiency?
+                        Success could mean unlocking orders of magnitude more training data through clear attribution
+                        mechanisms. Success would enable dramatic reductions in computational waste through dynamic
+                        parameter sharing. Perhaps most importantly, success would create a path toward safe compute
+                        sharing through reliable influence tracking; the sparse, concatenated section could be
+                        distributed
+                        across multiple computers.
+                    </p>
+
+                    <p>
+                        The stakes are significant. If deep voting succeeds, it could unlock another 6+ orders of
                         magnitude of training data and compute productivity. If it fails, we may remain constrained by
-                        the fundamental limitations of current architectures.</p>
+                        the fundamental limitations of current architectures. The next section examines the empirical
+                        evidence, providing an early view of whether deep voting might achieve the theoretical benefits
+                        suggested by its mathematical framework.
+                    </p>
                 </section>
 
                 <section id="empirical-evidence">
@@ -3057,23 +3184,62 @@
                         </figcaption>
                     </figure>
 
-                    <h3>The First Crack: RETRO and ATLAS</h3>
-                    <p>Recent architectures challenge baseline tradeoffs. RETRO outperforms GPT-3 on the Pile (0.670 vs
-                        0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3's 175B [<a href="#ref-4"
-                            class="cite">4</a>]:</p>
+                    <p>
+                        To evaluate whether deep voting can shift the fundamental tradeoffs between capability
+                        and attribution, we must first establish clear empirical baselines. Deep learning’s conventional
+                        wisdom around end-to-end training suggests a stark choice: systems can either achieve
+                        state-ofthe-art performance through dense feature mixing or maintain clear attribution, but not
+                        both. Yet
+                        recent results challenge this assumption. Consider the performance comparison between GPT-3
+                        and RETRO, as described in Table <a href="#table-2-7">2.7</a> below.
+                    </p>
 
-                    <div class="table-container">
+                    <p>
+                        The result demands explanation. RETRO matches GPT-3’s performance while using 25x
+                        fewer parameters and maintaining clear paths for attribution through its retrieval mechanism. If
+                        the tradeoffs between attribution and capability were truly fundamental, such a result should
+                        not
+                        be possible.
+                    </p>
+
+                    <h3>Pure Architectures: The Baseline Tradeoff</h3>
+
+                    <p>
+                        Conventional architectures exhibit clear tradeoffs between attribution, efficiency, and
+                        performance. We examine three points on this spectrum:
+                    </p>
+
+                    <p>
+                        Traditional deep learning systems (&lambda; = 1) achieve state-of-the-art performance through
+                        unrestricted parameter sharing. On MNIST, non-private models reach 98.3% accuracy, while
+                        an identically parameterized model with differential privacy constraints drops to 90% (Abadi
+                        et al., 2016). This performance advantage comes at a cost: unrestricted parameter mixing during
+                        training erases mappings between sources and predictions, making attribution impossible.
+                    </p>
+
+                    <p>
+                        Group-based federated systems (&lambda; = 0, &gamma; = 1) maintain clear attribution boundaries
+                        by
+                        partitioning data within institutional silos. When data is independently and identically
+                        distributed
+                        (IID) across clients, this partitioning incurs no performance cost. However, when data is
+                        non-IID
+                    </p>
+
+                    <div class="table-container" id=table-2-7>
                         <table class="data-table">
-                            <caption>Table: RETRO results on the Pile, measured in bits-per-byte. (From Borgeaud et al.,
-                                2022)</caption>
+                            <caption>RETRO results on the Pile, measured in bits-per-bytes, from (Borgeaud
+                                et al., 2022). Jurassic-1 and GPT-3 numbers are taken from (<a href="#ref-68"
+                                    class="cite">Lieber et al., 2021</a>). Gopher
+                                numbers are taken from (<a href="#ref-69" class="cite">Rae et al., 2021</a>).</caption>
                             <thead>
                                 <tr>
                                     <th>Subset</th>
-                                    <th>7B Baseline</th>
+                                    <th>7B Baseline (Ours)</th>
                                     <th>GPT-3</th>
                                     <th>Jurassic-1</th>
                                     <th>Gopher</th>
-                                    <th>7.5B RETRO</th>
+                                    <th>7.5B</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -3217,19 +3383,85 @@
                         </table>
                     </div>
 
-                    <p>This constitutes a 25x reduction in parameter count while achieving superior performance and
-                        maintaining clear attribution paths through its retrieval mechanism.</p>
+                    <p>
+                        across clients, MNIST accuracy drops from 98.69% to 96.29% (<a href="#ref-70" class="cite">Zhao
+                            et al., 2018</a>)—a 2.4%
+                        degradation relative to joint training. This reflects a tension between attribution boundaries
+                        and
+                        cross-source pattern learning.
+                    </p>
 
-                    <p>ATLAS demonstrates similar gains: 25-50x parameter efficiency improvements while maintaining or
-                        exceeding baseline performance [<a href="#ref-5" class="cite">5</a>]. Both systems achieve these
+                    <p>
+                        Pure memory-based approaches (&lambda; = 0,&gamma; = 0) such as k-NN provide perfect attribution
+                        by directly linking predictions to source examples. These systems achieve 97.2% accuracy on
+                        MNIST (<a href="#ref-71" class="cite">Grover and Toghi 2018</a>) but cannot generalize beyond
+                        patterns explicitly present in
+                        their memory banks.
+                    </p>
+
+                    <p>
+                        These results establish baseline tradeoffs: dense architectures sacrifice attribution for
+                        performance, and federated/memory-based architectures sacrifice performance (on non-IID data)
+                        but
+                        gain attribution. The six orders of magnitude of inaccessible data and underutilized compute
+                        identified earlier remain siloed behind institutional boundaries because organizations cannot
+                        share data without relinquishing control. If these tradeoffs reflect fundamental constraints
+                        rather
+                        than architectural limitations, they would permanently restrict AI systems’ access to real-world
+                        resources
+                    </p>
+
+                    <h3>The First Crack: RETRO and ATLAS</h3>
+
+                    <p>
+                        However, recent architectures challenge these baseline tradeoffs. RETRO outperforms GPT-3 on
+                        the Pile (0.670 vs 0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3’s
+                        175B. This constitutes a 25x reduction in parameter count while achieving superior performance
+                        and maintaining clear attribution paths through its retrieval mechanism (<a
+                            href="#ref-72">Borgeaud et al., 2022</a>).
+                    </p>
+
+                    <p>
+                        ATLAS demonstrates similar gains: 25-50x parameter efficiency improvements while maintaining or
+                        exceeding baseline performance (<a href="#ref-46" class="cite">Izacard et al., 2023</a>). Both
+                        systems achieve these
                         results through a fundamental architectural shift: rather than compressing all knowledge into
-                        dense parameters, they maintain explicit connections to source documents through retrieval.</p>
+                        dense parameters, they maintain explicit connections to source documents through retrieval.
+                    </p>
 
-                    <p>Federated RAG systems demonstrate concurrent improvements in attribution and performance:</p>
+                    <p>
+                        These results demonstrate that the tradeoff between attribution and capability reflects
+                        architectural choices rather than fundamental machine learning constraints. Systems maintaining
+                        explicit source separation through retrieval mechanisms achieve competitive performance with
+                        dense models while preserving attribution.
+                    </p>
 
-                    <div class="table-container">
+                    <h3>Converging Evidence Across Architectures</h3>
+
+                    <p>
+                        RETRO and ATLAS represent a broader pattern. Multiple architectural innovations demonstrate
+                        that explicit information paths enable simultaneous optimization of attribution and performance.
+                    </p>
+
+                    <p>
+                        PATE (Private Aggregation of Teacher Ensembles) demonstrates this pattern in privacypreserving
+                        machine learning. Traditional privacy-preserving approaches incur 10-20% performance
+                        degradation. PATE reduces this gap to 0.7% on MNIST (98.5% accuracy versus 99.2%
+                        non-private baseline) while maintaining differential privacy guarantees through source-separated
+                        teacher ensembles (<a href="#ref-73" class="cite">Papernot et al., 2018</a>).
+                    </p>
+
+                    <p>
+                        Federated RAG systems demonstrate concurrent improvements in attribution and performance. Recent
+                        work shows that federated RAG improves both attribution clarity and model
+                        accuracy simultaneously (Table <a href="#table-2-8">2.8</a>) (<a href="#ref-74" class="cite">Hou
+                            and Wang 2024</a>).
+                    </p>
+
+                    <div class="table-container" id="table-2-8">
                         <table class="data-table">
-                            <caption>Table: Performance Metrics on MMLU Tasks (Federated RAG vs Baseline RAG)</caption>
+                            <caption>Table 2.8: Performance Metrics on MMLU Tasks (<a href="#ref-74" class="cite">Hou
+                                    and Wang 2024</a>)</caption>
                             <thead>
                                 <tr>
                                     <th>Task</th>
@@ -3267,39 +3499,143 @@
                         </table>
                     </div>
 
+                    <p>
+                        Git Re-Basin demonstrates that independently trained models can be merged with minimal
+                        performance loss through weight permutation alignment (<a href="#ref-75" class="cite">Ainsworth
+                            et al., 2022</a>). This extends
+                        previous model merging results (<a href="#ref-76" class="cite">Zhao et al., 2018</a>) by
+                        enabling merging across models trained
+                        on separate dataset partitions from similar distributions. The technique identifies and corrects
+                        for
+                        arbitrary permutations of hidden layer neurons that occur during independent training,
+                        effectively
+                        aligning equivalent features across models before merging.
+                    </p>
+
                     <h3>Deep Voting: Formalizing the Pattern</h3>
-                    <p>These architectures (RETRO, ATLAS, PATE [<a href="#ref-18" class="cite">18</a>], federated RAG
-                        [<a href="#ref-19" class="cite">19</a>], and Git Re-Basin [<a href="#ref-20"
-                            class="cite">20</a>]) share a common technical mechanism: they replace addition operations
-                        during training with concatenation, deferring synthesis until inference time. We formalize this
-                        pattern as <em>deep voting</em>.</p>
+
+                    <p>
+                        These architectures (RETRO, ATLAS, PATE, federated RAG, and Git Re-Basin) share a common
+                        technical mechanism: they replace addition operations during training with concatenation,
+                        deferring synthesis until inference time. We formalize this pattern as <em>deep voting</em>.
+                    </p>
+
+                    <p>
+                        Traditional deep learning architectures synthesize knowledge during training by adding
+                        gradient updates into shared parameters. This pre-synthesis creates the documented tradeoffs:
+                        compressed representations lose attribution, strict partitioning loses cross-source patterns,
+                        and
+                        explicit storage loses efficiency. Deep voting defers this synthesis. Source-specific knowledge
+                        remains concatenated (partitioned) during training. At inference time, relevant partitions are
+                        selectively synthesized through weighted addition, with synthesis scope bounded by intelligence
+                        budgets (Section <a href="#second-hypothesis">2.7</a>).
+                    </p>
+
+                    <p>
+                        This architectural choice enables three simultaneous optimizations that conventional
+                        architectures trade off:
+                    </p>
+
+                    <p>
+                        <strong>Attribution through source partitioning.</strong> Concatenated representations preserve
+                        source
+                        identity. RETRO and ATLAS maintain explicit mappings to source documents, enabling the
+                        source-level control required to unlock 6+ orders of magnitude of inaccessible data.
+                    </p>
+
+                    <p>
+                        <strong>Efficiency through selective synthesis.</strong> Inference-time synthesis activates only
+                        relevant
+                        partitions. RETRO’s 25x parameter reduction and PATE’s 0.7% privacy-performance gap
+                        demonstrate that selective synthesis substantially reduces computational requirements.
+                    </p>
+
+                    <p>
+                        <strong>Performance through shared computation. </strong> Shared syntactic components learn
+                        crosssource patterns without full parameter mixing. Git Re-Basin’s successful merging and
+                        federated
+                        RAG’s accuracy improvements demonstrate that partitioned training with shared components
+                        achieves competitive performance, avoiding the 2.4% degradation of pure federated approaches
+                        on non-IID data.
+                    </p>
+
+                    <p>
+                        The convergent results across these architectures (operating in different domains with different
+                        implementations e.g. language modeling, privacy preservation, retrieval, model merging)
+                        indicate that this mechanism represents a fundamental alternative to dense parameter mixing
+                        rather than domain-specific engineering. Deep voting shifts the Pareto frontier between
+                        attribution, efficiency, and performance by preserving source mappings that addition destroys
+                    </p>
+
+                    <h3>Deep Voting: A Path to 6+ Orders of Magnitude</h3>
 
                     <figure class="full-width">
                         <img src="1411.3146/deep_learning_to_deep_voting_v3.png" alt="Deep Learning to Deep Voting">
                         <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a
                             deep learning model (i.e. by adding weight updates) which is later used for predictions,
-                            while deep voting systems (right) learn weight parameters which remain partitioned by source
-                            (i.e. concatenated), but which are learned in a way that they can be rapidly synthesized on
-                            the fly. Partitions (pictured above as pie slices) are rapidly synthesized to form a model
-                            used for a specific prediction. Darker lines/slices indicate information being used for a
-                            particular prediction. Lighter lines/slices indicate information not being used for a
-                            particular prediction. The circle on top of the slices represents a dense model capable of
-                            rapidly synthesizing slices in practice. The combination of concatenated weights and
-                            concatenated metadata with inference predictions (which tracks the synthesis and subsequent
-                            use of slices for an AI prediction) enables ABC.</figcaption>
+                            while
+                            deep voting systems (right) learn weight parameters which remain partitioned by source (i.e.
+                            concatenated), but which are learned in a way that they can be rapidly synthesized on the
+                            fly.
+                            Partitions (pictured above as pie slices) are rapidly synthesized to form a model used for a
+                            specific prediction. Darker lines/slices indicate information being used for a particular
+                            prediction.
+                            Lighter lines/slices indicate information not being used for a particular prediction. The
+                            circle
+                            on top of the slices represents a dense model capable of rapidly synthesizing slices in
+                            practice
+                            (which itself must be trained to do so). Metadata (which tracks the synthesis and subsequent
+                            use
+                            of slices for an AI prediction) enables attribution-based control (ABC).</figcaption>
                     </figure>
 
-                    <p>Deep voting addresses the addition problem that blocks access to 6+ orders of magnitude of data
-                        and compute. By preserving source attribution through concatenated representations while
-                        enabling cross-source learning through shared components, deep voting architectures demonstrate
-                        that the baseline tradeoffs between attribution, efficiency, and performance reflect
+                    <p>Deep voting addresses the addition problem that blocks access to 6+ orders of magnitude
+                        of data and compute. By preserving source attribution through concatenated representations
+                        while enabling cross-source learning through shared components, deep voting architectures
+                        demonstrate that the baseline tradeoffs between attribution, efficiency, and performance reflect
                         architectural choices rather than fundamental constraints.</p>
 
-                    <p>However, solving the addition problem reveals a deeper challenge: the copy problem. Even if one
-                        achieved perfect attribution through deep voting, data sources cannot enforce how their
+                    <p>
+                        The empirical evidence is substantial. RETRO and ATLAS achieve 25-50x parameter
+                        efficiency while maintaining performance. PATE reduces privacy-performance gaps from 10-
+                        20% to 0.7%. Git Re-Basin enables merging of independently trained models. Federated RAG
+                        improves both attribution and accuracy simultaneously. These systems operate at scale today,
+                        processing real workloads with working implementations.
+                    </p>
+
+                    <p>
+                        The implications for data access are direct. Current LLM training sets use approximately
+                        180TB of text data. Global digital data reaches 180 zettabytes (6-9 orders of magnitude larger).
+                        Vast institutional repositories remain inaccessible primarily due to attribution and control
+                        concerns (<a href="#ref-77" class="cite">Youssef et al., 2023</a>). Deep voting’s
+                        source-partitioned architecture provides the
+                        attribution mechanism these institutions require, establishing a viable technical path to unlock
+                        this siloed data
+                    </p>
+
+                    <p>
+                        Similarly, the implications for compute efficiency are substantial. The 6+ orders of magnitude
+                        of training inefficiency documented in Section <a href="#underutilized-compute">2.2.1</a> stems
+                        from retraining overhead, dense
+                        forward propagation, parameter redundancy, and catastrophic forgetting. Deep voting’s deferred
+                        synthesis architecture addresses each source: partitioned training enables selective retraining,
+                        inference-time synthesis enables sparse activation, source separation reduces redundancy, and
+                        explicit organization prevents catastrophic forgetting.
+                    </p>
+
+                    <p>
+                        Deep voting addresses the addition problem. Source-partitioned representations preserve
+                        attribution. Deferred synthesis enables efficiency. Shared components enable performance. The
+                        architecture has been demonstrated at scale across multiple systems and domains, and a clear
+                        direction for future empirical work has been presented.
+                    </p>
+
+                    <p>
+                        However, solving the addition problem reveals a deeper challenge: the copy problem. Even
+                        if one achieved perfect attribution through deep voting, data sources cannot enforce how their
                         contributions are used because whoever possesses a copy of the model retains unilateral control.
-                        Chapter 2 addresses this challenge, introducing techniques that enable attribution-based
-                        <em>control</em> rather than mere attribution-based <em>suggestions</em>.
+                        Chapter 3 addresses this challenge, introducing techniques that enable attribution-based <em>control</em>
+                        rather than mere attribution-based <em></em>.
                     </p>
                 </section>
 
@@ -3918,6 +4254,121 @@
                             <span class="venue">
                                 The algorithmic foundations of differential privacy. e, Foundations
                                 and Trends® in Theoretical Computer Science, 9(3–4):211–407.
+                            </span>
+                        </li>
+
+                        <li id="ref-68">
+                            <span class="authors">
+                                O. Lieber, O. Sharir, B. Lenz, and Y. Shoham. 2021.
+                            </span>
+
+                            <span class="venue">
+                                Jurassic-1: Technical details and evaluation.
+                                <em>White Paper. AI21 Labs.</em>
+                            </span>
+                        </li>
+
+                        <li id="ref-69">
+                            <span class="authors">
+                                J. Rae, S. Borgeaud, T. Cai, K. Millican, J. Hoffmann, F. Song, J. Aslanides, S.
+                                Henderson,
+                                R. Ring, S. Young, E. Rutherford, T. Hennigan, J. Menick, A. Cassirer, R. Powell, G. van
+                                den
+                                Driessche, L. A. Hendricks, M. Rauh, P.-S. Huang, A. Glaese, J. Welbl, S. Dathathri,
+                                S. Huang, J. Uesato, J. Mellor, I. Higgins, A. Creswell, N. McAleese, A. Wu, E. Elsen,
+                                S. Jayakumar, E. Buchatskaya, D. Budden, E. Sutherland, K. Simonyan, M. Paganini,
+                            </span>
+                        </li>
+
+                        <li id="ref-70">
+                            <span class="authors">
+                                Y. Zhao, M. Li, L. Lai, N. Suda, D. Civin, and V. Chandra. 2018
+                            </span>
+
+                            <span class="venue">
+                                Federated learning with
+                                non-iid data.
+                            </span>
+                        </li>
+
+                        <li id="ref-71">
+                            <span class="authors">
+                                D. Grover and B. Toghi. 2018.
+                            </span>
+
+                            <span class="venue">
+                                Mnist dataset classification utilizing k-nn classifier with modified
+                                sliding-window metric. <em>arXiv preprint arXiv:1809.06846.</em>
+                            </span>
+                        </li>
+
+                        <li id="ref-72">
+                            <span class="authors">
+                                S. Borgeaud, A. Mensch, J. Hoffmann, T. Cai, E. Rutherford, K. Millican, G. B. Van Den
+                                Driessche, J.-B. Lespiau, B. Damoc, A. Clark, et al. 2022.
+                            </span>
+
+                            <span class="venue">
+                                Improving language models by
+                                retrieving from trillions of tokens. In <em>International conference on machine</em>
+                                learning,
+                                pages
+                                2206–2240. PMLR.
+                            </span>
+                        </li>
+
+                        <li id="ref-73">
+                            <span class="authors">
+                                N. Papernot, S. Song, I. Mironov, A. Raghunathan, K. Talwar, and Ulfar Erlingsson. 2018.
+                            </span>
+
+                            <span class="venue">
+                                Scalable private learning with pate.
+                            </span>
+                        </li>
+
+                        <li id="ref-74">
+                            <span class="authors">
+                                X. Hou and X. Wang. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Large language model with federated retrieval-augmented
+                                generation for improved knowledge retrieval.
+                            </span>
+                        </li>
+
+                        <li id="ref-75">
+                            <span class="authors">
+                                S. K. Ainsworth, J. Hayase, and S. Srinivasa. 2022.
+                            </span>
+
+                            <span class="venue">
+                                Git re-basin: Merging models modulo
+                                permutation symmetries. <em>arXiv preprint arXiv:2209.04836.</em>
+                            </span>
+                        </li>
+
+                        <li id="ref-76">
+                            <span class="authors">
+                                Y. Zhao, M. Li, L. Lai, N. Suda, D. Civin, and V. Chandra. 2018.
+                            </span>
+
+                            <span class="venue">
+                                Federated learning with
+                                non-iid data.
+                            </span>
+                        </li>
+
+                        <li id="ref-77">
+                            <span class="authors">
+                                A. Youssef, M. Ng, J. Long, T. Hernandez-Boussard, N. Shah, A. Miner, D. Larson, and
+                                C. Langlotz. 2023.
+                            </span>
+
+                            <span class="venue">
+                                Organizational factors in clinical data sharing for artificial intelligence
+                                in health care. <em>JAMA Network Open</em>, 6:e2348422, 12.
                             </span>
                         </li>
                     </ol>
