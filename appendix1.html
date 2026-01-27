@@ -115,201 +115,225 @@
             </aside>
 
             <main>
-                <!-- Margin ASCII Art -->
-                <div class="ascii-art float" style="top: 50px;">
-                    FLOP/s
-
-                    10²⁸ ████
-                    10²⁴ ███
-                    10²⁰ ██
-                    10¹⁶ █
-
-                    exponential
-                    <span class="caption">compute scale</span>
-                </div>
-
-                <div class="ascii-art pulse" style="top: 700px;">
-                    GPU vs TPU
-
-                    ▓▓▓▓▓▓ GPU
-                    ░░░░ TPU
-                    ▒▒ ASIC
-
-                    NVIDIA
-                    dominates
-                    <span class="caption">hardware mix</span>
-                </div>
-
-                <div class="ascii-art breathe" style="top: 1400px;">
-                    DISTRIBUTION
-
-                    Cloud: 16%
-                    ┌────┐
-                    │████│
-
-                    Consumer: 33%
-                    ┌────────┐
-                    │████████│
-
-                    Other: 51%
-                    ┌────────────┐
-                    │████████████│
-                    <span class="caption">who has it</span>
-                </div>
-
-                <div class="ascii-art float" style="top: 2100px;">
-                    SMARTPHONES
-
-                    📱📱📱📱📱
-                    📱📱📱📱📱
-                    📱📱📱📱📱
-
-                    = 23% of
-                    global FLOP/s!
-                    <span class="caption">hidden compute</span>
-                </div>
-
-                <div class="ascii-art pulse" style="top: 2800px;">
-                    GROWTH 7x
-
-                    Q1 2023:
-                    ░░░░
-
-                    Q4 2024:
-                    ▓▓▓▓▓▓▓▓▓▓▓▓
-                    ▓▓▓▓▓▓▓▓▓▓▓▓
-                    ▓▓▓▓▓▓
-                    <span class="caption">accelerating</span>
-                </div>
-
                 <div class="chapter-header">
                     <p class="chapter-number">Appendix I</p>
                     <h1>Estimated Global Compute Distribution and Capacity</h1>
                 </div>
 
                 <section>
-                    <p>This appendix documents the global distribution of computing power as of Q4 2024, with particular
-                        focus on AI accelerators and general-purpose computing hardware. All computing power is measured
-                        in floating point operations per second (FLOP/s), enabling direct comparison between different
-                        types of computing devices.</p>
+                    <p>
+                        This appendix documents the global distribution of computing power as of Q4 2024, with
+                        particular focus on AI accelerators and general-purpose computing hardware. All computing
+                        power is measured in floating point operations per second (FLOP/s), enabling direct comparison
+                        between different types of computing devices.
+                    </p>
                 </section>
 
                 <section id="methodology">
                     <h2>Methodology</h2>
+
                     <p>Our analysis tracks two primary categories of computing power:</p>
+
                     <ol>
                         <li><strong>Specialized AI Hardware:</strong> Data center GPUs (e.g., NVIDIA H100s, AMD MI300X),
-                            TPUs, and custom ASICs (e.g., Microsoft MAIA, Meta MTIA)</li>
+                            TPUs, and custom ASICs (e.g., Microsoft MAIA, Meta MTIA)
+                        </li>
+
                         <li><strong>General Purpose Computing:</strong> Consumer devices including smartphones, personal
-                            computers, and gaming consoles</li>
+                            computers, and gaming consoles
+                        </li>
                     </ol>
 
+                    <p>
+                        The analysis covers 2023-2024, with several key methodological considerations:
+                    </p>
+
                     <h3>Time Period Normalization</h3>
-                    <p>Many source datasets span 2022-2024. For these three-year totals, we estimate the 2023-2024
-                        portion as 80% of the total, reflecting accelerating deployment rates through the period and
-                        increased manufacturing capacity in later years.</p>
+
+                    <p>
+                        Many source datasets span 2022-2024. For these three-year totals, we estimate the 2023-2024
+                        portion as 80% of the total, reflecting:
+                    </p>
+
+                    <ul>
+                        <li>Accelerating deployment rates through the period</li>
+
+                        <li>Increased manufacturing capacity in later years</li>
+
+                        <li>Reported quarterly growth patterns (<a href="#ref-1" class="cite">Mann 2024</a>)</li>
+                    </ul>
 
                     <h3>Infrastructure Accounting</h3>
-                    <p>To account for infrastructure deployed before our analysis period that remains in active use, we
-                        apply a 1.3&times; multiplier to new deployments.</p>
+
+                    <p>
+                        To account for infrastructure deployed before our analysis period that remains in active use, we
+                        apply a 1.3&times; multiplier to new deployments. This multiplier derives from:
+                    </p>
+
+                    <ul>
+                        <li>Historical hardware retirement rates (<a href="#ref-2" class="cite">Epoch AI 2024</a>)</li>
+
+                        <li>Typical infrastructure lifecycle lengths</li>
+
+                        <li> Reported infrastructure retention patterns (<a href="#ref-1" class="cite">Mann 2024</a>)
+                        </li>
+                    </ul>
 
                     <h3>Consumer Device Calculations</h3>
+
                     <p>For devices like smartphones, we calculate:</p>
-                    <p style="text-align: center; margin: 1rem 0;">$$\text{Total Capacity} = \text{Quarterly Sales}
-                        \times \text{Number of Quarters} \times \text{Device Performance}$$</p>
+
+                    <p style="text-align: center; margin: 1rem 0;">
+                        $$\text{Total Capacity} = \text{Quarterly Sales}
+                        \times \text{Number of Quarters} \times \text{Device Performance}$$
+                    </p>
+
+                    <p>
+                        Key assumptions include:
+                    </p>
+
+                    <ul>
+                        <li>275M average quarterly smartphone sales (<a href="#ref-3" class="cite">Ming 2024</a>)</li>
+
+                        <li>8 quarters (covering 2023-2024)</li>
+
+                        <li>80/20 split between iPhone/Android market share</li>
+
+                        <li>Device performance from manufacturer specifications</li>
+                    </ul>
                 </section>
 
                 <section id="hardware-specs">
-                    <h2>Hardware Specifications</h2>
-                    <p class="table-caption">Table 1: Hardware Specifications (2023-2024)</p>
-                    <table class="data-table">
+                    <h2>Results</h2>
+
+                    <h3>Hardware Specifications</h3>
+
+                    <p>
+                        We begin by documenting the performance characteristics of key computing hardware. Table
+                        <a href="#table-6-1">6.1</a> shows peak theoretical performance for major AI accelerators and
+                        consumer devices.
+                    </p>
+
+                    <p class="table-caption">Table 6.1: Hardware Specifications (2023-2024)</p>
+
+                    <table class="data-table" id="table-6-1">
                         <thead>
                             <tr>
                                 <th>Hardware</th>
                                 <th>Type</th>
-                                <th class="numeric">Peak Performance (FLOP/s)</th>
+                                <th class="numeric">Peak Performance <br> (FLOP/s)</th>
+                                <th>Source</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="category">
-                                <td colspan="3"><em>Data Center AI Chips</em></td>
+                                <td colspan="4"><em>Data Center AI Chips</em></td>
                             </tr>
                             <tr>
                                 <td>AMD MI300X OAM</td>
                                 <td>GPU</td>
                                 <td class="numeric">$2.61 \times 10^{15}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
                                 <td>NVIDIA H100</td>
                                 <td>GPU</td>
                                 <td class="numeric">$9.89 \times 10^{14}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
                                 <td>NVIDIA A100</td>
                                 <td>GPU</td>
                                 <td class="numeric">$3.12 \times 10^{14}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
                                 <td>Microsoft MAIA</td>
                                 <td>ASIC</td>
                                 <td class="numeric">$8.00 \times 10^{14}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
                                 <td>Meta MTIA</td>
                                 <td>ASIC</td>
                                 <td class="numeric">$3.54 \times 10^{14}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
                                 <td>AWS Tranium</td>
                                 <td>ASIC</td>
                                 <td class="numeric">$2.50 \times 10^{14}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
                                 <td>AWS Inferentia</td>
                                 <td>ASIC</td>
                                 <td class="numeric">$1.92 \times 10^{14}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr class="category">
-                                <td colspan="3"><em>Consumer Devices</em></td>
+                                <td colspan="4"><em>Consumer Devices</em></td>
                             </tr>
                             <tr>
                                 <td>iPhone 14 Pro</td>
                                 <td>Mobile SoC</td>
                                 <td class="numeric">$2.00 \times 10^{12}$</td>
+                                <td><a href="#ref-3" class="cite">Ming 2024</a></td>
                             </tr>
                             <tr>
                                 <td>Samsung S24</td>
                                 <td>Mobile SoC</td>
                                 <td class="numeric">$3.40 \times 10^{12}$</td>
+                                <td><a href="#ref-3" class="cite">Ming 2024</a></td>
                             </tr>
                             <tr>
                                 <td>Average PC CPU</td>
                                 <td>CPU</td>
                                 <td class="numeric">$4.08 \times 10^{10}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
                                 <td>Average PC GPU</td>
                                 <td>GPU</td>
                                 <td class="numeric">$4.60 \times 10^{12}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
                                 <td>PS5</td>
                                 <td>Console</td>
                                 <td class="numeric">$1.03 \times 10^{13}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </section>
 
                 <section id="nvidia-shipments">
-                    <h2>NVIDIA GPU Shipments</h2>
-                    <p class="table-caption">Table 2: NVIDIA GPU Shipments (2023-2024)</p>
-                    <table class="data-table">
+                    <h2>Estimated New Hardware Deployments</h2>
+
+                    <p>Table <a href="#table-6-2">6.2</a> documents NVIDIA’s GPU shipments, which represent the majority
+                        of
+                        new AI
+                        computing capacity deployed during this period.</p>
+
+                    <p>
+                        These shipments are distributed across major cloud providers and AI companies. Table <a
+                            href="#table-6-3">6.3</a>
+                        details how this computing capacity is allocated, including both NVIDIA GPUs and custom AI
+                        accelerators
+                    </p>
+
+                    <p class="table-caption">
+                        Table 6.2: NVIDIA GPU Shipments (2023-2024)
+                    </p>
+
+                    <table class="data-table" id="table-6-3">
                         <thead>
                             <tr>
                                 <th>Type</th>
                                 <th class="numeric">Units</th>
-                                <th class="numeric">Computing Power (FLOP/s)</th>
+                                <th class="numeric">Computing Power <br> (FLOP/s)</th>
+                                <th>Source/Calculation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -317,135 +341,348 @@
                                 <td>A100s (2023)</td>
                                 <td class="numeric">2,260,000</td>
                                 <td class="numeric">$7.05 \times 10^{20}$</td>
+                                <td>Units$\times 3.12 \times 10^{14}$ FLOP/s per A100</td>
                             </tr>
                             <tr>
                                 <td>H100s (2023)</td>
                                 <td class="numeric">1,500,000</td>
                                 <td class="numeric">$1.48 \times 10^{21}$</td>
+                                <td>Units$\times 9.89 \times 10^{14}$ FLOP/s per H100</td>
                             </tr>
                             <tr>
                                 <td>A100s (2024)</td>
                                 <td class="numeric">2,000,000</td>
                                 <td class="numeric">$6.24 \times 10^{20}$</td>
+                                <td>Units$\times 3.12 \times 10^{14}$ FLOP/s per A100</td>
                             </tr>
                             <tr>
                                 <td>H100s (2024)</td>
                                 <td class="numeric">2,000,000</td>
                                 <td class="numeric">$1.98 \times 10^{21}$</td>
+                                <td>Units$\times 9.89 \times 10^{14}$ FLOP/s per H100</td>
                             </tr>
                             <tr class="total">
                                 <td>Total 2022-2024</td>
                                 <td class="numeric">7,760,000</td>
                                 <td class="numeric">$4.79 \times 10^{21}$</td>
+                                <td>Sum of all rows above</td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <h3>
+                        Estimated Base Computing Capacity
+                    </h3>
+
+                    <p>
+                        To establish total worldwide computing capacity, we first document the base capacity that
+                        existed
+                        at the start of our analysis period (Q1 2023).
+                    </p>
+
+                    <h3>Estimated Global Computing Distribution</h3>
+
+                    <p>
+                        Finally, Table <a href="#table-6-6">6.6</a> presents the complete worldwide distribution of
+                        computing capacity as of Q4
+                        2024, combining base capacity, new deployments, and applying our temporal adjustment factors.
+                    </p>
                 </section>
 
-                <section id="cloud-deployments">
-                    <h2>Major Cloud Provider Deployments</h2>
-                    <p class="table-caption">Table 3: Estimated Major Cloud Provider Deployments (2022-2024)</p>
+                <section id="analysis">
+                    <h2>Analysis and Implications</h2>
+
+                    <h3>Distribution of Computing Power</h3>
+
+                    <p>
+                        The results reveal several key insights about global computing power distribution:
+                    </p>
+
+                    <ol>
+                        <li><strong>Cloud Concentration:</strong> The four largest cloud/AI providers (Meta,
+                            Microsoft/OpenAI,
+                            Google/DeepMind, and Amazon/Anthropic) collectively control 15.9% of global computing power.
+                            This represents a significant concentration of high-performance computing
+                            resources.</li>
+                        <li><strong>Consumer Device Significance:</strong> Despite lower per-unit performance, consumer
+                            devices
+                            collectively represent 32.83% of global computing power, with smartphones alone accounting
+                            for 23.23%. This highlights the massive scale of deployed consumer hardware.</li>
+                        <li><strong>Legacy Infrastructure:</strong> Pre-2023 and other cloud infrastructure remains
+                            significant,
+                            representing 51.28% of total capacity. This suggests substantial inertia in computing
+                            infrastructure deployment.</li>
+                    </ol>
+
+                    <h3>Growth Patterns</h3>
+
+                    <p>
+                        The data reveals several notable trends in computing power growth:
+                    </p>
+
+                    <ul>
+                        <li><strong>Accelerating Deployment:</strong> New capacity added in 2023-2024 ($2.82 \times
+                            10^{22}$ FLOP/s) is approximately 7 times larger than the Q1 2023 base capacity ($3.98
+                            \times 10^{21}$ FLOP/s).</li>
+                    </ul>
+
+                    <p class="table-caption">
+                        Table 6.3: Estimated Major Cloud Provider Deployments (2022-2024)
+                    </p>
+
                     <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Provider</th>
                                 <th>Hardware Type</th>
-                                <th class="numeric">Computing Power (FLOP/s)</th>
+                                <th class="numeric">Computing Power <br> (FLOP/s)</th>
+                                <th> Source/Calculation</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="category">
-                                <td colspan="3"><em>Microsoft/OpenAI</em></td>
+                                <td colspan="4"><em>Microsoft/OpenAI</em></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>H100 equivalents</td>
                                 <td class="numeric">$6.53 \times 10^{20}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>AMD MI300X</td>
                                 <td class="numeric">$2.51 \times 10^{20}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>MAIA</td>
                                 <td class="numeric">$1.58 \times 10^{20}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
+                                <td><strong>Total New</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$1.06 \times 10^{21}$</strong></td>
+                                <td>Sum of three rows above</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2023-2024 (80%)</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$8.50 \times 10^{20}$</strong></td>
+                                <td>Total New $\times$ 0.8 (2-year portion of 3-year total)</td>
+                            </tr>
+                             <tr>
                                 <td><strong>Total Q4 2024</strong></td>
                                 <td></td>
                                 <td class="numeric"><strong>$1.38 \times 10^{21}$</strong></td>
+                                <td>2023-2024 total $\times$ 1.3 (infrastructure multiplier)</td>
                             </tr>
 
                             <tr class="category">
-                                <td colspan="3"><em>Amazon/Anthropic</em></td>
+                                <td colspan="4"><em>Amazon/Anthropic</em></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>H100/A100</td>
                                 <td class="numeric">$2.87 \times 10^{20}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>Inferentia</td>
                                 <td class="numeric">$1.75 \times 10^{20}$</td>
+                                <td>Units$\times 1.92 \times 10^{14}$ FLOP/s per chip</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>Tranium</td>
                                 <td class="numeric">$9.15 \times 10^{19}$</td>
+                                <td>Units$\times 2.50 \times 10^{14}$ FLOP/s per chip</td>
+                            </tr>
+                             <tr>
+                                <td>Total New</td>
+                                <td></td>
+                                <td class="numeric">$5.53 \times 10^{20}$</td>
+                                <td>Sum of three rows above</td>
+                            </tr>
+                            <tr>
+                                <td>2023-2024 (80%) </td>
+                                <td></td>
+                                <td class="numeric">$4.42 \times 10^{20}$</td>
+                                <td>Total New $\times$ 0.8</td>
                             </tr>
                             <tr>
                                 <td><strong>Total Q4 2024</strong></td>
                                 <td></td>
                                 <td class="numeric"><strong>$7.19 \times 10^{20}$</strong></td>
+                                <td>2023-2024 total $\times$ 1.3</td>
                             </tr>
 
                             <tr class="category">
-                                <td colspan="3"><em>Google/DeepMind</em></td>
+                                <td colspan="4"><em>Google/DeepMind</em></td>
+                            </tr>
+                             <tr>
+                                <td></td>
+                                <td>TPUs (Q1 2023) </td>
+                                <td class="numeric">$2.93 \times 10^{19}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>TPUs (Q4 2024)</td>
                                 <td class="numeric">$9.10 \times 10^{20}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>New TPUs 2023-2024 </td>
+                                <td class="numeric">$8.81 \times 10^{20}$</td>
+                                <td>Q4 2024 TPUs - Q1 2023 TPUs</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>H100/A100</td>
                                 <td class="numeric">$3.16 \times 10^{20}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
+                            </tr>
+                             <tr>
+                                <td><strong>Total New GPUs</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$3.16 \times 10^{20}$</strong></td>
+                                <td>Same as H100/A100 row</td>
+                            </tr>
+                             <tr>
+                                <td><strong>Total New TPUs</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$8.81 \times 10^{20}$</strong></td>
+                                <td>Same as New TPUs row</td>
+                            </tr>
+                             <tr>
+                                <td><strong>New GPUs + TPUs</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$1.20 \times 10^{21}$</strong></td>
+                                <td>Sum of Total New GPUs and TPUs</td>
                             </tr>
                             <tr>
                                 <td><strong>Total Q4 2024</strong></td>
                                 <td></td>
                                 <td class="numeric"><strong>$1.23 \times 10^{21}$</strong></td>
+                                <td>(New GPUs + TPUs) $\times$ 1.3 - Q1 2023 TPUs</td>
                             </tr>
 
+                            
                             <tr class="category">
-                                <td colspan="3"><em>Meta</em></td>
+                                <td colspan="4"><em>Meta</em></td>
+                            </tr>
+                             <tr>
+                                <td></td>
+                                <td>A100</td>
+                                <td class="numeric">$6.68 \times 10^{18}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
+                            </tr>
+                             <tr>
+                                <td></td>
+                                <td>H100</td>
+                                <td class="numeric">$3.46 \times 10^{20}$</td>
+                                <td>Units $\times$ 9.89 $\times$ $10^{14}$ FLOP/s per H100</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>H100/A100</td>
                                 <td class="numeric">$3.96 \times 10^{20}$</td>
+                                <td>Sum of A100 and H100 rows</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>AMD MI300X</td>
                                 <td class="numeric">$4.52 \times 10^{20}$</td>
+                                <td>Units $\times$ 2.61 $\times$ $10^{15}$ FLOP/s per MI300X</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>MTIA</td>
                                 <td class="numeric">$5.31 \times 10^{20}$</td>
+                                <td>Units $\times$ 3.54 $\times$ $10^{14}$ FLOP/s per MTIA</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total New</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$1.38 \times 10^{21}$</strong></td>
+                                <td>Sum of all hardware rows</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2023-2024 (80%)</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$1.10 \times 10^{21}$</strong></td>
+                                <td>Total New $\times$ 0.8</td>
                             </tr>
                             <tr>
                                 <td><strong>Total Q4 2024</strong></td>
                                 <td></td>
                                 <td class="numeric"><strong>$1.79 \times 10^{21}$</strong></td>
+                                <td> 2023-2024 total $\times$ 1.3</td>
+                            </tr>
+                            <tr class="category">
+                                <td colspan="4"><em>Other NVIDIA Customers</em></td>
+                            </tr>
+                             <tr>
+                                <td></td>
+                                <td>H100/A100</td>
+                                <td class="numeric">$1.38 \times 10^{21}$</td>
+                                <td><a href="#ref-3" class="cite">Ming 2024</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>MI300X</td>
+                                <td class="numeric">$1.52 \times 10^{21}$</td>
+                                 <td><a href="#ref-1" class="cite">Mann 2024</a></td>
+                            </tr>                            
+                            <tr>
+                                <td><strong>Total New</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$1.54 \times 10^{20}$</strong></td>
+                                <td>Sum of H100/A100 and MI300X rows</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2023-2024 (80%)</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$1.23 \times 10^{21}$</strong></td>
+                                <td>Total New $\times$ 0.8 (2-year portion of 3-year total)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Q4 2024</strong></td>
+                                <td></td>
+                                <td class="numeric"><strong>$2.00 \times 10^{21}$</strong></td>
+                                <td> 2023-2024 total$\times$ 1.3 (infrastructure multiplier)</td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <ul>
+                        <li><strong>Custom Hardware:</strong> Major cloud providers are increasingly deploying custom AI
+                            accelerators alongside NVIDIA GPUs.</li>
+                        <li><strong>Consumer Updates:</strong> The rapid replacement cycle of consumer devices maintains
+                            their significant share of total computing power.</li>
+                    </ul>
+
+                    <h3>Methodological Limitations</h3>
+                    <ul>
+                        <li><strong>Utilization Rates:</strong> Our analysis uses peak theoretical performance. Actual
+                            achieved performance varies based on workload characteristics, cooling constraints, and
+                            network bottlenecks.</li>
+                        <li><strong>Temporal Distribution:</strong> The 80% factor for 2023-2024 portion is an estimate
+                            based on recent NVIDIA sales growth.</li>
+                        <li><strong>Consumer Device Usage:</strong> Not all consumer devices are actively used for
+                            computation, potentially overestimating their contribution.</li>
+                    </ul>
+                </section>
+
+                <section id="cloud-deployments">
+                    <h2>Major Cloud Provider Deployments</h2>
+                    <p class="table-caption">Table 3: Estimated Major Cloud Provider Deployments (2022-2024)</p>
+
                 </section>
 
                 <section id="base-capacity">
@@ -599,42 +836,42 @@
                     </table>
                 </section>
 
-                <section id="analysis">
-                    <h2>Analysis and Implications</h2>
 
-                    <h3>Distribution of Computing Power</h3>
-                    <ul>
-                        <li><strong>Cloud Concentration:</strong> The four largest cloud/AI providers collectively
-                            control 15.9% of global computing power, representing significant concentration of
-                            high-performance computing resources.</li>
-                        <li><strong>Consumer Device Significance:</strong> Despite lower per-unit performance, consumer
-                            devices collectively represent 32.83% of global computing power, with smartphones alone
-                            accounting for 23.23%.</li>
-                        <li><strong>Legacy Infrastructure:</strong> Pre-2023 and other cloud infrastructure remains
-                            significant at 51.28% of total capacity.</li>
-                    </ul>
+                <section class="references">
+                    <h2>References</h2>
 
-                    <h3>Growth Patterns</h3>
-                    <ul>
-                        <li><strong>Accelerating Deployment:</strong> New capacity added in 2023-2024 ($2.82 \times
-                            10^{22}$ FLOP/s) is approximately 7 times larger than the Q1 2023 base capacity ($3.98
-                            \times 10^{21}$ FLOP/s).</li>
-                        <li><strong>Custom Hardware:</strong> Major cloud providers are increasingly deploying custom AI
-                            accelerators alongside NVIDIA GPUs.</li>
-                        <li><strong>Consumer Updates:</strong> The rapid replacement cycle of consumer devices maintains
-                            their significant share of total computing power.</li>
-                    </ul>
+                    <ol>
+                        <li id="ref-1">
+                            <span class="authors">
+                                T. Mann. 2024.
+                            </span>
 
-                    <h3>Methodological Limitations</h3>
-                    <ul>
-                        <li><strong>Utilization Rates:</strong> Our analysis uses peak theoretical performance. Actual
-                            achieved performance varies based on workload characteristics, cooling constraints, and
-                            network bottlenecks.</li>
-                        <li><strong>Temporal Distribution:</strong> The 80% factor for 2023-2024 portion is an estimate
-                            based on recent NVIDIA sales growth.</li>
-                        <li><strong>Consumer Device Usage:</strong> Not all consumer devices are actively used for
-                            computation, potentially overestimating their contribution.</li>
-                    </ul>
+                            <span class="venue">
+                                Ai’s rising tide lifts all chips as amd instinct, cloudy silicon vie for a slice of
+                                nvidia’s pie. <em>The Register</em>, Dec.
+                            </span>
+                        </li>
+
+                        <li id="ref-2">
+                            <span class="authors">
+                                Epoch AI. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Data on machine learning hardware. Updated December 30, 2024.
+                            </span>
+                        </li>
+
+                        <li id="ref-3">
+                            <span class="authors">
+                                Ming. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Nvidia ai gpu shipments to hit 4m in 2024. <em>SMYG Limited News</em>, Jun.
+                            </span>
+                        </li>
+                    </ol>
                 </section>
 
                 <nav class="chapter-nav">
