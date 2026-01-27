@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+        rel="stylesheet">
     <!-- MathJax for LaTeX rendering -->
     <script>
         MathJax = {
@@ -21,311 +24,416 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HDSX11G9D"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8HDSX11G9D');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8HDSX11G9D');
     </script>
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-OtFEayY3RhHZVOzX3iV76.js"></script>
     <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
+        window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+        plausible.init()
     </script>
 </head>
+
 <body>
-    <nav>
-        <a href="index.html">I. Introduction</a>
-        <a href="chapter2.html">II. Deep Voting</a>
-        <a href="chapter3.html">III. Network-Source AI</a>
-        <a href="chapter4.html">IV. Broad Listening</a>
-        <a href="chapter5.html" class="active">V. Conclusion</a>
-        <a href="https://andrewtrask.com">About</a>
-        <a href="appendix1.html">Appendix I</a>
-        <a href="appendix2.html">Appendix II</a>
-    </nav>
+    <div class="wrapper">
+        <nav>
+            <a href="index.html">I. Introduction</a>
+            <a href="chapter2.html">II. Deep Voting</a>
+            <a href="chapter3.html">III. Network-Source AI</a>
+            <a href="chapter4.html">IV. Broad Listening</a>
+            <a href="chapter5.html" class="active">V. Conclusion</a>
+            <a href="https://andrewtrask.com">About</a>
+            <a href="appendix1.html">Appendix I</a>
+            <a href="appendix2.html">Appendix II</a>
+        </nav>
 
-    <div class="page-container">
-        <aside class="toc-sidebar">
-            <h4>On This Page</h4>
-            <ul>
-                <li class="toc-h3"><a href="#opening">Opening</a></li>
-                <li class="toc-h3"><a href="#individual-level">Individual Level</a></li>
-                <li class="toc-h3"><a href="#institutional-level">Institutional Level</a></li>
-                <li class="toc-h3"><a href="#societal-level">Societal Level</a></li>
-                <li class="toc-h3"><a href="#geopolitical-level">Geopolitical Level</a></li>
-                <li class="toc-h3"><a href="#reframe">The Reframe</a></li>
-                <li class="toc-h3"><a href="#claims">What the Thesis Claims</a></li>
-                <li class="toc-h3"><a href="#future">The Future of AI</a></li>
-            </ul>
-            <div class="ascii-decoration">
-  central    broad
-    ·    →   ·─·─·
-   /|\       │ │ │
-  ·····      ·─·─·
+        <div class="page-container">
+            <aside class="toc-sidebar">
+                <h4>On This Page</h4>
+                <ul>
+                    <li class="toc-h3"><a href="#opening">Opening</a></li>
+                    <li class="toc-h3"><a href="#individual-level">Individual Level</a></li>
+                    <li class="toc-h3"><a href="#institutional-level">Institutional Level</a></li>
+                    <li class="toc-h3"><a href="#societal-level">Societal Level</a></li>
+                    <li class="toc-h3"><a href="#geopolitical-level">Geopolitical Level</a></li>
+                    <li class="toc-h3"><a href="#reframe">The Reframe</a></li>
+                    <li class="toc-h3"><a href="#claims">What the Thesis Claims</a></li>
+                    <li class="toc-h3"><a href="#future">The Future of AI</a></li>
+                </ul>
+                <div class="ascii-decoration">
+                    central broad
+                    · → ·─·─·
+                    /|\ │ │ │
+                    ····· ·─·─·
 
-   race to
-   connect
+                    race to
+                    connect
+                </div>
+            </aside>
+
+            <!-- Floating margin art -->
+            <div class="ascii-margin">
+                <div class="art-piece">
+                    from
+                    central
+                    intelligence
+                    ↓
+                    [█████]
+                    ↓
+                    to
+                </div>
+                <div class="art-piece">
+                    communication
+                    tool
+
+                    ☺ ←──→ ☺
+                    ╲ ╱
+                    ☺──☺
+                    ╱ ╲
+                    ☺ ←──→ ☺
+                </div>
+                <div class="art-piece">
+                    the future
+                    is a
+                    race to
+                    connect
+
+                    ···
+                    ·····
+                    ·······
+                </div>
             </div>
-        </aside>
 
-        <!-- Floating margin art -->
-        <div class="ascii-margin">
-            <div class="art-piece">
-    from
-   central
- intelligence
-      ↓
-  [█████]
-      ↓
-      to
-            </div>
-            <div class="art-piece">
- communication
-     tool
+            <main>
+                <!-- Margin ASCII Art - positioned absolutely, scrolls with content -->
+                <div class="ascii-art float" style="top: 50px;">
+                    TRANSFORMATION
 
-  ☺ ←──→ ☺
-   ╲    ╱
-    ☺──☺
-   ╱    ╲
-  ☺ ←──→ ☺
-            </div>
-            <div class="art-piece">
-  the future
-    is a
-   race to
-   connect
+                    BEFORE
+                    ◉
+                    /│\
+                    · · ·
+                    central
 
-     ···
-    ·····
-   ·······
-            </div>
+                    AFTER
+                    ·─·─·─·
+                    │ │ │ │
+                    ·─·─·─·
+                    distributed
+                    <span class="caption">the shift</span>
+                </div>
+
+                <div class="ascii-art pulse" style="top: 700px;">
+                    INDIVIDUAL
+
+                    hallucination?
+                    │
+                    [source]
+                    │
+                    ✓ verified
+                    <span class="caption">check the source</span>
+                </div>
+
+                <div class="ascii-art breathe" style="top: 1300px;">
+                    INSTITUTIONAL
+
+                    data owner:
+                    "I'll share
+                    IF I keep
+                    control"
+
+                    ABC: ✓
+                    <span class="caption">rational sharing</span>
+                </div>
+
+                <div class="ascii-art float" style="top: 1900px;">
+                    SOCIETAL
+
+                    withdraw ─┐
+                    │
+                    ▼
+                    [system]
+                    │
+                    adapts
+                    <span class="caption">structural alignment</span>
+                </div>
+
+                <div class="ascii-art pulse" style="top: 2500px;">
+                    GEOPOLITICAL
+
+                    authoritarian:
+                    coerce ─▶ ◉
+
+                    democratic:
+                    volunteer
+                    │
+                    ·─·─·─·
+                    <span class="caption">different paths</span>
+                </div>
+
+                <div class="ascii-art breathe" style="top: 3100px;">
+                    THE REFRAME
+
+                    old: filter
+                    bottleneck
+
+                    new: everyone
+                    filters
+                    for
+                    everyone
+                    <span class="caption">scaling synthesis</span>
+                </div>
+
+                <div class="ascii-art float" style="top: 3700px;">
+                    WHAT ABC IS
+
+                    ✓ attribution
+                    ✓ control
+                    ✓ verification
+
+                    NOT magic
+                    just possible
+                    <span class="caption">technical reality</span>
+                </div>
+
+                <div class="ascii-art pulse" style="top: 4300px;">
+                    THE FUTURE
+
+                    race to
+                    CONNECT
+                    not
+                    centralize
+
+                    ·───·───·
+                    │ │ │
+                    ·───·───·
+                    <span class="caption">the choice</span>
+                </div>
+
+                <div class="chapter-header">
+                    <p class="chapter-number">Chapter V</p>
+                    <h1>Conclusion: AI as a Communication Tool</h1>
+                </div>
+
+                <section id="opening">
+                    <p>This thesis opened by observing that several apparently distinct problems in contemporary AI
+                        systems share a common structural feature: the absence of <a
+                            href="https://attribution-based-control.ai/">attribution-based control</a>. When AI systems
+                        add information without attribution, users cannot verify claims. When systems copy training data
+                        without preserving contributor control, data owners rationally withhold contributions. When
+                        systems branch into multiple instances without accountability mechanisms, governance becomes
+                        intractable. The introduction traced how these technical absences cascade upward into
+                        consequences at individual, institutional, societal, and geopolitical levels, then asked whether
+                        attribution-based control is technically feasible with existing machinery. Chapters 2, 3, and 4
+                        surveyed techniques in deep learning, cryptography, and distributed systems that could provide
+                        the three components of ABC. This conclusion returns to the cascading consequences to examine
+                        what changes if ABC proves achievable.</p>
+                </section>
+
+                <section id="individual-level">
+                    <h2>At the Individual Level</h2>
+                    <p>At the individual level, the introduction identified hallucination and disinformation as
+                        characteristic problems. Users encounter claims they cannot verify, generated by systems whose
+                        reasoning processes remain opaque. Deep voting, as surveyed in Chapter 2, does not eliminate
+                        hallucination. Models will continue to produce outputs unsupported by their training data. What
+                        changes is the possibility of source inspection [<a href="#ref-3" class="cite">3</a>]. When each
+                        token of output can be traced to the training examples that most influenced its generation,
+                        users gain the architectural prerequisite for verification. They can examine whether claimed
+                        facts derive from sources they consider reliable, whether confident assertions rest on thin
+                        evidential bases, whether patterns reflect genuine regularities or artifacts of biased sampling.
+                        This does not automatically produce truth, but it provides the foundation upon which
+                        verification practices could be built. The individual-level problems identified in the
+                        introduction require this foundation.</p>
+                </section>
+
+                <section id="institutional-level">
+                    <h2>At the Institutional Level</h2>
+                    <p>At the institutional level, the introduction observed that data owners have rational incentives
+                        to withhold contributions from AI systems. Contributing data to centralized training pipelines
+                        means surrendering control over how that data will be used, who will benefit from insights
+                        derived from it, and whether contributors will receive any attribution or compensation. The
+                        introduction estimated that this dynamic has locked away six or more orders of magnitude of
+                        potentially valuable training data.</p>
+
+                    <p>Structured transparency [<a href="#ref-1" class="cite">1</a>], as surveyed in Chapter 3,
+                        addresses the technical barrier that makes this withholding rational. When cryptographic
+                        mechanisms can enforce access policies [<a href="#ref-6" class="cite">6</a>,<a href="#ref-7"
+                            class="cite">7</a>], when contributors can specify conditions under which their data may be
+                        used, when audit trails can verify compliance with those conditions, the calculus changes. Data
+                        owners might contribute to systems where they retain meaningful control even as their
+                        contributions enable collective intelligence. The institutional barriers identified in the
+                        introduction were rational responses to architectural limitations. Removing those limitations
+                        does not guarantee participation, but it removes the technical obstacle that made withholding
+                        the only rational choice.</p>
+                </section>
+
+                <section id="societal-level">
+                    <h2>At the Societal Level</h2>
+                    <p>At the societal level, the introduction raised questions of governance and alignment that
+                        currently dominate discourse in the field [<a href="#ref-8" class="cite">8</a>]. How do we
+                        ensure that AI systems behave in accordance with human values? How do we maintain meaningful
+                        human control over systems that may eventually exceed human capabilities in many domains?
+                        Current approaches typically involve centralized actors tuning systems on samples of human
+                        feedback, hoping that the tuning generalizes appropriately.</p>
+
+                    <p>The recursive structures surveyed in Chapter 4 suggest an alternative architecture. If AI systems
+                        require ongoing contributions from distributed sources [<a href="#ref-6" class="cite">6</a>],
+                        and if contributors retain the ability to withdraw those contributions, then alignment becomes
+                        structurally enforced rather than centrally imposed. A system that violates contributor values
+                        sufficiently to trigger widespread withdrawal loses capability. This is not a complete solution
+                        to alignment. Contributors might coordinate to pursue objectives harmful to non-contributors.
+                        The mechanisms by which contributors express values through contribution decisions remain
+                        underspecified. The assumption that contributors can evaluate system behavior at the speed
+                        required for effective feedback may prove optimistic. But the architectural possibility differs
+                        from current approaches: collective control without requiring trust in a small number of
+                        companies or governments to tune systems appropriately on humanity's behalf.</p>
+                </section>
+
+                <section id="geopolitical-level">
+                    <h2>At the Geopolitical Level</h2>
+                    <p>At the geopolitical level, the introduction noted a strategic tension facing liberal democracies.
+                        Authoritarian states can mandate resource centralization in ways that liberal democracies cannot
+                        without violating foundational principles. If AI capability correlates with centralization [<a
+                            href="#ref-2" class="cite">2</a>], this creates structural disadvantages for democratic
+                        societies.</p>
+
+                    <p>The recursive delegation mechanisms in Chapter 4 suggest a different scaling dynamic. If
+                        capability can emerge through voluntary coordination of distributed resources rather than
+                        coerced aggregation, liberal democracies might access resources unavailable to authoritarian
+                        centralization. Citizens globally might contribute to systems that preserve their control in
+                        ways they would never contribute to systems under authoritarian control. This is speculative,
+                        and competitive dynamics might override architectural properties. But the possibility exists
+                        that voluntary coordination at scale could match or exceed what coerced centralization achieves,
+                        providing a path toward capable AI systems that does not require compromising democratic values
+                        to remain competitive.</p>
+                </section>
+
+                <section id="reframe">
+                    <h2>The Reframe</h2>
+                    <p>The pattern across these four levels suggests a reframe. The problems identified in the
+                        introduction were not primarily failures of intention or governance. They were consequences of
+                        infrastructure. The internet scaled the capacity to share information globally, but it did not
+                        scale the capacity to filter, aggregate, and verify information at corresponding rates. Those
+                        operations still required human attention at every step [<a href="#ref-4" class="cite">4</a>].
+                        When synthesis required human cognition, bottlenecks formed wherever humans could be positioned
+                        to aggregate. Platforms emerged to provide synthesis functions because the underlying
+                        infrastructure could not. The resulting concentration of control was not a choice but an
+                        architectural necessity given available technology.</p>
+
+                    <div class="definition-box">
+                        <h3>The Core Contribution</h3>
+                        <p>The thesis contribution is not the pattern of recursive trust propagation. That pattern is
+                            ancient. Humans have always extended their reach by trusting others who trust others,
+                            delegating judgment through networks of credibility built over time [<a href="#ref-5"
+                                class="cite">5</a>].</p>
+                        <p>The contribution is identifying specific technical barriers that prevented this pattern from
+                            operating at machine speed, and surveying existing techniques in deep learning,
+                            cryptography, and distributed systems that could address those barriers.</p>
+                        <p>Word-of-mouth operated at the speed of human conversation. The machinery surveyed in this
+                            thesis could allow analogous trust propagation to operate at the speed of computation.</p>
+                    </div>
+                </section>
+
+                <section id="claims">
+                    <h2>What the Thesis Claims&mdash;and Does Not</h2>
+                    <p>This framing clarifies both what the thesis claims and what it does not. The claim is that ABC
+                        appears technically feasible using existing techniques. The evidence is the survey of those
+                        techniques across three chapters, demonstrating that:</p>
+                    <ul>
+                        <li>Deep voting can provide attribution for model outputs</li>
+                        <li>Cryptographic mechanisms can enforce contributor control over data usage</li>
+                        <li>Recursive structures can enable coordination without central authorities</li>
+                    </ul>
+
+                    <p>These are technical possibilities, not deployment realities. Whether the techniques compose
+                        effectively at scale, whether the computational overhead proves acceptable, whether the
+                        coordination dynamics produce the alignment effects suggested above: these remain empirical
+                        questions requiring investigation beyond what a survey thesis can provide.</p>
+
+                    <p>The thesis also does not claim that technical architecture determines social outcomes.
+                        Architecture enables and constrains, but human choices operate within those constraints. Even if
+                        ABC proves technically feasible, adoption depends on incentives, network effects, competitive
+                        dynamics, and institutional decisions that technical analysis cannot predict. The surveillance
+                        infrastructure that currently characterizes AI development emerged not because alternatives were
+                        impossible but because the available alternatives were not yet competitive. Whether ABC-enabled
+                        alternatives become competitive depends on factors beyond architecture. The honest claim is
+                        narrower: if these barriers to collective intelligence without centralized control prove
+                        surmountable, then concentration of AI capability is a choice rather than a necessity. The
+                        thesis has tried to show that the barriers may indeed be surmountable.</p>
+                </section>
+
+                <section id="future" class="vision">
+                    <h2>The Future of AI</h2>
+                    <p>The introduction ended by suggesting that the future of AI need not be a race to centralize. The
+                        chapters that followed surveyed technical machinery that could make that suggestion more than
+                        aspiration. Whether the machinery works as described, whether it composes into systems that
+                        function at scale, whether adoption dynamics favor its deployment: these questions remain open.
+                        But the architectural possibility now has technical substance behind it.</p>
+
+                    <p><strong>The future of AI might instead become a race to connect</strong>, through systems that
+                        preserve attribution and control even as they enable collective intelligence exceeding what any
+                        centralized system could achieve.</p>
+
+                    <p>Determining whether this possibility can become reality is work that remains to be done.</p>
+                </section>
+
+                <section class="references">
+                    <h2>References</h2>
+                    <ol>
+                        <li id="ref-1"><span class="authors">Trask, A., Bluemke, E., Garfinkel, B., Ghezzou
+                                Cuervas-Mons, C., & Dafoe, A.</span> (2020). <a
+                                href="https://arxiv.org/abs/2012.08347"><span class="title">Beyond Privacy Trade-offs
+                                    with Structured Transparency.</span></a> <span
+                                class="venue">arXiv:2012.08347</span>.</li>
+                        <li id="ref-2"><span class="authors">Kaplan, J., et al.</span> (2020). <a
+                                href="https://arxiv.org/abs/2001.08361"><span class="title">Scaling Laws for Neural
+                                    Language Models.</span></a> <span class="venue">arXiv:2001.08361</span>.</li>
+                        <li id="ref-3"><span class="authors">Borgeaud, S., et al.</span> (2022). <a
+                                href="https://arxiv.org/abs/2112.04426"><span class="title">Improving language models by
+                                    retrieving from trillions of tokens.</span></a> <span class="venue">ICML
+                                2022</span>, 2206–2240.</li>
+                        <li id="ref-4"><span class="authors">Dunbar, R. I. M.</span> (1993). <a
+                                href="https://doi.org/10.1017/S0140525X00032325"><span class="title">Coevolution of
+                                    neocortical size, group size and language in humans.</span></a> <span
+                                class="venue">Behavioral and Brain Sciences</span>, 16(4), 681–735.</li>
+                        <li id="ref-5"><span class="authors">Granovetter, M. S.</span> (1973). <a
+                                href="https://doi.org/10.1086/225469"><span class="title">The Strength of Weak
+                                    Ties.</span></a> <span class="venue">American Journal of Sociology</span>, 78(6),
+                            1360–1380.</li>
+                        <li id="ref-6"><span class="authors">McMahan, H. B., et al.</span> (2017). <a
+                                href="https://arxiv.org/abs/1602.05629"><span class="title">Communication-Efficient
+                                    Learning of Deep Networks from Decentralized Data.</span></a> <span
+                                class="venue">AISTATS 2017</span>.</li>
+                        <li id="ref-7"><span class="authors">Dwork, C., & Roth, A.</span> (2014). <a
+                                href="https://doi.org/10.1561/0400000042"><span class="title">The Algorithmic
+                                    Foundations of Differential Privacy.</span></a> <span class="venue">Foundations and
+                                Trends in Theoretical Computer Science</span>, 9(3–4), 211–407.</li>
+                        <li id="ref-8"><span class="authors">Gabriel, I.</span> (2020). <a
+                                href="https://doi.org/10.1007/s11023-020-09539-2"><span class="title">Artificial
+                                    intelligence, values, and alignment.</span></a> <span class="venue">Minds and
+                                Machines</span>, 30(3), 411–437.</li>
+                    </ol>
+                </section>
+
+                <nav class="chapter-nav">
+                    <a href="chapter4.html" class="prev">Chapter IV: Broad Listening</a>
+                    <a href="about.html" class="next">About the Author</a>
+                </nav>
+            </main>
         </div>
 
-        <main>
-            <!-- Margin ASCII Art - positioned absolutely, scrolls with content -->
-            <div class="ascii-art float" style="top: 50px;">
-  TRANSFORMATION
+        <footer>
+            <p>Andrew Trask &middot; University of Oxford</p>
+        </footer>
+    </div><!-- /.wrapper -->
 
-     BEFORE
-       ◉
-      /│\
-     · · ·
-   central
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCa5kJX0IfZqgsgGUg5LB470wWtz3nfi_DuQ&s"
+        alt="University of Oxford" class="oxford-logo-fixed">
 
-     AFTER
-   ·─·─·─·
-   │ │ │ │
-   ·─·─·─·
-  distributed
-<span class="caption">the shift</span>
-            </div>
-
-            <div class="ascii-art pulse" style="top: 700px;">
-   INDIVIDUAL
-
-  hallucination?
-       │
-    [source]
-       │
-   ✓ verified
-<span class="caption">check the source</span>
-            </div>
-
-            <div class="ascii-art breathe" style="top: 1300px;">
-  INSTITUTIONAL
-
-  data owner:
-  "I'll share
-   IF I keep
-   control"
-
-  ABC: ✓
-<span class="caption">rational sharing</span>
-            </div>
-
-            <div class="ascii-art float" style="top: 1900px;">
-   SOCIETAL
-
-  withdraw ─┐
-            │
-            ▼
-       [system]
-            │
-       adapts
-<span class="caption">structural alignment</span>
-            </div>
-
-            <div class="ascii-art pulse" style="top: 2500px;">
-  GEOPOLITICAL
-
-  authoritarian:
-    coerce ─▶ ◉
-
-  democratic:
-    volunteer
-        │
-    ·─·─·─·
-<span class="caption">different paths</span>
-            </div>
-
-            <div class="ascii-art breathe" style="top: 3100px;">
-  THE REFRAME
-
-  old: filter
-       bottleneck
-
-  new: everyone
-       filters
-       for
-       everyone
-<span class="caption">scaling synthesis</span>
-            </div>
-
-            <div class="ascii-art float" style="top: 3700px;">
-  WHAT ABC IS
-
-  ✓ attribution
-  ✓ control
-  ✓ verification
-
-  NOT magic
-  just possible
-<span class="caption">technical reality</span>
-            </div>
-
-            <div class="ascii-art pulse" style="top: 4300px;">
-   THE FUTURE
-
-  race to
-  CONNECT
-  not
-  centralize
-
-  ·───·───·
-  │   │   │
-  ·───·───·
-<span class="caption">the choice</span>
-            </div>
-
-            <div class="chapter-header">
-                <p class="chapter-number">Chapter V</p>
-                <h1>Conclusion: AI as a Communication Tool</h1>
-            </div>
-
-            <section id="opening">
-                <p>This thesis opened by observing that several apparently distinct problems in contemporary AI systems share a common structural feature: the absence of attribution-based control. When AI systems add information without attribution, users cannot verify claims. When systems copy training data without preserving contributor control, data owners rationally withhold contributions. When systems branch into multiple instances without accountability mechanisms, governance becomes intractable. The introduction traced how these technical absences cascade upward into consequences at individual, institutional, societal, and geopolitical levels, then asked whether attribution-based control is technically feasible with existing machinery. Chapters 2, 3, and 4 surveyed techniques in deep learning, cryptography, and distributed systems that could provide the three components of ABC. This conclusion returns to the cascading consequences to examine what changes if ABC proves achievable.</p>
-            </section>
-
-            <section id="individual-level">
-                <h2>At the Individual Level</h2>
-                <p>At the individual level, the introduction identified hallucination and disinformation as characteristic problems. Users encounter claims they cannot verify, generated by systems whose reasoning processes remain opaque. Deep voting, as surveyed in Chapter 2, does not eliminate hallucination. Models will continue to produce outputs unsupported by their training data. What changes is the possibility of source inspection [<a href="#ref-3" class="cite">3</a>]. When each token of output can be traced to the training examples that most influenced its generation, users gain the architectural prerequisite for verification. They can examine whether claimed facts derive from sources they consider reliable, whether confident assertions rest on thin evidential bases, whether patterns reflect genuine regularities or artifacts of biased sampling. This does not automatically produce truth, but it provides the foundation upon which verification practices could be built. The individual-level problems identified in the introduction require this foundation.</p>
-            </section>
-
-            <section id="institutional-level">
-                <h2>At the Institutional Level</h2>
-                <p>At the institutional level, the introduction observed that data owners have rational incentives to withhold contributions from AI systems. Contributing data to centralized training pipelines means surrendering control over how that data will be used, who will benefit from insights derived from it, and whether contributors will receive any attribution or compensation. The introduction estimated that this dynamic has locked away six or more orders of magnitude of potentially valuable training data.</p>
-
-                <p>Structured transparency [<a href="#ref-1" class="cite">1</a>], as surveyed in Chapter 3, addresses the technical barrier that makes this withholding rational. When cryptographic mechanisms can enforce access policies [<a href="#ref-6" class="cite">6</a>,<a href="#ref-7" class="cite">7</a>], when contributors can specify conditions under which their data may be used, when audit trails can verify compliance with those conditions, the calculus changes. Data owners might contribute to systems where they retain meaningful control even as their contributions enable collective intelligence. The institutional barriers identified in the introduction were rational responses to architectural limitations. Removing those limitations does not guarantee participation, but it removes the technical obstacle that made withholding the only rational choice.</p>
-            </section>
-
-            <section id="societal-level">
-                <h2>At the Societal Level</h2>
-                <p>At the societal level, the introduction raised questions of governance and alignment that currently dominate discourse in the field [<a href="#ref-8" class="cite">8</a>]. How do we ensure that AI systems behave in accordance with human values? How do we maintain meaningful human control over systems that may eventually exceed human capabilities in many domains? Current approaches typically involve centralized actors tuning systems on samples of human feedback, hoping that the tuning generalizes appropriately.</p>
-
-                <p>The recursive structures surveyed in Chapter 4 suggest an alternative architecture. If AI systems require ongoing contributions from distributed sources [<a href="#ref-6" class="cite">6</a>], and if contributors retain the ability to withdraw those contributions, then alignment becomes structurally enforced rather than centrally imposed. A system that violates contributor values sufficiently to trigger widespread withdrawal loses capability. This is not a complete solution to alignment. Contributors might coordinate to pursue objectives harmful to non-contributors. The mechanisms by which contributors express values through contribution decisions remain underspecified. The assumption that contributors can evaluate system behavior at the speed required for effective feedback may prove optimistic. But the architectural possibility differs from current approaches: collective control without requiring trust in a small number of companies or governments to tune systems appropriately on humanity's behalf.</p>
-            </section>
-
-            <section id="geopolitical-level">
-                <h2>At the Geopolitical Level</h2>
-                <p>At the geopolitical level, the introduction noted a strategic tension facing liberal democracies. Authoritarian states can mandate resource centralization in ways that liberal democracies cannot without violating foundational principles. If AI capability correlates with centralization [<a href="#ref-2" class="cite">2</a>], this creates structural disadvantages for democratic societies.</p>
-
-                <p>The recursive delegation mechanisms in Chapter 4 suggest a different scaling dynamic. If capability can emerge through voluntary coordination of distributed resources rather than coerced aggregation, liberal democracies might access resources unavailable to authoritarian centralization. Citizens globally might contribute to systems that preserve their control in ways they would never contribute to systems under authoritarian control. This is speculative, and competitive dynamics might override architectural properties. But the possibility exists that voluntary coordination at scale could match or exceed what coerced centralization achieves, providing a path toward capable AI systems that does not require compromising democratic values to remain competitive.</p>
-            </section>
-
-            <section id="reframe">
-                <h2>The Reframe</h2>
-                <p>The pattern across these four levels suggests a reframe. The problems identified in the introduction were not primarily failures of intention or governance. They were consequences of infrastructure. The internet scaled the capacity to share information globally, but it did not scale the capacity to filter, aggregate, and verify information at corresponding rates. Those operations still required human attention at every step [<a href="#ref-4" class="cite">4</a>]. When synthesis required human cognition, bottlenecks formed wherever humans could be positioned to aggregate. Platforms emerged to provide synthesis functions because the underlying infrastructure could not. The resulting concentration of control was not a choice but an architectural necessity given available technology.</p>
-
-                <div class="definition-box">
-                    <h3>The Core Contribution</h3>
-                    <p>The thesis contribution is not the pattern of recursive trust propagation. That pattern is ancient. Humans have always extended their reach by trusting others who trust others, delegating judgment through networks of credibility built over time [<a href="#ref-5" class="cite">5</a>].</p>
-                    <p>The contribution is identifying specific technical barriers that prevented this pattern from operating at machine speed, and surveying existing techniques in deep learning, cryptography, and distributed systems that could address those barriers.</p>
-                    <p>Word-of-mouth operated at the speed of human conversation. The machinery surveyed in this thesis could allow analogous trust propagation to operate at the speed of computation.</p>
-                </div>
-            </section>
-
-            <section id="claims">
-                <h2>What the Thesis Claims&mdash;and Does Not</h2>
-                <p>This framing clarifies both what the thesis claims and what it does not. The claim is that ABC appears technically feasible using existing techniques. The evidence is the survey of those techniques across three chapters, demonstrating that:</p>
-                <ul>
-                    <li>Deep voting can provide attribution for model outputs</li>
-                    <li>Cryptographic mechanisms can enforce contributor control over data usage</li>
-                    <li>Recursive structures can enable coordination without central authorities</li>
-                </ul>
-
-                <p>These are technical possibilities, not deployment realities. Whether the techniques compose effectively at scale, whether the computational overhead proves acceptable, whether the coordination dynamics produce the alignment effects suggested above: these remain empirical questions requiring investigation beyond what a survey thesis can provide.</p>
-
-                <p>The thesis also does not claim that technical architecture determines social outcomes. Architecture enables and constrains, but human choices operate within those constraints. Even if ABC proves technically feasible, adoption depends on incentives, network effects, competitive dynamics, and institutional decisions that technical analysis cannot predict. The surveillance infrastructure that currently characterizes AI development emerged not because alternatives were impossible but because the available alternatives were not yet competitive. Whether ABC-enabled alternatives become competitive depends on factors beyond architecture. The honest claim is narrower: if these barriers to collective intelligence without centralized control prove surmountable, then concentration of AI capability is a choice rather than a necessity. The thesis has tried to show that the barriers may indeed be surmountable.</p>
-            </section>
-
-            <section id="future" class="vision">
-                <h2>The Future of AI</h2>
-                <p>The introduction ended by suggesting that the future of AI need not be a race to centralize. The chapters that followed surveyed technical machinery that could make that suggestion more than aspiration. Whether the machinery works as described, whether it composes into systems that function at scale, whether adoption dynamics favor its deployment: these questions remain open. But the architectural possibility now has technical substance behind it.</p>
-
-                <p><strong>The future of AI might instead become a race to connect</strong>, through systems that preserve attribution and control even as they enable collective intelligence exceeding what any centralized system could achieve.</p>
-
-                <p>Determining whether this possibility can become reality is work that remains to be done.</p>
-            </section>
-
-            <section class="references">
-                <h2>References</h2>
-                <ol>
-                    <li id="ref-1"><span class="authors">Trask, A., Bluemke, E., Garfinkel, B., Ghezzou Cuervas-Mons, C., & Dafoe, A.</span> (2020). <a href="https://arxiv.org/abs/2012.08347"><span class="title">Beyond Privacy Trade-offs with Structured Transparency.</span></a> <span class="venue">arXiv:2012.08347</span>.</li>
-                    <li id="ref-2"><span class="authors">Kaplan, J., et al.</span> (2020). <a href="https://arxiv.org/abs/2001.08361"><span class="title">Scaling Laws for Neural Language Models.</span></a> <span class="venue">arXiv:2001.08361</span>.</li>
-                    <li id="ref-3"><span class="authors">Borgeaud, S., et al.</span> (2022). <a href="https://arxiv.org/abs/2112.04426"><span class="title">Improving language models by retrieving from trillions of tokens.</span></a> <span class="venue">ICML 2022</span>, 2206–2240.</li>
-                    <li id="ref-4"><span class="authors">Dunbar, R. I. M.</span> (1993). <a href="https://doi.org/10.1017/S0140525X00032325"><span class="title">Coevolution of neocortical size, group size and language in humans.</span></a> <span class="venue">Behavioral and Brain Sciences</span>, 16(4), 681–735.</li>
-                    <li id="ref-5"><span class="authors">Granovetter, M. S.</span> (1973). <a href="https://doi.org/10.1086/225469"><span class="title">The Strength of Weak Ties.</span></a> <span class="venue">American Journal of Sociology</span>, 78(6), 1360–1380.</li>
-                    <li id="ref-6"><span class="authors">McMahan, H. B., et al.</span> (2017). <a href="https://arxiv.org/abs/1602.05629"><span class="title">Communication-Efficient Learning of Deep Networks from Decentralized Data.</span></a> <span class="venue">AISTATS 2017</span>.</li>
-                    <li id="ref-7"><span class="authors">Dwork, C., & Roth, A.</span> (2014). <a href="https://doi.org/10.1561/0400000042"><span class="title">The Algorithmic Foundations of Differential Privacy.</span></a> <span class="venue">Foundations and Trends in Theoretical Computer Science</span>, 9(3–4), 211–407.</li>
-                    <li id="ref-8"><span class="authors">Gabriel, I.</span> (2020). <a href="https://doi.org/10.1007/s11023-020-09539-2"><span class="title">Artificial intelligence, values, and alignment.</span></a> <span class="venue">Minds and Machines</span>, 30(3), 411–437.</li>
-                </ol>
-            </section>
-
-            <nav class="chapter-nav">
-                <a href="chapter4.html" class="prev">Chapter IV: Broad Listening</a>
-                <a href="about.html" class="next">About the Author</a>
-            </nav>
-        </main>
-    </div>
-
-    <footer>
-        <p>Andrew Trask &middot; University of Oxford</p>
-    </footer>
-
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCa5kJX0IfZqgsgGUg5LB470wWtz3nfi_DuQ&s" alt="University of Oxford" class="oxford-logo-fixed">
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tocLinks = document.querySelectorAll('.toc-sidebar a');
-            const sections = [];
-            tocLinks.forEach(link => {
-                const id = link.getAttribute('href').substring(1);
-                const section = document.getElementById(id);
-                if (section) sections.push({ id, element: section, link });
-            });
-            function updateActiveLink() {
-                const scrollPos = window.scrollY + 100;
-                let currentSection = sections[0];
-                for (const section of sections) {
-                    if (section.element.offsetTop <= scrollPos) currentSection = section;
-                }
-                tocLinks.forEach(link => link.classList.remove('active'));
-                if (currentSection) currentSection.link.classList.add('active');
-            }
-            window.addEventListener('scroll', updateActiveLink);
-            updateActiveLink();
-        });
-    </script>
+    <script src='main.js' type='text/javascript' defer></script>
 </body>
+
 </html>

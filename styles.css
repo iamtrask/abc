@@ -183,6 +183,7 @@ header .affiliation {
 section {
     margin-bottom: 2.5rem;
     position: relative;
+    scroll-margin-block: calc(var(--header-height) + 14px);
 }
 
 section h2 {
@@ -655,6 +656,11 @@ main {
     padding: 0.5rem 0.75rem;
     text-align: center;
     vertical-align: middle;
+}
+
+.data-table td img {
+    display: block;
+    margin: auto;
 }
 
 .data-table th {
