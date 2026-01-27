@@ -108,179 +108,83 @@
             </div>
 
             <main>
-                <!-- Margin ASCII Art - positioned absolutely, scrolls with content -->
-                <div class="ascii-art float" style="top: 50px;">
-                    TRANSFORMATION
-
-                    BEFORE
-                    ◉
-                    /│\
-                    · · ·
-                    central
-
-                    AFTER
-                    ·─·─·─·
-                    │ │ │ │
-                    ·─·─·─·
-                    distributed
-                    <span class="caption">the shift</span>
-                </div>
-
-                <div class="ascii-art pulse" style="top: 700px;">
-                    INDIVIDUAL
-
-                    hallucination?
-                    │
-                    [source]
-                    │
-                    ✓ verified
-                    <span class="caption">check the source</span>
-                </div>
-
-                <div class="ascii-art breathe" style="top: 1300px;">
-                    INSTITUTIONAL
-
-                    data owner:
-                    "I'll share
-                    IF I keep
-                    control"
-
-                    ABC: ✓
-                    <span class="caption">rational sharing</span>
-                </div>
-
-                <div class="ascii-art float" style="top: 1900px;">
-                    SOCIETAL
-
-                    withdraw ─┐
-                    │
-                    ▼
-                    [system]
-                    │
-                    adapts
-                    <span class="caption">structural alignment</span>
-                </div>
-
-                <div class="ascii-art pulse" style="top: 2500px;">
-                    GEOPOLITICAL
-
-                    authoritarian:
-                    coerce ─▶ ◉
-
-                    democratic:
-                    volunteer
-                    │
-                    ·─·─·─·
-                    <span class="caption">different paths</span>
-                </div>
-
-                <div class="ascii-art breathe" style="top: 3100px;">
-                    THE REFRAME
-
-                    old: filter
-                    bottleneck
-
-                    new: everyone
-                    filters
-                    for
-                    everyone
-                    <span class="caption">scaling synthesis</span>
-                </div>
-
-                <div class="ascii-art float" style="top: 3700px;">
-                    WHAT ABC IS
-
-                    ✓ attribution
-                    ✓ control
-                    ✓ verification
-
-                    NOT magic
-                    just possible
-                    <span class="caption">technical reality</span>
-                </div>
-
-                <div class="ascii-art pulse" style="top: 4300px;">
-                    THE FUTURE
-
-                    race to
-                    CONNECT
-                    not
-                    centralize
-
-                    ·───·───·
-                    │ │ │
-                    ·───·───·
-                    <span class="caption">the choice</span>
-                </div>
-
                 <div class="chapter-header">
                     <p class="chapter-number">Chapter V</p>
-                    <h1>Conclusion: AI as a Communication Tool</h1>
+
+                    <h1>Conclusion</h1>
                 </div>
 
                 <section id="opening">
-                    <p>This thesis opened by observing that several apparently distinct problems in contemporary AI
+                    <p>
+                        This thesis opened by observing that several apparently distinct problems in contemporary AI
                         systems share a common structural feature: the absence of <a
-                            href="https://attribution-based-control.ai/">attribution-based control</a>. When AI systems
-                        add information without attribution, users cannot verify claims. When systems copy training data
-                        without preserving contributor control, data owners rationally withhold contributions. When
-                        systems branch into multiple instances without accountability mechanisms, governance becomes
-                        intractable. The introduction traced how these technical absences cascade upward into
-                        consequences at individual, institutional, societal, and geopolitical levels, then asked whether
-                        attribution-based control is technically feasible with existing machinery. Chapters 2, 3, and 4
-                        surveyed techniques in deep learning, cryptography, and distributed systems that could provide
-                        the three components of ABC. This conclusion returns to the cascading consequences to examine
-                        what changes if ABC proves achievable.</p>
+                            href="https://attribution-based-control.ai/">attribution-based control</a>. When
+                        AI systems add information without attribution, users cannot verify claims. When systems
+                        copy training data without preserving contributor control, data owners rationally withhold
+                        contributions. When systems branch into multiple instances without accountability mechanisms,
+                        governance becomes intractable. The introduction traced how these technical absences cascade
+                        upward into consequences at individual, institutional, societal, and geopolitical levels, then
+                        asked
+                        whether attribution-based control is technically feasible with existing machinery. Chapters 2,
+                        3,
+                        and 4 surveyed techniques in deep learning, cryptography, and distributed systems that could
+                        provide the three components of ABC. This conclusion returns to the cascading consequences
+                        to examine what changes if ABC proves achievable.
+                    </p>
                 </section>
 
                 <section id="individual-level">
                     <h2>At the Individual Level</h2>
-                    <p>At the individual level, the introduction identified hallucination and disinformation as
+
+                    <p>
+                        At the individual level, the introduction identified hallucination and disinformation as
                         characteristic problems. Users encounter claims they cannot verify, generated by systems whose
                         reasoning processes remain opaque. Deep voting, as surveyed in Chapter 2, does not eliminate
                         hallucination. Models will continue to produce outputs unsupported by their training data. What
-                        changes is the possibility of source inspection [<a href="#ref-3" class="cite">3</a>]. When each
-                        token of output can be traced to the training examples that most influenced its generation,
-                        users gain the architectural prerequisite for verification. They can examine whether claimed
-                        facts derive from sources they consider reliable, whether confident assertions rest on thin
-                        evidential bases, whether patterns reflect genuine regularities or artifacts of biased sampling.
-                        This does not automatically produce truth, but it provides the foundation upon which
-                        verification practices could be built. The individual-level problems identified in the
-                        introduction require this foundation.</p>
+                        changes is the possibility of source inspection. When each token of output can be traced to the
+                        training examples that most influenced its generation, users gain the architectural prerequisite
+                        for
+                        verification. They can examine whether claimed facts derive from sources they consider reliable,
+                        whether confident assertions rest on thin evidential bases, whether patterns reflect genuine
+                        regularities or artifacts of biased sampling. This does not automatically produce truth, but it
+                        provides the foundation upon which verification practices could be built. The individual-level
+                        problems identified in the introduction require this foundation.
+                    </p>
                 </section>
 
                 <section id="institutional-level">
                     <h2>At the Institutional Level</h2>
-                    <p>At the institutional level, the introduction observed that data owners have rational incentives
+
+                    <p>
+                        At the institutional level, the introduction observed that data owners have rational incentives
                         to withhold contributions from AI systems. Contributing data to centralized training pipelines
                         means surrendering control over how that data will be used, who will benefit from insights
                         derived from it, and whether contributors will receive any attribution or compensation. The
                         introduction estimated that this dynamic has locked away six or more orders of magnitude of
-                        potentially valuable training data.</p>
-
-                    <p>Structured transparency [<a href="#ref-1" class="cite">1</a>], as surveyed in Chapter 3,
-                        addresses the technical barrier that makes this withholding rational. When cryptographic
-                        mechanisms can enforce access policies [<a href="#ref-6" class="cite">6</a>,<a href="#ref-7"
-                            class="cite">7</a>], when contributors can specify conditions under which their data may be
-                        used, when audit trails can verify compliance with those conditions, the calculus changes. Data
-                        owners might contribute to systems where they retain meaningful control even as their
-                        contributions enable collective intelligence. The institutional barriers identified in the
+                        potentially valuable training data. Structured transparency, as surveyed in Chapter 3, addresses
+                        the technical barrier that makes this withholding rational. When cryptographic mechanisms
+                        can enforce access policies, when contributors can specify conditions under which their data
+                        may be used, when audit trails can verify compliance with those conditions, the calculus
+                        changes. Data owners might contribute to systems where they retain meaningful control even
+                        as their contributions enable collective intelligence. The institutional barriers identified in
+                        the
                         introduction were rational responses to architectural limitations. Removing those limitations
                         does not guarantee participation, but it removes the technical obstacle that made withholding
-                        the only rational choice.</p>
+                        the only rational choice.
+                    </p>
                 </section>
 
                 <section id="societal-level">
                     <h2>At the Societal Level</h2>
-                    <p>At the societal level, the introduction raised questions of governance and alignment that
-                        currently dominate discourse in the field [<a href="#ref-8" class="cite">8</a>]. How do we
-                        ensure that AI systems behave in accordance with human values? How do we maintain meaningful
-                        human control over systems that may eventually exceed human capabilities in many domains?
-                        Current approaches typically involve centralized actors tuning systems on samples of human
-                        feedback, hoping that the tuning generalizes appropriately.</p>
 
-                    <p>The recursive structures surveyed in Chapter 4 suggest an alternative architecture. If AI systems
-                        require ongoing contributions from distributed sources [<a href="#ref-6" class="cite">6</a>],
+                    <p>
+                        At the societal level, the introduction raised questions of governance and alignment that
+                        currently dominate discourse in the field. How do we ensure that AI systems behave in accordance
+                        with human values? How do we maintain meaningful human control over systems
+                        that may eventually exceed human capabilities in many domains? Current approaches typically
+                        involve centralized actors tuning systems on samples of human feedback, hoping that the
+                        tuning generalizes appropriately. The recursive structures surveyed in Chapter 4 suggest an
+                        alternative architecture. If AI systems require ongoing contributions from distributed sources,
                         and if contributors retain the ability to withdraw those contributions, then alignment becomes
                         structurally enforced rather than centrally imposed. A system that violates contributor values
                         sufficiently to trigger widespread withdrawal loses capability. This is not a complete solution
@@ -288,96 +192,106 @@
                         The mechanisms by which contributors express values through contribution decisions remain
                         underspecified. The assumption that contributors can evaluate system behavior at the speed
                         required for effective feedback may prove optimistic. But the architectural possibility differs
-                        from current approaches: collective control without requiring trust in a small number of
-                        companies or governments to tune systems appropriately on humanity's behalf.</p>
+                        from
+                        current approaches: collective control without requiring trust in a small number of companies or
+                        governments to tune systems appropriately on humanity’s behalf.
+                    </p>
                 </section>
 
                 <section id="geopolitical-level">
                     <h2>At the Geopolitical Level</h2>
-                    <p>At the geopolitical level, the introduction noted a strategic tension facing liberal democracies.
-                        Authoritarian states can mandate resource centralization in ways that liberal democracies cannot
-                        without violating foundational principles. If AI capability correlates with centralization [<a
-                            href="#ref-2" class="cite">2</a>], this creates structural disadvantages for democratic
-                        societies.</p>
 
-                    <p>The recursive delegation mechanisms in Chapter 4 suggest a different scaling dynamic. If
-                        capability can emerge through voluntary coordination of distributed resources rather than
-                        coerced aggregation, liberal democracies might access resources unavailable to authoritarian
-                        centralization. Citizens globally might contribute to systems that preserve their control in
-                        ways they would never contribute to systems under authoritarian control. This is speculative,
-                        and competitive dynamics might override architectural properties. But the possibility exists
-                        that voluntary coordination at scale could match or exceed what coerced centralization achieves,
-                        providing a path toward capable AI systems that does not require compromising democratic values
-                        to remain competitive.</p>
+                    <p>
+                        At the geopolitical level, the introduction noted a strategic tension facing liberal
+                        democracies.
+                        Authoritarian states can mandate resource centralization in ways that liberal democracies cannot
+                        without violating foundational principles. If AI capability correlates with centralization, this
+                        creates structural disadvantages for democratic societies. The recursive delegation mechanisms
+                        in Chapter 4 suggest a different scaling dynamic. If capability can emerge through voluntary
+                        coordination of distributed resources rather than coerced aggregation, liberal democracies might
+                        access resources unavailable to authoritarian centralization. Citizens globally might contribute
+                        to systems that preserve their control in ways they would never contribute to systems under
+                        authoritarian control. This is speculative, and competitive dynamics might override
+                        architectural
+                        properties. But the possibility exists that voluntary coordination at scale could match or
+                        exceed
+                        what coerced centralization achieves, providing a path toward capable AI systems that does not
+                        require compromising democratic values to remain competitive.
+                    </p>
                 </section>
 
                 <section id="reframe">
                     <h2>The Reframe</h2>
-                    <p>The pattern across these four levels suggests a reframe. The problems identified in the
+
+                    <p>
+                        The pattern across these four levels suggests a reframe. The problems identified in the
                         introduction were not primarily failures of intention or governance. They were consequences of
                         infrastructure. The internet scaled the capacity to share information globally, but it did not
-                        scale the capacity to filter, aggregate, and verify information at corresponding rates. Those
-                        operations still required human attention at every step [<a href="#ref-4" class="cite">4</a>].
-                        When synthesis required human cognition, bottlenecks formed wherever humans could be positioned
-                        to aggregate. Platforms emerged to provide synthesis functions because the underlying
-                        infrastructure could not. The resulting concentration of control was not a choice but an
-                        architectural necessity given available technology.</p>
-
-                    <div class="definition-box">
-                        <h3>The Core Contribution</h3>
-                        <p>The thesis contribution is not the pattern of recursive trust propagation. That pattern is
-                            ancient. Humans have always extended their reach by trusting others who trust others,
-                            delegating judgment through networks of credibility built over time [<a href="#ref-5"
-                                class="cite">5</a>].</p>
-                        <p>The contribution is identifying specific technical barriers that prevented this pattern from
-                            operating at machine speed, and surveying existing techniques in deep learning,
-                            cryptography, and distributed systems that could address those barriers.</p>
-                        <p>Word-of-mouth operated at the speed of human conversation. The machinery surveyed in this
-                            thesis could allow analogous trust propagation to operate at the speed of computation.</p>
-                    </div>
+                        scale
+                        the capacity to filter, aggregate, and verify information at corresponding rates. Those
+                        operations
+                        still required human attention at every step. When synthesis required human cognition,
+                        bottlenecks formed wherever humans could be positioned to aggregate. Platforms emerged to
+                        provide
+                        synthesis functions because the underlying infrastructure could not. The resulting concentration
+                        of control was not a choice but an architectural necessity given available technology. The
+                        thesis
+                        contribution is not the pattern of recursive trust propagation. That pattern is ancient. Humans
+                        have always extended their reach by trusting others who trust others, delegating judgment
+                        through networks of credibility built over time. The contribution is identifying specific
+                        technical
+                        barriers that prevented this pattern from operating at machine speed, and surveying existing
+                        techniques in deep learning, cryptography, and distributed systems that could address those
+                        barriers. Word-of-mouth operated at the speed of human conversation. The machinery surveyed
+                        in this thesis could allow analogous trust propagation to operate at the speed of computation.
+                    </p>                   
                 </section>
 
                 <section id="claims">
                     <h2>What the Thesis Claims&mdash;and Does Not</h2>
-                    <p>This framing clarifies both what the thesis claims and what it does not. The claim is that ABC
-                        appears technically feasible using existing techniques. The evidence is the survey of those
-                        techniques across three chapters, demonstrating that:</p>
-                    <ul>
-                        <li>Deep voting can provide attribution for model outputs</li>
-                        <li>Cryptographic mechanisms can enforce contributor control over data usage</li>
-                        <li>Recursive structures can enable coordination without central authorities</li>
-                    </ul>
 
-                    <p>These are technical possibilities, not deployment realities. Whether the techniques compose
-                        effectively at scale, whether the computational overhead proves acceptable, whether the
-                        coordination dynamics produce the alignment effects suggested above: these remain empirical
-                        questions requiring investigation beyond what a survey thesis can provide.</p>
+                     <p>
+                        This framing clarifies both what the thesis claims and what it does not. The claim is that
+                        ABC appears technically feasible using existing techniques. The evidence is the survey of those
+                        techniques across three chapters, demonstrating that deep voting can provide attribution for
+                        model outputs, that cryptographic mechanisms can enforce contributor control over data usage,
+                        95
+                        and that recursive structures can enable coordination without central authorities. These are
+                        technical possibilities, not deployment realities. Whether the techniques compose effectively
+                        at scale, whether the computational overhead proves acceptable, whether the coordination
+                        dynamics produce the alignment effects suggested above: these remain empirical questions
+                        requiring investigation beyond what a survey thesis can provide.
+                    </p>
 
-                    <p>The thesis also does not claim that technical architecture determines social outcomes.
+                    <p>
+                        The thesis also does not claim that technical architecture determines social outcomes.
                         Architecture enables and constrains, but human choices operate within those constraints. Even if
                         ABC proves technically feasible, adoption depends on incentives, network effects, competitive
                         dynamics, and institutional decisions that technical analysis cannot predict. The surveillance
-                        infrastructure that currently characterizes AI development emerged not because alternatives were
-                        impossible but because the available alternatives were not yet competitive. Whether ABC-enabled
-                        alternatives become competitive depends on factors beyond architecture. The honest claim is
-                        narrower: if these barriers to collective intelligence without centralized control prove
+                        infrastructure that currently characterizes AI development emerged not because alternatives
+                        were impossible but because the available alternatives were not yet competitive. Whether
+                        ABCenabled alternatives become competitive depends on factors beyond architecture. The honest
+                        claim is narrower: if these barriers to collective intelligence without centralized control
+                        prove
                         surmountable, then concentration of AI capability is a choice rather than a necessity. The
-                        thesis has tried to show that the barriers may indeed be surmountable.</p>
+                        thesis
+                        has tried to show that the barriers may indeed be surmountable.
+                    </p>
                 </section>
 
                 <section id="future" class="vision">
                     <h2>The Future of AI</h2>
-                    <p>The introduction ended by suggesting that the future of AI need not be a race to centralize. The
-                        chapters that followed surveyed technical machinery that could make that suggestion more than
-                        aspiration. Whether the machinery works as described, whether it composes into systems that
-                        function at scale, whether adoption dynamics favor its deployment: these questions remain open.
-                        But the architectural possibility now has technical substance behind it.</p>
 
-                    <p><strong>The future of AI might instead become a race to connect</strong>, through systems that
-                        preserve attribution and control even as they enable collective intelligence exceeding what any
-                        centralized system could achieve.</p>
-
-                    <p>Determining whether this possibility can become reality is work that remains to be done.</p>
+                    <p>
+                        The introduction ended by suggesting that the future of AI need not be a race to centralize.
+                        The chapters that followed surveyed technical machinery that could make that suggestion more
+                        than aspiration. Whether the machinery works as described, whether it composes into systems
+                        that function at scale, whether adoption dynamics favor its deployment: these questions remain
+                        open. But the architectural possibility now has technical substance behind it. The future of AI
+                        might instead become a race to connect, through systems that preserve attribution and control
+                        even as they enable collective intelligence exceeding what any centralized system could achieve.
+                        Determining whether this possibility can become reality is work that remains to be done.
+                    </p>
                 </section>
 
                 <section class="references">
