@@ -1778,7 +1778,7 @@
                             control</a> (ABC). An AI model possesses attribution-based
                         control when two properties are true: data sources control which AI predictions they support, AI
                         users control which data sources they rely upon for an AI prediction. Following this definition
-                        (Definition <a href="index.html#defintion-1-1-1">1.1.1</a>), ABC implies certain architectural
+                        (Definition <a href="index.html#definition-1-1-1">1.1.1</a>), ABC implies certain architectural
                         properties as novel requirements:
                     </p>
 
@@ -2672,7 +2672,8 @@
                 </section>
 
                 <section id="second-hypothesis">
-                    <h2>Second Hypothesis: Deep Voting with Intelligence Budgets</h2>
+                    <h2>Second Hypothesis: From Deep Learning to Deep Voting
+                        with AI Recycling and Src-specific Intelligence Budgets</h2>
 
                     <figure class="full-width">
                         <img src="1411.3146/abc_ch2_7_0_v5.png" alt="Second Hypothesis graph">
@@ -2680,23 +2681,34 @@
                             section.</figcaption>
                     </figure>
 
-                    <p>The previous section revealed how privacy mechanisms might naturally separate dense from sparse
-                        information patterns. Yet this theoretical insight raises a practical question: how do we
+                    <p>
+                        The previous section revealed how privacy mechanisms might naturally separate dense from
+                        sparse information patterns. Yet this theoretical insight raises a practical question: how do we
                         actually <em>implement</em> the measurement and control regimes we defined? The definitions in
-                        the previous section assumed worst-case bounds (requiring that ε constraints hold for
-                        <em>all</em> pairs of neighboring datasets). But attribution-based control requires the
-                        opposite: not uniform bounds across all sources, but <em>source-specific</em> control where each
-                        source can have different influence levels matching different stakeholder needs.
+                        the
+                        previous section assumed worst-case bounds (requiring that ϵ constraints hold for <em>all</em>
+                        pairs of
+                        neighboring datasets). But attribution-based control requires the opposite: not uniform bounds
+                        across all sources, but <em>source-specific</em> control where each source can have different
+                        influence
+                        levels matching different stakeholder needs.
                     </p>
 
                     <h3>From Worst-Case to Individual Differential Privacy</h3>
-                    <p>Standard differential privacy enforces worst-case bounds across all possible pairs of neighboring
-                        datasets. Consider a dataset where most individuals' data appears in common patterns, but one
+
+                    <p>
+                        Standard differential privacy enforces worst-case bounds across all possible pairs of
+                        neighboring
+                        datasets. Consider a dataset where most individuals’ data appears in common patterns, but one
                         individual has highly unique data. Worst-case differential privacy must constrain the entire
-                        mechanism based on that one outlier, reducing utility for everyone—even though the mechanism
+                        mechanism based on that one outlier, reducing utility for everyone&mdash;even though the
+                        mechanism
                         only ever operates on the <em>actual</em> dataset, not all possible datasets. Individual
-                        differential privacy provides a more nuanced approach by focusing privacy guarantees on the
-                        <em>actual</em> dataset rather than all possible datasets:
+                        differential
+                        privacy
+                        (<a href="#ref-66" class="cite">Soria-Comas et al., 2016</a>) provides a more nuanced approach
+                        by focusing privacy guarantees
+                        on the <em>actual</em> dataset rather than all possible datasets:
                     </p>
 
                     <div class="definition-box">
@@ -2708,17 +2720,33 @@
                             \Pr[\mathcal{M}(D) \in S] \leq \exp(\epsilon) \cdot \Pr[\mathcal{M}(D') \in S]$</p>
                     </div>
 
-                    <p>The crucial difference from standard DP: $D$ refers to the <em>actual</em> dataset being
+                    <p>
+                        The crucial difference from standard DP: $D$ refers to the <em>actual</em> dataset being
                         protected, while $D'$ ranges over $D$'s neighbors. Standard DP requires indistinguishability for
                         <em>any</em> pair of neighbors; individual DP requires indistinguishability only between the
-                        actual dataset and its neighbors.
+                        actual dataset and its neighbors. This asymmetry allows the mechanism to adjust noise based on
+                        properties of the
+                        actual dataset (such as its local sensitivity) rather than worst-case properties across all
+                        possible
+                        datasets.
+                    </p>
+
+                    <p>
+                        This enables tighter privacy guarantees in practice. When the actual dataset has low local
+                        sensitivity (changing any individual barely affects outputs), individual DP requires minimal
+                        noise. When the actual dataset has high local sensitivity (some individuals significantly affect
+                        outputs), individual DP adds proportionate noise. Standard DP must always assume worst-case
+                        sensitivity regardless of the actual dataset’s properties.
                     </p>
 
                     <h3>From Individual Privacy to Individual Attribution</h3>
-                    <p>Just as we extended standard differential privacy to define attribution regimes in the previous
+
+                    <p>
+                        Just as we extended standard differential privacy to define attribution regimes in the previous
                         section, we can extend individual differential privacy to define individual attribution. The key
-                        insight remains the same: privacy and attribution are opposite ends of the same ε spectrum, now
-                        applied to the actual dataset rather than worst-case bounds.</p>
+                        insight remains the same: privacy and attribution are opposite ends of the same ϵ spectrum, now
+                        applied to the actual dataset rather than worst-case bounds.
+                    </p>
 
                     <div class="definition-box">
                         <h3>Individual Differential Privacy vs. Attribution</h3>
@@ -2736,17 +2764,23 @@
                     </div>
 
                     <h3>From Examples to Sources: Group Differential Privacy</h3>
-                    <p>But attribution-based control requires more than individual-level bounds, it requires
-                        <em>source-level</em> control. Individual differential privacy protects single examples in the
-                        actual dataset, but data sources typically contribute many examples. Consider a medical AI
-                        trained on data from 100 hospitals: each hospital contributes thousands of patient records. ABC
-                        needs to measure and control influence at the hospital level, not just the individual patient
-                        level. The differential privacy literature addresses this through group differential privacy,
-                        which extends privacy guarantees from individuals to groups of records:
+
+                    <p>
+                        But attribution-based control requires more than individual-level bounds, it requires
+                        <em>source-level</em>
+                        control. Individual differential privacy protects single examples in the actual dataset, but
+                        data
+                        sources typically contribute many examples. Consider a medical AI trained on data from 100
+                        hospitals: each hospital contributes thousands of patient records. ABC needs to measure and
+                        control influence at the hospital level, not just the individual patient level. The differential
+                        privacy literature addresses this through group differential privacy (<a href="#ref-67"
+                            class="cite">Dwork et al., 2014</a>), which
+                        extends privacy guarantees from individuals to groups of records:
                     </p>
 
                     <div class="definition-box">
                         <h3>Group Differential Privacy</h3>
+
                         <p>A randomized mechanism $\mathcal{M}: \mathcal{D} \to \mathcal{R}$ satisfies ε-group
                             differential privacy for groups of size $k$ if for all datasets $D, D'$ differing in at most
                             $k$ records and all subsets of outputs $S \subseteq \mathcal{R}$:</p>
@@ -2769,10 +2803,65 @@
                             \Pr[\mathcal{M}(D) \in S] \leq \exp(\epsilon_s) \cdot \Pr[\mathcal{M}(D') \in S]$</p>
                     </div>
 
+                    <p>
+                        Standard differential privacy automatically provides group privacy through composition: if
+                        a mechanism satisfies $ϵ$-DP for individuals, it satisfies $kϵ$-DP for groups of size $k$.
+                        However,
+                        this is a worst-case bound that assumes all $k$ individuals have maximal independent influence.
+                        Group differential privacy makes group protection explicit, enabling tighter analysis when group
+                        members have correlated data or when mechanisms can exploit group structure.
+                    </p>
+
+                    <p>
+                        We can combine group differential privacy with individual differential privacy to obtain
+                        source-level control calibrated to the actual dataset. When we partition a dataset by sources
+                        \( D = \bigcup_{s \in S} D_s \), we treat each source as a group and apply individual DP at the
+                        group level:
+                    </p>
+
+                    <div class="definition-box">
+                        <h3>Source-Level Individual Differential Privacy</h3>
+
+                        <p>
+                            Given a dataset \( D \) partitioned by sources
+                            \( D = \bigcup_{s \in S} D_s \), a response mechanism \( \mathcal{M}(\cdot) \)
+                            satisfies \( \epsilon_s \)-individual differential privacy for source \( s \) if,
+                            for any dataset \( D' \) differing from \( D \) only in source \( s \)’s data
+                            (i.e., \( D' = D_{-s} \cup D'_s \) where \( |D'_s| = |D_s| \)),
+                            and any \( S \subset \mathrm{Range}(\mathcal{M}) \):
+                        </p>
+
+                        <p style="text-align: center;">
+                            \[
+                            \exp(-\epsilon_s)\,\Pr[\mathcal{M}(D') \in S]
+                            \;\le\;
+                            \Pr[\mathcal{M}(D) \in S]
+                            \;\le\;
+                            \exp(\epsilon_s)\,\Pr[\mathcal{M}(D') \in S]
+                            \]
+                        </p>
+                    </div>
+
+                    <p>
+                        This combines group DP’s extension to multiple records with individual DP’s calibration
+                        to the actual dataset. Each source s receives its own privacy parameter \( \epsilon_s \)
+                        measuring influence
+                        on the actual dataset $D$, not worst-case influence across all possible datasets. A hospital
+                        contributing highly unique medical data might have large \( \epsilon_s \) for the actual
+                        dataset, while a
+                        hospital contributing common patterns might have small \( \epsilon_s \) (without forcing all
+                        hospitals to
+                        share worst-case bounds).
+                    </p>
+
                     <h3>From Source-Level Privacy to Source-Level Attribution</h3>
-                    <p>Just as individual DP extends to attribution regimes (privacy, measurement, attribution),
-                        source-level individual DP extends to source-level attribution. We can quantitatively measure
-                        each source's influence on the actual dataset:</p>
+
+                    <p>
+                        Just as individual DP extends to attribution regimes (privacy, measurement, attribution),
+                        sourcelevel individual DP extends to source-level attribution. We can quantitatively measure
+                        each
+                        source’s influence on the actual dataset:
+                    </p>
 
                     <div class="definition-box">
                         <h3>Source-Level Individual Differential Attribution</h3>
@@ -2783,16 +2872,49 @@
                             D_\alpha^\leftrightarrow(\mathcal{A}(D)\|\mathcal{A}(D^{-s})) =
                             \max\{D_\alpha(\mathcal{A}(D)\|\mathcal{A}(D^{-s})),
                             D_\alpha(\mathcal{A}(D^{-s})\|\mathcal{A}(D))\}$</p>
-                        <p>where $D_\alpha$ is the Rényi divergence of order $\alpha$, $D^{-s} = D \setminus D_s$
+                        <p>where $D_\alpha$ is the Rényi divergence of order $\alpha$<a href="#sidenote-4"
+                                class="sidenote-ref"><sup>4</sup></a>, $D^{-s} = D \setminus D_s$
                             represents the dataset with source $s$ removed, and $\mathcal{A}(D)$ represents the output
                             distribution of algorithm $\mathcal{A}$ on dataset $D$.</p>
                     </div>
 
-                    <p>This measures each source's attribution relative to the actual dataset $D$ by quantifying how
-                        predictions change when that specific source is included versus excluded. This enables the
-                        diverse source-level control ABC requires.</p>
+                    <p>
+                        This measures each source’s attribution relative to the actual dataset \( D \)
+                        by quantifying how predictions change when that specific source is included
+                        versus excluded. Unlike standard group DP (which provides worst-case
+                        \( k\epsilon \) bounds for all groups of size \( k \)), source-level individual
+                        attribution calibrates to actual dataset properties: a medical research paper
+                        might have high attribution for predictions in its domain (large divergence
+                        from \( D_{-s} \)) but negligible attribution for unrelated queries (small
+                        divergence).
+                    </p>
+
+                    <p>
+                        This enables the diverse source-level control ABC requires. Consider the medical AI trained
+                        on 100 hospitals: some hospitals can demand privacy (enforce small \( \epsilon_s \) calibrated
+                        to their actual
+                        data), others can guarantee attribution (enforce large ϵs ensuring measurable influence), others
+                        can simply track their contribution (measure \( \epsilon_s \) without bounds). Worst-case group
+                        DP cannot
+                        accommodate this diversity; it forces uniform \( k\epsilon \) bounds across all groups of size
+                        \( k \).
+                        Source-level
+                        individual attribution provides per-source control adjusted to the actual dataset, precisely
+                        what
+                        attribution-based control requires.
+                    </p>
+
+                    <div class="sidenote" id="sidenote-4">
+                        <p>
+                            <sup>4</sup>
+                            Rényi divergence generalizes both KL divergence
+  (\( \alpha \to 1 \)) and max divergence (\( \alpha \to \infty \)),
+  providing tractable computation with tunable sensitivity–privacy tradeoffs.
+                        </p>
+                    </div>
 
                     <h3>Intelligence Budgets: Implementing Individual Source Control</h3>
+
                     <p>This source-level individual attribution measure enables a practical control mechanism:
                         <em>intelligence budgets</em>. Rather than simply measuring influence after the fact, we can
                         actively control how much each source influences predictions through architectural routing
@@ -3773,6 +3895,29 @@
                             <span class="venue">
                                 Deep learning with differential privacy. In <em>Proceedings of the 2016 ACM SIGSAC
                                     Conference on Computer and Communications Security</em>, CCS’16. ACM, October
+                            </span>
+                        </li>
+
+                        <li id="ref-66">
+                            <span class="authors">
+                                J. Soria-Comas, J. Domingo-Ferrer, D. Sanchez, and D. Meg ´ ´ıas. 2016.
+                            </span>
+
+                            <span class="venue">
+                                Individual differential privacy: A utility-preserving formulation of differential
+                                privacy guarantees. <em>CoRR</em>,
+                                abs/1612.02298.
+                            </span>
+                        </li>
+
+                        <li id="ref-67">
+                            <span class="authors">
+                                C. Dwork, A. Roth, et al. 2014.
+                            </span>
+
+                            <span class="venue">
+                                The algorithmic foundations of differential privacy. e, Foundations
+                                and Trends® in Theoretical Computer Science, 9(3–4):211–407.
                             </span>
                         </li>
                     </ol>
