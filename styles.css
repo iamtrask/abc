@@ -644,6 +644,10 @@ main {
     scroll-margin-block: calc(var(--header-height) + 14px);
 }
 
+.data-table:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
 .data-table caption {
     font-style: italic;
     text-align: center;
@@ -658,6 +662,7 @@ main {
     padding: 0.5rem 0.75rem;
     text-align: center;
     vertical-align: middle;
+    white-space: nowrap;
 }
 
 .data-table td img {
@@ -668,11 +673,10 @@ main {
 .data-table th {
     background-color: #f5f5f5;
     font-weight: 600;
-    white-space: nowrap;
 }
 
 .data-table td {
-    white-space: nowrap;
+    font-size: 13px;
 }
 
 .data-table td:first-child {
@@ -708,7 +712,8 @@ main {
 
 /* Responsive tables */
 @media (max-width: 768px) {
-    .data-table {
+    .data-table,
+    .data-table td {
         font-size: 0.8rem;
     }
 
@@ -829,30 +834,30 @@ main {
     font-size: 12px;
     width: 260px;
     max-width: 320px;
-   scroll-margin-block: calc(var(--header-height) + 14px);
+    scroll-margin-block: calc(var(--header-height) + 14px);
     padding-left: 5px;
 }
 
 .sidenote:before {
-    content: "";
+    content: '';
     position: absolute;
     top: -1px;
     left: 0;
     width: 20%;
     height: 1px;
     background-color: currentColor;
-    transition: width .2s;
+    transition: width 0.2s;
 }
 
 .sidenote:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 1px;
     height: 40%;
     background-color: currentColor;
-    transition: height .2s;
+    transition: height 0.2s;
 }
 
 .sidenote.is-highlighted:before {
@@ -863,7 +868,7 @@ main {
     height: 100%;
 }
 
-@media(max-width: 1399px) {
+@media (max-width: 1399px) {
     .sidenote {
         position: relative;
         transform: none;
