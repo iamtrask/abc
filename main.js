@@ -179,3 +179,45 @@ if (document.fonts) {
 }
 
 window.addEventListener('resize', initializeSidenotes);
+
+/**
+ * Reference back-links: add numbered ↑ links from reference entries to every citation in text.
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    var refItems = document.querySelectorAll('ol li[id^="ref-"]');
+    if (!refItems.length) return;
+
+    var refsContainer = refItems[0].parentElement;
+    var citationLinks = document.querySelectorAll('a[href^="#ref-"]');
+    var allCitations = {};
+
+    citationLinks.forEach(function (link) {
+        if (refsContainer.contains(link)) return;
+        var refId = link.getAttribute('href').substring(1);
+        if (!allCitations[refId]) allCitations[refId] = [];
+        var idx = allCitations[refId].length + 1;
+        link.id = 'cite-' + refId + '-' + idx;
+        allCitations[refId].push(link);
+    });
+
+    refItems.forEach(function (li) {
+        var citations = allCitations[li.id];
+        if (!citations || !citations.length) return;
+        citations.forEach(function (cite, i) {
+            var backLink = document.createElement('a');
+            backLink.href = '#' + cite.id;
+            backLink.className = 'ref-backlink';
+            backLink.textContent = '\u2191' + (i + 1);
+            backLink.title = 'Citation ' + (i + 1) + ' in text';
+            li.appendChild(backLink);
+        });
+    });
+
+    // Handle fragment scroll after dynamic IDs are created
+    if (window.location.hash) {
+        var target = document.querySelector(window.location.hash);
+        if (target) {
+            setTimeout(function () { target.scrollIntoView(); }, 100);
+        }
+    }
+});

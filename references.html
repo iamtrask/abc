@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>References | ABC in AI</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        main h2 { margin-top: 3em; margin-bottom: 0.5em; }
+        main h2:first-of-type { margin-top: 1em; }
+        main ol li { margin-bottom: 0.6em; }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -2393,6 +2398,33 @@
         alt="University of Oxford" class="oxford-logo-fixed">
 
     <script src='main.js' type='text/javascript' defer></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var chapterMap = {
+            'Chapter I: Introduction': 'index.html',
+            'Chapter II: From Deep Learning to Deep Voting': 'chapter2.html',
+            'Chapter III: Network-Source AI': 'chapter3.html',
+            'Chapter IV: Broad Listening': 'chapter4.html',
+            'Chapter V: Conclusion': 'chapter5.html',
+            'Appendix I: Compute Distribution': 'appendix1.html',
+            'Appendix II: Model Rankings': 'appendix2.html'
+        };
+        document.querySelectorAll('main h2').forEach(function (h2) {
+            var file = chapterMap[h2.textContent.trim()];
+            if (!file) return;
+            var ol = h2.nextElementSibling;
+            if (!ol || ol.tagName !== 'OL') return;
+            ol.querySelectorAll('li[id^="ref-"]').forEach(function (li) {
+                var link = document.createElement('a');
+                link.href = file + '#cite-' + li.id + '-1';
+                link.className = 'chapter-link';
+                link.textContent = '\u2192';
+                link.title = 'View in ' + h2.textContent.trim();
+                li.appendChild(link);
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>
