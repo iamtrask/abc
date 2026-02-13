@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter III: From Network-Source AI to Broad Listening | ABC in AI</title>
+    <title>Chapter IV: From Network-Source AI to Broad Listening | ABC in AI</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,10 +62,17 @@
                     <li class="toc-h4"><a href="#individual-path">The Individual Path</a></li>
                     <li class="toc-h3"><a href="#third-why">Third Why: The Branching Problem</a></li>
                     <li class="toc-h3"><a href="#third-hypothesis">Third Hypothesis: Reach via Recursion</a></li>
+                    <li class="toc-h4"><a href="#the-requirement-recursion">The Requirement</a></li>
                     <li class="toc-h3"><a href="#second-hypothesis">Second Hypothesis: Delegation Without
                             Concentration</a></li>
-                    <li class="toc-h3"><a href="#first-hypothesis">First Hypothesis: The Machinery Exists</a></li>
-                    <li class="toc-h3"><a href="#conclusion">Conclusion</a></li>
+                    <li class="toc-h4"><a href="#baconrank">BaconRank</a></li>
+                    <li class="toc-h4"><a href="#why-centralization">Why Centralization Was a Symptom</a></li>
+                    <li class="toc-h3"><a href="#first-hypothesis">First Hypothesis: Broad Listening Competes</a></li>
+                    <li class="toc-h4"><a href="#honesty-problem">The Honesty Problem</a></li>
+                    <li class="toc-h4"><a href="#other-practical">Other Practical Concerns</a></li>
+                    <li class="toc-h4"><a href="#gap-closes">The Gap Closes</a></li>
+                    <li class="toc-h3"><a href="#conclusion">Conclusion: Broad Listening</a></li>
+                    <li class="toc-h4"><a href="#the-telephone">The Telephone</a></li>
                 </ul>
                 <div class="ascii-decoration">
                     ☺─☺─☺─☺─☺
@@ -134,7 +141,8 @@
                         sources in order to curate as much data as standard AI systems. Delegation of trust evaluation
                         is therefore necessary, but it too has a fatal flaw: if AI users and data sources delegate trust
                         evaluation to a small collection of central parties, NSAI collapses back into the system it was
-                        meant to replace. This chapter identifies the root issue as high-branching nodes; any node
+                        meant to replace (today's centralized AI). This chapter identifies the root issue as
+                        high-branching nodes; any node
                         connecting to millions cannot cultivate the strong-tie relationships that trust evaluation
                         requires.
                         The chapter then prescribes recursive delegation through low-branching networks as the remedy,
@@ -173,20 +181,19 @@
                     <h2>The Problem of ABC in Network-source AI</h2>
 
                     <p>
-                        Standard AI is trained on a curated dataset and can only leverage information obtained by the
-                        AI owning entity to make predictions. In this way, standard AI is like a rudimentary,
-                        button-less,
+                        Today, a frontier AI system is trained on a curated dataset and can only leverage information
+                        obtained by the AI owning entity when making predictions. In this way, today's AI is like a
+                        rudimentary, button-less,
                         hot-line telephone where users can only call the telephone provider for information, and the
                         telephone provider can only reply based on information they have gathered. Network-source AI
                         (NSAI) is like a modern telephone, giving users the ability to dial anyone in the world
                         directly,
-                        circumventing the data collection processes and opinions of the telephone provider <a
+                        circumventing the data collection processes and opinions of the telephone provider.<a
                             href="#sidenote-1" class="sidenote-ref"><sup>1</sup></a>
-                        . Chapters
+                        Chapters
                         2 and 3 specified novel methods to make and respond to those calls: how to aggregate the
                         responses in an attributable way (deep voting), and how to protect the calls and responses using
                         encryption (structured transparency).
-                        But while NSAI offers a technical
                     </p>
 
                     <p>
@@ -200,9 +207,11 @@
                         weights; it does not produce them). The system is incomplete in precisely the way a combustion
                         engine is incomplete without fuel: the machinery is specified, but the input that makes it run
                         is
-                        not. This matters because the weights are not incidental to attribution-based control, they are
+                        not. This matters because the weights are not incidental to attribution-based control, they
+                        <em>are</em>
                         the means of controlling attribution. Without the ability to reliably form trust weights, deep
-                        voting might as well be vanilla deep learning and NSAI might as well be standard AI. Without
+                        voting might as well be vanilla deep learning and NSAI might as well be today's frontier AI
+                        systems. Without
                         this final ingredient, the telephone can dial anywhere, but the user does not know whom to call.
                         This chapter addresses that gap.
                     </p>
@@ -218,13 +227,14 @@
                         <p class="callout-title">The Diagnosis</p>
 
                         <p>
-                            Let’s say you receive a problematic test and need an oncologist to follow up. Using
-                            your phone, you can theoretically dial any oncologist on earth, but your phone contains
-                            near-zero oncologists whose judgment you have personally evaluated. Let’s say your city
+                            Let's say you receive a problematic medical test and need an oncologist to follow up. Using
+                            your phone, you can theoretically dial any oncologist on earth, but your phone's contacts
+                            contains
+                            zero oncologists whose judgment you have personally evaluated. Let's say your city
                             has hundreds of oncologists, your country has tens of thousands, and in theory you could
                             contact them one by one (by looking them up online). Each would probably answer, but
-                            each answer would contain what the oncologist chooses to share, something like “yes I’m a
-                            great doctor... what is your insurance and when can you come in for an evaluation?”
+                            each answer would contain what the oncologist chooses to share, something like "yes I'm a
+                            great doctor... what is your insurance and when can you come in for an evaluation?"
                         </p>
 
                         <p>
@@ -236,15 +246,13 @@
                         </p>
 
                         <p>
-                            However, you cannot collectively dial all the patients of the world’s oncologists;
+                            However, you cannot collectively dial all the patients of the world's oncologists;
                             even if you had a team of people to help you make thousands of phone calls, you do not
-                            know the names or numbers of each oncologist’s patients. They are not listed anywhere
+                            know the names or numbers of each oncologist's patients. They are not listed anywhere
                             you can find. Some of them are almost certainly friends of friends of friends of yours...
                             so the path to an introduction might exist... but you cannot see or traverse it. Indeed, the
-                            information is almost certainly there.
+                            information is almost certainly there. But you have no way to ask.
                         </p>
-
-                        <p>But you have no way to ask.</p>
                     </div>
                 </section>
 
@@ -253,12 +261,15 @@
 
                     <p>
                         Trust requires observation. If no one has ever observed a party perform, no one can trust that
-                        party to perform well, one can only <em>hope</em>. One might be tempted to argue that everyday
+                        party to perform well; one can only <em>hope</em>. One might be tempted to argue that everyday
                         life
                         involves trusting many people one has not directly observed (e.g., taxi drivers, baristas)
                         because
                         they are credentialed in some way. But credentials, ratings, and recommendations do not create
-                        trust; they transfer it. At the origin of every trust chain, someone watched.
+                        trust; they transfer it. Even someone's location implies membership in a community, that they
+                        have successfully avoided being arrested or otherwise removed from that part of society.
+                        Geography is its own kind of credential, transferring trust from your community to you. At the
+                        origin of every trust chain, someone watched.
                     </p>
 
                     <p>
@@ -278,10 +289,10 @@
                     </p>
 
                     <p>
-                        Sociologists call these high-trust relationships ”strong ties”: relationships characterized by
-                        sustained interaction, emotional investment, and mutual obligation (<a href="#ref-2"
+                        Sociologists call these high-trust relationships "strong ties": relationships characterized by
+                        sustained interaction, emotional investment, and mutual obligation (<a href="#ref-1"
                             class="cite">Granovetter 1973</a>). The
-                        last element is crucial. Mutual obligation means both parties have stakes in the relationship’s
+                        last element is crucial. Mutual obligation means both parties have stakes in the relationship's
                         continuation... and therefore both bear costs if they betray it. This is what makes strong-tie
                         trust
                         enforceable rather than merely hopeful.
@@ -290,15 +301,14 @@
                     <p>
                         The problem is that building strong-tie relationships requires attention, and attention is
                         finite.
-                        Dunbar’s research establishes the constraint as universal across humans: approximately 150
-                        stable relationships... a limit traced to neocortex size itself (<a href="#ref-1"
+                        Dunbar's research establishes the constraint as universal across humans: approximately 150
+                        stable relationships... a limit traced to neocortex size itself (<a href="#ref-2"
                             class="cite">Dunbar 1993</a>).
                     </p>
 
                     <p>
-                        Meanwhile, NSAI requires trust assessments for millions of sources. If competitive systems
-                        require data at thirty-trillion-token scale from millions of sources (see Chapter 2 for
-                        details), and
+                        Meanwhile, NSAI requires trust assessments for millions of sources. If competitive AI systems
+                        require data at thirty-trillion-token scale from millions of sources (see Chapter 2), and
                         individuals can maintain at most 150 strong ties, the gap spans 4+ orders of magnitude. That
                         gap will not close through individual effort, and delegation is therefore necessary. The
                         question
@@ -340,8 +350,9 @@
                         This argument is sufficient, but let us more closely inspect the mechanics of trust
                         centralization. After all, ABC is not an end in itself. Chapter 1 introduced ABC as a means to
                         address
-                        concrete problems: privacy erosion, copyright disputes, data siloing, concentration of power,
-                        and competitive disadvantage against centralized adversaries. Even if we abandoned the goal of
+                        concrete problems such as: privacy erosion, copyright disputes, data siloing, concentration of
+                        power, and competitive disadvantage against centralized adversaries. Even if we abandoned the
+                        goal of
                         ABC, these problems (and the stakeholders who care about them) would not disappear. They
                         would continue to obstruct institutional paths to trust evaluation at scale.
                     </p>
@@ -349,12 +360,13 @@
                     <p>
                         Consider data owners. As Chapter 2 documented, 6+ orders of magnitude of data remains
                         siloed because data owners do not trust institutional intermediaries with their information
-                        (<a href="#ref-13" class="cite">Grybauskas 2023</a>; <a href="#ref-14" class="cite">O’Brien
-                            2025</a>; <a href="#ref-15" class="cite">Grynbaum and Mac 2023</a>;
-                        <a href="#ref-16" class="cite">Youssef et al., 2023</a>). This
-                        resistance is rational. Data owners are one of millions; the institution has no particular stake
+                        (<a href="#ref-3" class="cite">Grybauskas 2023</a>; <a href="#ref-4" class="cite">O'Brien
+                            2025</a>; <a href="#ref-5" class="cite">Grynbaum and Mac 2023</a>;
+                        <a href="#ref-6" class="cite">Youssef et al., 2023</a>). This
+                        resistance is rational. Data owners are each one of millions; the institution has no particular
+                        stake
                         in
-                        protecting any single owner’s interests. Without mutual stakes, data owners have no mechanism
+                        protecting any single owner's interests. Without mutual stakes, data owners have no mechanism
                         to hold institutions accountable, only the hope that the institution will behave well (often in
                         the
                         face of evidence they will not, e.g. privacy and copyright violations).
@@ -362,17 +374,18 @@
 
                     <p>
                         Consider governments. The company Klout processed forty-five billion social interactions
-                        daily to score 750 million users (<a href="#ref-17" class="cite">Rao et al., 2015</a>),
+                        daily to score 750 million users (<a href="#ref-7" class="cite">Rao et al., 2015</a>),
                         attracted $200 million in acquisition
                         value,
-                        and served over two thousand business partners (<a href="#ref-18" class="cite">Fortune
+                        and served over two thousand business partners (<a href="#ref-8" class="cite">Fortune
                             2014</a>). Western society shut it down
-                        anyway... the day GDPR took effect (<a href="#ref-19" class="cite">Oremus 2018</a>). Privacy
-                        regulation made Klout’s level
+                        anyway... the day GDPR took effect (<a href="#ref-9" class="cite">Oremus 2018</a>). Privacy
+                        regulation made Klout's level
                         of trust evaluation illegal by making its level of surveillance illegal. Yet, GDPR is not a
                         local
                         legislation targeted a specific companies like Klout, it is a European wide paradigm shift in
-                        privacy expectations, inspiring similar legislation around the world (<a href="#ref-20"
+                        privacy expectations, inspiring a wave of similar legislation around the world (<a
+                            href="#ref-10"
                             class="cite">Simmons 2022</a>).
                     </p>
 
@@ -382,22 +395,23 @@
                         surveil-er
                         and surveilled. Yet, democratic values prohibit comprehensive surveillance. There is no policy
                         that satisfies both constraints, or a widely deployed technology that circumvents them. Caught
-                        between these imperatives, Western societies pay the costs of both while achieving the full
+                        between these imperatives, western societies pay the costs of both while achieving the full
                         benefits of neither.
                     </p>
 
                     <p>
                         The result is visible in current online infrastructure. A handful of social media platforms
                         observe and manage approximately 8.5% of all waking human experience on earth... four trillion
-                        hours annually (<a href="#ref-8" class="cite">Hootsuite 2024</a>).<a href="#sidenote-2"
+                        hours annually (<a href="#ref-11" class="cite">Hootsuite 2024</a>).<a href="#sidenote-2"
                             class="sidenote-ref"><sup>2</sup></a> This is surveillance at civilizational scale, yet the
                         online
                         trust
-                        verification problem remains woefully unsolved: half of web traffic is bots (<a href="#ref-9"
+                        verification problem remains woefully unsolved: half of web traffic is bots (<a href="#ref-12"
                             class="cite">Imperva 2024</a>),
-                        up to 30% of online reviews remain fraudulent (<a href="#ref-21" class="cite">D’Onfro 2013</a>;
-                        <a href="#ref-22" class="cite">Cross 2022</a>), and state actors
-                        operate troll factories at scale (<a href="#ref-23" class="cite">Foreign, Commonwealth &
+                        up to 30% of online reviews remain fraudulent (<a href="#ref-13" class="cite">D'Onfro
+                            2013</a>;
+                        <a href="#ref-14" class="cite">Cross 2022</a>), and state actors
+                        operate troll factories at scale (<a href="#ref-15" class="cite">Foreign, Commonwealth &
                             Development Office 2022</a>). Western
                         platforms cannot even reliably verify that people online are human, let alone whether they are
                         trustworthy sources of information on specific topics.
@@ -405,8 +419,8 @@
 
                     <p>
                         Centralization in the Western context fails because surveillance is limited and because of the
-                        power imbalance between user and platform. An institution serving millions need not depend on
-                        any single user, and a user who is one of millions cannot hold the institution accountable
+                        power imbalance between user and platform. An institution serving billions need not depend on
+                        any single user, and a user who is one of billions cannot hold the institution accountable
                         (except
                         through some similarly powerful institution... which itself then has an analogous accountability
                         relationship). And in response to the power imbalance, users are both wary of platform
@@ -439,17 +453,19 @@
                     <p>
                         The alternative is delegation through individuals: trust your friends and colleagues to evaluate
                         sources on your behalf. This preserves what institutions cannot offer: strong-ties. Your friend
-                        has 150 relationships, not two billion; you are one of 150, not one of millions; and your friend
+                        has 150 relationships, not millions; you are one of 150, not one of millions; and your friend
                         depends on your continued relationship for support, reciprocity, and reputation within your
                         shared community. If your friend misleads you, they lose something they value. The mutual
                         stakes that make trust enforceable remain intact.
                     </p>
 
                     <p>
-                        But individual delegation cannot reach the scale that competitive AI platforms require. The
+                        But individual delegation cannot directly reach the scale that competitive AI platforms require.
+                        The
                         Dunbar limit applies to delegated relationships as surely as direct ones. If each friend
                         evaluates
-                        within their limit of 150, and you have 150 friends, your network reaches at most 22,500 sources
+                        within their limit of 150, and you have 150 friends, your network reaches at most 22,500
+                        sources
                         (assuming no mutual friends among them), at best 2+ orders of magnitude short of the millions
                         of sources that competitive AI systems require.
                     </p>
@@ -476,7 +492,8 @@
 
                     <p>
                         Consider what happens when nodes of vastly different cardinality connect, pictured in Figure
-                        <a href="#figure-4-5">4.5</a>. One institution sits in the middle, billions of sources connect
+                        <a href="#figure-branching-imbalance">4.5</a>. One institution sits in the middle, billions of
+                        sources connect
                         on one side, billions of
                         users
                         on the other. Now ask: what stake does each party have in the relationship? The institution has
@@ -489,7 +506,7 @@
                         information.
                     </p>
 
-                    <figure class="full-width" id="figure-4-5">
+                    <figure class="full-width" id="figure-branching-imbalance">
                         <img src="1411.3146/branching_imbalance.png" alt="Branching imbalance">
                         <figcaption>The circle in the middle represents an institutional intermediary with billions of
                             data sources it consumes information from, and billions of outputs it shares information to.
@@ -506,9 +523,9 @@
                         accountability cannot survive it.
                     </p>
 
-                    <figure class="full-width" id="figure-4-6">
+                    <figure class="full-width" id="figure-branching-balance">
                         <img src="1411.3146/branching_balance_v3.png" alt="Balanced branching">
-                        <figcaption> The circles on the far left and right represent individuals producing data and
+                        <figcaption>The circles on the far left and right represent individuals producing data and
                             consuming insights (respectively), each limited to 150 strong-tie relationships. The circle
                             in the
                             middle also represents an individual, responsible for making trust decisions in the social
@@ -518,7 +535,8 @@
 
                     <p>
                         Now consider what happens when nodes operate at comparable scale, pictured in Figure
-                        <a href="#figure-4-6">4.6</a>. If you connect to 150 friends, and each friend connects to 150
+                        <a href="#figure-branching-balance">4.6</a>. If you connect to 150 friends, and each friend
+                        connects to 150
                         sources, you reach 22,500
                         sources&mdash;far short of the million-source scale competitive systems require. To reach a
                         million
@@ -529,14 +547,14 @@
                         Alternatively,
                         if instead your friends each connected to only a handful of sources (perhaps 10), reach would
                         shrink further, dependency would concentrate on those few connections, and the network would
-                        fail to achieve competitive scale. The failure mode is not merely ”too many connections” but
+                        fail to achieve competitive scale. The failure mode is not merely "too many connections" but
                         deviation from Dunbar-scale in either direction.
                     </p>
 
                     <figure class="full-width">
                         <img src="1411.3146/side_by_side_imbalance_v4.png" alt="Side by side comparison">
                         <figcaption>Conventional AI (left) cultivates cardinality imbalance between data sources / users
-                            and itself. Network-source AI (right) insufficiently scales due to Dunbar’s limit.
+                            and itself. Network-source AI (right) insufficiently scales due to Dunbar's limit.
                         </figcaption>
                     </figure>
 
@@ -544,11 +562,12 @@
                         This is the root beneath both failures. The institutional path fails because institutions
                         operate
                         far above Dunbar scale while their users cannot... billions of connections on one side, hundreds
-                        on the other, creating asymmetric stakes that make accountability impossible. The individual
+                        on the other, creating asymmetric stakes that subvert accountability. The individual
                         path fails because short paths to competitive scale require someone in the chain to exceed
                         Dunbar limits, recreating the same imbalance one hop away. Both are instances of the same
-                        architectural constraint: any path to scale that includes a node deviating from Dunbar-scale
-                        operation, connected to nodes that do not. This activates the responses... weaker parties that
+                        architectural constraint: any path to scale that includes a node deviating from their peers'
+                        scale (e.g., Dunbar-scale), connected to nodes that do not. This activates the responses...
+                        weaker parties that
                         hide
                         data, and governments that pass laws which protect the weaker from the stronger, introducing
                         friction to coordination in the process (i.e., privacy laws hindering verification ability).
@@ -561,18 +580,20 @@
                     <div class="definition-box">
                         <h3>The Branching Problem</h3>
 
-                        <p>Trust cannot traverse non-Dunbar-scale nodes. Nodes operating above Dunbar scale (k >> 150)
-                            cannot sustain strong-tie relationships with any counterparty. Nodes operating below it (k
-                            << 150) underutilise capacity and concentrate dependency. Imbalance between connected nodes
-                                creates asymmetric stakes that undermine accountability. Trust breaks wherever nodes
-                                deviate from Dunbar-scale operation.</p>
+                        <p>Trust struggles to traverse nodes with highly unbalanced numbers of relationships, with
+                            Dunbar's scale acting as a central empirical reference point. As nodes operate higher than
+                            Dunbar scale ($k \gg 150$) their ability to sustain strong-tie relationships with others
+                            diminishes. As nodes operate below Dunbar scale ($k \ll 150$) they underutilise capacity and
+                            concentrate their dependency on their counterparties. Imbalance between connected nodes
+                            ($k_1 \gg k_2$) creates asymmetric stakes that undermine accountability, and Dunbar's
+                            number is a hinge point; trust degrades as nodes deviate from Dunbar-scale cardinality.</p>
                     </div>
 
                     <p>
                         Contemporary AI systems exhibit extreme deviation from Dunbar-scale at both ends of
                         their architecture: at training time, one model connects to billions of sources; at inference
                         time, one model connects to billions of users. Both points constitute nodes operating orders of
-                        magnitude above relational capacity, connected to nodes operating within it. Network-source
+                        magnitude above relational capacity. Network-source
                         AI, as specified in Chapters 2 and 3, does not escape this constraint. Deep voting requires
                         trust
                         weights, and structured transparency protects those weights, but neither specifies how weights
@@ -586,10 +607,12 @@
                     <div class="definition-box">
                         <h3>The Branching Puzzle</h3>
                         <p>Competitive AI systems require trust paths to billions of sources, yet the branching problem
-                            prohibits any node from connecting to more than ~150 counterparties. Short paths to billions
-                            require high-branching nodes; high-branching nodes break trust. The branching puzzle: how
-                            can trust delegation reach global scale when trust fails at any node exceeding Dunbar-scale
-                            operation?</p>
+                            suggests that nodes struggle to connect with more than ~150 people (i.e. Dunbar's number) if
+                            they are to propagate trust. Short paths to billions
+                            require high-branching nodes; high-branching nodes undermine trust. The branching puzzle: how
+                            can trust delegation reach global scale when trust degrades as nodes deviate from
+                            Dunbar-scale
+                            cardinality?</p>
                     </div>
 
                     <p>
@@ -598,8 +621,7 @@
                         neither chapter addressed where trust weights come from. Without a solution to the branching
                         puzzle, users must either delegate weight-formation to high-branching platforms (undermining
                         attribution-based control and inheriting the accountability failures that motivated NSAI) or
-                        accept reach limited to a few thousand sources. The next section will begin to explore a
-                        solution.
+                        accept limited reach. The next section explores a solution.
                     </p>
 
                     <div class="callout">
@@ -609,7 +631,7 @@
 
                         <p><strong>The platform path.</strong> The patient consults a review platform with two billion
                             users
-                            and tens of thousands of oncologist reviews. The platform’s algorithm surfaces
+                            and tens of thousands of oncologist reviews. The platform's algorithm surfaces
                             a five-star physician. The patient books an appointment, receives treatment, and
                             dies eighteen months later from a cancer that a competent oncologist would have
                             caught. The review was fake... posted by a marketing firm working for the oncologist
@@ -621,11 +643,11 @@
                         </p>
 
                         <p><strong>The friend path.</strong> The patient asks their 150 friends whether anyone knows a
-                            good oncologist. No one does&mdash;oncology is specialised, and the patient’s immediate
+                            good oncologist. No one does&mdash;oncology is specialised, and the patient's immediate
                             network lacks relevant experience. The patient asks friends to ask their friends: 150
                             times 150 yields 22,500 people, still no oncologist referral with direct experience. The
                             information exists somewhere in the social fabric, but three hops away, four hops away,
-                            beyond the reach of the patient’s strong-tie network. The patient gives up and returns to
+                            beyond the reach of the patient's strong-tie network. The patient gives up and returns to
                             the
                             platform. This is the low-branching failure: Dunbar-limited connections at every node, and
                             no path long enough to reach relevant sources.
@@ -641,482 +663,621 @@
                 <section id="third-hypothesis">
                     <h2>Third Hypothesis: Reach via Recursion</h2>
 
-                    <p>There is a third path: recursion. If each node maintains $k$ connections and trust propagates
-                        through chains of depth $H$, theoretical reach scales as <em>O(k<sup>H</sup>)</em>. Fifty
+                    <figure class="full-width">
+                        <img src="1411.3146/ch_4_6_v1.png" alt="Third Hypothesis concept graph">
+                        <figcaption>Subset of concept graph highlighting the Third Hypothesis and focus of this section.
+                        </figcaption>
+                    </figure>
+
+                    <p>In theory, a third path exists: recursion. If each node in a social graph maintains $k$
+                        connections and trust propagates
+                        through chains of depth $H$, theoretical reach scales as $O(k^H)$. Fifty
                         connections
                         across six hops has the theoretical potential to reach fifteen billion sources:</p>
 
-                    <p style="text-align: center; font-size: 1.2em;"><strong>Reach = k<sup>H</sup> = 50<sup>6</sup> =
-                            15,625,000,000</strong></p>
+                    <p style="text-align: center; font-size: 1.2em;">$$\text{Reach} = k^H = 50^6 =
+                        15{,}625{,}000{,}000$$</p>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/scale_assumption.png" alt="Low-branching recursion achieves exponential reach">
+                        <figcaption>High-branching delegation (left) connects directly to many sources but creates
+                            bottlenecks and exceeds evaluation capacity. Low-branching recursion (right) achieves
+                            exponential reach through depth while preserving evaluation capacity at each hop. Each person
+                            maintains ~50 verifiable connections; over 6 hops this reaches $50^6 = 15.6$ billion
+                            sources. Darker lines indicate sources being used for a prediction. The architecture
+                            leverages small-world network properties where people are connected through short paths.
+                        </figcaption>
+                    </figure>
 
                     <p>
                         This is mathematical possibility, not a claim about actual social networks, but the pattern
-                        has precedent. Word of mouth has operated this way for thousands of years; the spread of
-                        firemaking, agriculture, and religious ideas all propagated through peer networks without
-                        central
-                        coordination. Academic citation networks, PageRank, and Wikipedia exhibit similar structure:
-                        researchers cite dozens of sources, pages link to dozens of others, editors assess within their
-                        capacity, and no central node determines outcomes (<a href="#ref-24" class="cite">Lawrence et
-                            al., 1999</a>; <a href="#ref-25" class="cite">Page et al., 1999</a>;
-                        <a href="#ref-26" class="cite">Reagle 2010</a>).
+                        has precedent. Information propagation phenomena like <em>word of mouth</em> have operated this
+                        way for thousands of years; as they advanced prior to mass broadcasting technologies, the spread
+                        of early
+                        fire-making, agriculture, and religious ideas all propagated through peer networks of this kind.
+                        Academic citation networks, PageRank, and Wikipedia exhibit similar structure:
+                        researchers cite dozens of sources, pages/papers link to dozens of others, people/editors assess
+                        within their
+                        capacity at each hop in the graph, and no central node determines outcomes (<a href="#ref-16"
+                            class="cite">Lawrence et
+                            al., 1999</a>; <a href="#ref-17" class="cite">Page et al., 1999</a>;
+                        <a href="#ref-18" class="cite">Reagle 2010</a>).
                     </p>
 
-                    <h3>Reframing the Problem</h3>
-
                     <p>
-                        This perspective reframes the problems documented in the three Whys as one of scaling existing
-                        word-of-mouth mechanisms. Word of mouth involves several operations: sharing information
-                        with contacts, filtering what to pass along, aggregating responses, and weighting sources by
-                        trust. Thus, another way to view the problem is that communication infrastructure has upgraded
-                        word of mouth’s mechanisms unevenly for centuries. The printing press scaled sharing while
-                        leaving filtering and aggregation at human speed. Radio and television extended this pattern.
-                        Digital infrastructure continued it... sharing now operates instantly, but filtering,
-                        aggregating,
-                        and trust-weighting still require human attention at each hop. And when sharing scales but
-                        aggregation does not, bottlenecks form at whoever can aggregate, concentrating power into an
-                        attention economy (<a href="#ref-7" class="cite">Goldhaber 1997</a>). The branching problem and
-                        the corresponding collapse of
-                        mutual stakes trace to the uneven development of communication infrastructure.
+                        Yet communication infrastructure has upgraded these mechanisms unevenly. The printing press,
+                        radio, television, and digital networks each scaled broadcasting to larger audiences while
+                        leaving the capacity to filter, synthesize, and verify information at human speed (<a
+                            href="#ref-19" class="cite">Goldhaber 1997</a>). The branching problem is a consequence of
+                        this asymmetry: when broadcasting scales but trust does not, bottlenecks form, and power
+                        concentrates. Scaling the capacity to listen as broadly as we already broadcast is what this
+                        thesis calls <em>broad listening</em>.
                     </p>
 
-                    <h3>The Requirement</h3>
+                    <h3 id="the-requirement-recursion">The Requirement</h3>
 
                     <p>
-                        The mathematics establish that reach without branching is possible in principle. Two questions
-                        remain before this possibility becomes useful. First, does trust survive recursive depth?
-                        Information passing through six hops might degrade at each link&mdash;the telephone game. If the
-                        chain
-                        corrupts what it carries, reach is worthless. The Second Hypothesis addresses this question.
-                        Second, can coordination costs be reduced enough to compete with platforms? Real networks
-                        impose costs at every hop: phone calls, explanations, waiting for callbacks. A chain that could
-                        theoretically reach a relevant expert in four hops might take weeks in practice. Word of mouth
-                        has the right structure but the wrong speed. The First Hypothesis addresses this question.
+                        The mathematics above establish that reach without branching is possible in theory. Three
+                        questions remain before this possibility becomes
+                        useful: are social graphs connected enough to facilitate global communication using this
+                        recursive technique, does trust survive recursive depth, and can coordination costs be reduced
+                        enough such that this form of global communication infrastructure can compete with
+                        centralized, high-branching platforms?
+                    </p>
+
+                    <p>
+                        Regarding whether social graphs are connected enough, a long-standing meme has suggested that
+                        each person in the world is separated by six
+                        degrees of separation, a claim a team of Facebook researchers later reduced to four degrees of
+                        separation (<a href="#ref-20" class="cite">Backstrom et al. 2012</a>). It
+                        would seem that the world's social graph is connected enough for four hops to facilitate
+                        information propagating globally. Regarding the
+                        remaining two questions, the Second Hypothesis and First Hypothesis sections below address them
+                        respectively.
                     </p>
                 </section>
 
                 <section id="second-hypothesis">
                     <h2>Second Hypothesis: Delegation Without Concentration</h2>
 
+                    <figure class="full-width">
+                        <img src="1411.3146/ch_4_7_v1.png" alt="Second Hypothesis concept graph">
+                        <figcaption>Subset of concept graph highlighting the Second Hypothesis and focus of this
+                            section.
+                        </figcaption>
+                    </figure>
+
                     <p>
-                        The Third Hypothesis established that recursive networks can achieve global reach without
-                        high-branching nodes, but mathematical possibility does not guarantee practical implementation.
-                        The Second Why documented a historical pattern: delegation systems either centralize under
-                        competitive pressure or fail to reach useful scale. The question is whether recursive trust
-                        propagation can avoid this pattern.
+                        The Third Hypothesis established that recursive networks can theoretically reach 15.6 billion
+                        sources through six hops of fifty connections each, but reach is not the same as trust. Everyone
+                        knows the telephone game: a message degrades with each retelling, and by the end of a chain
+                        of a dozen or so people a message arrives as noise. If trust propagation works the same way,
+                        then recursive reach is just recursive degradation, and billions of unreliable paths are
+                        uninteresting.
                     </p>
 
                     <p>
-                        The mechanism described below scales without concentrating because no node can substitute its
-                        judgment for another’s. Whether this architectural property proves sufficient against
-                        competitive dynamics is an empirical question that this thesis does not resolve, but the
-                        structure
-                        differs from previous delegation systems in ways worth examining.
+                        Yet, the telephone game fails for a specific reason, which is that it has a single serial path,
+                        one chain of retelling with one point of failure at every hop. Thus, a single liar or a single
+                        misremembering anywhere in the chain corrupts the entire message irreversibly. But this
+                        degradation isn't inherent to recursion itself; it's a property of recursion without redundancy.
                     </p>
 
-                    <h3>The Propagation Mechanism</h3>
-
-                    <p>Each participant maintains trust assessments $w_{u,v}^d \in [0,1]$ for direct contacts, where $d$
-                        indexes the domain. Trust propagates via iterated computation. Let $T_h(n)$ denote participant
-                        $n$'s trust score at hop $h$. Trust originates with the querying user and propagates as each
-                        participant distributes to contacts:</p>
-
-                    <p style="text-align: center;">$$\text{Map}_n(T_h(n)) = \{(v, T_h(n) \cdot w_{n,v}^d) : v \in
-                        \text{contacts}(n)\}$$</p>
-
-                    <p>Recipients aggregate incoming trust via probabilistic OR:</p>
-
-                    <p style="text-align: center;">$$T_{h+1}(m) = 1 - \prod_{i=1}^{k}(1 - T_h(n_i) \cdot w_{n_i,m}^d)$$
-                    </p>
-
-                    <p>After H iterations, trust scores determine how much each source influences the response.</p>
-
-                    <h3>Why It Scales</h3>
+                    <h3 id="baconrank">BaconRank: Trust Propagation Through Redundant Paths</h3>
 
                     <p>
-                        The mechanism requires \( O(k \cdot H) \) operations per participant per query,
-                        where \( k \) is the number of contacts and \( H \) is the number of hops.
-                        With \( k \approx 50 \) and \( H \approx 6 \), each participant performs roughly
-                        300 operations regardless of total network size.
-                        The computational cost of reaching billions of sources through recursive
-                        propagation does not require any participant to perform billions of operations.
+                        This chapter proposes a trust propagation algorithm called <strong>BaconRank</strong>, named
+                        after the "six degrees of Kevin Bacon" game that illustrates the small-world property of social
+                        networks. BaconRank is inspired by Google's PageRank algorithm (<a href="#ref-17"
+                            class="cite">Page et al., 1999</a>), which
+                        demonstrated that recursive propagation through a link graph could produce meaningful authority
+                        scores at web scale. Both algorithms share a core insight: the importance of a node can be
+                        inferred from the structure of paths leading to it, without any centralized authority assigning
+                        scores. However, BaconRank differs from PageRank in three ways that reflect the shift from
+                        ranking web pages to propagating interpersonal trust:
                     </p>
 
-                    <h3>Why It Decentralizes</h3>
+                    <ol>
+                        <li><strong>Query-relative.</strong> PageRank computes a single global ranking: every user sees
+                            the same authority scores. BaconRank computes a <em>personalized</em> ranking that
+                            originates from a specific querying user and propagates outward through <em>their</em> trust
+                            relationships. Two users with different social graphs will assign different trust scores to
+                            the same source. This is analogous to Personalized PageRank (<a href="#ref-21"
+                                class="cite">Haveliwala 2002</a>), but grounded in social trust rather than topic
+                            similarity.</li>
+
+                        <li><strong>Domain-specific.</strong> PageRank assigns a single authority score per page.
+                            BaconRank maintains separate trust weights per domain of expertise (e.g., medical knowledge,
+                            financial analysis, climate science), so that a participant trusted for medical insight need
+                            not be trusted for financial advice.</li>
+
+                        <li><strong>Probabilistic aggregation.</strong> PageRank distributes a node's authority equally
+                            across outgoing links and sums incoming contributions (with normalization). BaconRank
+                            aggregates incoming trust via a probabilistic OR, which treats each incoming path as an
+                            independent confirmation. This ensures that trust scores remain bounded in $[0,1]$ without
+                            requiring global normalization, and that redundant paths increase confidence with diminishing
+                            returns rather than unbounded accumulation.</li>
+                    </ol>
+
+                    <p>We now define BaconRank formally.</p>
+
+                    <div class="definition-box">
+                        <h3>BaconRank</h3>
+
+                        <p>
+                            Let $G = (N, E)$ be a directed trust graph where $N$ is the set of all participants and $E$
+                            is the set of directed edges between them, with each edge representing a direct trust
+                            relationship. Let $d$ denote a specific domain of expertise over which trust is evaluated.
+                            Each participant $u \in N$ maintains a trust weight $w_{u,v}^d \in [0,1]$ for each direct
+                            contact $v \in \text{contacts}(u)$, representing $u$'s assessment of $v$'s reliability in
+                            domain $d$. Let $q \in N$ be the querying user who initiates the trust propagation. Let
+                            $h \in \{0, 1, \ldots, H\}$ denote the current hop, where $h = 0$ is the origin and $H$ is
+                            the maximum propagation depth (e.g., $H = 6$). Let $T_h(n) \in [0,1]$ denote the cumulative
+                            trust that has reached participant $n \in N$ after $h$ hops of propagation, with initial
+                            condition $T_0(q) = 1$ and $T_0(n) = 0$ for all $n \neq q$. BaconRank proceeds in two
+                            alternating steps at each hop:
+                        </p>
+
+                        <p>
+                            <strong>Map.</strong> Each participant $n$ who has received trust $T_h(n) > 0$ distributes it
+                            to their direct contacts, weighted by their trust assessments:
+                        </p>
+
+                        <p style="text-align: center;">
+                            $$\text{Map}_n(T_h(n)) = \{(v,\; T_h(n) \cdot w_{n,v}^d) : v \in \text{contacts}(n)\}$$
+                        </p>
+
+                        <p>
+                            That is, each contact $v$ of participant $n$ receives a share of $n$'s trust, scaled by how
+                            much $n$ trusts $v$ in domain $d$.
+                        </p>
+
+                        <p>
+                            <strong>Reduce.</strong> Each recipient $m \in N$ may receive trust from multiple senders at
+                            hop $h$. Let $n_1, n_2, \ldots, n_k$ be the $k$
+                            participants who forward trust to $m$. These contributions are aggregated via probabilistic
+                            OR:
+                        </p>
+
+                        <p style="text-align: center;">
+                            $$T_{h+1}(m) = 1 - \prod_{i=1}^{k}(1 - T_h(n_i) \cdot w_{n_i,m}^d)$$
+                        </p>
+
+                        <p>
+                            Each additional path can only increase $T_{h+1}(m)$, but with diminishing returns: the
+                            product term shrinks toward zero as $k$ grows, so $T_{h+1}(m)$ approaches but never exceeds
+                            $1$. After $H$ hops, the final trust score $T_H(s)$ for each source $s \in N$ represents
+                            the querying user $q$'s transitive, domain-specific trust in $s$, aggregated across all
+                            paths of length at most $H$.
+                        </p>
+                    </div>
 
                     <p>
-                        Each participant controls only their own weights (the assessments they maintain about their
-                        own contacts) and no participant controls anyone else’s. When trust propagates through a chain,
-                        each node applies its own assessments, but those assessments affect only the next hop. No node
-                        observes the full chain from query to response, and no node substitutes its judgment for the
-                        judgment of other participants in the network.
+                        The Map&ndash;Reduce structure reflects an architectural property wherein each participant
+                        executes only local
+                        operations (weighting their own contacts) without access to the global graph. This means
+                        BaconRank can be implemented in a distributed setting where no single party observes the full
+                        network topology, a property that aligns with the structured transparency guarantees of
+                        Chapter 3.
                     </p>
 
                     <p>
-                        Path redundancy reinforces this distribution if network structure approximates the mathematics
-                        from Section <a href="#third-hypothesis">4.6</a>. Whether real adoption produces such structure,
-                        or whether clustering
-                        creates de facto bottlenecks despite the architecture, remains an empirical question. The
-                        architecture makes concentration structurally difficult by ensuring that influence over outcomes
-                        requires
-                        controlling weights across many independent participants. It does not make concentration
-                        impossible, and competitive dynamics could produce outcomes the architecture alone cannot
-                        prevent.
+                        This property was first introduced in Chapter 1, which identified the breadth criterion:
+                        truth-finding requires aggregating from many independent sources because coordinated deception
+                        becomes logistically harder when information must be consistent across many independently
+                        weighted witnesses. If the graph provides thousands of redundant paths to a single source (a
+                        number that depends on network structure and connectivity), then a deceiver at any hop would
+                        need to corrupt many chains simultaneously and consistently, whereas the telephone game requires
+                        corrupting only one. As redundant paths increase, the probability that any single corrupt path
+                        dominates the aggregate approaches zero, confirming the intuition that a mesh of thousands of
+                        independent paths is categorically more robust than a single wire.
                     </p>
 
-                    <h3>The Requirement</h3>
+                    <p>
+                        One caveat, stated plainly: redundancy handles independent failures and uncoordinated deception,
+                        but it doesn't handle coordinated attacks where adversaries control many nodes along many paths
+                        at once. How much path diversity real social networks actually provide, and how far network
+                        structure constrains adversarial coordination in practice, are questions which are out of scope
+                        for this thesis. What this architecture changes is the economics of deception: corrupting this
+                        system requires corrupting many independent paths rather than a single intermediary.
+                    </p>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/network_source_ai_to_broad_listening_v2.png"
+                            alt="Network-source AI to Broad Listening comparison">
+                        <figcaption>Network-source AI (left) sources information directly from eye-witnesses while broad
+                            listening (right) leverages information from the same sources weighted through a social
+                            graph. Darker lines indicate sources being used for a prediction. Dotted sparsity indicates
+                            trust.</figcaption>
+                    </figure>
+
+                    <h3 id="why-centralization">Why Centralization Was a Symptom, Not a Goal</h3>
 
                     <p>
-                        The mechanism scales and decentralizes in principle.
-                        After \( H \) iterations, each source has a trust score
-                        \( T_H(s) \) reflecting the paths through which trust reached it.
-                        Two requirements remain before this mechanism becomes practically useful:
-                        the trust scores must convert into a synthesized response, and participation must be cheap and
-                        secure enough that people actually use the system.
-                        The First Hypothesis addresses these requirements.
+                        Even if trust survives depth, a concern remains: information technology tends to centralize. The
+                        Second Why documented the pattern in detail: delegation systems tend to centralize under
+                        competitive pressure or fail at useful scale. Email was once a distributed system of peer
+                        connections and a handful of platforms now operate it; web search began with multiple competing
+                        companies using decentralized ranking algorithms and consolidated under a dominant platform. If
+                        history is any guide, this system may face strong centralizing pressures too.
+                    </p>
+
+                    <p>
+                        Yet, these systems didn't necessarily centralize because centralization is the natural state of
+                        information systems. They centralized for many well known reasons (network effects, economies of
+                        scale, user convenience, etc.), but perhaps these reasons are underpinned by three more
+                        fundamental driving forces of centralization.
+                    </p>
+
+                    <p>
+                        The first is information overload. When there's more information than any person can process,
+                        the job of synthesis and indexing gets handed to an intermediary (search engines, news editors,
+                        recommendation algorithms, etc.), and those intermediaries centralize because they can filter
+                        the flood more efficiently than individuals acting alone. Deep voting (Chapter 2) addresses this
+                        cause specifically: source-partitioned representations can compress and index information without
+                        any central party needing to hold all the data.
+                    </p>
+
+                    <p>
+                        Privacy is the second. Information too sensitive to share directly gets handed to institutions
+                        people hope will keep it safe: banks, hospitals, intelligence agencies, etc. These institutions
+                        centralize because centralization solves a real problem: some information can't flow freely
+                        between individuals. Structured transparency (Chapter 3) replaces the need for a trusted
+                        custodian with cryptographic protocols that let participants share information without
+                        surrendering copies of it.
+                    </p>
+
+                    <p>
+                        The third cause is harder to see because it's the water we swim in: veracity. When information
+                        might not be true, people defer to institutional arbiters (journalists, researchers, rating
+                        agencies) who centralize because someone has to adjudicate what counts as real. BaconRank (this
+                        chapter) offers an alternative through recursive trust propagation, enabling truth-finding
+                        through redundant paths without any central authority.
+                    </p>
+
+                    <p>
+                        Three causes of centralization, and three chapters that each built a tool for one of them. The
+                        delegation systems that centralized (academic citations, web search) faced some or all of these
+                        limitations, which were then amplified by other centralizing forces like network effects. This
+                        architecture faces the same competitive pressures, but it meets them with specific technical
+                        remedies targeted at each underlying cause.
+                    </p>
+
+                    <p>
+                        Broad listening is what emerges when information overload, privacy, and veracity are all
+                        addressed simultaneously through decentralized means. Centralization was never the goal of
+                        delegation systems; it was in part a symptom of missing technical infrastructure, and the
+                        theoretical frameworks for that infrastructure now exist. And whether decentralized alternatives
+                        will outcompete centralized incumbents in practice is genuinely unknown. But the structural
+                        necessity has changed: for centuries, addressing information overload, privacy, or veracity at
+                        scale strongly favoured centralized approaches. The technical landscape has changed, even if the
+                        competitive and social landscape remains to be tested.
                     </p>
                 </section>
 
                 <section id="first-hypothesis">
-                    <h2>First Hypothesis: The Machinery Exists</h2>
+                    <h2>First Hypothesis: Broad Listening Competes</h2>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/ch_4_8_v1.png" alt="First Hypothesis concept graph">
+                        <figcaption>Subset of concept graph highlighting the First Hypothesis and focus of this section.
+                        </figcaption>
+                    </figure>
 
                     <p>
-                        The Second Hypothesis showed that recursive delegation scales and decentralizes in principle.
-                        Whether anyone uses it depends on two requirements: participation must be cheap enough to
-                        compete with platforms, and secure enough that honest participation is rational.
+                        Broad listening removes the structural necessity for centralization, but architectural
+                        possibility doesn't imply practical competitiveness. Even if the architecture is sound, might it
+                        take forever to run? At present, typing a question into a frontier AI system returns an answer
+                        in seconds, whereas broad listening proposes a system where a query propagates through six hops
+                        of a social graph, with human attention (perhaps even human approval) required at every node.
+                        Recursive consultation through social networks has always been slow. Asking a friend to ask a
+                        friend to ask a friend takes days or weeks, because each person in the chain has to notice the
+                        message, think about it, write a reply, and pass it along.
                     </p>
 
                     <p>
-                        Chapters ?? and ?? address both requirements, though empirical validation remains future
-                        work.
-                    </p>
-
-                    <h3>What Deep Voting Provides</h3>
-
-                    <p>
-                        Recursive consultation through social networks presently requires human effort at every hop:
-                        formulating requests, providing context, waiting for responses, following up when people forget.
-                        A chain that could theoretically reach a relevant expert in four hops might take days or weeks
-                        in
-                        practice. Meanwhile, platform queries from frontier AI systems can return results in seconds.
+                        But the slowness of recursive consultation has never been a property of the network's reach;
+                        it's a consequence of the human coordination cost at each node. Deep voting proposed to
+                        dramatically reduce this bottleneck by separating weight specification from query-time
+                        coordination. Participants record their trust assessments in advance (who they trust, for which
+                        domains, how much), and when a query arrives, the system propagates trust according to these
+                        weights without requiring any human being to check their phone.
                     </p>
 
                     <p>
-                        Deep voting addresses this gap by describing how this analog process could be done digitally,
-                        plausibly giving a path towards a significant reduction in cost and latency. It did this in part
-                        by separating weight specification from query-time coordination. Participants record trust
-                        assessments in advance, specifying which contacts they trust for which domains. When a query
-                        arrives, the system propagates trust according to these pre-recorded weights without requiring
-                        human attention. Trust scores convert to contribution weights:
+                        The propagation computation requires $O(k \cdot H)$ operations per participant, which with
+                        $k \approx 50$ contacts and $H \approx 6$ hops amounts to roughly 300 operations regardless of
+                        how large the network grows. The synthesis step requires language model inference, which
+                        currently takes seconds. The relevant comparison here is between days of sequential human phone
+                        calls and seconds of parallelised matrix multiplication.
                     </p>
 
-                    <p style="text-align: center;">\[
-                        B(s) = \frac{T_H(s)}{\sum_{s' \in S_q} T_H(s')}
-                        \tag{4.4}
-                        \]
+                    <h3 id="honesty-problem">The Honesty Problem</h3>
+
+                    <p>
+                        Yet, speed becomes irrelevant if participants can't provide honest assessments, and recording
+                        trust assessments in a digital system creates vulnerabilities that face-to-face word of mouth
+                        doesn't have. If assessments are observable, employers can identify which employees distrust
+                        company sources, governments can identify which citizens trust opposition voices, and commercial
+                        actors can map relationships for targeted manipulation. Facing those risks, rational
+                        participants would either refuse to participate or provide strategically dishonest assessments,
+                        and either outcome renders BaconRank useless regardless of its other architectural properties.
                     </p>
 
                     <p>
-                        The propagation computation itself is lightweight (matrix operations over sparse graphs).
+                        Structured transparency is designed for exactly this problem, providing something analogous to
+                        end-to-end encryption for the trust propagation process. Assessments travel over encrypted data
+                        so that predictions don't reveal who assessed whom; computations can be verified without
+                        exposing the underlying inputs; and cryptographic keys are distributed across participants so
+                        that no single party can observe the full process or override it unilaterally.
                     </p>
 
                     <p>
-                        The synthesis step requires language model inference, which currently takes seconds. Whether
-                        end-to-end latency proves competitive with conventional platforms is an empirical question
-                        this thesis does not answer, but the architecture eliminates the human coordination bottleneck
-                        that made recursive consultation impractical. The difference between days of phone calls and
-                        seconds of computation is large enough that precise benchmarks are unlikely to change the
-                        qualitative conclusion.
+                        The result is that participants can record honest assessments without exposing themselves,
+                        though whether they actually will is a question about human behaviour rather than technology,
+                        and one this thesis can't answer. What has changed is that the principal technical barrier has
+                        been addressed: before structured transparency, honest participation in a global trust network
+                        required trusting every intermediary with the content of one's assessments. The cryptographic
+                        tools to remove that requirement now exist, even if practical deployment at scale introduces
+                        additional engineering challenges.
                     </p>
 
-                    <h3>What Structured Transparency Provides</h3>
+                    <h3 id="other-practical">Other Practical Concerns</h3>
 
                     <p>
-                        Recording trust assessments in a digital system creates vulnerability that face-to-face word of
-                        mouth does not. If assessments are observable, employers could identify employees who distrust
-                        company sources, governments could identify citizens who trust opposition voices, and commercial
-                        actors could infer relationships for targeted manipulation. Rational participants facing these
-                        risks would either decline to participate or provide strategically dishonest assessments.
+                        The reader might also suggest other practical concerns. Will a popular product for broad
+                        listening be open source? Will it rely upon proprietary services which recentralize control
+                        (e.g. Google's Play Store and Android)? Might open source implementations and public
+                        infrastructure receive enough funding to compete with the entrenched interests of trillion
+                        dollar companies which rely upon the attention economy for vast sums of revenue? These are all
+                        crucial questions which should be explored. This thesis describes a practical possibility, as
+                        well as some incentive reasons why this approach could out-compete existing approaches (e.g.
+                        incentives discussed in the Introduction chapter, data siloing challenges with centralized
+                        infrastructure discussed in Chapter 2, etc.), but the world is complex and further investigation
+                        is required.
                     </p>
 
-                    <p>
-                        Structured transparency addresses this by enabling something analogous to end-to-end encryption
-                        for the trust propagation process. Information flows from participants to intended
-                        recipients without requiring any central intermediary to observe unencrypted weights or
-                        messages. Input and output privacy allow trust scores to propagate over encrypted data. Input
-                        and
-                        output verification verifies correct execution without revealing inputs or intermediate
-                        variables.
-                    </p>
+                    <h3 id="gap-closes">The Gap Closes</h3>
 
                     <p>
-                        Whether these guarantees prove sufficient to motivate honest participation is ultimately an
-                        empirical question about user behavior. What the architecture provides is the removal of a
-                        technical barrier: participants <em>can</em> record honest assessments without exposure, even if
-                        the
-                        thesis
-                        cannot guarantee that they <em>will</em>.
-                    </p>
-
-                    <h3>The Gap Closes</h3>
-
-                    <p>
-                        The First Why identified a gap between cognitive capacity for trust
-                        evaluation&mdash;approximately
-                        150
-                        relationships&mdash;and the number of sources requiring evaluation—approximately 10<sup>9</sup>.
-                        Seven
-                        orders of magnitude.
+                        Nevertheless, the First Why identified a gap between what individuals can evaluate
+                        (approximately 150 relationships, constrained by Dunbar's number) and what competitive AI
+                        systems require, which is trust assessments for roughly a billion sources. Seven orders of
+                        magnitude separate the two.
                     </p>
 
                     <p>
-                        Recursive depth addresses the gap structurally. Deep voting replaces human coordination with
-                        computation, making recursive consultation plausibly fast enough to compete with
-                        platforms. Structured transparency protects assessments from observation, making honest
-                        participation possible without exposure.
+                        To address this challenge, a combination of mechanisms, each built independently for a different
+                        problem, compose into a system that addresses this trust gap. Recursive depth gives the network
+                        its reach (six hops of fifty connections spanning fifteen billion sources), and the redundancy
+                        of thousands of independent paths scatters uncoordinated deception against the aggregate. But
+                        reach and integrity mean nothing if the process takes weeks, which is where deep voting changes
+                        the calculation: pre-recorded weights replace sequential human coordination with seconds of
+                        parallelised matrix operations. The remaining vulnerability is that participants might lie about
+                        their weights if they fear exposure, which is what structured transparency addresses through
+                        encryption that doesn't require trusting any intermediary. And BaconRank ties it together,
+                        converting trust-weighted aggregation across these redundant, encrypted, computationally
+                        efficient paths into verified information without a central arbiter.
                     </p>
 
                     <p>
-                        The contribution is not the pattern of recursive trust propagation, which has operated in
-                        human societies for as long as those societies have existed. The contribution is identifying
-                        the infrastructure barriers&mdash;coordination cost and privacy risk&mdash;and providing
-                        machinery that
-                        addresses them. Whether that machinery proves sufficient in practice remains for future work to
-                        establish.
+                        None of this is new as a pattern: recursive trust propagation is how human societies have always
+                        worked, and people have always asked friends of friends for advice. What's new is the
+                        identification of specific barriers that prevented this ancient pattern from scaling
+                        (coordination cost, privacy risk, and veracity uncertainty) and the demonstration that
+                        technologies which already exist, combined through the architecture described in this thesis,
+                        can address each one. The result is something like word-of-mouth upgraded to operate at machine
+                        speed, global scale, and with cryptographic protection. Whether this composition can actually
+                        compete with the platforms people use today is a question this thesis can't settle, but the
+                        technical coherence of the composition (the fact that the pieces fit) is what this thesis has
+                        argued.
                     </p>
                 </section>
 
                 <section id="conclusion">
-                    <h2>Conclusion</h2>
+                    <h2>Conclusion: Broad Listening</h2>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/deep_learning_to_broad_listening_v2.png"
+                            alt="Traditional AI to Broad Listening">
+                        <figcaption>Traditional AI (left) compresses all sources into a model, obfuscating source
+                            influence and control while broad listening (right) leverages information from relevant
+                            sources, weighted through a social graph. Darker lines indicate sources being used for a
+                            prediction.</figcaption>
+                    </figure>
 
                     <p>
-                        This chapter asked whether the problems documented in the three Whys admit a solution. The
-                        Third Hypothesis established that recursive networks can achieve global reach without requiring
-                        any node to exceed Dunbar-scale operation. The Second Hypothesis showed that a specific
-                        propagation mechanism scales computationally and distributes authority structurally. The First
-                        Hypothesis showed that deep voting addresses coordination cost and structured transparency
-                        addresses privacy risk.
+                        What does it actually look like to participate in this system? From the perspective of a data
+                        source, it means maintaining a local LLM (e.g. ClaudeBot) as an interface to the world, a
+                        piece of a deep voting architecture that encodes your knowledge and answers queries on your
+                        behalf. A doctor can't personally field a billion queries about oncology, but a trained LLM
+                        maintained on infrastructure the doctor controls, encrypted through structured transparency and
+                        governed by intelligence budgets the doctor sets, can respond to verified queries automatically.
+                        This isn't a "digital twin" in the popular sense; it's the doctor's voice in the system,
+                        operating within bounds she chose and contributing to a collective intelligence she helps
+                        govern.
                     </p>
 
                     <p>
-                        What the chapter establishes is architectural possibility, not guaranteed outcome. Whether
-                        the machinery proves sufficient to motivate adoption, and whether the architectural properties
-                        prove robust against competitive dynamics, remain empirical questions.
+                        From the perspective of a user, a query propagates through the network in milliseconds.
+                        BaconRank identifies thousands of relevant sources, weighted by trust accumulated through
+                        recursive paths, and their partitions get synthesised through encrypted computation. What comes
+                        back isn't anonymous per se, as it arrives with attribution metadata about the people and trust
+                        paths used to produce the AI result. But that attribution metadata also doesn't need to divulge
+                        the exact identities of the parties who contributed, merely the attestation that they were
+                        sourced through a verified chain of trust, and corroborated with some level of redundancy. A
+                        medical claim can be traced to oncologists trusted by patients who recovered, or flagged as
+                        originating from sources with no verifiable track record. But the exact names of each
+                        participant are not strictly speaking necessary, and if trust needs adjusting, the user can
+                        adjust their intelligence budget and query again, refining the prompt with each iteration.
                     </p>
 
                     <p>
-                        The chapter also proposed a reframe. The three Whys traced concentration not to any
-                        fundamental constraint on distributed trust, but to uneven development of communication
-                        infrastructure&mdash;sharing scaled while filtering, aggregating, and trust-weighting remained at
-                        human speed. The contribution of this thesis is not the pattern of recursive trust propagation,
-                        which is ancient. The contribution is identifying the infrastructure gaps that prevented the
-                        pattern from operating at scale, and surveying and re-framing recently proposed machinery that
-                        addresses them.
+                        The observation that most people miss is that when anyone uses a modern AI chat system, they're
+                        already talking with the world in a way analogous to the form described above. The training data
+                        came from the world, the fine-tuning reflected human preferences, and the predictions synthesise
+                        patterns drawn from billions of people. What's absent is any control over that connection: which
+                        part of the world you're talking with, whether what you hear is genuine, and whether the
+                        conversation is being observed. In a very real sense, the interface already exists within major
+                        AI products like ChatGPT, Claude, and Gemini. What doesn't exist is the user's ability to
+                        control it... with attribution-based control.
+                    </p>
+
+                    <h3 id="the-telephone">The Telephone</h3>
+
+                    <p>
+                        Before the rotary dial was introduced in 1919, a telephone caller picked up the receiver and
+                        spoke with an operator, a centralized intermediary who decided whom to connect, leaving the
+                        caller with no control over the connection. After the telephone dial was introduced, a telephone
+                        caller chose their contacts directly. And once phones became digital, and contained contact
+                        lists, a telephone caller could pull up trusted numbers without memorizing them. After
+                        end-to-end encryption, the conversation became private on apps like Signal and WhatsApp. The
+                        telephone itself didn't change through any of these transitions; what changed was the caller's
+                        relationship to it, from passive recipient of a centralized service to active participant in an
+                        end-to-end encrypted network.
+                    </p>
+
+                    <p>
+                        AI is at the operator stage of this transformation. A user queries a frontier system and
+                        receives a response assembled from data they didn't choose, governed by values they didn't set,
+                        built on reasoning they can't trace. The user picks up the receiver (chatgpt.com) and gets
+                        whoever the operator (OpenAI) connects them to, with no ability to dial, no contact list of
+                        trusted sources, and no way to verify that the line is private or that the voice on the other
+                        end is telling the truth. The model decides who the user talks to within the inner workings of
+                        its neurons. Even when a model queries a web source or local context window, its still the
+                        neurons which (in a hidden way) decide what information to use to create predictions... and
+                        nobody can decode the inner workings of those neurons to know which sources are truly being
+                        relied upon.
+                    </p>
+
+                    <p>
+                        In short, the AI user has no buttons, and attribution-based control provides them. Deep voting
+                        is the dial: source-partitioned representations let a user choose which sources inform each
+                        prediction, the way a caller selects a number. Structured transparency is the encryption:
+                        cryptographic protocols that protect the channel without requiring anyone to trust a central
+                        custodian. BaconRank is the contact list: a trust-weighted directory of the whole world,
+                        discovered through recursive networks of verified relationships, letting a user find trustworthy
+                        sources many hops away without ever leaving Dunbar scale.
+                    </p>
+
+                    <p>
+                        The AI model is the telephone. The AI model has always been a kind of telephone for listening to
+                        large groups of people. What's been missing are the buttons, the contact list, and the
+                        encryption to protect it. Broad listening is what happens when these get added, when people use
+                        AI not to receive intelligence from a central source but to communicate, at scale, through
+                        trust-weighted channels, with cryptographic guarantees, with the world.
                     </p>
                 </section>
 
                 <section class="references">
                     <h2>References</h2>
                     <ol>
-                        <li id="ref-1"><span class="authors">Dunbar, R. I. M.</span> (1993). <a
-                                href="https://doi.org/10.1017/S0140525X00032325"><span class="title">Coevolution of
-                                    neocortical size, group size and language in humans.</span></a> <span
-                                class="venue">Behavioral and Brain Sciences</span>, 16(4), 681–735.</li>
-                        <li id="ref-2"><span class="authors">Granovetter, M. S.</span> (1973). <a
+                        <li id="ref-1"><span class="authors">Granovetter, M. S.</span> (1973). <a
                                 href="https://doi.org/10.1086/225469"><span class="title">The Strength of Weak
                                     Ties.</span></a> <span class="venue">American Journal of Sociology</span>, 78(6),
                             1360–1380.</li>
-                        <li id="ref-3"><span class="authors">Granovetter, M.</span> (1985). <a
-                                href="https://doi.org/10.1086/228311"><span class="title">Economic Action and Social
-                                    Structure: The Problem of Embeddedness.</span></a> <span class="venue">American
-                                Journal of Sociology</span>, 91(3), 481–510.</li>
-                        <li id="ref-4"><span class="authors">Centola, D., & Macy, M.</span> (2007). <a
-                                href="https://doi.org/10.1086/521848"><span class="title">Complex Contagions and the
-                                    Weakness of Long Ties.</span></a> <span class="venue">American Journal of
-                                Sociology</span>, 113(3), 702–734.</li>
-                        <li id="ref-5"><span class="authors">Coleman, J. S.</span> (1988). <a
-                                href="https://doi.org/10.1086/228943"><span class="title">Social Capital in the Creation
-                                    of Human Capital.</span></a> <span class="venue">American Journal of
-                                Sociology</span>, 94, S95–S120.</li>
-                        <li id="ref-6"><span class="authors">Backstrom, L., et al.</span> (2012). <a
-                                href="https://arxiv.org/abs/1111.4570"><span class="title">Four Degrees of
-                                    Separation.</span></a> <span class="venue">ACM Web Science 2012</span>, 33–42.</li>
-                        <li id="ref-7"><span class="authors">Goldhaber, M. H.</span> (1997). <a
-                                href="https://firstmonday.org/article/view/519/440"><span class="title">The Attention
-                                    Economy and the Net.</span></a> <span class="venue">First Monday</span>, 2(4).</li>
-                        <li id="ref-8"><span class="authors">Hootsuite.</span> (2024). <a
+                        <li id="ref-2"><span class="authors">Dunbar, R. I. M.</span> (1993). <a
+                                href="https://doi.org/10.1017/S0140525X00032325"><span class="title">Coevolution of
+                                    neocortical size, group size and language in humans.</span></a> <span
+                                class="venue">Behavioral and Brain Sciences</span>, 16(4), 681–735.</li>
+                        <li id="ref-3">
+                            <span class="authors">Grybauskas, D.</span> (2023).
+                            <span class="title">Will Twitter's new rate limits really stop scraping?</span>
+                            <span class="venue"><em>Built In</em>, July.</span>
+                        </li>
+                        <li id="ref-4">
+                            <span class="authors">O'Brien, M.</span> (2025).
+                            <span class="title">Reddit sues AI company Perplexity and others for 'industrial-scale'
+                                scraping of user comments.</span>
+                            <span class="venue"><em>Associated Press</em>, October.</span>
+                        </li>
+                        <li id="ref-5">
+                            <span class="authors">Grynbaum, M. M. and Mac, R.</span> (2023).
+                            <span class="title">The Times sues OpenAI and Microsoft over A.I. use of copyrighted
+                                work.</span>
+                            <span class="venue"><em>The New York Times</em>, December.</span>
+                        </li>
+                        <li id="ref-6">
+                            <span class="authors">Youssef, A., Ng, M., Long, J., Hernandez-Boussard, T., Shah, N.,
+                                Miner, A., Larson, D., and Langlotz, C.</span> (2023).
+                            <span class="title">Organizational factors in clinical data sharing for artificial
+                                intelligence in health care.</span>
+                            <span class="venue"><em>JAMA Network Open</em>, 6:e2348422.</span>
+                        </li>
+                        <li id="ref-7">
+                            <span class="authors">Rao, A., Spasojevic, N., Li, Z., and DSouza, T.</span> (2015).
+                            <span class="title">Klout score: Measuring influence across multiple social
+                                networks.</span>
+                            <span class="venue"><em>Proceedings of the IEEE International Conference on Big Data</em>,
+                                2282–2289.</span>
+                        </li>
+                        <li id="ref-8">
+                            <span class="authors">Fortune.</span> (2014).
+                            <span class="title">Klout acquired for $200 million by Lithium Technologies.</span>
+                            <span class="venue"><em>Fortune</em>, March.</span>
+                        </li>
+                        <li id="ref-9">
+                            <span class="authors">Oremus, W.</span> (2018).
+                            <span class="title">Klout is dead, just in time for Europe's GDPR privacy law. That's not a
+                                coincidence.</span>
+                            <span class="venue"><em>Slate</em>, May.</span>
+                        </li>
+                        <li id="ref-10">
+                            <span class="authors">Simmons, D.</span> (2022).
+                            <span class="title">17 countries with GDPR-like data privacy laws.</span>
+                            <span class="venue">January.</span>
+                        </li>
+                        <li id="ref-11"><span class="authors">Hootsuite.</span> (2024). <a
                                 href="https://www.hootsuite.com/resources/digital-trends"><span class="title">Digital
                                     2024: Global Overview Report.</span></a> <span class="venue">Hootsuite & We Are
                                 Social</span>.</li>
-                        <li id="ref-9"><span class="authors">Imperva.</span> (2024). <a
+                        <li id="ref-12"><span class="authors">Imperva.</span> (2024). <a
                                 href="https://www.imperva.com/resources/resource-library/reports/bad-bot-report/"><span
                                     class="title">2024 Bad Bot Report.</span></a> <span class="venue">Imperva Threat
-                                Research. Reported via Forbes, April
-                                2024.</span>.</li>
-                        <li id="ref-10"><span class="authors">Simmons, R.</span> (2022). <span class="title">The GDPR
-                                and Its Influence on Global Data Privacy Legislation.</span> <span class="venue">Journal
-                                of Data Protection & Privacy</span>.</li>
-                        <li id="ref-11"><span class="authors">Rao, A.</span> (2015). <a
-                                href="https://www.wired.com/2012/04/klout-score/"><span class="title">Klout and Social
-                                    Scoring.</span></a> <span class="venue">Wired</span>.</li>
-                        <li id="ref-12"><span class="authors">Axelrod, R., & Hamilton, W. D.</span> (1981). <a
-                                href="https://doi.org/10.1126/science.7466396"><span class="title">The Evolution of
-                                    Cooperation.</span></a> <span class="venue">Science</span>, 211(4489), 1390–1396.
-                        </li>
-
+                                Research. Reported via Forbes, April 2024.</span></li>
                         <li id="ref-13">
-                            <span class="authors">
-                                D. Grybauskas. 2023.
-                            </span>
-
-                            <span class="venue">
-                                Will twitter’s new rate limits really stop scraping? <em>Built In</em>, July. Online
-                                article.
-                            </span>
+                            <span class="authors">D'Onfro, J.</span> (2013).
+                            <span class="title">A whopping 20% of Yelp reviews are fake.</span>
+                            <span class="venue">September.</span>
                         </li>
-
                         <li id="ref-14">
-                            <span class="authors">
-                                M. O’Brien. 2025.
-                            </span>
-
-                            <span class="venue">
-                                Reddit sues ai company perplexity and others for ’industrial-scale’ scraping
-                                of user comments. <em>Associated Press</em>, October. Updated 4:41 PM GMT-4, October 22,
-                                2025.
-                            </span>
+                            <span class="authors">Cross, B.</span> (2022).
+                            <span class="title">Up to 30% of online reviews are fake and most consumers can't tell the
+                                difference.</span>
+                            <span class="venue">November.</span>
                         </li>
-
                         <li id="ref-15">
-                            <span class="authors">
-                                M. M. Grynbaum and R. Mac. 2023.
-                            </span>
-
-                            <span class="venue">
-                                The times sues openai and microsoft over a.i. use of
-                                copyrighted work. <em>The New York Times</em>, December.
-                            </span>
+                            <span class="authors">Foreign, Commonwealth &amp; Development Office.</span> (2022).
+                            <span class="title">UK exposes sick Russian troll factory plaguing social media with Kremlin
+                                propaganda.</span>
+                            <span class="venue">UK Government Press Release, May.</span>
                         </li>
-
                         <li id="ref-16">
-                            <span class="authors">
-                                A. Youssef, M. Ng, J. Long, T. Hernandez-Boussard, N. Shah, A. Miner, D. Larson, and
-                                C. Langlotz. 2023.
-                            </span>
-
-                            <span class="venue">
-                                Organizational factors in clinical data sharing for artificial intelligence
-                                in health care. <em>JAMA Network Open</em>, 6:e2348422, 12.
-                            </span>
+                            <span class="authors">Lawrence, S., Giles, C. L., and Bollacker, K.</span> (1999).
+                            <span class="title">Digital libraries and autonomous citation indexing.</span>
+                            <span class="venue"><em>Computer</em>, 32(6):67–71.</span>
                         </li>
-
                         <li id="ref-17">
-                            <span class="authors">
-                                A. Rao, N. Spasojevic, Z. Li, and T. DSouza. 2015.
-                            </span>
-
-                            <span class="venue">
-                                Klout score: Measuring influence across
-                                multiple social networks. In <em>Proceedings of the IEEE International Conference on Big
-                                    Data</em>,
-                                pages 2282–2289.
-                            </span>
+                            <span class="authors">Page, L., Brin, S., Motwani, R., and Winograd, T.</span> (1999).
+                            <span class="title">The PageRank citation ranking: Bringing order to the web.</span>
+                            <span class="venue">Technical report, Stanford InfoLab.</span>
                         </li>
-
                         <li id="ref-18">
-                            <span class="authors">
-                                Fortune. 2014.
-                            </span>
-
-                            <span class="venue">
-                                Klout acquired for $200 million by lithium technologies. <em>Fortune</em>, March.
-                            </span>
+                            <span class="authors">Reagle, J. M.</span> (2010).
+                            <span class="title"><em>Good faith collaboration: The culture of Wikipedia.</em></span>
+                            <span class="venue">MIT Press.</span>
                         </li>
-
-                        <li id="ref-19">
-                            <span class="authors">
-                                W. Oremus. 2018.
-                            </span>
-
-                            <span class="venue">
-                                Klout is dead, just in time for Europe’s GDPR privacy law. That’s not a
-                                coincidence. <em>Slate</em>, May
-                            </span>
-                        </li>
-
-                        <li id="ref-20">
-                            <span class="authors">
-                                D. Simmons. 2022.
-                            </span>
-
-                            <span class="venue">
-                                17 countries with GDPR-like data privacy laws, January.
-                            </span>
-                        </li>
-
+                        <li id="ref-19"><span class="authors">Goldhaber, M. H.</span> (1997). <a
+                                href="https://firstmonday.org/article/view/519/440"><span class="title">The Attention
+                                    Economy and the Net.</span></a> <span class="venue">First Monday</span>, 2(4).</li>
+                        <li id="ref-20"><span class="authors">Backstrom, L., et al.</span> (2012). <a
+                                href="https://arxiv.org/abs/1111.4570"><span class="title">Four Degrees of
+                                    Separation.</span></a> <span class="venue">ACM Web Science 2012</span>, 33–42.</li>
                         <li id="ref-21">
-                            <span class="authors">
-                                J. D’Onfro. 2013.
-                            </span>
-
-                            <span class="venue">
-                                A whopping 20% of yelp reviews are fake, September. Accessed: 2026-01-
-                                02.
-                            </span>
-                        </li>
-
-                        <li id="ref-22">
-                            <span class="authors">
-                                B. Cross. 2022.
-                            </span>
-
-                            <span class="venue">
-                                Up to 30% of online reviews are fake and most consumers can’t tell the
-                                difference, November. Accessed: 2026-01-02.
-                            </span>
-                        </li>
-
-                        <li id="ref-23">
-                            <span class="authors">
-                                Foreign, Commonwealth & Development Office. 2022.
-                            </span>
-
-                            <span class="venue">
-                                Uk exposes sick russian troll factory
-                                plaguing social media with kremlin propaganda. UK Government Press Release, May.
-                                Accessed 2024.
-                            </span>
-                        </li>
-
-                        <li id="ref-24">
-                            <span class="authors">
-                                S. Lawrence, C. L. Giles, and K. Bollacker. 1999.
-                            </span>
-
-                            <span class="venue">
-                                Digital libraries and autonomous citation
-                                indexing. <em>Computer</em>, 32(6):67–71.
-                            </span>
-                        </li>
-
-                        <li id="ref-25">
-                            <span class="authors">
-                                L. Page, S. Brin, R. Motwani, and T. Winograd. 1999.
-                            </span>
-
-                            <span class="venue">
-                                The pagerank citation ranking: Bringing
-                                order to the web. Technical report, Stanford infolab
-                            </span>
-                        </li>
-
-                        <li id="ref-26">
-                            <span class="authors">
-                                J. M. Reagle. 2010.
-                            </span>
-
-                            <span class="venue">
-                                <em>Good faith collaboration: The culture of Wikipedia</em>. MIT Press.
-                            </span>
+                            <span class="authors">Haveliwala, T. H.</span> (2002).
+                            <span class="title">Topic-sensitive PageRank.</span>
+                            <span class="venue"><em>Proceedings of the 11th International Conference on World Wide
+                                    Web</em>, 517–526.</span>
                         </li>
                     </ol>
                 </section>
