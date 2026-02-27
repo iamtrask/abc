@@ -566,7 +566,7 @@
     "year": 2015,
     "venue": "Nature Jobs",
     "venueShort": "Nature Jobs",
-    "url": "http://blogs.nature.com/naturejobs/2015/09/21/data-sharing-why-it-doesnt-happen/",
+    "url": "https://web.archive.org/web/20210421105442/http://blogs.nature.com/naturejobs/2015/09/21/data-sharing-why-it-doesnt-happen/",
     "doi": null,
     "type": "journal",
     "screenshot": null
@@ -690,7 +690,7 @@
     "year": 1993,
     "venue": "Journal of official Statistics",
     "venueShort": "Journal of official Statistics",
-    "url": "https://doi.org/10.1177/009365029302000407",
+    "url": "https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/discussion-statistical-disclosure-limitation.pdf",
     "doi": null,
     "type": "journal",
     "screenshot": null
@@ -730,9 +730,9 @@
       "resources"
     ],
     "year": 2024,
-    "venue": "\\url{https://www.industry.gov.au/publications/australias-ai-ethics-principles}",
-    "venueShort": "\\url{https://www.industry.gov.au/publications/australias-ai-ethics-principles}",
-    "url": "https://www.industry.gov.au/publications/australias-ai-ethics-principles",
+    "venue": "\\url{https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-principles}",
+    "venueShort": "\\url{https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-principles}",
+    "url": "https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-principles",
     "doi": null,
     "type": "misc",
     "screenshot": null
@@ -1057,7 +1057,7 @@
     "year": 2003,
     "venue": "Networks in the knowledge economy",
     "venueShort": "Networks in the knowledge economy",
-    "url": "https://doi.org/10.2307/j.ctv1kz4h78",
+    "url": "https://doi.org/10.1093/oso/9780195159509.003.0006",
     "doi": null,
     "type": "journal",
     "screenshot": null
@@ -1246,7 +1246,7 @@
     "year": 2024,
     "venue": "Educating Silicon",
     "venueShort": "Educating Silicon",
-    "url": "https://educatingsilicon.substack.com/p/how-much-llm-training-data-is-there",
+    "url": "https://www.educatingsilicon.com/2024/05/09/how-much-llm-training-data-is-there-in-the-limit/",
     "doi": null,
     "type": "journal",
     "screenshot": null
@@ -2585,7 +2585,7 @@
     "year": 2014,
     "venue": "Fortune",
     "venueShort": "Fortune",
-    "url": "https://fortune.com/2014/03/27/klout-acquired-for-200-million-by-lithium-technologies/",
+    "url": "https://fortune.com/2014/03/26/klout-acquired-for-200-million-by-lithium-technologies/",
     "doi": null,
     "type": "journal",
     "screenshot": null
@@ -2733,7 +2733,7 @@
     "year": 1997,
     "venue": "First Monday",
     "venueShort": "First Monday",
-    "url": "https://firstmonday.org/article/view/519/440",
+    "url": "https://doi.org/10.5210/fm.v2i4.519",
     "doi": null,
     "type": "journal",
     "screenshot": null
