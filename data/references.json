@@ -1049,6 +1049,19 @@
     "type": "misc",
     "screenshot": null
   },
+  "2f928592-a19d-38f4-91e4-45f12ea471a0": {
+    "title": "Structural Holes: The Social Structure of Competition",
+    "authors": [
+      "burt_ronald_s"
+    ],
+    "year": 1992,
+    "venue": "Harvard University Press",
+    "venueShort": "Harvard University Press",
+    "url": "http://www.jstor.org/stable/j.ctv1kz4h78",
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
   "burt2003social": {
     "title": "The social structure of competition",
     "authors": [
@@ -1156,6 +1169,20 @@
     "url": "https://ai.google/responsibility/principles/",
     "doi": null,
     "type": "misc",
+    "screenshot": null
+  },
+  "schmidt2014google": {
+    "title": "How google works",
+    "authors": [
+      "schmidt_eric",
+      "rosenberg_jonathan"
+    ],
+    "year": 2014,
+    "venue": "Grand Central Publishing",
+    "venueShort": "Grand Central Publishing",
+    "url": null,
+    "doi": null,
+    "type": "book",
     "screenshot": null
   },
   "borgeaud2022improving": {
@@ -1943,7 +1970,7 @@
     "year": 2024,
     "venue": null,
     "venueShort": null,
-    "url": "https://www.hup.harvard.edu/books/9780674970847",
+    "url": "https://www.techrxiv.org/users/793847/articles/1103136-large-language-model-with-federated-retrieval-augmented-generation-for-improved-knowledge-retrieval",
     "doi": "10.36227/techrxiv.171837853.31531482/v1",
     "type": "journal",
     "screenshot": null
@@ -2189,7 +2216,7 @@
     "year": 2025,
     "venue": "International Conference on Database and Expert Systems Applications",
     "venueShort": "International Conference on Database and Expert Systems Applications",
-    "url": "https://doi.org/10.1007/978-3-031-61003-5_29",
+    "url": "https://doi.org/10.1007/978-3-032-02049-9_1",
     "doi": null,
     "type": "conference",
     "screenshot": null
