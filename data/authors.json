@@ -1,0 +1,3644 @@
+{
+  "dziri_nouha": {
+    "displayName": "Nouha Dziri",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "milton_sivan": {
+    "displayName": "Sivan Milton",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "yu_mo": {
+    "displayName": "Mo Yu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zaiane_osmar": {
+    "displayName": "Osmar Zaiane",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "reddy_siva": {
+    "displayName": "Siva Reddy",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "vaccari_cristian": {
+    "displayName": "Cristian Vaccari",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "chadwick_andrew": {
+    "displayName": "Andrew Chadwick",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zuccon_guido": {
+    "displayName": "Guido Zuccon",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "koopman_bevan": {
+    "displayName": "Bevan Koopman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "shaik_razia": {
+    "displayName": "Razia Shaik",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gravel_jocelyn": {
+    "displayName": "Jocelyn Gravel",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "damoursgravel_madeleine": {
+    "displayName": "Madeleine D’Amours-Gravel",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "osmanlliu_esli": {
+    "displayName": "Esli Osmanlliu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "xu_ziwei": {
+    "displayName": "Ziwei Xu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "jain_sanjay": {
+    "displayName": "Sanjay Jain",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kankanhalli_mohan": {
+    "displayName": "Mohan Kankanhalli",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "yu_lei": {
+    "displayName": "Lei Yu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cao_meng": {
+    "displayName": "Meng Cao",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cheung_jackie_ck": {
+    "displayName": "Jackie CK Cheung",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dong_yue": {
+    "displayName": "Yue Dong",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "trask_andrew": {
+    "displayName": "Andrew Trask",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bluemke_emma": {
+    "displayName": "Emma Bluemke",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "garfinkel_ben": {
+    "displayName": "Ben Garfinkel",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cuervasmons_claudia_ghezzou": {
+    "displayName": "Claudia Ghezzou Cuervas{-}Mons",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dafoe_allan": {
+    "displayName": "Allan Dafoe",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "youssef_alaa": {
+    "displayName": "Alaa Youssef",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ng_madelena": {
+    "displayName": "Madelena Ng",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "long_jin": {
+    "displayName": "Jin Long",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hernandezboussard_tina": {
+    "displayName": "Tina Hernandez-Boussard",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "shah_nigam": {
+    "displayName": "Nigam Shah",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "miner_adam": {
+    "displayName": "Adam Miner",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "larson_david": {
+    "displayName": "David Larson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "langlotz_curtis": {
+    "displayName": "Curtis Langlotz",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mcmahan_h_brendan": {
+    "displayName": "H. Brendan McMahan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "moore_eider": {
+    "displayName": "Eider Moore",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ramage_daniel": {
+    "displayName": "Daniel Ramage",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "arcas_blaise_aguera_y": {
+    "displayName": "Blaise Ag{\\\"{u}}era y Arcas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rieke_nicola": {
+    "displayName": "Nicola Rieke",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hancox_jonny": {
+    "displayName": "Jonny Hancox",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "li_wenqi": {
+    "displayName": "Wenqi Li",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "milletari_fausto": {
+    "displayName": "Fausto Milletarì",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "roth_holger_r": {
+    "displayName": "Holger R. Roth",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "albarqouni_shadi": {
+    "displayName": "Shadi Albarqouni",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bakas_spyridon": {
+    "displayName": "Spyridon Bakas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "galtier_mathieu_n": {
+    "displayName": "Mathieu N. Galtier",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "landman_bennett_a": {
+    "displayName": "Bennett A. Landman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "maierhein_klaus": {
+    "displayName": "Klaus Maier-Hein",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ourselin_sebastien": {
+    "displayName": "Sébastien Ourselin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sheller_micah": {
+    "displayName": "Micah Sheller",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "summers_ronald_m": {
+    "displayName": "Ronald M. Summers",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "xu_daguang": {
+    "displayName": "Daguang Xu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "baust_maximilian": {
+    "displayName": "Maximilian Baust",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cardoso_m_jorge": {
+    "displayName": "M. Jorge Cardoso",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "nguyen_thanh_tam": {
+    "displayName": "Thanh Tam Nguyen",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "huynh_thanh_trung": {
+    "displayName": "Thanh Trung Huynh",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ren_zhao": {
+    "displayName": "Zhao Ren",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "nguyen_phi_le": {
+    "displayName": "Phi Le Nguyen",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "liew_alan_weechung": {
+    "displayName": "Alan Wee-Chung Liew",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "yin_hongzhi": {
+    "displayName": "Hongzhi Yin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "nguyen_quoc_viet_hung": {
+    "displayName": "Quoc Viet Hung Nguyen",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "amodei_dario": {
+    "displayName": "Dario Amodei",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "olah_chris": {
+    "displayName": "Chris Olah",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "steinhardt_jacob": {
+    "displayName": "Jacob Steinhardt",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "christiano_paul": {
+    "displayName": "Paul Christiano",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "schulman_john": {
+    "displayName": "John Schulman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mane_dan": {
+    "displayName": "Dan Mané",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gabriel_iason": {
+    "displayName": "Iason Gabriel",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ntoutsi_eirini": {
+    "displayName": "Eirini Ntoutsi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "fafalios_pavlos": {
+    "displayName": "Pavlos Fafalios",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gadiraju_ujwal": {
+    "displayName": "Ujwal Gadiraju",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "iosifidis_vasileios": {
+    "displayName": "Vasileios Iosifidis",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "nejdl_wolfgang": {
+    "displayName": "Wolfgang Nejdl",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "vidal_mariaesther": {
+    "displayName": "Maria-Esther Vidal",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ruggieri_salvatore": {
+    "displayName": "Salvatore Ruggieri",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "turini_franco": {
+    "displayName": "Franco Turini",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "papadopoulos_symeon": {
+    "displayName": "Symeon Papadopoulos",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "krasanakis_emmanouil": {
+    "displayName": "Emmanouil Krasanakis",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "others": {
+    "displayName": "others",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kaplan_jared": {
+    "displayName": "Jared Kaplan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mccandlish_sam": {
+    "displayName": "Sam McCandlish",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "henighan_tom": {
+    "displayName": "Tom Henighan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "brown_tom_b": {
+    "displayName": "Tom B. Brown",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "chess_benjamin": {
+    "displayName": "Benjamin Chess",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "child_rewon": {
+    "displayName": "Rewon Child",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gray_scott": {
+    "displayName": "Scott Gray",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "radford_alec": {
+    "displayName": "Alec Radford",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wu_jeffrey": {
+    "displayName": "Jeffrey Wu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hoffmann_jordan": {
+    "displayName": "Jordan Hoffmann",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "borgeaud_sebastian": {
+    "displayName": "Sebastian Borgeaud",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mensch_arthur": {
+    "displayName": "Arthur Mensch",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "buchatskaya_elena": {
+    "displayName": "Elena Buchatskaya",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cai_trevor": {
+    "displayName": "Trevor Cai",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rutherford_eliza": {
+    "displayName": "Eliza Rutherford",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "casas_diego_de_las": {
+    "displayName": "Diego de Las Casas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hendricks_lisa_anne": {
+    "displayName": "Lisa Anne Hendricks",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "welbl_johannes": {
+    "displayName": "Johannes Welbl",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "clark_aidan": {
+    "displayName": "Aidan Clark",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hennigan_tom": {
+    "displayName": "Tom Hennigan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "noland_eric": {
+    "displayName": "Eric Noland",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "millican_katie": {
+    "displayName": "Katie Millican",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "driessche_george_van_den": {
+    "displayName": "George van den Driessche",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "damoc_bogdan": {
+    "displayName": "Bogdan Damoc",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "guy_aurelia": {
+    "displayName": "Aurelia Guy",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "osindero_simon": {
+    "displayName": "Simon Osindero",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "simonyan_karen": {
+    "displayName": "Karen Simonyan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "elsen_erich": {
+    "displayName": "Erich Elsen",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rae_jack_w": {
+    "displayName": "Jack W. Rae",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "vinyals_oriol": {
+    "displayName": "Oriol Vinyals",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sifre_laurent": {
+    "displayName": "Laurent Sifre",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sutton_richard": {
+    "displayName": "Richard Sutton",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "goodfellow_ian": {
+    "displayName": "Ian Goodfellow",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bengio_yoshua": {
+    "displayName": "Yoshua Bengio",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "courville_aaron": {
+    "displayName": "Aaron Courville",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dunbar_robin_im": {
+    "displayName": "Robin IM Dunbar",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "freeman_linton_c": {
+    "displayName": "Linton C Freeman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mouton_christopher_a": {
+    "displayName": "Christopher A. Mouton",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lucas_caleb": {
+    "displayName": "Caleb Lucas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "guest_ella": {
+    "displayName": "Ella Guest",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bhattacharyya_mehul": {
+    "displayName": "Mehul Bhattacharyya",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "miller_valerie_m": {
+    "displayName": "Valerie M Miller",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bhattacharyya_debjani": {
+    "displayName": "Debjani Bhattacharyya",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "miller_larry_e": {
+    "displayName": "Larry E Miller",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "devriendt_thijs": {
+    "displayName": "Thijs Devriendt",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "shabani_mahsa": {
+    "displayName": "Mahsa Shabani",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "borry_pascal": {
+    "displayName": "Pascal Borry",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ouyang_long": {
+    "displayName": "Long Ouyang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "jiang_xu": {
+    "displayName": "Xu Jiang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "almeida_diogo": {
+    "displayName": "Diogo Almeida",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wainwright_carroll": {
+    "displayName": "Carroll Wainwright",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mishkin_pamela": {
+    "displayName": "Pamela Mishkin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zhang_chong": {
+    "displayName": "Chong Zhang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "agarwal_sandhini": {
+    "displayName": "Sandhini Agarwal",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "slama_katarina": {
+    "displayName": "Katarina Slama",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ray_alex": {
+    "displayName": "Alex Ray",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hilton_jacob": {
+    "displayName": "Jacob Hilton",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kelton_fraser": {
+    "displayName": "Fraser Kelton",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "miller_luke": {
+    "displayName": "Luke Miller",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "simens_maddie": {
+    "displayName": "Maddie Simens",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "askell_amanda": {
+    "displayName": "Amanda Askell",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "welinder_peter": {
+    "displayName": "Peter Welinder",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "christiano_paul_f": {
+    "displayName": "Paul F Christiano",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "leike_jan": {
+    "displayName": "Jan Leike",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lowe_ryan": {
+    "displayName": "Ryan Lowe",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "roozbahani_zahra": {
+    "displayName": "Zahra Roozbahani",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ahmad_muhammad_aurangzeb": {
+    "displayName": "Muhammad Aurangzeb Ahmad",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "yaramis_ilker": {
+    "displayName": "Ilker Yaramis",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "roy_taposh_dutta": {
+    "displayName": "Taposh Dutta Roy",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "manakul_potsawee": {
+    "displayName": "Potsawee Manakul",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "liusie_adian": {
+    "displayName": "Adian Liusie",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gales_mark_j_f": {
+    "displayName": "Mark J. F. Gales",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "golodny_andrew": {
+    "displayName": "Andrew Golodny",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "jeong_jiwoong_j": {
+    "displayName": "Jiwoong J. Jeong",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "vey_brianna_l": {
+    "displayName": "Brianna L. Vey",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "reddy_ananth": {
+    "displayName": "Ananth Reddy",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kim_thomas": {
+    "displayName": "Thomas Kim",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "santos_thiago": {
+    "displayName": "Thiago Santos",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "correa_ramon": {
+    "displayName": "Ramon Correa",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dutt_raman": {
+    "displayName": "Raman Dutt",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mosunjac_marina": {
+    "displayName": "Marina Mosunjac",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "opreailies_gabriela": {
+    "displayName": "Gabriela Oprea-Ilies",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "smith_geoffrey": {
+    "displayName": "Geoffrey Smith",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "woo_minjae": {
+    "displayName": "Minjae Woo",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mcadams_christopher_r": {
+    "displayName": "Christopher R. McAdams",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "newell_mary_s": {
+    "displayName": "Mary S. Newell",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "banerjee_imon": {
+    "displayName": "Imon Banerjee",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gichoya_judy": {
+    "displayName": "Judy Gichoya",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "trivedi_hari": {
+    "displayName": "Hari Trivedi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "trieu_phuong_dung_yun": {
+    "displayName": "Phuong Dung Yun Trieu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mellothoms_claudia": {
+    "displayName": "Claudia Mello-Thoms",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "barron_melissa": {
+    "displayName": "Melissa Barron",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lewis_sarah": {
+    "displayName": "Sarah Lewis",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "onega_tracy": {
+    "displayName": "Tracy Onega",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "beaber_elisabeth": {
+    "displayName": "Elisabeth Beaber",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sprague_brian": {
+    "displayName": "Brian Sprague",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "barlow_william": {
+    "displayName": "William Barlow",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "haas_jennifer": {
+    "displayName": "Jennifer Haas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "tosteson_anna": {
+    "displayName": "Anna Tosteson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "schnall_mitchell": {
+    "displayName": "Mitchell Schnall",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "armstrong_katrina": {
+    "displayName": "Katrina Armstrong",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "schapira_marilyn": {
+    "displayName": "Marilyn Schapira",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "geller_berta": {
+    "displayName": "Berta Geller",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "weaver_donald": {
+    "displayName": "Donald Weaver",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "conant_emily": {
+    "displayName": "Emily Conant",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gould_julie": {
+    "displayName": "Julie Gould",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "grybauskas_denas": {
+    "displayName": "Denas Grybauskas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "obrien_matt": {
+    "displayName": "Matt O'Brien",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "samuelson_pamela": {
+    "displayName": "Pamela Samuelson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "grynbaum_michael_m": {
+    "displayName": "Michael M. Grynbaum",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mac_ryan": {
+    "displayName": "Ryan Mac",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "patel_jayesh": {
+    "displayName": "Jayesh Patel",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "robison_kylie": {
+    "displayName": "Kylie Robison",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zhou_ian": {
+    "displayName": "Ian Zhou",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "tofigh_farzad": {
+    "displayName": "Farzad Tofigh",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "piccardi_massimo": {
+    "displayName": "Massimo Piccardi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "abolhasan_mehran": {
+    "displayName": "Mehran Abolhasan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "franklin_daniel": {
+    "displayName": "Daniel Franklin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lipman_justin": {
+    "displayName": "Justin Lipman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "jadon_aryan": {
+    "displayName": "Aryan Jadon",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kumar_shashank": {
+    "displayName": "Shashank Kumar",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rubin_donald_b": {
+    "displayName": "Donald B Rubin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "yao_a": {
+    "displayName": "A. Yao",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lobo_jesus_l": {
+    "displayName": "Jesus L Lobo",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gillopez_sergio": {
+    "displayName": "Sergio Gil-Lopez",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "del_ser_javier": {
+    "displayName": "Javier Del Ser",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "australian_government_department_of_industry_science_energy": {
+    "displayName": "Science, Energy Australian Government Department of Industry",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "resources": {
+    "displayName": "Resources",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "commission_european": {
+    "displayName": "European Commission",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "autonomous_ieee_global_initiative_on_ethics_of": {
+    "displayName": "IEEE Global Initiative on Ethics of Autonomous",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "systems_intelligent": {
+    "displayName": "Intelligent Systems",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "institute_future_of_life": {
+    "displayName": "Future of Life Institute",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "now_access": {
+    "displayName": "Access Now",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "institute_ai_now": {
+    "displayName": "AI Now Institute",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "declaration_montreal": {
+    "displayName": "Montreal Declaration",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "forum_world_economic": {
+    "displayName": "World Economic Forum",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "society_harvard_berkman_klein_center_for_internet": {
+    "displayName": "Harvard Berkman Klein Center for Internet & Society",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "institute_alan_turing": {
+    "displayName": "Alan Turing Institute",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "microsoft": {
+    "displayName": "Microsoft",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ibm": {
+    "displayName": "IBM",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "riesen_guillaume": {
+    "displayName": "Guillaume Riesen",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "pope_quintin": {
+    "displayName": "Quintin Pope",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "crispweed": {
+    "displayName": "crispweed",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "summerfield_christopher": {
+    "displayName": "Christopher Summerfield",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "argyle_lisa_p": {
+    "displayName": "Lisa P Argyle",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bakker_michiel": {
+    "displayName": "Michiel Bakker",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "collins_teddy": {
+    "displayName": "Teddy Collins",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "durmus_esin": {
+    "displayName": "Esin Durmus",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "eloundou_tyna": {
+    "displayName": "Tyna Eloundou",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ganguli_deep": {
+    "displayName": "Deep Ganguli",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hackenburg_kobi": {
+    "displayName": "Kobi Hackenburg",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hadfield_gillian_k": {
+    "displayName": "Gillian K Hadfield",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "welle_elissa": {
+    "displayName": "Elissa Welle",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "samuel_sigal": {
+    "displayName": "Sigal Samuel",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hu_crystal": {
+    "displayName": "Crystal Hu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cai_kenrick": {
+    "displayName": "Kenrick Cai",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "morales_jowi": {
+    "displayName": "Jowi Morales",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mirvish_dan": {
+    "displayName": "Dan Mirvish",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "tong_anna": {
+    "displayName": "Anna Tong",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "martina_michael": {
+    "displayName": "Michael Martina",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "burt_ronald_s": {
+    "displayName": "Ronald S Burt",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "russell_stuart": {
+    "displayName": "Stuart Russell",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "norvig_peter": {
+    "displayName": "Peter Norvig",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "intelligence_artificial": {
+    "displayName": "Artificial Intelligence",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "berger_virginie": {
+    "displayName": "Virginie Berger",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "insights_statista_market": {
+    "displayName": "{Statista Market Insights}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bernays_edward_l": {
+    "displayName": "Edward L. Bernays",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "adikari_shalinda": {
+    "displayName": "Shalinda Adikari",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dutta_kaushik": {
+    "displayName": "Kaushik Dutta",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lecun_yann": {
+    "displayName": "Yann LeCun",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hinton_geoffrey": {
+    "displayName": "Geoffrey Hinton",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "google": {
+    "displayName": "Google",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "van_den_driessche_george_bm": {
+    "displayName": "George Bm Van Den Driessche",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lespiau_jeanbaptiste": {
+    "displayName": "Jean-Baptiste Lespiau",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "izacard_gautier": {
+    "displayName": "Gautier Izacard",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lewis_patrick": {
+    "displayName": "Patrick Lewis",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lomeli_maria": {
+    "displayName": "Maria Lomeli",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hosseini_lucas": {
+    "displayName": "Lucas Hosseini",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "petroni_fabio": {
+    "displayName": "Fabio Petroni",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "schick_timo": {
+    "displayName": "Timo Schick",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dwivediyu_jane": {
+    "displayName": "Jane Dwivedi-Yu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "joulin_armand": {
+    "displayName": "Armand Joulin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "riedel_sebastian": {
+    "displayName": "Sebastian Riedel",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "grave_edouard": {
+    "displayName": "Edouard Grave",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "guo_ziyao": {
+    "displayName": "Ziyao Guo",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wang_kai": {
+    "displayName": "Kai Wang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cazenavette_george": {
+    "displayName": "George Cazenavette",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "li_hui": {
+    "displayName": "Hui Li",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zhang_kaipeng": {
+    "displayName": "Kaipeng Zhang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "you_yang": {
+    "displayName": "Yang You",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kemker_ronald": {
+    "displayName": "Ronald Kemker",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mcclure_marc": {
+    "displayName": "Marc McClure",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "abitino_angelina": {
+    "displayName": "Angelina Abitino",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hayes_tyler": {
+    "displayName": "Tyler Hayes",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kanan_christopher": {
+    "displayName": "Christopher Kanan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cummins_mark": {
+    "displayName": "Mark Cummins",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "le_quoc_v": {
+    "displayName": "Quoc V Le",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "krizhevsky_alex": {
+    "displayName": "Alex Krizhevsky",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sutskever_ilya": {
+    "displayName": "Ilya Sutskever",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hinton_geoffrey_e": {
+    "displayName": "Geoffrey E Hinton",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zeiler_matthew_d": {
+    "displayName": "Matthew D Zeiler",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "fergus_rob": {
+    "displayName": "Rob Fergus",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "chomsky_noam": {
+    "displayName": "Noam Chomsky",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dwork_cynthia": {
+    "displayName": "Cynthia Dwork",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mcsherry_frank": {
+    "displayName": "Frank McSherry",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "nissim_kobbi": {
+    "displayName": "Kobbi Nissim",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "smith_adam": {
+    "displayName": "Adam Smith",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "feldman_vitaly": {
+    "displayName": "Vitaly Feldman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zrnic_tijana": {
+    "displayName": "Tijana Zrnic",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "papernot_nicolas": {
+    "displayName": "Nicolas Papernot",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "song_shuang": {
+    "displayName": "Shuang Song",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mironov_ilya": {
+    "displayName": "Ilya Mironov",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "raghunathan_ananth": {
+    "displayName": "Ananth Raghunathan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "talwar_kunal": {
+    "displayName": "Kunal Talwar",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "erlingsson_ulfar": {
+    "displayName": "Úlfar Erlingsson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zhao_yue": {
+    "displayName": "Yue Zhao",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "li_meng": {
+    "displayName": "Meng Li",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lai_liangzhen": {
+    "displayName": "Liangzhen Lai",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "suda_naveen": {
+    "displayName": "Naveen Suda",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "civin_damon": {
+    "displayName": "Damon Civin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "chandra_vikas": {
+    "displayName": "Vikas Chandra",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ainsworth_samuel_k": {
+    "displayName": "Samuel K Ainsworth",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hayase_jonathan": {
+    "displayName": "Jonathan Hayase",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "srinivasa_siddhartha": {
+    "displayName": "Siddhartha Srinivasa",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "strati_foteini": {
+    "displayName": "Foteini Strati",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "elvinger_paul": {
+    "displayName": "Paul Elvinger",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kerimoglu_tolga": {
+    "displayName": "Tolga Kerimoglu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "klimovic_ana": {
+    "displayName": "Ana Klimovic",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kaye_danielle": {
+    "displayName": "Danielle Kaye",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kachwala_zaheer": {
+    "displayName": "Zaheer Kachwala",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bajwa_arsheeya": {
+    "displayName": "Arsheeya Bajwa",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "howley_daniel": {
+    "displayName": "Daniel Howley",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "you_josh": {
+    "displayName": "Josh You",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dai_damai": {
+    "displayName": "Damai Dai",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "deng_chengqi": {
+    "displayName": "Chengqi Deng",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zhao_chenggang": {
+    "displayName": "Chenggang Zhao",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "xu_rx": {
+    "displayName": "RX Xu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gao_huazuo": {
+    "displayName": "Huazuo Gao",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "chen_deli": {
+    "displayName": "Deli Chen",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "li_jiashi": {
+    "displayName": "Jiashi Li",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zeng_wangding": {
+    "displayName": "Wangding Zeng",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "yu_xingkai": {
+    "displayName": "Xingkai Yu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wu_y": {
+    "displayName": "Y Wu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ai_meta": {
+    "displayName": "{Meta AI}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mann_benjamin": {
+    "displayName": "Benjamin Mann",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ryder_nick": {
+    "displayName": "Nick Ryder",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "subbiah_melanie": {
+    "displayName": "Melanie Subbiah",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dhariwal_prafulla": {
+    "displayName": "Prafulla Dhariwal",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "neelakantan_arvind": {
+    "displayName": "Arvind Neelakantan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "shyam_pranav": {
+    "displayName": "Pranav Shyam",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sastry_girish": {
+    "displayName": "Girish Sastry",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wiggers_kyle": {
+    "displayName": "Kyle Wiggers",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ai_epoch": {
+    "displayName": "{Epoch AI}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mehta_ivan": {
+    "displayName": "Ivan Mehta",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "openai": {
+    "displayName": "{OpenAI}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sevilla_jaime": {
+    "displayName": "Jaime Sevilla",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "roldan_edu": {
+    "displayName": "Edu Rold\\'{a}n",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "biases_weights": {
+    "displayName": "{Weights \\& Biases}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "veldanda_akshaj_kumar": {
+    "displayName": "Akshaj Kumar Veldanda",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zhang_shixiong": {
+    "displayName": "Shi-Xiong Zhang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "das_anirban": {
+    "displayName": "Anirban Das",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "chakraborty_supriyo": {
+    "displayName": "Supriyo Chakraborty",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rawls_stephen": {
+    "displayName": "Stephen Rawls",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sahu_sambit": {
+    "displayName": "Sambit Sahu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "naphade_milind": {
+    "displayName": "Milind Naphade",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bratt_ian": {
+    "displayName": "Ian Bratt",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kirkpatrick_james": {
+    "displayName": "James Kirkpatrick",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "pascanu_razvan": {
+    "displayName": "Razvan Pascanu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rabinowitz_neil": {
+    "displayName": "Neil Rabinowitz",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "veness_joel": {
+    "displayName": "Joel Veness",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "desjardins_guillaume": {
+    "displayName": "Guillaume Desjardins",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rusu_andrei_a": {
+    "displayName": "Andrei A. Rusu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "milan_kieran": {
+    "displayName": "Kieran Milan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "quan_john": {
+    "displayName": "John Quan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ramalho_tiago": {
+    "displayName": "Tiago Ramalho",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "grabskabarwinska_agnieszka": {
+    "displayName": "Agnieszka Grabska-Barwinska",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hassabis_demis": {
+    "displayName": "Demis Hassabis",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "clopath_claudia": {
+    "displayName": "Claudia Clopath",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kumaran_dharshan": {
+    "displayName": "Dharshan Kumaran",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hadsell_raia": {
+    "displayName": "Raia Hadsell",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "together": {
+    "displayName": "Together",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cummings_alex_sayf": {
+    "displayName": "Alex Sayf Cummings",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "contributors_wikipedia": {
+    "displayName": "{Wikipedia contributors}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kahle_brewster": {
+    "displayName": "Brewster Kahle",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mider_daniel": {
+    "displayName": "Daniel Mider",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "taylor_petroc": {
+    "displayName": "Petroc Taylor",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bogwasi_tumisang": {
+    "displayName": "Tumisang Bogwasi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hochreiter_sepp": {
+    "displayName": "Sepp Hochreiter",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hanin_boris": {
+    "displayName": "Boris Hanin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "soriacomas_jordi": {
+    "displayName": "Jordi Soria{-}Comas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "domingoferrer_josep": {
+    "displayName": "Josep Domingo{-}Ferrer",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sanchez_david": {
+    "displayName": "David S{\\'{a}}nchez",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "megias_david": {
+    "displayName": "David Meg{\\'{\\i}}as",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "roth_aaron": {
+    "displayName": "Aaron Roth",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lieber_opher": {
+    "displayName": "Opher Lieber",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sharir_or": {
+    "displayName": "Or Sharir",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lenz_barak": {
+    "displayName": "Barak Lenz",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "shoham_yoav": {
+    "displayName": "Yoav Shoham",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rae_jack": {
+    "displayName": "Jack Rae",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "song_francis": {
+    "displayName": "Francis Song",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "aslanides_john": {
+    "displayName": "John Aslanides",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "henderson_sarah": {
+    "displayName": "Sarah Henderson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ring_roman": {
+    "displayName": "Roman Ring",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "young_susannah": {
+    "displayName": "Susannah Young",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "menick_jacob": {
+    "displayName": "Jacob Menick",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cassirer_albin": {
+    "displayName": "Albin Cassirer",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "powell_richard": {
+    "displayName": "Richard Powell",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "van_den_driessche_george": {
+    "displayName": "George van den Driessche",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rauh_maribeth": {
+    "displayName": "Maribeth Rauh",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "huang_posen": {
+    "displayName": "Po-Sen Huang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "glaese_amelia": {
+    "displayName": "Amelia Glaese",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dathathri_sumanth": {
+    "displayName": "Sumanth Dathathri",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "huang_saffron": {
+    "displayName": "Saffron Huang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "uesato_jonathan": {
+    "displayName": "Jonathan Uesato",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mellor_john": {
+    "displayName": "John Mellor",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "higgins_irina": {
+    "displayName": "Irina Higgins",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "creswell_antonia": {
+    "displayName": "Antonia Creswell",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mcaleese_nat": {
+    "displayName": "Nat McAleese",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wu_amy": {
+    "displayName": "Amy Wu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "jayakumar_siddhant": {
+    "displayName": "Siddhant Jayakumar",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "budden_david": {
+    "displayName": "David Budden",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sutherland_esme": {
+    "displayName": "Esme Sutherland",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "paganini_michela": {
+    "displayName": "Michela Paganini",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "martens_lena": {
+    "displayName": "Lena Martens",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "li_xiang_lorraine": {
+    "displayName": "Xiang Lorraine Li",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kuncoro_adhiguna": {
+    "displayName": "Adhiguna Kuncoro",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "nematzadeh_aida": {
+    "displayName": "Aida Nematzadeh",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gribovskaya_elena": {
+    "displayName": "Elena Gribovskaya",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "donato_domenic": {
+    "displayName": "Domenic Donato",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lazaridou_angeliki": {
+    "displayName": "Angeliki Lazaridou",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "tsimpoukelli_maria": {
+    "displayName": "Maria Tsimpoukelli",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "grigorev_nikolai": {
+    "displayName": "Nikolai Grigorev",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "fritz_doug": {
+    "displayName": "Doug Fritz",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sottiaux_thibault": {
+    "displayName": "Thibault Sottiaux",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "pajarskas_mantas": {
+    "displayName": "Mantas Pajarskas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "pohlen_toby": {
+    "displayName": "Toby Pohlen",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gong_zhitao": {
+    "displayName": "Zhitao Gong",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "toyama_daniel": {
+    "displayName": "Daniel Toyama",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "de_masson_dautume_cyprien": {
+    "displayName": "Cyprien de Masson d’Autume",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "li_yujia": {
+    "displayName": "Yujia Li",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "terzi_tayfun": {
+    "displayName": "Tayfun Terzi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mikulik_vladimir": {
+    "displayName": "Vladimir Mikulik",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "babuschkin_igor": {
+    "displayName": "Igor Babuschkin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "de_las_casas_diego": {
+    "displayName": "Diego de Las Casas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bradbury_james": {
+    "displayName": "James Bradbury",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "johnson_matthew": {
+    "displayName": "Matthew Johnson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hechtman_blake": {
+    "displayName": "Blake Hechtman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "weidinger_laura": {
+    "displayName": "Laura Weidinger",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "isaac_william": {
+    "displayName": "William Isaac",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lockhart_ed": {
+    "displayName": "Ed Lockhart",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rimell_laura": {
+    "displayName": "Laura Rimell",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dyer_chris": {
+    "displayName": "Chris Dyer",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ayoub_kareem": {
+    "displayName": "Kareem Ayoub",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "stanway_jeff": {
+    "displayName": "Jeff Stanway",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bennett_lorrayne": {
+    "displayName": "Lorrayne Bennett",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kavukcuoglu_koray": {
+    "displayName": "Koray Kavukcuoglu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "irving_geoffrey": {
+    "displayName": "Geoffrey Irving",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "grover_divas": {
+    "displayName": "Divas Grover",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "toghi_behrad": {
+    "displayName": "Behrad Toghi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hou_x": {
+    "displayName": "X. Hou",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wang_x": {
+    "displayName": "X. Wang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "abadi_martin": {
+    "displayName": "Martin Abadi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "chu_andy": {
+    "displayName": "Andy Chu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zhang_li": {
+    "displayName": "Li Zhang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lederer_johannes": {
+    "displayName": "Johannes Lederer",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kaissis_georgios_a": {
+    "displayName": "Georgios A. Kaissis",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "makowski_marcus_r": {
+    "displayName": "Marcus R. Makowski",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ruckert_daniel": {
+    "displayName": "Daniel Rückert",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "braren_rickmer_f": {
+    "displayName": "Rickmer F. Braren",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gentry_craig": {
+    "displayName": "Craig Gentry",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "boneh_dan": {
+    "displayName": "Dan Boneh",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "costan_victor": {
+    "displayName": "Victor Costan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "devadas_srinivas": {
+    "displayName": "Srinivas Devadas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "goldreich_oded": {
+    "displayName": "Oded Goldreich",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "goldwasser_shafi": {
+    "displayName": "Shafi Goldwasser",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "micali_silvio": {
+    "displayName": "Silvio Micali",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rackoff_charles": {
+    "displayName": "Charles Rackoff",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "feige_uriel": {
+    "displayName": "Uriel Feige",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "fiat_amos": {
+    "displayName": "Amos Fiat",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "shamir_adi": {
+    "displayName": "Adi Shamir",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "laurie_ben": {
+    "displayName": "Ben Laurie",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "chase_melissa": {
+    "displayName": "Melissa Chase",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "perrin_trevor": {
+    "displayName": "Trevor Perrin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "zaverucha_greg": {
+    "displayName": "Greg Zaverucha",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "shu_kai": {
+    "displayName": "Kai Shu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bhattacharjee_amrita": {
+    "displayName": "Amrita Bhattacharjee",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "alatawi_faisal": {
+    "displayName": "Faisal Alatawi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "nazer_tahora_h": {
+    "displayName": "Tahora H Nazer",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ding_kaize": {
+    "displayName": "Kaize Ding",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "karami_mansooreh": {
+    "displayName": "Mansooreh Karami",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "liu_huan": {
+    "displayName": "Huan Liu",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "schneier_bruce": {
+    "displayName": "Bruce Schneier",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "veliz_carissa": {
+    "displayName": "Carissa Véliz",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "fecher_benedikt": {
+    "displayName": "Benedikt Fecher",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "friesike_sascha": {
+    "displayName": "Sascha Friesike",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hebing_marcel": {
+    "displayName": "Marcel Hebing",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ascoli_giorgio_a": {
+    "displayName": "Giorgio A Ascoli",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sienkiewicz_mariusz": {
+    "displayName": "Mariusz Sienkiewicz",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "scott_ian": {
+    "displayName": "Ian Scott",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gong_ting": {
+    "displayName": "Ting Gong",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "vidal_nick": {
+    "displayName": "Nick Vidal",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "telecommunications_national": {
+    "displayName": "{National Telecommunications",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "administration_information": {
+    "displayName": "Information Administration}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "press_associated": {
+    "displayName": "{Associated Press}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "initiative_open_source": {
+    "displayName": "{Open Source Initiative}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "owenjackson_charles": {
+    "displayName": "Charles Owen-Jackson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "grow_jacob": {
+    "displayName": "Jacob Grow",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "manzini_arianna": {
+    "displayName": "Arianna Manzini",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "keeling_geoff": {
+    "displayName": "Geoff Keeling",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rieser_verena": {
+    "displayName": "Verena Rieser",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "iqbal_hasan": {
+    "displayName": "Hasan Iqbal",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "tomasev_nenad": {
+    "displayName": "Nenad Tomašev",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ktena_ira": {
+    "displayName": "Ira Ktena",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kenton_zachary": {
+    "displayName": "Zachary Kenton",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rodriguez_mikel": {
+    "displayName": "Mikel Rodriguez",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "elsayed_seliem": {
+    "displayName": "Seliem El-Sayed",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "brown_sasha": {
+    "displayName": "Sasha Brown",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "akbulut_canfer": {
+    "displayName": "Canfer Akbulut",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hughes_edward": {
+    "displayName": "Edward Hughes",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bergman_a_stevie": {
+    "displayName": "A. Stevie Bergman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "shelby_renee": {
+    "displayName": "Renee Shelby",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "marchal_nahema": {
+    "displayName": "Nahema Marchal",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "griffin_conor": {
+    "displayName": "Conor Griffin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mateosgarcia_juan": {
+    "displayName": "Juan Mateos-Garcia",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "street_winnie": {
+    "displayName": "Winnie Street",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lange_benjamin": {
+    "displayName": "Benjamin Lange",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ingerman_alex": {
+    "displayName": "Alex Ingerman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lentz_alison": {
+    "displayName": "Alison Lentz",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "enger_reed": {
+    "displayName": "Reed Enger",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "barakat_andrew": {
+    "displayName": "Andrew Barakat",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "krakovna_victoria": {
+    "displayName": "Victoria Krakovna",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "siy_john_oliver": {
+    "displayName": "John Oliver Siy",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "kurthnelson_zeb": {
+    "displayName": "Zeb Kurth-Nelson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mccroskery_amanda": {
+    "displayName": "Amanda McCroskery",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bolina_vijay": {
+    "displayName": "Vijay Bolina",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "law_harry": {
+    "displayName": "Harry Law",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "shanahan_murray": {
+    "displayName": "Murray Shanahan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "alberts_lize": {
+    "displayName": "Lize Alberts",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "balle_borja": {
+    "displayName": "Borja Balle",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "haas_sarah_de": {
+    "displayName": "Sarah de Haas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ibitoye_yetunde": {
+    "displayName": "Yetunde Ibitoye",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "goldberg_beth": {
+    "displayName": "Beth Goldberg",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "krier_sebastien": {
+    "displayName": "Sébastien Krier",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "reese_alexander": {
+    "displayName": "Alexander Reese",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "witherspoon_sims": {
+    "displayName": "Sims Witherspoon",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hawkins_will": {
+    "displayName": "Will Hawkins",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wallace_don": {
+    "displayName": "Don Wallace",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "franklin_matija": {
+    "displayName": "Matija Franklin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "goldstein_josh_a": {
+    "displayName": "Josh A. Goldstein",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lehman_joel": {
+    "displayName": "Joel Lehman",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "klenk_michael": {
+    "displayName": "Michael Klenk",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "vallor_shannon": {
+    "displayName": "Shannon Vallor",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "biles_courtney": {
+    "displayName": "Courtney Biles",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "morris_meredith_ringel": {
+    "displayName": "Meredith Ringel Morris",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "king_helen": {
+    "displayName": "Helen King",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "manyika_james": {
+    "displayName": "James Manyika",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wealand_adam": {
+    "displayName": "Adam Wealand",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "pasquale_frank": {
+    "displayName": "Frank Pasquale",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "elsea_jennifer_k": {
+    "displayName": "Jennifer K Elsea",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mcmahan_brendan": {
+    "displayName": "Brendan McMahan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hampson_seth": {
+    "displayName": "Seth Hampson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "y_arcas_blaise_aguera": {
+    "displayName": "Blaise Aguera y Arcas",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bogdanov_dan": {
+    "displayName": "Dan Bogdanov",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "laud_peeter": {
+    "displayName": "Peeter Laud",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "laur_sven": {
+    "displayName": "Sven Laur",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "pullonen_pille": {
+    "displayName": "Pille Pullonen",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "craddock_mark": {
+    "displayName": "Mark Craddock",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "archer_david": {
+    "displayName": "David Archer",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "gascon_adria": {
+    "displayName": "Adria Gascon",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "laine_kim": {
+    "displayName": "Kim Laine",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "raykova_mariana": {
+    "displayName": "Mariana Raykova",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "jug_matjaz": {
+    "displayName": "Matjaz Jug",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mclellan_robert": {
+    "displayName": "Robert McLellan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "jansen_ronald": {
+    "displayName": "Ronald Jansen",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ohrimenko_olga": {
+    "displayName": "Olga Ohrimenko",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wardly_simon": {
+    "displayName": "Simon Wardly",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lauter_kristin": {
+    "displayName": "Kristin Lauter",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "smart_nigel": {
+    "displayName": "Nigel Smart",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sharan_aalekh": {
+    "displayName": "Aalekh Sharan",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "saxena_ira": {
+    "displayName": "Ira Saxena",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wright_rebecca": {
+    "displayName": "Rebecca Wright",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "garcia_eddie": {
+    "displayName": "Eddie Garcia",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wall_andy": {
+    "displayName": "Andy Wall",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "sahai_amit": {
+    "displayName": "Amit Sahai",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "waters_brent": {
+    "displayName": "Brent Waters",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "foundation_sovrin": {
+    "displayName": "{Sovrin Foundation}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "wang_fennie": {
+    "displayName": "Fennie Wang",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "de_filippi_primavera": {
+    "displayName": "Primavera De Filippi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "loftus_jake": {
+    "displayName": "Jake Loftus",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "smart_nigel_p": {
+    "displayName": "Nigel P Smart",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "chaum_david": {
+    "displayName": "David Chaum",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "adler_steven": {
+    "displayName": "Steven Adler",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hitzig_zoe": {
+    "displayName": "Zo{\\\"e} Hitzig",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "jain_shrey": {
+    "displayName": "Shrey Jain",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "brewer_catherine": {
+    "displayName": "Catherine Brewer",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "srivastava_v": {
+    "displayName": "V Srivastava",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "christian_b": {
+    "displayName": "B Christian",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "trask_a": {
+    "displayName": "A Trask",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "granovetter_mark_s": {
+    "displayName": "Mark S Granovetter",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rao_adithya": {
+    "displayName": "Adithya Rao",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "spasojevic_nemanja": {
+    "displayName": "Nemanja Spasojevic",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "li_zhisheng": {
+    "displayName": "Zhisheng Li",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "dsouza_trevor": {
+    "displayName": "Trevor DSouza",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "fortune": {
+    "displayName": "{Fortune}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "oremus_will": {
+    "displayName": "Will Oremus",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "simmons_dan": {
+    "displayName": "Dan Simmons",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "hootsuite": {
+    "displayName": "{Hootsuite}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "imperva": {
+    "displayName": "{Imperva}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "donfro_jillian": {
+    "displayName": "Jillian D'Onfro",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "cross_bettie": {
+    "displayName": "Bettie Cross",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "foreign_commonwealth_development_office": {
+    "displayName": "Commonwealth \\& Development Office} {Foreign",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "lawrence_steve": {
+    "displayName": "Steve Lawrence",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "giles_c_lee": {
+    "displayName": "C Lee Giles",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "bollacker_kurt": {
+    "displayName": "Kurt Bollacker",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "page_lawrence": {
+    "displayName": "Lawrence Page",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "brin_sergey": {
+    "displayName": "Sergey Brin",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "motwani_rajeev": {
+    "displayName": "Rajeev Motwani",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "winograd_terry": {
+    "displayName": "Terry Winograd",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "reagle_joseph_michael": {
+    "displayName": "Joseph Michael Reagle",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "goldhaber_michael_h": {
+    "displayName": "Michael H Goldhaber",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "backstrom_lars": {
+    "displayName": "Lars Backstrom",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "boldi_paolo": {
+    "displayName": "Paolo Boldi",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "rosa_marco": {
+    "displayName": "Marco Rosa",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ugander_johan": {
+    "displayName": "Johan Ugander",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "vigna_sebastiano": {
+    "displayName": "Sebastiano Vigna",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "haveliwala_taher_h": {
+    "displayName": "Taher H. Haveliwala",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "mann_tobias": {
+    "displayName": "Tobias Mann",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "ming": {
+    "displayName": "Ming",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "llc_macrotrends": {
+    "displayName": "{Macrotrends LLC}",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  }
+}

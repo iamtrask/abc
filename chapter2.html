@@ -98,8 +98,8 @@
                     <p>
                         Estimates below suggest that models are trained using less than 1/1,000,000th of the world’s
                         data
-                        and AI compute productivity. Consequently, following AI’s scaling laws (<a href="#ref-23"
-                            class="cite">Kaplan et al., 2020</a>; <a href="#ref-24" class="cite">Hoffmann et al.,
+                        and AI compute productivity. Consequently, following AI’s scaling laws (<a href="#ref-1"
+                            class="cite">Kaplan et al., 2020</a>; <a href="#ref-2" class="cite">Hoffmann et al.,
                             2022</a>), AI models possess
                         capabilities which are insignificant compared to what
                         existing data, compute, and algorithms could create.
@@ -178,7 +178,7 @@
                     <p>
                         As of NeurIPS 2024, leading AI researchers have reported that available compute and data
                         reserves are approaching saturation, creating constraints on both computational resources and
-                        pre-training scale (<a href="#ref-3" class="cite">Robison 2024</a>; <a href="#ref-25"
+                        pre-training scale (<a href="#ref-3" class="cite">Robison 2024</a>; <a href="#ref-20"
                             class="cite">Strati et al., 2024</a>). However, this assessment overlooks
                         approximately six orders of magnitude of underutilized compute productivity and siloed data.
                         Rather than absolute scarcity, the industry faces structural problems of data and compute access
@@ -191,8 +191,8 @@
                         The AI industry’s computational requirements have driven significant economic and geopolitical
                         consequences, including NVIDIA’s rise to become the world’s most valuable company, U.S.
                         export restrictions on AI chips to China, and intense competition for latest-generation hardware
-                        among startups, enterprises, and major technology firms (<a href="#ref-26" class="cite">Kaye
-                            2025</a>; <a href="#ref-27" class="cite">Kachwala and Bajwa 2025</a>; <a href="#ref-28"
+                        among startups, enterprises, and major technology firms (<a href="#ref-21" class="cite">Kaye
+                            2025</a>; <a href="#ref-22" class="cite">Kachwala and Bajwa 2025</a>; <a href="#ref-23"
                             class="cite">Howley 2023</a>). However, recent evidence suggests that current AI training
                         and inference
                         processes utilize less than 0.0002% of available compute productivity, indicating that perceived
@@ -211,7 +211,7 @@
 
                     <p>
                         Due to its role in commercial deployments, analysts estimate that AI firms spend billions of
-                        dollars annually on inference (<a href="#ref-29" class="cite">You 2025</a>). However, while
+                        dollars annually on inference (<a href="#ref-24" class="cite">You 2025</a>). However, while
                         these costs might appear to reflect
                         fundamental requirements for achieving high performance, a growing body of empirical work
                         indicates substantial inefficiency in current inference practices.
@@ -264,16 +264,16 @@
                         the parameters through retrieval from a large-scale vector database (Borgeaud et al., 2022).
                         Similarly, Meta’s ATLAS demonstrates that models can be reduced to 1/50th their original size
                         while maintaining or exceeding baseline performance through database-augmented inference
-                        (<a href="#ref-30" class="cite">Izacard et al., 2023</a>).
+                        (<a href="#ref-5" class="cite">Izacard et al., 2023</a>).
                     </p>
 
                     <p>
                         We adopt RETRO/ATLAS-style parameter efficiency as a conservative lower bound on
                         current compute waste, noting that these approaches have not been widely adopted in either the
-                        sparsity literature (<a href="#ref-31" class="cite">Lederer 2024</a>) or frontier AI
+                        sparsity literature (<a href="#ref-55" class="cite">Lederer 2024</a>) or frontier AI
                         deployments, nor have comparable efficiency
                         gains been demonstrated through alternative methods (cf. the persistent redundancy problem
-                        in Mixture of Experts models (<a href="#ref-32" class="cite">Dai et al., 2024</a>)). These
+                        in Mixture of Experts models (<a href="#ref-25" class="cite">Dai et al., 2024</a>)). These
                         results
                         suggest that at least 96-98% of
                         parameters activated during dense inference are unnecessary for individual queries.
@@ -330,7 +330,7 @@
                         parameters. Guo et al. achieve 5-10x reduction in parameter count through lossless compression
                         while maintaining accuracy: ”Notably, we distill CIFAR-10 and CIFAR-100 to 1/5 and Tiny
                         ImageNet to 1/10 of their original sizes without any performance loss on ConvNet, offering
-                        the first lossless method of dataset distillation” (<a href="#ref-33" class="cite">Guo et al.,
+                        the first lossless method of dataset distillation” (<a href="#ref-6" class="cite">Guo et al.,
                             2023</a>). This compression has been
                         demonstrated across multiple standard architectures, as shown in <a href="#table-2-1">Table
                             2.1.</a>
@@ -338,13 +338,13 @@
 
                     <div class="table-container" id="table-2-1">
                         <table class="data-table">
-                            <caption>Table 2.1: Table and caption from (<a href="#ref-33" class="cite">Guo et al.,
+                            <caption>Table 2.1: Table and caption from (<a href="#ref-6" class="cite">Guo et al.,
                                     2023</a>)
                                 (see paper for additional
                                 detailed descriptions). ”Comparison with previous dataset distillation methods on
                                 CIFAR-10, CIFAR-100
                                 and Tiny ImageNet... Highlighted results indicate we achieve lossless distillation.” -
-                                (<a href="#ref-33" class="cite">Guo et al., 2023</a>)</caption>
+                                (<a href="#ref-6" class="cite">Guo et al., 2023</a>)</caption>
                             <thead>
                                 <tr>
                                     <th>Dataset</th>
@@ -584,8 +584,8 @@
 
                     <p>
                         AI firms famously spend immense amounts of money training their AI models, a point which
-                        features heavily in their marketing (<a href="#ref-34" class="cite">Meta AI 2024</a>; <a
-                            href="#ref-35" class="cite">Brown et al., 2020</a>; <a href="#ref-36" class="cite">Wiggers
+                        features heavily in their marketing (<a href="#ref-26" class="cite">Meta AI 2024</a>; <a
+                            href="#ref-27" class="cite">Brown et al., 2020</a>; <a href="#ref-28" class="cite">Wiggers
                             2024</a>). However,
                         despite widespread hype around AI training spend, a theoretical inefficiency is backed by an
                         increasingly large body of empirical observations, suggesting that the compute requirements for
@@ -620,11 +620,11 @@
                         AI models store information within their weights. To acquire this information, models are
                         trained on large corpora at substantial computational cost (e.g., significant portions of the
                         public
-                        internet) (<a href="#ref-37" class="cite">Epoch AI 2025</a>). However, when models require
+                        internet) (<a href="#ref-29" class="cite">Epoch AI 2025</a>). However, when models require
                         substantial updates (either
                         incorporating new information or removing outdated content) current practice involves retraining
                         from
-                        scratch (<a href="#ref-38" class="cite">Goodfellow et al., 2016</a>). This approach discards all
+                        scratch (<a href="#ref-7" class="cite">Goodfellow et al., 2016</a>). This approach discards all
                         previously
                         computed parameters
                         and repeats the entire training process, even when the majority of learned representations
@@ -645,9 +645,9 @@
                         less than 1% of quarterly compute budgets (see <a href="#table-2-2">Table 2.2</a>; methodology
                         detailed in Appendices
                         I and II). Yet these same firms continue expanding computational infrastructure to support
-                        larger models (<a href="#ref-39" class="cite">Mehta 2024</a>; <a href="#ref-40"
+                        larger models (<a href="#ref-30" class="cite">Mehta 2024</a>; <a href="#ref-31"
                             class="cite">OpenAI 2024</a>;
-                        <a href="#ref-41" class="cite">Sevilla and Roldan 2024</a>), suggesting that remaining
+                        <a href="#ref-32" class="cite">Sevilla and Roldan 2024</a>), suggesting that remaining
                         compute capacity is allocated to other training activities rather than final model production.
                     </p>
 
@@ -927,7 +927,7 @@
                         documented practices in frontier AI laboratories. Major labs employ hundreds to thousands of
                         researchers who routinely train models during development. Standard optimization procedures,
                         such as hyperparameter sweeps, involve training single model architectures tens to hundreds of
-                        times to identify optimal configurations (<a href="#ref-42" class="cite">Weights & Biases
+                        times to identify optimal configurations (<a href="#ref-33" class="cite">Weights & Biases
                             2025</a>).
                     </p>
 
@@ -937,7 +937,7 @@
                         to model development, current approaches necessarily involve complete retraining for each
                         configuration. This contrasts with modular systems where components can be incrementally
                         optimized without discarding the entire structure. Recent work on targeted model modification
-                        (e.g., LLM surgery (<a href="#ref-43" class="cite">Veldanda et al., 2024</a>)) suggests
+                        (e.g., LLM surgery (<a href="#ref-34" class="cite">Veldanda et al., 2024</a>)) suggests
                         alternatives to full retraining, but such
                         techniques have not been widely adopted in frontier model development, necessitating substantial
                         computational expenditure during optimization.
@@ -950,7 +950,7 @@
                             href="#table-2-2">Table 2.2</a>,
                         approximately 98.53% of annual training budgets are allocated to models other than the final
                         deployment (calculated as 100% − (0.22%/15%), where 15% represents the estimated fraction
-                        of total compute dedicated to training (<a href="#ref-44" class="cite">Bratt 2025</a>)). Under
+                        of total compute dedicated to training (<a href="#ref-35" class="cite">Bratt 2025</a>)). Under
                         the objective of producing a
                         generalpurpose model, this implies that the vast majority of training compute is allocated to
                         parameters
@@ -961,8 +961,8 @@
                         This annual estimate may understate total inefficiency, as it assumes frontier labs must train
                         at least one model from scratch annually. If model parameters could be efficiently reused across
                         generations (as RETRO/ATLAS demonstrate through their retrieval databases, where up to
-                        98% of knowledge can be transferred between model versions (<a href="#ref-45"
-                            class="cite">Borgeaud et al., 2022</a>; <a href="#ref-46" class="cite">Izacard
+                        98% of knowledge can be transferred between model versions (<a href="#ref-4"
+                            class="cite">Borgeaud et al., 2022</a>; <a href="#ref-5" class="cite">Izacard
                             et al., 2023</a>)) the efficiency gap would be larger. However, retraining overhead
                         represents only
                         one source of computational waste. A second source arises from how models process information
@@ -1188,7 +1188,7 @@
                             <em>through the entire model and all of its knowledge</em> and store that information in
                             random
                             locations throughout the model. Then, as more training examples pile into the model, the
-                            model experiences <em>catastrophic forgetting</em> (<a href="#ref-47"
+                            model experiences <em>catastrophic forgetting</em> (<a href="#ref-36"
                                 class="cite">Kirkpatrick et al., 2017</a>) as collisions
                             occur.
                             And to train an entire model like GPT-3 on modern training corpuses (i.e. trillions of
@@ -1201,7 +1201,7 @@
                         limited empirical work on information segmentation during training. RETRO and ATLAS
                         provide partial evidence, as does work on curriculum learning and knowledge distillation.
                         Kemker et al. observe that avoiding catastrophic forgetting requires approximately 40x larger
-                        model capacity (<a href="#ref-48" class="cite">Kemker et al., 2018</a>), though this estimate is
+                        model capacity (<a href="#ref-8" class="cite">Kemker et al., 2018</a>), though this estimate is
                         not especially recent. Multiple
                         sources of training inefficiency compound: full model retraining during updates, dense forward
                         propagation through all parameters, parameter redundancy from insufficient compression, and
@@ -1396,7 +1396,7 @@
                         Following growing rumors across the AI research community that data is becoming a major
                         bottleneck, OpenAI’s former chief scientist, Ilya Sutskever, announced during his test of time
                         award speech at NeurIPS 2024 that data for training AI has peaked, ”We’ve achieved peak data
-                        and there’ll be no more” (<a href="#ref-49" class="cite">Robison 2024</a>). However, while this
+                        and there’ll be no more” (<a href="#ref-3" class="cite">Robison 2024</a>). However, while this
                         may be true for the AI industry,
                         and Ilya (being recent Chief Scientist at OpenAI) is perhaps one of the best people in the world
                         to know, Ilya’s statement does not reflect the reality of what data exists in the world.
@@ -1417,7 +1417,7 @@
                         <p>
                             This mirrors the current state of AI training. When frontier models like GPT-4
                             (trained on 6.5 trillion tokens), and Qwen2.5-72B (18 trillion tokens), LLama 4 (30 trillion
-                            tokens), (<a href="#ref-50" class="cite">Epoch AI 2024</a>) report hitting data limits, they’re really
+                            tokens), (<a href="#ref-37" class="cite">Epoch AI 2024</a>) report hitting data limits, they’re really
                             hitting access limits. They’re
                             not
                             running out of data, they’re running out of data they can freely collect.
@@ -1431,15 +1431,15 @@
                         GPT-4 was trained on approximately 6.5 trillion tokens, while Alibaba’s Qwen2.5-72B used 18
                         trillion tokens. The largest reported text dataset, used for Meta’s Llama 4, contains 30
                         trillion
-                        tokens (<a href="#ref-37" class="cite">Epoch AI 2025</a>). Using RedPajama as a reference
-                        (<a href="#ref-51" class="cite">Together 2023</a>), each trillion tokens
+                        tokens (<a href="#ref-29" class="cite">Epoch AI 2025</a>). Using RedPajama as a reference
+                        (<a href="#ref-38" class="cite">Together 2023</a>), each trillion tokens
                         requires less than 6TB of storage, implying that the largest known training dataset (Llama 4)
                         occupies less than 180TB.
                     </p>
 
                     <div class="table-container" id="table-2-5">
                         <table class="data-table">
-                            <caption>Table 2.5: Estimated Volume of Public Digital Text Content (<a href="#ref-52"
+                            <caption>Table 2.5: Estimated Volume of Public Digital Text Content (<a href="#ref-39"
                                     class="cite">Cummins 2024</a>)</caption>
                             <thead>
                                 <tr>
@@ -1544,7 +1544,7 @@
                         The scale of untapped data is staggering. As shown in Tables <a href="#table-2-5">2.5</a> and <a
                             href="#table-2.6">2.6</a>, stored email and
                         instant messages alone contain over 1,850 trillion tokens, approximately 60 times the largest
-                        known training dataset (<a href="#ref-53" class="cite">Cummins 2024</a>). Daily human
+                        known training dataset (<a href="#ref-9" class="cite">Cummins 2024</a>). Daily human
                         communication generates approximately
                         150 trillion tokens, accumulating to roughly 55 quadrillion tokens annually (approximately
                         1,750 times the scale of frontier training sets).
@@ -1556,11 +1556,11 @@
                         Yet even this vast sea of text represents merely a drop in the ocean of total digital data.
                         While
                         frontier AI models train on curated web scrapes such as Common Crawl (454 TB as of December
-                        2023) (<a href="#ref-54" class="cite">Wikipedia contributors 2024</a>), the Internet Archive’s
+                        2023) (<a href="#ref-40" class="cite">Wikipedia contributors 2024</a>), the Internet Archive’s
                         Wayback Machine alone stores
-                        approximately 100 petabytes (<a href="#ref-55" class="cite">Kahle 2024</a>). Meanwhile, global
+                        approximately 100 petabytes (<a href="#ref-41" class="cite">Kahle 2024</a>). Meanwhile, global
                         digital data is projected to reach
-                        180 zettabytes by 2025 (<a href="#ref-56" class="cite">Mider 2024</a>; <a href="#ref-57"
+                        180 zettabytes by 2025 (<a href="#ref-42" class="cite">Mider 2024</a>; <a href="#ref-43"
                             class="cite">Taylor 2024</a>), six orders
                         of magnitude larger than The
                         Internet Archive and nine orders of magnitude larger than the largest known training datasets.
@@ -1568,7 +1568,7 @@
 
                     <div class="table-container" id="table-2.6">
                         <table class="data-table">
-                            <caption>Table 2.6: Estimated Volume of Text Data (<a href="#ref-53" class="cite">Cummins
+                            <caption>Table 2.6: Estimated Volume of Text Data (<a href="#ref-9" class="cite">Cummins
                                     2024</a>)</caption>
                             <thead>
                                 <tr>
@@ -1879,8 +1879,8 @@
                         RETRO and ATLAS demonstrate the minimum scale of such a breakthrough. By maintaining
                         source-based partitions through their database architecture, they achieve equal performance
                         while activating only 2-4% of the parameters of similarly performant dense models (<a
-                            href="#ref-30" class="cite">Borgeaud
-                            et al., 2022</a>; <a href="#ref-46" class="cite">Izacard et al., 2023</a>).
+                            href="#ref-4" class="cite">Borgeaud
+                            et al., 2022</a>; <a href="#ref-5" class="cite">Izacard et al., 2023</a>).
                     </p>
 
                     <p>
@@ -1911,7 +1911,7 @@
 
                     <p>
                         Recall that current AI models must retrain entirely from scratch when updating their knowledge,
-                        because of problems such as catastrophic forgetting (<a href="#ref-48" class="cite">Kemker et
+                        because of problems such as catastrophic forgetting (<a href="#ref-8" class="cite">Kemker et
                             al., 2018</a>). While various
                         approaches to incremental training exist, successful ABC would necessitate one particular
                         solution: source-partitioned retraining. Consequently, if an AI model can train source-separated
@@ -2101,7 +2101,7 @@
                         on
                         less than 1/1,000,000th of the digitized information in the world because they cannot access the
                         other 99.9999%, which remains hidden amongst the world’s 360 million companies, 8+ billion
-                        citizens, etc. (<a href="#ref-58" class="cite">Bogwasi 2025</a>).
+                        citizens, etc. (<a href="#ref-44" class="cite">Bogwasi 2025</a>).
                     </p>
 
                     <p>
@@ -2176,7 +2176,7 @@
                         AI systems fail to maintain attribution in the first place? The answer lies in deep learning’s
                         foundational premise: algorithms should learn everything from scratch through layers of
                         (largely)
-                        unrestricted feature mixing on raw data (<a href="#ref-8" class="cite">Goodfellow et al.,
+                        unrestricted feature mixing on raw data (<a href="#ref-7" class="cite">Goodfellow et al.,
                             2016</a>).
                     </p>
 
@@ -2198,7 +2198,7 @@
                     <p>
                         Consider what happens when a neural network learns to recognize cats. Rather than storing
                         clear, interpretable features like ”pointy ears” or ”whiskers”, the network distributes this
-                        knowledge across its weights in complex, entangled patterns (<a href="#ref-59" class="cite">Le
+                        knowledge across its weights in complex, entangled patterns (<a href="#ref-10" class="cite">Le
                             2013</a>). This unrestricted mixing
                         of
                         features makes post-hoc source-based partitioning impossible (at the present moment):
@@ -2226,7 +2226,7 @@
                         The research community has made extensive efforts to address these limitations. Recent work
                         has attempted to trace predictions back to training data through influence functions, remove
                         specific datapoints’ influence through machine unlearning, and develop various attribution
-                        methods to reverse engineer the source-prediction relationship (<a href="#ref-60"
+                        methods to reverse engineer the source-prediction relationship (<a href="#ref-19"
                             class="cite">Nguyen et al., 2024</a>). Yet
                         despite these attempts, both influence functions and unlearning remain unsolved challenges in
                         the literature. So far, the relationship between sources and predictions has been irreversibly
@@ -2345,8 +2345,8 @@
                         First, in models like GPT-3, through forward and backward propagation, each example’s
                         information eventually touches every weight in the network. Even tiny weight changes alter how
                         future examples flow through the network, creating cascading effects that can amplify initially
-                        small influences (related: vanishing and exploding gradients (<a href="#ref-61"
-                            class="cite">Hochreiter 1998</a>; <a href="#ref-62" class="cite">Hanin 2018</a>)).
+                        small influences (related: vanishing and exploding gradients (<a href="#ref-45"
+                            class="cite">Hochreiter 1998</a>; <a href="#ref-46" class="cite">Hanin 2018</a>)).
 
                     </p>
 
@@ -2448,12 +2448,12 @@
                         Deep learning’s central hypothesis would suggest we can’t, that features need to densely mix
                         (using addition) in order to learn the powerful correlations and representations that give deep
                         learning its predictive capability. However, presumably deep learning maps multiple distinct
-                        concepts into a shared feature when those two concepts are related (<a href="#ref-63"
+                        concepts into a shared feature when those two concepts are related (<a href="#ref-11"
                             class="cite">Krizhevsky et al., 2012</a>).
                         For
                         example, a deep learning model which classifies images might have features which detect ears,
                         fur, and eyes — features which would be useful for modeling many different animals which
-                        possess these related concepts (<a href="#ref-13" class="cite">Zeiler and Fergus 2014</a>).
+                        possess these related concepts (<a href="#ref-12" class="cite">Zeiler and Fergus 2014</a>).
                         However, as these features are not laid
                         out in advance, deep learning needs to densely mix its features in order to discover these
                         related
@@ -2527,7 +2527,7 @@
                         about the world, domain expertise in particular fields, claims made by individual sources, etc.
                         The capital of France, the rules of chess, statistics about pizza... each appears in distinct
                         contexts
-                        with limited overlap. As Chomsky noted in linguistics (<a href="#ref-14" class="cite">Chomsky
+                        with limited overlap. As Chomsky noted in linguistics (<a href="#ref-13" class="cite">Chomsky
                             2014</a>), while we use common
                         patterns to express all knowledge, the knowledge itself often remains naturally partitioned by
                         topic, and when documents are topic specific... by source.
@@ -2550,7 +2550,7 @@
 
                     <p>
                         A key insight of this chapter is that techniques from privacy-preserving machine learning,
-                        particularly differential privacy (DP) (<a href="#ref-64" class="cite">Dwork et al., 2006</a>),
+                        particularly differential privacy (DP) (<a href="#ref-14" class="cite">Dwork et al., 2006</a>),
                         provide a principled way to measure
                         and control which features benefit from dense mixing versus sparse representation. Differential
                         privacy quantifies how much a model’s outputs depend on any individual training example:
@@ -2602,7 +2602,7 @@
                     </p>
 
                     <p>
-                        Given differential privacy’s use in deep learning (e.g., (<a href="#ref-65" class="cite">Abadi
+                        Given differential privacy’s use in deep learning (e.g., (<a href="#ref-54" class="cite">Abadi
                             et al., 2016</a>)), this framework
                         suggests an architectural insight: a neural network serving diverse stakeholders requires the
                         capability to enforce different ϵ regimes for different information. Information requiring
@@ -2708,7 +2708,7 @@
                         only ever operates on the <em>actual</em> dataset, not all possible datasets. Individual
                         differential
                         privacy
-                        (<a href="#ref-66" class="cite">Soria-Comas et al., 2016</a>) provides a more nuanced approach
+                        (<a href="#ref-47" class="cite">Soria-Comas et al., 2016</a>) provides a more nuanced approach
                         by focusing privacy guarantees
                         on the <em>actual</em> dataset rather than all possible datasets:
                     </p>
@@ -2775,7 +2775,7 @@
                         sources typically contribute many examples. Consider a medical AI trained on data from 100
                         hospitals: each hospital contributes thousands of patient records. ABC needs to measure and
                         control influence at the hospital level, not just the individual patient level. The differential
-                        privacy literature addresses this through group differential privacy (<a href="#ref-67"
+                        privacy literature addresses this through group differential privacy (<a href="#ref-48"
                             class="cite">Dwork et al., 2014</a>), which
                         extends privacy guarantees from individuals to groups of records:
                     </p>
@@ -3012,7 +3012,7 @@
                             Filtering</p>
 
                         <p>
-                            Feldman and Zrnic’s individual differential privacy framework (<a href="#ref-17"
+                            Feldman and Zrnic’s individual differential privacy framework (<a href="#ref-15"
                                 class="cite">Feldman and Zrnic 2020</a>)
                             provides a concrete example of intelligence budgets implemented through adaptive filtering
                             rather than architectural routing.
@@ -3231,9 +3231,9 @@
                     <div class="table-container" id=table-2-7>
                         <table class="data-table">
                             <caption>RETRO results on the Pile, measured in bits-per-bytes, from (Borgeaud
-                                et al., 2022). Jurassic-1 and GPT-3 numbers are taken from (<a href="#ref-68"
+                                et al., 2022). Jurassic-1 and GPT-3 numbers are taken from (<a href="#ref-49"
                                     class="cite">Lieber et al., 2021</a>). Gopher
-                                numbers are taken from (<a href="#ref-69" class="cite">Rae et al., 2021</a>).</caption>
+                                numbers are taken from (<a href="#ref-50" class="cite">Rae et al., 2021</a>).</caption>
                             <thead>
                                 <tr>
                                     <th>Subset</th>
@@ -3386,7 +3386,7 @@
                     </div>
 
                     <p>
-                        across clients, MNIST accuracy drops from 98.69% to 96.29% (<a href="#ref-70" class="cite">Zhao
+                        across clients, MNIST accuracy drops from 98.69% to 96.29% (<a href="#ref-17" class="cite">Zhao
                             et al., 2018</a>)—a 2.4%
                         degradation relative to joint training. This reflects a tension between attribution boundaries
                         and
@@ -3396,7 +3396,7 @@
                     <p>
                         Pure memory-based approaches (&lambda; = 0,&gamma; = 0) such as k-NN provide perfect attribution
                         by directly linking predictions to source examples. These systems achieve 97.2% accuracy on
-                        MNIST (<a href="#ref-71" class="cite">Grover and Toghi 2018</a>) but cannot generalize beyond
+                        MNIST (<a href="#ref-51" class="cite">Grover and Toghi 2018</a>) but cannot generalize beyond
                         patterns explicitly present in
                         their memory banks.
                     </p>
@@ -3420,12 +3420,12 @@
                         the Pile (0.670 vs 0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3’s
                         175B. This constitutes a 25x reduction in parameter count while achieving superior performance
                         and maintaining clear attribution paths through its retrieval mechanism (<a
-                            href="#ref-72">Borgeaud et al., 2022</a>).
+                            href="#ref-4">Borgeaud et al., 2022</a>).
                     </p>
 
                     <p>
                         ATLAS demonstrates similar gains: 25-50x parameter efficiency improvements while maintaining or
-                        exceeding baseline performance (<a href="#ref-46" class="cite">Izacard et al., 2023</a>). Both
+                        exceeding baseline performance (<a href="#ref-5" class="cite">Izacard et al., 2023</a>). Both
                         systems achieve these
                         results through a fundamental architectural shift: rather than compressing all knowledge into
                         dense parameters, they maintain explicit connections to source documents through retrieval.
@@ -3450,19 +3450,19 @@
                         machine learning. Traditional privacy-preserving approaches incur 10-20% performance
                         degradation. PATE reduces this gap to 0.7% on MNIST (98.5% accuracy versus 99.2%
                         non-private baseline) while maintaining differential privacy guarantees through source-separated
-                        teacher ensembles (<a href="#ref-73" class="cite">Papernot et al., 2018</a>).
+                        teacher ensembles (<a href="#ref-16" class="cite">Papernot et al., 2018</a>).
                     </p>
 
                     <p>
                         Federated RAG systems demonstrate concurrent improvements in attribution and performance. Recent
                         work shows that federated RAG improves both attribution clarity and model
-                        accuracy simultaneously (Table <a href="#table-2-8">2.8</a>) (<a href="#ref-74" class="cite">Hou
+                        accuracy simultaneously (Table <a href="#table-2-8">2.8</a>) (<a href="#ref-52" class="cite">Hou
                             and Wang 2024</a>).
                     </p>
 
                     <div class="table-container" id="table-2-8">
                         <table class="data-table">
-                            <caption>Table 2.8: Performance Metrics on MMLU Tasks (<a href="#ref-74" class="cite">Hou
+                            <caption>Table 2.8: Performance Metrics on MMLU Tasks (<a href="#ref-52" class="cite">Hou
                                     and Wang 2024</a>)</caption>
                             <thead>
                                 <tr>
@@ -3503,9 +3503,9 @@
 
                     <p>
                         Git Re-Basin demonstrates that independently trained models can be merged with minimal
-                        performance loss through weight permutation alignment (<a href="#ref-75" class="cite">Ainsworth
+                        performance loss through weight permutation alignment (<a href="#ref-18" class="cite">Ainsworth
                             et al., 2022</a>). This extends
-                        previous model merging results (<a href="#ref-76" class="cite">Zhao et al., 2018</a>) by
+                        previous model merging results (<a href="#ref-17" class="cite">Zhao et al., 2018</a>) by
                         enabling merging across models trained
                         on separate dataset partitions from similar distributions. The technique identifies and corrects
                         for
@@ -3609,7 +3609,7 @@
                         The implications for data access are direct. Current LLM training sets use approximately
                         180TB of text data. Global digital data reaches 180 zettabytes (6-9 orders of magnitude larger).
                         Vast institutional repositories remain inaccessible primarily due to attribution and control
-                        concerns (<a href="#ref-77" class="cite">Youssef et al., 2023</a>). Deep voting’s
+                        concerns (<a href="#ref-53" class="cite">Youssef et al., 2023</a>). Deep voting’s
                         source-partitioned architecture provides the
                         attribution mechanism these institutions require, establishing a viable technical path to unlock
                         this siloed data
@@ -3666,84 +3666,56 @@
                                 href="https://arxiv.org/abs/2310.05773"><span class="title">Towards lossless dataset
                                     distillation via difficulty-aligned trajectory matching.</span></a> <span
                                 class="venue">arXiv:2310.05773</span>.</li>
-                        <li id="ref-7"><span class="authors">Epoch AI.</span> (2024). <a
-                                href="https://epoch.ai/data/notable-ai-models"><span class="title">Data on Notable AI
-                                    Models.</span></a> <span class="venue">epoch.ai/data/notable-ai-models</span>.</li>
-                        <li id="ref-8"><span class="authors">Goodfellow, I., Bengio, Y., & Courville, A.</span> (2016).
+                        <li id="ref-7"><span class="authors">Goodfellow, I., Bengio, Y., & Courville, A.</span> (2016).
                             <a href="https://www.deeplearningbook.org/"><span class="title">Deep Learning.</span></a>
                             <span class="venue">MIT Press</span>.
                         </li>
-                        <li id="ref-9"><span class="authors">Kemker, R., et al.</span> (2018). <a
+                        <li id="ref-8"><span class="authors">Kemker, R., et al.</span> (2018). <a
                                 href="https://arxiv.org/abs/1708.02072"><span class="title">Measuring Catastrophic
                                     Forgetting in Neural Networks.</span></a> <span class="venue">AAAI 2018</span>.</li>
-                        <li id="ref-10"><span class="authors">Cummins, M.</span> (2024). <a
+                        <li id="ref-9"><span class="authors">Cummins, M.</span> (2024). <a
                                 href="https://educatingsilicon.substack.com/p/how-much-llm-training-data-is-there"><span
                                     class="title">How much LLM training data is there, in the limit?</span></a> <span
                                 class="venue">Educating Silicon</span>.</li>
-                        <li id="ref-11"><span class="authors">Le, Q. V., et al.</span> (2013). <a
+                        <li id="ref-10"><span class="authors">Le, Q. V., et al.</span> (2013). <a
                                 href="https://arxiv.org/abs/1112.6209"><span class="title">Building high-level features
                                     using large scale unsupervised learning.</span></a> <span class="venue">IEEE
                                 Transactions on Pattern Analysis and Machine Intelligence</span>.</li>
-                        <li id="ref-12"><span class="authors">Krizhevsky, A., Sutskever, I., & Hinton, G. E.</span>
+                        <li id="ref-11"><span class="authors">Krizhevsky, A., Sutskever, I., & Hinton, G. E.</span>
                             (2012). <a
                                 href="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"><span
                                     class="title">ImageNet Classification with Deep Convolutional Neural
                                     Networks.</span></a> <span class="venue">NeurIPS 2012</span>.</li>
-                        <li id="ref-13"><span class="authors">Zeiler, M. D., & Fergus, R.</span> (2014). <a
+                        <li id="ref-12"><span class="authors">Zeiler, M. D., & Fergus, R.</span> (2014). <a
                                 href="https://arxiv.org/abs/1311.2901"><span class="title">Visualizing and Understanding
                                     Convolutional Networks.</span></a> <span class="venue">ECCV 2014</span>.</li>
-                        <li id="ref-14"><span class="authors">Chomsky, N.</span> (2014). <a
+                        <li id="ref-13"><span class="authors">Chomsky, N.</span> (2014). <a
                                 href="https://mitpress.mit.edu/9780262527408/aspects-of-the-theory-of-syntax/"><span
                                     class="title">Aspects of the Theory of Syntax.</span></a> <span class="venue">MIT
                                 Press</span>.</li>
-                        <li id="ref-15"><span class="authors">Dwork, C., et al.</span> (2006). <a
+                        <li id="ref-14"><span class="authors">Dwork, C., et al.</span> (2006). <a
                                 href="https://doi.org/10.1007/11681878_14"><span class="title">Calibrating noise to
                                     sensitivity in private data analysis.</span></a> <span class="venue">TCC
                                 2006</span>.</li>
-                        <li id="ref-16"><span class="authors">Abadi, M., et al.</span> (2016). <a
-                                href="https://arxiv.org/abs/1607.00133"><span class="title">Deep Learning with
-                                    Differential Privacy.</span></a> <span class="venue">CCS 2016</span>.</li>
-                        <li id="ref-17"><span class="authors">Feldman, V., & Zrnic, T.</span> (2020). <a
+                        <li id="ref-15"><span class="authors">Feldman, V., & Zrnic, T.</span> (2020). <a
                                 href="https://arxiv.org/abs/2008.11193"><span class="title">Individual Privacy
                                     Accounting via a Renyi Filter.</span></a> <span
                                 class="venue">arXiv:2008.11193</span>.</li>
-                        <li id="ref-18"><span class="authors">Papernot, N., et al.</span> (2018). <a
+                        <li id="ref-16"><span class="authors">Papernot, N., et al.</span> (2018). <a
                                 href="https://arxiv.org/abs/1802.08908"><span class="title">Scalable Private Learning
                                     with PATE.</span></a> <span class="venue">ICLR 2018</span>.</li>
-                        <li id="ref-19"><span class="authors">Zhao, Y., et al.</span> (2018). <a
+                        <li id="ref-17"><span class="authors">Zhao, Y., et al.</span> (2018). <a
                                 href="https://arxiv.org/abs/1806.00582"><span class="title">Federated Learning with
                                     Non-IID Data.</span></a> <span class="venue">arXiv:1806.00582</span>.</li>
-                        <li id="ref-20"><span class="authors">Ainsworth, S. K., et al.</span> (2022). <a
+                        <li id="ref-18"><span class="authors">Ainsworth, S. K., et al.</span> (2022). <a
                                 href="https://arxiv.org/abs/2209.04836"><span class="title">Git Re-Basin: Merging Models
                                     modulo Permutation Symmetries.</span></a> <span
                                 class="venue">arXiv:2209.04836</span>.</li>
-                        <li id="ref-21"><span class="authors">Nguyen, T. T., et al.</span> (2024). <a
+                        <li id="ref-19"><span class="authors">Nguyen, T. T., et al.</span> (2024). <a
                                 href="https://arxiv.org/abs/2209.02299"><span class="title">A Survey of Machine
                                     Unlearning.</span></a> <span class="venue">arXiv:2209.02299</span>.</li>
-                        <li id="ref-22"><span class="authors">Hochreiter, S., & Schmidhuber, J.</span> (1997). <a
-                                href="https://doi.org/10.1162/neco.1997.9.8.1735"><span class="title">Long Short-Term
-                                    Memory.</span></a> <span class="venue">Neural Computation</span>, 9(8), 1735–1780.
-                        </li>
 
-                        <li id="ref-23">
-                            <span class="authors">J. Kaplan, S. McCandlish, T. Henighan, T. B. Brown, B. Chess, R.
-                                Child, S. Gray, A. Radford, J. Wu, and D. Amodei. 2020.</span>
-
-                            <span class="venue">Scaling laws for neural language models. <em>CoRR</em>,
-                                abs/2001.08361.</span>
-                        </li>
-
-                        <li id="ref-24">
-                            <span class="authors">J. Hoffmann, S. Borgeaud, A. Mensch, E. Buchatskaya, T. Cai, E.
-                                Rutherford, D. de Las Casas,
-                                L. A. Hendricks, J. Welbl, A. Clark, T. Hennigan, E. Noland, K. Millican, G. van den
-                                Driessche, B. Damoc, A. Guy, S. Osindero, K. Simonyan, E. Elsen, J. W. Rae, O. Vinyals,
-                                and L. Sifre. 2022.</span>
-
-                            <span class="venue">Training compute-optimal large language models.</span>
-                        </li>
-
-                        <li id="ref-25">
+                        <li id="ref-20">
                             <span class="authors">F. Strati, P. Elvinger, T. Kerimoglu, and A. Klimovic. 2024. </span>
 
                             <span class="venue">Ml training with cloud gpu
@@ -3753,7 +3725,7 @@
                                 for Computing Machinery.</span>
                         </li>
 
-                        <li id="ref-26">
+                        <li id="ref-21">
                             <span class="authors">
                                 D. Kaye. 2025.
                             </span>
@@ -3763,7 +3735,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-27">
+                        <li id="ref-22">
                             <span class="authors">
                                 Z. Kachwala and A. Bajwa. 2025.
                             </span>
@@ -3774,7 +3746,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-28">
+                        <li id="ref-23">
                             <span class="authors">
                                 D. Howley. 2023.
                             </span>
@@ -3785,7 +3757,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-29">
+                        <li id="ref-24">
                             <span class="authors">
                                 J. You. 2025.
                             </span>
@@ -3795,33 +3767,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-30">
-                            <span class="authors">
-                                S. Borgeaud, A. Mensch, J. Hoffmann, T. Cai, E. Rutherford, K. Millican, G. B. Van Den
-                                Driessche, J.-B. Lespiau, B. Damoc, A. Clark, et al. 2022.
-                            </span>
-
-                            <span class="venue">
-                                Improving language models by
-                                retrieving from trillions of tokens. In <em>International conference on machine
-                                    learning</em>,
-                                pages
-                                2206–2240. PMLR.
-                            </span>
-                        </li>
-
-                        <li id="ref-31">
-                            <span class="authors">
-                                J. Lederer. 2024.
-                            </span>
-
-                            <span class="venue">
-                                Statistical guarantees for sparse deep learning. <em>AStA Advances in Statistical
-                                    Analysis</em>, 108(2):231–258.
-                            </span>
-                        </li>
-
-                        <li id="ref-32">
+                        <li id="ref-25">
                             <span class="authors">
                                 D. Dai, C. Deng, C. Zhao, R. Xu, H. Gao, D. Chen, J. Li, W. Zeng, X. Yu, Y. Wu, et al.
                                 2024.
@@ -3833,19 +3779,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-33">
-                            <span class="authors">
-                                Z. Guo, K. Wang, G. Cazenavette, H. Li, K. Zhang, and Y. You. 2023.
-                            </span>
-
-                            <span class="venue">
-                                Towards lossless dataset
-                                distillation via difficulty-aligned trajectory matching. <em>arXiv preprint
-                                    arXiv:2310.05773.</em>
-                            </span>
-                        </li>
-
-                        <li id="ref-34">
+                        <li id="ref-26">
                             <span class="authors">
                                 Meta AI. 2024.
                             </span>
@@ -3856,7 +3790,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-35">
+                        <li id="ref-27">
                             <span class="authors">
                                 T. B. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal, A. Neelakantan, P.
                                 Shyam,
@@ -3869,7 +3803,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-36">
+                        <li id="ref-28">
                             <span class="authors">
                                 K. Wiggers. 2024.
                             </span>
@@ -3881,7 +3815,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-37">
+                        <li id="ref-29">
                             <span class="authors">
                                 Epoch AI. 2025.
                             </span>
@@ -3891,17 +3825,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-38">
-                            <span class="authors">
-                                I. Goodfellow, Y. Bengio, and A. Courville. 2016.
-                            </span>
-
-                            <a href="https://www.deeplearningbook.org/">
-                                <em>Deep Learning</em>. MIT Press.
-                            </a>
-                        </li>
-
-                        <li id="ref-39">
+                        <li id="ref-30">
                             <span class="authors">
                                 I. Mehta. 2024.
                             </span>
@@ -3912,7 +3836,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-40">
+                        <li id="ref-31">
                             <span class="authors">
                                 OpenAI. 2024.
                             </span>
@@ -3923,7 +3847,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-41">
+                        <li id="ref-32">
                             <span class="authors">
                                 J. Sevilla and E. Roldan. 2024.
                             </span>
@@ -3936,7 +3860,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-42">
+                        <li id="ref-33">
                             <span class="authors">
                                 Weights & Biases. 2025.
                             </span>
@@ -3947,7 +3871,7 @@
                             </a>
                         </li>
 
-                        <li id="ref-43">
+                        <li id="ref-34">
                             <span class="authors">
                                 A. K. Veldanda, S.-X. Zhang, A. Das, S. Chakraborty, S. Rawls, S. Sahu, and M. Naphade.
                                 2024.
@@ -3959,7 +3883,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-44">
+                        <li id="ref-35">
                             <span class="authors">
                                 I. Bratt. 2025.
                             </span>
@@ -3971,35 +3895,7 @@
                             </a>
                         </li>
 
-                        <li id="ref-45">
-                            <span class="authors">
-                                S. Borgeaud, A. Mensch, J. Hoffmann, T. Cai, E. Rutherford, K. Millican, G. B. Van Den
-                                Driessche, J.-B. Lespiau, B. Damoc, A. Clark, et al. 2022.
-                            </span>
-
-                            <span class="venue">
-                                Improving language models by
-                                retrieving from trillions of tokens. In <em>International conference on machine
-                                    learning</em>,
-                                pages
-                                2206–2240. PMLR.
-                            </span>
-                        </li>
-
-                        <li id="ref-46">
-                            <span class="authors">
-                                G. Izacard, P. Lewis, M. Lomeli, L. Hosseini, F. Petroni, T. Schick, J. Dwivedi-Yu, A.
-                                Joulin,
-                                S. Riedel, and E. Grave. 2023
-                            </span>
-
-                            <span class="venue">
-                                Atlas: Few-shot learning with retrieval augmented language
-                                models. <em>Journal of Machine Learning Research</em>, 24(251):1–43.
-                            </span>
-                        </li>
-
-                        <li id="ref-47">
+                        <li id="ref-36">
                             <span class="authors">
                                 J. Kirkpatrick, R. Pascanu, N. Rabinowitz, J. Veness, G. Desjardins, A. A. Rusu, K.
                                 Milan,
@@ -4013,30 +3909,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-48">
-                            <span class="authors">
-                                R. Kemker, M. McClure, A. Abitino, T. Hayes, and C. Kanan. 2018.
-                            </span>
-
-                            <span class="venue">
-                                Measuring catastrophic forgetting in neural networks. In <em>Proceedings of the AAAI
-                                    conference on artificial intelligence</em>,
-                                volume 32.
-                            </span>
-                        </li>
-
-                        <li id="ref-49">
-                            <span class="authors">
-                                K. Robison. 2024.
-                            </span>
-
-                            <span class="venue">
-                                OpenAI cofounder Ilya Sutskever says the way AI is built is about to change.
-                                <em>The Verge</em>, December. Accessed: December 31, 2024.
-                            </span>
-                        </li>
-
-                        <li id="ref-50">
+                        <li id="ref-37">
                             <span class="authors">
                                 Epoch AI. 2024.
                             </span>
@@ -4046,7 +3919,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-51">
+                        <li id="ref-38">
                             <span class="authors">
                                 Together. 2023.
                             </span>
@@ -4062,7 +3935,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-52">
+                        <li id="ref-39">
                             <span class="authors">
                                 A. S. Cummings. 2017.
                             </span>
@@ -4073,25 +3946,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-53">
-                            <span class="authors">
-                                M. Cummins. 2024.
-                            </span>
-
-                            <span class="venue">
-                                How much llm training data is there, in the limit? <em>Educating Silicon</em>,
-                                May. A comprehensive analysis of available text data for LLM training, including web
-                                data,
-                                code, academic publications, books, court documents, social media, transcribed audio,
-                                and
-                                private communications. Estimates suggest current LLM training sets are approaching the
-                                limits of high-quality public text, with approximately 40-90T tokens available in
-                                English
-                                and 100-200T tokens across all languages
-                            </span>
-                        </li>
-
-                        <li id="ref-54">
+                        <li id="ref-40">
                             <span class="authors">
                                 Wikipedia contributors. 2024.
                             </span>
@@ -4102,7 +3957,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-55">
+                        <li id="ref-41">
                             <span class="authors">
                                 B. Kahle. 2024.
                             </span>
@@ -4117,7 +3972,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-56">
+                        <li id="ref-42">
                             <span class="authors">
                                 D. Mider. 2024.
                             </span>
@@ -4128,7 +3983,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-57">
+                        <li id="ref-43">
                             <span class="authors">
                                 P. Taylor. 2024.
                             </span>
@@ -4139,7 +3994,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-58">
+                        <li id="ref-44">
                             <span class="authors">
                                 T. Bogwasi. 2025.
                             </span>
@@ -4149,32 +4004,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-59">
-                            <span class="authors">
-                                Q. V. Le. 2013.
-                            </span>
-
-                            <span class="venue">
-                                Building high-level features using large scale unsupervised learning. In <em>2013
-                                    IEEE international conference on acoustics, speech and signal processing</em>, pages
-                                8595–8598.
-                                IEEE.
-                            </span>
-                        </li>
-
-                        <li id="ref-60">
-                            <span class="authors">
-                                T. T. Nguyen, T. T. Huynh, Z. Ren, P. L. Nguyen, A. W.-C. Liew, H. Yin, and Q. V. H.
-                                Nguyen.
-                                2024.
-                            </span>
-
-                            <span class="venue">
-                                A survey of machine unlearning.
-                            </span>
-                        </li>
-
-                        <li id="ref-61">
+                        <li id="ref-45">
                             <span class="authors">
                                 S. Hochreiter. 1998.
                             </span>
@@ -4187,7 +4017,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-62">
+                        <li id="ref-46">
                             <span class="authors">
                                 B. Hanin. 2018.
                             </span>
@@ -4198,45 +4028,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-63">
-                            <span class="authors">
-                                A. Krizhevsky, I. Sutskever, and G. E. Hinton. 2012.
-                            </span>
-
-                            <span class="venue">
-                                Imagenet classification with deep
-                                convolutional neural networks. <em>Advances in neural information processing
-                                    systems</em>, 25.
-                            </span>
-                        </li>
-
-                        <li id="ref-64">
-                            <span class="authors">
-                                C. Dwork, F. McSherry, K. Nissim, and A. Smith. 2006.
-                            </span>
-
-                            <span class="venue">
-                                Calibrating noise to sensitivity in
-                                private data analysis. In <em>Theory of Cryptography: Third Theory of Cryptography
-                                    Conference,
-                                    TCC 2006, New York, NY, USA, March 4-7, 2006. Proceedings</em> 3, pages 265–284.
-                                Springer
-                            </span>
-                        </li>
-
-                        <li id="ref-65">
-                            <span class="authors">
-                                M. Abadi, A. Chu, I. Goodfellow, H. B. McMahan, I. Mironov, K. Talwar, and L. Zhang.
-                                2016.
-                            </span>
-
-                            <span class="venue">
-                                Deep learning with differential privacy. In <em>Proceedings of the 2016 ACM SIGSAC
-                                    Conference on Computer and Communications Security</em>, CCS’16. ACM, October
-                            </span>
-                        </li>
-
-                        <li id="ref-66">
+                        <li id="ref-47">
                             <span class="authors">
                                 J. Soria-Comas, J. Domingo-Ferrer, D. Sanchez, and D. Meg ´ ´ıas. 2016.
                             </span>
@@ -4248,7 +4040,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-67">
+                        <li id="ref-48">
                             <span class="authors">
                                 C. Dwork, A. Roth, et al. 2014.
                             </span>
@@ -4259,7 +4051,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-68">
+                        <li id="ref-49">
                             <span class="authors">
                                 O. Lieber, O. Sharir, B. Lenz, and Y. Shoham. 2021.
                             </span>
@@ -4270,7 +4062,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-69">
+                        <li id="ref-50">
                             <span class="authors">
                                 J. Rae, S. Borgeaud, T. Cai, K. Millican, J. Hoffmann, F. Song, J. Aslanides, S.
                                 Henderson,
@@ -4279,21 +4071,16 @@
                                 Driessche, L. A. Hendricks, M. Rauh, P.-S. Huang, A. Glaese, J. Welbl, S. Dathathri,
                                 S. Huang, J. Uesato, J. Mellor, I. Higgins, A. Creswell, N. McAleese, A. Wu, E. Elsen,
                                 S. Jayakumar, E. Buchatskaya, D. Budden, E. Sutherland, K. Simonyan, M. Paganini,
-                            </span>
-                        </li>
-
-                        <li id="ref-70">
-                            <span class="authors">
-                                Y. Zhao, M. Li, L. Lai, N. Suda, D. Civin, and V. Chandra. 2018
+                                et al. 2021.
                             </span>
 
                             <span class="venue">
-                                Federated learning with
-                                non-iid data.
+                                Scaling language models: Methods, analysis &amp; insights from training Gopher.
+                                <em>arXiv preprint</em>.
                             </span>
                         </li>
 
-                        <li id="ref-71">
+                        <li id="ref-51">
                             <span class="authors">
                                 D. Grover and B. Toghi. 2018.
                             </span>
@@ -4304,32 +4091,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-72">
-                            <span class="authors">
-                                S. Borgeaud, A. Mensch, J. Hoffmann, T. Cai, E. Rutherford, K. Millican, G. B. Van Den
-                                Driessche, J.-B. Lespiau, B. Damoc, A. Clark, et al. 2022.
-                            </span>
-
-                            <span class="venue">
-                                Improving language models by
-                                retrieving from trillions of tokens. In <em>International conference on machine</em>
-                                learning,
-                                pages
-                                2206–2240. PMLR.
-                            </span>
-                        </li>
-
-                        <li id="ref-73">
-                            <span class="authors">
-                                N. Papernot, S. Song, I. Mironov, A. Raghunathan, K. Talwar, and Ulfar Erlingsson. 2018.
-                            </span>
-
-                            <span class="venue">
-                                Scalable private learning with pate.
-                            </span>
-                        </li>
-
-                        <li id="ref-74">
+                        <li id="ref-52">
                             <span class="authors">
                                 X. Hou and X. Wang. 2024.
                             </span>
@@ -4340,29 +4102,7 @@
                             </span>
                         </li>
 
-                        <li id="ref-75">
-                            <span class="authors">
-                                S. K. Ainsworth, J. Hayase, and S. Srinivasa. 2022.
-                            </span>
-
-                            <span class="venue">
-                                Git re-basin: Merging models modulo
-                                permutation symmetries. <em>arXiv preprint arXiv:2209.04836.</em>
-                            </span>
-                        </li>
-
-                        <li id="ref-76">
-                            <span class="authors">
-                                Y. Zhao, M. Li, L. Lai, N. Suda, D. Civin, and V. Chandra. 2018.
-                            </span>
-
-                            <span class="venue">
-                                Federated learning with
-                                non-iid data.
-                            </span>
-                        </li>
-
-                        <li id="ref-77">
+                        <li id="ref-53">
                             <span class="authors">
                                 A. Youssef, M. Ng, J. Long, T. Hernandez-Boussard, N. Shah, A. Miner, D. Larson, and
                                 C. Langlotz. 2023.
@@ -4373,6 +4113,15 @@
                                 in health care. <em>JAMA Network Open</em>, 6:e2348422, 12.
                             </span>
                         </li>
+                        <li id="ref-54"><span class="authors">Abadi, M., Chu, A., Goodfellow, I., McMahan, H. B., Mironov, I., Talwar, K., & Zhang, L.</span>
+                            (2016).
+                            <a href="https://doi.org/10.1145/2976749.2978318"><span class="title">Deep learning with
+                                    differential privacy.</span></a> <span class="venue">Proceedings of the 2016 ACM
+                                SIGSAC Conference on Computer and Communications Security (CCS'16)</span>.</li>
+                        <li id="ref-55"><span class="authors">Lederer, J.</span> (2024).
+                            <a href="https://doi.org/10.1007/s10182-022-00467-3"><span class="title">Statistical guarantees for
+                                    sparse deep learning.</span></a> <span class="venue">AStA Advances in Statistical
+                                Analysis, 108(2), 231–258</span>.</li>
                     </ol>
                 </section>
 
