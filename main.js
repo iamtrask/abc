@@ -67,12 +67,13 @@ function alignMarginItems() {
     if (window.matchMedia('(max-width: 1024px)').matches) return;
 
     // Phase 1: position sidenotes at their anchor refs
+    // (Skip if sidenote has been moved into a track by citation-card.js)
     document.querySelectorAll('.sidenote-ref').forEach((ref) => {
         const targetId = ref.getAttribute('href');
         if (!targetId || !targetId.startsWith('#')) return;
 
         const sidenote = document.querySelector(targetId);
-        if (!sidenote) return;
+        if (!sidenote || sidenote.style.display === 'none') return;
 
         const block = ref.closest('.sidenote') || ref.closest('section');
         if (!block) return;

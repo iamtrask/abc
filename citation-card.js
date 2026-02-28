@@ -291,6 +291,7 @@
         activeEntry.card.classList.remove('is-expanded');
         for (var i = 0; i < activeEntry.citeLinks.length; i++) {
             activeEntry.citeLinks[i].classList.remove('is-card-highlight');
+            activeEntry.citeLinks[i].classList.remove('is-highlighted');
         }
         applySidebarOffset(activeEntry.track, 0);
         activeEntry = null;
@@ -304,8 +305,7 @@
     /** Highlight from cite hover — shift track so card aligns with cite */
     function highlightFromCite(entry, cite) {
         cancelUnhighlight();
-        if (activeEntry === entry) return;
-        if (activeEntry) doUnhighlight();
+        if (activeEntry && activeEntry !== entry) doUnhighlight();
         activeEntry = entry;
 
         entry.card.classList.remove('is-hidden');
@@ -314,10 +314,23 @@
             entry.citeLinks[i].classList.add('is-card-highlight');
         }
 
-        // Shift the track so this card aligns with the hovered cite
-        var citeRect = cite.getBoundingClientRect();
-        var cardRect = entry.card.getBoundingClientRect();
-        applySidebarOffset(entry.track, citeRect.top - cardRect.top);
+        // Disable transition, reset transform, measure clean positions,
+        // then apply the correct offset and re-enable transition.
+        var track = entry.track;
+        if (track) {
+            track.style.transition = 'none';
+            track.style.transform = '';
+            track.offsetHeight;  // force reflow
+
+            var citeRect = cite.getBoundingClientRect();
+            var cardRect = entry.card.getBoundingClientRect();
+            var dy = citeRect.top - cardRect.top;
+            track.style.transform = dy ? 'translateY(' + dy + 'px)' : '';
+
+            requestAnimationFrame(function () {
+                track.style.transition = '';
+            });
+        }
     }
 
     /** Highlight from card hover — expand to show author detail; flex flow handles pushing */
@@ -338,6 +351,28 @@
         }
     }
 
+    /* ---- sidenote card builder ---- */
+
+    function buildSidenoteCard(sidenote, ref) {
+        var card = document.createElement('div');
+        card.className = 'cite-sidebar-card cite-sidebar-sidenote is-hidden';
+
+        // Clone the sidenote content into the card
+        var content = document.createElement('div');
+        content.className = 'cite-sidebar-sidenote-body';
+        var children = sidenote.childNodes;
+        for (var i = 0; i < children.length; i++) {
+            content.appendChild(children[i].cloneNode(true));
+        }
+        card.appendChild(content);
+
+        // Set anchor for positioning
+        if (!ref.id) ref.id = 'sidenote-anchor-' + sidenote.id;
+        card.setAttribute('data-anchor-id', ref.id);
+
+        return card;
+    }
+
     /* ---- card creation ---- */
 
     function createCards() {
@@ -349,7 +384,10 @@
         allSections.forEach(function (section) {
             var cites = section.querySelectorAll('a.cite');
             var seenRefs = {};  // refNum → { card, citeLinks[], track }
-            var sectionCards = [];
+
+            // Collect all margin items: citations + sidenotes, sorted by
+            // document position of their anchor element.
+            var marginItems = [];  // { anchorEl, type, ... }
 
             cites.forEach(function (cite) {
                 var href = cite.getAttribute('href');
@@ -359,58 +397,92 @@
                 var r = lookup(href);
                 if (!r) return;
 
-                var mapKey = sectionIndex + ':' + refNum;
-
                 if (seenRefs[refNum]) {
-                    // Deduplicate: link this cite to the existing card
                     seenRefs[refNum].citeLinks.push(cite);
                     citeToCard[cite.id || (cite.id = 'cite-sc-' + sectionIndex + '-' + refNum + '-' + seenRefs[refNum].citeLinks.length)] = seenRefs[refNum];
                     return;
                 }
 
-                // Create a new card
                 var card = buildCard(r);
                 wireAvatarHovers(card);
 
-                // Assign a unique anchor ID to the first cite for positioning
                 if (!cite.id) cite.id = 'cite-anchor-' + sectionIndex + '-' + refNum;
                 card.setAttribute('data-anchor-id', cite.id);
                 card.setAttribute('data-ref-num', refNum);
                 card.setAttribute('data-section-index', String(sectionIndex));
 
-                sectionCards.push(card);
                 cards.push(card);
 
                 var entry = { card: card, citeLinks: [cite], track: null };
                 seenRefs[refNum] = entry;
-                citeToCard[mapKey] = entry;
+                citeToCard[sectionIndex + ':' + refNum] = entry;
 
-                // Card hover → expand to show author detail
                 card.addEventListener('mouseenter', function () {
                     highlightFromCard(entry);
                 });
                 card.addEventListener('mouseleave', function () {
                     scheduleUnhighlight();
                 });
+
+                marginItems.push({ anchorEl: cite, type: 'cite', card: card, entry: entry });
             });
 
-            // Create one track container per section and append all cards to it
-            if (sectionCards.length) {
+            // Collect sidenotes in this section
+            var sidenoteRefs = section.querySelectorAll('a.sidenote-ref');
+            sidenoteRefs.forEach(function (ref) {
+                var href = ref.getAttribute('href');
+                if (!href || href.indexOf('#') !== 0) return;
+                var sidenote = document.querySelector(href);
+                if (!sidenote) return;
+
+                var card = buildSidenoteCard(sidenote, ref);
+                cards.push(card);
+
+                // Wire hover: ref → highlight card, card → highlight ref
+                var snEntry = { card: card, citeLinks: [ref], track: null, isSidenote: true };
+
+                card.addEventListener('mouseenter', function () {
+                    cancelUnhighlight();
+                    if (activeEntry && activeEntry !== snEntry) doUnhighlight();
+                    activeEntry = snEntry;
+                    card.classList.add('is-highlighted');
+                    ref.classList.add('is-highlighted');
+                });
+                card.addEventListener('mouseleave', function () {
+                    scheduleUnhighlight();
+                });
+
+                marginItems.push({ anchorEl: ref, type: 'sidenote', card: card, entry: snEntry, origSidenote: sidenote });
+            });
+
+            // Sort by document position
+            marginItems.sort(function (a, b) {
+                var pos = a.anchorEl.compareDocumentPosition(b.anchorEl);
+                if (pos & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
+                if (pos & Node.DOCUMENT_POSITION_PRECEDING) return 1;
+                return 0;
+            });
+
+            // Build the track
+            if (marginItems.length) {
                 var track = document.createElement('div');
                 track.className = 'cite-sidebar-track';
-                for (var i = 0; i < sectionCards.length; i++) {
-                    track.appendChild(sectionCards[i]);
+
+                for (var i = 0; i < marginItems.length; i++) {
+                    track.appendChild(marginItems[i].card);
+                    marginItems[i].entry.track = track;
+
+                    // Hide original sidenote element
+                    if (marginItems[i].origSidenote) {
+                        marginItems[i].origSidenote.style.display = 'none';
+                    }
                 }
+
                 section.appendChild(track);
                 tracks.push(track);
-
-                // Store track reference in each entry
-                Object.keys(seenRefs).forEach(function (refNum) {
-                    seenRefs[refNum].track = track;
-                });
             }
 
-            // Cite hover → highlight card + shift sidebar
+            // Wire cite hover → highlight + shift
             Object.keys(seenRefs).forEach(function (refNum) {
                 var entry = seenRefs[refNum];
                 entry.citeLinks.forEach(function (cite) {
@@ -423,6 +495,19 @@
                 });
             });
 
+            // Wire sidenote ref hover → highlight + shift
+            marginItems.forEach(function (item) {
+                if (item.type !== 'sidenote') return;
+                var entry = item.entry;
+                var ref = item.anchorEl;
+                ref.addEventListener('mouseenter', function () {
+                    highlightFromCite(entry, ref);
+                });
+                ref.addEventListener('mouseleave', function () {
+                    scheduleUnhighlight();
+                });
+            });
+
             sectionIndex++;
         });
 
@@ -431,43 +516,23 @@
     /* ---- IntersectionObserver: show/hide cards by anchor cite proximity ---- */
 
     function setupObserver() {
-        var realignQueued = false;
-        function queueRealign() {
-            if (realignQueued) return;
-            realignQueued = true;
-            requestAnimationFrame(function () {
-                requestAnimationFrame(function () {
-                    realignQueued = false;
-                    if (window.realignMarginItems) window.realignMarginItems();
-                });
-            });
-        }
-
         // Observe each card's anchor cite element.
         // Only show cards whose anchor is near the viewport.
+        // No realignment on scroll — track position is set once at init,
+        // and highlightFromCite handles alignment on hover.
         var observer = new IntersectionObserver(function (entries) {
-            var changed = false;
             entries.forEach(function (entry) {
                 var card = entry.target._sidebarCard;
                 if (!card) return;
 
                 if (entry.isIntersecting) {
-                    if (card.classList.contains('is-hidden')) {
-                        card.classList.remove('is-hidden');
-                        changed = true;
-                    }
+                    card.classList.remove('is-hidden');
                 } else {
-                    if (!card.classList.contains('is-hidden')) {
-                        card.classList.add('is-hidden');
-                        card.classList.remove('is-highlighted');
-                        changed = true;
-                    }
+                    card.classList.add('is-hidden');
+                    card.classList.remove('is-highlighted');
                 }
             });
-
-            if (changed) queueRealign();
         }, {
-            // Show cards when their anchor is within ~half a viewport of the edges
             rootMargin: '50% 0px 50% 0px',
             threshold: 0
         });
