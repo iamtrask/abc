@@ -1407,8 +1407,8 @@
       "srinivasa_siddhartha"
     ],
     "year": 2022,
-    "venue": "arXiv preprint arXiv:2209.04836,\n  url = {https://arxiv.org/abs/2409.13054}",
-    "venueShort": "arXiv preprint arXiv:2209.04836,\n  url = {https://arxiv.org/abs/2409.13054}",
+    "venue": "arXiv preprint arXiv:2209.04836",
+    "venueShort": "arXiv preprint arXiv:2209.04836",
     "url": "https://arxiv.org/abs/2209.04836",
     "doi": null,
     "type": "journal",
@@ -1826,7 +1826,7 @@
     "screenshot": null
   },
   "dwork2014algorithmic": {
-    "title": "The algorithmic foundations of differential privacy.",
+    "title": "The algorithmic foundations of differential privacy",
     "authors": [
       "dwork_cynthia",
       "roth_aaron",
@@ -2121,9 +2121,11 @@
     "screenshot": null
   },
   "goldreich1987towards": {
-    "title": "Towards a theory of software protection and simulation by oblivious RAMs",
+    "title": "How to play ANY mental game",
     "authors": [
-      "goldreich_oded"
+      "goldreich_oded",
+      "micali_silvio",
+      "wigderson_avi"
     ],
     "year": 1987,
     "venue": "Proceedings of the nineteenth annual ACM symposium on Theory of computing",

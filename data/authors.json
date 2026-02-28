@@ -2753,14 +2753,20 @@
     "headshot": null,
     "links": {}
   },
-  "goldwasser_shafi": {
-    "displayName": "Shafi Goldwasser",
+  "micali_silvio": {
+    "displayName": "Silvio Micali",
     "affiliation": null,
     "headshot": null,
     "links": {}
   },
-  "micali_silvio": {
-    "displayName": "Silvio Micali",
+  "wigderson_avi": {
+    "displayName": "Avi Wigderson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
+  "goldwasser_shafi": {
+    "displayName": "Shafi Goldwasser",
     "affiliation": null,
     "headshot": null,
     "links": {}
