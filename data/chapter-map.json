@@ -133,7 +133,12 @@
     "52": "10.36227/techrxiv.171837853.31531482/v1",
     "53": "privacy_blocks_medical_sharing",
     "54": "Abadi_2016",
-    "55": "lederer2024statistical"
+    "55": "lederer2024statistical",
+    "56": "mironov2017renyi",
+    "57": "mcsherry2007mechanism",
+    "58": "kalai2005efficient",
+    "59": "freund1997decision",
+    "60": "phan2025lastexam"
   },
   "chapter3": {
     "1": "st",
@@ -203,23 +208,41 @@
     "20": "backstrom2012four",
     "21": "haveliwala2002topicsensitive"
   },
-  "chapter5": {
-    "1": "st",
-    "2": "scaling_laws_2020",
-    "3": "borgeaud2022improving",
-    "4": "dunbar1993coevolution",
-    "5": "granovetter1973strength",
-    "6": "fl",
-    "7": "dwork2014algorithmic",
-    "8": "gabriel2020artificial"
-  },
+  "chapter5": {},
   "appendix1": {
+    "1": "casson2001libraries",
+    "2": "galen_epidemics",
+    "3": "canfora1989vanished",
+    "4": "kennedy2003progymnasmata",
+    "5": "smithsonian_diamond_sutra",
+    "6": "scott1998seeing",
+    "7": "diderot_encyclopedie",
+    "8": "sep_diderot",
+    "9": "wells1937world_brain",
+    "10": "wikipedia_governance",
+    "11": "somers2017google_books",
+    "12": "licklider1960man",
+    "13": "cortada2018change",
+    "14": "licklider1968computer",
+    "15": "simon1955behavioral",
+    "16": "simon1956rational",
+    "17": "simon1982models",
+    "18": "hayek1945use",
+    "19": "sen1981poverty",
+    "20": "anderson1983imagined",
+    "21": "bernays1928propaganda",
+    "22": "tye1998father",
+    "23": "hootsuite2024",
+    "24": "companiesmarketcap2026",
+    "25": "ostrom1990governing"
+  },
+  "appendix2": {
     "1": "mann2024ai",
     "2": "epoch2024hardware",
     "3": "ming2024nvidia",
     "4": "macrotrends2024nvidia"
   },
-  "appendix2": {
+  "appendix3": {
     "1": "epoch2024hardware"
   }
 }

@@ -45,9 +45,10 @@
             <a href="chapter3.html">III. Network-Source AI</a>
             <a href="chapter4.html">IV. Broad Listening</a>
             <a href="chapter5.html" class="active">V. Conclusion</a>
-            <a href="references.html">References</a>
             <a href="appendix1.html">Appendix I</a>
             <a href="appendix2.html">Appendix II</a>
+            <a href="appendix3.html">Appendix III</a>
+            <a href="references.html">References</a>
             <a href="https://andrewtrask.com">About</a>
         </nav>
 
@@ -56,13 +57,13 @@
                 <h4>On This Page</h4>
                 <ul>
                     <li class="toc-h3"><a href="#opening">Opening</a></li>
-                    <li class="toc-h3"><a href="#individual-level">Individual Level</a></li>
-                    <li class="toc-h3"><a href="#institutional-level">Institutional Level</a></li>
-                    <li class="toc-h3"><a href="#societal-level">Societal Level</a></li>
-                    <li class="toc-h3"><a href="#geopolitical-level">Geopolitical Level</a></li>
-                    <li class="toc-h3"><a href="#reframe">The Reframe</a></li>
-                    <li class="toc-h3"><a href="#claims">What the Thesis Claims</a></li>
-                    <li class="toc-h3"><a href="#future">The Future of AI</a></li>
+                    <li class="toc-h3"><a href="#three-solutions">Three Problems &amp; Solutions</a></li>
+                    <li class="toc-h3"><a href="#consequences">Consequences Reframed</a></li>
+                    <li class="toc-h4"><a href="#individual-level">Individual Level</a></li>
+                    <li class="toc-h4"><a href="#institutional-level">Institutional Level</a></li>
+                    <li class="toc-h4"><a href="#societal-level">Societal Level</a></li>
+                    <li class="toc-h4"><a href="#geopolitical-level">Geopolitical Level</a></li>
+                    <li class="toc-h4"><a href="#ai-safety-level">AI Safety</a></li>
                 </ul>
                 <div class="ascii-decoration">
                     central broad
@@ -117,232 +118,245 @@
 
                 <section id="opening">
                     <p>
-                        This thesis opened by observing that several apparently distinct problems in contemporary AI
-                        systems share a common structural feature: the absence of <a
-                            href="https://attribution-based-control.ai/">attribution-based control</a>. When
-                        AI systems add information without attribution, users cannot verify claims. When systems
-                        copy training data without preserving contributor control, data owners rationally withhold
-                        contributions. When systems branch into multiple instances without accountability mechanisms,
-                        governance becomes intractable. The introduction traced how these technical absences cascade
-                        upward into consequences at individual, institutional, societal, and geopolitical levels, then
-                        asked
-                        whether attribution-based control is technically feasible with existing machinery. Chapters 2,
-                        3,
-                        and 4 surveyed techniques in deep learning, cryptography, and distributed systems that could
-                        provide the three components of ABC. This conclusion returns to the cascading consequences
-                        to examine what changes if ABC proves achievable.
+                        Addressing the overreliance of AI systems on addition, branching, and copying within deep
+                        learning systems, these chapters proposed three methods for addressing AI&rsquo;s overreliance
+                        on addition, branching, and copying. However, none of the three solutions, taken alone,
+                        provides attribution-based control.
                     </p>
                 </section>
 
-                <section id="individual-level">
-                    <h2>At the Individual Level</h2>
+                <section id="three-solutions">
+                    <h2>Three Problems and Three Solutions</h2>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/ch_1_v2.png"
+                            alt="The addition, branching, and copy problems addressed in chapters 2, 3, and 4">
+                        <figcaption>The addition, branching, and copy problems addressed in chapters 2, 3, and 4
+                            through the use of concatenation, encryption, and recursion to provide attribution-based
+                            control.</figcaption>
+                    </figure>
 
                     <p>
-                        At the individual level, the introduction identified hallucination and disinformation as
-                        characteristic problems. Users encounter claims they cannot verify, generated by systems whose
-                        reasoning processes remain opaque. Deep voting, as surveyed in Chapter 2, does not eliminate
-                        hallucination. Models will continue to produce outputs unsupported by their training data. What
-                        changes is the possibility of source inspection. When each token of output can be traced to the
-                        training examples that most influenced its generation (<a href="#ref-3"
-                            class="cite">Borgeaud et al., 2022</a>), users gain the architectural prerequisite
-                        for
-                        verification. They can examine whether claimed facts derive from sources they consider reliable,
-                        whether confident assertions rest on thin evidential bases, whether patterns reflect genuine
-                        regularities or artifacts of biased sampling. This does not automatically produce truth, but it
-                        provides the foundation upon which verification practices could be built. The individual-level
-                        problems identified in the introduction require this foundation.
-                    </p>
-                </section>
-
-                <section id="institutional-level">
-                    <h2>At the Institutional Level</h2>
-
-                    <p>
-                        At the institutional level, the introduction observed that data owners have rational incentives
-                        to withhold contributions from AI systems. Contributing data to centralized training pipelines
-                        means surrendering control over how that data will be used, who will benefit from insights
-                        derived from it, and whether contributors will receive any attribution or compensation. The
-                        introduction estimated that this dynamic has locked away six or more orders of magnitude of
-                        potentially valuable training data (<a href="#ref-2" class="cite">Kaplan et al.,
-                            2020</a>). Structured transparency (<a href="#ref-1" class="cite">Trask et al.,
-                            2020</a>), as surveyed in Chapter 3, addresses
-                        the technical barrier that makes this withholding rational. When cryptographic mechanisms
-                        can enforce access policies (<a href="#ref-7" class="cite">Dwork &amp; Roth,
-                            2014</a>; <a href="#ref-6" class="cite">McMahan et al., 2017</a>), when
-                        contributors can specify conditions under which their data
-                        may be used, when audit trails can verify compliance with those conditions, the calculus
-                        changes. Data owners might contribute to systems where they retain meaningful control even
-                        as their contributions enable collective intelligence. The institutional barriers identified in
-                        the
-                        introduction were rational responses to architectural limitations. Removing those limitations
-                        does not guarantee participation, but it removes the technical obstacle that made withholding
-                        the only rational choice.
-                    </p>
-                </section>
-
-                <section id="societal-level">
-                    <h2>At the Societal Level</h2>
-
-                    <p>
-                        At the societal level, the introduction raised questions of governance and alignment that
-                        currently dominate discourse in the field. How do we ensure that AI systems behave in accordance
-                        with human values (<a href="#ref-8" class="cite">Gabriel, 2020</a>)? How do we maintain meaningful human control over systems
-                        that may eventually exceed human capabilities in many domains? Current approaches typically
-                        involve centralized actors tuning systems on samples of human feedback, hoping that the
-                        tuning generalizes appropriately. The recursive structures surveyed in Chapter 4 (<a href="#ref-4"
-                            class="cite">Dunbar, 1993</a>; <a href="#ref-5" class="cite">Granovetter,
-                            1973</a>) suggest an
-                        alternative architecture. If AI systems require ongoing contributions from distributed sources,
-                        and if contributors retain the ability to withdraw those contributions, then alignment becomes
-                        structurally enforced rather than centrally imposed. A system that violates contributor values
-                        sufficiently to trigger widespread withdrawal loses capability. This is not a complete solution
-                        to alignment. Contributors might coordinate to pursue objectives harmful to non-contributors.
-                        The mechanisms by which contributors express values through contribution decisions remain
-                        underspecified. The assumption that contributors can evaluate system behavior at the speed
-                        required for effective feedback may prove optimistic. But the architectural possibility differs
-                        from
-                        current approaches: collective control without requiring trust in a small number of companies or
-                        governments to tune systems appropriately on humanity’s behalf.
-                    </p>
-                </section>
-
-                <section id="geopolitical-level">
-                    <h2>At the Geopolitical Level</h2>
-
-                    <p>
-                        At the geopolitical level, the introduction noted a strategic tension facing liberal
-                        democracies.
-                        Authoritarian states can mandate resource centralization in ways that liberal democracies cannot
-                        without violating foundational principles. If AI capability correlates with centralization, this
-                        creates structural disadvantages for democratic societies. The recursive delegation mechanisms
-                        in Chapter 4 suggest a different scaling dynamic. If capability can emerge through voluntary
-                        coordination of distributed resources rather than coerced aggregation, liberal democracies might
-                        access resources unavailable to authoritarian centralization. Citizens globally might contribute
-                        to systems that preserve their control in ways they would never contribute to systems under
-                        authoritarian control. This is speculative, and competitive dynamics might override
-                        architectural
-                        properties. But the possibility exists that voluntary coordination at scale could match or
-                        exceed
-                        what coerced centralization achieves, providing a path toward capable AI systems that does not
-                        require compromising democratic values to remain competitive.
-                    </p>
-                </section>
-
-                <section id="reframe">
-                    <h2>The Reframe</h2>
-
-                    <p>
-                        The pattern across these four levels suggests a reframe. The problems identified in the
-                        introduction were not primarily failures of intention or governance. They were consequences of
-                        infrastructure. The internet scaled the capacity to share information globally, but it did not
-                        scale
-                        the capacity to filter, aggregate, and verify information at corresponding rates. Those
-                        operations
-                        still required human attention at every step. When synthesis required human cognition,
-                        bottlenecks formed wherever humans could be positioned to aggregate. Platforms emerged to
-                        provide
-                        synthesis functions because the underlying infrastructure could not. The resulting concentration
-                        of control was not a choice but an architectural necessity given available technology. The
-                        thesis
-                        contribution is not the pattern of recursive trust propagation. That pattern is ancient. Humans
-                        have always extended their reach by trusting others who trust others, delegating judgment
-                        through networks of credibility built over time. The contribution is identifying specific
-                        technical
-                        barriers that prevented this pattern from operating at machine speed, and surveying existing
-                        techniques in deep learning, cryptography, and distributed systems that could address those
-                        barriers. Word-of-mouth operated at the speed of human conversation. The machinery surveyed
-                        in this thesis could allow analogous trust propagation to operate at the speed of computation.
-                    </p>                   
-                </section>
-
-                <section id="claims">
-                    <h2>What the Thesis Claims&mdash;and Does Not</h2>
-
-                     <p>
-                        This framing clarifies both what the thesis claims and what it does not. The claim is that
-                        ABC appears technically feasible using existing techniques. The evidence is the survey of those
-                        techniques across three chapters, demonstrating that deep voting can provide attribution for
-                        model outputs, that cryptographic mechanisms can enforce contributor control over data usage,
-                        95
-                        and that recursive structures can enable coordination without central authorities. These are
-                        technical possibilities, not deployment realities. Whether the techniques compose effectively
-                        at scale, whether the computational overhead proves acceptable, whether the coordination
-                        dynamics produce the alignment effects suggested above: these remain empirical questions
-                        requiring investigation beyond what a survey thesis can provide.
+                        Deep voting (Chapter 2) replaces addition with concatenation in key parts of the training
+                        process, preserving source-partitioned representations so that individual contributions remain
+                        identifiable at inference time. It does this by embracing recent breakthroughs in deep learning
+                        models which partition neurons in sections, and then by re-purposing differential privacy
+                        budgeting by inverting its key term, providing differential attribution budgeting. The empirical
+                        evidence surveyed in Chapter 2 (from RETRO, ATLAS, PATE, and related systems) suggests this can
+                        achieve competitive performance while maintaining per-source attribution. But a deep voting
+                        model, like any AI model, can be copied, and whoever possesses a copy controls it unilaterally.
+                        Attribution metadata becomes advisory: the model&rsquo;s owner may honor it or ignore it.
+                        Deep voting provides attribution without control.
                     </p>
 
                     <p>
-                        The thesis also does not claim that technical architecture determines social outcomes.
-                        Architecture enables and constrains, but human choices operate within those constraints. Even if
-                        ABC proves technically feasible, adoption depends on incentives, network effects, competitive
-                        dynamics, and institutional decisions that technical analysis cannot predict. The surveillance
-                        infrastructure that currently characterizes AI development emerged not because alternatives
-                        were impossible but because the available alternatives were not yet competitive. Whether
-                        ABCenabled alternatives become competitive depends on factors beyond architecture. The honest
-                        claim is narrower: if these barriers to collective intelligence without centralized control
-                        prove
-                        surmountable, then concentration of AI capability is a choice rather than a necessity. The
-                        thesis
-                        has tried to show that the barriers may indeed be surmountable.
+                        Structured transparency (Chapter 3) addresses the control problem through a framework organised
+                        around five criteria (input privacy, output privacy, input verification, output verification,
+                        and flow governance) that can be satisfied through various combinations of cryptographic
+                        techniques. Combined with deep voting, structured transparency enables data owners to contribute
+                        to AI predictions without surrendering copies of their information, retaining cryptographic
+                        enforcement over which predictions their data supports. But structured transparency does not
+                        solve the problem of evaluating counterparties at scale: a data owner who can cryptographically
+                        control their contribution still cannot personally assess the billions of users who might
+                        request access to it. Structured transparency provides control without trust at scale.
                     </p>
-                </section>
-
-                <section id="future" class="vision">
-                    <h2>The Future of AI</h2>
 
                     <p>
-                        The introduction ended by suggesting that the future of AI need not be a race to centralize.
-                        The chapters that followed surveyed technical machinery that could make that suggestion more
-                        than aspiration. Whether the machinery works as described, whether it composes into systems
-                        that function at scale, whether adoption dynamics favor its deployment: these questions remain
-                        open. But the architectural possibility now has technical substance behind it. The future of AI
-                        might instead become a race to connect, through systems that preserve attribution and control
-                        even as they enable collective intelligence exceeding what any centralized system could achieve.
-                        Determining whether this possibility can become reality is work that remains to be done.
+                        BaconRank (Chapter 4) addresses trust through recursive propagation across low-branching
+                        networks in which each participant evaluates a small number of direct contacts within
+                        Dunbar-scale constraints. At six hops with fifty connections per node, such a network could
+                        in theory reach \(50^6 \approx 15.6\) billion sources. But BaconRank can only propagate trust
+                        assessments about sources whose contributions remain individually identifiable (requiring deep
+                        voting) and whose participation is cryptographically governed (requiring structured
+                        transparency). BaconRank provides trust propagation without anything to propagate trust about.
+                    </p>
+
+                    <p>
+                        The three solutions are mutually dependent: each requires the other two to function as
+                        described. This mutual dependence is both the architecture&rsquo;s strength (it addresses
+                        attribution, control, and trust simultaneously rather than trading one for another) and its
+                        principal vulnerability (a failure in any one component undermines the others).
+                    </p>
+
+                    <p>
+                        Together, deep voting and structured transparency describe what Chapter 3 called network-source
+                        AI: a paradigm in which AI systems draw predictive capability from a network of data owners,
+                        each retaining control over the only copy of their information, rather than from a centralised
+                        corpus assembled through copying. BaconRank then layers on top of network-source AI to enable
+                        broad listening: network-source AI where the sources are weighted by local trust relationships
+                        between people.
+                    </p>
+
+                    <h3 id="consequences">Consequences Reframed</h3>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/individual_consequences_v3.png"
+                            alt="Traditional vs ABC-enabled AI systems">
+                        <figcaption>Traditional open/closed-source AI systems (left) mathematically delete information
+                            linking source and prediction. ABC-enabled AI systems (right) enable attribution between
+                            those with data and those seeking insights. In ABC-enabled AI, attribution and control flow
+                            with the information, enabling verification of sources and protection of contributor
+                            interests.</figcaption>
+                    </figure>
+
+                    <p>
+                        If this combined architecture scales as described, the consequences Chapter 1 traced to the
+                        absence of ABC change in character. At the individual level, the authenticity problem becomes
+                        addressable through source inspection. The medical student from Chapter 1 who queries an AI
+                        about a rare disease receives attribution metadata identifying which databases contributed and
+                        through which trust paths they were evaluated.
+                    </p>
+
+                    <figure class="full-width" id="individual-level">
+                        <img src="1411.3146/ch_5_2_v1.png"
+                            alt="Attribution for hallucination and disinformation detection">
+                        <figcaption>Attribution provides metadata to detect disinformation and hallucination, recursive
+                            branching provides trust networks to identify strong sources, and control provides agency to
+                            shift AI predictions from problematic sources to robust ones.</figcaption>
+                    </figure>
+
+                    <p>
+                        Because AI models necessarily base their outputs on <em>some</em> data, a hallucination
+                        manifests as the model drawing on sources that are irrelevant or insufficiently qualified for
+                        the query at hand; with attribution, this becomes visible, much as a bibliography lets a reader
+                        judge whether an academic paper&rsquo;s conclusions are supported by its references. The user
+                        who can see which sources contributed to a prediction can evaluate whether those sources are
+                        qualified (the hallucination question) and whether they have been introduced in bad faith (the
+                        disinformation question). Neither hallucination nor disinformation is eliminated; the invention
+                        of the bibliography did not prevent anyone from writing anything in a book. But the mechanism
+                        for detecting both that written scholarship has relied on for centuries becomes available in
+                        the AI context as well.
+                    </p>
+
+                    <figure class="full-width" id="institutional-level">
+                        <img src="1411.3146/ch_5_3_v1.png"
+                            alt="Institutional level: misuse detection and privacy-preserving KYC">
+                        <figcaption>Attribution provides metadata to detect misuse and privacy-preserving KYC,
+                            recursive branching provides trust networks to reward value-aligned predictions and penalize
+                            violations, and control provides agency to enforce compensation and shift AI predictions
+                            from problematic AI users and data sources to value-aligned ones.</figcaption>
+                    </figure>
+
+                    <p>
+                        At the institutional level, the collective action failure around data sharing is addressed at
+                        the level of incentives. Under the combined architecture, a data owner considering whether to
+                        participate faces a different proposition than the current one. Instead of surrendering a copy
+                        and hoping for the best, the data owner can specify which categories of prediction their data
+                        may support, evaluate the users requesting access through trust paths they can inspect, and
+                        withdraw participation if the terms are violated. The change is structural, affecting incentives
+                        rather than merely adding technical plumbing. Chapter 2 documented that the data available for
+                        AI training represents a small fraction, perhaps six or more orders of magnitude less, than the
+                        data that exists but remains unshared, and that data is withheld because the current
+                        architecture offers no mechanism to participate without losing control. If that mechanism
+                        exists, the economic logic that drove the AI industry to repurpose graphics processors would
+                        apply with at least equal force to the vastly larger pool of data whose owners now have reason
+                        to contribute.
+                    </p>
+
+                    <p>
+                        At the societal level, the governance problem changes. Chapter 1 argued that AI governance is
+                        currently an exercise in altruism: because AI systems are controlled by whoever holds a copy,
+                        society must hope that the institutions controlling the most powerful models will exercise that
+                        control responsibly. Chapter 1 called this the value alignment problem: AI capability and AI
+                        alignment operate independently, because scaling laws drive capability while nothing in the
+                        architecture connects that capability to the values of the people whose data produced it.
+                    </p>
+
+                    <figure class="full-width" id="societal-level">
+                        <img src="1411.3146/ch_5_4_v1.png"
+                            alt="Societal level: values propagation into predictions">
+                        <figcaption>Attribution provides metadata to model the propagation of values into a prediction,
+                            trust networks provide the legibility for individuals to find groups aligned with their
+                            values, and control provides agency to shift AI predictions to representative groups aligned
+                            with the values of the AI user (and vice versa).</figcaption>
+                    </figure>
+
+                    <p>
+                        The bias problem, which Chapter 1 treated as one of AI&rsquo;s most politically charged
+                        consequences, is similarly reframed. Under current architectures, bias is a training-time
+                        problem: the model absorbs whatever distributions exist in its training data, and those
+                        distributions become baked into every subsequent prediction. Under attribution-based control,
+                        bias becomes a query-time problem. Because the user can see which sources inform a prediction
+                        and can weight them through trust paths calibrated to the question at hand, the appropriate
+                        source audience can be adjusted on the fly, much as a statistician designing a survey ensures
+                        a representative sample by selecting respondents appropriate to the research question.
+                        Attribution-based control does not eliminate the political dimensions of bias, but it moves the
+                        locus of decision from a training-time choice made once by the model&rsquo;s developer to a
+                        query-time choice made repeatedly by the people closest to the question.
+                    </p>
+
+                    <p>
+                        Under attribution-based control, the value alignment problem is reframed as a problem of
+                        representative control. Data owners exercise ongoing consent over how their contributions are
+                        used. Intermediaries that fail to earn trust lose access to the data that makes them useful.
+                        The governance problem does not disappear, but its structure changes: instead of asking
+                        &ldquo;will this institution behave responsibly with the power it has accumulated?&rdquo; the
+                        relevant question becomes &ldquo;has this institution earned the ongoing consent of the sources
+                        it depends on?&rdquo;
+                    </p>
+
+                    <p id="geopolitical-level">
+                        At the geopolitical level, the dilemma between democratic values and AI capability dissolves.
+                        Chapter 1 argued that AI capability is driven by scaling laws: more data and more compute yield
+                        more capable models. Under current architectures, this creates a structural dilemma for
+                        democratic nations. Centralising data and compute into a national AI programme would compromise
+                        privacy, intellectual property, freedom of choice, and the market freedoms that democracies
+                        exist to protect. But declining to centralise means ceding AI capability to authoritarian rivals
+                        who face no such constraints. Attribution-based control suggests a third path. If data owners
+                        can participate without surrendering control, AI capability can be assembled not from the
+                        resources of a single corporation or a single nation but from the collective data, compute, and
+                        talent of the global free market. A democratic coalition whose AI draws on the voluntary,
+                        revocable participation of billions of data owners across the free world would have access to a
+                        larger and more diverse data pool than any centralised programme, authoritarian or otherwise,
+                        could assemble through compulsion.
+                    </p>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/ch_5_5_v1.png"
+                            alt="Geopolitical level: free market motivation for data and compute">
+                        <figcaption>Attribution provides metadata to assign credit to data owners, and control provides
+                            agency for data owners to receive credit and payment for participation, enabling the free
+                            market to motivate more data and compute than any nation (authoritarian or
+                            otherwise).</figcaption>
+                    </figure>
+
+                    <p id="ai-safety-level">
+                        At the level of AI safety, the architecture addresses a concern that cuts across all the
+                        others. Much of the contemporary debate about AI risk centres on loss of control: the
+                        possibility that a sufficiently capable AI system, concentrated within a single institution,
+                        could pursue goals misaligned with human interests and prove difficult to constrain once it
+                        controls enough resources. Under attribution-based control, the attack surface changes. Instead
+                        of a single model whose compromise redirects the system&rsquo;s capability, each prediction
+                        draws on the ongoing, revocable participation of distributed data sources, routed through trust
+                        paths that individual participants can inspect and withdraw from. Compromising such a system
+                        would require simultaneously subverting billions of independent data owners and the
+                        cryptographic infrastructure governing their participation, a qualitatively different challenge
+                        from penetrating one company&rsquo;s servers. The architecture does not eliminate AI risk, but
+                        it replaces a concentrated vulnerability (one institution, one model, one point of failure) with
+                        a distributed one, and distributed systems have historically proven more resilient to both
+                        adversarial attack and internal failure than centralised alternatives.
+                    </p>
+
+                    <p>
+                        These claims are significant, and the gap between architecture and deployment is large. But
+                        the technical path described in this thesis does offer, at the level of architecture, responses
+                        to the problems Chapter 1 raised. In a narrow technical sense, this is what the thesis set out
+                        to do, and it is sufficient. But a technical path is not the same as a built road, and the
+                        history of information technology suggests that the existence of a federated alternative has
+                        never, on its own, been enough to displace a centralised incumbent. It seems naive and
+                        farfetched to make any claim to avert the centralization of AI.
                     </p>
                 </section>
 
                 <section class="references">
                     <h2>References</h2>
                     <ol>
-                        <li id="ref-1"><span class="authors">Trask, A., Bluemke, E., Garfinkel, B., Ghezzou
-                                Cuervas-Mons, C., & Dafoe, A.</span> (2020). <a
-                                href="https://arxiv.org/abs/2012.08347"><span class="title">Beyond Privacy Trade-offs
-                                    with Structured Transparency.</span></a> <span
-                                class="venue">arXiv:2012.08347</span>.</li>
-                        <li id="ref-2"><span class="authors">Kaplan, J., et al.</span> (2020). <a
-                                href="https://arxiv.org/abs/2001.08361"><span class="title">Scaling Laws for Neural
-                                    Language Models.</span></a> <span class="venue">arXiv:2001.08361</span>.</li>
-                        <li id="ref-3"><span class="authors">Borgeaud, S., et al.</span> (2022). <a
-                                href="https://arxiv.org/abs/2112.04426"><span class="title">Improving language models by
-                                    retrieving from trillions of tokens.</span></a> <span class="venue">ICML
-                                2022</span>, 2206–2240.</li>
-                        <li id="ref-4"><span class="authors">Dunbar, R. I. M.</span> (1993). <a
-                                href="https://doi.org/10.1017/S0140525X00032325"><span class="title">Coevolution of
-                                    neocortical size, group size and language in humans.</span></a> <span
-                                class="venue">Behavioral and Brain Sciences</span>, 16(4), 681–735.</li>
-                        <li id="ref-5"><span class="authors">Granovetter, M. S.</span> (1973). <a
-                                href="https://doi.org/10.1086/225469"><span class="title">The Strength of Weak
-                                    Ties.</span></a> <span class="venue">American Journal of Sociology</span>, 78(6),
-                            1360–1380.</li>
-                        <li id="ref-6"><span class="authors">McMahan, H. B., et al.</span> (2017). <a
-                                href="https://arxiv.org/abs/1602.05629"><span class="title">Communication-Efficient
-                                    Learning of Deep Networks from Decentralized Data.</span></a> <span
-                                class="venue">AISTATS 2017</span>.</li>
-                        <li id="ref-7"><span class="authors">Dwork, C., & Roth, A.</span> (2014). <a
-                                href="https://doi.org/10.1561/0400000042"><span class="title">The Algorithmic
-                                    Foundations of Differential Privacy.</span></a> <span class="venue">Foundations and
-                                Trends in Theoretical Computer Science</span>, 9(3–4), 211–407.</li>
-                        <li id="ref-8"><span class="authors">Gabriel, I.</span> (2020). <a
-                                href="https://doi.org/10.1007/s11023-020-09539-2"><span class="title">Artificial
-                                    intelligence, values, and alignment.</span></a> <span class="venue">Minds and
-                                Machines</span>, 30(3), 411–437.</li>
                     </ol>
                 </section>
 
                 <nav class="chapter-nav">
                     <a href="chapter4.html" class="prev">Chapter IV: Broad Listening</a>
-                    <a href="about.html" class="next">About the Author</a>
+                    <a href="appendix1.html" class="next">Appendix I: Epilogue</a>
                 </nav>
             </main>
         </div>
