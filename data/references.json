@@ -1062,19 +1062,6 @@
     "type": "book",
     "screenshot": null
   },
-  "burt2003social": {
-    "title": "The social structure of competition",
-    "authors": [
-      "burt_ronald_s"
-    ],
-    "year": 2003,
-    "venue": "Networks in the knowledge economy",
-    "venueShort": "Networks in the knowledge economy",
-    "url": "https://doi.org/10.1093/oso/9780195159509.003.0006",
-    "doi": null,
-    "type": "journal",
-    "screenshot": null
-  },
   "russell1995modern": {
     "title": "A modern approach",
     "authors": [
@@ -1169,6 +1156,19 @@
     "url": "https://ai.google/responsibility/principles/",
     "doi": null,
     "type": "misc",
+    "screenshot": null
+  },
+  "burt2003social": {
+    "title": "The social structure of competition",
+    "authors": [
+      "burt_ronald_s"
+    ],
+    "year": 2003,
+    "venue": "Networks in the knowledge economy",
+    "venueShort": "Networks in the knowledge economy",
+    "url": "https://doi.org/10.1093/oso/9780195159509.003.0006",
+    "doi": null,
+    "type": "journal",
     "screenshot": null
   },
   "schmidt2014google": {
