@@ -98,7 +98,6 @@
     abstract = "State-of-the-art language models (LMs) sometimes generate that misalign with world knowledge. To explore the mechanistic causes of these hallucinations, we create diagnostic datasets with subject-relation queries and adapt interpretability methods to trace hallucinations through internal model representations. We discover two general and distinct mechanistic causes of hallucinations shared across LMs (Llama-2, Pythia, GPT-J): 1) : insufficient subject attribute knowledge in lower layer MLPs, and 2) : failure to select the correct object attribute in upper layer attention heads. We also found these two internal mechanistic causes of hallucinations are reflected in external manifestations. Based on insights from our mechanistic analysis, we propose a novel hallucination mitigation method through targeted restoration of the LM{'}s internal fact recall pipeline, demonstrating superior performance compared to baselines."
 }
 
-
 @inproceedings{dziri_origin_2022,
 	address = {Seattle, United States},
 	title = {On the {Origin} of {Hallucinations} in {Conversational} {Models}: {Is} it the {Datasets} or the {Models}?},
@@ -186,7 +185,9 @@ Three researchers asked ChatGPT 20 medical questions and prompted it to provide 
 Results
 ChatGPT provided responses varying between 53 and 244 words long and reported 2 to 7 references per answer. Seventeen of the 20 invited raters provided feedback. The raters reported limited quality of the responses, with a median score of 60% (first and third quartiles: 50% and 85%, respectively). In addition, they identified major (n=5) and minor (n=7) factual errors among the 17 evaluated responses. Of the 59 references evaluated, 41 (69%) were fabricated, although they appeared real. Most fabricated citations used names of authors with previous relevant publications, a title that seemed pertinent and a credible journal format.
 Conclusion
-When asked multiple medical questions, ChatGPT provided answers of limited quality for scientific publication. More importantly, ChatGPT provided deceptively real references. Users of ChatGPT should pay particular attention to the references provided before integration into medical manuscripts.}
+When asked multiple medical questions, ChatGPT provided answers of limited quality for scientific publication. More importantly, ChatGPT provided deceptively real references. Users of ChatGPT should pay particular attention to the references provided before integration into medical,
+  url = {https://doi.org/10.7759/cureus.39238}
+ manuscripts.}
 }
 
 @article{bhattacharyya2023high,
@@ -260,7 +261,7 @@ When asked multiple medical questions, ChatGPT provided answers of limited quali
   bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 
-@misc{Steptoe, title="Senate AI Forum Focuses On Intellectual Property Issues", author="Golodny, Andrew", year={2023}, month={12},url={https://www.steptoe.com/en/news-publications/steptechtoe-blog/senate-ai-forum-focuses-on-intellectual-property-issues.html}, journal={Steptoe}} 
+@misc{Steptoe, title="Senate AI Forum Focuses On Intellectual Property Issues", author="Golodny, Andrew", year={2023}, month={12},url={https://www.steptoe.com/en/news-publications/steptechtoe-blog/senate-ai-forum-focuses-on-intellectual-property-issues.html}, journal={Steptoe}}
 
 @misc{jeong2022emorybreastimagingdataset,
       title={The EMory BrEast imaging Dataset (EMBED): A Racially Diverse, Granular Dataset of 3.5M Screening and Diagnostic Mammograms}, 
@@ -355,7 +356,6 @@ doi = {10.1001/jamanetworkopen.2023.48422}
   keywords={Security;Protocols;Computational modeling;Cryptography;Privacy;Integrated circuit modeling;Data privacy;Multi-party computation;machine learning;federated learning;data privacy;cryptography;protocols},
   doi={10.1109/ACCESS.2024.3388992}}
 
-
 @INPROCEEDINGS{synthetic_data_privacy,
   author={Jadon, Aryan and Kumar, Shashank},
   booktitle={2023 International Conference on Smart Applications, Communications and Networking (SmartNets)}, 
@@ -366,13 +366,6 @@ doi = {10.1001/jamanetworkopen.2023.48422}
   pages={1-4},
   keywords={Training;Data privacy;Medical services;Data models;Regulation;Artificial intelligence;Informatics;Generative AI Models;Synthetic Data Generation;Healthcare Research;Patient Privacy;Data Augmentation;Federated Learning;Differential Privacy;Data Anonymization;Transfer Learning;Health Informatics},
   doi={10.1109/SmartNets58706.2023.10215825}}
-
-
-
-
-
-
-
 
 @article{health_sharing_incentives,
 author = {Devriendt, Thijs and Shabani, Mahsa and Borry, Pascal},
@@ -385,22 +378,13 @@ year = {2021},
 doi = {10.1089/bio.2020.0037},
     note ={PMID: 33926229},
 
-URL = { 
-    
-        https://doi.org/10.1089/bio.2020.0037
-    
-    
+URL = {
 
-},
-eprint = { 
-    
         https://doi.org/10.1089/bio.2020.0037
-    
-    
+
+
 
 }
-,
-    abstract = { Background: The lack of incentives has been described as the rate-limiting step for data sharing. Currently, the evaluation of scientific productivity by academic institutions and funders has been heavily reliant upon the number of publications and citations, raising questions about the adequacy of such mechanisms to reward data generation and sharing. This article provides a systematic review of the current and proposed incentive mechanisms for researchers in biomedical sciences and discusses their strengths and weaknesses. Methods: PubMed, Web of Science, and Google Scholar were queried for original research articles, editorials, and opinion articles on incentives for data sharing. Articles were included if they discussed incentive mechanisms for data sharing, were applicable to biomedical sciences, and were written in English. Results: Although coauthorship in return for the sharing of data is common, this might be incompatible with authorship guidelines and raise concerns over the ability of secondary analysts to contest the proposed research methods or conclusions that are drawn. Data publication, citation, and altmetrics have been proposed as alternative routes to credit data generators, which could address these disadvantages. Their primary downsides are that they are not well-established, it is difficult to acquire evidence to support their implementation, and that they could be gamed or give rise to novel forms of research misconduct. Conclusions: Alternative recognition mechanisms need to be more commonly used to generate evidence on their power to stimulate data sharing, and to assess where they fall short. There is ample discussion in policy documents on alternative crediting systems to work toward Open Science, which indicates that that there is an interest in working out more elaborate metascience programs. }
 }
 
 @misc{nguyen2024surveymachineunlearning,
@@ -462,7 +446,7 @@ address="Santa Monica, CA",
 year="2023",
 doi="10.7249/RRA2977-1",
 publisher="RAND Corporation"
-}%n
+}
 
 @misc{industryAustraliaAI2024,
   title        = {Australia’s AI Ethics Principles},
@@ -667,21 +651,13 @@ pages = {131-135},
 year = {2020},
 doi = {10.1177/1362168820906908},
 
-URL = { 
-    
-        https://doi.org/10.1177/1362168820906908
-    
-    
+URL = {
 
-},
-eprint = { 
-    
         https://doi.org/10.1177/1362168820906908
-    
-    
+
+
 
 }
-
 }
 
 @article{depaulo1998everyday,
@@ -694,7 +670,6 @@ eprint = {
   year={1998},
   publisher={American Psychological Association}
 }
-
 
 @inproceedings{backstrom2012four,
   title={Four degrees of separation},
@@ -724,7 +699,7 @@ eprint = {
       url={https://arxiv.org/abs/1703.04730}, 
 }
 
-@article{Hampel01061974},
+@article{Hampel01061974,
 author = {Frank R. Hampel},
 title = {The Influence Curve and its Role in Robust Estimation},
 journal = {Journal of the American Statistical Association},
@@ -734,12 +709,7 @@ pages = {383--393},
 year = {1974},
 publisher = {ASA Website},
 doi = {10.1080/01621459.1974.10482962},
-URL = { 
-        https://www.tandfonline.com/doi/abs/10.1080/01621459.1974.10482962
-},
-eprint = { 
-        https://www.tandfonline.com/doi/pdf/10.1080/01621459.1974.10482962
-}
+URL = {https://www.tandfonline.com/doi/abs/10.1080/01621459.1974.10482962}
 }
 
 @article{feldman2020individual,
@@ -993,6 +963,7 @@ series = {EuroMLSys '24}
     url = {https://www.theguardian.com/world/2013/sep/30/nsa-americans-metadata-year-documents},
     note = {Accessed: December 31, 2024}
 }
+
 @online{morgan2024data,
     author = {Morgan, Steve},
     title = {The World Will Store 200 Zettabytes Of Data By 2025},
@@ -1013,7 +984,7 @@ series = {EuroMLSys '24}
   year={2023}
 }
 
-@misc{epoch2024hardware,
+@article{epoch2024hardware,
     title={Data on Machine Learning Hardware},
     author={{Epoch AI}},
     year={2024},
@@ -1071,24 +1042,6 @@ series = {EuroMLSys '24}
     url={https://www.news.market.us/gaming-console-statistics/}
 }
 
-@article{epoch2024hardware,
-    title={Data on Machine Learning Hardware},
-    author={{Epoch AI}},
-    year={2024},
-    url={https://epoch.ai/data/machine-learning-hardware},
-    note={Updated December 30, 2024}
-}
-
-@article{mann2024ai,
-    title={AI's rising tide lifts all chips as AMD Instinct, cloudy silicon vie for a slice of Nvidia's pie},
-    author={Mann, Tobias},
-    journal={The Register},
-    year={2024},
-    month={Dec},
-    day={23},
-    url={https://www.theregister.com/2024/12/23/nvidia_ai_hardware_competition/}
-}
-
 @article{ming2024nvidia,
     title={NVIDIA AI GPU Shipments to Hit 4M in 2024},
     author={Ming},
@@ -1111,7 +1064,8 @@ series = {EuroMLSys '24}
   title={Git re-basin: Merging models modulo permutation symmetries},
   author={Ainsworth, Samuel K and Hayase, Jonathan and Srinivasa, Siddhartha},
   journal={arXiv preprint arXiv:2209.04836},
-  year={2022}
+  year={2022},
+  url = {https://arxiv.org/abs/2209.04836}
 }
 
 @article{veldanda2024llm,
@@ -1284,7 +1238,6 @@ note = {Published 12:37 PM PDT, October 31, 2024}
     note = {Analysis of AI model compute trends showing 4-5x yearly growth from 2010 to 2024}
 }
 
-
 @article{lawrence1999digital,
   title={Digital libraries and autonomous citation indexing},
   author={Lawrence, Steve and Giles, C Lee and Bollacker, Kurt},
@@ -1296,6 +1249,7 @@ note = {Published 12:37 PM PDT, October 31, 2024}
   publisher={IEEE},
   url = {https://doi.org/10.1109/2.769447}
 }
+
 @misc{wandb2025sweeps_tutorial,
     title = {Sweeps: An Overview},
     author = {{Weights \& Biases}},
@@ -1367,15 +1321,6 @@ abstract = {Deep neural networks are currently the most successful machine-learn
   year={2012}
 }
 
-@article{hanin2018neural,
-  title={Which neural net architectures give rise to exploding and vanishing gradients?},
-  author={Hanin, Boris},
-  journal={Advances in neural information processing systems},
-  volume={31},
-  year={2018},
-  url = {https://arxiv.org/abs/1801.03744}
-}
-
 @article{hochreiter1998vanishing,
   title={The vanishing gradient problem during learning recurrent neural nets and problem solutions},
   author={Hochreiter, Sepp},
@@ -1409,7 +1354,7 @@ abstract = {Deep neural networks are currently the most successful machine-learn
 @article{dwork2014algorithmic,
   title={The algorithmic foundations of differential privacy},
   author={Dwork, Cynthia and Roth, Aaron and others},
-  journal={Foundations and Trends{\textregistered} in Theoretical Computer Science},
+  journal={Foundations and Trends in Theoretical Computer Science},
   volume={9},
   number={3--4},
   pages={211--407},
@@ -1493,7 +1438,8 @@ abstract = {Deep neural networks are currently the most successful machine-learn
   
   year = {2018},
   
-  copyright = {arXiv.org perpetual, non-exclusive license}
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  url = {https://arxiv.org/abs/1806.00582}
 }
 
 @online{mirvish2011hathaway,
@@ -1592,22 +1538,22 @@ doi = {10.1017/dap.2020.8}
   year={2016}
 }
 
-@inproceedings{mcmahan2017communication,
+@article{mcmahan2017communication,
   title={Communication-efficient learning of deep networks from decentralized data},
   author={McMahan, Brendan and Moore, Eider and Ramage, Daniel and Hampson, Seth and y Arcas, Blaise Aguera},
-  booktitle={Artificial Intelligence and Statistics},
+  journal={Proceedings of the 20th International Conference on Artificial Intelligence and Statistics},
   pages={1273--1282},
   year={2017},
-  organization={PMLR},
   url = {https://proceedings.mlr.press/v54/mcmahan17a.html}
 }
 
 @inproceedings{goldreich1987towards,
-  title={Towards a theory of software protection and simulation by oblivious RAMs},
-  author={Goldreich, Oded},
+  title={How to play ANY mental game},
+  author={Goldreich, Oded and Micali, Silvio and Wigderson, Avi},
   booktitle={Proceedings of the nineteenth annual ACM symposium on Theory of computing},
-  pages={182--194},
-  year={1987}
+  pages={218--229},
+  year={1987},
+  url = {https://doi.org/10.1145/28395.28420}
 }
 
 @inproceedings{boneh2011functional,
@@ -1683,7 +1629,7 @@ title = {Ethics of Big Data: Balancing Risk and Innovation},
 year = {2012},
 isbn = {1449311792},
 publisher = {O'Reilly Media, Inc.},
-abstract = { Ethics of Big Data author Kord Davis remembers exactly why he decided to write his book. "I found myself attending dozens of working meetings where a big data technologist would suggest a new product feature that was available using big data technology and having other folks in the room begin the thats-creepy-no-its-not debate," Davis says. "Those debates would end with no decision or action being agreed upon. I realized that in the absence of a common framework and vocabulary for discussion, people revert to their own moral code." Davis feels that his concise book is timely because, he says, "Big data is literally changing what we value and how we value things. "What I call big data's 'forcing function' is the result of the volume, velocity, and variety of big datas growth. Touching nearly all aspects of our lives, we are just now beginning to understand how it will influence our values and the meaning of words like identity, privacy, ownership, and reputation." And what we don't know can most definitely hurt us. "Individuals and organizations can suffer direct harm as a result of information being used in ways that it wasnt intended," Davis cautions. "This book addresses how to balance the benefits of big data innovation with the risk of harm from unintended consequences."}
+abstract = {Ethics of Big Data author Kord Davis remembers exactly why he decided to write his book. This book addresses how to balance the benefits of big data innovation with the risk of harm from unintended consequences.}
 }
 
 @article{ascoli2015sharing,
@@ -1735,7 +1681,6 @@ abstract = { Ethics of Big Data author Kord Davis remembers exactly why he decid
   publisher={Accessed}
 }
 
-
 @article{sovrin,
   title={The Sovrin Network and Zero Knowledge Proofs},
   author={{Sovrin Foundation}},
@@ -1775,17 +1720,6 @@ abstract = { Ethics of Big Data author Kord Davis remembers exactly why he decid
   year={1989},
   publisher={SIAM}
 }
-
-@article{dwork2014algorithmic,
-  title={The algorithmic foundations of differential privacy.},
-  author={Dwork, Cynthia and Roth, Aaron and others},
-  journal={Foundations and Trends in Theoretical Computer Science},
-  volume={9},
-  number={3-4},
-  pages={211--407},
-  year={2014}
-}
-
 
 @book{un_handbook, title={https://docs.google.com/document/d/1GYu6UJI81jR8LgooXVDsYk1s6FlM-SbOvo3oLHglFhY/edit#heading=h.k9fcam5cpoh7},
 author={Craddock, Mark and Archer, David and Bogdanov, Dan and Gascon, Adria and Balle, Borja and Laine, Kim and Trask, Andrew and Mariana Raykova and Jug, Matjaz and McLellan,  robert and Jansen,  Ronald and Ohrimenko, Olga and Wardly, Simon and Lauter, Kristin and Smart, Nigel and Sharan, Aalekh and Saxena, Ira and Wright, Rebecca and Garcia, Eddie and Wall, Andy},
@@ -1859,15 +1793,6 @@ year={2018}}
   journal = {Security and Privacy From a Legal, Ethical, and Technical Perspective}
 }
 
-@misc{a2019_un,
-  title = {UN Handbook on Privacy-Preserving Computation Techniques},
-  author = {Craddock, Mark and Archer, David and Bogdanov, Dan and Gascon, Adria and Balle, Borja and Laine, Kim and Trask, Andrew and Raykova, Mariana and Jug, Matjaz and McLellan, Robert and Jansen, Ronald and Ohrimenko, Olga and Wardly, Simon and Lauter, Kristin and Smart, Nigel and Sharan, Aalekh and Saxena, Ira and Wright, Rebecca and Garcia, Eddie and Wall, Andy},
-  url = {https://arxiv.org/abs/2301.06167},
-  urldate = {2020-11-25},
-  year = {2019},
-  organization = {United Nations}
-}
-
 @article{kaaniche_2020_privacy,
   author = {Kaaniche, Nesrine and Laurent, Maryline and Belguith, Sana},
   month = {12},
@@ -1891,18 +1816,6 @@ year={2018}}
   volume = { 11980},
   year = {2020},
   journal = {Computer Security}
-}
-
-@misc{dangawan_2018_using,
-  author = {Dang-awan, R. and Piscos, J. A. and Chua, R. B.},
-  month = {07},
-  pages = {1–7},
-  title = {Using Sharemind as a Tool to Develop an Internet Voting System with Secure Multiparty Computation},
-  doi = {10.1109/IISA.2018.8633690},
-  url = {https://ieeexplore.ieee.org/document/8633690},
-  urldate = {2020-11-25},
-  year = {2018},
-  organization = {IEEE Xplore}
 }
 
 @article{nissenbaum_2004_privacy,
@@ -2207,8 +2120,6 @@ pages = {1030–1044},
 numpages = {15}
 }
 
-
-
 @article{glaser_2014_a,
   author = {Glaser, Alexander and Barak, Boaz and Goldston, Robert J.},
   month = {06},
@@ -2283,17 +2194,6 @@ numpages = {15}
   journal = {The American Political Science Review}
 }
 
-@article{fearon1995rationalist,
-  title={Rationalist explanations for war},
-  author={Fearon, James D},
-  journal={International organization},
-  volume={49},
-  number={3},
-  pages={379--414},
-  year={1995},
-  publisher={Cambridge University Press}
-}
-
 @article{wang_2020_selfsovereign,
   author = {Wang, Fennie and De Filippi, Primavera},
   month = {01},
@@ -2321,7 +2221,8 @@ numpages = {15}
   doi = {10.1038/s41467-019-10933-3},
   volume = {10},
   year = {2019},
-  journal = {Nature Communications}
+  journal = {Nature Communications},
+  url = {https://doi.org/10.1038/s41467-019-10933-3}
 }
 
 @inproceedings{sienkiewicz2025data,
@@ -2356,6 +2257,7 @@ numpages = {15}
   url = {https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html},
   urldate = {2025-10-19}
 }
+
 @book{cummings2017democracy,
   title={Democracy of sound: Music piracy and the remaking of American copyright in the twentieth century},
   author={Cummings, Alex Sayf},
@@ -2379,203 +2281,6 @@ numpages = {15}
   author={Elsea, Jennifer K},
   year={2006},
   url = {https://sgp.fas.org/crs/secrecy/RS21900.pdf}
-}
-
-@inproceedings{dziri_origin_2022,
-	address = {Seattle, United States},
-	title = {On the {Origin} of {Hallucinations} in {Conversational} {Models}: {Is} it the {Datasets} or the {Models}?},
-	shorttitle = {On the {Origin} of {Hallucinations} in {Conversational} {Models}},
-	url = {https://aclanthology.org/2022.naacl-main.387},
-	doi = {10.18653/v1/2022.naacl-main.387},
-	abstract = {Knowledge-grounded conversational models are known to suffer from producing factually invalid statements, a phenomenon commonly called hallucination. In this work, we investigate the underlying causes of this phenomenon: is hallucination due to the training data, or to the models? We conduct a comprehensive human study on both existing knowledge-grounded conversational benchmarks and several state-of-the-art models. Our study reveals that the standard benchmarks consist of {\textbackslash}textgreater 60\% hallucinated responses, leading to models that not only hallucinate but even amplify hallucinations. Our findings raise important questions on the quality of existing datasets and models trained using them. We make our annotations publicly available for future research.},
-	urldate = {2023-11-03},
-	booktitle = {Proceedings of the 2022 {Conference} of the {North} {American} {Chapter} of the {Association} for {Computational} {Linguistics}: {Human} {Language} {Technologies}},
-	publisher = {Association for Computational Linguistics},
-	author = {Dziri, Nouha and Milton, Sivan and Yu, Mo and Zaiane, Osmar and Reddy, Siva},
-	editor = {Carpuat, Marine and de Marneffe, Marie-Catherine and Meza Ruiz, Ivan Vladimir},
-	month = jul,
-	year = {2022},
-	pages = {5271--5285},
-}
-
-@inproceedings{rashkin_increasing_2021,
-	address = {Online},
-	title = {Increasing {Faithfulness} in {Knowledge}-{Grounded} {Dialogue} with {Controllable} {Features}},
-	url = {https://aclanthology.org/2021.acl-long.58},
-	doi = {10.18653/v1/2021.acl-long.58},
-	abstract = {Knowledge-grounded dialogue systems are intended to convey information that is based on evidence provided in a given source text. We discuss the challenges of training a generative neural dialogue model for such systems that is controlled to stay faithful to the evidence. Existing datasets contain a mix of conversational responses that are faithful to selected evidence as well as more subjective or chit-chat style responses. We propose different evaluation measures to disentangle these different styles of responses by quantifying the informativeness and objectivity. At training time, additional inputs based on these evaluation measures are given to the dialogue model. At generation time, these additional inputs act as stylistic controls that encourage the model to generate responses that are faithful to the provided evidence. We also investigate the usage of additional controls at decoding time using resampling techniques. In addition to automatic metrics, we perform a human evaluation study where raters judge the output of these controlled generation models to be generally more objective and faithful to the evidence compared to baseline dialogue systems.},
-	urldate = {2023-11-03},
-	booktitle = {Proceedings of the 59th {Annual} {Meeting} of the {Association} for {Computational} {Linguistics} and the 11th {International} {Joint} {Conference} on {Natural} {Language} {Processing} ({Volume} 1: {Long} {Papers})},
-	publisher = {Association for Computational Linguistics},
-	author = {Rashkin, Hannah and Reitter, David and Tomar, Gaurav Singh and Das, Dipanjan},
-	editor = {Zong, Chengqing and Xia, Fei and Li, Wenjie and Navigli, Roberto},
-	month = aug,
-	year = {2021},
-	pages = {704--718},
-}
-
-@article{vaccari_deepfakes_2020,
-	title = {Deepfakes and {Disinformation}: {Exploring} the {Impact} of {Synthetic} {Political} {Video} on {Deception}, {Uncertainty}, and {Trust} in {News}},
-	volume = {6},
-	issn = {2056-3051, 2056-3051},
-	shorttitle = {Deepfakes and {Disinformation}},
-	url = {https://doi.org/10.1177/2056305120903408},
-	doi = {10.1177/2056305120903408},
-	abstract = {Artificial Intelligence (AI) now enables the mass creation of what have become known as “deepfakes”: synthetic videos that closely resemble real videos. Integrating theories about the power of visual communication and the role played by uncertainty in undermining trust in public discourse, we explain the likely contribution of deepfakes to online disinformation. Administering novel experimental treatments to a large representative sample of the United Kingdom population allowed us to compare people’s evaluations of deepfakes. We find that people are more likely to feel uncertain than to be misled by deepfakes, but this resulting uncertainty, in turn, reduces trust in news on social media. We conclude that deepfakes may contribute toward generalized indeterminacy and cynicism, further intensifying recent challenges to online civic culture in democratic societies.},
-	language = {en},
-	number = {1},
-	urldate = {2023-11-10},
-	journal = {Social Media + Society},
-	author = {Vaccari, Cristian and Chadwick, Andrew},
-	month = jan,
-	year = {2020},
-	pages = {205630512090340},
-}
-
-@inproceedings{zuccon_hallucination_attribution,
-author = {Zuccon, Guido and Koopman, Bevan and Shaik, Razia},
-title = {ChatGPT Hallucinates when Attributing Answers},
-year = {2023},
-isbn = {9798400704086},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3624918.3625329},
-doi = {10.1145/3624918.3625329},
-abstract = {Can ChatGPT provide evidence to support its answers? Does the evidence it suggests actually exist and does it really support the answer? We investigate these questions using a collection of domain-specific knowledge-based questions, specifically prompting ChatGPT to provide both an answer and supporting evidence in the form of references to external sources. We also investigate how different prompts impact answers and evidence. We find that ChatGPT provides correct or partially correct answers of the time; however, the suggested references actually only exist 14\% of the time. We further provide insights on the generated references that reveal common traits among the references that ChatGPT generates, and show how even if a reference provided by the model does exist, this reference often does not always support the claims ChatGPT attributes to it. Our findings are important because (1) they are the first systematic analysis of the references generated by ChatGPT in its answers; (2) they suggest that the model may leverage good quality information in producing correct answers, but is unable to attribute real evidence to support its answers. Prompts, raw result files and manual analysis are made publicly available at https://github.com/ielab/LLM-attribution.},
-booktitle = {Proceedings of the Annual International ACM SIGIR Conference on Research and Development in Information Retrieval in the Asia Pacific Region},
-pages = {46–51},
-numpages = {6},
-keywords = {Attribution, ChatGPT, Hallucinations, Large Language Models},
-location = {Beijing, China},
-series = {SIGIR-AP '23}
-}
-
-@article{GRAVEL2023226,
-title = {Learning to Fake It: Limited Responses and Fabricated References Provided by ChatGPT for Medical Questions},
-journal = {Mayo Clinic Proceedings: Digital Health},
-volume = {1},
-number = {3},
-pages = {226-234},
-year = {2023},
-issn = {2949-7612},
-doi = {https://doi.org/10.1016/j.mcpdig.2023.05.004},
-url = {https://doi.org/10.1016/j.mcpdig.2023.05.004},
-author = {Jocelyn Gravel and Madeleine D’Amours-Gravel and Esli Osmanlliu},
-abstract = {Objective
-To evaluate the quality of the answers and the references provided by ChatGPT for medical questions.
-Patients and Methods
-Three researchers asked ChatGPT 20 medical questions and prompted it to provide the corresponding references. The responses were evaluated for the quality of content by medical experts using a verbal numeric scale going from 0% to 100%. These experts were the corresponding authors of the 20 articles from where the medical questions were derived. We planned to evaluate 3 references per response for their pertinence, but this was amended on the basis of preliminary results showing that most references provided by ChatGPT were fabricated. This experimental observational study was conducted in February 2023.
-Results
-ChatGPT provided responses varying between 53 and 244 words long and reported 2 to 7 references per answer. Seventeen of the 20 invited raters provided feedback. The raters reported limited quality of the responses, with a median score of 60% (first and third quartiles: 50% and 85%, respectively). In addition, they identified major (n=5) and minor (n=7) factual errors among the 17 evaluated responses. Of the 59 references evaluated, 41 (69%) were fabricated, although they appeared real. Most fabricated citations used names of authors with previous relevant publications, a title that seemed pertinent and a credible journal format.
-Conclusion
-When asked multiple medical questions, ChatGPT provided answers of limited quality for scientific publication. More importantly, ChatGPT provided deceptively real references. Users of ChatGPT should pay particular attention to the references provided before integration into medical,
-  url = {https://doi.org/10.7759/cureus.39238}
- manuscripts.}
-}
-
-@article{bhattacharyya2023high,
-  title={High rates of fabricated and inaccurate references in ChatGPT-generated medical content},
-  author={Bhattacharyya, Mehul and Miller, Valerie M and Bhattacharyya, Debjani and Miller, Larry E},
-  journal={Cureus},
-  volume={15},
-  number={5},
-  year={2023},
-  publisher={Cureus Inc.},
-  url = {https://doi.org/10.7759/cureus.39238}
-}
-
-@inproceedings{RLHF,
- author = {Ouyang, Long and Wu, Jeffrey and Jiang, Xu and Almeida, Diogo and Wainwright, Carroll and Mishkin, Pamela and Zhang, Chong and Agarwal, Sandhini and Slama, Katarina and Ray, Alex and Schulman, John and Hilton, Jacob and Kelton, Fraser and Miller, Luke and Simens, Maddie and Askell, Amanda and Welinder, Peter and Christiano, Paul F and Leike, Jan and Lowe, Ryan},
- booktitle = {Advances in Neural Information Processing Systems},
- editor = {S. Koyejo and S. Mohamed and A. Agarwal and D. Belgrave and K. Cho and A. Oh},
- pages = {27730--27744},
- publisher = {Curran Associates, Inc.},
- title = {Training language models to follow instructions with human feedback},
- url = {https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf},
- volume = {35},
- year = {2022}
-}
-
-@misc{ahmad2023creatingtrustworthyllmsdealing,
-      title={Creating Trustworthy LLMs: Dealing with Hallucinations in Healthcare AI}, 
-      author={Muhammad Aurangzeb Ahmad and Ilker Yaramis and Taposh Dutta Roy},
-      year={2023},
-      eprint={2311.01463},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2311.01463}, 
-}
-
-@misc{manakul2023selfcheckgptzeroresourceblackboxhallucination,
-      title={SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models}, 
-      author={Potsawee Manakul and Adian Liusie and Mark J. F. Gales},
-      year={2023},
-      eprint={2303.08896},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2303.08896}, 
-}
-
-@misc{xu2024hallucinationinevitableinnatelimitation,
-      title={Hallucination is Inevitable: An Innate Limitation of Large Language Models}, 
-      author={Ziwei Xu and Sanjay Jain and Mohan Kankanhalli},
-      year={2024},
-      eprint={2401.11817},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2401.11817}, 
-}
-
-@article{st,
-  author       = {Andrew Trask and
-                  Emma Bluemke and
-                  Ben Garfinkel and
-                  Claudia Ghezzou Cuervas{-}Mons and
-                  Allan Dafoe},
-  title        = {Beyond Privacy Trade-offs with Structured Transparency},
-  journal      = {CoRR},
-  volume       = {abs/2012.08347},
-  year         = {2020},
-  url          = {https://arxiv.org/abs/2012.08347},
-  eprinttype    = {arXiv},
-  eprint       = {2012.08347},
-  timestamp    = {Sat, 02 Jan 2021 15:43:30 +0100},
-  biburl       = {https://dblp.org/rec/journals/corr/abs-2012-08347.bib},
-  bibsource    = {dblp computer science bibliography, https://dblp.org}
-}
-
-@misc{Steptoe, title="Senate AI Forum Focuses On Intellectual Property Issues", author="Golodny, Andrew", year={2023}, month={12},url={https://www.steptoe.com/en/news-publications/steptechtoe-blog/senate-ai-forum-focuses-on-intellectual-property-issues.html}, journal={Steptoe}} 
-
-@misc{jeong2022emorybreastimagingdataset,
-      title={The EMory BrEast imaging Dataset (EMBED): A Racially Diverse, Granular Dataset of 3.5M Screening and Diagnostic Mammograms}, 
-      author={Jiwoong J. Jeong and Brianna L. Vey and Ananth Reddy and Thomas Kim and Thiago Santos and Ramon Correa and Raman Dutt and Marina Mosunjac and Gabriela Oprea-Ilies and Geoffrey Smith and Minjae Woo and Christopher R. McAdams and Mary S. Newell and Imon Banerjee and Judy Gichoya and Hari Trivedi},
-      year={2022},
-      eprint={2202.04073},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV},
-      url={https://arxiv.org/abs/2202.04073}, 
-}
-
-@article{global_cancer_screening,
-author = {Trieu, Phuong Dung Yun and Mello-Thoms, Claudia and Barron, Melissa and Lewis, Sarah},
-year = {2023},
-month = {01},
-pages = {},
-title = {Look how far we have come: BREAST cancer detection education on the international stage},
-volume = {12},
-journal = {Frontiers in Oncology},
-doi = {10.3389/fonc.2022.1023714}
-}
-
-@article{us_cancer_screening,
-author = {Onega, Tracy and Beaber, Elisabeth and Sprague, Brian and Barlow, William and Haas, Jennifer and Tosteson, Anna and Schnall, Mitchell and Armstrong, Katrina and Schapira, Marilyn and Geller, Berta and Weaver, Donald and Conant, Emily},
-year = {2014},
-month = {10},
-pages = {},
-title = {Breast Cancer Screening in an Era of Personalized Regimens A Conceptual Model and National Cancer Institute Initiative for Risk-Based and Preference-Based Approaches at a Population Level},
-volume = {120},
-journal = {Cancer},
-doi = {10.1002/cncr.28771}
 }
 
 @article{adler2024personhood,
@@ -2660,26 +2365,6 @@ doi = {10.1002/cncr.28771}
   urldate      = {2025-11-04}
 }
 
-@article{privacy_blocks_medical_sharing,
-author = {Youssef, Alaa and Ng, Madelena and Long, Jin and Hernandez-Boussard, Tina and Shah, Nigam and Miner, Adam and Larson, David and Langlotz, Curtis},
-year = {2023},
-month = {12},
-pages = {e2348422},
-title = {Organizational Factors in Clinical Data Sharing for Artificial Intelligence in Health Care},
-volume = {6},
-journal = {JAMA Network Open},
-doi = {10.1001/jamanetworkopen.2023.48422}
-}
-
-@article{grynbaum2023times,
-  title={The Times sues OpenAI and Microsoft over AI use of copyrighted work},
-  author={Grynbaum, Michael M and Mac, Ryan},
-  journal={The New York Times},
-  volume={27},
-  number={1},
-  year={2023}
-}
-
 @article{samuelson2023generative,
   title={Generative AI meets copyright},
   author={Samuelson, Pamela},
@@ -2714,36 +2399,6 @@ doi = {10.1001/jamanetworkopen.2023.48422}
   url = {https://builtin.com/articles/twitter-rate-limit-scraping},
   urldate = {2025-10-23},
   note = {Online article}
-}
-
-@article{Rieke_2020,
-   title={The future of digital health with federated learning},
-   volume={3},
-   ISSN={2398-6352},
-   url={http://dx.doi.org/10.1038/s41746-020-00323-1},
-   DOI={10.1038/s41746-020-00323-1},
-   number={1},
-   journal={npj Digital Medicine},
-   publisher={Springer Science and Business Media LLC},
-   author={Rieke, Nicola and Hancox, Jonny and Li, Wenqi and Milletarì, Fausto and Roth, Holger R. and Albarqouni, Shadi and Bakas, Spyridon and Galtier, Mathieu N. and Landman, Bennett A. and Maier-Hein, Klaus and Ourselin, Sébastien and Sheller, Micah and Summers, Ronald M. and Trask, Andrew and Xu, Daguang and Baust, Maximilian and Cardoso, M. Jorge},
-   year={2020},
-   month=sep }
-
-@article{fl,
-  author       = {H. Brendan McMahan and
-                  Eider Moore and
-                  Daniel Ramage and
-                  Blaise Ag{\"{u}}era y Arcas},
-  title        = {Federated Learning of Deep Networks using Model Averaging},
-  journal      = {CoRR},
-  volume       = {abs/1602.05629},
-  year         = {2016},
-  url          = {http://arxiv.org/abs/1602.05629},
-  eprinttype    = {arXiv},
-  eprint       = {1602.05629},
-  timestamp    = {Mon, 13 Aug 2018 16:48:01 +0200},
-  biburl       = {https://dblp.org/rec/journals/corr/McMahanMRA16.bib},
-  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 
 @inproceedings{adikari2015real,
@@ -2789,117 +2444,6 @@ doi = {10.1001/jamanetworkopen.2023.48422}
   url = {https://aima.cs.berkeley.edu/}
 }
 
-@ARTICLE{smpc_ml,
-  author={Zhou, Ian and Tofigh, Farzad and Piccardi, Massimo and Abolhasan, Mehran and Franklin, Daniel and Lipman, Justin},
-  journal={IEEE Access}, 
-  title={Secure Multi-Party Computation for Machine Learning: A Survey}, 
-  year={2024},
-  volume={12},
-  number={},
-  pages={53881-53899},
-  keywords={Security;Protocols;Computational modeling;Cryptography;Privacy;Integrated circuit modeling;Data privacy;Multi-party computation;machine learning;federated learning;data privacy;cryptography;protocols},
-  doi={10.1109/ACCESS.2024.3388992}}
-
-
-@INPROCEEDINGS{synthetic_data_privacy,
-  author={Jadon, Aryan and Kumar, Shashank},
-  booktitle={2023 International Conference on Smart Applications, Communications and Networking (SmartNets)}, 
-  title={Leveraging Generative AI Models for Synthetic Data Generation in Healthcare: Balancing Research and Privacy}, 
-  year={2023},
-  volume={},
-  number={},
-  pages={1-4},
-  keywords={Training;Data privacy;Medical services;Data models;Regulation;Artificial intelligence;Informatics;Generative AI Models;Synthetic Data Generation;Healthcare Research;Patient Privacy;Data Augmentation;Federated Learning;Differential Privacy;Data Anonymization;Transfer Learning;Health Informatics},
-  doi={10.1109/SmartNets58706.2023.10215825}}
-
-
-
-
-
-
-
-
-@article{health_sharing_incentives,
-author = {Devriendt, Thijs and Shabani, Mahsa and Borry, Pascal},
-title = {Data Sharing in Biomedical Sciences: A Systematic Review of Incentives},
-journal = {Biopreservation and Biobanking},
-volume = {19},
-number = {3},
-pages = {219-227},
-year = {2021},
-doi = {10.1089/bio.2020.0037},
-    note ={PMID: 33926229},
-
-URL = { 
-    
-        https://doi.org/10.1089/bio.2020.0037
-    
-    
-
-},
-eprint = { 
-    
-        https://doi.org/10.1089/bio.2020.0037
-    
-    
-
-}
-,
-    abstract = { Background: The lack of incentives has been described as the rate-limiting step for data sharing. Currently, the evaluation of scientific productivity by academic institutions and funders has been heavily reliant upon the number of publications and citations, raising questions about the adequacy of such mechanisms to reward data generation and sharing. This article provides a systematic review of the current and proposed incentive mechanisms for researchers in biomedical sciences and discusses their strengths and weaknesses. Methods: PubMed, Web of Science, and Google Scholar were queried for original research articles, editorials, and opinion articles on incentives for data sharing. Articles were included if they discussed incentive mechanisms for data sharing, were applicable to biomedical sciences, and were written in English. Results: Although coauthorship in return for the sharing of data is common, this might be incompatible with authorship guidelines and raise concerns over the ability of secondary analysts to contest the proposed research methods or conclusions that are drawn. Data publication, citation, and altmetrics have been proposed as alternative routes to credit data generators, which could address these disadvantages. Their primary downsides are that they are not well-established, it is difficult to acquire evidence to support their implementation, and that they could be gamed or give rise to novel forms of research misconduct. Conclusions: Alternative recognition mechanisms need to be more commonly used to generate evidence on their power to stimulate data sharing, and to assess where they fall short. There is ample discussion in policy documents on alternative crediting systems to work toward Open Science, which indicates that that there is an interest in working out more elaborate metascience programs. }
-}
-
-@misc{nguyen2024surveymachineunlearning,
-      title={A Survey of Machine Unlearning}, 
-      author={Thanh Tam Nguyen and Thanh Trung Huynh and Zhao Ren and Phi Le Nguyen and Alan Wee-Chung Liew and Hongzhi Yin and Quoc Viet Hung Nguyen},
-      year={2024},
-      eprint={2209.02299},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2209.02299}, 
-}
-
-@misc{amodei2016concreteproblemsaisafety,
-      title={Concrete Problems in AI Safety}, 
-      author={Dario Amodei and Chris Olah and Jacob Steinhardt and Paul Christiano and John Schulman and Dan Mané},
-      year={2016},
-      eprint={1606.06565},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/1606.06565}, 
-}
-
-@article{gabriel2020artificial,
-  title={Artificial intelligence, values, and alignment},
-  author={Gabriel, Iason},
-  journal={Minds and machines},
-  volume={30},
-  number={3},
-  pages={411--437},
-  year={2020},
-  publisher={Springer}
-}
-
-@article{ntoutsi2020bias,
-  title={Bias in data-driven artificial intelligence systems—An introductory survey},
-  author={Ntoutsi, Eirini and Fafalios, Pavlos and Gadiraju, Ujwal and Iosifidis, Vasileios and Nejdl, Wolfgang and Vidal, Maria-Esther and Ruggieri, Salvatore and Turini, Franco and Papadopoulos, Symeon and Krasanakis, Emmanouil and others},
-  journal={Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery},
-  volume={10},
-  number={3},
-  pages={e1356},
-  year={2020},
-  publisher={Wiley Online Library}
-}
-
-@misc{gabriel2024ethicsadvancedaiassistants,
-      title={The Ethics of Advanced AI Assistants}, 
-      author={Iason Gabriel and Arianna Manzini and Geoff Keeling and Lisa Anne Hendricks and Verena Rieser and Hasan Iqbal and Nenad Tomašev and Ira Ktena and Zachary Kenton and Mikel Rodriguez and Seliem El-Sayed and Sasha Brown and Canfer Akbulut and Andrew Trask and Edward Hughes and A. Stevie Bergman and Renee Shelby and Nahema Marchal and Conor Griffin and Juan Mateos-Garcia and Laura Weidinger and Winnie Street and Benjamin Lange and Alex Ingerman and Alison Lentz and Reed Enger and Andrew Barakat and Victoria Krakovna and John Oliver Siy and Zeb Kurth-Nelson and Amanda McCroskery and Vijay Bolina and Harry Law and Murray Shanahan and Lize Alberts and Borja Balle and Sarah de Haas and Yetunde Ibitoye and Allan Dafoe and Beth Goldberg and Sébastien Krier and Alexander Reese and Sims Witherspoon and Will Hawkins and Maribeth Rauh and Don Wallace and Matija Franklin and Josh A. Goldstein and Joel Lehman and Michael Klenk and Shannon Vallor and Courtney Biles and Meredith Ringel Morris and Helen King and Blaise Agüera y Arcas and William Isaac and James Manyika},
-      year={2024},
-      eprint={2404.16244},
-      archivePrefix={arXiv},
-      primaryClass={cs.CY},
-      url={https://arxiv.org/abs/2404.16244}, 
-}
-
 @article{welle2025aligning,
   author    = {Welle, Elissa},
   title     = {Aligning those who align {AI}, one satirical website at a time},
@@ -2928,401 +2472,6 @@ eprint = {
   year={2025}
 }
 
-@book{ai_bioweapon,
-author="Mouton, Christopher A. and Caleb Lucas and Ella Guest",
-title="The Operational Risks of AI in Large-Scale Biological Attacks: A Red-Team Approach",
-address="Santa Monica, CA",
-year="2023",
-doi="10.7249/RRA2977-1",
-publisher="RAND Corporation"
-}%n
-
-@misc{industryAustraliaAI2024,
-  title        = {Australia’s AI Ethics Principles},
-  author       = {Australian Government Department of Industry, Science, Energy and Resources},
-  year         = {2024},
-  howpublished = {\url{https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-principles}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{ecGermanyAI2024,
-  title        = {Germany AI Strategy Report},
-  author       = {European Commission},
-  year         = {2024},
-  howpublished = {\url{https://ai-watch.ec.europa.eu/countries/germany/germany-ai-strategy-report_en}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{ecFranceAI2024,
-  title        = {France AI Strategy Report},
-  author       = {European Commission},
-  year         = {2024},
-  howpublished = {\url{https://ai-watch.ec.europa.eu/countries/france/france-ai-strategy-report_en}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{ecWhitePaperAI2020,
-  title        = {White Paper on Artificial Intelligence: A European Approach to Excellence and Trust},
-  author       = {European Commission},
-  year         = {2020},
-  howpublished = {\url{https://commission.europa.eu/publications/white-paper-artificial-intelligence-european-approach-excellence-and-trust_en}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{ieeeEthicsAI2021,
-  title        = {Ethically Aligned Design: A Vision for Prioritizing Human Well-being with Artificial Intelligence and Autonomous Systems},
-  author       = {IEEE Global Initiative on Ethics of Autonomous and Intelligent Systems},
-  year         = {2021},
-  howpublished = {\url{https://standards.ieee.org/wp-content/uploads/import/documents/other/ead_v2.pdf}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{futureOfLifeAIPrinciples2024,
-  title        = {AI Principles},
-  author       = {Future of Life Institute},
-  year         = {2024},
-  howpublished = {\url{https://futureoflife.org/open-letter/ai-principles/}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{accessNowTorontoDeclaration2023,
-  title        = {The Toronto Declaration: Protecting the Rights to Equality and Non-Discrimination in Machine Learning Systems},
-  author       = {Access Now},
-  year         = {2023},
-  howpublished = {\url{https://www.accessnow.org/press-release/the-toronto-declaration-protecting-the-rights-to-equality-and-non-discrimination-in-machine-learning-systems/}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{aiNowAlgorithmicAccountability2024,
-  title        = {Algorithmic Accountability Policy Toolkit},
-  author       = {AI Now Institute},
-  year         = {2024},
-  howpublished = {\url{https://ainowinstitute.org/publications/algorithmic-accountability-policy-toolkit}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{montrealDeclaration2024,
-  title        = {Montreal Declaration for a Responsible Development of Artificial Intelligence},
-  author       = {Montreal Declaration},
-  year         = {2024},
-  howpublished = {\url{https://montrealdeclaration-responsibleai.com/}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{weforumAIGovernance2023,
-  title        = {AI Governance: A Holistic Approach to Implement Ethics into AI},
-  author       = {World Economic Forum},
-  year         = {2023},
-  howpublished = {\url{https://www.weforum.org/publications/ai-governance-a-holistic-approach-to-implement-ethics-into-ai/}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{harvardPrincipledAI2020,
-  title        = {Principled AI},
-  author       = {Harvard Berkman Klein Center for Internet & Society},
-  year         = {2020},
-  howpublished = {\url{https://cyber.harvard.edu/publication/2020/principled-ai}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{turingAIethics2019,
-  title        = {Understanding Artificial Intelligence Ethics and Safety},
-  author       = {Alan Turing Institute},
-  year         = {2019},
-  howpublished = {\url{https://www.turing.ac.uk/sites/default/files/2019-08/understanding_artificial_intelligence_ethics_and_safety.pdf}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{googleAIPrinciples2024,
-  title        = {AI Principles},
-  author       = {Google},
-  year         = {2024},
-  howpublished = {\url{https://ai.google/responsibility/principles/}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{microsoftAIPrinciples2024,
-  title        = {AI Principles and Approach},
-  author       = {Microsoft},
-  year         = {2024},
-  howpublished = {\url{https://www.microsoft.com/en-us/ai/principles-and-approach}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@misc{ibmAIPrinciples2018,
-  title        = {IBM Principles for Trust and Transparency},
-  author       = {IBM},
-  year         = {2018},
-  howpublished = {\url{https://www.ibm.com/policy/wp-content/uploads/2018/06/IBM_Principles_SHORT.V4.3.pdf}},
-  note         = {[Accessed 12-09-2024]},
-}
-
-@article{scaling_laws_2020,
-  author       = {Jared Kaplan and
-                  Sam McCandlish and
-                  Tom Henighan and
-                  Tom B. Brown and
-                  Benjamin Chess and
-                  Rewon Child and
-                  Scott Gray and
-                  Alec Radford and
-                  Jeffrey Wu and
-                  Dario Amodei},
-  title        = {Scaling Laws for Neural Language Models},
-  journal      = {CoRR},
-  volume       = {abs/2001.08361},
-  year         = {2020},
-  url          = {https://arxiv.org/abs/2001.08361},
-  eprinttype    = {arXiv},
-  eprint       = {2001.08361},
-  timestamp    = {Wed, 03 Jun 2020 10:55:13 +0200},
-  biburl       = {https://dblp.org/rec/journals/corr/abs-2001-08361.bib},
-  bibsource    = {dblp computer science bibliography, https://dblp.org}
-}
-
-@misc{hoffmann2022trainingcomputeoptimallargelanguage,
-      title={Training Compute-Optimal Large Language Models}, 
-      author={Jordan Hoffmann and Sebastian Borgeaud and Arthur Mensch and Elena Buchatskaya and Trevor Cai and Eliza Rutherford and Diego de Las Casas and Lisa Anne Hendricks and Johannes Welbl and Aidan Clark and Tom Hennigan and Eric Noland and Katie Millican and George van den Driessche and Bogdan Damoc and Aurelia Guy and Simon Osindero and Karen Simonyan and Erich Elsen and Jack W. Rae and Oriol Vinyals and Laurent Sifre},
-      year={2022},
-      eprint={2203.15556},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2203.15556}, 
-}
-
-@misc{Samuel_2024, title={“I lost trust”: Why the OpenAI team in charge of safeguarding humanity imploded}, url={https://www.vox.com/future-perfect/2024/5/17/24158403/openai-resignations-ai-safety-ilya-sutskever-jan-leike-artificial-intelligence}, journal={Vox}, author={Samuel, Sigal}, year={2024}, month={May}} 
-
-@misc{Hu_Cai_2024, url={https://www.reuters.com/technology/artificial-intelligence/openai-remove-non-profit-control-give-sam-altman-equity-sources-say-2024-09-25/}, journal={Exclusive: Openai to remove non-profit control and give Sam Altman equity | Reuters}, author={Hu, Crystal and Cai, Kenrick}, year={2024}, month={Sep}} 
-
-@misc{Morales_2024, title={Musk’s concerns over google deepmind “ai dictatorship” revealed in emails from 2016 - communications released during the recent OpenAI Court case}, url={https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-concerns-over-google-deepmind-ai-dictatorship-revealed-in-emails-from-2016-communications-released-during-the-recent-openai-court-case}, journal={Tom’s Hardware}, publisher={Tom’s Hardware}, author={Morales, Jowi}, year={2024}, month={Nov}} 
-
-@misc{Tong_Martina_2024, url={https://www.reuters.com/technology/artificial-intelligence/us-government-commission-pushes-manhattan-project-style-ai-initiative-2024-11-19/}, journal={US Government Commission pushes Manhattan Project-style Ai Initiative | Reuters}, publisher={Reuters}, author={Tong, Anna and Martina, Michael}, year={2024}, month={Nov}} 
-
-@article{triangulation,
-  title={The use of triangulation in qualitative research},
-  author={Carter, Nancy},
-  journal={Number 5/September 2014},
-  volume={41},
-  number={5},
-  pages={545--547},
-  year={2014},
-  publisher={Oncology Nursing Society}
-}
-
-@misc{1943, author={US District Court}, url={https://casetext.com/case/united-states-v-associated-press}, journal={United States v. Associated Press, 52 F. supp. 362 | casetext search + citator}, year={1943}, month={Oct}} 
-
-@article{c6d8420c4f48429d8e84c65d2b00369f,
-title = "Practical guidance for using multiple data sources in systematic reviews and meta-analyses (with examples from the MUDS study)",
-abstract = "Data for individual trials included in systematic reviews may be available in multiple sources. For example, a single trial might be reported in 2 journal articles and 3 conference abstracts. Because of differences across sources, source selection can influence the results of systematic reviews. We used our experience in the Multiple Data Sources in Systematic Reviews (MUDS) study, and evidence from previous studies, to develop practical guidance for using multiple data sources in systematic reviews. We recommend the following: (1) Specify which sources you will use. Before beginning a systematic review, consider which sources are likely to contain the most useful data. Try to identify all relevant reports and to extract information from the most reliable sources. (2) Link individual trials with multiple sources. Write to authors to determine which sources are likely related to the same trials. Use a modified Preferred Reporting Items for Systematic Reviews and Meta-analyses (PRISMA) flowchart to document both the selection of trials and the selection of sources. (3) Follow a prespecified protocol for extracting trial characteristics from multiple sources. Identify differences among sources, and contact study authors to resolve differences if possible. (4) Prespecify outcomes and results to examine in the review and meta-analysis. In your protocol, describe how you will handle multiple outcomes within each domain of interest. Look for outcomes using all eligible sources. (5) Identify which data sources were included in the review. Consider whether the results might have been influenced by data sources used. (6) To reduce bias, and to reduce research waste, share the data used in your review.",
-keywords = "meta-analysis, multiple data sources, reporting bias, risk of bias assessment, selective outcome reporting",
-author = "{for the MUDS investigators} and Evan Mayo-Wilson and Tianjing Li and Nicole Fusco and Kay Dickersin",
-note = "Funding Information: This study was supported by contract ME 1303 5785 from the Patient‐Centered Outcomes Research Institute (PCORI) and a fund established at Johns Hopkins for scholarly research on reporting biases by Greene LLP. The funders were not involved in the design or conduct of the study, manuscript preparation, or the decision to submit the manuscript for publication. Publisher Copyright: {\textcopyright} 2017 The Authors. Research Synthesis Methods published by John Wiley & Sons Ltd.",
-year = "2018",
-month = mar,
-doi = "10.1002/jrsm.1277",
-language = "English (US)",
-volume = "9",
-pages = "2--12",
-journal = "Research Synthesis Methods",
-issn = "1759-2879",
-publisher = "John Wiley and Sons Ltd",
-number = "1",
-}
-
-@article{doi:10.1177/1362168820906908,
-author = {Hossein Nassaji},
-title ={The importance of using multiple measures or data sources in L2 instructional research},
-
-journal = {Language Teaching Research},
-volume = {24},
-number = {2},
-pages = {131-135},
-year = {2020},
-doi = {10.1177/1362168820906908},
-
-URL = { 
-    
-        https://doi.org/10.1177/1362168820906908
-    
-    
-
-},
-eprint = { 
-    
-        https://doi.org/10.1177/1362168820906908
-    
-    
-
-}
-
-}
-
-@article{depaulo1998everyday,
-  title={Everyday lies in close and casual relationships.},
-  author={DePaulo, Bella M and Kashy, Deborah A},
-  journal={Journal of personality and social psychology},
-  volume={74},
-  number={1},
-  pages={63},
-  year={1998},
-  publisher={American Psychological Association}
-}
-
-
-@inproceedings{backstrom2012four,
-  title={Four degrees of separation},
-  author={Backstrom, Lars and Boldi, Paolo and Rosa, Marco and Ugander, Johan and Vigna, Sebastiano},
-  booktitle={Proceedings of the 4th annual ACM Web science conference},
-  pages={33--42},
-  year={2012}
-}
-
-@article{Bellovin2011FrankMI2,
-  title={Frank Miller: Inventor of the One-Time Pad},
-  author={Bellovin, Stephen},
-  journal={Cryptologia},
-  year={2011},
-  volume={35},
-  pages={203 - 222},
-  url={https://api.semanticscholar.org/CorpusID:35541360}
-}
-
-@misc{koh2020understandingblackboxpredictionsinfluence,
-      title={Understanding Black-box Predictions via Influence Functions}, 
-      author={Pang Wei Koh and Percy Liang},
-      year={2020},
-      eprint={1703.04730},
-      archivePrefix={arXiv},
-      primaryClass={stat.ML},
-      url={https://arxiv.org/abs/1703.04730}, 
-}
-
-@article{Hampel01061974},
-author = {Frank R. Hampel},
-title = {The Influence Curve and its Role in Robust Estimation},
-journal = {Journal of the American Statistical Association},
-volume = {69},
-number = {346},
-pages = {383--393},
-year = {1974},
-publisher = {ASA Website},
-doi = {10.1080/01621459.1974.10482962},
-URL = { 
-        https://www.tandfonline.com/doi/abs/10.1080/01621459.1974.10482962
-},
-eprint = { 
-        https://www.tandfonline.com/doi/pdf/10.1080/01621459.1974.10482962
-}
-}
-
-@article{feldman2020individual,
-  title={Individual Privacy Accounting via a Renyi Filter},
-  author={Feldman, Vitaly and Zrnic, Tijana},
-  journal={arXiv preprint arXiv:2008.11193},
-  year={2020}
-}
-
-@book{Goodfellow-et-al-2016,
-    title={Deep Learning},
-    author={Ian Goodfellow and Yoshua Bengio and Aaron Courville},
-    publisher={MIT Press},
-    note={\url{http://www.deeplearningbook.org}},
-    year={2016}
-}
-
-@article{castelvecchi2016can,
-  title={Can we open the black box of AI?},
-  author={Castelvecchi, Davide},
-  journal={Nature News},
-  volume={538},
-  number={7623},
-  pages={20},
-  year={2016}
-}
-
-@article{lederer2024statistical,
-  title={Statistical guarantees for sparse deep learning},
-  author={Lederer, Johannes},
-  journal={AStA Advances in Statistical Analysis},
-  volume={108},
-  number={2},
-  pages={231--258},
-  year={2024},
-  publisher={Springer},
-  doi = {10.1007/s10182-022-00467-3},
-  url = {https://doi.org/10.1007/s10182-022-00467-3}
-}
-
-@article{dai2024deepseekmoe,
-  title={Deepseekmoe: Towards ultimate expert specialization in mixture-of-experts language models},
-  author={Dai, Damai and Deng, Chengqi and Zhao, Chenggang and Xu, RX and Gao, Huazuo and Chen, Deli and Li, Jiashi and Zeng, Wangding and Yu, Xingkai and Wu, Y and others},
-  journal={arXiv preprint arXiv:2401.06066},
-  year={2024},
-  url = {https://arxiv.org/abs/2401.06066}
-}
-
-@article{guo2023towards,
-  title={Towards lossless dataset distillation via difficulty-aligned trajectory matching},
-  author={Guo, Ziyao and Wang, Kai and Cazenavette, George and Li, Hui and Zhang, Kaipeng and You, Yang},
-  journal={arXiv preprint arXiv:2310.05773},
-  year={2023}
-}
-
-@article{cottier2024rising,
-  title={The rising costs of training frontier AI models},
-  author={Cottier, Ben and Rahman, Robi and Fattorini, Loredana and Maslej, Nestor and Owen, David},
-  journal={arXiv preprint arXiv:2405.21015},
-  year={2024}
-}
-
-@article{li2024llm,
-  title={Llm inference serving: Survey of recent advances and opportunities},
-  author={Li, Baolin and Jiang, Yankai and Gadepally, Vijay and Tiwari, Devesh},
-  journal={arXiv preprint arXiv:2407.12391},
-  year={2024}
-}
-
-@techreport{ark2024bigideas,
-    title = {Big Ideas 2024: Disrupting the Norm, Defining the Future},
-    author = {{ARK Investment Management LLC}},
-    year = {2024},
-    month = {January},
-    institution = {ARK Investment Management LLC},
-    type = {Annual Research Report},
-    url = {https://europe.ark-funds.com/wp-content/uploads/2024/02/ARK-Invest-Big-Ideas-2024.pdf},
-    note = {Released January 31, 2024}
-}
-
-@online{appenzeller2024llmflation,
-    author = {Appenzeller, Guido},
-    title = {Welcome to {LLMflation} -- {LLM} inference cost is going down fast},
-    year = {2024},
-    month = {November},
-    day = {12},
-    url = {https://a16z.com/llmflation-llm-inference-cost/},
-    publisher = {Andreessen Horowitz},
-    organization = {a16z},
-    urldate = {2024-02-07},
-    type = {Blog Post}
-}
-
-@article{brown2020language,
-    title={Language Models are Few-Shot Learners},
-    author={Brown, Tom B and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and others},
-    journal={arXiv preprint arXiv:2005.14165},
-    year={2020},
-    url={https://arxiv.org/abs/2005.14165}
-}
-
-@inproceedings{borgeaud2022improving,
-  title={Improving language models by retrieving from trillions of tokens},
-  author={Borgeaud, Sebastian and Mensch, Arthur and Hoffmann, Jordan and Cai, Trevor and Rutherford, Eliza and Millican, Katie and Van Den Driessche, George Bm and Lespiau, Jean-Baptiste and Damoc, Bogdan and Clark, Aidan and others},
-  booktitle={International conference on machine learning},
-  pages={2206--2240},
-  year={2022},
-  organization={PMLR}
-}
-
 @article{patel2023inference,
   title={The Inference Cost of Search Disruption – Large Language Model Cost Analysis},
   author={Patel, Dylan and Ahmad, Afzal},
@@ -3334,23 +2483,6 @@ eprint = {
   note={Analysis of LLM inference costs and their impact on search engine economics}
 }
 
-@inproceedings{gpu_shortage,
-author = {Strati, Foteini and Elvinger, Paul and Kerimoglu, Tolga and Klimovic, Ana},
-title = {ML Training with Cloud GPU Shortages: Is Cross-Region the Answer?},
-year = {2024},
-isbn = {9798400705410},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3642970.3655843},
-doi = {10.1145/3642970.3655843},
-abstract = {The widespread adoption of ML has led to a high demand for GPU hardware and consequently, severe shortages of GPUs in the public cloud. Allocating a sufficient number of GPUs to train or fine-tune today's large ML models in a single cloud region is often difficult. Users can get access to more GPUs if they are willing to run a ML training job using devices across different geographical regions. However, GPU nodes are connected with lower network bandwidth and cloud providers charge extra for data transfers across geographical regions. In this work, we explore when and how it makes sense to leverage GPUs across zones and regions for distributed ML training. We analyze the throughput and cost impact of cross-region training based on the computation and communication patterns of different model parallelism strategies, develop a profile-based analytical model for estimating training throughput and cost, and provide guidelines for allocating geo-distributed resources efficiently. We find that although ML training throughput and cost with pure data parallelism degrades significantly when nodes span geographic regions, cross-region training with pipeline parallelism is practical.},
-booktitle = {Proceedings of the 4th Workshop on Machine Learning and Systems},
-pages = {107–116},
-numpages = {10},
-keywords = {Cloud computing, Machine Learning},
-location = {Athens, Greece},
-series = {EuroMLSys '24}
-}
 
 @article{patel2019bridging,
   title={Bridging data silos using big data integration},
@@ -3363,17 +2495,6 @@ series = {EuroMLSys '24}
   url = {https://doi.org/10.5121/ijdms.2019.11301}
 }
 
-@article{robison2024openai,
-    author = {Robison, Kylie},
-    title = {{OpenAI cofounder Ilya Sutskever says the way AI is built is about to change}},
-    journal = {The Verge},
-    year = {2024},
-    month = {December},
-    day = {14},
-    url = {https://www.theverge.com/2024/12/13/24320811/openai-ilya-sutskever-agi-data-training},
-    note = {Accessed: December 31, 2024}
-}
-
 @misc{EpochAIModels2025,
   title = {Data on AI Models},
   author = {{Epoch AI}},
@@ -3381,295 +2502,6 @@ series = {EuroMLSys '24}
   month = {07},
   url = {https://epoch.ai/data/ai-models},
   note = {Accessed: 2025-11-02}
-}
-
-@online{together2023redpajama,
-    title = {RedPajama-Data-v2: An open dataset with 30 trillion tokens for training large language models},
-    author = {Together},
-    organization = {Together AI},
-    year = {2023},
-    month = {10},
-    day = {30},
-    url = {https://www.together.ai/blog/redpajama-data-v2},
-    urldate = {2024-12-31},
-    abstract = {Today, we're releasing a new version of the RedPajama dataset, with 30 trillion filtered and deduplicated tokens (100+ trillions raw) from 84 CommonCrawl dumps covering 5 languages, along with 40+ pre-computed data quality annotations that can be used for further filtering and weighting.},
-    keywords = {language models, datasets, machine learning, NLP, RedPajama, CommonCrawl},
-    note = {The dataset includes data processing tools for CommonCrawl data, focusing on five languages: English, French, Spanish, German, and Italian. It provides over 40 quality annotations for filtering and weighting data, including natural language indicators, repetitiveness measures, and content-based signals.}
-}
-
-@misc{wikipedia_commoncrawl_2024,
-  title = {Common {Crawl}},
-  author = {{Wikipedia contributors}},
-  year = {2024},
-  note = {Last edited on 30 December 2024, at 01:48 (UTC)},
-  url = {https://en.wikipedia.org/wiki/Common_Crawl},
-  urldate = {2024-12-31},
-  organization = {Wikipedia, The Free Encyclopedia}
-}
-
-@article{educating_silicon_2024,
-    title = {How much LLM training data is there, in the limit?},
-    author = {Cummins, Mark},
-    journal = {Educating Silicon},
-    year = {2024},
-    month = {May},
-    day = {9},
-    url = {https://www.educatingsilicon.com/2024/05/09/how-much-llm-training-data-is-there-in-the-limit/},
-    note = {A comprehensive analysis of available text data for LLM training, including web data, code, academic publications, books, court documents, social media, transcribed audio, and private communications. Estimates suggest current LLM training sets are approaching the limits of high-quality public text, with approximately 40-90T tokens available in English and 100-200T tokens across all languages.},
-    keywords = {LLM, training data, artificial intelligence, natural language processing, data analysis},
-    publisher = {Educating Silicon Blog}
-}
-
-@misc{internet_archive_donation,
-    title = {A Message from Internet Archive Founder, Brewster Kahle},
-    author = {Kahle, Brewster},
-    organization = {Internet Archive},
-    year = {2024},
-    url = {https://archive.org/donate/},
-    note = {Internet Archive donation page detailing the organization's mission, impact, and ways to support. The Archive hosts over 99 petabytes of data, including 625 billion webpages, 38 million texts, and 14 million audio recordings. Federal Tax ID: 94-3242767},
-    address = {300 Funston Avenue, San Francisco, CA 94118-2116},
-    institution = {Internet Archive},
-    type = {Web Page},
-    keywords = {digital library, web archive, preservation, nonprofit organization}
-}
-
-@article{mider_osint_2024,
-    title = {Open source intelligence on the internet -- categorisation and evaluation of search tools},
-    author = {Mider, Daniel},
-    journal = {Internal Security Review},
-    volume = {31},
-    pages = {383--412},
-    year = {2024},
-    doi = {10.4467/20801335PBW.24.030.20807},
-    issn = {2080-1335},
-    abstract = {This article presents a comprehensive analysis and systematic review of search tools used in open source intelligence (OSINT). Three main categories of software were evaluated: systems integrated with operating system or web browser, standalone applications, and repositories of links to specialised tools. A critical evaluation of representative examples from each category was conducted, taking into account their functionality, effectiveness, and limitations.},
-    keywords = {open source intelligence, OSINT, cybersecurity, internet-based information retrieval},
-    affiliation = {Faculty of Political Science and International Studies, University of Warsaw},
-    language = {english}
-}
-
-@online{taylor2024data,
-    author = {Taylor, Petroc},
-    title = {Amount of data created, consumed, and stored 2010-2023, with forecasts to 2028},
-    year = {2024},
-    month = {5},
-    publisher = {Statista},
-    url = {https://www.statista.com/statistics/871513/worldwide-data-created/},
-    note = {Accessed: December 31, 2024}
-}
-
-@article{ball2013nsa,
-    author = {Ball, James},
-    title = {NSA stores metadata of millions of web users for up to a year, secret files show},
-    journal = {The Guardian},
-    year = {2013},
-    month = {September},
-    day = {30},
-    url = {https://www.theguardian.com/world/2013/sep/30/nsa-americans-metadata-year-documents},
-    note = {Accessed: December 31, 2024}
-}
-@online{morgan2024data,
-    author = {Morgan, Steve},
-    title = {The World Will Store 200 Zettabytes Of Data By 2025},
-    date = {2024-02-01},
-    organization = {Cybersecurity Ventures},
-    url = {https://cybersecurityventures.com/the-world-will-store-200-zettabytes-of-data-by-2025},
-    urldate = {2024-12-31},
-    note = {Press Release}
-}
-
-@article{izacard2023atlas,
-  title={Atlas: Few-shot learning with retrieval augmented language models},
-  author={Izacard, Gautier and Lewis, Patrick and Lomeli, Maria and Hosseini, Lucas and Petroni, Fabio and Schick, Timo and Dwivedi-Yu, Jane and Joulin, Armand and Riedel, Sebastian and Grave, Edouard},
-  journal={Journal of Machine Learning Research},
-  volume={24},
-  number={251},
-  pages={1--43},
-  year={2023}
-}
-
-@misc{epoch2024hardware,
-    title={Data on Machine Learning Hardware},
-    author={{Epoch AI}},
-    year={2024},
-    url={https://epoch.ai/data/machine-learning-hardware},
-    note={Updated December 30, 2024}
-}
-
-@article{mann2024ai,
-    title={AI's rising tide lifts all chips as AMD Instinct, cloudy silicon vie for a slice of Nvidia's pie},
-    author={Mann, Tobias},
-    journal={The Register},
-    year={2024},
-    month={Dec},
-    day={23},
-    url={https://www.theregister.com/2024/12/23/nvidia_ai_hardware_competition/}
-}
-
-@article{chauhan2024nvidia,
-    title={Nvidia: 50 Billion Reasons Why This Artificial Intelligence (AI) Stock Could Skyrocket in 2024},
-    author={Chauhan, Harsh},
-    journal={The Motley Fool},
-    year={2024},
-    month={Jan},
-    day={2},
-    url={https://www.fool.com/investing/2024/01/02/nvidia-reasons-why-artificial-intelligence-ai/}
-}
-
-@article{bertramie2024h100,
-    title={H100 is a Key Driver in 2024},
-    author={Bertramie},
-    journal={Moomoo Community},
-    year={2024},
-    month={Jan},
-    day={15},
-    url={https://www.moomoo.com/community/feed/h100-is-a-key-driver-in-2024-111759072493573}
-}
-
-@article{dutt2024pc,
-    title={Global PC shipments up 3\% in first quarter of 2024},
-    author={Dutt, Ishan},
-    journal={Canalys Newsroom},
-    year={2024},
-    month={Apr},
-    day={9},
-    url={https://canalys.com/newsroom/global-pc-market-q1-2024}
-}
-
-@article{mahajan2024gaming,
-    title={Gaming Console Statistics 2024 By Games, Performance, Quality},
-    author={Mahajan, Ketan},
-    journal={Market.us News},
-    year={2024},
-    month={Aug},
-    day={6},
-    url={https://www.news.market.us/gaming-console-statistics/}
-}
-
-@article{epoch2024hardware,
-    title={Data on Machine Learning Hardware},
-    author={{Epoch AI}},
-    year={2024},
-    url={https://epoch.ai/data/machine-learning-hardware},
-    note={Updated December 30, 2024}
-}
-
-@article{mann2024ai,
-    title={AI's rising tide lifts all chips as AMD Instinct, cloudy silicon vie for a slice of Nvidia's pie},
-    author={Mann, Tobias},
-    journal={The Register},
-    year={2024},
-    month={Dec},
-    day={23},
-    url={https://www.theregister.com/2024/12/23/nvidia_ai_hardware_competition/}
-}
-
-@article{ming2024nvidia,
-    title={NVIDIA AI GPU Shipments to Hit 4M in 2024},
-    author={Ming},
-    journal={SMYG Limited News},
-    year={2024},
-    month={Jun},
-    day={12},
-    url={https://www.smyg.hk/news/details/13715}
-}
-
-@misc{macrotrends2024nvidia,
-    title={NVIDIA Revenue 2010-2024 | NVDA},
-    author={{Macrotrends LLC}},
-    year={2024},
-    url={https://www.macrotrends.net/stocks/charts/NVDA/nvidia/revenue},
-    note={Accessed January 2024}
-}
-
-@article{ainsworth2022git,
-  title={Git re-basin: Merging models modulo permutation symmetries},
-  author={Ainsworth, Samuel K and Hayase, Jonathan and Srinivasa, Siddhartha},
-  journal={arXiv preprint arXiv:2209.04836,
-  url = {https://arxiv.org/abs/2409.13054}
-},
-  year={2022}
-}
-
-@article{veldanda2024llm,
-  title={LLM Surgery: Efficient Knowledge Unlearning and Editing in Large Language Models},
-  author={Veldanda, Akshaj Kumar and Zhang, Shi-Xiong and Das, Anirban and Chakraborty, Supriyo and Rawls, Stephen and Sahu, Sambit and Naphade, Milind},
-  journal={arXiv preprint arXiv:2409.13054},
-  year={2024},
-  url = {https://arxiv.org/abs/2409.13054}
-}
-
-@article{hill2024bittersweet,
-    author = {Hill, Felix},
-    title = {The Bittersweet Lesson: The Strange Case of Inductive Bias in Transformers},
-    year = {2024},
-    month = {oct},
-    day = {21},
-    url = {https://docs.google.com/document/d/1MPqtT_1vQ-73j796tf7sXIZKCRcIfUD0cVU_UbPXnUU/},
-    note = {Online blog post},
-}
-
-@misc{crispweed2024alignment,
-  author       = {crispweed},
-  title        = {The {Alignment} {Trap}: {AI} {Safety} as {Path} to {Power}},
-  year         = {2024},
-  month        = {oct},
-  note         = {Accessed: 2025-01-03},
-  url          = {https://www.lesswrong.com/posts/zWJTcaJCkYiJwCmgx/the-alignment-trap-ai-safety-as-path-to-power},
-  howpublished = {LessWrong},
-  day          = {29}
-}
-
-@misc{pope2023centralizing,
-  author       = {Pope, Quintin},
-  title        = {{AI} is centralizing by default; let's not make it worse},
-  year         = {2023},
-  month        = {sep},
-  day          = {21},
-  url          = {https://forum.effectivealtruism.org/posts/zd5inbT4kYKivincm/ai-is-centralizing-by-default-let-s-not-make-it-worse},
-  howpublished = {Effective Altruism Forum},
-  note         = {Accessed: 2025-01-03}
-}
-
-@misc{riesen2023imagine,
-  author       = {Riesen, Guillaume},
-  title        = {Imagine {A} {World}: {What} if global challenges led to more centralization?},
-  year         = {2023},
-  month        = {sep},
-  day          = {12},
-  type         = {Podcast},
-  series       = {Future of Life Institute Podcast},
-  publisher    = {Future of Life Institute},
-  url          = {https://futureoflife.org/podcast/imagine-a-world-what-if-global-challenges-led-to-more-centralization/},
-  note         = {Accessed: 2025-01-03},
-  howpublished = {Audio podcast episode},
-  keywords     = {artificial intelligence, centralization, worldbuilding}
-}
-
-@book{chomsky2014aspects,
-  title={Aspects of the Theory of Syntax},
-  author={Chomsky, Noam},
-  number={11},
-  year={2014},
-  publisher={MIT press}
-}
-
-@inproceedings{le2013building,
-  title={Building high-level features using large scale unsupervised learning},
-  author={Le, Quoc V},
-  booktitle={2013 IEEE international conference on acoustics, speech and signal processing},
-  pages={8595--8598},
-  year={2013},
-  organization={IEEE}
-}
-
-@article{hanin2018neural,
-  title={Which neural net architectures give rise to exploding and vanishing gradients?},
-  author={Hanin, Boris},
-  journal={Advances in neural information processing systems},
-  volume={31},
-  year={2018},
-  url = {https://arxiv.org/abs/1801.03744}
 }
 
 @online{Kaye2025NvidiaFirstCompany,
@@ -3683,324 +2515,6 @@ series = {EuroMLSys '24}
   urldate = {2025-11-02}
 }
 
-@article{kachwala2024nvidia,
-author = {Kachwala, Zaheer and Bajwa, Arsheeya},
-title = {Nvidia faces revenue threat from new U.S. AI chip export curbs, analysts say},
-journal = {Reuters},
-year = {2025},
-month = {January},
-day = {13},
-url = {https://www.reuters.com/technology/artificial-intelligence/nvidia-says-new-rule-will-weaken-us-leadership-ai-2025-01-13/},
-note = {Updated January 13, 2025 6:31 PM GMT}
-}
-
-@article{howley2023nvidia,
-author = {Howley, Daniel},
-title = {There's an AI war, and Nvidia is the only arms dealer: Analyst},
-journal = {Yahoo Finance},
-year = {2023},
-month = {May},
-day = {25},
-url = {https://finance.yahoo.com/news/theres-an-ai-war-and-nvidia-is-the-only-arms-dealer-analyst-174654030.html},
-note = {Updated May 25, 2023}
-}
-
-@article{meta2024llama,
-title = {Introducing Llama 3.1: Our most capable models to date},
-author = {{Meta AI}},
-year = {2024},
-month = {July},
-day = {23},
-url = {https://ai.meta.com/blog/meta-llama-3-1/},
-journal = {Meta AI Blog},
-note = {Published July 23, 2024}
-}
-
-@article{wiggers2024openai,
-author = {Wiggers, Kyle},
-title = {OpenAI CEO Sam Altman says lack of compute capacity is delaying the company's products},
-journal = {TechCrunch},
-year = {2024},
-month = {October},
-day = {31},
-url = {https://techcrunch.com/2024/10/31/openai-ceo-sam-altman-says-lack-of-compute-is-delaying-the-companys-products/},
-note = {Published 12:37 PM PDT, October 31, 2024}
-}
-
-@article{mehta2024zuckerberg,
-    author = {Mehta, Ivan},
-    title = {Zuckerberg says {Meta} will need 10x more computing power to train {Llama} 4 than {Llama} 3},
-    journal = {TechCrunch},
-    year = {2024},
-    month = {aug},
-    day = {1},
-    url = {https://techcrunch.com/2024/08/01/zuckerberg-says-meta-will-need-10x-more-computing-power-to-train-llama-4-than-llama-3/},
-    note = {12:53 AM PDT}
-}
-
-@article{openai2024learning,
-    author = {{OpenAI}},
-    title = {Learning to reason with {LLMs}},
-    year = {2024},
-    month = {sep},
-    day = {12},
-    url = {https://openai.com/index/learning-to-reason-with-llms},
-    institution = {OpenAI},
-    note = {Introduces OpenAI o1, a new large language model trained with reinforcement learning for complex reasoning}
-}
-
-@article{sevilla2024training,
-    author = {Sevilla, Jaime and Rold\'{a}n, Edu},
-    title = {Training Compute of Frontier {AI} Models Grows by 4-5x per Year},
-    journal = {Epoch AI Blog},
-    year = {2024},
-    month = {may},
-    day = {28},
-    url = {https://epoch.ai/blog/training-compute-of-frontier-ai-models-grows-by-4-5x-per-year},
-    institution = {Epoch AI},
-    note = {Analysis of AI model compute trends showing 4-5x yearly growth from 2010 to 2024}
-}
-
-@misc{wandb2025sweeps_tutorial,
-    title = {Sweeps: An Overview},
-    author = {{Weights \& Biases}},
-    year = {2025},
-    howpublished = {\url{https://docs.wandb.ai/tutorials/sweeps/}},
-    note = {Online tutorial for using W\&B Sweeps for hyperparameter optimization},
-    organization = {Weights \& Biases}
-}
-
-@misc{bratt2025inference,
-    author = {Bratt, Ian},
-    title = {Why There Is No {AI} Without Inference},
-    year = {2025},
-    month = {jan},
-    day = {19},
-    howpublished = {\url{https://partners.wsj.com/nasdaq-arm/information-technology/why-there-is-no-ai-without-inference/}},
-    note = {WSJ Partner Content sponsored by Arm, Vice President of Machine-Learning Technology},
-    organization = {The Wall Street Journal},
-    publisher = {Dow Jones \& Company}
-}
-
-
-
-
-
-
-
-
-
-@article{
-doi:10.1073/pnas.1611835114,
-author = {James Kirkpatrick  and Razvan Pascanu  and Neil Rabinowitz  and Joel Veness  and Guillaume Desjardins  and Andrei A. Rusu  and Kieran Milan  and John Quan  and Tiago Ramalho  and Agnieszka Grabska-Barwinska  and Demis Hassabis  and Claudia Clopath  and Dharshan Kumaran  and Raia Hadsell },
-title = {Overcoming catastrophic forgetting in neural networks},
-journal = {Proceedings of the National Academy of Sciences},
-volume = {114},
-number = {13},
-pages = {3521-3526},
-year = {2017},
-doi = {10.1073/pnas.1611835114},
-URL = {https://www.pnas.org/doi/abs/10.1073/pnas.1611835114},
-eprint = {https://www.pnas.org/doi/pdf/10.1073/pnas.1611835114},
-abstract = {Deep neural networks are currently the most successful machine-learning technique for solving a variety of tasks, including language translation, image classification, and image generation. One weakness of such models is that, unlike humans, they are unable to learn multiple tasks sequentially. In this work we propose a practical solution to train such models sequentially by protecting the weights important for previous tasks. This approach, inspired by synaptic consolidation in neuroscience, enables state of the art results on multiple reinforcement learning problems experienced sequentially. The ability to learn tasks in a sequential fashion is crucial to the development of artificial intelligence. Until now neural networks have not been capable of this and it has been widely thought that catastrophic forgetting is an inevitable feature of connectionist models. We show that it is possible to overcome this limitation and train networks that can maintain expertise on tasks that they have not experienced for a long time. Our approach remembers old tasks by selectively slowing down learning on the weights important for those tasks. We demonstrate our approach is scalable and effective by solving a set of classification tasks based on a hand-written digit dataset and by learning several Atari 2600 games sequentially.}}
-
-@inproceedings{kemker2018measuring,
-  title={Measuring catastrophic forgetting in neural networks},
-  author={Kemker, Ronald and McClure, Marc and Abitino, Angelina and Hayes, Tyler and Kanan, Christopher},
-  booktitle={Proceedings of the AAAI conference on artificial intelligence},
-  volume={32},
-  number={1},
-  year={2018}
-}
-
-@misc{bogwasi2025business,
-  author       = {Bogwasi, Tumisang},
-  title        = {Business Facts: Essential Business Statistics You Should Know in 2025},
-  year         = {2025},
-  url          = {https://www.brimco.io/business-statistics-to-know/},
-  urldate      = {2025-01-19},
-  organization = {Brimco}
-}
-
-@article{dwork2014algorithmic,
-  title={The algorithmic foundations of differential privacy},
-  author={Dwork, Cynthia and Roth, Aaron and others},
-  journal={Foundations and Trends{\textregistered} in Theoretical Computer Science},
-  volume={9},
-  number={3--4},
-  pages={211--407},
-  year={2014},
-  publisher={Now Publishers, Inc.}
-}
-
-@article{idp,
-  author       = {Jordi Soria{-}Comas and
-                  Josep Domingo{-}Ferrer and
-                  David S{\'{a}}nchez and
-                  David Meg{\'{\i}}as},
-  title        = {Individual Differential Privacy: {A} Utility-Preserving Formulation
-                  of Differential Privacy Guarantees},
-  journal      = {CoRR},
-  volume       = {abs/1612.02298},
-  year         = {2016},
-  url          = {http://arxiv.org/abs/1612.02298},
-  eprinttype    = {arXiv},
-  eprint       = {1612.02298},
-  timestamp    = {Fri, 26 May 2023 22:12:10 +0200},
-  biburl       = {https://dblp.org/rec/journals/corr,
-  url = {https://uploads-ssl.webflow.com/60fd4503684b466578c0d307/61138924626a6981ee09caf6_jurassic_tech_paper.pdf}
-/Soria-ComasD0M16.bib},
-  bibsource    = {dblp computer science bibliography, https://dblp.org}
-}
-
-@article{jurassic,
-	title        = {Jurassic-1: Technical Details and Evaluation},
-	author       = {Lieber, Opher and Sharir, Or and Lenz, Barak and Shoham, Yoav},
-	year         = 2021,
-	journal      = {White Paper. AI21 Labs},
-	url = {https://uploads-ssl.webflow.com/60fd4503684b466578c0d307/61138924626a6981ee09caf6_jurassic_tech_paper.pdf}
-}
-
-@article{rae2021gopher,
-  title={Scaling Language Models: Methods, Analysis \& Insights from Training {G}opher},
-  author={Rae, Jack and Borgeaud, Sebastian and Cai, Trevor and Millican, Katie and Hoffmann, Jordan and Song, Francis and Aslanides, John and Henderson, Sarah and Ring, Roman and Young, Susannah and Rutherford, Eliza and Hennigan, Tom and Menick, Jacob and Cassirer, Albin and Powell, Richard and van den Driessche, George and Hendricks, Lisa Anne and Rauh, Maribeth and Huang, Po-Sen and Glaese, Amelia and Welbl, Johannes and Dathathri, Sumanth and Huang, Saffron and Uesato, Jonathan and Mellor, John and Higgins, Irina and Creswell, Antonia and McAleese, Nat and Wu, Amy and Elsen, Erich and Jayakumar, Siddhant and Buchatskaya, Elena and Budden, David and Sutherland, Esme and Simonyan, Karen and Paganini, Michela and Sifre, Laurent and Martens, Lena and Li, Xiang Lorraine and Kuncoro, Adhiguna and Nematzadeh, Aida and Gribovskaya, Elena and Donato, Domenic and Lazaridou, Angeliki and Mensch, Arthur and Lespiau, Jean-Baptiste and Tsimpoukelli, Maria and Grigorev, Nikolai and Fritz, Doug and Sottiaux, Thibault and Pajarskas, Mantas and Pohlen, Toby and Gong, Zhitao and Toyama, Daniel and de Masson d’Autume, Cyprien and Li, Yujia and Terzi, Tayfun and Mikulik, Vladimir and Babuschkin, Igor and Clark, Aidan and de Las Casas, Diego and Guy, Aurelia and Bradbury, James and Johnson, Matthew and Hechtman, Blake and Weidinger, Laura and Gabriel, Iason and Isaac, William and Lockhart, Ed and Osindero, Simon and Rimell, Laura and Dyer, Chris and Vinyals, Oriol and Ayoub, Kareem and Stanway, Jeff and Bennett, Lorrayne and Hassabis, Demis and Kavukcuoglu, Koray and Irving, Geoffrey},
-  journal={arXiv submission},
-  year={2021},
-  url = {https://arxiv.org/abs/2112.11446}
-}
-
-@article{mnist_sota,
-  author       = {Adam Byerly and
-                  Tatiana Kalganova and
-                  Ian Dear},
-  title        = {A Branching and Merging Convolutional Network with Homogeneous Filter
-                  Capsules},
-  journal      = {CoRR},
-  volume       = {abs/2001.09136},
-  year         = {2020},
-  url          = {https://arxiv.org/abs/2001.09136},
-  eprinttype    = {arXiv},
-  eprint       = {2001.09136},
-  timestamp    = {Sat, 23 Jan 2021 01:17:27 +0100},
-  biburl       = {https://dblp.org/rec/journals/corr/abs-2001-09136.bib},
-  bibsource    = {dblp computer science bibliography, https://dblp.org}
-}
-
-@inproceedings{Abadi_2016, series={CCS’16},
-   title={Deep Learning with Differential Privacy},
-   url={http://dx.doi.org/10.1145/2976749.2978318},
-   DOI={10.1145/2976749.2978318},
-   booktitle={Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security},
-   publisher={ACM},
-   author={Abadi, Martin and Chu, Andy and Goodfellow, Ian and McMahan, H. Brendan and Mironov, Ilya and Talwar, Kunal and Zhang, Li},
-   year={2016},
-   month=oct, collection={CCS’16} }
-
-@article{zhao2018federated,
-  doi = {10.48550/ARXIV.1806.00582},
-  
-  url = {https://arxiv.org/abs/1806.00582},
-  
-  author = {Zhao, Yue and Li, Meng and Lai, Liangzhen and Suda, Naveen and Civin, Damon and Chandra, Vikas},
-  
-  keywords = {Machine Learning (cs.LG), Machine Learning (stat.ML), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  
-  title = {Federated Learning with Non-IID Data},
-  
-  publisher = {arXiv},
-  
-  year = {2018},
-  
-  copyright = {arXiv.org perpetual, non-exc,
-  url = {https://arxiv.org/abs/1809.06846}
-lusive license}
-}
-
-
-@article{grover2018mnist,
-  title={MNIST Dataset Classification Utilizing k-NN Classifier with Modified Sliding-window Metric},
-  author={Grover, Divas and Toghi, Behrad},
-  journal={arXiv preprint arXiv:1809.06846},
-  year={2018},
-  url = {https://arxiv.org/abs/1809.06846}
-}
-
-@misc{papernot2018scalableprivatelearningpate,
-      title={Scalable Private Learning with PATE}, 
-      author={Nicolas Papernot and Shuang Song and Ilya Mironov and Ananth Raghunathan and Kunal Talwar and Úlfar Erlingsson},
-      year={2018},
-      eprint={1802.08908},
-      archivePrefix={arXiv},
-      primaryClass={stat.ML},
-      url={https://arxiv.org/abs/1802.08908}, 
-}
-
-@article{10.36227/techrxiv.171837853.31531482/v1, author = {Hou, X. and Wang, X.}, title = {Large language model with federated retrieval-augmented generation for improved knowledge retrieval}, year = {2024}, doi = {10.36227/techrxiv.171837853.31531482/v1},
-  url = {https://www.techrxiv.org/users/793847/articles/1103136-large-language-model-with-federated-retrieval-augmented-generation-for-improved-knowledge-retrieval}
-}
-
-@book{pasquale_2015,
-  title={The Black Box Society},
-  author={Pasquale, Frank},
-  year={2015},
-  publisher={Harvard University Press},
-  url = {https://www.hup.harvard.edu/books/9780674970847}
-}
-
-@article{kaissis_2020,
-  title={Secure, privacy-preserving and federated machine learning in medical imaging},
-  author={Kaissis, Georgios A. and Makowski, Marcus R. and Rückert, Daniel and Braren,  Rickmer F.},
-  journal={Nature Machine Intelligence},
-  volume={2},
-  pages={305-311},
-  year={2020},
-  month = {6},
-  doi = {10.1038/s42256-020-0186-1}
-}
-
-@article{hayek_1945,
-  title={The Use of Knowledge in Society},
-  author={Hayek, Friedrich},
-  journal={The American Economic Review},
-  volume={35},
-  number={4},
-  pages={519-530},
-  year={1945},
-  month = {09}
-}
-
-@article{mccarthy_2020,
-author = {McCarthy, Natasha and Fourniol, Franck},
-year = {2020},
-month = {06},
-pages = {},
-title = {The role of technology in governance: The example of Privacy Enhancing Technologies},
-volume = {2},
-journal = {Data & Policy},
-doi = {10.1017/dap.2020.8}
-}
-
-@article{shamir1979share,
-  title={How to share a secret},
-  author={Shamir, Adi},
-  journal={Communications of the ACM},
-  volume={22},
-  number={11},
-  pages={612--613},
-  year={1979},
-  publisher={ACm New York, NY, USA}
-}
-
-@article{costan2016intel,
-  title={Intel SGX Explained.},
-  author={Costan, Victor and Devadas, Srinivas},
-  journal={IACR Cryptol. ePrint Arch.},
-  volume={2016},
-  number={86},
-  pages={1--118},
-  year={2016}
-}
-
 @article{rubin1993statistical,
   title={Statistical disclosure limitation},
   author={Rubin, Donald B},
@@ -4010,792 +2524,6 @@ doi = {10.1017/dap.2020.8}
   pages={461--468},
   year={1993},
   url = {https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/discussion-statistical-disclosure-limitation.pdf}
-}
-
-@inproceedings{mcmahan2017communication,
-  title={Communication-efficient learning of deep networks from decentralized data},
-  author={McMahan, Brendan and Moore, Eider and Ramage, Daniel and Hampson, Seth and y Arcas, Blaise Aguera},
-  booktitle={Artificial Intelligence and Statistics},
-  pages={1273--1282},
-  year={2017},
-  organization={PMLR}
-}
-
-@inproceedings{goldreich1987towards,
-  title={Towards a theory of software protection and simulation by oblivious RAMs},
-  author={Goldreich, Oded},
-  booktitle={Proceedings of the nineteenth annual ACM symposium on Theory of computing},
-  pages={182--194,
-  url = {https://doi.org/10.1007/978-3-642-19571-6_16}
-},
-  year={1987}
-}
-
-@inproceedings{boneh2011functional,
-  title={Functional encryption: Definitions and challenges},
-  author={Boneh, Dan and Sahai, Amit and Waters, Brent},
-  booktitle={Theory of Cryptography Conference},
-  pages={253--273},
-  year={2011},
-  organization={Springer},
-  url = {https://doi.org/10.1007/978-3-642-19571-6_16}
-}
-
-@book{gentry2009fully,
-  title={A fully homomorphic encryption scheme},
-  author={Gentry, Craig and Boneh, Dan},
-  volume={20},
-  number={9},
-  year={2009},
-  publisher={Stanford university Stanford}
-}
-
-@inproceedings{chase2020signal,
-  title={The Signal private group system and anonymous credentials supporting efficient verifiable encryption},
-  author={Chase, Melissa and Perrin, Trevor and Zaverucha, Greg},
-  booktitle={Proceedings of the 2020 ACM SIGSAC Conference on Computer and Communications Security},
-  pages={1445--1459},
-  year={2020}
-}
-
-@article{laurie2014certificate,
-  title={Certificate transparency},
-  author={Laurie, Ben},
-  journal={Communications of the ACM},
-  volume={57},
-  number={10},
-  pages={40--46},
-  year={2014},
-  publisher={ACM New York, NY, USA}
-}
-
-@inproceedings{Yao1982ProtocolsFS,
-  title={Protocols for secure computations},
-  author={A. Yao},
-  booktitle={FOCS 1982},
-  year={1982}
-}
-
-@inproceedings{bogdanov2014input,
-  title={From input private to universally composable secure multi-party computation primitives},
-  author={Bogdanov, Dan and Laud, Peeter and Laur, Sven and Pullonen, Pille},
-  booktitle={2014 IEEE 27th Computer Security Foundations Symposium},
-  pages={184--198},
-  year={2014},
-  organization={IEEE},
-  url = {https://doi.org/10.1109/CSF.2014.21}
-}
-
-@misc{doctorow_2020, title={https://www.youtube.com/watch?v=gbYXBJOFgeI},
-author={Doctorow, Cory},
-year={2020}
-}
-
-@article{gal2019competitive,
-  title={The Competitive Effects of the GDPR},
-  author={Gal, Michal S and Aviv, Oshrit},
-  journal={Journal of Competition Law \& Economics},
-  year={2019}
-}
-
-@book{ethics_of_big_data,
-author = {Davis, Kord},
-title = {Ethics of Big Data: Balancing Risk and Innovation},
-year = {2012},
-isbn = {1449311792},
-publisher = {O'Reilly Media, Inc.},
-abstract = { Ethics of Big Data author Kord Davis remembers exactly why he decided to write his book. "I found myself attending dozens of working meetings where a big data technologist would suggest a new product feature that was available using big data technology and having other folks in the room begin the thats-creepy-no-its-not debate," Davis says. "Those debates would end with no decision or action being agreed upon. I realized that in the absence of a common framework and vocabulary for discussion, people revert to their own moral code." Davis feels that his concise book is timely because, he says, "Big data is literally changing what we value and how we value things. "What I call big data's 'forcing function' is the result of the volume, velocity, and variety of big datas growth. Touching nearly all aspects of our lives, we are just now beginning to understand how it will influence our values and the meaning of words like identity, privacy, ownership, and reputation." And what we don't know can most definitely hurt us. "Individuals and organizations can suffer direct harm as a result of information being used in ways that it wasnt intended," Davis cautions. "This book addresses how to balance the benefits of big data innovation with the risk of harm from,
-  url = {https://doi.org/10.1371/journal.pbio.1002275}
-unintended consequences."}
-}
-
-@article{ascoli2015sharing,
-  title={Sharing neuron data: carrots, sticks, and digital records},
-  author={Ascoli, Giorgio A},
-  journal={PLoS Biol},
-  volume={13},
-  number={10},
-  pages={e1002275},
-  year={2015},
-  publisher={Public Library of Science},
-  url = {https://doi.org/10.1371/journal.pbio.1002275}
-}
-
-@article{ascoli2017win,
-  title={Win--win data sharing in neuroscience},
-  author={Ascoli, Giorgio A and Maraver, Patricia and Nanda, Sumit and Polavaram, Sridevi and Arma{\~n}anzas, Rub{\'e}n},
-  journal={Nature methods},
-  volume={14},
-  number={2},
-  pages={112--116},
-  year={2017},
-  publisher={Nature Publishing Group}
-}
-
-@article{data_sharing_doesnt_happen,
-  title={Data sharing: Why it doesn’t happen},
-  author={Gould, Julie},
-  journal={Nature Jobs},
-  howpublished = {\url{https://web.archive.org/web/20210421105442/http://blogs.nature.com/naturejobs/2015/09/21/data-sharing-why-it-doesnt-happen/}},
-  year={2015},
-  publisher={Nature Publishing Group}}
-  
- @article{neff2013big,
-  title={Why big data won't cure us},
-  author={Neff, Gina},
-  journal={Big data},
-  volume={1},
-  number={3},
-  pages={117--123},
-  year={2013},
-  publisher={Mary Ann Liebert, Inc. 140 Huguenot Street, 3rd Floor New Rochelle, NY 10801 USA}
-}
-
-@misc{fatml,
-  title={Principles for accountable algorithms and a social impact statement for algorithms. Online: https://www. fatml. org/resources/principles-for-accountable-algorithms},
-  author={Diakopoulos, N and Friedler, S and Arenas, M and Barocas, S and Hay, M and Howe, B and Jagadish, H and Unsworth, K and Sahuguet, A and Venkatasubramanian, S and others},
-  year={2017},
-  publisher={Accessed}
-}
-
-
-@article{sovrin,
-  title={The Sovrin Network and Zero Knowledge Proofs},
-  author={{Sovrin Foundation}},
-  journal={sovrin.org},
-  year={2018},
-  url={https://sovrin.org/the-sovrin-network-and-zero-knowledge-proofs/}
-}
-
-@inproceedings{loftus2011secure,
-  title={Secure outsourced computation},
-  author={Loftus, Jake and Smart, Nigel P},
-  booktitle={International Conference on Cryptology in Africa},
-  pages={1--20},
-  year={2011},
-  organization={Springer},
-  url = {https://doi.org/10.1007/978-3-642-21969-6_1}
-}
-
-@article{feige1988zero,
-  title={Zero-knowledge proofs of identity},
-  author={Feige, Uriel and Fiat, Amos and Shamir, Adi},
-  journal={Journal of cryptology},
-  volume={1},
-  number={2},
-  pages={77--94},
-  year={1988},
-  publisher={Springer}
-}
-
-@article{goldwasser1989knowledge,
-  title={The knowledge complexity of interactive proof systems},
-  author={Goldwasser, Shafi and Micali, Silvio and Rackoff, Charles},
-  journal={SIAM Journal on computing},
-  volume={18},
-  number={1},
-  pages={186--208},
-  year={1989},
-  publisher={SIAM}
-}
-
-@article{dwork2014algorithmic,
-  title={The algorithmic foundations of differential privacy.},
-  author={Dwork, Cynthia and Roth, Aaron and others},
-  journal={Foundations and Trends in Theoretical Computer Science},
-  volume={9},
-  number={3-4},
-  pages={211--407},
-  year={2014}
-}
-
-
-@book{un_handbook, title={https://docs.google.com/document/d/1GYu6UJI81jR8LgooXVDsYk1s6FlM-SbOvo3oLHglFhY/edit#heading=h.k9fcam5cpoh7},
-author={Craddock, Mark and Archer, David and Bogdanov, Dan and Gascon, Adria and Balle, Borja and Laine, Kim and Trask, Andrew and Mariana Raykova and Jug, Matjaz and McLellan,  robert and Jansen,  Ronald and Ohrimenko, Olga and Wardly, Simon and Lauter, Kristin and Smart, Nigel and Sharan, Aalekh and Saxena, Ira and Wright, Rebecca and Garcia, Eddie and Wall, Andy},
-year={2018}}
-
-@article{stadler_2020,
-  author = {Stadler, William},
-  month = {09},
-  title = {Risks of Privacy-Enhancing Technologies: Complexity and Implications of Differential Privacy in the Context of Cybercrime},
-  doi = {10.5772/intechopen.92752},
-  url = {https://www.intechopen.com/books/security-and-privacy-from-a-legal-ethical-and-technical-perspective/risks-of-privacy-enhancing-technologies-complexity-and-implications-of-differential-privacy-in-the-c},
-  urldate = {2020-11-25},
-  year = {2020},
-  journal = {Security and Privacy From a Legal, Ethical, and Technical Perspective}
-}
-
-@misc{a2019_un,
-  title = {UN Handbook on Privacy-Preserving Computation Techniques},
-  author = {Craddock, Mark and Archer, David and Bogdanov, Dan and Gascon, Adria and Balle, Borja and Laine, Kim and Trask, Andrew and Raykova, Mariana and Jug, Matjaz and McLellan, Robert and Jansen, Ronald and Ohrimenko, Olga and Wardly, Simon and Lauter, Kristin and Smart, Nigel and Sharan, Aalekh and Saxena, Ira and Wright, Rebecca and Garcia, Eddie and Wall, Andy},
-  url = {https://arxiv.org/abs/2301.06167},
-  urldate = {2020-11-25},
-  year = {2019},
-  organization = {United Nations}
-}
-
-@article{kaaniche_2020,
-  author = {Kaaniche, Nesrine and Laurent, Maryline and Belguith, Sana},
-  month = {12},
-  pages = {102807},
-  title = {Privacy enhancing technologies for solving the privacy-personalization paradox: Taxonomy and survey},
-  doi = {10.1016/j.jnca.2020.102807},
-  url = {https://www.sciencedirect.com/science/article/abs/pii/S1084804520302794?dgcid=rss_sd_all},
-  urldate = {2020-11-25},
-  volume = {171},
-  year = {2020},
-  journal = {Journal of Network and Computer Applications}
-}
-
-@article{willemson_2020,
-  author = {Willemson, Jan},
-  pages = {111-121},
-  title = {How Not to Use a Privacy-Preserving Computation Platform: Case Study of a Voting Application},
-  doi = {10.1007/978-3-030-42048-2_8},
-  url = {https://link.springer.com/chapter/10.1007%2F978-3-030-42048-2_8},
-  urldate = {2020-11-25},
-  volume = { 11980},
-  year = {2020},
-  journal = {Computer Security}
-}
-
-@misc{dangawan_2018_using,
-  author = {Dang-awan, R. and Piscos, J. A. and Chua, R. B.},
-  month = {07},
-  pages = {1–7},
-  title = {Using Sharemind as a Tool to Develop an Internet Voting System with Secure Multiparty Computation},
-  doi = {10.1109/IISA.2018.8633690},
-  url = {https://ieeexplore.ieee.org/document/8633690},
-  urldate = {2020-11-25},
-  year = {2018},
-  organization = {IEEE Xplore}
-}
-
-@article{stadler_2020_risks,
-  author = {Stadler, William},
-  month = {09},
-  title = {Risks of Privacy-Enhancing Technologies: Complexity and Implications of Differential Privacy in the Context of Cybercrime},
-  doi = {10.5772/intechopen.92752},
-  url = {https://www.intechopen.com/books/security-and-privacy-from-a-legal-ethical-and-technical-perspective/risks-of-privacy-enhancing-technologies-complexity-and-implications-of-differential-privacy-in-the-c},
-  urldate = {2020-11-25},
-  year = {2020},
-  journal = {Security and Privacy From a Legal, Ethical, and Technical Perspective}
-}
-
-@misc{a2019_un,
-  title = {UN Handbook on Privacy-Preserving Computation Techniques},
-  author = {Craddock, Mark and Archer, David and Bogdanov, Dan and Gascon, Adria and Balle, Borja and Laine, Kim and Trask, Andrew and Raykova, Mariana and Jug, Matjaz and McLellan, Robert and Jansen, Ronald and Ohrimenko, Olga and Wardly, Simon and Lauter, Kristin and Smart, Nigel and Sharan, Aalekh and Saxena, Ira and Wright, Rebecca and Garcia, Eddie and Wall, Andy},
-  url = {https://arxiv.org/abs/2301.06167},
-  urldate = {2020-11-25},
-  year = {2019},
-  organization = {United Nations}
-}
-
-@article{kaaniche_2020_privacy,
-  author = {Kaaniche, Nesrine and Laurent, Maryline and Belguith, Sana},
-  month = {12},
-  pages = {102807},
-  title = {Privacy enhancing technologies for solving the privacy-personalization paradox: Taxonomy and survey},
-  doi = {10.1016/j.jnca.2020.102807},
-  url = {https://www.sciencedirect.com/science/article/abs/pii/S1084804520302794?dgcid=rss_sd_all},
-  urldate = {2020-11-25},
-  volume = {171},
-  year = {2020},
-  journal = {Journal of Network and Computer Applications}
-}
-
-@article{willemson_2020_how,
-  author = {Willemson, Jan},
-  pages = {111-121},
-  title = {How Not to Use a Privacy-Preserving Computation Platform: Case Study of a Voting Application},
-  doi = {10.1007/978-3-030-42048-2_8},
-  url = {https://link.springer.com/chapter/10.1007%2F978-3-030-42048-2_8},
-  urldate = {2020-11-25},
-  volume = { 11980},
-  year = {2020},
-  journal = {Computer Security}
-}
-
-@misc{dangawan_2018_using,
-  author = {Dang-awan, R. and Piscos, J. A. and Chua, R. B.},
-  month = {07},
-  pages = {1–7},
-  title = {Using Sharemind as a Tool to Develop an Internet Voting System with Secure Multiparty Computation},
-  doi = {10.1109/IISA.2018.8633690},
-  url = {https://ieeexplore.ieee.org/document/8633690},
-  urldate = {2020-11-25},
-  year = {2018},
-  organization = {IEEE Xplore}
-}
-
-@article{nissenbaum_2004_privacy,
-  author = {Nissenbaum, Helen},
-  title = {PRIVACY AS CONTEXTUAL INTEGRITY},
-  url = {https://crypto.stanford.edu/portia/papers/RevnissenbaumDTP31.pdf},
-  year = {2004},
-  journal = {WASHINGTON LAW REVIEW}
-}
-
-@book{helenfaynissenbaum_2010_privacy,
-  author = {Helen Fay Nissenbaum},
-  publisher = {Stanford Law Books},
-  title = {Privacy in context : technology, policy, and the integrity of social life},
-  year = {2010}
-}
-
-@article{fecher_2015_what,
-  author = {Fecher, Benedikt and Friesike, Sascha and Hebing, Marcel},
-  editor = {Phillips, Robert S.},
-  month = {02},
-  pages = {e0118053},
-  title = {What Drives Academic Data Sharing?},
-  doi = {10.1371/journal.pone.0118053},
-  urldate = {2019-11-22},
-  volume = {10},
-  year = {2015},
-  journal = {PLOS ONE}
-}
-
-@article{burgelman_2019_open,
-  author = {Burgelman, Jean-Claude and Pascu, Corina and Szkuta, Katarzyna and Von Schomberg, Rene and Karalopoulos, Athanasios and Repanas, Konstantinos and Schouppe, Michel},
-  month = {12},
-  title = {Open Science, Open Data, and Open Scholarship: European Policies to Make Science Fit for the Twenty-First Century},
-  doi = {10.3389/fdata.2019.00043},
-  urldate = {2020-03-27},
-  volume = {2},
-  year = {2019},
-  journal = {Frontiers in Big Data}
-}
-
-@article{cohen_1986_spheres,
-  author = {Cohen, Joshua and Walzer, Michael},
-  month = {08},
-  pages = {457},
-  title = {Spheres of Justice: A Defense of Pluralism and Equality.},
-  doi = {10.2307/2026330},
-  urldate = {2019-11-02},
-  volume = {83},
-  year = {1986},
-  journal = {The Journal of Philosophy}
-}
-
-@book{veliz_2020_privacy,
-  author = {Véliz, Carissa},
-  publisher = {Transworld Digital},
-  title = {Privacy is power : why and how you should take back control of your data},
-  year = {2020}
-}
-
-@article{benthall_2017_contextual,
-  author = {Benthall, Sebastian and Gürses, Seda and Nissenbaum, Helen},
-  pages = {1-69},
-  title = {Contextual Integrity through the Lens of Computer Science},
-  doi = {10.1561/3300000016},
-  urldate = {2019-10-26},
-  volume = {2},
-  year = {2017},
-  journal = {Foundations and Trends® in Privacy and Security}
-}
-
-@article{mulligan_2016_privacy,
-  author = {Mulligan, Deirdre K. and Koopman, Colin and Doty, Nick},
-  month = {12},
-  pages = {20160118},
-  title = {Privacy is an essentially contested concept: a multi-dimensional analytic for mapping privacy},
-  doi = {10.1098/rsta.2016.0118},
-  url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5124066/},
-  urldate = {2020-01-24},
-  volume = {374},
-  year = {2016},
-  journal = {Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences}
-}
-
-@article{barth_2006_privacy,
-  author = {Barth, A. and Datta, A. and Mitchell, J.C. and Nissenbaum, H.},
-  title = {Privacy and contextual integrity: framework and applications},
-  doi = {10.1109/sp.2006.32},
-  urldate = {2020-11-25},
-  year = {2006},
-  journal = {2006 IEEE Symposium on Security and Privacy (S&P'06)}
-}
-
-@book{solove_2010_understanding,
-  author = {Solove, Daniel J},
-  publisher = {Harvard University Press},
-  title = {Understanding privacy},
-  year = {2010}
-}
-
-@misc{nissenbaum_2018_origin,
-  author = {Nissenbaum, Helen and  Benthall,  Sebastian and Datta, Anupam and  Tschantz, Michael Carl and Mardziel, Piot },
-  title = {ORIGIN PRIVACY -PROTECTING PRIVACY IN THE BIG-DATA ERA NEW YORK UNIVERSITY APPROVED FOR PUBLIC RELEASE; DISTRIBUTION UNLIMITED  AIR FORCE MATERIEL COMMAND},
-  url = {https://apps.dtic.mil/dtic/tr/fulltext/u2/1057995.pdf},
-  year = {2018}
-}
-
-@misc{dietrich_2020_the,
-  author = {Dietrich, Daniel   and  Gray, Jonathan and McNamara, Tim and Poikola, Antti  and Pollock, Rufus  and Tait, Julian  and  Zijlstra, Ton},
-  title = {The Open Data Handbook},
-  url = {http://opendatahandbook.org/},
-  year = {2020},
-  organization = {opendatahandbook.org}
-}
-
-@misc{theopendataresearchnetwork_2020_the,
-  author = {The Open Data Research Network},
-  title = {The Open Data Research network | Open Data Research Network},
-  url = {http://www.opendataresearch.org/},
-  urldate = {2020-11-25},
-  year = {2020},
-  organization = {www.opendataresearch.org}
-}
-
-@misc{grynoch_2020_resource,
-  author = {Grynoch, Tess},
-  title = {Resource Guides: Research Data Management Resources: Open and Publicly Available Data},
-  url = {https://libraryguides.umassmed.edu/research_data_management_resources/open_public_data},
-  urldate = {2020-11-25},
-  year = {2020},
-  organization = {libraryguides.umassmed.edu}
-}
-
-@misc{europeancommission_facts,
-  author = {European Commission },
-  title = {Facts and Figures for open research data},
-  url = {https://ec.europa.eu/info/research-and-innovation/strategy/goals-research-and-innovation-policy/open-science/open-science-monitor/facts-and-figures-open-research-data_en},
-  urldate = {2020-11-25},
-  organization = {European Commission - European Commission}
-}
-
-@article{europeandataportal_2020_open,
-  author = {European Data Portal },
-  title = {Open Data and Privacy 1 Analytical Report 3: Open Data and Privacy Analytical Report n3},
-  doi = {10.2830/532195},
-  url = {https://www.europeandataportal.eu/sites/default/files/open_data_and_privacy_v1_final_clean.pdf},
-  urldate = {2020-11-25},
-  year = {2020},
-  journal = {Luxembourg: Publications Office of the European Union, 2020 © European Union, 2020}
-}
-
-@article{kobayashi_2018_the,
-  author = {Kobayashi, Shinji and Kane, Thomas and Paton, Chris},
-  month = {04},
-  pages = {041-047},
-  title = {The Privacy and Security Implications of Open Data in Healthcare},
-  doi = {10.1055/s-0038-1641201},
-  urldate = {2020-01-27},
-  volume = {27},
-  year = {2018},
-  journal = {Yearbook of Medical Informatics}
-}
-
-@article{alieldin_2018_a,
-  author = {Ali-Eldin, Amr and Zuiderwijk, Anneke and Janssen, Marijn},
-  pages = {186-201},
-  title = {A Privacy Risk Assessment Model for Open Data},
-  doi = {10.1007/978-3-319-78428-1_10},
-  urldate = {2020-11-25},
-  year = {2018},
-  journal = {Lecture Notes in Business Information Processing}
-}
-
-@misc{green_2017_open,
-  author = {Green, Ben and Cunningham, Gabe and Ekblaw, Ariel and Kominers, Paul and Linzer, Andrew and Crawford, Susan P.},
-  month = {02},
-  title = {Open Data Privacy},
-  url = {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2924751},
-  urldate = {2020-11-25},
-  year = {2017},
-  organization = {papers.ssrn.com}
-}
-
-@article{veliz_2018_protecting,
-  author = {Véliz, Carissa and Grunewald, Philipp},
-  month = {07},
-  pages = {702-704},
-  title = {Protecting data privacy is key to a smart energy future},
-  doi = {10.1038/s41560-018-0203-3},
-  urldate = {2020-04-29},
-  volume = {3},
-  year = {2018},
-  journal = {Nature Energy}
-}
-
-@article{stankovic_2016_measuring,
-  author = {Stankovic, L. and Stankovic, V. and Liao, J. and Wilson, C.},
-  month = {12},
-  pages = {1565–1580},
-  title = {Measuring the energy intensity of domestic activities from smart meter data},
-  doi = {10.1016/j.apenergy.2016.09.087},
-  url = {https://www.sciencedirect.com/science/article/pii/S0306261916313897},
-  urldate = {2020-04-05},
-  volume = {183},
-  year = {2016},
-  journal = {Applied Energy}
-}
-
-@article{capraro_2018_grand,
-  author = {Capraro, Valerio and Perc, Matjaž},
-  month = {10},
-  title = {Grand Challenges in Social Physics: In Pursuit of Moral Behavior},
-  doi = {10.3389/fphy.2018.00107},
-  urldate = {2020-09-23},
-  volume = {6},
-  year = {2018},
-  journal = {Frontiers in Physics}
-}
-
-@article{capraro_2014_heuristics,
-  author = {Capraro, Valerio and Jordan, Jillian J. and Rand, David G.},
-  month = {10},
-  pages = {6790},
-  title = {Heuristics guide the implementation of social preferences in one-shot Prisoner's Dilemma experiments},
-  doi = {10.1038/srep06790},
-  url = {https://pubmed.ncbi.nlm.nih.gov/25348470/},
-  urldate = {2020-11-25},
-  volume = {4},
-  year = {2014},
-  journal = {Scientific Reports}
-}
-
-@article{heuer_2019_cooperation,
-  author = {Heuer, Leonie and Orland, Andreas},
-  month = {07},
-  pages = {182142},
-  title = {Cooperation in the Prisoner’s Dilemma: an experimental comparison between pure and mixed strategies},
-  doi = {10.1098/rsos.182142},
-  urldate = {2020-10-04},
-  volume = {6},
-  year = {2019},
-  journal = {Royal Society Open Science}
-}
-
-@article{santos_2011_coevolution,
-  author = {Santos, Francisco C. and Pacheco, Jorge M. and Skyrms, Brian},
-  month = {04},
-  pages = {30-35},
-  title = {Co-evolution of pre-play signaling and cooperation},
-  doi = {10.1016/j.jtbi.2011.01.004},
-  url = {http://atpgroup.org/jmp/PDFs/136.pdf},
-  urldate = {2020-11-25},
-  volume = {274},
-  year = {2011},
-  journal = {Journal of Theoretical Biology}
-}
-
-@misc{ghoneim_2007_information,
-  author = {Ghoneim, Ayman and Abbass, Hussein and Barlow, Michael},
-  title = {Information Sharing in the Iterated Prisoner's Dilemma Game},
-  url = {http://vigir.missouri.edu/~gdesouza/Research/Conference_CDs/IEEE_SSCI_2007/CI%20and%20Games%20-%20CIG%202007/data/papers/CIG/S001P008.pdf},
-  urldate = {2020-11-25},
-  year = {2007}
-}
-
-@misc{angwin_2020_privacy,
-  author = {Angwin, Julia},
-  title = {Privacy Tools: Opting Out from Data Brokers},
-  url = {https://juliaangwin.com/privacy-tools-opting-out-from-data-brokers/},
-  urldate = {2020-11-25},
-  year = {2020},
-  organization = {Julia Angwin}
-}
-
-@article{fearon1995rationalist,
-  title={Rationalist explanations for war},
-  author={Fearon, James D},
-  journal={International organization},
-  volume={49},
-  number={3},
-  pages={379--414},
-  year={1995},
-  publisher={Cambridge University Press}
-}
-
-@article{ssi,
-author = {Chaum, David},
-title = {Security without Identification: Transaction Systems to Make Big Brother Obsolete},
-year = {1985},
-issue_date = {Oct. 1985},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-volume = {28},
-number = {10},
-issn = {0001-0782},
-url = {https://doi.org/10.1145/4372.4373},
-doi = {10.1145/4372.4373},
-abstract = {The large-scale automated transaction systems of the near future can be designed to protect the privacy and maintain the security of both individuals and organizations.},
-journal = {Commun. ACM},
-month = oct,
-pages = {1030–1044},
-numpages = {15}
-}
-
-
-
-@article{glaser_2014_a,
-  author = {Glaser, Alexander and Barak, Boaz and Goldston, Robert J.},
-  month = {06},
-  pages = {497-502},
-  title = {A zero-knowledge protocol for nuclear warhead verification},
-  doi = {10.1038/nature13457},
-  urldate = {2020-09-15},
-  volume = {510},
-  year = {2014},
-  journal = {Nature}
-}
-
-@book{schneier_2015_data,
-  author = {Schneier, Bruce},
-  publisher = {W.W. Norton & Company},
-  title = {Data and Goliath : the hidden battles to collect your data and control your world},
-  year = {2015}
-}
-
-@article{oneil_2017_life,
-  author = {O'Neil, Cathy},
-  month = {01},
-  pages = {137–137},
-  title = {Life in the age of the algorithm},
-  doi = {10.1126/science.aal2885},
-  url = {https://science.sciencemag.org/content/355/6321/137/tab-article-info},
-  urldate = {2020-11-25},
-  volume = {355},
-  year = {2017},
-  journal = {Science}
-}
-
-@book{zuboff_2019_the,
-  author = {Zuboff, Shoshana},
-  publisher = {Publicaffairs},
-  title = {The age of surveillance capitalism : the fight for a human future at the new frontier of power},
-  year = {2019}
-}
-
-@article{huang_2007_credit,
-  author = {Huang, Cheng-Lung and Chen, Mu-Chen and Wang, Chieh-Jen},
-  month = {11},
-  pages = {847-856},
-  title = {Credit scoring with a data mining approach based on support vector machines},
-  doi = {10.1016/j.eswa.2006.07.007},
-  urldate = {2019-05-02},
-  volume = {33},
-  year = {2007},
-  journal = {Expert Systems with Applications}
-}
-
-@misc{kambal_2013_credit,
-  author = {Kambal, E. and Osman, I. and Taha, M. and Mohammed, N. and Mohammed, S.},
-  month = {08},
-  pages = {378–383},
-  title = {Credit scoring using data mining techniques with particular reference to Sudanese banks},
-  doi = {10.1109/ICCEEE.2013.6633966},
-  url = {https://ieeexplore.ieee.org/document/6633966},
-  urldate = {2020-11-25},
-  year = {2013},
-  organization = {IEEE Xplore}
-}
-
-@article{fearon_2003_ethnicity,
-  author = {Fearon, James D. and Laitin, David D.},
-  pages = {75–90},
-  title = {Ethnicity, Insurgency, and Civil War},
-  url = {https://www.jstor.org/stable/3118222},
-  urldate = {2020-11-25},
-  volume = {97},
-  year = {2003},
-  journal = {The American Political Science Review}
-}
-
-@article{fearon1995rationalist,
-  title={Rationalist explanations for war},
-  author={Fearon, James D},
-  journal={International organization},
-  volume={49},
-  number={3},
-  pages={379--414},
-  year={1995},
-  publisher={Cambridge University Press}
-}
-
-@article{wang_2020_selfsovereign,
-  author = {Wang, Fennie and De Filippi, Primavera},
-  month = {01},
-  title = {Self-Sovereign Identity in a Globalized World: Credentials-Based Identity Systems as a Driver for Economic Inclusion},
-  doi = {10.3389/fbloc.2019.00028},
-  urldate = {2020-02-20},
-  volume = {2},
-  year = {2020},
-  journal = {Frontiers in Blockchain}
-}
-
-@misc{melara_2015_open,
-  author = {Melara, Marcela and Blankstein, Aaron and University, Princeton and Bonneau, Joseph and Felten, Edward and Freedman, Michael},
-  month = {08},
-  title = {Open access to the Proceedings of the 24th USENIX Security Symposium is sponsored by USENIX CONIKS: Bringing Key Transparency to End Users CONIKS: Bringing Key Transparency to End Users},
-  url = {https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-melara.pdf},
-  urldate = {2020-11-25},
-  year = {2015}
-}
-
-@article{rocher_2019,
-  author = {Rocher, Luc and Hendrickx, Julien M. and de Montjoye, Yves-Alexandre},
-  month = {07},
-  title = {Estimating the success of re-identifications in incomplete datasets using generative models},
-  doi = {10.1038/s41467-019-10933-3},
-  volume = {10},
-  year = {2019},
-  journal = {Nature Communications},
-  url = {https://doi.org/10.1038/s41467-019-10933-3}
-}
-
-@inproceedings{sienkiewicz2025data,
-  title={From data silos to data mesh: a case study in financial data architecture},
-  author={Sienkiewicz, Mariusz},
-  booktitle={International Conference on Database and Expert Systems Applications},
-  pages={3--20},
-  year={2025},
-  organization={Springer},
-  url = {https://doi.org/10.1007/978-3-032-02049-9_1}
-}
-
-@article{scott2021coordinating,
-  title={Coordinating government silos: challenges and opportunities},
-  author={Scott, Ian and Gong, Ting},
-  journal={Global Public Policy and Governance},
-  volume={1},
-  number={1},
-  pages={20--38},
-  year={2021},
-  publisher={Springer},
-  url = {https://doi.org/10.1007/s43508-021-00004-z}
-}
-
-@article{grynbaum2023times,
-  author = {Grynbaum, Michael M. and Mac, Ryan},
-  title = {The Times Sues OpenAI and Microsoft Over A.I. Use of Copyrighted Work},
-  journal = {The New York Times},
-  year = {2023},
-  month = {December},
-  day = {27},
-  url = {https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html},
-  urldate = {2025-10-19}
-}
-@book{cummings2017democracy,
-  title={Democracy of sound: Music piracy and the remaking of American copyright in the twentieth century},
-  author={Cummings, Alex Sayf},
-  year={2017},
-  publisher={Oxford University Press}
-}
-
-@article{shu2020combating,
-  title={Combating disinformation in a social media age},
-  author={Shu, Kai and Bhattacharjee, Amrita and Alatawi, Faisal and Nazer, Tahora H and Ding, Kaize and Karami, Mansooreh and Liu, Huan},
-  journal={Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery},
-  volume={10},
-  number={6},
-  pages={e1385},
-  year={2020},
-  publisher={Wiley Online Library}
 }
 
 @article{dunbar2011many,
@@ -4845,7 +2573,6 @@ numpages = {15}
  year = {1992}
 }
 
-
 @article{burt2003social,
   title={The social structure of competition},
   author={Burt, Ronald S},
@@ -4856,13 +2583,6 @@ numpages = {15}
   year={2003},
   publisher={Oxford University Press New York, NY},
   url = {https://doi.org/10.1093/oso/9780195159509.003.0006}
-}
-
-@techreport{elsea2006protection,
-  title={The protection of classified information: The legal framework},
-  author={Elsea, Jennifer K},
-  year={2006},
-  url = {https://sgp.fas.org/crs/secrecy/RS21900.pdf}
 }
 
 @InCollection{sep-truth-pragmatic,
@@ -4886,7 +2606,6 @@ numpages = {15}
   year={1993},
   publisher={Cambridge University Press}
 }
-
 
 @inproceedings{10.1145/3524458.3548488,
 author = {Wolf, Gunnar and Ortega-Arjona, Jorge Luis},
@@ -4951,14 +2670,6 @@ series = {GoodIT '22}
   publisher={HeinOnline}
 }
 
-@inproceedings{backstrom2012four,
-  title={Four degrees of separation},
-  author={Backstrom, Lars and Boldi, Paolo and Rosa, Marco and Ugander, Johan and Vigna, Sebastiano},
-  booktitle={Proceedings of the 4th annual ACM Web science conference},
-  pages={33--42},
-  year={2012}
-}
-
 @article{lang2013word,
   title={Word of mouth: what we know and what we have yet to learn},
   author={Lang, Bodo and Hyde, Kenneth F},
@@ -4999,7 +2710,6 @@ series = {GoodIT '22}
   publisher={Elsevier}
 }
 
-
 @book{williamson1985economic,
   title={The Economic Institutions of Capitalism: Firms, Markets, Relational Contracting},
   author={Williamson, Oliver E},
@@ -5026,10 +2736,6 @@ series = {GoodIT '22}
   publisher={" O'Reilly Media, Inc."}
 }
 
-
-TODO: CHECK / PLACEHOLDER
-
-% Scaling laws and AI centralization
 @article{kaplan2020scaling,
   title={Scaling laws for neural language models},
   author={Kaplan, Jared and McCandlish, Sam and Henighan, Tom and Brown, Tom B and Chess, Benjamin and Child, Rewon and Gray, Scott and Radford, Alec and Wu, Jeffrey and Amodei, Dario},
@@ -5058,7 +2764,6 @@ TODO: CHECK / PLACEHOLDER
   year={2019}
 }
 
-% China and authoritarian AI
 @article{ding2018deciphering,
   title={Deciphering China's AI dream},
   author={Ding, Jeffrey},
@@ -5107,22 +2812,10 @@ TODO: CHECK / PLACEHOLDER
   publisher={Princeton University Press}
 }
 
-% Privacy technologies and adoption
 @article{tang2017privacy,
   title={Privacy loss in Apple's implementation of differential privacy on MacOS 10.12},
   author={Tang, Jun and Korolova, Aleksandra and Bai, Xiaolong and Wang, Xueqiang and Wang, XiaoFeng},
-  journal={arXiv preprint arXiv:1709.02753,
-  url = {https://proceedings.mlr.press/v54/mcmahan17a.html}
-},
-  year={2017}
-}
-
-@article{mcmahan2017communication,
-  title={Communication-efficient learning of deep networks from decentralized data},
-  author={McMahan, Brendan and Moore, Eider and Ramage, Daniel and Hampson, Seth and y Arcas, Blaise Aguera},
-  journal={Proceedings of the 20th International Conference on Artificial Intelligence and Statistics},
-  pages={1273--1282},
-  year={2017},
+  journal={arXiv preprint arXiv:1709.02753},
   url = {https://proceedings.mlr.press/v54/mcmahan17a.html}
 }
 
@@ -5178,12 +2871,12 @@ TODO: CHECK / PLACEHOLDER
   year={2010}
 }
 
-% Democracy, public opinion, media
 @book{bernays1928propaganda,
-  title={Propaganda},
-  author={Bernays, Edward L},
-  year={1928},
-  publisher={Ig publishing},
+  author = {Bernays, Edward L.},
+  title = {Propaganda},
+  year = {1928},
+  publisher = {Horace Liveright},
+  address = {New York},
   url = {https://archive.org/details/EdwardBernaysPropaganda1928Liveright}
 }
 
@@ -5286,7 +2979,6 @@ TODO: CHECK / PLACEHOLDER
   publisher={Oxford University Press}
 }
 
-% Surveillance capitalism
 @book{zuboff2019age,
   title={The age of surveillance capitalism: The fight for a human future at the new frontier of power},
   author={Zuboff, Shoshana},
@@ -5308,7 +3000,6 @@ TODO: CHECK / PLACEHOLDER
   publisher={Basic Books}
 }
 
-% Post-truth, disinformation, content moderation
 @book{kakutani2018death,
   title={The death of truth: Notes on falsehood in the age of Trump},
   author={Kakutani, Michiko},
@@ -5380,7 +3071,6 @@ TODO: CHECK / PLACEHOLDER
   publisher={NYU Press}
 }
 
-% AI dangers and critique
 @article{bender2021dangers,
   title={On the dangers of stochastic parrots: Can language models be too big?},
   author={Bender, Emily M and Gebru, Timnit and McMillan-Major, Angelina and Shmitchell, Shmargaret},
@@ -5410,7 +3100,6 @@ TODO: CHECK / PLACEHOLDER
   publisher={Springer}
 }
 
-% Internet history and platforms
 @article{licklider1968computer,
   title={The computer as a communication device},
   author={Licklider, Joseph Carl Robnett and Taylor, Robert W},
@@ -5480,13 +3169,6 @@ TODO: CHECK / PLACEHOLDER
   publisher={Oxford University Press}
 }
 
-@book{pariser2011filter,
-  title={The filter bubble: What the Internet is hiding from you},
-  author={Pariser, Eli},
-  year={2011},
-  publisher={Penguin UK}
-}
-
 @article{tufekci2018youtube,
   title={YouTube, the great radicalizer},
   author={Tufekci, Zeynep},
@@ -5510,7 +3192,6 @@ TODO: CHECK / PLACEHOLDER
   publisher={Basic Books}
 }
 
-% Information overload and cognition
 @article{eppler2004managing,
   title={Managing information quality: Increasing the value of information in knowledge-intensive products and processes},
   author={Eppler, Martin J},
@@ -5528,7 +3209,6 @@ TODO: CHECK / PLACEHOLDER
   year={1956}
 }
 
-% Citizen science
 @article{haklay2013citizen,
   title={Citizen science and volunteered geographic information: Overview and typology of participation},
   author={Haklay, Muki},
@@ -5538,20 +3218,12 @@ TODO: CHECK / PLACEHOLDER
   publisher={Springer}
 }
 
-% Tristan Harris design ethics citation (for the 9.6% stat)
 @misc{harris2017design,
   title={How Technology is Hijacking Your Mind},
   author={Harris, Tristan},
   year={2017},
   howpublished={\url{https://www.youtube.com/watch?v=pjMt6kT8yQk}},
   note={Presented at various venues including CHI Conference}
-}
-
-@book{bostrom2014superintelligence,
-  title={Superintelligence: Paths, dangers, strategies},
-  author={Bostrom, Nick},
-  year={2014},
-  publisher={Oxford University Press}
 }
 
 @misc{aschenbrenner2024situational,
@@ -5567,17 +3239,6 @@ TODO: CHECK / PLACEHOLDER
   author={Christian, Brian},
   year={2020},
   publisher={W. W. Norton \& Company}
-}
-
-@article{gabriel2020artificial,
-  title={Artificial intelligence, values, and alignment},
-  author={Gabriel, Iason},
-  journal={Minds and machines},
-  volume={30},
-  number={3},
-  pages={411--437},
-  year={2020},
-  publisher={Springer}
 }
 
 @article{woollacott2024bots,
@@ -5634,15 +3295,6 @@ TODO: CHECK / PLACEHOLDER
   year = {2024},
   howpublished = {Statista Research Department},
   url = {https://www.statista.com/topics/990/global-advertising-market/}
-}
-
-@book{bernays1928propaganda,
-  author = {Bernays, Edward L.},
-  title = {Propaganda},
-  year = {1928},
-  publisher = {Horace Liveright},
-  address = {New York},
-  url = {https://archive.org/details/EdwardBernaysPropaganda1928Liveright}
 }
 
 @book{dunbar2021friends,
@@ -5905,3 +3557,4 @@ TODO: CHECK / PLACEHOLDER
   publisher={ACM},
   url = {https://doi.org/10.1145/511446.511513}
 }
+

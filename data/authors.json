@@ -7750,6 +7750,29 @@
       "scholarThumbnail": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=DLQW_LoAAAAJ&citpid=2"
     }
   },
+  "micali_silvio": {
+    "displayName": "Silvio Micali",
+    "affiliation": null,
+    "headshot": null,
+    "links": {
+      "semanticScholar": "https://www.semanticscholar.org/author/1689467",
+      "dblp": "https://dblp.org/search?q=Silvio%20Micali"
+    },
+    "firstName": "Silvio",
+    "lastName": "Micali",
+    "_enrichment": {
+      "s2AuthorId": "1689467",
+      "confidence": "high",
+      "enrichedAt": "2026-02-28T03:15:41.104573+00:00",
+      "s2ProfileFetched": true
+    }
+  },
+  "wigderson_avi": {
+    "displayName": "Avi Wigderson",
+    "affiliation": null,
+    "headshot": null,
+    "links": {}
+  },
   "goldwasser_shafi": {
     "displayName": "Shafi Goldwasser",
     "affiliation": "professor of computer science at UC Berkeley",
@@ -7768,23 +7791,6 @@
       "s2ProfileFetched": true,
       "scholarId": "KA8dgpMAAAAJ",
       "scholarThumbnail": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=KA8dgpMAAAAJ&citpid=1"
-    }
-  },
-  "micali_silvio": {
-    "displayName": "Silvio Micali",
-    "affiliation": null,
-    "headshot": null,
-    "links": {
-      "semanticScholar": "https://www.semanticscholar.org/author/1689467",
-      "dblp": "https://dblp.org/search?q=Silvio%20Micali"
-    },
-    "firstName": "Silvio",
-    "lastName": "Micali",
-    "_enrichment": {
-      "s2AuthorId": "1689467",
-      "confidence": "high",
-      "enrichedAt": "2026-02-28T03:15:41.104573+00:00",
-      "s2ProfileFetched": true
     }
   },
   "rackoff_charles": {
