@@ -14,7 +14,7 @@
     "url": "https://aclanthology.org/2022.naacl-main.387",
     "doi": "10.18653/v1/2022.naacl-main.387",
     "type": "conference",
-    "screenshot": "assets/screenshots/dziri_origin_2022.jpg"
+    "screenshot": null
   },
   "vaccari_deepfakes_2020": {
     "title": "Deepfakes and Disinformation: Exploring the Impact of Synthetic Political Video on Deception, Uncertainty, and Trust in News",
@@ -28,7 +28,7 @@
     "url": "https://doi.org/10.1177/2056305120903408",
     "doi": "10.1177/2056305120903408",
     "type": "journal",
-    "screenshot": "assets/screenshots/vaccari_deepfakes_2020.jpg"
+    "screenshot": null
   },
   "zuccon_hallucination_attribution": {
     "title": "ChatGPT Hallucinates when Attributing Answers",
@@ -43,7 +43,7 @@
     "url": "https://doi.org/10.1145/3624918.3625329",
     "doi": "10.1145/3624918.3625329",
     "type": "conference",
-    "screenshot": "assets/screenshots/zuccon_hallucination_attribution.jpg"
+    "screenshot": null
   },
   "GRAVEL2023226": {
     "title": "Learning to Fake It: Limited Responses and Fabricated References Provided by ChatGPT for Medical Questions",
@@ -58,7 +58,7 @@
     "url": "https://doi.org/10.1016/j.mcpdig.2023.05.004",
     "doi": "https://doi.org/10.1016/j.mcpdig.2023.05.004",
     "type": "journal",
-    "screenshot": "assets/screenshots/GRAVEL2023226.jpg"
+    "screenshot": null
   },
   "xu2024hallucinationinevitableinnatelimitation": {
     "title": "Hallucination is Inevitable: An Innate Limitation of Large Language Models",
@@ -73,7 +73,7 @@
     "url": "https://arxiv.org/abs/2401.11817",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/xu2024hallucinationinevitableinnatelimitation.jpg"
+    "screenshot": null
   },
   "yu-etal-2024-mechanistic": {
     "title": "Mechanistic Understanding and Mitigation of Language Model Non-Factual Hallucinations",
@@ -89,7 +89,7 @@
     "url": "https://aclanthology.org/2024.findings-emnlp.466/",
     "doi": "10.18653/v1/2024.findings-emnlp.466",
     "type": "conference",
-    "screenshot": "assets/screenshots/yu-etal-2024-mechanistic.jpg"
+    "screenshot": null
   },
   "st": {
     "title": "Beyond Privacy Trade-offs with Structured Transparency",
@@ -106,7 +106,7 @@
     "url": "https://arxiv.org/abs/2012.08347",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/st.jpg"
+    "screenshot": null
   },
   "privacy_blocks_medical_sharing": {
     "title": "Organizational Factors in Clinical Data Sharing for Artificial Intelligence in Health Care",
@@ -126,7 +126,7 @@
     "url": "https://doi.org/10.1001/jamanetworkopen.2023.48422",
     "doi": "10.1001/jamanetworkopen.2023.48422",
     "type": "journal",
-    "screenshot": "assets/screenshots/privacy_blocks_medical_sharing.jpg"
+    "screenshot": null
   },
   "fl": {
     "title": "Federated Learning of Deep Networks using Model Averaging",
@@ -142,7 +142,7 @@
     "url": "http://arxiv.org/abs/1602.05629",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/fl.jpg"
+    "screenshot": null
   },
   "Rieke_2020": {
     "title": "The future of digital health with federated learning",
@@ -171,7 +171,7 @@
     "url": "http://dx.doi.org/10.1038/s41746-020-00323-1",
     "doi": "10.1038/s41746-020-00323-1",
     "type": "journal",
-    "screenshot": "assets/screenshots/Rieke_2020.jpg"
+    "screenshot": null
   },
   "nguyen2024surveymachineunlearning": {
     "title": "A Survey of Machine Unlearning",
@@ -190,7 +190,7 @@
     "url": "https://arxiv.org/abs/2209.02299",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/nguyen2024surveymachineunlearning.jpg"
+    "screenshot": null
   },
   "amodei2016concreteproblemsaisafety": {
     "title": "Concrete Problems in AI Safety",
@@ -208,7 +208,7 @@
     "url": "https://arxiv.org/abs/1606.06565",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/amodei2016concreteproblemsaisafety.jpg"
+    "screenshot": null
   },
   "gabriel2020artificial": {
     "title": "Artificial intelligence, values, and alignment",
@@ -221,7 +221,7 @@
     "url": "https://doi.org/10.1007/s11023-020-09539-2",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/gabriel2020artificial.jpg"
+    "screenshot": null
   },
   "ntoutsi2020bias": {
     "title": "Bias in data-driven artificial intelligence systems—An introductory survey",
@@ -244,7 +244,7 @@
     "url": "https://doi.org/10.1002/widm.1356",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/ntoutsi2020bias.jpg"
+    "screenshot": null
   },
   "scaling_laws_2020": {
     "title": "Scaling Laws for Neural Language Models",
@@ -266,7 +266,7 @@
     "url": "https://arxiv.org/abs/2001.08361",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/scaling_laws_2020.jpg"
+    "screenshot": null
   },
   "hoffmann2022trainingcomputeoptimallargelanguage": {
     "title": "Training Compute-Optimal Large Language Models",
@@ -300,7 +300,7 @@
     "url": "https://arxiv.org/abs/2203.15556",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/hoffmann2022trainingcomputeoptimallargelanguage.jpg"
+    "screenshot": null
   },
   "sutton2019bitter": {
     "title": "The bitter lesson",
@@ -313,7 +313,7 @@
     "url": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/sutton2019bitter.jpg"
+    "screenshot": null
   },
   "Goodfellow-et-al-2016": {
     "title": "Deep Learning",
@@ -328,7 +328,7 @@
     "url": "https://www.deeplearningbook.org/",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/Goodfellow-et-al-2016.jpg"
+    "screenshot": null
   },
   "dunbar1993coevolution": {
     "title": "Coevolution of neocortical size, group size and language in humans",
@@ -341,7 +341,7 @@
     "url": "https://doi.org/10.1017/S0140525X00032325",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/dunbar1993coevolution.jpg"
+    "screenshot": null
   },
   "freeman1977set": {
     "title": "A set of measures of centrality based on betweenness",
@@ -354,7 +354,7 @@
     "url": "https://www.jstor.org/stable/3033543",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/freeman1977set.jpg"
+    "screenshot": null
   },
   "ai_bioweapon": {
     "title": "The Operational Risks of AI in Large-Scale Biological Attacks: A Red-Team Approach",
@@ -369,7 +369,7 @@
     "url": "https://www.rand.org/pubs/research_reports/RRA2977-1.html",
     "doi": "10.7249/RRA2977-1",
     "type": "book",
-    "screenshot": "assets/screenshots/ai_bioweapon.jpg"
+    "screenshot": null
   },
   "bhattacharyya2023high": {
     "title": "High rates of fabricated and inaccurate references in ChatGPT-generated medical content",
@@ -385,7 +385,7 @@
     "url": "https://doi.org/10.7759/cureus.39238",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/bhattacharyya2023high.jpg"
+    "screenshot": null
   },
   "health_sharing_incentives": {
     "title": "Data Sharing in Biomedical Sciences: A Systematic Review of Incentives",
@@ -400,7 +400,7 @@
     "url": "https://doi.org/10.1089/bio.2020.0037",
     "doi": "10.1089/bio.2020.0037",
     "type": "journal",
-    "screenshot": "assets/screenshots/health_sharing_incentives.jpg"
+    "screenshot": null
   },
   "RLHF": {
     "title": "Training language models to follow instructions with human feedback",
@@ -432,7 +432,7 @@
     "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/RLHF.jpg"
+    "screenshot": null
   },
   "roozbahani2025review": {
     "title": "A Review of Methods for Reducing Hallucinations in Generative Artificial Intelligence to Enhance Knowledge Economy",
@@ -460,7 +460,7 @@
     "url": "https://arxiv.org/abs/2311.01463",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/ahmad2023creatingtrustworthyllmsdealing.jpg"
+    "screenshot": null
   },
   "manakul2023selfcheckgptzeroresourceblackboxhallucination": {
     "title": "SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models",
@@ -475,7 +475,7 @@
     "url": "https://arxiv.org/abs/2303.08896",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/manakul2023selfcheckgptzeroresourceblackboxhallucination.jpg"
+    "screenshot": null
   },
   "Steptoe": {
     "title": "Senate AI Forum Focuses On Intellectual Property Issues",
@@ -488,7 +488,7 @@
     "url": "https://www.steptoe.com/en/news-publications/steptechtoe-blog/senate-ai-forum-focuses-on-intellectual-property-issues.html",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/Steptoe.jpg"
+    "screenshot": null
   },
   "jeong2022emorybreastimagingdataset": {
     "title": "The EMory BrEast imaging Dataset (EMBED): A Racially Diverse, Granular Dataset of 3.5M Screening and Diagnostic Mammograms",
@@ -516,7 +516,7 @@
     "url": "https://arxiv.org/abs/2202.04073",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/jeong2022emorybreastimagingdataset.jpg"
+    "screenshot": null
   },
   "global_cancer_screening": {
     "title": "Look how far we have come: BREAST cancer detection education on the international stage",
@@ -532,7 +532,7 @@
     "url": "https://doi.org/10.3389/fonc.2022.1023714",
     "doi": "10.3389/fonc.2022.1023714",
     "type": "journal",
-    "screenshot": "assets/screenshots/global_cancer_screening.jpg"
+    "screenshot": null
   },
   "us_cancer_screening": {
     "title": "Breast Cancer Screening in an Era of Personalized Regimens A Conceptual Model and National Cancer Institute Initiative for Risk-Based and Preference-Based Approaches at a Population Level",
@@ -556,7 +556,7 @@
     "url": "https://doi.org/10.1002/cncr.28771",
     "doi": "10.1002/cncr.28771",
     "type": "journal",
-    "screenshot": "assets/screenshots/us_cancer_screening.jpg"
+    "screenshot": null
   },
   "data_sharing_doesnt_happen": {
     "title": "Data sharing: Why it doesn’t happen",
@@ -569,7 +569,7 @@
     "url": "https://web.archive.org/web/20210421105442/http://blogs.nature.com/naturejobs/2015/09/21/data-sharing-why-it-doesnt-happen/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/data_sharing_doesnt_happen.jpg"
+    "screenshot": null
   },
   "grybauskas2023twitter": {
     "title": "Will Twitter's New Rate Limits Really Stop Scraping?",
@@ -582,7 +582,7 @@
     "url": "https://builtin.com/articles/twitter-rate-limit-scraping",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/grybauskas2023twitter.jpg"
+    "screenshot": null
   },
   "obrien2025reddit": {
     "title": "Reddit sues AI company Perplexity and others for 'industrial-scale' scraping of user comments",
@@ -595,7 +595,7 @@
     "url": "https://apnews.com/article/reddit-perplexity-ai-copyright-scraping-lawsuit-3ad8968550dd7e11bcd285a74fb6e2ff",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/obrien2025reddit.jpg"
+    "screenshot": null
   },
   "samuelson2023generative": {
     "title": "Generative AI meets copyright",
@@ -608,7 +608,7 @@
     "url": "https://doi.org/10.1126/science.adi0656",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/samuelson2023generative.jpg"
+    "screenshot": null
   },
   "grynbaum2023times": {
     "title": "The Times Sues OpenAI and Microsoft Over A.I. Use of Copyrighted Work",
@@ -622,7 +622,7 @@
     "url": "https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/grynbaum2023times.jpg"
+    "screenshot": null
   },
   "patel2019bridging": {
     "title": "Bridging data silos using big data integration",
@@ -635,7 +635,7 @@
     "url": "https://doi.org/10.5121/ijdms.2019.11301",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/patel2019bridging.jpg"
+    "screenshot": null
   },
   "robison2024openai": {
     "title": "OpenAI cofounder Ilya Sutskever says the way AI is built is about to change",
@@ -648,7 +648,7 @@
     "url": "https://www.theverge.com/2024/12/13/24320811/openai-ilya-sutskever-agi-data-training",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/robison2024openai.jpg"
+    "screenshot": null
   },
   "smpc_ml": {
     "title": "Secure Multi-Party Computation for Machine Learning: A Survey",
@@ -666,7 +666,7 @@
     "url": "https://doi.org/10.1109/ACCESS.2024.3388992",
     "doi": "10.1109/ACCESS.2024.3388992",
     "type": "journal",
-    "screenshot": "assets/screenshots/smpc_ml.jpg"
+    "screenshot": null
   },
   "synthetic_data_privacy": {
     "title": "Leveraging Generative AI Models for Synthetic Data Generation in Healthcare: Balancing Research and Privacy",
@@ -680,7 +680,7 @@
     "url": "https://doi.org/10.1109/SmartNets58706.2023.10215825",
     "doi": "10.1109/SmartNets58706.2023.10215825",
     "type": "conference",
-    "screenshot": "assets/screenshots/synthetic_data_privacy.jpg"
+    "screenshot": null
   },
   "rubin1993statistical": {
     "title": "Statistical disclosure limitation",
@@ -693,7 +693,7 @@
     "url": "https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/discussion-statistical-disclosure-limitation.pdf",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/rubin1993statistical.jpg"
+    "screenshot": null
   },
   "Yao1982ProtocolsFS": {
     "title": "Protocols for secure computations",
@@ -706,7 +706,7 @@
     "url": "https://doi.org/10.1109/SFCS.1982.88",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/Yao1982ProtocolsFS.jpg"
+    "screenshot": null
   },
   "lobo2023right": {
     "title": "The right to be forgotten in artificial intelligence: issues, approaches, limitations and challenges",
@@ -721,7 +721,7 @@
     "url": "https://doi.org/10.1109/CAI54212.2023.00085",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/lobo2023right.jpg"
+    "screenshot": null
   },
   "industryAustraliaAI2024": {
     "title": "Australia’s AI Ethics Principles",
@@ -735,7 +735,7 @@
     "url": "https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-principles",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/industryAustraliaAI2024.jpg"
+    "screenshot": null
   },
   "ecGermanyAI2024": {
     "title": "Germany AI Strategy Report",
@@ -748,7 +748,7 @@
     "url": "https://ai-watch.ec.europa.eu/countries/germany/germany-ai-strategy-report_en",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/ecGermanyAI2024.jpg"
+    "screenshot": null
   },
   "ecFranceAI2024": {
     "title": "France AI Strategy Report",
@@ -761,7 +761,7 @@
     "url": "https://ai-watch.ec.europa.eu/countries/france/france-ai-strategy-report_en",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/ecFranceAI2024.jpg"
+    "screenshot": null
   },
   "ecWhitePaperAI2020": {
     "title": "White Paper on Artificial Intelligence: A European Approach to Excellence and Trust",
@@ -774,7 +774,7 @@
     "url": "https://commission.europa.eu/publications/white-paper-artificial-intelligence-european-approach-excellence-and-trust_en",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/ecWhitePaperAI2020.jpg"
+    "screenshot": null
   },
   "ieeeEthicsAI2021": {
     "title": "Ethically Aligned Design: A Vision for Prioritizing Human Well-being with Artificial Intelligence and Autonomous Systems",
@@ -788,7 +788,7 @@
     "url": "https://standards.ieee.org/wp-content/uploads/import/documents/other/ead_v2.pdf",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/ieeeEthicsAI2021.jpg"
+    "screenshot": null
   },
   "futureOfLifeAIPrinciples2024": {
     "title": "AI Principles",
@@ -801,7 +801,7 @@
     "url": "https://futureoflife.org/open-letter/ai-principles/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/futureOfLifeAIPrinciples2024.jpg"
+    "screenshot": null
   },
   "accessNowTorontoDeclaration2023": {
     "title": "The Toronto Declaration: Protecting the Rights to Equality and Non-Discrimination in Machine Learning Systems",
@@ -814,7 +814,7 @@
     "url": "https://www.accessnow.org/press-release/the-toronto-declaration-protecting-the-rights-to-equality-and-non-discrimination-in-machine-learning-systems/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/accessNowTorontoDeclaration2023.jpg"
+    "screenshot": null
   },
   "aiNowAlgorithmicAccountability2024": {
     "title": "Algorithmic Accountability Policy Toolkit",
@@ -827,7 +827,7 @@
     "url": "https://ainowinstitute.org/publications/algorithmic-accountability-policy-toolkit",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/aiNowAlgorithmicAccountability2024.jpg"
+    "screenshot": null
   },
   "montrealDeclaration2024": {
     "title": "Montreal Declaration for a Responsible Development of Artificial Intelligence",
@@ -840,7 +840,7 @@
     "url": "https://montrealdeclaration-responsibleai.com/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/montrealDeclaration2024.jpg"
+    "screenshot": null
   },
   "weforumAIGovernance2023": {
     "title": "AI Governance: A Holistic Approach to Implement Ethics into AI",
@@ -853,7 +853,7 @@
     "url": "https://www.weforum.org/publications/ai-governance-a-holistic-approach-to-implement-ethics-into-ai/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/weforumAIGovernance2023.jpg"
+    "screenshot": null
   },
   "harvardPrincipledAI2020": {
     "title": "Principled AI",
@@ -866,7 +866,7 @@
     "url": "https://cyber.harvard.edu/publication/2020/principled-ai",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/harvardPrincipledAI2020.jpg"
+    "screenshot": null
   },
   "turingAIethics2019": {
     "title": "Understanding Artificial Intelligence Ethics and Safety",
@@ -879,7 +879,7 @@
     "url": "https://www.turing.ac.uk/sites/default/files/2019-08/understanding_artificial_intelligence_ethics_and_safety.pdf",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/turingAIethics2019.jpg"
+    "screenshot": null
   },
   "microsoftAIPrinciples2024": {
     "title": "AI Principles and Approach",
@@ -892,7 +892,7 @@
     "url": "https://www.microsoft.com/en-us/ai/principles-and-approach",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/microsoftAIPrinciples2024.jpg"
+    "screenshot": null
   },
   "ibmAIPrinciples2018": {
     "title": "IBM Principles for Trust and Transparency",
@@ -905,7 +905,7 @@
     "url": "https://www.ibm.com/policy/wp-content/uploads/2018/06/IBM_Principles_SHORT.V4.3.pdf",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/ibmAIPrinciples2018.jpg"
+    "screenshot": null
   },
   "riesen2023imagine": {
     "title": "Imagine A World: What if global challenges led to more centralization?",
@@ -918,7 +918,7 @@
     "url": "https://futureoflife.org/podcast/imagine-a-world-what-if-global-challenges-led-to-more-centralization/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/riesen2023imagine.jpg"
+    "screenshot": null
   },
   "pope2023centralizing": {
     "title": "AI is centralizing by default; let's not make it worse",
@@ -931,7 +931,7 @@
     "url": "https://forum.effectivealtruism.org/posts/zd5inbT4kYKivincm/ai-is-centralizing-by-default-let-s-not-make-it-worse",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/pope2023centralizing.jpg"
+    "screenshot": null
   },
   "crispweed2024alignment": {
     "title": "The Alignment Trap: AI Safety as Path to Power",
@@ -944,7 +944,7 @@
     "url": "https://www.lesswrong.com/posts/zWJTcaJCkYiJwCmgx/the-alignment-trap-ai-safety-as-path-to-power",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/crispweed2024alignment.jpg"
+    "screenshot": null
   },
   "summerfield2025impact": {
     "title": "The impact of advanced AI systems on democracy",
@@ -967,7 +967,7 @@
     "url": "https://doi.org/10.1038/s41562-025-02309-z",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/summerfield2025impact.jpg"
+    "screenshot": null
   },
   "welle2025aligning": {
     "title": "Aligning those who align AI, one satirical website at a time",
@@ -980,7 +980,7 @@
     "url": "https://www.theverge.com/ai-artificial-intelligence/776752/center-for-the-alignment-of-ai-alignment-centers",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/welle2025aligning.jpg"
+    "screenshot": null
   },
   "Samuel_2024": {
     "title": "“I lost trust”: Why the OpenAI team in charge of safeguarding humanity imploded",
@@ -993,7 +993,7 @@
     "url": "https://www.vox.com/future-perfect/2024/5/17/24158403/openai-resignations-ai-safety-ilya-sutskever-jan-leike-artificial-intelligence",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/Samuel_2024.jpg"
+    "screenshot": null
   },
   "Hu_Cai_2024": {
     "title": "Exclusive: Openai to remove non-profit control and give Sam Altman equity | Reuters",
@@ -1007,7 +1007,7 @@
     "url": "https://www.reuters.com/technology/artificial-intelligence/openai-remove-non-profit-control-give-sam-altman-equity-sources-say-2024-09-25/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/Hu_Cai_2024.jpg"
+    "screenshot": null
   },
   "Morales_2024": {
     "title": "Musk’s concerns over google deepmind “ai dictatorship” revealed in emails from 2016 - communications released during the recent OpenAI Court case",
@@ -1020,7 +1020,7 @@
     "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-concerns-over-google-deepmind-ai-dictatorship-revealed-in-emails-from-2016-communications-released-during-the-recent-openai-court-case",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/Morales_2024.jpg"
+    "screenshot": null
   },
   "mirvish2011hathaway": {
     "title": "The Hathaway Effect: How Anne Gives Warren Buffett a Rise",
@@ -1033,7 +1033,7 @@
     "url": "https://www.huffpost.com/entry/the-hathaway-effect-how-a_b_830041",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/mirvish2011hathaway.jpg"
+    "screenshot": null
   },
   "Tong_Martina_2024": {
     "title": "US Government Commission pushes Manhattan Project-style Ai Initiative | Reuters",
@@ -1047,7 +1047,7 @@
     "url": "https://www.reuters.com/technology/artificial-intelligence/us-government-commission-pushes-manhattan-project-style-ai-initiative-2024-11-19/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/Tong_Martina_2024.jpg"
+    "screenshot": null
   },
   "2f928592-a19d-38f4-91e4-45f12ea471a0": {
     "title": "Structural Holes: The Social Structure of Competition",
@@ -1060,7 +1060,7 @@
     "url": "http://www.jstor.org/stable/j.ctv1kz4h78",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/2f928592-a19d-38f4-91e4-45f12ea471a0.jpg"
+    "screenshot": null
   },
   "russell1995modern": {
     "title": "A modern approach",
@@ -1075,7 +1075,7 @@
     "url": "https://aima.cs.berkeley.edu/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/russell1995modern.jpg"
+    "screenshot": null
   },
   "berger2025ai": {
     "title": "The AI Copyright Battle: Why OpenAI And Google Are Pushing For Fair Use",
@@ -1088,7 +1088,7 @@
     "url": "https://www.forbes.com/sites/virginieberger/2025/03/15/the-ai-copyright-battle-why-openai-and-google-are-pushing-for-fair-use/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/berger2025ai.jpg"
+    "screenshot": null
   },
   "statista2025advertising": {
     "title": "Advertising - Worldwide",
@@ -1101,7 +1101,7 @@
     "url": "https://www.statista.com/outlook/amo/advertising/worldwide",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/statista2025advertising.jpg"
+    "screenshot": null
   },
   "bernays1928propaganda": {
     "title": "Propaganda",
@@ -1114,7 +1114,7 @@
     "url": "https://archive.org/details/EdwardBernaysPropaganda1928Liveright",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/bernays1928propaganda.jpg"
+    "screenshot": null
   },
   "adikari2015real": {
     "title": "Real time bidding in online digital advertisement",
@@ -1128,7 +1128,7 @@
     "url": "https://doi.org/10.1007/978-3-319-18714-3_2",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/adikari2015real.jpg"
+    "screenshot": null
   },
   "lecun2015deep": {
     "title": "Deep learning",
@@ -1143,7 +1143,7 @@
     "url": "https://doi.org/10.1038/nature14539",
     "doi": "10.1038/nature14539",
     "type": "journal",
-    "screenshot": "assets/screenshots/lecun2015deep.jpg"
+    "screenshot": null
   },
   "googleAIPrinciples2024": {
     "title": "AI Principles",
@@ -1156,7 +1156,7 @@
     "url": "https://ai.google/responsibility/principles/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/googleAIPrinciples2024.jpg"
+    "screenshot": null
   },
   "burt2003social": {
     "title": "The social structure of competition",
@@ -1169,7 +1169,7 @@
     "url": "https://doi.org/10.1093/oso/9780195159509.003.0006",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/burt2003social.jpg"
+    "screenshot": null
   },
   "schmidt2014google": {
     "title": "How google works",
@@ -1183,7 +1183,7 @@
     "url": null,
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/schmidt2014google.jpg"
+    "screenshot": null
   },
   "borgeaud2022improving": {
     "title": "Improving language models by retrieving from trillions of tokens",
@@ -1206,7 +1206,7 @@
     "url": "https://arxiv.org/abs/2112.04426",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/borgeaud2022improving.jpg"
+    "screenshot": null
   },
   "izacard2023atlas": {
     "title": "Atlas: Few-shot learning with retrieval augmented language models",
@@ -1228,7 +1228,7 @@
     "url": "https://arxiv.org/abs/2208.03299",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/izacard2023atlas.jpg"
+    "screenshot": null
   },
   "guo2023towards": {
     "title": "Towards lossless dataset distillation via difficulty-aligned trajectory matching",
@@ -1246,7 +1246,7 @@
     "url": "https://arxiv.org/abs/2310.05773",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/guo2023towards.jpg"
+    "screenshot": null
   },
   "kemker2018measuring": {
     "title": "Measuring catastrophic forgetting in neural networks",
@@ -1263,7 +1263,7 @@
     "url": "https://arxiv.org/abs/1708.02072",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/kemker2018measuring.jpg"
+    "screenshot": null
   },
   "educating_silicon_2024": {
     "title": "How much LLM training data is there, in the limit?",
@@ -1276,7 +1276,7 @@
     "url": "https://www.educatingsilicon.com/2024/05/09/how-much-llm-training-data-is-there-in-the-limit/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/educating_silicon_2024.jpg"
+    "screenshot": null
   },
   "le2013building": {
     "title": "Building high-level features using large scale unsupervised learning",
@@ -1289,7 +1289,7 @@
     "url": "https://arxiv.org/abs/1112.6209",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/le2013building.jpg"
+    "screenshot": null
   },
   "krizhevsky2012imagenet": {
     "title": "Imagenet classification with deep convolutional neural networks",
@@ -1304,7 +1304,7 @@
     "url": "https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/krizhevsky2012imagenet.jpg"
+    "screenshot": null
   },
   "zeiler2014visualizing": {
     "title": "Visualizing and understanding convolutional networks",
@@ -1318,7 +1318,7 @@
     "url": "https://arxiv.org/abs/1311.2901",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/zeiler2014visualizing.jpg"
+    "screenshot": null
   },
   "chomsky2014aspects": {
     "title": "Aspects of the Theory of Syntax",
@@ -1331,7 +1331,7 @@
     "url": "https://mitpress.mit.edu/9780262527408/aspects-of-the-theory-of-syntax/",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/chomsky2014aspects.jpg"
+    "screenshot": null
   },
   "dwork2006calibrating": {
     "title": "Calibrating noise to sensitivity in private data analysis",
@@ -1347,7 +1347,7 @@
     "url": "https://doi.org/10.1007/11681878_14",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/dwork2006calibrating.jpg"
+    "screenshot": null
   },
   "feldman2020individual": {
     "title": "Individual Privacy Accounting via a Renyi Filter",
@@ -1361,7 +1361,7 @@
     "url": "https://arxiv.org/abs/2008.11193",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/feldman2020individual.jpg"
+    "screenshot": null
   },
   "papernot2018scalableprivatelearningpate": {
     "title": "Scalable Private Learning with PATE",
@@ -1379,7 +1379,7 @@
     "url": "https://arxiv.org/abs/1802.08908",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/papernot2018scalableprivatelearningpate.jpg"
+    "screenshot": null
   },
   "zhao2018federated": {
     "title": "Federated Learning with Non-IID Data",
@@ -1397,7 +1397,7 @@
     "url": "https://arxiv.org/abs/1806.00582",
     "doi": "10.48550/ARXIV.1806.00582",
     "type": "journal",
-    "screenshot": "assets/screenshots/zhao2018federated.jpg"
+    "screenshot": null
   },
   "ainsworth2022git": {
     "title": "Git re-basin: Merging models modulo permutation symmetries",
@@ -1412,7 +1412,7 @@
     "url": "https://arxiv.org/abs/2209.04836",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/ainsworth2022git.jpg"
+    "screenshot": null
   },
   "gpu_shortage": {
     "title": "ML Training with Cloud GPU Shortages: Is Cross-Region the Answer?",
@@ -1428,7 +1428,7 @@
     "url": "https://doi.org/10.1145/3642970.3655843",
     "doi": "10.1145/3642970.3655843",
     "type": "conference",
-    "screenshot": "assets/screenshots/gpu_shortage.jpg"
+    "screenshot": null
   },
   "Kaye2025NvidiaFirstCompany": {
     "title": "Nvidia hits new milestone as world's first \\$5tn company",
@@ -1441,7 +1441,7 @@
     "url": "https://www.bbc.co.uk/news/articles/cp8e970vn5vo",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/Kaye2025NvidiaFirstCompany.jpg"
+    "screenshot": null
   },
   "kachwala2024nvidia": {
     "title": "Nvidia faces revenue threat from new U.S. AI chip export curbs, analysts say",
@@ -1455,7 +1455,7 @@
     "url": "https://www.reuters.com/technology/artificial-intelligence/nvidia-says-new-rule-will-weaken-us-leadership-ai-2025-01-13/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/kachwala2024nvidia.jpg"
+    "screenshot": null
   },
   "howley2023nvidia": {
     "title": "There's an AI war, and Nvidia is the only arms dealer: Analyst",
@@ -1468,7 +1468,7 @@
     "url": "https://finance.yahoo.com/news/theres-an-ai-war-and-nvidia-is-the-only-arms-dealer-analyst-174654030.html",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/howley2023nvidia.jpg"
+    "screenshot": null
   },
   "epoch2025openaicomputespend": {
     "title": "Most of OpenAI’s 2024 compute went to experiments",
@@ -1481,7 +1481,7 @@
     "url": "https://epoch.ai/data-insights/openai-compute-spend",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/epoch2025openaicomputespend.jpg"
+    "screenshot": null
   },
   "dai2024deepseekmoe": {
     "title": "Deepseekmoe: Towards ultimate expert specialization in mixture-of-experts language models",
@@ -1504,7 +1504,7 @@
     "url": "https://arxiv.org/abs/2401.06066",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/dai2024deepseekmoe.jpg"
+    "screenshot": null
   },
   "meta2024llama": {
     "title": "Introducing Llama 3.1: Our most capable models to date",
@@ -1517,7 +1517,7 @@
     "url": "https://ai.meta.com/blog/meta-llama-3-1/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/meta2024llama.jpg"
+    "screenshot": null
   },
   "brown2020language": {
     "title": "Language Models are Few-Shot Learners",
@@ -1540,7 +1540,7 @@
     "url": "https://arxiv.org/abs/2005.14165",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/brown2020language.jpg"
+    "screenshot": null
   },
   "wiggers2024openai": {
     "title": "OpenAI CEO Sam Altman says lack of compute capacity is delaying the company's products",
@@ -1553,7 +1553,7 @@
     "url": "https://techcrunch.com/2024/10/31/openai-ceo-sam-altman-says-lack-of-compute-is-delaying-the-companys-products/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/wiggers2024openai.jpg"
+    "screenshot": null
   },
   "EpochAIModels2025": {
     "title": "Data on AI Models",
@@ -1566,7 +1566,7 @@
     "url": "https://epoch.ai/data/ai-models",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/EpochAIModels2025.jpg"
+    "screenshot": null
   },
   "mehta2024zuckerberg": {
     "title": "Zuckerberg says Meta will need 10x more computing power to train Llama 4 than Llama 3",
@@ -1579,7 +1579,7 @@
     "url": "https://techcrunch.com/2024/08/01/zuckerberg-says-meta-will-need-10x-more-computing-power-to-train-llama-4-than-llama-3/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/mehta2024zuckerberg.jpg"
+    "screenshot": null
   },
   "openai2024learning": {
     "title": "Learning to reason with LLMs",
@@ -1592,7 +1592,7 @@
     "url": "https://openai.com/index/learning-to-reason-with-llms",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/openai2024learning.jpg"
+    "screenshot": null
   },
   "sevilla2024training": {
     "title": "Training Compute of Frontier AI Models Grows by 4-5x per Year",
@@ -1606,7 +1606,7 @@
     "url": "https://epoch.ai/blog/training-compute-of-frontier-ai-models-grows-by-4-5x-per-year",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/sevilla2024training.jpg"
+    "screenshot": null
   },
   "weights2025sweeps": {
     "title": "Sweeps: An Overview",
@@ -1619,7 +1619,7 @@
     "url": "https://docs.wandb.ai/models/tutorials/sweeps",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/weights2025sweeps.jpg"
+    "screenshot": null
   },
   "veldanda2024llm": {
     "title": "LLM Surgery: Efficient Knowledge Unlearning and Editing in Large Language Models",
@@ -1638,7 +1638,7 @@
     "url": "https://arxiv.org/abs/2409.13054",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/veldanda2024llm.jpg"
+    "screenshot": null
   },
   "bratt2025inference": {
     "title": "Why There Is No AI Without Inference",
@@ -1651,7 +1651,7 @@
     "url": "https://partners.wsj.com/nasdaq-arm/information-technology/why-there-is-no-ai-without-inference/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/bratt2025inference.jpg"
+    "screenshot": null
   },
   "doi:10.1073/pnas.1611835114": {
     "title": "Overcoming catastrophic forgetting in neural networks",
@@ -1677,7 +1677,7 @@
     "url": "https://www.pnas.org/doi/abs/10.1073/pnas.1611835114",
     "doi": "10.1073/pnas.1611835114",
     "type": "journal",
-    "screenshot": "assets/screenshots/doi_10.1073_pnas.1611835114.jpg"
+    "screenshot": null
   },
   "epoch2024hardware": {
     "title": "Data on Machine Learning Hardware",
@@ -1690,7 +1690,7 @@
     "url": "https://epoch.ai/data/machine-learning-hardware",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/epoch2024hardware.jpg"
+    "screenshot": null
   },
   "together2023redpajama": {
     "title": "RedPajama-Data-v2: An open dataset with 30 trillion tokens for training large language models",
@@ -1703,7 +1703,7 @@
     "url": "https://www.together.ai/blog/redpajama-data-v2",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/together2023redpajama.jpg"
+    "screenshot": null
   },
   "cummings2017democracy": {
     "title": "Democracy of sound: Music piracy and the remaking of American copyright in the twentieth century",
@@ -1716,7 +1716,7 @@
     "url": "https://global.oup.com/academic/product/democracy-of-sound-9780190625009",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/cummings2017democracy.jpg"
+    "screenshot": null
   },
   "wikipedia_commoncrawl_2024": {
     "title": "Common Crawl",
@@ -1729,7 +1729,7 @@
     "url": "https://en.wikipedia.org/wiki/Common_Crawl",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/wikipedia_commoncrawl_2024.jpg"
+    "screenshot": null
   },
   "internet_archive_donation": {
     "title": "A Message from Internet Archive Founder, Brewster Kahle",
@@ -1742,7 +1742,7 @@
     "url": "https://archive.org/donate/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/internet_archive_donation.jpg"
+    "screenshot": null
   },
   "mider_osint_2024": {
     "title": "Open source intelligence on the internet -- categorisation and evaluation of search tools",
@@ -1755,7 +1755,7 @@
     "url": "https://doi.org/10.4467/20801335PBW.24.030.20807",
     "doi": "10.4467/20801335PBW.24.030.20807",
     "type": "journal",
-    "screenshot": "assets/screenshots/mider_osint_2024.jpg"
+    "screenshot": null
   },
   "taylor2024data": {
     "title": "Amount of data created, consumed, and stored 2010-2023, with forecasts to 2028",
@@ -1768,7 +1768,7 @@
     "url": "https://www.statista.com/statistics/871513/worldwide-data-created/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/taylor2024data.jpg"
+    "screenshot": null
   },
   "bogwasi2025business": {
     "title": "Business Facts: Essential Business Statistics You Should Know in 2025",
@@ -1781,7 +1781,7 @@
     "url": "https://www.brimco.io/business-statistics-to-know/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/bogwasi2025business.jpg"
+    "screenshot": null
   },
   "hochreiter1998vanishing": {
     "title": "The vanishing gradient problem during learning recurrent neural nets and problem solutions",
@@ -1794,7 +1794,7 @@
     "url": "https://doi.org/10.1142/S0218488598000094",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/hochreiter1998vanishing.jpg"
+    "screenshot": null
   },
   "hanin2018neural": {
     "title": "Which neural net architectures give rise to exploding and vanishing gradients?",
@@ -1807,7 +1807,7 @@
     "url": "https://arxiv.org/abs/1801.03744",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/hanin2018neural.jpg"
+    "screenshot": null
   },
   "idp": {
     "title": "Individual Differential Privacy: A Utility-Preserving Formulation\n                  of Differential Privacy Guarantees",
@@ -1823,7 +1823,7 @@
     "url": "http://arxiv.org/abs/1612.02298",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/idp.jpg"
+    "screenshot": null
   },
   "dwork2014algorithmic": {
     "title": "The algorithmic foundations of differential privacy",
@@ -1838,7 +1838,7 @@
     "url": "https://doi.org/10.1561/0400000042",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/dwork2014algorithmic.jpg"
+    "screenshot": null
   },
   "jurassic": {
     "title": "Jurassic-1: Technical Details and Evaluation",
@@ -1854,7 +1854,7 @@
     "url": "https://uploads-ssl.webflow.com/60fd4503684b466578c0d307/61138924626a6981ee09caf6_jurassic_tech_paper.pdf",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/jurassic.jpg"
+    "screenshot": null
   },
   "rae2021gopher": {
     "title": "Scaling Language Models: Methods, Analysis \\& Insights from Training Gopher",
@@ -1945,7 +1945,7 @@
     "url": "https://arxiv.org/abs/2112.11446",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/rae2021gopher.jpg"
+    "screenshot": null
   },
   "grover2018mnist": {
     "title": "MNIST Dataset Classification Utilizing k-NN Classifier with Modified Sliding-window Metric",
@@ -1959,7 +1959,7 @@
     "url": "https://arxiv.org/abs/1809.06846",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/grover2018mnist.jpg"
+    "screenshot": null
   },
   "10.36227/techrxiv.171837853.31531482/v1": {
     "title": "Large language model with federated retrieval-augmented generation for improved knowledge retrieval",
@@ -1973,7 +1973,7 @@
     "url": "https://www.techrxiv.org/users/793847/articles/1103136-large-language-model-with-federated-retrieval-augmented-generation-for-improved-knowledge-retrieval",
     "doi": "10.36227/techrxiv.171837853.31531482/v1",
     "type": "journal",
-    "screenshot": "assets/screenshots/10.36227_techrxiv.171837853.31531482_v1.jpg"
+    "screenshot": null
   },
   "Abadi_2016": {
     "title": "Deep Learning with Differential Privacy",
@@ -1992,7 +1992,7 @@
     "url": "http://dx.doi.org/10.1145/2976749.2978318",
     "doi": "10.1145/2976749.2978318",
     "type": "conference",
-    "screenshot": "assets/screenshots/Abadi_2016.jpg"
+    "screenshot": null
   },
   "lederer2024statistical": {
     "title": "Statistical guarantees for sparse deep learning",
@@ -2005,7 +2005,76 @@
     "url": "https://doi.org/10.1007/s10182-022-00467-3",
     "doi": "10.1007/s10182-022-00467-3",
     "type": "journal",
-    "screenshot": "assets/screenshots/lederer2024statistical.jpg"
+    "screenshot": null
+  },
+  "mironov2017renyi": {
+    "title": "Renyi Differential Privacy",
+    "authors": [
+      "mironov_ilya"
+    ],
+    "year": 2017,
+    "venue": "2017 IEEE 30th Computer Security Foundations Symposium (CSF)",
+    "venueShort": "CSF",
+    "url": "https://doi.org/10.1109/CSF.2017.11",
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "mcsherry2007mechanism": {
+    "title": "Mechanism Design via Differential Privacy",
+    "authors": [
+      "mcsherry_frank",
+      "talwar_kunal"
+    ],
+    "year": 2007,
+    "venue": "48th Annual IEEE Symposium on Foundations of Computer Science (FOCS)",
+    "venueShort": "FOCS",
+    "url": "https://doi.org/10.1109/FOCS.2007.66",
+    "doi": null,
+    "type": "conference",
+    "screenshot": null
+  },
+  "kalai2005efficient": {
+    "title": "Efficient Algorithms for Online Decision Problems",
+    "authors": [
+      "kalai_adam",
+      "vempala_santosh"
+    ],
+    "year": 2005,
+    "venue": "Journal of Computer and System Sciences",
+    "venueShort": "Journal of Computer and System Sciences",
+    "url": "https://doi.org/10.1016/j.jcss.2004.10.016",
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "freund1997decision": {
+    "title": "A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting",
+    "authors": [
+      "freund_yoav",
+      "schapire_robert_e"
+    ],
+    "year": 1997,
+    "venue": "Journal of Computer and System Sciences",
+    "venueShort": "Journal of Computer and System Sciences",
+    "url": "https://doi.org/10.1006/jcss.1997.1504",
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "phan2025lastexam": {
+    "title": "Humanity's Last Exam",
+    "authors": [
+      "phan_long",
+      "others"
+    ],
+    "year": 2025,
+    "venue": null,
+    "venueShort": null,
+    "url": "https://arxiv.org/abs/2501.14249",
+    "doi": null,
+    "type": "misc",
+    "screenshot": null
   },
   "kaissis_2020": {
     "title": "Secure, privacy-preserving and federated machine learning in medical imaging",
@@ -2021,7 +2090,7 @@
     "url": "https://doi.org/10.1038/s42256-020-0186-1",
     "doi": "10.1038/s42256-020-0186-1",
     "type": "journal",
-    "screenshot": "assets/screenshots/kaissis_2020.jpg"
+    "screenshot": null
   },
   "gentry2009fully": {
     "title": "A fully homomorphic encryption scheme",
@@ -2035,7 +2104,7 @@
     "url": "https://doi.org/10.1145/1536414.1536440",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/gentry2009fully.jpg"
+    "screenshot": null
   },
   "costan2016intel": {
     "title": "Intel SGX Explained.",
@@ -2049,7 +2118,7 @@
     "url": "https://eprint.iacr.org/2016/086",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/costan2016intel.jpg"
+    "screenshot": null
   },
   "goldreich1987towards": {
     "title": "How to play ANY mental game",
@@ -2064,7 +2133,7 @@
     "url": "https://doi.org/10.1145/28395.28420",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/goldreich1987towards.jpg"
+    "screenshot": null
   },
   "goldwasser1989knowledge": {
     "title": "The knowledge complexity of interactive proof systems",
@@ -2079,7 +2148,7 @@
     "url": "https://doi.org/10.1137/0218012",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/goldwasser1989knowledge.jpg"
+    "screenshot": null
   },
   "feige1988zero": {
     "title": "Zero-knowledge proofs of identity",
@@ -2094,7 +2163,7 @@
     "url": "https://doi.org/10.1007/BF02351717",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/feige1988zero.jpg"
+    "screenshot": null
   },
   "laurie2014certificate": {
     "title": "Certificate transparency",
@@ -2107,7 +2176,7 @@
     "url": "https://www.rfc-editor.org/rfc/rfc6962",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/laurie2014certificate.jpg"
+    "screenshot": null
   },
   "chase2020signal": {
     "title": "The Signal private group system and anonymous credentials supporting efficient verifiable encryption",
@@ -2122,7 +2191,7 @@
     "url": "https://signal.org/blog/signal-private-group-system/",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/chase2020signal.jpg"
+    "screenshot": null
   },
   "shamir1979share": {
     "title": "How to share a secret",
@@ -2135,7 +2204,7 @@
     "url": "https://doi.org/10.1145/359168.359176",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/shamir1979share.jpg"
+    "screenshot": null
   },
   "shu2020combating": {
     "title": "Combating disinformation in a social media age",
@@ -2154,7 +2223,7 @@
     "url": "https://doi.org/10.1002/widm.1385",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/shu2020combating.jpg"
+    "screenshot": null
   },
   "schneier_2015_data": {
     "title": "Data and Goliath : the hidden battles to collect your data and control your world",
@@ -2167,7 +2236,7 @@
     "url": "https://www.schneier.com/books/data-and-goliath/",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/schneier_2015_data.jpg"
+    "screenshot": null
   },
   "veliz_2020_privacy": {
     "title": "Privacy is power : why and how you should take back control of your data",
@@ -2180,7 +2249,7 @@
     "url": "https://www.penguin.co.uk/books/314/314359/privacy-is-power/9780552177719.html",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/veliz_2020_privacy.jpg"
+    "screenshot": null
   },
   "fecher_2015_what": {
     "title": "What Drives Academic Data Sharing?",
@@ -2195,7 +2264,7 @@
     "url": "https://doi.org/10.1371/journal.pone.0118053",
     "doi": "10.1371/journal.pone.0118053",
     "type": "journal",
-    "screenshot": "assets/screenshots/fecher_2015_what.jpg"
+    "screenshot": null
   },
   "ascoli2015sharing": {
     "title": "Sharing neuron data: carrots, sticks, and digital records",
@@ -2208,7 +2277,7 @@
     "url": "https://doi.org/10.1371/journal.pbio.1002275",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/ascoli2015sharing.jpg"
+    "screenshot": null
   },
   "sienkiewicz2025data": {
     "title": "From data silos to data mesh: a case study in financial data architecture",
@@ -2221,7 +2290,7 @@
     "url": "https://doi.org/10.1007/978-3-032-02049-9_1",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/sienkiewicz2025data.jpg"
+    "screenshot": null
   },
   "scott2021coordinating": {
     "title": "Coordinating government silos: challenges and opportunities",
@@ -2235,7 +2304,7 @@
     "url": "https://doi.org/10.1007/s43508-021-00004-z",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/scott2021coordinating.jpg"
+    "screenshot": null
   },
   "vidal2024compelling": {
     "title": "Compelling responses to NTIA's AI Open Model Weights RFC",
@@ -2248,7 +2317,7 @@
     "url": "https://opensource.org/blog/compelling-responses-to-ntias-ai-open-model-weights-rfc",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/vidal2024compelling.jpg"
+    "screenshot": null
   },
   "ntia2024aiweights": {
     "title": "NTIA AI Open Model Weights RFC",
@@ -2262,7 +2331,7 @@
     "url": "https://www.regulations.gov/document/NTIA-2023-0009-0001/comment",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/ntia2024aiweights.jpg"
+    "screenshot": null
   },
   "associatedpress2025anthropic": {
     "title": "AI startup Anthropic agrees to pay \\$1.5bn to settle book piracy lawsuit",
@@ -2275,7 +2344,7 @@
     "url": "https://www.theguardian.com/technology/2025/sep/05/anthropic-settlement-ai-book-lawsuit",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/associatedpress2025anthropic.jpg"
+    "screenshot": null
   },
   "osi_osaid_2024": {
     "title": "The Open Source AI Definition -- 1.0",
@@ -2288,7 +2357,7 @@
     "url": "https://opensource.org/ai/open-source-ai-definition",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/osi_osaid_2024.jpg"
+    "screenshot": null
   },
   "owenjackson2024opensource": {
     "title": "Open source, open risks: The growing dangers of unregulated generative AI",
@@ -2301,7 +2370,7 @@
     "url": "https://www.ibm.com/think/insights/unregulated-generative-ai-dangers-open-source",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/owenjackson2024opensource.jpg"
+    "screenshot": null
   },
   "grow2025zuckerberg": {
     "title": "The Zuckerberg-LeCun AI Paradox: A Tale of Two Visions",
@@ -2314,7 +2383,7 @@
     "url": "https://medium.com/@Gbgrow/the-zuckerberg-lecun-ai-paradox-a-tale-of-two-visions-811ded5d2298",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/grow2025zuckerberg.jpg"
+    "screenshot": null
   },
   "gabriel2024ethicsadvancedaiassistants": {
     "title": "The Ethics of Advanced AI Assistants",
@@ -2383,7 +2452,7 @@
     "url": "https://arxiv.org/abs/2404.16244",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/gabriel2024ethicsadvancedaiassistants.jpg"
+    "screenshot": null
   },
   "wealand2025reducing": {
     "title": "Reducing bias in AI models through open source",
@@ -2396,7 +2465,7 @@
     "url": "https://www.redhat.com/en/blog/reducing-bias-ai-models-through-open-source",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/wealand2025reducing.jpg"
+    "screenshot": null
   },
   "pasquale_2015": {
     "title": "The Black Box Society",
@@ -2409,7 +2478,7 @@
     "url": "https://www.hup.harvard.edu/books/9780674970847",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/pasquale_2015.jpg"
+    "screenshot": null
   },
   "elsea2006protection": {
     "title": "The protection of classified information: The legal framework",
@@ -2422,7 +2491,7 @@
     "url": "https://sgp.fas.org/crs/secrecy/RS21900.pdf",
     "doi": null,
     "type": "report",
-    "screenshot": "assets/screenshots/elsea2006protection.jpg"
+    "screenshot": null
   },
   "mcmahan2017communication": {
     "title": "Communication-efficient learning of deep networks from decentralized data",
@@ -2439,7 +2508,7 @@
     "url": "https://proceedings.mlr.press/v54/mcmahan17a.html",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/mcmahan2017communication.jpg"
+    "screenshot": null
   },
   "bogdanov2014input": {
     "title": "From input private to universally composable secure multi-party computation primitives",
@@ -2455,7 +2524,7 @@
     "url": "https://doi.org/10.1109/CSF.2014.21",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/bogdanov2014input.jpg"
+    "screenshot": null
   },
   "a2019_un": {
     "title": "UN Handbook on Privacy-Preserving Computation Techniques",
@@ -2487,7 +2556,7 @@
     "url": "https://arxiv.org/abs/2301.06167",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/a2019_un.jpg"
+    "screenshot": null
   },
   "boneh2011functional": {
     "title": "Functional encryption: Definitions and challenges",
@@ -2502,7 +2571,7 @@
     "url": "https://doi.org/10.1007/978-3-642-19571-6_16",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/boneh2011functional.jpg"
+    "screenshot": null
   },
   "sovrin": {
     "title": "The Sovrin Network and Zero Knowledge Proofs",
@@ -2515,7 +2584,7 @@
     "url": "https://sovrin.org/the-sovrin-network-and-zero-knowledge-proofs/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/sovrin.jpg"
+    "screenshot": null
   },
   "wang_2020_selfsovereign": {
     "title": "Self-Sovereign Identity in a Globalized World: Credentials-Based Identity Systems as a Driver for Economic Inclusion",
@@ -2529,7 +2598,7 @@
     "url": "https://doi.org/10.3389/fbloc.2019.00028",
     "doi": "10.3389/fbloc.2019.00028",
     "type": "journal",
-    "screenshot": "assets/screenshots/wang_2020_selfsovereign.jpg"
+    "screenshot": null
   },
   "loftus2011secure": {
     "title": "Secure outsourced computation",
@@ -2543,7 +2612,7 @@
     "url": "https://doi.org/10.1007/978-3-642-21969-6_1",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/loftus2011secure.jpg"
+    "screenshot": null
   },
   "ssi": {
     "title": "Security without Identification: Transaction Systems to Make Big Brother Obsolete",
@@ -2556,7 +2625,7 @@
     "url": "https://doi.org/10.1145/4372.4373",
     "doi": "10.1145/4372.4373",
     "type": "journal",
-    "screenshot": "assets/screenshots/ssi.jpg"
+    "screenshot": null
   },
   "adler2024personhood": {
     "title": "Personhood credentials: Artificial intelligence and the value of privacy-preserving tools to distinguish who is real online",
@@ -2575,7 +2644,7 @@
     "url": "https://arxiv.org/abs/2408.07892",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/adler2024personhood.jpg"
+    "screenshot": null
   },
   "granovetter1973strength": {
     "title": "The strength of weak ties",
@@ -2588,7 +2657,7 @@
     "url": "https://doi.org/10.1086/225469",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/granovetter1973strength.jpg"
+    "screenshot": null
   },
   "rao2015klout": {
     "title": "Klout Score: Measuring Influence Across Multiple Social Networks",
@@ -2604,7 +2673,7 @@
     "url": "https://arxiv.org/abs/1510.08487",
     "doi": "10.1109/BigData.2015.7364017",
     "type": "conference",
-    "screenshot": "assets/screenshots/rao2015klout.jpg"
+    "screenshot": null
   },
   "fortune2014klout": {
     "title": "Klout acquired for \\$200 million by Lithium Technologies",
@@ -2617,7 +2686,7 @@
     "url": "https://fortune.com/2014/03/26/klout-acquired-for-200-million-by-lithium-technologies/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/fortune2014klout.jpg"
+    "screenshot": null
   },
   "slate2018klout": {
     "title": "Klout Is Dead, Just in Time for Europe's GDPR Privacy Law. That's Not a Coincidence",
@@ -2630,7 +2699,7 @@
     "url": "https://slate.com/technology/2018/05/klout-is-dead-just-in-time-of-europes-gdpr-privacy-law-thats-not-a-coincidence.html",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/slate2018klout.jpg"
+    "screenshot": null
   },
   "simmons2022gdpr": {
     "title": "17 Countries with GDPR-like Data Privacy Laws",
@@ -2643,7 +2712,7 @@
     "url": "https://insights.comforte.com/countries-with-gdpr-like-data-privacy-laws",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/simmons2022gdpr.jpg"
+    "screenshot": null
   },
   "hootsuite2024": {
     "title": "Digital 2024 Global Overview Report",
@@ -2656,7 +2725,7 @@
     "url": "https://www.hootsuite.com/resources/digital-trends",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/hootsuite2024.jpg"
+    "screenshot": null
   },
   "imperva2024bots": {
     "title": "2024 Bad Bot Report",
@@ -2669,7 +2738,7 @@
     "url": "https://www.imperva.com/resources/resource-library/reports/bad-bot-report/",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/imperva2024bots.jpg"
+    "screenshot": null
   },
   "donfro2013yelp": {
     "title": "A Whopping 20\\% Of Yelp Reviews Are Fake",
@@ -2682,7 +2751,7 @@
     "url": "https://www.businessinsider.com/20-percent-of-yelp-reviews-fake-2013-9",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/donfro2013yelp.jpg"
+    "screenshot": null
   },
   "cross2022fake": {
     "title": "Up to 30\\% of online reviews are fake and most consumers can't tell the difference",
@@ -2695,7 +2764,7 @@
     "url": "https://cbsaustin.com/news/local/up-to-30-of-online-reviews-are-fake-and-most-consumers-cant-tell-the-difference",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/cross2022fake.jpg"
+    "screenshot": null
   },
   "fcdo2022trollfarm": {
     "title": "UK exposes sick Russian troll factory plaguing social media with Kremlin propaganda",
@@ -2708,7 +2777,7 @@
     "url": "https://www.gov.uk/government/news/uk-exposes-sick-russian-troll-factory-plaguing-social-media-with-kremlin-propaganda",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/fcdo2022trollfarm.jpg"
+    "screenshot": null
   },
   "lawrence1999digital": {
     "title": "Digital libraries and autonomous citation indexing",
@@ -2723,7 +2792,7 @@
     "url": "https://doi.org/10.1109/2.769447",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/lawrence1999digital.jpg"
+    "screenshot": null
   },
   "page1999pagerank": {
     "title": "The PageRank citation ranking: Bringing order to the web.",
@@ -2739,7 +2808,7 @@
     "url": "http://ilpubs.stanford.edu:8090/422/",
     "doi": null,
     "type": "report",
-    "screenshot": "assets/screenshots/page1999pagerank.jpg"
+    "screenshot": null
   },
   "reagle2010good": {
     "title": "Good faith collaboration: The culture of Wikipedia",
@@ -2752,7 +2821,7 @@
     "url": "https://doi.org/10.7551/mitpress/8051.001.0001",
     "doi": null,
     "type": "book",
-    "screenshot": "assets/screenshots/reagle2010good.jpg"
+    "screenshot": null
   },
   "goldhaber1997attention": {
     "title": "The attention economy and the net",
@@ -2765,7 +2834,7 @@
     "url": "https://doi.org/10.5210/fm.v2i4.519",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/goldhaber1997attention.jpg"
+    "screenshot": null
   },
   "backstrom2012four": {
     "title": "Four degrees of separation",
@@ -2782,7 +2851,7 @@
     "url": "https://arxiv.org/abs/1111.4570",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/backstrom2012four.jpg"
+    "screenshot": null
   },
   "haveliwala2002topicsensitive": {
     "title": "Topic-sensitive PageRank",
@@ -2795,7 +2864,308 @@
     "url": "https://doi.org/10.1145/511446.511513",
     "doi": null,
     "type": "conference",
-    "screenshot": "assets/screenshots/haveliwala2002topicsensitive.jpg"
+    "screenshot": null
+  },
+  "casson2001libraries": {
+    "title": "Libraries in the Ancient World",
+    "authors": [
+      "casson_lionel"
+    ],
+    "year": 2001,
+    "venue": "Yale University Press",
+    "venueShort": "Yale University Press",
+    "url": "https://yalebooks.yale.edu/book/9780300097214/libraries-in-the-ancient-world/",
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
+  "galen_epidemics": {
+    "title": "Commentary on Hippocrates' Epidemics",
+    "authors": [
+      "galen"
+    ],
+    "year": null,
+    "venue": null,
+    "venueShort": null,
+    "url": null,
+    "doi": null,
+    "type": "misc",
+    "screenshot": null
+  },
+  "canfora1989vanished": {
+    "title": "The Vanished Library: A Wonder of the Ancient World",
+    "authors": [
+      "canfora_luciano"
+    ],
+    "year": 1989,
+    "venue": "University of California Press",
+    "venueShort": "University of California Press",
+    "url": "https://www.google.com/books/edition/The_Vanished_Library/",
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
+  "kennedy2003progymnasmata": {
+    "title": "Progymnasmata: Greek Textbooks of Prose Composition and Rhetoric",
+    "authors": [
+      "kennedy_george_a"
+    ],
+    "year": 2003,
+    "venue": "Society of Biblical Literature",
+    "venueShort": "Society of Biblical Literature",
+    "url": null,
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
+  "smithsonian_diamond_sutra": {
+    "title": "The Diamond Sutra",
+    "authors": [
+      "library_british"
+    ],
+    "year": null,
+    "venue": "\\url{https://www.bl.uk/collection-items/the-diamond-sutra}",
+    "venueShort": "\\url{https://www.bl.uk/collection-items/the-diamond-sutra}",
+    "url": "https://www.bl.uk/collection-items/the-diamond-sutra",
+    "doi": null,
+    "type": "misc",
+    "screenshot": null
+  },
+  "scott1998seeing": {
+    "title": "Seeing Like a State: How Certain Schemes to Improve the Human Condition Have Failed",
+    "authors": [
+      "scott_james_c"
+    ],
+    "year": 1998,
+    "venue": "Yale University Press",
+    "venueShort": "Yale University Press",
+    "url": "https://yalebooks.yale.edu/book/9780300078152/seeing-like-a-state/",
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
+  "diderot_encyclopedie": {
+    "title": "Encyclopedie, ou dictionnaire raisonne des sciences, des arts et des metiers",
+    "authors": [
+      "diderot_denis",
+      "dalembert_jean_le_rond"
+    ],
+    "year": 1751,
+    "venue": null,
+    "venueShort": null,
+    "url": "https://encyclopedie.uchicago.edu/",
+    "doi": null,
+    "type": "misc",
+    "screenshot": null
+  },
+  "sep_diderot": {
+    "title": "Denis Diderot",
+    "authors": [
+      "philosophy_stanford_encyclopedia_of"
+    ],
+    "year": null,
+    "venue": "\\url{https://plato.stanford.edu/entries/diderot/}",
+    "venueShort": "\\url{https://plato.stanford.edu/entries/diderot/}",
+    "url": "https://plato.stanford.edu/entries/diderot/",
+    "doi": null,
+    "type": "misc",
+    "screenshot": null
+  },
+  "wells1937world_brain": {
+    "title": "World Brain",
+    "authors": [
+      "wells_h_g"
+    ],
+    "year": 1937,
+    "venue": "Methuen \\& Co",
+    "venueShort": "Methuen \\& Co",
+    "url": null,
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
+  "wikipedia_governance": {
+    "title": "Wikipedia: Governance",
+    "authors": [
+      "wikipedia"
+    ],
+    "year": null,
+    "venue": "\\url{https://en.wikipedia.org/wiki/Wikipedia:Governance}",
+    "venueShort": "\\url{https://en.wikipedia.org/wiki/Wikipedia:Governance}",
+    "url": "https://en.wikipedia.org/wiki/Wikipedia:Governance",
+    "doi": null,
+    "type": "misc",
+    "screenshot": null
+  },
+  "somers2017google_books": {
+    "title": "Torching the Modern-Day Library of Alexandria",
+    "authors": [
+      "somers_james"
+    ],
+    "year": 2017,
+    "venue": "The Atlantic",
+    "venueShort": "The Atlantic",
+    "url": "https://www.theatlantic.com/technology/archive/2017/04/the-tragedy-of-google-books/523320/",
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "licklider1960man": {
+    "title": "Man-Computer Symbiosis",
+    "authors": [
+      "licklider_j_c_r"
+    ],
+    "year": 1960,
+    "venue": "IRE Transactions on Human Factors in Electronics",
+    "venueShort": "IRE Transactions on Human Factors in Electronics",
+    "url": "https://doi.org/10.1109/THFE2.1960.4503259",
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "cortada2018change": {
+    "title": "Change and Continuity at IBM: Key Themes in Histories of IBM",
+    "authors": [
+      "cortada_james_w"
+    ],
+    "year": 2018,
+    "venue": "Business History Review",
+    "venueShort": "Business History Review",
+    "url": "https://doi.org/10.1017/S0007680518000685",
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "licklider1968computer": {
+    "title": "The computer as a communication device",
+    "authors": [
+      "licklider_joseph_carl_robnett",
+      "taylor_robert_w"
+    ],
+    "year": 1968,
+    "venue": "Science and technology",
+    "venueShort": "Science and technology",
+    "url": null,
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "simon1955behavioral": {
+    "title": "A Behavioral Model of Rational Choice",
+    "authors": [
+      "simon_herbert_a"
+    ],
+    "year": 1955,
+    "venue": "The Quarterly Journal of Economics",
+    "venueShort": "The Quarterly Journal of Economics",
+    "url": "https://doi.org/10.2307/1884852",
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "simon1956rational": {
+    "title": "Rational Choice and the Structure of the Environment",
+    "authors": [
+      "simon_herbert_a"
+    ],
+    "year": 1956,
+    "venue": "Psychological Review",
+    "venueShort": "Psychological Review",
+    "url": "https://doi.org/10.1037/h0042769",
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "simon1982models": {
+    "title": "Models of Bounded Rationality",
+    "authors": [
+      "simon_herbert_a"
+    ],
+    "year": 1982,
+    "venue": "MIT Press",
+    "venueShort": "MIT Press",
+    "url": null,
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
+  "hayek1945use": {
+    "title": "The Use of Knowledge in Society",
+    "authors": [
+      "hayek_friedrich_a"
+    ],
+    "year": 1945,
+    "venue": "The American Economic Review",
+    "venueShort": "The American Economic Review",
+    "url": "https://doi.org/10.1257/aer.35.4.519",
+    "doi": null,
+    "type": "journal",
+    "screenshot": null
+  },
+  "sen1981poverty": {
+    "title": "Poverty and Famines: An Essay on Entitlement and Deprivation",
+    "authors": [
+      "sen_amartya"
+    ],
+    "year": 1981,
+    "venue": "Oxford University Press",
+    "venueShort": "Oxford University Press",
+    "url": "https://doi.org/10.1093/0198284632.001.0001",
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
+  "anderson1983imagined": {
+    "title": "Imagined Communities: Reflections on the Origin and Spread of Nationalism",
+    "authors": [
+      "anderson_benedict"
+    ],
+    "year": 1983,
+    "venue": "Verso",
+    "venueShort": "Verso",
+    "url": null,
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
+  "tye1998father": {
+    "title": "The Father of Spin: Edward L. Bernays and the Birth of Public Relations",
+    "authors": [
+      "tye_larry"
+    ],
+    "year": 1998,
+    "venue": "Crown Publishers",
+    "venueShort": "Crown Publishers",
+    "url": null,
+    "doi": null,
+    "type": "book",
+    "screenshot": null
+  },
+  "companiesmarketcap2026": {
+    "title": "Largest Companies by Market Capitalization",
+    "authors": [
+      "companiesmarketcap"
+    ],
+    "year": 2026,
+    "venue": "\\url{https://companiesmarketcap.com/}",
+    "venueShort": "\\url{https://companiesmarketcap.com/}",
+    "url": "https://companiesmarketcap.com/",
+    "doi": null,
+    "type": "misc",
+    "screenshot": null
+  },
+  "ostrom1990governing": {
+    "title": "Governing the Commons: The Evolution of Institutions for Collective Action",
+    "authors": [
+      "ostrom_elinor"
+    ],
+    "year": 1990,
+    "venue": "Cambridge University Press",
+    "venueShort": "Cambridge University Press",
+    "url": "https://doi.org/10.1017/CBO9780511807763",
+    "doi": null,
+    "type": "book",
+    "screenshot": null
   },
   "mann2024ai": {
     "title": "AI's rising tide lifts all chips as AMD Instinct, cloudy silicon vie for a slice of Nvidia's pie",
@@ -2808,7 +3178,7 @@
     "url": "https://www.theregister.com/2024/12/23/nvidia_ai_hardware_competition/",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/mann2024ai.jpg"
+    "screenshot": null
   },
   "ming2024nvidia": {
     "title": "NVIDIA AI GPU Shipments to Hit 4M in 2024",
@@ -2821,7 +3191,7 @@
     "url": "https://www.smyg.hk/news/details/13715",
     "doi": null,
     "type": "journal",
-    "screenshot": "assets/screenshots/ming2024nvidia.jpg"
+    "screenshot": null
   },
   "macrotrends2024nvidia": {
     "title": "NVIDIA Revenue 2010-2024 | NVDA",
@@ -2834,6 +3204,6 @@
     "url": "https://www.macrotrends.net/stocks/charts/NVDA/nvidia/revenue",
     "doi": null,
     "type": "misc",
-    "screenshot": "assets/screenshots/macrotrends2024nvidia.jpg"
+    "screenshot": null
   }
 }

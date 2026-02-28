@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appendix II: Model Compute Rankings | ABC in AI</title>
+    <title>Appendix II: Global Compute Distribution | ABC in AI</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,38 +36,24 @@
         plausible.init()
     </script>
     <style>
-        table {
-            table-layout: fixed;
-        }
-
         .data-table {
             width: 100%;
             border-collapse: collapse;
             margin: 1.5rem 0;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
         }
 
         .data-table th,
         .data-table td {
-            padding: 0.4rem 0.5rem;
+            padding: 0.5rem 0.75rem;
             text-align: left;
             border-bottom: 1px solid #ddd;
-            word-break: normal;
-            overflow-wrap: break-word;
-            white-space: normal;
         }
 
         .data-table th {
             background: #f5f5f5;
             font-weight: 600;
-            font-size: 0.7rem;
-            position: sticky;
-            top: var(--header-height);
-            transition: top .3s;
-        }
-
-        nav.is-hide+.page-container .data-table th {
-            top: 0;
+            font-size: 0.8rem;
         }
 
         .data-table tr:hover {
@@ -77,7 +63,18 @@
         .data-table .numeric {
             text-align: right;
             font-family: 'Courier New', monospace;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
+        }
+
+        .data-table .category {
+            font-style: italic;
+            color: #666;
+            background: #fafafa;
+        }
+
+        .data-table .total {
+            font-weight: 600;
+            border-top: 2px solid #333;
         }
 
         .table-caption {
@@ -85,15 +82,6 @@
             color: #555;
             margin-bottom: 0.5rem;
             font-weight: 600;
-        }
-
-        .model-name {
-            font-weight: 500;
-        }
-
-        .org-name {
-            color: #555;
-            font-size: 0.7rem;
         }
     </style>
 </head>
@@ -106,9 +94,10 @@
             <a href="chapter3.html">III. Network-Source AI</a>
             <a href="chapter4.html">IV. Broad Listening</a>
             <a href="chapter5.html">V. Conclusion</a>
-            <a href="references.html">References</a>
             <a href="appendix1.html">Appendix I</a>
             <a href="appendix2.html" class="active">Appendix II</a>
+            <a href="appendix3.html">Appendix III</a>
+            <a href="references.html">References</a>
             <a href="https://andrewtrask.com">About</a>
         </nav>
 
@@ -116,1682 +105,794 @@
             <aside class="toc-sidebar">
                 <h4>On This Page</h4>
                 <ul>
-                    <li class="toc-h3"><a href="#overview">Overview</a></li>
-                    <li class="toc-h3"><a href="#frontier-models">Frontier Models</a></li>
-                    <li class="toc-h3"><a href="#large-models">Large Models</a></li>
-                    <li class="toc-h3"><a href="#medium-models">Medium Models</a></li>
-                    <li class="toc-h3"><a href="#small-models">Small/Historical Models</a></li>
+                    <li class="toc-h3"><a href="#methodology">Methodology</a></li>
+                    <li class="toc-h3"><a href="#hardware-specs">Hardware Specifications</a></li>
+                    <li class="toc-h3"><a href="#nvidia-shipments">NVIDIA Shipments</a></li>
+                    <li class="toc-h3"><a href="#analysis">Analysis</a></li>
                 </ul>
             </aside>
 
             <main>
                 <div class="chapter-header">
                     <p class="chapter-number">Appendix II</p>
-                    <h1>Large Model Compute Rankings and GPU Capacity Utilization</h1>
+                    <h1>Estimated Global Compute Distribution and Capacity</h1>
                 </div>
 
-                <section id="overview">
+                <section>
                     <p>
-                        This appendix presents a comprehensive ranking of 182 notable AI models, combining data
-                        from Epoch AI’s “Notable AI Models” database (<a href="#ref-1" class="cite">Epo</a> ) with
-                        organizational compute capacity
-                        estimates from Appendix I. For each model, we track:
+                        This appendix documents the global distribution of computing power as of Q4 2024, with
+                        particular focus on AI accelerators and general-purpose computing hardware. All computing
+                        power is measured in floating point operations per second (FLOP/s), enabling direct comparison
+                        between different types of computing devices.
                     </p>
+                </section>
+
+                <section id="methodology">
+                    <h2>Methodology</h2>
+
+                    <p>Our analysis tracks two primary categories of computing power:</p>
+
+                    <ol>
+                        <li><strong>Specialized AI Hardware:</strong> Data center GPUs (e.g., NVIDIA H100s, AMD MI300X),
+                            TPUs, and custom ASICs (e.g., Microsoft MAIA, Meta MTIA)
+                        </li>
+
+                        <li><strong>General Purpose Computing:</strong> Consumer devices including smartphones, personal
+                            computers, and gaming consoles
+                        </li>
+                    </ol>
+
+                    <p>
+                        The analysis covers 2023-2024, with several key methodological considerations:
+                    </p>
+
+                    <h3>Time Period Normalization</h3>
+
+                    <p>
+                        Many source datasets span 2022-2024. For these three-year totals, we estimate the 2023-2024
+                        portion as 80% of the total, reflecting:
+                    </p>
+
                     <ul>
-                        <li> Model name and developing organization(s)</li>
-                        <li>Training compute requirements (FLOPs)</li>
-                        <li>Lab/Cloud provider responsible for training</li>
-                        <li>Parent organization’s 2024 estimated peak annual FLOP capacity</li>
-                        <li>Three metrics of organizational impact:
+                        <li>Accelerating deployment rates through the period</li>
 
-                            <ul>
-                                <li>
-                                    Share of organization’s publicly known models: Training FLOPs divided by total
-                                    known training FLOPs for that organization
-                                </li>
+                        <li>Increased manufacturing capacity in later years</li>
 
-                                <li>
-                                    Share of peak annual FLOP budget: Training FLOPs divided by parent organization’s
-                                    2024 estimated peak annual FLOP capacity
-                                </li>
+                        <li>Reported quarterly growth patterns (<a href="#ref-1" class="cite">Mann 2024</a>)</li>
+                    </ul>
 
-                                <li>
-                                    Share of peak annual FLOP budget with 100x sweep: Same as above, but assuming
-                                    each model required 100x more compute for development and testing
-                                </li>
-                            </ul>
+                    <h3>Infrastructure Accounting</h3>
+
+                    <p>
+                        To account for infrastructure deployed before our analysis period that remains in active use, we
+                        apply a 1.3&times; multiplier to new deployments. This multiplier derives from:
+                    </p>
+
+                    <ul>
+                        <li>Historical hardware retirement rates (<a href="#ref-2" class="cite">Epoch AI 2024</a>)</li>
+
+                        <li>Typical infrastructure lifecycle lengths</li>
+
+                        <li> Reported infrastructure retention patterns (<a href="#ref-1" class="cite">Mann 2024</a>)
                         </li>
                     </ul>
 
+                    <h3>Consumer Device Calculations</h3>
+
+                    <p>For devices like smartphones, we calculate:</p>
+
+                    <p style="text-align: center; margin: 1rem 0;">
+                        $$\text{Total Capacity} = \text{Quarterly Sales}
+                        \times \text{Number of Quarters} \times \text{Device Performance}$$
+                    </p>
+
                     <p>
-                        The data is presented in six tables, ordered by decreasing training compute requirements.
-                        This allows tracking the evolution of model scale over time and comparing relative
-                        organizational
-                        investments in different AI capabilities. Note that training compute estimates for the most
-                        recent
-                        models are based on publicly available information and may be incomplete or imprecise.
+                        Key assumptions include:
                     </p>
+
+                    <ul>
+                        <li>275M average quarterly smartphone sales (<a href="#ref-3" class="cite">Ming 2024</a>)</li>
+
+                        <li>8 quarters (covering 2023-2024)</li>
+
+                        <li>80/20 split between iPhone/Android market share</li>
+
+                        <li>Device performance from manufacturer specifications</li>
+                    </ul>
                 </section>
 
-                <section id="frontier-models">
-                    <p class="table-caption">Table 7.1: AI Model Training Compute Requirements (Part 1 of 6)</p>
+                <section id="hardware-specs">
+                    <h2>Results</h2>
 
-                    <table class="data-table" id="table-7-1">
+                    <h3>Hardware Specifications</h3>
+
+                    <p>
+                        We begin by documenting the performance characteristics of key computing hardware. Table
+                        <a href="#table-6-1">6.1</a> shows peak theoretical performance for major AI accelerators and
+                        consumer devices.
+                    </p>
+
+                    <p class="table-caption">Table 6.1: Hardware Specifications (2023-2024)</p>
+
+                    <table class="data-table" id="table-6-1">
                         <thead>
                             <tr>
-                                <th>Model</th>
-                                <th>Organization</th>
-                                <th>Lab/Cloud</th>
-                                <th class="numeric">Train FLOPs</th>
-                                <th class="numeric">Parent Org Peak <br> Annual FLOPs</th>
-                                <th class="numberic">Model/Public <br>Models (%)</th>
-                                <th class="numeric">Model/Peak Annual (%)</th>
-                                <th class="numeric">Model/Peak <br>w/100x (%) </th>
+                                <th>Hardware</th>
+                                <th>Type</th>
+                                <th class="numeric">Peak Performance <br> (FLOP/s)</th>
+                                <th>Source</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="model-name">Gemini 1.0 Ultra</td>
-                                <td class="org-name">Google DeepMind</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$5.00 \times 10^{25}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">45.65</td>
-                                <td class="numeric">0.129</td>
-                                <td class="numeric">12.93</td>
+                            <tr class="category">
+                                <td colspan="4"><em>Data Center AI Chips</em></td>
                             </tr>
                             <tr>
-                                <td class="model-name">Claude 3.5 Sonnet</td>
-                                <td class="org-name">Anthropic</td>
-                                <td>Anthropic/Amazon</td>
-                                <td class="numeric">$4.98 \times 10^{25}$</td>
-                                <td class="numeric">$2.27 \times 10^{28}$</td>
-                                <td class="numeric">69.74</td>
-                                <td class="numeric">0.220</td>
-                                <td class="numeric">21.96</td>
+                                <td>AMD MI300X OAM</td>
+                                <td>GPU</td>
+                                <td class="numeric">$2.61 \times 10^{15}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">GPT-4o</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$3.81 \times 10^{25}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">53.36</td>
-                                <td class="numeric">0.088</td>
-                                <td class="numeric">8.75</td>
+                                <td>NVIDIA H100</td>
+                                <td>GPU</td>
+                                <td class="numeric">$9.89 \times 10^{14}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">Llama 3.1-405B</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$3.80 \times 10^{25}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">66.32</td>
-                                <td class="numeric">0.067</td>
-                                <td class="numeric">6.72</td>
+                                <td>NVIDIA A100</td>
+                                <td>GPU</td>
+                                <td class="numeric">$3.12 \times 10^{14}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">GPT-4</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$2.10 \times 10^{25}$</td>
-                                <td class="numeric">$4.35 \times 10^{25}$</td>
-                                <td class="numeric">29.41</td>
-                                <td class="numeric">0.048</td>
-                                <td class="numeric">4.82</td>
+                                <td>Microsoft MAIA</td>
+                                <td>ASIC</td>
+                                <td class="numeric">$8.00 \times 10^{14}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">Gemini 1.0 Pro</td>
-                                <td class="org-name">Google DeepMind</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$1.83 \times 10^{25}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">16.71</td>
-                                <td class="numeric">0.047</td>
-                                <td class="numeric">4.73</td>
+                                <td>Meta MTIA</td>
+                                <td>ASIC</td>
+                                <td class="numeric">$3.54 \times 10^{14}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">Claude 3 Opus</td>
-                                <td class="org-name">Anthropic</td>
-                                <td>Anthropic/Amazon</td>
-                                <td class="numeric">$1.64 \times 10^{25}$</td>
-                                <td class="numeric">$2.27 \times 10^{28}$</td>
-                                <td class="numeric">22.97</td>
-                                <td class="numeric">0.072</td>
-                                <td class="numeric">7.23</td>
+                                <td>AWS Tranium</td>
+                                <td>ASIC</td>
+                                <td class="numeric">$2.50 \times 10^{14}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">Gemini 1.5 Pro</td>
-                                <td class="org-name">Google DeepMind</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$1.58 \times 10^{25}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">14.43</td>
-                                <td class="numeric">0.041</td>
-                                <td class="numeric">4.09</td>
+                                <td>AWS Inferentia</td>
+                                <td>ASIC</td>
+                                <td class="numeric">$1.92 \times 10^{14}$</td>
+                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
+                            </tr>
+                            <tr class="category">
+                                <td colspan="4"><em>Consumer Devices</em></td>
                             </tr>
                             <tr>
-                                <td class="model-name">Llama 3-70B</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$7.86 \times 10^{24}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">13.72</td>
-                                <td class="numeric">0.014</td>
-                                <td class="numeric">1.39</td>
+                                <td>iPhone 14 Pro</td>
+                                <td>Mobile SoC</td>
+                                <td class="numeric">$2.00 \times 10^{12}$</td>
+                                <td><a href="#ref-3" class="cite">Ming 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">GPT-4o mini</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$7.36 \times 10^{24}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">10.31</td>
-                                <td class="numeric">0.017</td>
-                                <td class="numeric">1.69</td>
+                                <td>Samsung S24</td>
+                                <td>Mobile SoC</td>
+                                <td class="numeric">$3.40 \times 10^{12}$</td>
+                                <td><a href="#ref-3" class="cite">Ming 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">PaLM 2</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$7.34 \times 10^{24}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">6.70</td>
-                                <td class="numeric">0.019</td>
-                                <td class="numeric">1.90</td>
+                                <td>Average PC CPU</td>
+                                <td>CPU</td>
+                                <td class="numeric">$4.08 \times 10^{10}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">Llama 3.3</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$6.86 \times 10^{24}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">11.98</td>
-                                <td class="numeric">0.012</td>
-                                <td class="numeric">1.21</td>
+                                <td>Average PC GPU</td>
+                                <td>GPU</td>
+                                <td class="numeric">$4.60 \times 10^{12}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">Amazon Nova Pro</td>
-                                <td class="org-name">Amazon</td>
-                                <td>Anthropic/Amazon</td>
-                                <td class="numeric">$6.00 \times 10^{24}$</td>
-                                <td class="numeric">$2.27 \times 10^{28}$</td>
-                                <td class="numeric">8.40</td>
-                                <td class="numeric">0.026</td>
-                                <td class="numeric">2.65</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Amazon Titan</td>
-                                <td class="org-name">Amazon</td>
-                                <td>Anthropic/Amazon</td>
-                                <td class="numeric">$4.80 \times 10^{24}$</td>
-                                <td class="numeric">$2.27 \times 10^{28}$</td>
-                                <td class="numeric">6.72</td>
-                                <td class="numeric">0.021</td>
-                                <td class="numeric">2.12</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Claude 2</td>
-                                <td class="org-name">Anthropic</td>
-                                <td>Anthropic/Amazon</td>
-                                <td class="numeric">$3.87 \times 10^{24}$</td>
-                                <td class="numeric">$2.27 \times 10^{28}$</td>
-                                <td class="numeric">5.41</td>
-                                <td class="numeric">0.017</td>
-                                <td class="numeric">1.70</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Minerva (540B)</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$2.74 \times 10^{24}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">2.50</td>
-                                <td class="numeric">0.007</td>
-                                <td class="numeric">0.71</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">GPT-3.5 (text-davinci-003)</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$2.58 \times 10^{24}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">3.61</td>
-                                <td class="numeric">0.006</td>
-                                <td class="numeric">0.59</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">U-PaLM (540B)</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$2.53 \times 10^{24}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">2.31</td>
-                                <td class="numeric">0.007</td>
-                                <td class="numeric">0.065</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">PaLM (540B)</td>
-                                <td class="org-name">Google Research</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$2.53 \times 10^{24}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">2.31</td>
-                                <td class="numeric">0.007</td>
-                                <td class="numeric">0.65</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Flan-PaLM 540B</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$2.50 \times 10^{24}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">2.28</td>
-                                <td class="numeric">0.006</td>
-                                <td class="numeric">0.65</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">FLAN 137B</td>
-                                <td class="org-name">Google Research</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$2.05 \times 10^{24}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">1.87</td>
-                                <td class="numeric">0.005</td>
-                                <td class="numeric">0.53</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Meta Movie Gen Video</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$1.65 \times 10^{24}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">2.88</td>
-                                <td class="numeric">0.003</td>
-                                <td class="numeric">0.029</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Megatron-Turing NLG 530B</td>
-                                <td class="org-name">Microsoft, NVIDIA</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$1.17 \times 10^{24}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">1.64</td>
-                                <td class="numeric">0.003</td>
-                                <td class="numeric">0.27</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Llama 2-70B</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$8.10 \times 10^{23}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">1.41</td>
-                                <td class="numeric">0.003</td>
-                                <td class="numeric">0.14</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Gopher (280B)</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$6.31 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.58</td>
-                                <td class="numeric">0.002</td>
-                                <td class="numeric">0.16</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Chinchilla</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$5.76 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.53</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.15</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">LLaMA-65B</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$5.50 \times 10^{23}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.96</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.10</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">OPT-175B</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$4.30 \times 10^{23}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.75</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.08</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">BlenderBot 3</td>
-                                <td class="org-name">McGill University, Meta AI, Mila</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$4.30 \times 10^{23}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.75</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.08</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Parti</td>
-                                <td class="org-name">Google Research</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.96 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.36</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.10</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">FunSearch</td>
-                                <td class="org-name">Google DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.87 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.35</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.10</td>
+                                <td>PS5</td>
+                                <td>Console</td>
+                                <td class="numeric">$1.03 \times 10^{13}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </section>
 
-                <section id="large-models">
-                    <p class="table-caption">Table 7.2: AI Model Training Compute Requirements (Part 2 of 6)</p>
+                <section id="nvidia-shipments">
+                    <h2>Estimated New Hardware Deployments</h2>
 
-                    <table class="data-table" id="table-7-2">
-                        <thead>
-                            <tr>
-                                <th>Model</th>
-                                <th>Organization</th>
-                                <th>Lab/Cloud</th>
-                                <th class="numeric">Train FLOPs</th>
-                                <th class="numeric">Parent Org Peak <br>Annual FLOPs</th>
-                                <th class="numeric">Model/Public <br>Models (%)</th>
-                                <th class="numeric">Model/Peak Annual (%)</th>
-                                <th class="numeric">Model/Peak <br>w/100x (%)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="model-name">GLaM</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$3.64 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.33</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.09</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">LaMDA</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$3.55 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.32</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.09</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlphaGo Zero</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$3.41 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.31</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.09</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Galactica</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$3.24 \times 10^{23}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.57</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.06</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">InstructGPT 175B</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$3.19 \times 10^{23}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.45</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.07</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">GPT-3 175B (davinci)</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$3.14 \times 10^{23}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.44</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.07</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ST-MoE</td>
-                                <td class="org-name">Google, Google Brain,Google Research</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.90 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.26</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.07</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Flamingo</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.19 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.20</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.06</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlexaTM 20B</td>
-                                <td class="org-name">Amazon</td>
-                                <td>Anthropic/Amazon </td>
-                                <td class="numeric">$2.04 \times 10^{23}$</td>
-                                <td class="numeric">$2.27 \times 10^{28}$</td>
-                                <td class="numeric">0.29</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.09</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlphaGo Master</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.00 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.18</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.05</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ViT-22B</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.93 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.18</td>
-                                <td class="numeric">0.001</td>
-                                <td class="numeric">0.05</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">PaLI</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.69 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.15</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.04</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlphaCode</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.64 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.15</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.04</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Llama Guard</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI </td>
-                                <td class="numeric">$1.60 \times 10^{23}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.28</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.03</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">UL2</td>
-                                <td class="org-name">Google Research,Google Brain</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.20 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.11</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.03</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Meena</td>
-                                <td class="org-name">Google Brain</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.12 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.10</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.03</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">OpenVLA</td>
-                                <td class="org-name"> Stanford,UC Berkeley,Toyota,DeepMind,MIT</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.10 \times 10^{23}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.10</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.03</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Llama 2-7B</td>
-                                <td class="org-name"> Meta AI</td>
-                                <td>Meta AI </td>
-                                <td class="numeric">$8.40 \times 10^{22}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.15</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.01</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Switch</td>
-                                <td class="org-name"> Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$8.22 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.08</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">mT5-XXL</td>
-                                <td class="org-name"> Google, Google Research</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$8.20 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.07</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ByT5-XXL</td>
-                                <td class="org-name"> Google, Google Research</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$8.10 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.07</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">LLaVA 1.5</td>
-                                <td class="org-name"> UW Madison,Microsoft Research</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$7.81 \times 10^{22}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.11</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">LLaVA</td>
-                                <td class="org-name"> UW Madison,Microsoft,Columbia</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$7.80 \times 10^{22}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.11</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ProtT5-XXL</td>
-                                <td class="org-name">TU Munich,Med AI,NVIDIA,Oak Ridge,Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$7.37 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.07</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ESM2-15B</td>
-                                <td class="org-name">Meta AI,NYU,Stanford,MIT</td>
-                                <td>Meta AI </td>
-                                <td class="numeric">$7.35 \times 10^{22}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.13</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.01</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Codex</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$7.34 \times 10^{22}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.10</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">CoCa</td>
-                                <td class="org-name">Google Research</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$7.30 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.07</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">OpenAI Five</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$6.70 \times 10^{22}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.09</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlphaStar</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$5.93 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.05</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ViT-G/14</td>
-                                <td class="org-name">Google Brain,Google Research</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$5.85 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.05</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.02</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">XGLM-7.5B</td>
-                                <td class="org-name">Meta AI,Facebook AI Research</td>
-                                <td>Meta AI </td>
-                                <td class="numeric">$2.25 \times 10^{22}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.04</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
+                    <p>Table <a href="#table-6-2">6.2</a> documents NVIDIA’s GPU shipments, which represent the majority
+                        of
+                        new AI
+                        computing capacity deployed during this period.</p>
 
+                    <p>
+                        These shipments are distributed across major cloud providers and AI companies. Table <a
+                            href="#table-6-3">6.3</a>
+                        details how this computing capacity is allocated, including both NVIDIA GPUs and custom AI
+                        accelerators
+                    </p>
 
+                    <p class="table-caption" id="table-6-2">
+                        Table 6.2: NVIDIA GPU Shipments (2023-2024)
+                    </p>
 
+                    <div class="table-container">
+                        <table class="data-table" >
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th class="numeric">Units</th>
+                                    <th class="numeric">Computing Power <br> (FLOP/s)</th>
+                                    <th>Source/Calculation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A100s (2023)</td>
+                                    <td class="numeric">2,260,000</td>
+                                    <td class="numeric">$7.05 \times 10^{20}$</td>
+                                    <td>Units$\times 3.12 \times 10^{14}$ FLOP/s per A100</td>
+                                </tr>
+                                <tr>
+                                    <td>H100s (2023)</td>
+                                    <td class="numeric">1,500,000</td>
+                                    <td class="numeric">$1.48 \times 10^{21}$</td>
+                                    <td>Units$\times 9.89 \times 10^{14}$ FLOP/s per H100</td>
+                                </tr>
+                                <tr>
+                                    <td>A100s (2024)</td>
+                                    <td class="numeric">2,000,000</td>
+                                    <td class="numeric">$6.24 \times 10^{20}$</td>
+                                    <td>Units$\times 3.12 \times 10^{14}$ FLOP/s per A100</td>
+                                </tr>
+                                <tr>
+                                    <td>H100s (2024)</td>
+                                    <td class="numeric">2,000,000</td>
+                                    <td class="numeric">$1.98 \times 10^{21}$</td>
+                                    <td>Units$\times 9.89 \times 10^{14}$ FLOP/s per H100</td>
+                                </tr>
+                                <tr class="total">
+                                    <td>Total 2022-2024</td>
+                                    <td class="numeric">7,760,000</td>
+                                    <td class="numeric">$4.79 \times 10^{21}$</td>
+                                    <td>Sum of all rows above</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
+                    <h3>
+                        Estimated Base Computing Capacity
+                    </h3>
 
+                    <p>
+                        To establish total worldwide computing capacity, we first document the base capacity that
+                        existed
+                        at the start of our analysis period (Q1 2023).
+                    </p>
 
+                    <h3>Estimated Global Computing Distribution</h3>
 
-                        </tbody>
-                    </table>
+                    <p>
+                        Finally, Table <a href="#table-6-6">6.6</a> presents the complete worldwide distribution of
+                        computing capacity as of Q4
+                        2024, combining base capacity, new deployments, and applying our temporal adjustment factors.
+                    </p>
                 </section>
 
-                <section id="medium-models">
-                    <p class="table-caption">Table 7.3: AI Model Training Compute Requirements (Part 3 of 6)</p>
+                <section id="analysis">
+                    <h2>Analysis and Implications</h2>
 
-                    <table class="data-table" id="table-7-3">
-                        <thead>
-                            <tr>
-                                <th>Model</th>
-                                <th>Organization</th>
-                                <th>Lab/Cloud</th>
-                                <th class="numeric">Train FLOPs</th>
-                                <th class="numeric">Parent Org Peak <br>Annual FLOPs</th>
-                                <th class="numeric">Model/Public <br>Models (%)</th>
-                                <th class="numeric">Model/Peak Annual (%)</th>
-                                <th class="numeric">Model/Peak <br>w/100x (%)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <h3>Distribution of Computing Power</h3>
 
-                            <tr>
-                                <td class="model-name">GraphCast</td>
-                                <td class="org-name">Google DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.10 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.02</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.01</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">NLLB</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$1.75 \times 10^{22}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.03</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">RETRO-7B</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$1.68 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.02</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Turing-NLG</td>
-                                <td class="org-name">Microsoft</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$1.57 \times 10^{22}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.02</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Imagen</td>
-                                <td class="org-name">Google Brain</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$1.46 \times 10^{22}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">OpenAI Five Rerun</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$1.30 \times 10^{22}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.02</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">CLIP (ViT L/14@336px)</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$1.05 \times 10^{22}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AudioGen</td>
-                                <td class="org-name">Meta AI, Hebrew University</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$9.50 \times 10^{21}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.02</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">T5-3B</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$9.00 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">iGPT-L</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$8.91 \times 10^{21}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ContextNet + Noisy Student</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$8.16 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Segment Anything Model</td>
-                                <td class="org-name">Meta AI</td>
-                                <td>Meta AI </td>
-                                <td class="numeric">$7.80 \times 10^{21}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Conformer + Wav2vec 2.0</td>
-                                <td class="org-name">Google, Google Research,Google Brain</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$7.60 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">GNMT</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$6.62 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ADM</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$6.20 \times 10^{21}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">XLNet</td>
-                                <td class="org-name">CMU,Google Brain</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$6.19 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">NUWA</td>
-                                <td class="org-name">Microsoft Research, Peking University</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$4.84 \times 10^{21}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlphaFold-Multimer</td>
-                                <td class="org-name">Google DeepMind,DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$4.35 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ViT-Huge/14</td>
-                                <td class="org-name">Google Brain,Google Research</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$4.26 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Whisper</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$4.21 \times 10^{21}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Gato</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind</td>
-                                <td class="numeric">$4.02 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ViT-G (model soup)</td>
-                                <td class="org-name">UW, Columbia, Google, Meta, Tel Aviv</td>
-                                <td>Meta AI</td>
-                                <td class="numeric">$3.40 \times 10^{21}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.01</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ViT-G (model soup)</td>
-                                <td class="org-name">UW, Columbia, Google, Meta, Tel Aviv</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.40 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ELECTRA</td>
-                                <td class="org-name">Stanford,Google, Google Brain</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.10 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlphaFold 2</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.99 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
-                <section id="small-models">
-                    <p class="table-caption">Table 7.4: AI Model Training Compute Requirements (Part 4 of 6)
-                    </p>
-                    <table class="data-table" id="table-7-4">
-                        <thead>
-                            <tr>
-                                <th>Model</th>
-                                <th>Organization</th>
-                                <th>Lab/Cloud</th>
-                                <th class="numeric">Train FLOPs</th>
-                                <th class="numeric">Parent Org Peak <br>Annual FLOPs</th>
-                                <th class="numeric">Model/Public <br>Models (%)</th>
-                                <th class="numeric">Model/Peak Annual (%)</th>
-                                <th class="numeric">Model/Peak <br>w/100x (%)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="model-name">ALBERT-xxlarge</td>
-                                <td class="org-name">Toyota Tech Institute,Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.39 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">NASv3 (CIFAR-10)</td>
-                                <td class="org-name">Google Brain</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.20 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">GPT-2 (1.5B)</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$1.92 \times 10^{21}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">EMDR</td>
-                                <td class="org-name">Mila,McGill,DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.91 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlphaGo Lee</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.90 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">BigGAN-deep 512x512</td>
-                                <td class="org-name">Heriot-Watt,DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.80 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">MnasNet-A3</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.50 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">MnasNet-A1 + SSDLite</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.50 \times 10^{21}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Swin Transformer V2</td>
-                                <td class="org-name">Microsoft Research Asia</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$1.10 \times 10^{21}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">JFT</td>
-                                <td class="org-name">Google Research,CMU</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$8.43 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">OpenAI TI7 DOTA 1v</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$6.05 \times 10^{20}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">BERT-Large-CAS (PTB+WT2+WT103)</td>
-                                <td class="org-name">Amazon</td>
-                                <td>Anthropic/Amazon </td>
-                                <td class="numeric">$5.21 \times 10^{20}$</td>
-                                <td class="numeric">$2.27 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <p class="table-caption">Table 7.5: AI Model Training Compute Requirements (Part 5 of 6)
+                    <p>
+                        The results reveal several key insights about global computing power distribution:
                     </p>
 
-                    <table class="data-table" id="table-7-5">
+                    <ol>
+                        <li><strong>Cloud Concentration:</strong> The four largest cloud/AI providers (Meta,
+                            Microsoft/OpenAI,
+                            Google/DeepMind, and Amazon/Anthropic) collectively control 15.9% of global computing power.
+                            This represents a significant concentration of high-performance computing
+                            resources.</li>
+                        <li><strong>Consumer Device Significance:</strong> Despite lower per-unit performance, consumer
+                            devices
+                            collectively represent 32.83% of global computing power, with smartphones alone accounting
+                            for 23.23%. This highlights the massive scale of deployed consumer hardware.</li>
+                        <li><strong>Legacy Infrastructure:</strong> Pre-2023 and other cloud infrastructure remains
+                            significant,
+                            representing 51.28% of total capacity. This suggests substantial inertia in computing
+                            infrastructure deployment.</li>
+                    </ol>
+
+                    <h3>Growth Patterns</h3>
+
+                    <p>
+                        The data reveals several notable trends in computing power growth:
+                    </p>
+
+                    <ul>
+                        <li><strong>Accelerating Deployment:</strong> New capacity added in 2023-2024 ($2.82 \times
+                            10^{22}$ FLOP/s) is approximately 7 times larger than the Q1 2023 base capacity ($3.98
+                            \times 10^{21}$ FLOP/s).</li>
+                    </ul>
+
+                    <p class="table-caption" id="table-6-3">
+                        Table 6.3: Estimated Major Cloud Provider Deployments (2022-2024)
+                    </p>
+
+                    <div class="table-container">
+                        <table class="data-table" >
+                            <thead>
+                                <tr>
+                                    <th>Provider</th>
+                                    <th>Hardware Type</th>
+                                    <th class="numeric">Computing Power <br> (FLOP/s)</th>
+                                    <th> Source/Calculation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="category">
+                                    <td colspan="4"><em>Microsoft/OpenAI</em></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>H100 equivalents</td>
+                                    <td class="numeric">$6.53 \times 10^{20}$</td>
+                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>AMD MI300X</td>
+                                    <td class="numeric">$2.51 \times 10^{20}$</td>
+                                    <td><a href="#ref-1" class="cite">Mann 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>MAIA</td>
+                                    <td class="numeric">$1.58 \times 10^{20}$</td>
+                                    <td><a href="#ref-1" class="cite">Mann 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total New</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$1.06 \times 10^{21}$</strong></td>
+                                    <td>Sum of three rows above</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2023-2024 (80%)</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$8.50 \times 10^{20}$</strong></td>
+                                    <td>Total New $\times$ 0.8 (2-year portion of 3-year total)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Q4 2024</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$1.38 \times 10^{21}$</strong></td>
+                                    <td>2023-2024 total $\times$ 1.3 (infrastructure multiplier)</td>
+                                </tr>
+
+                                <tr class="category">
+                                    <td colspan="4"><em>Amazon/Anthropic</em></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>H100/A100</td>
+                                    <td class="numeric">$2.87 \times 10^{20}$</td>
+                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Inferentia</td>
+                                    <td class="numeric">$1.75 \times 10^{20}$</td>
+                                    <td>Units$\times 1.92 \times 10^{14}$ FLOP/s per chip</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Tranium</td>
+                                    <td class="numeric">$9.15 \times 10^{19}$</td>
+                                    <td>Units$\times 2.50 \times 10^{14}$ FLOP/s per chip</td>
+                                </tr>
+                                <tr>
+                                    <td>Total New</td>
+                                    <td></td>
+                                    <td class="numeric">$5.53 \times 10^{20}$</td>
+                                    <td>Sum of three rows above</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-2024 (80%) </td>
+                                    <td></td>
+                                    <td class="numeric">$4.42 \times 10^{20}$</td>
+                                    <td>Total New $\times$ 0.8</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Q4 2024</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$7.19 \times 10^{20}$</strong></td>
+                                    <td>2023-2024 total $\times$ 1.3</td>
+                                </tr>
+
+                                <tr class="category">
+                                    <td colspan="4"><em>Google/DeepMind</em></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>TPUs (Q1 2023) </td>
+                                    <td class="numeric">$2.93 \times 10^{19}$</td>
+                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>TPUs (Q4 2024)</td>
+                                    <td class="numeric">$9.10 \times 10^{20}$</td>
+                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>New TPUs 2023-2024 </td>
+                                    <td class="numeric">$8.81 \times 10^{20}$</td>
+                                    <td>Q4 2024 TPUs - Q1 2023 TPUs</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>H100/A100</td>
+                                    <td class="numeric">$3.16 \times 10^{20}$</td>
+                                    <td><a href="#ref-1" class="cite">Mann 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total New GPUs</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$3.16 \times 10^{20}$</strong></td>
+                                    <td>Same as H100/A100 row</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total New TPUs</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$8.81 \times 10^{20}$</strong></td>
+                                    <td>Same as New TPUs row</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>New GPUs + TPUs</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$1.20 \times 10^{21}$</strong></td>
+                                    <td>Sum of Total New GPUs and TPUs</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Q4 2024</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$1.23 \times 10^{21}$</strong></td>
+                                    <td>(New GPUs + TPUs) $\times$ 1.3 - Q1 2023 TPUs</td>
+                                </tr>
+
+
+                                <tr class="category">
+                                    <td colspan="4"><em>Meta</em></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>A100</td>
+                                    <td class="numeric">$6.68 \times 10^{18}$</td>
+                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>H100</td>
+                                    <td class="numeric">$3.46 \times 10^{20}$</td>
+                                    <td>Units $\times$ 9.89 $\times$ $10^{14}$ FLOP/s per H100</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>H100/A100</td>
+                                    <td class="numeric">$3.96 \times 10^{20}$</td>
+                                    <td>Sum of A100 and H100 rows</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>AMD MI300X</td>
+                                    <td class="numeric">$4.52 \times 10^{20}$</td>
+                                    <td>Units $\times$ 2.61 $\times$ $10^{15}$ FLOP/s per MI300X</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>MTIA</td>
+                                    <td class="numeric">$5.31 \times 10^{20}$</td>
+                                    <td>Units $\times$ 3.54 $\times$ $10^{14}$ FLOP/s per MTIA</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total New</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$1.38 \times 10^{21}$</strong></td>
+                                    <td>Sum of all hardware rows</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2023-2024 (80%)</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$1.10 \times 10^{21}$</strong></td>
+                                    <td>Total New $\times$ 0.8</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Q4 2024</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$1.79 \times 10^{21}$</strong></td>
+                                    <td> 2023-2024 total $\times$ 1.3</td>
+                                </tr>
+                                <tr class="category">
+                                    <td colspan="4"><em>Other NVIDIA Customers</em></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>H100/A100</td>
+                                    <td class="numeric">$1.38 \times 10^{21}$</td>
+                                    <td><a href="#ref-3" class="cite">Ming 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>MI300X</td>
+                                    <td class="numeric">$1.52 \times 10^{21}$</td>
+                                    <td><a href="#ref-1" class="cite">Mann 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total New</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$1.54 \times 10^{20}$</strong></td>
+                                    <td>Sum of H100/A100 and MI300X rows</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2023-2024 (80%)</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$1.23 \times 10^{21}$</strong></td>
+                                    <td>Total New $\times$ 0.8 (2-year portion of 3-year total)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Q4 2024</strong></td>
+                                    <td></td>
+                                    <td class="numeric"><strong>$2.00 \times 10^{21}$</strong></td>
+                                    <td> 2023-2024 total$\times$ 1.3 (infrastructure multiplier)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="table-caption" id="table-6-4">Table 6.4: Base Computing Capacity (Q1 2023)</p>
+
+                    <table class="data-table" >
                         <thead>
                             <tr>
-                                <th>Model</th>
-                                <th>Organization</th>
-                                <th>Lab/Cloud</th>
-                                <th class="numeric">Train FLOPs</th>
-                                <th class="numeric">Parent Org Peak <br>Annual FLOPs</th>
-                                <th class="numeric">Model/Public <br>Models (%)</th>
-                                <th class="numeric">Model/Peak Annual (%)</th>
-                                <th class="numeric">Model/Peak <br>w/100x (%)</th>
+                                <th>Type</th>
+                                <th class="numeric">Computing Power <br>(FLOP/s)</th>
+                                <th>Source/Calculation</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="model-name">Big Transformer for Back-Translation</td>
-                                <td class="org-name">Facebook AI Research,Google Brain</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$4.78 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
+                                <td>TPU</td>
+                                <td class="numeric">$2.93 \times 10^{19}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
                             <tr>
-                                <td class="model-name">Xception</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$4.36 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
+                                <td>GPU</td>
+                                <td class="numeric">$3.95 \times 10^{21}$</td>
+                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
                             </tr>
-                            <tr>
-                                <td class="model-name">AmoebaNet-A (F=448)</td>
-                                <td class="org-name">Google Brain</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.85 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlphaGo Fan</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.80 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">SNM-skip</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.98 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">BERT-Large</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.85 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">IMPALA</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.68 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Mesh-TensorFlow Transformer 4.9B</td>
-                                <td class="org-name">Google Brain</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.62 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Contriever</td>
-                                <td class="org-name">Meta AI,UCL,PSL,Grenoble</td>
-                                <td> Meta AI </td>
-                                <td class="numeric">$1.57 \times 10^{20}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">AlphaFold</td>
-                                <td class="org-name">DeepMind</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$1.00 \times 10^{20}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">EfficientNetV2-XL</td>
-                                <td class="org-name">Google, Google Brain</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$9.56 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">MoE-Multi</td>
-                                <td class="org-name">Jagiellonian University,Google Brain</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$9.39 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Adaptive Input Transformer + RD</td>
-                                <td class="org-name">Microsoft Research Asia,Soochow</td>
-                                <td> Microsoft/OpenAI </td>
-                                <td class="numeric">$8.20 \times 10^{19}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">DeiT-B</td>
-                                <td class="org-name">Meta AI,Sorbonne University</td>
-                                <td> Meta AI </td>
-                                <td class="numeric">$7.88 \times 10^{19}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">BEIT-3</td>
-                                <td class="org-name">Microsoft</td>
-                                <td> Microsoft/OpenAI </td>
-                                <td class="numeric">$7.00 \times 10^{19}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Mesh-TensorFlow Transformer 2.9B</td>
-                                <td class="org-name">Google Brain</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$6.84 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">PNASNet-5</td>
-                                <td class="org-name">Johns Hopkins,Google AI,Stanford</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$6.63 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Sparse all-MLP</td>
-                                <td class="org-name">Meta AI</td>
-                                <td> Meta AI </td>
-                                <td class="numeric">$6.08 \times 10^{19}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ConvS2S (ensemble of 8 models)</td>
-                                <td class="org-name">Meta AI</td>
-                                <td> Meta AI </td>
-                                <td class="numeric">$5.64 \times 10^{19}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Seq2Seq LSTM</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$5.60 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">MuZero</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$4.80 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Population-based DRL</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.49 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">QT-Opt</td>
-                                <td class="org-name">Google Brain,UC Berkeley</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.49 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">LSTM (Hebbian, Cache, MbPA)</td>
-                                <td class="org-name">DeepMind,UCL</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.33 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ResNet-200</td>
-                                <td class="org-name">Microsoft Research Asia</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$2.97 \times 10^{19}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Segatron-XL large, M=384 + HCP</td>
-                                <td class="org-name">Microsoft Research, Waterloo</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$2.65 \times 10^{19}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">MultiBand Diffusion</td>
-                                <td class="org-name">Meta AI, Hebrew U,LORIA</td>
-                                <td>Meta AI </td>
-                                <td class="numeric">$2.60 \times 10^{19}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Transformer local-attention (NesT-B)</td>
-                                <td class="org-name">Google Cloud, Google Research</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$2.41 \times 10^{19}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">MSRA (C, PReLU)</td>
-                                <td class="org-name">Microsoft Research</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$2.40 \times 10^{19}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Detic</td>
-                                <td class="org-name">Meta AI,UT Austin</td>
-                                <td>Meta AI </td>
-                                <td class="numeric">$2.34 \times 10^{19}$</td>
-                                <td class="numeric">$5.65 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">GPT-1</td>
-                                <td class="org-name">OpenAI</td>
-                                <td>Microsoft/OpenAI </td>
-                                <td class="numeric">$1.76 \times 10^{19}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">TransE</td>
-                                <td class="org-name">UTC-CNRS,Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.34 \times 10^{18}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
+                            <tr class="total">
+                                <td>Total</td>
+                                <td class="numeric">$3.98 \times 10^{21}$</td>
+                                <td>Sum of TPU and GPU rows</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <p class="table-caption">Table 7.6: AI Model Training Compute Requirements (Part 6 of 6)
+                    <p class="table-caption" id="table-6-5">Table 6.5: Estimated New Computing Capacity (Q1 2023 - Q4
+                        2024)</p>
+
+                    <div class="table-container" >
+                        <table class="data-table" >
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th class="numeric">Computing Power <br>(FLOP/s)</th>
+                                    <th>Source/Calculation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="category">
+                                    <td colspan="3"><em>Specialized AI Hardware</em></td>
+                                </tr>
+                                <tr>
+                                    <td>NVIDIA GPUs (avg of source 1)</td>
+                                    <td class="numeric">$4.82 \times 10^{21}$</td>
+                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
+                                </tr>
+                                <tr>
+                                    <td>NVIDIA GPUs (avg of source 2)</td>
+                                    <td class="numeric">$4.79 \times 10^{21}$</td>
+                                    <td>Sum of all NVIDIA shipments from Table <a href="#table-6-2">6.2</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Avg NVIDIA GPUs</td>
+                                    <td class="numeric">$4.81 \times 10^{21}$</td>
+                                    <td>Average of two NVIDIA GPU sources above</td>
+                                </tr>
+                                <tr>
+                                    <td>New Google TPUs</td>
+                                    <td class="numeric">$8.81 \times 10^{20}$</td>
+                                    <td>Q4 2024 TPUs - Q1 2023 TPUs from Table <a href="#table-6-3">6.3</a></td>
+                                </tr>
+                                <tr>
+                                    <td>New Cloud Hardware</td>
+                                    <td class="numeric">$2.35 \times 10^{21}$</td>
+                                    <td>Sum of all non-NVIDIA cloud hardware from Table <a href="#table-6-3">6.3</a>
+                                    </td>
+                                </tr>
+                                <tr class="category">
+                                    <td colspan="3"><em>Consumer Devices</em></td>
+                                </tr>
+                                <tr>
+                                    <td>Active iPhones</td>
+                                    <td class="numeric">$5.98 \times 10^{21}$</td>
+                                    <td> \( 275\text{M units/quarter} \times 8\ \text{quarters} \times 80\% \times 2.00
+                                        \times 10^{12}\ \text{FLOP/s per iPhone} \)</td>
+                                </tr>
+                                <tr>
+                                    <td>Active Androids</td>
+                                    <td class="numeric">$1.50 \times 10^{21}$</td>
+                                    <td> \( 275\text{M units/quarter} \times 8\ \text{quarters} \times 20\% \times 3.40
+                                        \times 10^{12}\ \text{FLOP/s per Android} \)</td>
+                                </tr>
+                                <tr>
+                                    <td>PC CPUs</td>
+                                    <td class="numeric">$1.96 \times 10^{19}$</td>
+                                    <td> \( 60\text{M units/quarter} \times 8\ \text{quarters} \times 4.08\
+                                        \times 10^{10}\ \text{FLOP/s per CPU} \)</td>
+                                </tr>
+                                <tr>
+                                    <td>PC GPUs</td>
+                                    <td class="numeric">$2.21 \times 10^{21}$</td>
+                                    <td> \( 60\text{M units/quarter} \times 8\ \text{quarters} \times 4.60\
+                                        \times 10^{12}\ \text{FLOP/s per GPU} \)</td>
+                                </tr>
+                                <tr>
+                                    <td>Game Consoles</td>
+                                    <td class="numeric">$8.64 \times 10^{20}$</td>
+                                    <td> \( 84\text{M units} \times 1.03\ \times 10^{13}\ \text{FLOP/s per console} \)
+                                    </td>
+                                </tr>
+                                <tr class="total">
+                                    <td>Total New</td>
+                                    <td class="numeric">$2.82 \times 10^{22}$</td>
+                                    <td>Sum of all rows above</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="table-caption" id="table-6-6">Table 6.6: Estimated Total Worldwide Computing Capacity (Q4 2024). Note
+                        that these calculations exclude cloud CPU compute.</p>
+
+                    <div class="table-container">
+                        <table class="data-table" >
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th class="numeric">Computing Power <br>(FLOP/s)</th>
+                                    <th class="numeric">Share (%)</th>
+                                    <th>Source/Calculation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="category">
+                                    <td colspan="4"><em>Cloud/AI Providers</em></td>
+                                </tr>
+                                <tr>
+                                    <td>Meta</td>
+                                    <td class="numeric">$1.79 \times 10^{21}$</td>
+                                    <td class="numeric">5.57%</td>
+                                    <td>From Table <a href="#table-6-3">6.3</a> Total Q4 2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Microsoft/OpenAI</td>
+                                    <td class="numeric">$1.38 \times 10^{21}$</td>
+                                    <td class="numeric">4.29%</td>
+                                    <td>From Table <a href="#table-6-3">6.3</a> Total Q4 2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Google/DeepMind</td>
+                                    <td class="numeric">$1.23 \times 10^{21}$</td>
+                                    <td class="numeric">3.81%</td>
+                                    <td>From Table <a href="#table-6-3">6.3</a> Total Q4 2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Amazon/Anthropic</td>
+                                    <td class="numeric">$7.19 \times 10^{20}$</td>
+                                    <td class="numeric">2.23%</td>
+                                    <td>From Table <a href="#table-6-3">6.3</a> Total Q4 2024</td>
+                                </tr>
+                                <tr class="category">
+                                    <td colspan="4"><em>Consumer Computing</em></td>
+                                </tr>
+                                <tr>
+                                    <td>Smartphones</td>
+                                    <td class="numeric">$7.48 \times 10^{21}$</td>
+                                    <td class="numeric">23.23%</td>
+                                    <td> Sum of Active iPhones and Androids from Table <a href="#table-6-5">6.5</a></td>
+                                </tr>
+                                <tr>
+                                    <td>PC CPUs/GPUs</td>
+                                    <td class="numeric">$2.23 \times 10^{21}$</td>
+                                    <td class="numeric">6.92%</td>
+                                    <td> Sum of PC CPUs and GPUs from Table <a href="#table-6-5">6.5</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Game Consoles</td>
+                                    <td class="numeric">$8.64 \times 10^{20}$</td>
+                                    <td class="numeric">2.68%</td>
+                                    <td>From Table <a href="#table-6-5">6.5</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Other Cloud/Pre-2023</td>
+                                    <td class="numeric">$1.65 \times 10^{22}$</td>
+                                    <td class="numeric">51.28%</td>
+                                    <td>Base capacity $\times$ 1.3 + remaining new capacity not allocated above</td>
+                                </tr>
+                                <tr class="total">
+                                    <td>Total</td>
+                                    <td class="numeric">$3.22 \times 10^{22}$</td>
+                                    <td class="numeric">100.00%</td>
+                                    <td>Sum of all rows above</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <ul>
+                        <li><strong>Custom Hardware:</strong> Major cloud providers are increasingly deploying custom AI
+                            accelerators (MAIA, MTIA, Inferentia) alongside NVIDIA GPUs, though these still represent a
+                            minority of total capacity.</li>
+                        <li><strong>Consumer Updates:</strong> The rapid replacement cycle of consumer devices
+                            (particularly
+                            smartphones) means this sector maintains a significant share of total computing power
+                            despite lower per-unit performance.</li>
+                    </ul>
+
+                    <h3>Methodological Limitations</h3>
+
+                    <p>
+                        Several factors affect the precision of these estimates:
                     </p>
-                    <table class="data-table" id="table-7-6">
-                        <thead>
-                            <tr>
-                                <th>Model</th>
-                                <th>Organization</th>
-                                <th>Lab/Cloud</th>
-                                <th class="numeric">Train FLOPs</th>
-                                <th class="numeric">Parent Org Peak <br>Annual FLOPs</th>
-                                <th class="numeric">Model/Public <br>Models (%)</th>
-                                <th class="numeric">Model/Peak Annual (%)</th>
-                                <th class="numeric">Model/Peak <br>w/100x (%)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="model-name">KN-LM</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$7.73 \times 10^{17}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">WeNet (Penn Treebank)</td>
-                                <td class="org-name">Amazon</td>
-                                <td>Anthropic/Amazon </td>
-                                <td class="numeric">$7.30 \times 10^{17}$</td>
-                                <td class="numeric">$2.27 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Unsupervised High-level Feature Learner</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$6.00 \times 10^{17}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">CT-MoS (WT2)</td>
-                                <td class="org-name">Google,National Tsing Hua University</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$5.62 \times 10^{17}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">DistBelief Speech</td>
-                                <td class="org-name">Google</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$3.11 \times 10^{17}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Mogrifier RLSTM (WT2)</td>
-                                <td class="org-name">DeepMind</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.40 \times 10^{17}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ReLU-Speech</td>
-                                <td class="org-name">Google,Toronto,NYU</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$1.28 \times 10^{17}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Large regularized LSTM</td>
-                                <td class="org-name">NYU,Google Brain</td>
-                                <td>Google DeepMind </td>
-                                <td class="numeric">$9.10 \times 10^{16}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">R-FCN</td>
-                                <td class="org-name">Tsinghua,Microsoft Research</td>
-                                <td> Microsoft/OpenAI </td>
-                                <td class="numeric">$6.15 \times 10^{16}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ADAM (CIFAR-10)</td>
-                                <td class="org-name">Amsterdam,OpenAI,Toronto</td>
-                                <td> Microsoft/OpenAI </td>
-                                <td class="numeric">$6.05 \times 10^{16}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Word2Vec (large)</td>
-                                <td class="org-name">Google</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$3.89 \times 10^{16}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ENAS</td>
-                                <td class="org-name">Google Brain,CMU,Stanford</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$2.01 \times 10^{16}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">DARTS</td>
-                                <td class="org-name">DeepMind,CMU</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$1.10 \times 10^{16}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">NAS with base 8 and shared embeddings</td>
-                                <td class="org-name">Google Brain</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$1.05 \times 10^{16}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">ISS</td>
-                                <td class="org-name">Duke University,Microsoft</td>
-                                <td> Microsoft/OpenAI </td>
-                                <td class="numeric">$3.40 \times 10^{15}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">Search-Proven Best LSTM</td>
-                                <td class="org-name">Google</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$3.34 \times 10^{15}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">DQN</td>
-                                <td class="org-name">DeepMind</td>
-                                <td> Google DeepMind </td>
-                                <td class="numeric">$2.30 \times 10^{15}$</td>
-                                <td class="numeric">$3.87 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                            <tr>
-                                <td class="model-name">RankNet</td>
-                                <td class="org-name">Microsoft Research,Microsoft</td>
-                                <td>Microsoft/OpenAI</td>
-                                <td class="numeric">$3.48 \times 10^{12}$</td>
-                                <td class="numeric">$4.35 \times 10^{28}$</td>
-                                <td class="numeric">0.00</td>
-                                <td class="numeric">0.000</td>
-                                <td class="numeric">0.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                    <ol>
+                        <li><strong>Utilization Rates:</strong> Our analysis uses peak theoretical performance. Actual
+                            achieved
+                            performance varies significantly based on:
+
+                            <ul>
+                                <li>Workload characteristics</li>
+
+                                <li>Cooling and power constraints</li>
+
+                                <li>Network and memory bottlenecks</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Temporal Distribution:</strong> The 80% factor used for 2023-2024 portion of
+                            2022-2024
+                            deployments is a rough estimate based on the degree to which NVIDIA sales and chip
+                            FLOP capacity have greatly increased in the past two years (<a href="#ref-4"
+                                class="cite">Macrotrends LLC 2024</a>).</li>
+                        <li><strong>Consumer Device Usage:</strong> Not all consumer devices are actively used for
+                            computation at
+                            any given time, potentially overestimating their contribution to global computing power.
+                        </li>
+                    </ol>
                 </section>
 
                 <section class="references">
@@ -1800,6 +901,17 @@
                     <ol>
                         <li id="ref-1">
                             <span class="authors">
+                                T. Mann. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Ai’s rising tide lifts all chips as amd instinct, cloudy silicon vie for a slice of
+                                nvidia’s pie. <em>The Register</em>, Dec.
+                            </span>
+                        </li>
+
+                        <li id="ref-2">
+                            <span class="authors">
                                 Epoch AI. 2024.
                             </span>
 
@@ -1807,12 +919,32 @@
                                 Data on machine learning hardware. Updated December 30, 2024.
                             </span>
                         </li>
+
+                        <li id="ref-3">
+                            <span class="authors">
+                                Ming. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Nvidia ai gpu shipments to hit 4m in 2024. <em>SMYG Limited News</em>, Jun.
+                            </span>
+                        </li>
+
+                        <li id="ref-4">
+                            <span class="authors">
+                                Macrotrends LLC. 2024.
+                            </span>
+
+                            <span class="venue">
+                                Nvidia revenue 2010-2024 — nvda. Accessed January 2024
+                            </span>
+                        </li>
                     </ol>
                 </section>
 
                 <nav class="chapter-nav">
-                    <a href="appendix1.html" class="prev">Appendix I: Compute Distribution</a>
-                    <a href="index.html" class="next">Back to Introduction</a>
+                    <a href="appendix1.html" class="prev">Appendix I: Epilogue</a>
+                    <a href="appendix3.html" class="next">Appendix III: Model Rankings</a>
                 </nav>
             </main>
         </div>

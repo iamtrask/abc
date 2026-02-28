@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appendix I: Global Compute Distribution | ABC in AI</title>
+    <title>Appendix I: Epilogue | ABC in AI</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,55 +35,6 @@
         window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
         plausible.init()
     </script>
-    <style>
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.85rem;
-        }
-
-        .data-table th,
-        .data-table td {
-            padding: 0.5rem 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .data-table th {
-            background: #f5f5f5;
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-
-        .data-table tr:hover {
-            background: #fafafa;
-        }
-
-        .data-table .numeric {
-            text-align: right;
-            font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
-        }
-
-        .data-table .category {
-            font-style: italic;
-            color: #666;
-            background: #fafafa;
-        }
-
-        .data-table .total {
-            font-weight: 600;
-            border-top: 2px solid #333;
-        }
-
-        .table-caption {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-    </style>
 </head>
 
 <body>
@@ -94,9 +45,10 @@
             <a href="chapter3.html">III. Network-Source AI</a>
             <a href="chapter4.html">IV. Broad Listening</a>
             <a href="chapter5.html">V. Conclusion</a>
-            <a href="references.html">References</a>
             <a href="appendix1.html" class="active">Appendix I</a>
             <a href="appendix2.html">Appendix II</a>
+            <a href="appendix3.html">Appendix III</a>
+            <a href="references.html">References</a>
             <a href="https://andrewtrask.com">About</a>
         </nav>
 
@@ -104,846 +56,1473 @@
             <aside class="toc-sidebar">
                 <h4>On This Page</h4>
                 <ul>
-                    <li class="toc-h3"><a href="#methodology">Methodology</a></li>
-                    <li class="toc-h3"><a href="#hardware-specs">Hardware Specifications</a></li>
-                    <li class="toc-h3"><a href="#nvidia-shipments">NVIDIA Shipments</a></li>
-                    <li class="toc-h3"><a href="#analysis">Analysis</a></li>
+                    <li class="toc-h3"><a href="#opening">Opening</a></li>
+                    <li class="toc-h3"><a href="#recurring-pattern">A Recurring Pattern</a></li>
+                    <li class="toc-h4"><a href="#the-library">The Library</a></li>
+                    <li class="toc-h4"><a href="#the-encyclopedia">The Encyclopedia</a></li>
+                    <li class="toc-h4"><a href="#the-computer">The Computer</a></li>
+                    <li class="toc-h4"><a href="#the-arc">The Arc</a></li>
+                    <li class="toc-h3"><a href="#key-variable">The Key Variable</a></li>
+                    <li class="toc-h3"><a href="#licklider">Licklider et al.</a></li>
+                    <li class="toc-h3"><a href="#ai-peak">AI and the Current Peak</a></li>
+                    <li class="toc-h3"><a href="#deeper-problem">The Deeper Problem</a></li>
+                    <li class="toc-h4"><a href="#four-tools">Four Tools</a></li>
+                    <li class="toc-h4"><a href="#politics">Politics</a></li>
+                    <li class="toc-h4"><a href="#economics">Economics</a></li>
+                    <li class="toc-h4"><a href="#culture">Culture</a></li>
+                    <li class="toc-h4"><a href="#structural-condition">Structural Condition</a></li>
+                    <li class="toc-h4"><a href="#free-listening">Free Listening</a></li>
+                    <li class="toc-h4"><a href="#what-changes">What Changes</a></li>
+                    <li class="toc-h3"><a href="#the-window">The Window</a></li>
+                    <li class="toc-h3"><a href="#freedom">Freedom</a></li>
+                    <li class="toc-h3"><a href="#the-end">The End</a></li>
                 </ul>
+                <div class="ascii-decoration">
+                    central broad
+                    · → ·─·─·
+                    /|\ │ │ │
+                    ····· ·─·─·
+
+                    the arc of
+                    federation
+                </div>
             </aside>
+
+            <!-- Floating margin art -->
+            <div class="ascii-margin">
+                <div class="art-piece">
+                    central
+                    ·
+                    /|\
+                    ·····
+                    ↓
+                    federated
+                    ·─·─·
+                    │ │ │
+                    ·─·─·
+                </div>
+                <div class="art-piece">
+                    the window
+                    is open
+
+                    ┌─────┐
+                    │ → → │
+                    │ ← │
+                    └─────┘
+                </div>
+                <div class="art-piece">
+                    free
+                    listening
+
+                    ☺ ←── ☺
+                    ↑ ↓
+                    ☺ ──→ ☺
+                </div>
+            </div>
 
             <main>
                 <div class="chapter-header">
                     <p class="chapter-number">Appendix I</p>
-                    <h1>Estimated Global Compute Distribution and Capacity</h1>
+                    <h1>Epilogue</h1>
                 </div>
 
-                <section>
+                <section id="opening">
+                    <figure class="full-width">
+                        <img src="1411.3146/ch_5_6_v1.png"
+                            alt="The option for decentralized AI does not mean AI will decentralize">
+                        <figcaption>The option for decentralized AI does not mean AI will decentralize.</figcaption>
+                    </figure>
+
                     <p>
-                        This appendix documents the global distribution of computing power as of Q4 2024, with
-                        particular focus on AI accelerators and general-purpose computing hardware. All computing
-                        power is measured in floating point operations per second (FLOP/s), enabling direct comparison
-                        between different types of computing devices.
+                        The problem of information centralisation, and even the more specific problems Chapter 1
+                        catalogued (hallucination, disinformation, data siloing, the concentration of power, the
+                        tension between capability and democratic values) are not new. Looking across history, both
+                        the high level centralisation issue and more specific manifestations appeared at similar
+                        moments, such as when the Library of Alexandria centralised the ancient world&rsquo;s
+                        knowledge, when the encyclopedia centralised Enlightenment scholarship, and when the mainframe
+                        centralised computing. In each of these cases (and in other cases), the centralised phase
+                        eventually gave way to something more distributed. But as far as this author is aware, in
+                        every case but one, centralisation only gave way to federation after a long period of time,
+                        and after a tremendous amount of centralisation-driven damage had been done.
                     </p>
                 </section>
 
-                <section id="methodology">
-                    <h2>Methodology</h2>
-
-                    <p>Our analysis tracks two primary categories of computing power:</p>
-
-                    <ol>
-                        <li><strong>Specialized AI Hardware:</strong> Data center GPUs (e.g., NVIDIA H100s, AMD MI300X),
-                            TPUs, and custom ASICs (e.g., Microsoft MAIA, Meta MTIA)
-                        </li>
-
-                        <li><strong>General Purpose Computing:</strong> Consumer devices including smartphones, personal
-                            computers, and gaming consoles
-                        </li>
-                    </ol>
+                <section id="recurring-pattern">
+                    <h2>A Recurring Pattern of Centralisation and Federation</h2>
 
                     <p>
-                        The analysis covers 2023-2024, with several key methodological considerations:
+                        The pattern is worth tracing briefly, because the details matter. Each case centralised for
+                        the same structural reason, created genuine value, concentrated control as a side effect, and
+                        eventually gave way to a federated alternative. But the circumstances under which federation
+                        occurred, and the costs that accumulated before it did, varied enormously.
                     </p>
 
-                    <h3>Time Period Normalization</h3>
+                    <h3 id="the-library">The Library</h3>
 
                     <p>
-                        Many source datasets span 2022-2024. For these three-year totals, we estimate the 2023-2024
-                        portion as 80% of the total, reflecting:
-                    </p>
-
-                    <ul>
-                        <li>Accelerating deployment rates through the period</li>
-
-                        <li>Increased manufacturing capacity in later years</li>
-
-                        <li>Reported quarterly growth patterns (<a href="#ref-1" class="cite">Mann 2024</a>)</li>
-                    </ul>
-
-                    <h3>Infrastructure Accounting</h3>
-
-                    <p>
-                        To account for infrastructure deployed before our analysis period that remains in active use, we
-                        apply a 1.3&times; multiplier to new deployments. This multiplier derives from:
-                    </p>
-
-                    <ul>
-                        <li>Historical hardware retirement rates (<a href="#ref-2" class="cite">Epoch AI 2024</a>)</li>
-
-                        <li>Typical infrastructure lifecycle lengths</li>
-
-                        <li> Reported infrastructure retention patterns (<a href="#ref-1" class="cite">Mann 2024</a>)
-                        </li>
-                    </ul>
-
-                    <h3>Consumer Device Calculations</h3>
-
-                    <p>For devices like smartphones, we calculate:</p>
-
-                    <p style="text-align: center; margin: 1rem 0;">
-                        $$\text{Total Capacity} = \text{Quarterly Sales}
-                        \times \text{Number of Quarters} \times \text{Device Performance}$$
+                        For most of recorded history, a scholar who wished to draw on many sources had to travel to
+                        find them. Written texts were scarce, scattered across cities and temples, and the cost of
+                        copying a manuscript by hand meant most works existed in only a few copies. The path of least
+                        resistance was centralisation: bring the texts to one place.
                     </p>
 
                     <p>
-                        Key assumptions include:
+                        The Library of Alexandria, founded under the Ptolemaic dynasty in the third century BCE,
+                        represents the most ambitious attempt. The Ptolemies aimed to house every written work in the
+                        known world, and their acquisition methods were
+                        aggressive. Scholars were dispatched abroad to purchase or copy any works of
+                        importance<a href="#sidenote-1" class="sidenote-ref"><sup>1</sup></a>.
+                        Ships arriving in Alexandria&rsquo;s harbour were searched for books, which were confiscated,
+                        copied, and catalogued; the originals were kept by the library and copies returned to their
+                        owners, a practice so routine that the confiscated works were designated &ldquo;from the
+                        ships&rdquo; as a cataloguing
+                        category <a href="#ref-1" class="cite">Casson, 2001</a><a href="#sidenote-2" class="sidenote-ref"><sup>2</sup></a>.
+                        The result was a genuine achievement in broad listening: for the first time, a single scholar
+                        could sit in one room and consult thousands of independent sources, comparing accounts,
+                        identifying contradictions, and drawing insights that no single source could provide.
+                    </p>
+                    <div class="sidenote" id="sidenote-1"><sup>1</sup> The practice is the ancient equivalent of web
+                        crawling: systematic agents sent out to discover, copy, and return content to a central
+                        repository, where it is indexed and made searchable on the repository&rsquo;s terms rather
+                        than the creator&rsquo;s.</div>
+                    <div class="sidenote" id="sidenote-2"><sup>2</sup> Galen, writing in the second century CE,
+                        provides the most detailed account of this practice in his <em>Commentary on
+                        Hippocrates&rsquo; Epidemics</em> <a href="#ref-2" class="cite">Galen, c. 170 CE</a>. He
+                        also records how Ptolemy III borrowed the original manuscripts of Aeschylus, Sophocles, and
+                        Euripides from the Athenian state archives, depositing fifteen talents of silver as surety
+                        for their return, then kept the originals and sent back copies, forfeiting the deposit. The
+                        structural logic is familiar: when data entered Alexandria&rsquo;s port, a copy was retained
+                        by the institution controlling the port, and the contributor lost governance over how the
+                        contributed work would be used. Every data point that travels through a modern
+                        platform&rsquo;s servers follows the same path.</div>
+
+                    <p>
+                        But Alexandria was also a centralisation of control, and the centralisation followed a
+                        structure familiar from Chapter 1. The Ptolemaic dynasty determined what was collected, who
+                        could access the collection, and which versions of a text were authoritative when multiple
+                        copies disagreed. Access was restricted to royally appointed scholars who depended on the
+                        crown&rsquo;s continued patronage for their stipends and tax
+                        exemptions <a href="#ref-1" class="cite">Casson, 2001</a>. The Sceptic philosopher Timon of
+                        Phlius, a contemporary of the library&rsquo;s peak under Ptolemy II Philadelphus, dismissed
+                        its scholars as &ldquo;bookish scribblers who spend their whole lives pecking away in the
+                        birdcage of the Muses&rdquo; <a href="#ref-3" class="cite">Canfora, 1989</a>. A smaller
+                        daughter library was later established in the Serapeum, where unaffiliated scholars could
+                        access copies of many manuscripts in what the fourth-century rhetorician Aphthonius described
+                        as &ldquo;reading rooms for books, offering an opportunity for the studious to pursue
+                        knowledge and arousing the whole city to the possibility of
+                        wisdom&rdquo; <a href="#ref-4" class="cite">Kennedy, 2003</a>, but the Great Library itself
+                        remained a royal institution whose collections served those the crown chose to
+                        support<a href="#sidenote-3" class="sidenote-ref"><sup>3</sup></a>.
+                    </p>
+                    <div class="sidenote" id="sidenote-3"><sup>3</sup> The tension between restricted and open access
+                        recurs in the contemporary AI landscape as the debate between closed-source and open-source
+                        models. Closed-source AI labs restrict access to their most capable models, offering the
+                        public a limited interface while reserving full capability for paying clients and internal
+                        researchers. Open-source projects make weights and training code available to anyone. The
+                        structural arguments are the same ones Alexandria and the Serapeum embodied: restricted access
+                        enables quality control and sustained funding; open access enables broader use, scrutiny, and
+                        innovation. Neither resolves the deeper question of who decides what the system
+                        contains.</div>
+
+                    <p>
+                        The centralisation was contested even at the time. During the third century BCE, the Attalid
+                        king Eumenes II established a rival library in Pergamum, and the two institutions competed
+                        for scholars, manuscripts, and prestige in what amounted to an intellectual arms race between
+                        Hellenistic powers <a href="#ref-1" class="cite">Casson, 2001</a>. Each library tried to
+                        attract the other&rsquo;s scholars by offering higher stipends, and Ptolemy V reportedly
+                        imprisoned the grammarian Aristophanes of Byzantium to prevent his defection to
+                        Pergamum<a href="#sidenote-4" class="sidenote-ref"><sup>4</sup></a>. When Pergamum&rsquo;s
+                        collection grew large enough to threaten Alexandria&rsquo;s dominance, the Ptolemies
+                        retaliated by banning the export of papyrus, forcing Pergamum to develop parchment as an
+                        alternative writing
+                        material<a href="#sidenote-5" class="sidenote-ref"><sup>5</sup></a>. Information overload was
+                        addressed through centralisation, centralisation created genuine value, and the entities that
+                        managed the centralised resource acquired considerable power over what could be known.
+                    </p>
+                    <div class="sidenote" id="sidenote-4"><sup>4</sup> The practice of retaining scholars through
+                        coercion rather than merit has a contemporary parallel in the non-compete agreements and
+                        equity vesting structures that major AI laboratories use to prevent researchers from joining
+                        competitors, and in the broader talent war between AI labs that has driven compensation for
+                        top machine-learning researchers to levels that only the largest institutions can
+                        sustain.</div>
+                    <div class="sidenote" id="sidenote-5"><sup>5</sup> Varro records the papyrus embargo; Pliny the
+                        Elder attributes the development of parchment (<em>charta pergamena</em>) to this rivalry,
+                        though Herodotus notes that animal skins had been used as writing material for centuries prior
+                        (<em>Histories</em> V.58.3). The papyrus embargo is structurally identical to the
+                        contemporary use of semiconductor export controls as a geopolitical instrument: the United
+                        States restricts the export of advanced GPU chips to China, and China restricts the export of
+                        rare earth minerals essential to chip manufacturing, each side attempting to deny the other
+                        access to the infrastructure on which the rival&rsquo;s knowledge system depends.</div>
+
+                    <p>
+                        When the library&rsquo;s collections were eventually damaged and dispersed (gradually, over
+                        several centuries, through a combination of declining patronage, civil strife, and religious
+                        conflict rather than the single fire of popular
+                        imagination <a href="#ref-3" class="cite">Canfora, 1989</a>), works were lost that humanity
+                        never recovered, precisely because no redundant copies existed outside the centralised
+                        collection<a href="#sidenote-6" class="sidenote-ref"><sup>6</sup></a>. Federation came through
+                        the slow proliferation of libraries across institutions and geographies, but that federation
+                        required technical infrastructure that did not exist in Alexandria&rsquo;s era: first the
+                        codex, then eventually the printing
+                        press<a href="#sidenote-7" class="sidenote-ref"><sup>7</sup></a>, which reduced the cost of
+                        copying so dramatically that centralised control over reproduction became impractical.
+                    </p>
+                    <div class="sidenote" id="sidenote-6"><sup>6</sup> The concentration of irreplaceable knowledge
+                        in a single institution is the oldest version of the single-point-of-failure problem that
+                        Chapter 1 identified in contemporary AI. When a centralised AI system is compromised,
+                        retrained, or shut down, the predictions it supported disappear with it, and no independent
+                        copies of its internal knowledge exist in a form that others can reconstruct.
+                        Alexandria&rsquo;s lesson is that centralisation makes knowledge powerful and fragile at the
+                        same time.</div>
+                    <div class="sidenote" id="sidenote-7"><sup>7</sup> The oldest dated printed book, a Chinese copy
+                        of the <em>Diamond Sutra</em>, was produced using woodblock printing in
+                        868 CE <a href="#ref-5" class="cite">Smithsonian</a>. Gutenberg&rsquo;s movable type arrived
+                        in Europe nearly six centuries later. In each case, the critical transition was the same: once
+                        copying became cheap enough that no single institution could control reproduction, centralised
+                        authority over the text gave way to distributed access. The release of open-weight AI models
+                        follows the same logic. When a trained model&rsquo;s weights can be downloaded and run on
+                        commodity hardware, the laboratory that produced the model loses the control over access that
+                        a closed API provides, just as the monastery lost control over the text once the printer could
+                        reproduce it without permission.</div>
+
+                    <h3 id="the-encyclopedia">The Encyclopedia</h3>
+
+                    <p>
+                        By the eighteenth century, the printing press had solved the library&rsquo;s centralisation
+                        problem so thoroughly that it created a new one. There were now so many books that no
+                        individual could read them all. Information overload had shifted from scarcity of sources to
+                        abundance, and the path of least resistance was once again centralisation: compress the
+                        essential knowledge of the era into a single reference
+                        work<a href="#sidenote-8" class="sidenote-ref"><sup>8</sup></a>.
+                    </p>
+                    <div class="sidenote" id="sidenote-8"><sup>8</sup> James C. Scott&rsquo;s <em>Seeing Like a
+                        State</em> <a href="#ref-6" class="cite">Scott, 1998</a> describes this impulse as the drive
+                        toward &ldquo;legibility&rdquo;: states simplify the messy, local, context-dependent
+                        knowledge of their subjects into standardised categories that can be read from the centre.
+                        Permanent surnames replace patronyms; cadastral surveys replace customary land use;
+                        monoculture replaces polyculture. Each simplification makes governance easier and local
+                        knowledge harder to preserve. The encyclopedic tradition enacts the same logic in the domain
+                        of knowledge itself, and so does the contemporary AI laboratory: a large language model
+                        compresses the world&rsquo;s text into a single set of weights, legible to the institution
+                        that controls inference but opaque to everyone whose knowledge was compressed.
+                        Scott&rsquo;s central warning&mdash;that legibility serves the centre at the cost of the
+                        periphery, and that the losses are invisible precisely because the simplified system cannot
+                        represent what it destroyed&mdash;applies to AI training corpora as directly as it applies to
+                        Prussian forestry or Soviet collectivisation.</div>
+
+                    <p>
+                        The <em>Encyclopédie</em>, edited by Denis Diderot and Jean le Rond d&rsquo;Alembert and
+                        published between 1751 and 1772, was motivated by genuine democratic idealism.
+                        Diderot&rsquo;s explicit aim was to &ldquo;change the common way of thinking&rdquo; through
+                        the expansion of knowledge and the development of critical modes of
+                        thought <a href="#ref-7" class="cite">Diderot, 1751</a><a href="#sidenote-9" class="sidenote-ref"><sup>9</sup></a>.
+                        The impulse is recognisably the same one that animates much of the enthusiasm for AI, and for
+                        open-source AI in particular: the hope that technology can democratise access to
+                        knowledge<a href="#sidenote-10" class="sidenote-ref"><sup>10</sup></a>.
+                    </p>
+                    <div class="sidenote" id="sidenote-9"><sup>9</sup> The phrase appears in Diderot&rsquo;s own
+                        article &ldquo;Encyclopédie&rdquo; within the work itself. What began in 1745 as a
+                        translation of Ephraim Chambers&rsquo;s 1728 <em>Cyclopedia</em> became, by Diderot&rsquo;s
+                        1750 <em>Prospectus</em>, something far more ambitious: an engine for changing, rather than
+                        codifying, existing
+                        knowledge <a href="#ref-8" class="cite">SEP, &ldquo;Denis Diderot&rdquo;</a>. The 32 volumes
+                        ultimately published contained over 70,000 articles by more than 140 contributors, and the
+                        project provided the intellectual cause around which the French Enlightenment
+                        <em>philosophes</em> coalesced as a movement.</div>
+                    <div class="sidenote" id="sidenote-10"><sup>10</sup> The most explicit articulation of this hope
+                        before the AI era is H.G. Wells&rsquo;s 1937 essay &ldquo;The Idea of a Permanent World
+                        Encyclopaedia,&rdquo; which envisioned a continuously updated knowledge system that would
+                        &ldquo;supply the humanity of the days before us, with a common understanding and the
+                        conception of a common purpose and of a commonweal such as now we hardly dare dream
+                        of&rdquo; <a href="#ref-9" class="cite">Wells, 1937</a>. Wells believed this system would
+                        achieve world peace by making all human knowledge universally accessible. The language maps
+                        directly onto the universalist rhetoric of contemporary AI laboratories, which similarly
+                        promise that a sufficiently capable model will unify human knowledge and dissolve
+                        disagreement.</div>
+
+                    <p>
+                        But the <em>Encyclopédie</em> was also a centralisation of editorial authority. Even though
+                        the work was circulated openly, Diderot and his collaborators decided what counted as
+                        knowledge and what did not. Subsequent encyclopedic traditions demonstrated that this
+                        authority is consequential: national encyclopedias in the nineteenth and twentieth centuries
+                        became instruments of state ideology in multiple
+                        countries<a href="#sidenote-11" class="sidenote-ref"><sup>11</sup></a>. Even the
+                        <em>Encyclopædia Britannica</em>, which aspired to political neutrality, necessarily
+                        reflected the editorial judgments of a small group about what the world&rsquo;s knowledge
+                        contained<a href="#sidenote-12" class="sidenote-ref"><sup>12</sup></a>.
+                    </p>
+                    <div class="sidenote" id="sidenote-11"><sup>11</sup> The <em>Great Soviet Encyclopedia</em>
+                        notoriously required subscribers to physically cut out and replace pages when political
+                        figures fell from favour. After the execution of Lavrentiy Beria, head of the NKVD, in 1953,
+                        subscribers received replacement pages with an extended entry on the Bering Strait to fill
+                        the space his biography had occupied. The mechanics differ from AI model updates, but the
+                        structural point is the same: whoever controls the compression of knowledge into an
+                        authoritative reference controls what a population can easily access, and can alter the
+                        historical record after publication.</div>
+                    <div class="sidenote" id="sidenote-12"><sup>12</sup> The parallel to AI training data curation is
+                        direct. When a small team at an AI laboratory decides which data to include in a training
+                        corpus, which to filter, and how to weight different sources, it is performing the same
+                        editorial function that Britannica&rsquo;s editors performed: compressing the world&rsquo;s
+                        knowledge into a single artefact, and in doing so, deciding what the artefact&rsquo;s users
+                        will be able to learn. The difference is that Britannica&rsquo;s editorial judgments were made
+                        by named individuals whose credentials and biases could be inspected. The equivalent
+                        judgments in AI training are typically made by anonymous teams following undisclosed
+                        criteria.</div>
+
+                    <p>
+                        Federation came through technical infrastructure. The proliferation of publishing distributed
+                        editorial authority across many authors and publishers. Much later, Wikipedia distributed the
+                        encyclopedic impulse itself across millions of contributors governed by transparent rules and
+                        versioned accountability rather than a single editorial
+                        vision <a href="#ref-10" class="cite">Wikipedia, &ldquo;Governance&rdquo;</a>. Wikipedia has
+                        well-documented problems of its own, but its architecture makes editorial decisions
+                        distributed and auditable in ways that earlier encyclopedias structurally could not
+                        achieve<a href="#sidenote-13" class="sidenote-ref"><sup>13</sup></a>.
+                    </p>
+                    <div class="sidenote" id="sidenote-13"><sup>13</sup> Wikipedia&rsquo;s governance model, in which
+                        editorial rules are transparent, changes are versioned, and disputes are resolved through
+                        documented processes rather than editorial fiat, represents one model for how AI governance
+                        might be federated. The open-source AI movement aspires to something similar: making model
+                        weights, training data, and fine-tuning decisions inspectable and reproducible. The gap
+                        between aspiration and achievement in open-source AI mirrors Wikipedia&rsquo;s own ongoing
+                        struggles with editorial capture, systemic bias, and the difficulty of scaling transparent
+                        governance, but the structural direction is the same.</div>
+
+                    <h3 id="the-computer">The Computer</h3>
+
+                    <p>
+                        In the 1950s and 1960s, the dominant vision of computing&rsquo;s future was centralised.
+                        Computation was so expensive that only governments, large corporations, and research
+                        universities could afford it, and the prevailing expectation (shared by most of the industry,
+                        including IBM, which controlled roughly two-thirds of the market) was that this would remain
+                        the case indefinitely. Computing would be a service: large machines owned by large
+                        institutions, accessed through terminals, controlled by whoever owned the
+                        hardware<a href="#sidenote-14" class="sidenote-ref"><sup>14</sup></a>.
+                    </p>
+                    <div class="sidenote" id="sidenote-14"><sup>14</sup> The parallel to contemporary AI is
+                        structural, not merely metaphorical. Users access large language models through browser
+                        interfaces and APIs; the models run on GPU clusters owned by a handful of laboratories; and
+                        the terms of access (what the model will and will not do, what data it retains, how it prices
+                        usage) are set entirely by whoever owns the hardware. The mainframe&rsquo;s dumb terminal,
+                        which transmitted keystrokes to a remote machine and displayed whatever the machine sent back,
+                        is the chatbot&rsquo;s text box.</div>
+
+                    <p>
+                        Unlike the library and the encyclopedia, the mainframe&rsquo;s centralisation was partly a
+                        failure of imagination. The machine itself did not require centralisation in the way a
+                        manuscript library required physical co-location of scrolls; it was the cost of the machine
+                        that made centralisation seem inevitable, and the cost was
+                        falling<a href="#sidenote-15" class="sidenote-ref"><sup>15</sup></a>. The question was whether
+                        the institutions that controlled mainframes would entrench their position before alternatives
+                        became viable<a href="#sidenote-16" class="sidenote-ref"><sup>16</sup></a>.
+                    </p>
+                    <div class="sidenote" id="sidenote-15"><sup>15</sup> The trajectory of GPU costs recapitulates
+                        the mainframe pattern with one complication. Models that required tens of millions of dollars
+                        to train in 2023 could be approximated by open-weight alternatives running on consumer
+                        hardware within two years. But the personal computer revolution that federated mainframe
+                        computing was itself partially reversed by cloud computing: Amazon Web Services, Microsoft
+                        Azure, and Google Cloud re-centralised computation into a handful of providers, and AI
+                        training runs almost exclusively on their infrastructure. The oscillation between federation
+                        and re-centralisation&mdash;mainframes to PCs to cloud to (perhaps) edge AI&mdash;suggests
+                        that cost reduction alone does not guarantee federation. The architecture of the
+                        infrastructure matters as much as its price.</div>
+                    <div class="sidenote" id="sidenote-16"><sup>16</sup> Google&rsquo;s attempt, begun in 2004, to
+                        digitise every book in the world into a single searchable database was the most literal
+                        re-enactment of Alexandria&rsquo;s ambition using computer
+                        infrastructure <a href="#ref-11" class="cite">Somers, 2017</a>. The project would have
+                        created a universal library accessible to anyone with a browser. It was halted not by a rival
+                        library but by a coalition of publishers and authors who objected to losing control over their
+                        works&mdash;the copyright equivalent of Pergamum&rsquo;s resistance. The structural lesson is
+                        that even when federation&rsquo;s technical prerequisites exist (the internet, scanning
+                        technology, search), the institutions whose power depends on controlling access to information
+                        will use legal and economic tools to prevent it.</div>
+
+                    <h3 id="the-arc">The Arc of Invention, Centralisation, and Federation</h3>
+
+                    <p>
+                        Across these three cases, a recognisable structure recurs. A new information technology
+                        emerges that enables broad listening at a scale not previously possible. The technology
+                        centralises, because centralisation is the path of least resistance when it is easier to
+                        bring information to one place than to build infrastructure for many places to share it, and
+                        the centralisation is typically coordinated by the most powerful actors of the day, who are in
+                        a financial position to be first movers on major new technologies. The centralisation creates
+                        genuine value, but it also concentrates control over what can be known, who can know it, and
+                        whose contributions are included. And eventually, new technical infrastructure emerges that
+                        enables federation: an arrangement that preserves much of the value centralisation created
+                        while distributing the control it concentrated.
                     </p>
 
-                    <ul>
-                        <li>275M average quarterly smartphone sales (<a href="#ref-3" class="cite">Ming 2024</a>)</li>
-
-                        <li>8 quarters (covering 2023-2024)</li>
-
-                        <li>80/20 split between iPhone/Android market share</li>
-
-                        <li>Device performance from manufacturer specifications</li>
-                    </ul>
+                    <p>
+                        The structure of AI&rsquo;s current situation, as described in Chapter 1, fits this pattern.
+                        AI centralises because centralisation is the path of least resistance; the centralisation
+                        creates genuine value; the same centralisation concentrates control; and the technical work in
+                        Chapters 2 through 4 describes infrastructure that could, if it scales as anticipated, enable
+                        a federated alternative. Whether the historical parallel is predictive (whether AI&rsquo;s
+                        centralised phase will end on a similar timeline and for similar reasons) is a question this
+                        thesis cannot answer. But the parallel does clarify what the technical work in earlier
+                        chapters is for: building the federated infrastructure for the current instance before the
+                        centralised phase locks in.
+                    </p>
                 </section>
 
-                <section id="hardware-specs">
-                    <h2>Results</h2>
-
-                    <h3>Hardware Specifications</h3>
+                <section id="key-variable">
+                    <h2>The Key Variable: The Size of the Peak</h2>
 
                     <p>
-                        We begin by documenting the performance characteristics of key computing hardware. Table
-                        <a href="#table-6-1">6.1</a> shows peak theoretical performance for major AI accelerators and
-                        consumer devices.
+                        If centralisation always gives way to federation, one might reasonably ask why it matters. If
+                        it is a phase, and the phase always ends, perhaps the right response is patience.
+                        The reason it matters is that the pattern does not specify how long the centralised phase
+                        lasts or how much damage accumulates during it. Alexandria&rsquo;s centralisation lasted
+                        centuries. When the library&rsquo;s collections were dispersed, works of antiquity were lost
+                        permanently, because no redundant copies existed outside the centralised collection. The
+                        vision of centralised mainframe computing persisted for roughly two decades and might have
+                        persisted far longer, entrenching a world in which there would be no personal computer, no
+                        open internet, and no possibility for an individual to publish, compute, or communicate
+                        without institutional permission.
                     </p>
-
-                    <p class="table-caption">Table 6.1: Hardware Specifications (2023-2024)</p>
-
-                    <table class="data-table" id="table-6-1">
-                        <thead>
-                            <tr>
-                                <th>Hardware</th>
-                                <th>Type</th>
-                                <th class="numeric">Peak Performance <br> (FLOP/s)</th>
-                                <th>Source</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="category">
-                                <td colspan="4"><em>Data Center AI Chips</em></td>
-                            </tr>
-                            <tr>
-                                <td>AMD MI300X OAM</td>
-                                <td>GPU</td>
-                                <td class="numeric">$2.61 \times 10^{15}$</td>
-                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>NVIDIA H100</td>
-                                <td>GPU</td>
-                                <td class="numeric">$9.89 \times 10^{14}$</td>
-                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>NVIDIA A100</td>
-                                <td>GPU</td>
-                                <td class="numeric">$3.12 \times 10^{14}$</td>
-                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>Microsoft MAIA</td>
-                                <td>ASIC</td>
-                                <td class="numeric">$8.00 \times 10^{14}$</td>
-                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>Meta MTIA</td>
-                                <td>ASIC</td>
-                                <td class="numeric">$3.54 \times 10^{14}$</td>
-                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>AWS Tranium</td>
-                                <td>ASIC</td>
-                                <td class="numeric">$2.50 \times 10^{14}$</td>
-                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>AWS Inferentia</td>
-                                <td>ASIC</td>
-                                <td class="numeric">$1.92 \times 10^{14}$</td>
-                                <td><a href="#ref-1" class="cite">Mann 2024</a></td>
-                            </tr>
-                            <tr class="category">
-                                <td colspan="4"><em>Consumer Devices</em></td>
-                            </tr>
-                            <tr>
-                                <td>iPhone 14 Pro</td>
-                                <td>Mobile SoC</td>
-                                <td class="numeric">$2.00 \times 10^{12}$</td>
-                                <td><a href="#ref-3" class="cite">Ming 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>Samsung S24</td>
-                                <td>Mobile SoC</td>
-                                <td class="numeric">$3.40 \times 10^{12}$</td>
-                                <td><a href="#ref-3" class="cite">Ming 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>Average PC CPU</td>
-                                <td>CPU</td>
-                                <td class="numeric">$4.08 \times 10^{10}$</td>
-                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>Average PC GPU</td>
-                                <td>GPU</td>
-                                <td class="numeric">$4.60 \times 10^{12}$</td>
-                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>PS5</td>
-                                <td>Console</td>
-                                <td class="numeric">$1.03 \times 10^{13}$</td>
-                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
-                <section id="nvidia-shipments">
-                    <h2>Estimated New Hardware Deployments</h2>
-
-                    <p>Table <a href="#table-6-2">6.2</a> documents NVIDIA’s GPU shipments, which represent the majority
-                        of
-                        new AI
-                        computing capacity deployed during this period.</p>
 
                     <p>
-                        These shipments are distributed across major cloud providers and AI companies. Table <a
-                            href="#table-6-3">6.3</a>
-                        details how this computing capacity is allocated, including both NVIDIA GPUs and custom AI
-                        accelerators
+                        The variable that determines the cost is the <em>duration of the peak</em>: how many years,
+                        decades, or centuries a small number of institutions control what can be collectively known
+                        (who can access knowledge, and whose contributions are counted as &ldquo;knowledge&rdquo;).
+                        A shorter peak means less entrenchment, less lock-in, and an easier transition when federated
+                        infrastructure arrives. A longer peak means centralised institutions have more time to build
+                        network effects, regulatory capture, and user dependence that make federation harder to
+                        achieve, even after the necessary technical infrastructure
+                        exists<a href="#sidenote-17" class="sidenote-ref"><sup>17</sup></a>.
                     </p>
-
-                    <p class="table-caption" id="table-6-2">
-                        Table 6.2: NVIDIA GPU Shipments (2023-2024)
-                    </p>
-
-                    <div class="table-container">
-                        <table class="data-table" >
-                            <thead>
-                                <tr>
-                                    <th>Type</th>
-                                    <th class="numeric">Units</th>
-                                    <th class="numeric">Computing Power <br> (FLOP/s)</th>
-                                    <th>Source/Calculation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>A100s (2023)</td>
-                                    <td class="numeric">2,260,000</td>
-                                    <td class="numeric">$7.05 \times 10^{20}$</td>
-                                    <td>Units$\times 3.12 \times 10^{14}$ FLOP/s per A100</td>
-                                </tr>
-                                <tr>
-                                    <td>H100s (2023)</td>
-                                    <td class="numeric">1,500,000</td>
-                                    <td class="numeric">$1.48 \times 10^{21}$</td>
-                                    <td>Units$\times 9.89 \times 10^{14}$ FLOP/s per H100</td>
-                                </tr>
-                                <tr>
-                                    <td>A100s (2024)</td>
-                                    <td class="numeric">2,000,000</td>
-                                    <td class="numeric">$6.24 \times 10^{20}$</td>
-                                    <td>Units$\times 3.12 \times 10^{14}$ FLOP/s per A100</td>
-                                </tr>
-                                <tr>
-                                    <td>H100s (2024)</td>
-                                    <td class="numeric">2,000,000</td>
-                                    <td class="numeric">$1.98 \times 10^{21}$</td>
-                                    <td>Units$\times 9.89 \times 10^{14}$ FLOP/s per H100</td>
-                                </tr>
-                                <tr class="total">
-                                    <td>Total 2022-2024</td>
-                                    <td class="numeric">7,760,000</td>
-                                    <td class="numeric">$4.79 \times 10^{21}$</td>
-                                    <td>Sum of all rows above</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3>
-                        Estimated Base Computing Capacity
-                    </h3>
+                    <div class="sidenote" id="sidenote-17"><sup>17</sup> Alexandria deployed all three. The network
+                        effect was self-reinforcing: scholars came because the manuscripts were there, and
+                        manuscripts accumulated because the scholars were there, making it progressively harder for
+                        any rival to offer a comparable resource. Regulatory capture took the form of state
+                        enforcement: the Ptolemies used the apparatus of the crown to confiscate manuscripts from
+                        ships, embargo papyrus exports to starve Pergamum of writing material, and imprison scholars
+                        to prevent defection. User dependence operated through patronage: the scholars who worked in
+                        the library depended on royal stipends and tax exemptions, and leaving meant losing both
+                        livelihood and access to the collection their own work required. The contemporary equivalents
+                        are visible in AI: the network effect of training data (more data attracts more users, whose
+                        interactions generate more data), the regulatory strategies of incumbents (lobbying for
+                        compliance requirements that only well-resourced laboratories can satisfy), and the dependence
+                        of researchers on institutional compute (leaving a major AI lab means losing access to the GPU
+                        clusters on which frontier research depends).</div>
 
                     <p>
-                        To establish total worldwide computing capacity, we first document the base capacity that
-                        existed
-                        at the start of our analysis period (Q1 2023).
-                    </p>
-
-                    <h3>Estimated Global Computing Distribution</h3>
-
-                    <p>
-                        Finally, Table <a href="#table-6-6">6.6</a> presents the complete worldwide distribution of
-                        computing capacity as of Q4
-                        2024, combining base capacity, new deployments, and applying our temporal adjustment factors.
+                        In most historical cases, nobody shortened the peak deliberately. The printing press did not
+                        emerge because someone set out to federate the library; it emerged because movable type was a
+                        useful technology, and federation was a consequence. Wikipedia&rsquo;s founders did set out
+                        to build a better encyclopedia, but the infrastructure that made their project possible (the
+                        web, and before it the internet) was not built for that purpose; it was built for general
+                        communication, and the encyclopedic application followed. Yet, there is one case in which
+                        someone recognised the pattern while the centralised phase was still underway and acted
+                        deliberately to shorten it.
                     </p>
                 </section>
 
-                <section id="analysis">
-                    <h2>Analysis and Implications</h2>
-
-                    <h3>Distribution of Computing Power</h3>
+                <section id="licklider">
+                    <h2>Licklider et al. Shortened the Peak</h2>
 
                     <p>
-                        The results reveal several key insights about global computing power distribution:
+                        In 1960, J.C.R. Licklider published a paper titled &ldquo;Man-Computer Symbiosis&rdquo;
+                        arguing that the future of computing lay in augmented communication, enabling humans to think
+                        together through machines in ways that neither could achieve
+                        alone <a href="#ref-12" class="cite">Licklider, 1960</a>. Nine years later, he became the
+                        first director of the Information Processing Techniques Office at ARPA, a position from which
+                        he controlled a significant portion of the US government&rsquo;s computer science research
+                        funding.
                     </p>
-
-                    <ol>
-                        <li><strong>Cloud Concentration:</strong> The four largest cloud/AI providers (Meta,
-                            Microsoft/OpenAI,
-                            Google/DeepMind, and Amazon/Anthropic) collectively control 15.9% of global computing power.
-                            This represents a significant concentration of high-performance computing
-                            resources.</li>
-                        <li><strong>Consumer Device Significance:</strong> Despite lower per-unit performance, consumer
-                            devices
-                            collectively represent 32.83% of global computing power, with smartphones alone accounting
-                            for 23.23%. This highlights the massive scale of deployed consumer hardware.</li>
-                        <li><strong>Legacy Infrastructure:</strong> Pre-2023 and other cloud infrastructure remains
-                            significant,
-                            representing 51.28% of total capacity. This suggests substantial inertia in computing
-                            infrastructure deployment.</li>
-                    </ol>
-
-                    <h3>Growth Patterns</h3>
 
                     <p>
-                        The data reveals several notable trends in computing power growth:
+                        The mainframe era was at its height, with IBM controlling 70 to 80 percent of the mainframe
+                        market in most industrialised
+                        countries <a href="#ref-13" class="cite">Cortada, 2018</a> and the prevailing assumption,
+                        shared by industry and most of the research community, that computing&rsquo;s future was
+                        centralised: large machines owned by large institutions, accessed through terminals. Licklider
+                        thought otherwise, and he articulated his alternative most fully in a 1968 paper co-authored
+                        with Robert Taylor, &ldquo;The Computer as a Communication
+                        Device&rdquo; <a href="#ref-14" class="cite">Licklider &amp; Taylor, 1968</a>. The paper
+                        described what Licklider and Taylor called &ldquo;cooperative modeling&rdquo;: the idea that
+                        networked computers could enable groups of people to build shared understanding, testing
+                        their mental models against each other&rsquo;s knowledge at a speed and scale that unaided
+                        human communication could not match. The prediction was about computers enabling a new kind
+                        of communication, and in particular a new kind of listening, as opposed to merely thinking
+                        for themselves.
                     </p>
-
-                    <ul>
-                        <li><strong>Accelerating Deployment:</strong> New capacity added in 2023-2024 ($2.82 \times
-                            10^{22}$ FLOP/s) is approximately 7 times larger than the Q1 2023 base capacity ($3.98
-                            \times 10^{21}$ FLOP/s).</li>
-                    </ul>
-
-                    <p class="table-caption" id="table-6-3">
-                        Table 6.3: Estimated Major Cloud Provider Deployments (2022-2024)
-                    </p>
-
-                    <div class="table-container">
-                        <table class="data-table" >
-                            <thead>
-                                <tr>
-                                    <th>Provider</th>
-                                    <th>Hardware Type</th>
-                                    <th class="numeric">Computing Power <br> (FLOP/s)</th>
-                                    <th> Source/Calculation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="category">
-                                    <td colspan="4"><em>Microsoft/OpenAI</em></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>H100 equivalents</td>
-                                    <td class="numeric">$6.53 \times 10^{20}$</td>
-                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>AMD MI300X</td>
-                                    <td class="numeric">$2.51 \times 10^{20}$</td>
-                                    <td><a href="#ref-1" class="cite">Mann 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>MAIA</td>
-                                    <td class="numeric">$1.58 \times 10^{20}$</td>
-                                    <td><a href="#ref-1" class="cite">Mann 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total New</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$1.06 \times 10^{21}$</strong></td>
-                                    <td>Sum of three rows above</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>2023-2024 (80%)</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$8.50 \times 10^{20}$</strong></td>
-                                    <td>Total New $\times$ 0.8 (2-year portion of 3-year total)</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total Q4 2024</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$1.38 \times 10^{21}$</strong></td>
-                                    <td>2023-2024 total $\times$ 1.3 (infrastructure multiplier)</td>
-                                </tr>
-
-                                <tr class="category">
-                                    <td colspan="4"><em>Amazon/Anthropic</em></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>H100/A100</td>
-                                    <td class="numeric">$2.87 \times 10^{20}$</td>
-                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Inferentia</td>
-                                    <td class="numeric">$1.75 \times 10^{20}$</td>
-                                    <td>Units$\times 1.92 \times 10^{14}$ FLOP/s per chip</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Tranium</td>
-                                    <td class="numeric">$9.15 \times 10^{19}$</td>
-                                    <td>Units$\times 2.50 \times 10^{14}$ FLOP/s per chip</td>
-                                </tr>
-                                <tr>
-                                    <td>Total New</td>
-                                    <td></td>
-                                    <td class="numeric">$5.53 \times 10^{20}$</td>
-                                    <td>Sum of three rows above</td>
-                                </tr>
-                                <tr>
-                                    <td>2023-2024 (80%) </td>
-                                    <td></td>
-                                    <td class="numeric">$4.42 \times 10^{20}$</td>
-                                    <td>Total New $\times$ 0.8</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total Q4 2024</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$7.19 \times 10^{20}$</strong></td>
-                                    <td>2023-2024 total $\times$ 1.3</td>
-                                </tr>
-
-                                <tr class="category">
-                                    <td colspan="4"><em>Google/DeepMind</em></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>TPUs (Q1 2023) </td>
-                                    <td class="numeric">$2.93 \times 10^{19}$</td>
-                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>TPUs (Q4 2024)</td>
-                                    <td class="numeric">$9.10 \times 10^{20}$</td>
-                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>New TPUs 2023-2024 </td>
-                                    <td class="numeric">$8.81 \times 10^{20}$</td>
-                                    <td>Q4 2024 TPUs - Q1 2023 TPUs</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>H100/A100</td>
-                                    <td class="numeric">$3.16 \times 10^{20}$</td>
-                                    <td><a href="#ref-1" class="cite">Mann 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total New GPUs</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$3.16 \times 10^{20}$</strong></td>
-                                    <td>Same as H100/A100 row</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total New TPUs</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$8.81 \times 10^{20}$</strong></td>
-                                    <td>Same as New TPUs row</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>New GPUs + TPUs</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$1.20 \times 10^{21}$</strong></td>
-                                    <td>Sum of Total New GPUs and TPUs</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total Q4 2024</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$1.23 \times 10^{21}$</strong></td>
-                                    <td>(New GPUs + TPUs) $\times$ 1.3 - Q1 2023 TPUs</td>
-                                </tr>
-
-
-                                <tr class="category">
-                                    <td colspan="4"><em>Meta</em></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>A100</td>
-                                    <td class="numeric">$6.68 \times 10^{18}$</td>
-                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>H100</td>
-                                    <td class="numeric">$3.46 \times 10^{20}$</td>
-                                    <td>Units $\times$ 9.89 $\times$ $10^{14}$ FLOP/s per H100</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>H100/A100</td>
-                                    <td class="numeric">$3.96 \times 10^{20}$</td>
-                                    <td>Sum of A100 and H100 rows</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>AMD MI300X</td>
-                                    <td class="numeric">$4.52 \times 10^{20}$</td>
-                                    <td>Units $\times$ 2.61 $\times$ $10^{15}$ FLOP/s per MI300X</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>MTIA</td>
-                                    <td class="numeric">$5.31 \times 10^{20}$</td>
-                                    <td>Units $\times$ 3.54 $\times$ $10^{14}$ FLOP/s per MTIA</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total New</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$1.38 \times 10^{21}$</strong></td>
-                                    <td>Sum of all hardware rows</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>2023-2024 (80%)</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$1.10 \times 10^{21}$</strong></td>
-                                    <td>Total New $\times$ 0.8</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total Q4 2024</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$1.79 \times 10^{21}$</strong></td>
-                                    <td> 2023-2024 total $\times$ 1.3</td>
-                                </tr>
-                                <tr class="category">
-                                    <td colspan="4"><em>Other NVIDIA Customers</em></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>H100/A100</td>
-                                    <td class="numeric">$1.38 \times 10^{21}$</td>
-                                    <td><a href="#ref-3" class="cite">Ming 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>MI300X</td>
-                                    <td class="numeric">$1.52 \times 10^{21}$</td>
-                                    <td><a href="#ref-1" class="cite">Mann 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total New</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$1.54 \times 10^{20}$</strong></td>
-                                    <td>Sum of H100/A100 and MI300X rows</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>2023-2024 (80%)</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$1.23 \times 10^{21}$</strong></td>
-                                    <td>Total New $\times$ 0.8 (2-year portion of 3-year total)</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Total Q4 2024</strong></td>
-                                    <td></td>
-                                    <td class="numeric"><strong>$2.00 \times 10^{21}$</strong></td>
-                                    <td> 2023-2024 total$\times$ 1.3 (infrastructure multiplier)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <p class="table-caption" id="table-6-4">Table 6.4: Base Computing Capacity (Q1 2023)</p>
-
-                    <table class="data-table" >
-                        <thead>
-                            <tr>
-                                <th>Type</th>
-                                <th class="numeric">Computing Power <br>(FLOP/s)</th>
-                                <th>Source/Calculation</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>TPU</td>
-                                <td class="numeric">$2.93 \times 10^{19}$</td>
-                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                            </tr>
-                            <tr>
-                                <td>GPU</td>
-                                <td class="numeric">$3.95 \times 10^{21}$</td>
-                                <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                            </tr>
-                            <tr class="total">
-                                <td>Total</td>
-                                <td class="numeric">$3.98 \times 10^{21}$</td>
-                                <td>Sum of TPU and GPU rows</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <p class="table-caption" id="table-6-5">Table 6.5: Estimated New Computing Capacity (Q1 2023 - Q4
-                        2024)</p>
-
-                    <div class="table-container" >
-                        <table class="data-table" >
-                            <thead>
-                                <tr>
-                                    <th>Category</th>
-                                    <th class="numeric">Computing Power <br>(FLOP/s)</th>
-                                    <th>Source/Calculation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="category">
-                                    <td colspan="3"><em>Specialized AI Hardware</em></td>
-                                </tr>
-                                <tr>
-                                    <td>NVIDIA GPUs (avg of source 1)</td>
-                                    <td class="numeric">$4.82 \times 10^{21}$</td>
-                                    <td><a href="#ref-2" class="cite">Epoch AI 2024</a></td>
-                                </tr>
-                                <tr>
-                                    <td>NVIDIA GPUs (avg of source 2)</td>
-                                    <td class="numeric">$4.79 \times 10^{21}$</td>
-                                    <td>Sum of all NVIDIA shipments from Table <a href="#table-6-2">6.2</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Avg NVIDIA GPUs</td>
-                                    <td class="numeric">$4.81 \times 10^{21}$</td>
-                                    <td>Average of two NVIDIA GPU sources above</td>
-                                </tr>
-                                <tr>
-                                    <td>New Google TPUs</td>
-                                    <td class="numeric">$8.81 \times 10^{20}$</td>
-                                    <td>Q4 2024 TPUs - Q1 2023 TPUs from Table <a href="#table-6-3">6.3</a></td>
-                                </tr>
-                                <tr>
-                                    <td>New Cloud Hardware</td>
-                                    <td class="numeric">$2.35 \times 10^{21}$</td>
-                                    <td>Sum of all non-NVIDIA cloud hardware from Table <a href="#table-6-3">6.3</a>
-                                    </td>
-                                </tr>
-                                <tr class="category">
-                                    <td colspan="3"><em>Consumer Devices</em></td>
-                                </tr>
-                                <tr>
-                                    <td>Active iPhones</td>
-                                    <td class="numeric">$5.98 \times 10^{21}$</td>
-                                    <td> \( 275\text{M units/quarter} \times 8\ \text{quarters} \times 80\% \times 2.00
-                                        \times 10^{12}\ \text{FLOP/s per iPhone} \)</td>
-                                </tr>
-                                <tr>
-                                    <td>Active Androids</td>
-                                    <td class="numeric">$1.50 \times 10^{21}$</td>
-                                    <td> \( 275\text{M units/quarter} \times 8\ \text{quarters} \times 20\% \times 3.40
-                                        \times 10^{12}\ \text{FLOP/s per Android} \)</td>
-                                </tr>
-                                <tr>
-                                    <td>PC CPUs</td>
-                                    <td class="numeric">$1.96 \times 10^{19}$</td>
-                                    <td> \( 60\text{M units/quarter} \times 8\ \text{quarters} \times 4.08\
-                                        \times 10^{10}\ \text{FLOP/s per CPU} \)</td>
-                                </tr>
-                                <tr>
-                                    <td>PC GPUs</td>
-                                    <td class="numeric">$2.21 \times 10^{21}$</td>
-                                    <td> \( 60\text{M units/quarter} \times 8\ \text{quarters} \times 4.60\
-                                        \times 10^{12}\ \text{FLOP/s per GPU} \)</td>
-                                </tr>
-                                <tr>
-                                    <td>Game Consoles</td>
-                                    <td class="numeric">$8.64 \times 10^{20}$</td>
-                                    <td> \( 84\text{M units} \times 1.03\ \times 10^{13}\ \text{FLOP/s per console} \)
-                                    </td>
-                                </tr>
-                                <tr class="total">
-                                    <td>Total New</td>
-                                    <td class="numeric">$2.82 \times 10^{22}$</td>
-                                    <td>Sum of all rows above</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <p class="table-caption" id="table-6-6">Table 6.6: Estimated Total Worldwide Computing Capacity (Q4 2024). Note
-                        that these calculations exclude cloud CPU compute.</p>
-
-                    <div class="table-container">
-                        <table class="data-table" >
-                            <thead>
-                                <tr>
-                                    <th>Category</th>
-                                    <th class="numeric">Computing Power <br>(FLOP/s)</th>
-                                    <th class="numeric">Share (%)</th>
-                                    <th>Source/Calculation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="category">
-                                    <td colspan="4"><em>Cloud/AI Providers</em></td>
-                                </tr>
-                                <tr>
-                                    <td>Meta</td>
-                                    <td class="numeric">$1.79 \times 10^{21}$</td>
-                                    <td class="numeric">5.57%</td>
-                                    <td>From Table <a href="#table-6-3">6.3</a> Total Q4 2024</td>
-                                </tr>
-                                <tr>
-                                    <td>Microsoft/OpenAI</td>
-                                    <td class="numeric">$1.38 \times 10^{21}$</td>
-                                    <td class="numeric">4.29%</td>
-                                    <td>From Table <a href="#table-6-3">6.3</a> Total Q4 2024</td>
-                                </tr>
-                                <tr>
-                                    <td>Google/DeepMind</td>
-                                    <td class="numeric">$1.23 \times 10^{21}$</td>
-                                    <td class="numeric">3.81%</td>
-                                    <td>From Table <a href="#table-6-3">6.3</a> Total Q4 2024</td>
-                                </tr>
-                                <tr>
-                                    <td>Amazon/Anthropic</td>
-                                    <td class="numeric">$7.19 \times 10^{20}$</td>
-                                    <td class="numeric">2.23%</td>
-                                    <td>From Table <a href="#table-6-3">6.3</a> Total Q4 2024</td>
-                                </tr>
-                                <tr class="category">
-                                    <td colspan="4"><em>Consumer Computing</em></td>
-                                </tr>
-                                <tr>
-                                    <td>Smartphones</td>
-                                    <td class="numeric">$7.48 \times 10^{21}$</td>
-                                    <td class="numeric">23.23%</td>
-                                    <td> Sum of Active iPhones and Androids from Table <a href="#table-6-5">6.5</a></td>
-                                </tr>
-                                <tr>
-                                    <td>PC CPUs/GPUs</td>
-                                    <td class="numeric">$2.23 \times 10^{21}$</td>
-                                    <td class="numeric">6.92%</td>
-                                    <td> Sum of PC CPUs and GPUs from Table <a href="#table-6-5">6.5</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Game Consoles</td>
-                                    <td class="numeric">$8.64 \times 10^{20}$</td>
-                                    <td class="numeric">2.68%</td>
-                                    <td>From Table <a href="#table-6-5">6.5</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Other Cloud/Pre-2023</td>
-                                    <td class="numeric">$1.65 \times 10^{22}$</td>
-                                    <td class="numeric">51.28%</td>
-                                    <td>Base capacity $\times$ 1.3 + remaining new capacity not allocated above</td>
-                                </tr>
-                                <tr class="total">
-                                    <td>Total</td>
-                                    <td class="numeric">$3.22 \times 10^{22}$</td>
-                                    <td class="numeric">100.00%</td>
-                                    <td>Sum of all rows above</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <ul>
-                        <li><strong>Custom Hardware:</strong> Major cloud providers are increasingly deploying custom AI
-                            accelerators (MAIA, MTIA, Inferentia) alongside NVIDIA GPUs, though these still represent a
-                            minority of total capacity.</li>
-                        <li><strong>Consumer Updates:</strong> The rapid replacement cycle of consumer devices
-                            (particularly
-                            smartphones) means this sector maintains a significant share of total computing power
-                            despite lower per-unit performance.</li>
-                    </ul>
-
-                    <h3>Methodological Limitations</h3>
 
                     <p>
-                        Several factors affect the precision of these estimates:
+                        What Licklider did next is the part that matters here. Rather than arguing that the mainframe
+                        era should end or waiting for the cost of hardware to fall far enough that decentralisation
+                        would happen on its own, he used ARPA&rsquo;s funding authority to build federated
+                        infrastructure <em>before</em> the centralised paradigm could entrench itself permanently.
+                        The result was the ARPANET, and the key architectural decision was that the network used
+                        packet switching rather than circuit switching: the protocols making the network valuable
+                        (TCP/IP, and later HTTP) were open standards that no company owned and no institution
+                        controlled. The network effects accrued to public infrastructure rather than to any single
+                        institution.
                     </p>
 
-                    <ol>
-                        <li><strong>Utilization Rates:</strong> Our analysis uses peak theoretical performance. Actual
-                            achieved
-                            performance varies significantly based on:
+                    <p>
+                        The outcome was far from inevitable. IBM could have built a proprietary network. Bell
+                        Telephone could have extended its monopoly into data transmission. Either outcome would have
+                        produced some form of networked computing, but the network effects would have routed through
+                        private infrastructure rather than public protocols. Licklider&rsquo;s intervention ensured
+                        that the federation of computing happened on terms that kept the foundational layer open.
+                    </p>
 
-                            <ul>
-                                <li>Workload characteristics</li>
+                    <p>
+                        The internet produced some of the most valuable corporations in history, but those
+                        corporations emerged on top of public infrastructure rather than in place of it. Licklider
+                        shortened the peak by building the federated alternative while the centralised institutions
+                        were still dominant, before they had locked in their advantage for the next chapter of the
+                        technology. The base layers remain open: anyone can still transmit a packet, register a
+                        domain, send an email across servers they do not own, because the protocols that
+                        Licklider&rsquo;s successors built, TCP/IP, HTTP, SMTP, belong to no corporation and no
+                        corporation can revoke your access to them. Google built the most popular building on a road
+                        it did not construct, and then made the building very difficult to leave.
+                    </p>
 
-                                <li>Cooling and power constraints</li>
+                    <p>
+                        But openness at the foundation did not guarantee openness at every layer above it. Search,
+                        social, messaging, and commerce consolidated in ways the network layer never did, and they
+                        consolidated without anyone playing Licklider&rsquo;s role. No programme manager saw the
+                        coming lock-in early enough, with both the institutional authority and the intellectual
+                        clarity to insist the next layer be built on open terms before private alternatives foreclosed
+                        the possibility. The window that existed in the 1960s for decentralised networking opened
+                        again in the 1990s for the application layer and closed without anyone walking through it.
+                    </p>
+                </section>
 
-                                <li>Network and memory bottlenecks</li>
-                            </ul>
-                        </li>
+                <section id="ai-peak">
+                    <h2>AI and the Current Peak</h2>
 
-                        <li><strong>Temporal Distribution:</strong> The 80% factor used for 2023-2024 portion of
-                            2022-2024
-                            deployments is a rough estimate based on the degree to which NVIDIA sales and chip
-                            FLOP capacity have greatly increased in the past two years (<a href="#ref-4"
-                                class="cite">Macrotrends LLC 2024</a>).</li>
-                        <li><strong>Consumer Device Usage:</strong> Not all consumer devices are actively used for
-                            computation at
-                            any given time, potentially overestimating their contribution to global computing power.
-                        </li>
-                    </ol>
+                    <p>
+                        The same pattern is visible in AI, driven by the same three causes of centralisation that
+                        Chapter 1 identified. The volume of data relevant to AI training exceeds what any single
+                        institution can curate, yet a handful of firms have scraped the public web and compressed it
+                        into models they control, which is structurally the Alexandrian move: bring everything to one
+                        place because building infrastructure for distributed synthesis is harder. Data owners decline
+                        to contribute because contributing currently means surrendering a copy, so medical
+                        institutions, publishers, financial firms, and billions of individuals withhold data because
+                        the architecture offers no mechanism for sharing without losing control, siloing resources in
+                        ways that hamper collective productivity just as isolated mainframes did before ARPANET gave
+                        them a way to share. And because AI users cannot verify which sources inform which
+                        predictions, the response has been structurally encyclopedic: where Diderot&rsquo;s editorial
+                        board decided what counted as knowledge, AI developers employ trust and safety teams,
+                        reinforcement learning from human feedback, and armies of annotators to curate what their
+                        models will say.
+                    </p>
+
+                    <p>
+                        Each of these causes of centralisation is also a failure of distributed power: information
+                        overload leaves individuals unable to hear everyone with something relevant to say, privacy
+                        failure locks data owners out unless they surrender control, and veracity failure lets some
+                        actors inject false information into systems whose users cannot trace what they receive, and
+                        because the curation is invisible, users cannot evaluate it either, which is why the same
+                        opacity that produces hallucination also produces the political suspicion: the left sees bias
+                        toward toxicity, the right sees bias toward censorship, and neither can verify the claim
+                        because the editorial process that would settle the question is not legible to anyone outside
+                        the lab. The consequences Chapter 1 catalogued are not separate problems requiring separate
+                        policy interventions but manifestations of a single architectural limitation playing out at
+                        different levels of scale: hallucination and disinformation trace to veracity failure;
+                        copyright disputes and bias trace to information overload, which created no licensed
+                        alternative to scraping and no mechanism for hearing voices outside the dominant training
+                        corpus; data siloing traces to privacy failure; and concentration of power and the
+                        geopolitical dilemma both trace to information overload forcing centralisation, because
+                        whoever aggregates the most data wins, and at the corporate level that concentrates power in
+                        a handful of firms while at the nation-state level it forces democracies to either centralise
+                        to compete or cede the advantage to nations that face no constraints on doing so.
+                    </p>
+
+                    <p>
+                        What made each previous centralised phase recoverable was that it concentrated control over
+                        one part of the listening problem, and over a fraction of the world&rsquo;s knowledge.
+                        Alexandria held perhaps half a million scrolls. The <em>Encyclopédie</em> synthesised the
+                        knowledge of eighteenth-century European scholarship. The mainframe supplied processing power
+                        to institutions that could afford one. Each was a large concentration by the standards of its
+                        time, but each was also bounded: by what had been written down, translated, shipped to Egypt,
+                        or priced within reach of a corporate data centre.
+                    </p>
+
+                    <p>
+                        AI has no equivalent bound. The institutions building frontier models have scraped essentially
+                        everything humanity has recorded, across languages, disciplines, and centuries, and compressed
+                        it into systems that a significant fraction of the world&rsquo;s population already uses to
+                        make decisions. No previous centralised phase concentrated anything close to that share of
+                        the world&rsquo;s information and decision-making within a single architectural chokepoint,
+                        which means the absence of a Licklider figure at this moment carries a different order of
+                        consequence than the failure to keep the application layer open in the 1990s. The window that
+                        closed then cost us open social infrastructure. The institutions accumulating network effects,
+                        regulatory leverage, and researcher dependence around frontier AI are not building on top of
+                        listening infrastructure the way Google built on TCP/IP. They are building the listening
+                        infrastructure itself, and building it
+                        closed<a href="#sidenote-18" class="sidenote-ref"><sup>18</sup></a>. However, while this
+                        problem might now seem clear and straightforward, there is significant reason to believe that
+                        the stakes of cutting the current AI peak are considerably higher than those were for the
+                        library, encyclopedia, or mainframe computer.
+                    </p>
+                    <div class="sidenote" id="sidenote-18"><sup>18</sup> Even so-called &ldquo;open source AI&rdquo;
+                        is still downstream of centralised editorial decisions (veracity), data crawling (overload),
+                        and lacks training on non-public data (privacy).</div>
+                </section>
+
+                <section id="deeper-problem">
+                    <h2>The Deeper Problem</h2>
+
+                    <p>
+                        Throughout the history of information technology, one side of a fundamental asymmetry has
+                        scaled faster than the other. Broadcasting, the ability to transmit information from one to
+                        many, has scaled repeatedly: from the spoken word to writing, from writing to the printing
+                        press, from the press to radio and television, from broadcast media to the internet. Each
+                        advance enabled a single source to reach a larger audience, and the project is now, for
+                        practical purposes, complete: one person can broadcast a message to billions in seconds.
+                    </p>
+
+                    <p>
+                        Listening, the ability to synthesise information from many sources into coherent
+                        understanding, has not kept pace. While a scholar in Alexandria could consult thousands of
+                        sources, a reader of the <em>Encyclopédie</em> could access tens of thousands, and a user of
+                        the modern internet can in theory reach billions, each person in the world still (mostly)
+                        listens to one person at a time. The ability to <em>synthesise</em> what billions know, to
+                        evaluate conflicting claims, weight sources by reliability, and arrive at understanding that
+                        accounts for the full complexity of available evidence has remained constrained by individual
+                        human cognition. Broadcasting scaled with technology; listening scaled with attention, but
+                        attention did not grow along with it, and this asymmetry has shaped how societies manage
+                        information, make decisions, and distribute power for as long as societies have existed. Yet,
+                        to really understand the complex nature of the current moment, it would be too hasty to say
+                        that civilisation has not scaled listening at all&hellip; it has had four tools to do so, and
+                        the constraints of those tools have had a profound impact on how power is distributed in the
+                        world which is instructive for considering the stakes of the current moment.
+                    </p>
+
+                    <h3 id="four-tools">Four Tools for Listening</h3>
+
+                    <p>
+                        The oldest is the <em>literary canon</em>: a set of entrance criteria that determine which
+                        statements are preserved and transmitted. Oral traditions, religious texts, academic
+                        literature, news organisations, and Wikipedia are all literary canons with different entrance
+                        criteria. A canon preserves the full nuance of what each source has to say, but it has a
+                        scaling problem. To synthesise a canon, someone must read ten sources and compress them;
+                        someone else must read ten compressions and compress again; and so on through as many layers
+                        of synthesis as the volume of material demands. The process preserves nuance at each step but
+                        requires human attention at every layer, and it can take generations to propagate through a
+                        large body of knowledge.
+                    </p>
+
+                    <p>
+                        The second tool is <em>statistics</em>. Born with the first national censuses around 3800
+                        BCE, statistics solves the scaling problem by requiring each source to reduce its testimony to
+                        a number according to a shared schema: a set of acceptance criteria for what counts
+                        (literally&hellip; an event worth counting). Once this reduction is made, broad listening can
+                        scale to billions through statistical tools like sums, averages, standard deviations, and
+                        other statistical techniques. While it might appear that this synthesis tool is for the
+                        sciences, its impact has had a profound impact on every aspect of modern society. For example,
+                        elections are a statistical broad listening tool: each citizen compresses their political
+                        judgment into a single vote. Market pricing is another: each participant compresses their
+                        assessment of value into a bid or ask. The power of statistics is real, but the cost is the
+                        nuance that the reduction discards. Age becomes a number; political judgment becomes a binary
+                        choice; the multidimensional reality of supply, demand, context, and quality collapses into a
+                        price. Through statistics, life&mdash;which is inherently a fill-in-the-blank
+                        experience&mdash;becomes multiple choice as society scales.
+                    </p>
+
+                    <p>
+                        The third tool is <em>sampling</em>: instead of reducing everyone&rsquo;s testimony to a
+                        number, select a small group and listen to them fully. Focus groups, market research,
+                        ethnographies, clinical trials, and judicial juries are all sampling techniques. Sampling
+                        preserves nuance but sacrifices completeness. Select the wrong sample and you hear a
+                        distortion; select a biased sample and you hear what you wanted to hear; and even when done
+                        well, you are still typically listening to dozens or hundreds, not millions.
+                    </p>
+
+                    <p>
+                        The fourth is <em>indexing</em>: cluster sources into labelled groups so that one of the
+                        other three tools can be applied to a relevant subpopulation. The Dewey Decimal System, search
+                        engines, and medical diagnostic codes are all indexes. Indexing does not itself perform
+                        synthesis; it organises the material so that canons, statistics, or sampling can be applied
+                        more precisely.
+                    </p>
+
+                    <p>
+                        Nearly every modern institution for managing information at scale, and nearly every web or
+                        smartphone app, is some permutation of these four tools. Yelp combines a literary canon
+                        (reviews) with a statistic (star ratings). Uber combines an index (who is nearby) with three
+                        statistics (driver ratings, rider ratings, and auction pricing). LinkedIn combines a literary
+                        canon (profiles), an index (search and connections), and a sample (the algorithmically
+                        curated feed). Democracy combines a statistic (the vote) with a literary canon (the free
+                        press) and sampling (opinion polls). Look across any major platform or institution and the
+                        same four components recur in different configurations to enable one person to understand the
+                        aggregate information of a group.
+                    </p>
+
+                    <p>
+                        The four tools have sustained civilisations for centuries, but none of them does what a true
+                        broad listening tool would do: synthesise with the nuance of a literary canon at the scale of
+                        a statistic. Every institution built on these tools faces the same structural trade-offs:
+                        scale or nuance, scale or veracity, scale or privacy, never both sides of the broad listening
+                        coin at once. The consequences of these trade-offs are visible wherever broad listening
+                        matters.
+                    </p>
+
+                    <h3 id="politics">Politics</h3>
+
+                    <p>
+                        In <em>Seeing Like a State</em>, James C. Scott argued that modern states function by
+                        imposing what he called <em>legibility</em> on the complex, locally adapted social systems
+                        they govern <a href="#ref-6" class="cite">Scott, 1998</a>. Permanent surnames replaced
+                        patronymic naming systems that carried rich local information (Scott cites a Welsh court case
+                        in which a man identified himself through a string of patronyms perfectly legible to his
+                        village but useless to a central government that did not know his father or grandfather).
+                        Cadastral maps replaced customary land tenure; standard weights and measures replaced local
+                        units that varied by region and trade; nomadic peoples were coerced into permanent settlement.
+                        In each case, officials compressed diverse, context-dependent social practices into
+                        simplified categories that a central authority could read, record, and act upon. Nuanced
+                        people were made legible to literary canons, statistics, samples, and indices.
+                    </p>
+
+                    <p>
+                        The compression was necessary because governance requires measurement: a state that cannot
+                        identify its citizens cannot tax or conscript them, and a state that cannot map its territory
+                        cannot administer it. But Scott documented, across examples ranging from Prussian scientific
+                        forestry to Soviet collectivisation to the planned city of Brasília, that the compression
+                        systematically destroys what it cannot encode. Local knowledge (what Scott calls
+                        <em>mētis</em>, the practical, context-dependent understanding that communities develop
+                        through experience) is, by its nature, illegible to centralised institutions. The more a
+                        state simplifies its population to govern it, the more it erodes the adaptive complexity that
+                        made local systems functional.
+                    </p>
+
+                    <p>
+                        Scott&rsquo;s analysis is usually read as a critique of authoritarian overreach. It is also a
+                        diagnosis of what happens when a state&rsquo;s broad listening tools are inadequate to the
+                        complexity of what they govern. The state had statistics (the census, the tax roll), indexing
+                        (the cadastral map, the administrative district), sampling (the reports of local officials),
+                        and literary canons (the legal code, with its own entrance criteria for what counts as
+                        binding precedent). But these could not sufficiently capture the adaptive, context-dependent
+                        knowledge that made local systems work, so the state simplified the population to fit the
+                        tools it had. The question Scott raises, without fully answering, is whether the compression,
+                        and the power it confers on whoever performs it, is a permanent feature of governance or a
+                        consequence of the information technology available to govern with.
+                    </p>
+
+                    <h3 id="economics">Economics</h3>
+
+                    <p>
+                        In a parallel line of work, Herbert Simon argued that economic agents do not
+                        optimise <a href="#ref-15" class="cite">Simon, 1955</a>;
+                        <a href="#ref-16" class="cite">1956</a>. They <em>satisfice</em>: they evaluate options
+                        sequentially and select the first one that exceeds an acceptable threshold, because the cost
+                        of evaluating all alternatives exceeds their cognitive and temporal
+                        capacity <a href="#ref-17" class="cite">Simon, 1982</a>. Simon coined the term &ldquo;bounded
+                        rationality&rdquo; to describe decision-making under these constraints, and received the
+                        Nobel Prize in Economics in 1978 for the resulting body of work.
+                    </p>
+
+                    <p>
+                        The implications extend well beyond individual decision-making. The market price system, which
+                        Friedrich Hayek had celebrated as a marvel of decentralised
+                        coordination <a href="#ref-18" class="cite">Hayek, 1945</a>, is itself a form of compression:
+                        each price collapses the multidimensional reality of supply, demand, context, quality, and
+                        preference into a single number. Hayek was right that prices coordinate behaviour more
+                        effectively than central planning in many domains, but Simon&rsquo;s work implies that the
+                        coordination is bounded by participants&rsquo; capacity to process the information prices
+                        transmit. When markets move faster than participants can evaluate, when the relevant variables
+                        outnumber what any agent can track, participants satisfice. They rely on heuristics, follow
+                        signals, delegate to intermediaries (analysts, rating agencies, index funds, algorithmic
+                        traders) who compress on their behalf. And the intermediaries who perform the compression
+                        acquire influence proportional to the trust placed in their judgment.
+                    </p>
+
+                    <p>
+                        The Anne Hathaway effect from Chapter 1 illustrates what happens when this compression fails.
+                        The Huffington Post published a story about the actress; algorithmic trading agents, trained
+                        on web sentiment, registered a spike in positive mentions of &ldquo;Hathaway&rdquo; and
+                        bought shares in Berkshire Hathaway, the insurance conglomerate, whose stock price rose
+                        measurably on no company-specific news at all. The compression from millions of web pages to
+                        a trading signal was too lossy to preserve the distinction between a person and a company.
+                        This is a small and almost comic example, but the structure is instructive: market
+                        manipulation, insider trading, and the misallocation of capital during speculative bubbles are
+                        larger instances of the same dynamic. They are what price discovery produces when the
+                        compression is too coarse, too slow, or too easily exploited by actors who can broadcast
+                        faster than the market can listen.
+                    </p>
+
+                    <p>
+                        But there is a deeper problem with price as a broad listening tool, one that Simon&rsquo;s
+                        framework exposes but does not fully develop. Amartya Sen&rsquo;s analysis of famine showed
+                        that the price mechanism can coordinate efficiently and still produce catastrophic
+                        outcomes <a href="#ref-19" class="cite">Sen, 1981</a>. During the Bengal famine of 1943, food
+                        production had not collapsed; it was roughly comparable to previous non-famine years. What
+                        collapsed was the ability of agricultural labourers to afford food, because wartime inflation
+                        had driven prices beyond their reach while their wages stagnated. The market
+                        &ldquo;listened&rdquo; through prices and concluded, correctly by its own logic, that food
+                        should flow toward those who could pay. The result was that food left famine-stricken Bengal
+                        for wealthier Calcutta, and roughly three million people starved in a region with adequate
+                        food supply. The price system had performed its compression faithfully, but the compression
+                        could not encode the difference between &ldquo;does not demand food&rdquo; and &ldquo;cannot
+                        afford food.&rdquo; Sen received the Nobel Prize in 1998 in part for demonstrating that the
+                        famine revealed a structural limitation of price as an information technology rather than a
+                        market malfunction in the conventional sense: need, dignity, and justice are dimensions of
+                        human reality that resist reduction to a number, and a broad listening tool built entirely on
+                        statistics will systematically fail to hear them if the schema of that statistic overly
+                        compresses that value away&hellip; throws away that nuance.
+                    </p>
+
+                    <h3 id="culture">Culture</h3>
+
+                    <p>
+                        In 1983, Benedict Anderson argued that the modern nation itself is a product of limited broad
+                        listening <a href="#ref-20" class="cite">Anderson, 1983</a>. Before the printing press, most
+                        people lived in local communities whose members knew each other directly. The
+                        &ldquo;nation,&rdquo; a community of millions who would never meet but who believed they
+                        shared something fundamental, could not exist, because no broad listening tool could sustain
+                        it. What Anderson called &ldquo;print capitalism&rdquo; changed this. The newspaper gave
+                        millions of strangers the same literary canon to read at roughly the same time, creating what
+                        Anderson described as simultaneity: the awareness that others you have never met are reading
+                        the same stories, reacting to the same events, and forming the same judgments. National
+                        identity was, in Anderson&rsquo;s analysis, an imagined community made possible by a shared
+                        literary canon whose entrance criteria (what the editor chose to print) were controlled by a
+                        small number of publishers.
+                    </p>
+
+                    <p>
+                        The logic extends beyond nations. Culture centralises whenever a shared canon scales faster
+                        than the audience&rsquo;s ability to evaluate it independently. The publishers and critics who
+                        curate a literary tradition determine which books a generation reads; the studios that finance
+                        and distribute films determine which stories a civilisation tells itself. Creating and
+                        distributing a cultural canon is expensive, the path of least resistance concentrates that
+                        investment in a few institutions, and whoever controls the canon acquires disproportionate
+                        influence over what a population considers beautiful, important, or true.
+                    </p>
+
+                    <p>
+                        The celebrity is sampling applied to culture: one person whose taste, judgment, or lifestyle
+                        millions adopt as a proxy for their own, because evaluating all available cultural options
+                        independently would exceed any individual&rsquo;s capacity. The influencer economy that now
+                        shapes purchasing decisions, political affiliations, and cultural norms is the
+                        industrial-scale version of this mechanism, with algorithmic feeds replacing editorial
+                        judgment as the selector of which samples reach which audiences.
+                    </p>
+
+                    <h3 id="structural-condition">The Structural Condition</h3>
+
+                    <p>
+                        In 1928, Edward Bernays published <em>Propaganda</em>. Bernays was Sigmund Freud&rsquo;s
+                        nephew, is largely credited as the father of public relations, a major factor in the reason
+                        women came to smoke in normative Western culture (he staged a demonstration at the 1929 New
+                        York Easter Parade in which debutantes lit Lucky Strikes as &ldquo;torches of
+                        freedom&rdquo; <a href="#ref-21" class="cite">Bernays, 1928</a>), and the person who
+                        engineered the modern American breakfast by commissioning a physician survey on behalf of the
+                        Beech-Nut Packing Company and publicising the predictable
+                        result <a href="#ref-22" class="cite">Tye, 1998</a>. He understood the structural condition
+                        described in the preceding sections well enough to build an industry on it, and opened
+                        <em>Propaganda</em> by explaining exactly how:
+                    </p>
+
+                    <blockquote>
+                        <p>
+                            The conscious and intelligent manipulation of the organized habits and opinions of the
+                            masses is an important element in democratic society. Those who manipulate this unseen
+                            mechanism of society constitute an invisible government which is the true ruling power of
+                            our country.
+                        </p>
+                        <p>
+                            We are governed, our minds are molded, our tastes formed, our ideas suggested, largely by
+                            [people] we have never heard of. This is a logical result of the way in which our
+                            democratic society is organized. Vast numbers of human beings must cooperate in this
+                            manner if they are to live together as a smoothly functioning society. &hellip;
+                        </p>
+                        <p>
+                            It is not usually realized how necessary these invisible governors are to the orderly
+                            functioning of our group life. In theory, every citizen may vote for whom [they please].
+                            Our Constitution does not envisage political parties as part of the mechanism of
+                            government, and its framers seem not to have pictured to themselves the existence in our
+                            national politics of anything like the modern political machine. But the American voters
+                            soon found that without organization and direction their individual votes, cast, perhaps,
+                            for dozens or hundreds of candidates, would produce nothing but confusion. Invisible
+                            government, in the shape of rudimentary political parties, arose almost overnight. Ever
+                            since then we have agreed, for the sake of simplicity and practicality, that party
+                            machines should narrow down the field of choice to two candidates, or at most three or
+                            four.
+                        </p>
+                        <p>
+                            In theory, every citizen makes up [their] mind on public questions and matters of private
+                            conduct. In practice, if all [people] had to study for themselves the abstruse economic,
+                            political, and ethical data involved in every question, they would find it impossible to
+                            come to a conclusion about anything. We have voluntarily agreed to let an invisible
+                            government sift the data and high-spot the outstanding issues so that our field of choice
+                            shall be narrowed to practical proportions. From our leaders and the media they use to
+                            reach the public, we accept the evidence and the demarcation of issues bearing upon
+                            public questions; from some ethical teacher, be it a minister, a favorite essayist, or
+                            merely prevailing opinion, we accept a standardized code of social conduct to which we
+                            conform most of the time.
+                        </p>
+                        <p>
+                            In theory, everybody buys the best and cheapest commodities offered [them] on the market.
+                            In practice, if every one went around pricing, and chemically testing before purchasing,
+                            the dozens of soaps or fabrics or brands of bread which are for sale, economic life would
+                            become hopelessly jammed. To avoid such confusion, society consents to have its choice
+                            narrowed to ideas and objects brought to its attention through propaganda of all kinds.
+                            There is consequently a vast and continuous effort going on to capture our minds in the
+                            interest of some policy or commodity or idea. &hellip;
+                        </p>
+                        <p>
+                            As civilization has become more complex, and as the need for invisible government has been
+                            increasingly demonstrated, the technical means have been invented and developed by which
+                            opinion may be regimented. With the printing press and the newspaper, the railroad, the
+                            telephone, telegraph, radio, and airplanes, ideas can be spread rapidly and even
+                            instantaneously over the whole of America. &hellip;
+                        </p>
+                        <p>
+                            [Ideas] can now be given an effectiveness greater than any sectional interest. The common
+                            design can be documented and sustained against perversion and betrayal. It can be
+                            elaborated and developed steadily and widely without personal, local, and sectional
+                            misunderstanding. &hellip;
+                        </p>
+                        <p>
+                            This invisible, intertwining structure of groupings and associations is the mechanism by
+                            which democracy has organized its group mind and simplified its mass thinking. To deplore
+                            the existence of such a mechanism is to ask for a society such as never was and never
+                            will be. To admit that it exists, but expect that it shall not be used, is
+                            unreasonable. &hellip;
+                        </p>
+                        <p>
+                            In the days when kings were kings, Louis XIV made his modest remark, &ldquo;L&rsquo;État
+                            c&rsquo;est moi.&rdquo; He was nearly right. But times have changed. The steam engine,
+                            the multiple press, and the public school, that trio of the industrial revolution, have
+                            taken the power away from kings and given it to the people. The people actually gained
+                            power which the king lost. For economic power tends to draw after it political power; and
+                            the history of the industrial revolution shows how that power passed from the king and
+                            the aristocracy to the bourgeoisie. Universal suffrage and universal schooling reinforced
+                            this tendency, and at last even the bourgeoisie stood in fear of the common people. For
+                            the masses promised to become king.
+                        </p>
+                        <p>
+                            To-day, however, a reaction has set in. The minority has discovered a powerful help in
+                            influencing majorities. It has found possible so to mold the mind of the masses that they
+                            will throw their newly gained strength in the desired direction. In the present structure
+                            of society, this practice is inevitable. Whatever of social importance is done today,
+                            whether in politics, finance, manufacture, agriculture, charity, education, or other
+                            fields, must be done with the help of propaganda. Propaganda is the executive arm of the
+                            invisible government.
+                        </p>
+                        <p>
+                            Universal literacy was supposed to educate the common man to control his environment.
+                            Once he could read and write he would have a mind fit to rule. So ran the democratic
+                            doctrine. But instead of a mind, universal literacy has given him rubber stamps, rubber
+                            stamps inked with advertising slogans, with editorials, with published scientific data,
+                            with the trivialities of the tabloids and the platitudes of history, but quite innocent
+                            of original thought. Each man&rsquo;s rubber stamps are the duplicates of millions of
+                            others, so that when those millions are exposed to the same stimuli, all receive
+                            identical imprints. &hellip; The mechanism by which ideas are disseminated on a large
+                            scale is propaganda, in the broad sense of an organized effort to spread a particular
+                            belief or
+                            doctrine. <a href="#ref-21" class="cite">Bernays, 1928</a>
+                        </p>
+                    </blockquote>
+
+                    <p>
+                        Bernays wrote this in 1928, before television, before the internet, before smartphones, and
+                        before algorithmic feeds. What Scott saw in the centralised power of governments, what Simon
+                        saw in the centralised power of markets, what Anderson saw in the centralised power of
+                        culture, Bernays saw as a unified vision: whoever controls the information that informs
+                        decisions controls the decisions themselves. He named this insight, and turned it into the
+                        most influential communications industry of the twentieth century. A handful of social media
+                        platforms now observe and manage approximately 8.5% of all waking human experience on
+                        earth <a href="#ref-23" class="cite">Hootsuite, 2024</a>, driving the bottom line for what
+                        are, at the time of writing, five of the six largest companies ever to exist, each of which
+                        is either in advertising or the infrastructure that supports it, and which collectively
+                        represents approximately $17 trillion in centralised
+                        value <a href="#ref-24" class="cite">CompaniesMarketCap, 2026</a>. Bernays&rsquo;s
+                        &ldquo;rubber stamps&rdquo; are now algorithmically personalised, his &ldquo;technical means
+                        by which opinion may be regimented&rdquo; now include recommendation engines and generative
+                        AI, and as he specifically described, democratic institutions are broadly ill-prepared to
+                        avert this centralisation of power.
+                    </p>
+
+                    <h3 id="free-listening">Free Listening</h3>
+
+                    <p>
+                        And that is because the democratic institutions of the past three centuries, among them free
+                        speech, free press, and free assembly, are protections for broadcasting. They guarantee the
+                        right to speak, publish, and to organise. They are among humanity&rsquo;s most important
+                        achievements, but they protect one side of the asymmetry: the side that was under threat from
+                        centralised broadcasting technology (e.g. the printing press) three centuries ago. The
+                        corresponding capacity, the ability to <em>hear</em> independently, to trace a claim back
+                        through the evidence and interests that produced it, to know whether the person informing a
+                        decision has relevant knowledge or a financial stake in the outcome, has no comparable
+                        protection anywhere in the so-called free world.
+                    </p>
+
+                    <p>
+                        There is no constitutional right to &ldquo;free listening.&rdquo;
+                    </p>
+
+                    <p>
+                        Consider what that absence means. A voter can speak freely about any candidate but has
+                        limited infrastructure to independently trace what that candidate has done, said, promised,
+                        and broken. A patient can freely choose a physician but has little means to see whether the
+                        treatment they receive reflects the best available evidence or the most recent pharmaceutical
+                        sales visit. A common citizen can read freely that a policy will create jobs or destroy them
+                        but has almost no ability to follow the claim back through the data, the statistical model,
+                        and the interests behind it. In each case, the individual need not be unintelligent; they lack
+                        equipment. They may have always had the right to speak about any of these matters, but modern
+                        citizens broadly have never had the means to hear at this level of scale. Free speech, without
+                        free listening, protects the right to shout into a storm. Free speech is worthless if no one
+                        can hear you.
+                    </p>
+
+                    <p>
+                        This is not a recent oversight. It is the terms of a bargain as old as speech itself. Before
+                        language, people could not pass experience to anyone else. A person could learn through
+                        experience, through pain, that certain food was dangerous, that certain terrain was
+                        impassable, that certain weather was lethal, but they could not tell anyone, because they had
+                        no words. And so the people around them could not be warned, and subsequently suffered the
+                        same pain, made the same discoveries, and died of the same mistakes generation after
+                        generation, with little improving except through the glacial accidents of natural selection.
+                    </p>
+
+                    <p>
+                        And then someone spoke.
+                    </p>
+
+                    <p>
+                        For the first time, one person&rsquo;s experience could become another person&rsquo;s
+                        knowledge. A community that could share information could better coordinate, could warn, could
+                        teach, could accumulate understanding across lifetimes instead of losing it every time
+                        someone died. This made human beings powerful over nature in a way no other species had ever
+                        been. But for the purpose of coordination, it also made them increasingly powerful over each
+                        other.
+                    </p>
+
+                    <p>
+                        The challenge is that if one gives power to a leader (of a family, tribe, county, or nation),
+                        but all of the leader&rsquo;s subjects observe all the information the leader observes, all
+                        of the decisions the leader makes, and all of the outcomes of those decisions, and they can
+                        observe each other&rsquo;s shared reactions and understandings of that leader, they have not
+                        actually given power to the leader. Instead, they are ruling through direct democracy and the
+                        leader is merely a figurehead. The instrument of a leader&rsquo;s power is made possible
+                        through information asymmetries, through the leader taking in more information about the state
+                        of the world and their behaviour in it than the subjects do. Without that information
+                        asymmetry, the leader is not leading. And as Bernays points out, that information asymmetry
+                        has also been a practical necessity for everyone involved.
+                    </p>
+
+                    <p>
+                        It is the information bottleneck of leadership, the compression of leadership, and whoever
+                        performed it acquired power over everyone who depended on it: power to shape what the
+                        community believed, what it feared, what it valued, and what it did. The bargain was implicit
+                        and, for most of human history,
+                        unavoidable<a href="#sidenote-19" class="sidenote-ref"><sup>19</sup></a>: surrender some of
+                        your autonomy to someone who processes more or different information than you can, and in
+                        return, benefit from coordination you and your community could never achieve in a
+                        decentralised manner. The alternative was for everyone in a community to redundantly process
+                        everything themselves, which means grinding the coordination capacity of a local community to
+                        a halt.
+                    </p>
+                    <div class="sidenote" id="sidenote-19"><sup>19</sup> The bargain described here is related to,
+                        but distinct from, the social contract tradition of Hobbes, Locke, and Rousseau. Those
+                        accounts explain why individuals consent to governance: for security (Hobbes), for the
+                        protection of property and rights (Locke), or for freedom within collectivity (Rousseau). The
+                        argument here concerns the structural reason governance requires intermediaries at all:
+                        listening does not scale, and whoever compresses information on another&rsquo;s behalf
+                        acquires power proportional to the compression. Hayek&rsquo;s account of the price system as
+                        a decentralised information
+                        technology <a href="#ref-18" class="cite">Hayek, 1945</a> comes closest to this framing, but
+                        treats the price mechanism as a solution rather than as itself a lossy compression that
+                        concentrates power, a point Sen&rsquo;s analysis of famine makes
+                        explicit <a href="#ref-19" class="cite">Sen, 1981</a>. Ostrom&rsquo;s work on polycentric
+                        governance of common-pool
+                        resources <a href="#ref-25" class="cite">Ostrom, 1990</a> demonstrates that local trust
+                        networks can solve collective action problems without centralised authority, a finding
+                        structurally analogous to the architecture this thesis proposes.</div>
+
+                    <p>
+                        Unfortunately, every information technology since language has extended the reach of the
+                        speaker without extending the capacity of the listener, and every such extension has raised
+                        the price of the bargain. Writing allowed experience to be recorded across centuries, but it
+                        also allowed priests and scribes to control what was recorded more so than the readers
+                        controlling what was written. Printing allowed ideas to reach millions, but it also allowed
+                        publishers and censors to decide which ideas more so than the masses to decide what they
+                        needed to know. Broadcasting allowed a single voice to reach an entire nation, but it also
+                        allowed that single voice to drown out every other more so than the listeners drawing out the
+                        information they collectively most need. At each stage of increasing broadcasting scale
+                        relative to listening scale, the intermediaries grew larger, more distant, and less
+                        accountable, following Granovetter&rsquo;s logic of strong-ties from Chapter 4. Tribe leaders
+                        became pharaohs, pharaohs gave way to parliaments, parliaments gave way to corporations, and
+                        now the corporations that mediate the largest share of human attention in history are building
+                        the technology that could mediate human judgment itself. The distance between the governed and
+                        the governors has never been greater, the compression has never been less visible (i.e.
+                        recommender engines, LLM chatbots), and the people living inside it have never had less
+                        ability to inspect what is being decided on their behalf, or by whom, or why.
+                    </p>
+
+                    <p>
+                        The entire preceding analysis describes variations of this single structural fact.
+                        Scott&rsquo;s legible state compressed local knowledge into centralised categories and
+                        governed through the compression. Simon&rsquo;s bounded organisation compressed market
+                        signals into administrative hierarchies and allocated through the compression. Sen&rsquo;s
+                        price mechanism compressed human need into exchange value and let three million people starve
+                        because the compression could not encode the difference between hunger and effective demand.
+                        Anderson&rsquo;s imagined community compressed cultural identity into narratives selected by
+                        publishers and broadcasters, and the people inside those narratives had no way to inspect the
+                        selection. Bernays saw all of this, named it, and built an industry on it. In each case, the
+                        bargain was the same: accept the compression, benefit from the coordination, and pay with
+                        your autonomy; in every case, listening did not scale without an intermediary; and in every
+                        case, the intermediary became even less accountable to the even larger group of people whose
+                        hearing it replaced.
+                    </p>
+
+                    <h3 id="what-changes">What Changes</h3>
+
+                    <p>
+                        AI is the first technology with the broad listening potential to entirely renegotiate this
+                        bargain between leaders and followers, not necessarily by eliminating intermediaries entirely
+                        (as Chapter 4 described, which would run into problems of trust at scale) but by building
+                        listening infrastructure that does not require large intermediaries: the first broad listening
+                        tool that enables one to hear across the full breadth of human experience with the nuance of
+                        a literary canon and the scale of a statistic. Not AI as currently built, which centralises
+                        the listening function into opaque models controlled by the institutions that trained them,
+                        but AI as this thesis has described it: a system in which every answer can be traced back to
+                        the sources that informed it, in which the trust placed in those sources flows through paths
+                        the person asking can inspect, in which the data that makes the system intelligent remains
+                        under the control of the people who provided it, and in which anyone who does not like how
+                        their contribution is being used can leave, and the system loses that contribution until
+                        consent is restored, an AI system with attribution-based control.
+                    </p>
+
+                    <p>
+                        The mechanism that makes this possible need not be large if it is recursive. BaconRank
+                        propagates trust through connections between people who actually know each other: the fifty or
+                        so relationships close enough that one person can genuinely judge another&rsquo;s competence
+                        on a given subject, and it has been estimated that four to six such hops connect any two
+                        people on earth. The architecture of broad listening, the infrastructure that could replace
+                        Bernays&rsquo;s invisible intermediaries with a system whose trust paths any participant can
+                        see and whose terms any participant can set, runs on the oldest and smallest unit of human
+                        social organisation: not a platform, an institution, or a government, but individual people
+                        who know each other well enough to say whether the other can be trusted, and who are willing
+                        to stake their own reputation on that assessment. Deep voting preserves the link between what
+                        those people know and what the system concludes, and structured transparency ensures that
+                        participating does not require surrendering control. Together, they describe a system that is
+                        intelligent because the people who compose it are, and that remains accountable because any of
+                        them can revaluate that trust, and can walk away from a source of intelligence if they desire.
+                    </p>
+
+                    <p>
+                        This is recognisably what Licklider described as &ldquo;cooperative modeling&rdquo;: a
+                        network through which the collected experience of its participants becomes available to each
+                        of them, weighted by trust they chose. And if this path is viable, modern society has the
+                        potential to renegotiate the bargain between the governors and the governed. For a quarter of
+                        a million years, the price of coordination across larger and larger groups facilitated by
+                        higher and higher scale broadcasting technology has been autonomy: the governed surrender
+                        hearing to the governors, the governors compress information on their behalf, and the
+                        governed have little-to-no infrastructure to see what was lost in the compression. If
+                        listening can scale without large intermediaries, if individuals can hear across the full
+                        breadth of human experience through networks of people they trust, then the structural reason
+                        that legislatures, corporations, publishers, and platforms hold power in their current form is
+                        no longer a technical necessity, but a choice. The institutions may persist, and in many
+                        contexts they should, but the <em>basis</em> on which they hold authority, the assumption
+                        that large numbers of people cannot hear or collectively make decisions for themselves and
+                        therefore must be heard for, is removable for the first time since the assumption became true.
+                    </p>
+
+                    <p>
+                        The stakes of that removal are higher than for any previous information technology. The
+                        library, encyclopedia, and mainframe each affected what people could <em>speak at scale</em>:
+                        which texts were accessible, which facts were included, which computations could be performed.
+                        AI affects how people <em>hear and decide</em>: which options appear, which evidence carries
+                        weight, which conclusions feel warranted. A centralised library limits access to information,
+                        but a centralised AI shapes the process of informed judgment itself, and following
+                        Bernays&rsquo;s thesis, the companies building AI at the greatest scale include advertising
+                        companies whose revenue depends on the very broadcasting-listening asymmetry that broad
+                        listening would close.
+                    </p>
+                </section>
+
+                <section id="the-window">
+                    <h2>The Window</h2>
+
+                    <p>
+                        Licklider is the only figure in the historical pattern who shortened the centralised phase
+                        deliberately rather than waiting for it to run its course. He recognised, while the mainframe
+                        era was still at its height, that the technical ingredients for federation existed, and he
+                        used public investment to build that infrastructure before central intermediaries could lock
+                        in their advantage. The ARPANET still produced powerful companies, but it ensured they
+                        emerged on top of public protocols rather than in place of them.
+                    </p>
+
+                    <p>
+                        The conditions that enabled his intervention are present today. The centralised phase of AI is
+                        early enough that the technical path remains open, the ingredients for a federated alternative
+                        exist, as this thesis has attempted to document, and the problems created by centralisation
+                        are generating political, legal, and market pressure for alternatives. But the window in which
+                        the path remains open is narrowing. The centralised institutions are accumulating
+                        advantages, among them proprietary data, trained models, user dependence, and regulatory
+                        relationships, that compound with each passing quarter. And unlike the mainframe era, where
+                        the centralising institutions were hardware manufacturers with less structural interest in
+                        opposing federation, some of the centralising institutions in AI are advertising companies
+                        whose revenue depends on the very asymmetry that broad listening would close. Every quarter
+                        that passes without federated infrastructure is a quarter in which the chance to build it
+                        diminishes because the economic and political barriers are given time to grow.
+                    </p>
+
+                    <p>
+                        Yet, Licklider did not publish a paper arguing that the mainframe era should end and then
+                        wait to see what happened. He built the infrastructure that would make federation possible
+                        before the centralised institutions could lock in their advantage, and he did it while
+                        holding a position that gave him authority over where public money went. The argument in
+                        &ldquo;The Computer as a Communication Device&rdquo; was important, but the ARPANET was what
+                        mattered. The argument described a window; the construction determined whether anyone walked
+                        through it.
+                    </p>
+
+                    <p>
+                        The preceding analysis does something Licklider&rsquo;s argument did. It traces the
+                        structural pattern, identifies the moment in the cycle, names the causes of centralisation,
+                        and describes technical paths that address each one. What it cannot do&mdash;what no argument
+                        can do&mdash;is shorten the peak. That requires building infrastructure, and building
+                        infrastructure at the scale and speed that the window&rsquo;s narrowing demands requires that
+                        the people who understand what is at stake treat that understanding as a reason to act rather
+                        than a reason to observe.
+                    </p>
+
+                    <p>
+                        The window Licklider walked through was available for roughly a decade before the mainframe
+                        institutions had accumulated enough network effects, regulatory relationships, and researcher
+                        dependence to close it. Whether the window in AI is comparably narrow, wider, or already
+                        closing faster than that estimate suggests is genuinely uncertain, and this thesis cannot
+                        resolve it. What is clear from the historical pattern is that the window does not stay open
+                        indefinitely, and that the institutions whose revenue depends on the broadcasting-listening
+                        asymmetry broad listening would close are not passive. They are building network effects,
+                        accumulating training data, funding the researchers whose work determines what comes next, and
+                        shaping the regulatory conversation in every jurisdiction that is trying to understand what AI
+                        governance should look like. These are not the actions of institutions that expect the
+                        centralised phase to give way easily. The technical path this thesis describes is viable.
+                        Whether it becomes actual depends on whether the people who see it also build it.
+                    </p>
+                </section>
+
+                <section id="freedom">
+                    <h2>Freedom</h2>
+
+                    <p>
+                        Three centuries of democratic struggle produced the most important set of rights any
+                        civilisation has secured: the right to speak, publish, associate, and hold power accountable
+                        through open deliberation. These rights were won by people who understood that the freedom to
+                        send information outward was worth defending even when the defence was costly, and they were
+                        right. They remain among the most important things any society has done.
+                    </p>
+
+                    <p>
+                        But they protect one side of the asymmetry: the side that was under threat when the printing
+                        press gave centralised institutions the power to determine which ideas reached which people.
+                        The corresponding capacity&mdash;the ability to hear independently, to trace a claim back
+                        through the evidence and interests that produced it, to know whether the person informing a
+                        decision has relevant knowledge or a financial stake in the outcome&mdash;has no comparable
+                        protection anywhere in the free world. There is no constitutional right to free listening,
+                        and the reason is not political failure. It is that until now, the equipment did not exist.
+                        Listening has never scaled without surrendering the listening to someone else, and you cannot
+                        secure a right to infrastructure that does not yet exist.
+                    </p>
+
+                    <p>
+                        The people who secured free speech understood, as Bernays understood from the other side,
+                        that controlling what reaches people is controlling what they can decide. They fought the
+                        right fight with the tools available in the seventeenth and eighteenth centuries: strip the
+                        power to censor from the institutions that held it, and ideas will compete on their merits.
+                        What they could not anticipate was that the technology of the following centuries would scale
+                        broadcasting so far beyond listening that the censorship problem would eventually become
+                        secondary to the synthesis problem. The state no longer needs to prevent you from speaking.
+                        It, or the corporation that has replaced it in this function, needs only to ensure that what
+                        you say cannot be heard above the noise, that the sources informing the decisions of the
+                        people around you remain invisible, and that the infrastructure for evaluating and weighting
+                        competing claims remains controlled by institutions with structural interests in the outcome.
+                        Free speech without free listening is the right to shout into a storm. The words go out.
+                        Nothing legible comes back.
+                    </p>
+
+                    <p>
+                        The architecture this thesis describes is a specification of what the equipment for free
+                        listening would need to do: preserve the link between a prediction and the sources that
+                        informed it; allow data owners to participate without surrendering copies of their
+                        information; propagate trust through networks of people who actually know each other, so that
+                        the scale of synthesis does not require delegating judgment to an institution whose decisions
+                        the people it serves cannot inspect. These are engineering requirements, and the preceding
+                        chapters have argued that they are tractable. The gap between a tractable engineering problem
+                        and built infrastructure is work, and the work is political and economic as much as it is
+                        technical: open protocols require funding, adoption, and the sustained effort of people who
+                        understand why the foundational layer must remain open before the application layer forecloses
+                        the possibility.
+                    </p>
+
+                    <p>
+                        Licklider did not just understand what was needed. He was in a position to fund it, and he
+                        used that position before the window closed. The question this thesis cannot answer on
+                        anyone&rsquo;s behalf is what position the people who understand the argument are in, and
+                        what they will do with it.
+                    </p>
+                </section>
+
+                <section id="the-end">
+                    <h2>The End</h2>
+
+                    <p>
+                        Before language, what a person learned died with them. Someone ate the wrong plant, stayed
+                        too long at the river, walked into weather that would kill them, and the people around them
+                        watched, and the next season someone else made the same discovery at the same cost. Whatever
+                        could not be inherited biologically was lost. Each generation began again.
+                    </p>
+
+                    <p>
+                        And then someone spoke, and the terms of being human changed. Experience could become
+                        knowledge, knowledge could travel, knowledge could accumulate across lifetimes and
+                        generations, and a community that could warn and teach and coordinate could do what no
+                        isolated individual could do: survive nature at a scale that let nature be survived. The price
+                        of that coordination was the bargain this epilogue has traced through every information
+                        technology since: surrender some hearing to someone who can compress more than you can, and
+                        receive in return the coordination that compression makes possible. The bargain was worth it.
+                        Against the river, the poison, the predator, the disease, the terms were favourable. The
+                        civilisation that produced this thesis, its institutions, its accumulated understanding of
+                        what large groups of people need, exists because the bargain kept being made.
+                    </p>
+
+                    <p>
+                        But the terms have changed. The rivers are dammed, the plants are catalogued, the predators
+                        are gone, and the diseases that killed children before they could speak are, in most of the
+                        world, curable. The case for surrendering hearing to governors whose decisions the governed
+                        cannot see was always strongest when the alternative to coordination was nature, and nature
+                        was worse. The people who built the great centralised listening institutions of the last few
+                        centuries&mdash;the newspapers, the broadcasters, the platforms, and now the AI
+                        laboratories&mdash;did not build them out of malice. They built them because centralisation
+                        was the only available path to coordination at scale, and coordination at scale was necessary,
+                        and the people who chose not to build them ceded the coordination to those who did. The
+                        bargain was not a mistake. It was the rational response to the tools available.
+                    </p>
+
+                    <p>
+                        What has changed is that a different response is now technically possible, and therefore a
+                        different choice is now available, possibly for the first time in the 250,000-year history of
+                        the bargain. Whether the infrastructure for that choice gets built&mdash;whether the window
+                        stays open long enough, and whether the people who understand what is at stake act in
+                        time&mdash;determines something more fundamental than AI policy. A centralised library
+                        limited what a scholar could read. A centralised encyclopedia limited which facts were
+                        included in the reference a generation consulted. A centralised mainframe limited which
+                        institutions could afford to compute. Each constrained access to information but left the
+                        process of individual judgment largely intact. An AI system that a significant and growing
+                        fraction of the world uses to decide what to believe, what options exist, and what to do
+                        operates at a different layer. It does not limit access to information. It shapes the process
+                        of informed judgment itself&mdash;which evidence feels relevant, which conclusions feel
+                        warranted, which possibilities appear. And it does this at a scale and with an invisibility
+                        that Bernays, who built an industry on the visibility of the same mechanism, could not have
+                        imagined.
+                    </p>
+
+                    <p>
+                        Free speech was secured by people who understood that the freedom to send information outward
+                        was worth the cost of the fight. They were right, and the right they secured is among the most
+                        important things any civilisation has done. The corresponding right&mdash;to hear from sources
+                        whose provenance is visible, whose interests are legible, whose conclusions can be traced back
+                        through the evidence that produced them&mdash;has waited for infrastructure that did not yet
+                        exist. The infrastructure is now describable. Whether it becomes buildable, and whether the
+                        people who can build it do so before the window closes, is the question that the technical
+                        work in this thesis cannot answer.
+                    </p>
+
+                    <p>
+                        For a quarter of a million years, the governed and the governors have not been the same
+                        people, because listening did not scale without surrendering it, and whoever performed the
+                        compression held power proportional to its scope. That condition is now, for the first time,
+                        technically removable.
+                    </p>
+
+                    <p>
+                        The people who will determine what happens next are not abstract. They are researchers who
+                        understand the architecture and choose where to work. They are funders who see the window and
+                        choose what to back. They are policymakers who grasp the historical pattern and choose which
+                        infrastructure receives public investment, and which is left to be built closed by
+                        institutions whose revenue depends on keeping it that way. Each of them will make that
+                        choice&mdash;is already making it&mdash;and the choice compounds. Licklider did not wait to
+                        see what the mainframe era would produce. He decided, while it was still producing, that the
+                        next layer would be open, and he used the position he held to make that decision real. The
+                        position each of these people holds is different from his. The decision is the same.
+                    </p>
                 </section>
 
                 <section class="references">
                     <h2>References</h2>
-
                     <ol>
-                        <li id="ref-1">
-                            <span class="authors">
-                                T. Mann. 2024.
-                            </span>
-
-                            <span class="venue">
-                                Ai’s rising tide lifts all chips as amd instinct, cloudy silicon vie for a slice of
-                                nvidia’s pie. <em>The Register</em>, Dec.
-                            </span>
-                        </li>
-
-                        <li id="ref-2">
-                            <span class="authors">
-                                Epoch AI. 2024.
-                            </span>
-
-                            <span class="venue">
-                                Data on machine learning hardware. Updated December 30, 2024.
-                            </span>
-                        </li>
-
-                        <li id="ref-3">
-                            <span class="authors">
-                                Ming. 2024.
-                            </span>
-
-                            <span class="venue">
-                                Nvidia ai gpu shipments to hit 4m in 2024. <em>SMYG Limited News</em>, Jun.
-                            </span>
-                        </li>
-
-                        <li id="ref-4">
-                            <span class="authors">
-                                Macrotrends LLC. 2024.
-                            </span>
-
-                            <span class="venue">
-                                Nvidia revenue 2010-2024 — nvda. Accessed January 2024
-                            </span>
-                        </li>
+                        <li id="ref-1"><span class="authors">Casson, L.</span> (2001).
+                            <span class="title">Libraries in the Ancient World.</span>
+                            <span class="venue">Yale University Press</span>.</li>
+                        <li id="ref-2"><span class="authors">Galen.</span> (c. 170 CE).
+                            <span class="title">Commentary on Hippocrates&rsquo; Epidemics.</span></li>
+                        <li id="ref-3"><span class="authors">Canfora, L.</span> (1989).
+                            <a href="https://www.google.com/books/edition/The_Vanished_Library/"><span class="title">The Vanished Library: A Wonder of the Ancient World.</span></a>
+                            <span class="venue">University of California Press</span>.</li>
+                        <li id="ref-4"><span class="authors">Kennedy, G. A.</span> (2003).
+                            <span class="title">Progymnasmata: Greek Textbooks of Prose Composition and Rhetoric.</span>
+                            <span class="venue">Society of Biblical Literature</span>.</li>
+                        <li id="ref-5"><span class="authors">British Library / Smithsonian.</span>
+                            <a href="https://www.bl.uk/collection-items/the-diamond-sutra"><span class="title">The Diamond Sutra.</span></a></li>
+                        <li id="ref-6"><span class="authors">Scott, J. C.</span> (1998).
+                            <a href="https://yalebooks.yale.edu/book/9780300078152/seeing-like-a-state/"><span class="title">Seeing Like a State: How Certain Schemes to Improve the Human Condition Have Failed.</span></a>
+                            <span class="venue">Yale University Press</span>.</li>
+                        <li id="ref-7"><span class="authors">Diderot, D., &amp; d&rsquo;Alembert, J. le R.</span> (1751&ndash;1772).
+                            <a href="https://encyclopedie.uchicago.edu/"><span class="title">Encyclopédie, ou dictionnaire raisonné des sciences, des arts et des métiers.</span></a></li>
+                        <li id="ref-8"><span class="authors">Stanford Encyclopedia of Philosophy.</span>
+                            <a href="https://plato.stanford.edu/entries/diderot/"><span class="title">Denis Diderot.</span></a></li>
+                        <li id="ref-9"><span class="authors">Wells, H. G.</span> (1937).
+                            <span class="title">World Brain.</span>
+                            <span class="venue">Methuen &amp; Co</span>.</li>
+                        <li id="ref-10"><span class="authors">Wikipedia.</span>
+                            <a href="https://en.wikipedia.org/wiki/Wikipedia:Governance"><span class="title">Wikipedia: Governance.</span></a></li>
+                        <li id="ref-11"><span class="authors">Somers, J.</span> (2017).
+                            <a href="https://www.theatlantic.com/technology/archive/2017/04/the-tragedy-of-google-books/523320/"><span class="title">Torching the Modern-Day Library of Alexandria.</span></a>
+                            <span class="venue">The Atlantic</span>.</li>
+                        <li id="ref-12"><span class="authors">Licklider, J. C. R.</span> (1960).
+                            <a href="https://doi.org/10.1109/THFE2.1960.4503259"><span class="title">Man-Computer Symbiosis.</span></a>
+                            <span class="venue">IRE Transactions on Human Factors in Electronics, HFE-1(1), 4&ndash;11</span>.</li>
+                        <li id="ref-13"><span class="authors">Cortada, J. W.</span> (2018).
+                            <a href="https://doi.org/10.1017/S0007680518000685"><span class="title">Change and Continuity at IBM: Key Themes in Histories of IBM.</span></a>
+                            <span class="venue">Business History Review, 92(1), 117&ndash;148</span>.</li>
+                        <li id="ref-14"><span class="authors">Licklider, J. C. R., &amp; Taylor, R. W.</span> (1968).
+                            <span class="title">The Computer as a Communication Device.</span>
+                            <span class="venue">Science and Technology, 76, 21&ndash;31</span>.</li>
+                        <li id="ref-15"><span class="authors">Simon, H. A.</span> (1955).
+                            <a href="https://doi.org/10.2307/1884852"><span class="title">A Behavioral Model of Rational Choice.</span></a>
+                            <span class="venue">The Quarterly Journal of Economics, 69(1), 99&ndash;118</span>.</li>
+                        <li id="ref-16"><span class="authors">Simon, H. A.</span> (1956).
+                            <a href="https://doi.org/10.1037/h0042769"><span class="title">Rational Choice and the Structure of the Environment.</span></a>
+                            <span class="venue">Psychological Review, 63(2), 129&ndash;138</span>.</li>
+                        <li id="ref-17"><span class="authors">Simon, H. A.</span> (1982).
+                            <span class="title">Models of Bounded Rationality.</span>
+                            <span class="venue">MIT Press</span>.</li>
+                        <li id="ref-18"><span class="authors">Hayek, F. A.</span> (1945).
+                            <a href="https://doi.org/10.1257/aer.35.4.519"><span class="title">The Use of Knowledge in Society.</span></a>
+                            <span class="venue">The American Economic Review, 35(4), 519&ndash;530</span>.</li>
+                        <li id="ref-19"><span class="authors">Sen, A.</span> (1981).
+                            <a href="https://doi.org/10.1093/0198284632.001.0001"><span class="title">Poverty and Famines: An Essay on Entitlement and Deprivation.</span></a>
+                            <span class="venue">Oxford University Press</span>.</li>
+                        <li id="ref-20"><span class="authors">Anderson, B.</span> (1983).
+                            <span class="title">Imagined Communities: Reflections on the Origin and Spread of Nationalism.</span>
+                            <span class="venue">Verso</span>.</li>
+                        <li id="ref-21"><span class="authors">Bernays, E.</span> (1928).
+                            <a href="https://archive.org/details/BernaysPropaganda"><span class="title">Propaganda.</span></a>
+                            <span class="venue">Horace Liveright</span>.</li>
+                        <li id="ref-22"><span class="authors">Tye, L.</span> (1998).
+                            <span class="title">The Father of Spin: Edward L. Bernays and the Birth of Public Relations.</span>
+                            <span class="venue">Crown Publishers</span>.</li>
+                        <li id="ref-23"><span class="authors">Hootsuite.</span> (2024).
+                            <a href="https://www.hootsuite.com/resources/digital-trends"><span class="title">Digital 2024 Global Overview Report.</span></a></li>
+                        <li id="ref-24"><span class="authors">CompaniesMarketCap.</span> (2026).
+                            <a href="https://companiesmarketcap.com/"><span class="title">Largest Companies by Market Capitalization.</span></a></li>
+                        <li id="ref-25"><span class="authors">Ostrom, E.</span> (1990).
+                            <a href="https://doi.org/10.1017/CBO9780511807763"><span class="title">Governing the Commons: The Evolution of Institutions for Collective Action.</span></a>
+                            <span class="venue">Cambridge University Press</span>.</li>
                     </ol>
                 </section>
 
                 <nav class="chapter-nav">
                     <a href="chapter5.html" class="prev">Chapter V: Conclusion</a>
-                    <a href="appendix2.html" class="next">Appendix II: Model Rankings</a>
+                    <a href="appendix2.html" class="next">Appendix II: Compute Distribution</a>
                 </nav>
             </main>
         </div>

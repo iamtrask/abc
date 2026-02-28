@@ -16,7 +16,8 @@
         MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                tags: 'ams'
             }
         };
     </script>
@@ -45,9 +46,10 @@
             <a href="chapter3.html">III. Network-Source AI</a>
             <a href="chapter4.html">IV. Broad Listening</a>
             <a href="chapter5.html">V. Conclusion</a>
-            <a href="references.html">References</a>
             <a href="appendix1.html">Appendix I</a>
             <a href="appendix2.html">Appendix II</a>
+            <a href="appendix3.html">Appendix III</a>
+            <a href="references.html">References</a>
             <a href="https://andrewtrask.com">About</a>
         </nav>
 
@@ -67,6 +69,8 @@
                     <li class="toc-h3"><a href="#second-hypothesis">Second Hypothesis: Deep Voting</a></li>
                     <li class="toc-h3"><a href="#first-hypothesis">First Hypothesis: 6+ OOM</a></li>
                     <li class="toc-h3"><a href="#empirical-evidence">Empirical Evidence</a></li>
+                    <li class="toc-h3"><a href="#empirical-prototype">Empirical Prototype</a></li>
+                    <li class="toc-h3"><a href="#deep-voting-path">Deep Voting: 6+ OOM</a></li>
                 </ul>
                 <div class="ascii-decoration">
                     ████▓▓▒▒░░
@@ -1072,25 +1076,25 @@
                                     <td>Meta</td>
                                     <td>$1.79 \times 10^{21}$</td>
                                     <td>5.57</td>
-                                    <td>From <a href="appendix1.html#table-6-3">Table 6.3</a> Total Q4 2024</td>
+                                    <td>From <a href="appendix2.html#table-6-3">Table 6.3</a> Total Q4 2024</td>
                                 </tr>
                                 <tr>
                                     <td>Microsoft/OpenAI</td>
                                     <td>$1.38 \times 10^{21}$</td>
                                     <td>4.29</td>
-                                    <td>From <a href="appendix1.html#table-6-3">Table 6.3</a> Total Q4 2024</td>
+                                    <td>From <a href="appendix2.html#table-6-3">Table 6.3</a> Total Q4 2024</td>
                                 </tr>
                                 <tr>
                                     <td>Google/DeepMind</td>
                                     <td>$1.23 \times 10^{21}$</td>
                                     <td>3.81</td>
-                                    <td>From <a href="appendix1.html#table-6-3">Table 6.3</a> Total Q4 2024</td>
+                                    <td>From <a href="appendix2.html#table-6-3">Table 6.3</a> Total Q4 2024</td>
                                 </tr>
                                 <tr>
                                     <td>Amazon/Anthropic</td>
                                     <td>$7.19 \times 10^{20}$</td>
                                     <td>2.23</td>
-                                    <td>From <a href="appendix1.html#table-6-3">Table 6.3</a> Total Q4 2024</td>
+                                    <td>From <a href="appendix2.html#table-6-3">Table 6.3</a> Total Q4 2024</td>
                                 </tr>
                                 <tr>
                                     <td colspan="4"><em>Consumer Computing</em></td>
@@ -1099,21 +1103,21 @@
                                     <td>Smartphones</td>
                                     <td>$7.48 \times 10^{21}$</td>
                                     <td>23.23</td>
-                                    <td>Sum of Active iPhones/Androids from <a href="appendix1.html#table-6-5"> Table
+                                    <td>Sum of Active iPhones/Androids from <a href="appendix2.html#table-6-5"> Table
                                             6.5</a></td>
                                 </tr>
                                 <tr>
                                     <td>PC CPUs/GPUs</td>
                                     <td>$2.23 \times 10^{21}$</td>
                                     <td>6.92</td>
-                                    <td>Sum of PC CPUs and GPUs from <a href="appendix1.html#table-6-5"> Table 6.5</a>
+                                    <td>Sum of PC CPUs and GPUs from <a href="appendix2.html#table-6-5"> Table 6.5</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Game Consoles</td>
                                     <td>$8.64 \times 10^{20}$</td>
                                     <td>2.68</td>
-                                    <td>From <a href="appendix1.html#table-6-5">Table 6.5</a></td>
+                                    <td>From <a href="appendix2.html#table-6-5">Table 6.5</a></td>
                                 </tr>
                                 <tr>
                                     <td>Other Cloud/Pre-2023</td>
@@ -3420,7 +3424,7 @@
                         the Pile (0.670 vs 0.811 bits-per-byte) while using only 7.5B parameters compared to GPT-3’s
                         175B. This constitutes a 25x reduction in parameter count while achieving superior performance
                         and maintaining clear attribution paths through its retrieval mechanism (<a
-                            href="#ref-4">Borgeaud et al., 2022</a>).
+                            href="#ref-4" class="cite">Borgeaud et al., 2022</a>).
                     </p>
 
                     <p>
@@ -3569,75 +3573,959 @@
                         attribution, efficiency, and performance by preserving source mappings that addition destroys
                     </p>
 
-                    <h3>Deep Voting: A Path to 6+ Orders of Magnitude</h3>
+                    <p>
+                        These systems demonstrate that the <em>architecture</em> of deferred synthesis is sound.
+                        Whether it remains sound when assets are independently owned, when per-source privacy
+                        guarantees impose real constraints on how predictions are synthesized, requires a setting
+                        where these constraints actually bind. The next section explores an approximation of that
+                        scenario.
+                    </p>
+                </section>
+
+                <section id="empirical-prototype">
+                    <h2>Empirical Prototype: Private Ensemble Aggregation with Intelligence Budgets</h2>
+
+                    <p>
+                        In this prototype, five frontier language models, each trained independently by a different
+                        organization on its own data and compute, are ensembled under a mechanism that enforces
+                        formal per-source influence bounds. The deep voting mechanism described above is instantiated
+                        in its simplest form through weighted voting: each model serves as a source-specific function
+                        \(g_s\), and the syntactic function \(f\) synthesizes their predictions at inference time.
+                        Differential privacy machinery (specifically, R&eacute;nyi differential privacy
+                        <a href="#ref-56" class="cite">Mironov, 2017</a> and the exponential mechanism
+                        <a href="#ref-57" class="cite">McSherry and Talwar, 2007</a>) implements the intelligence
+                        budget framework of Definition <a href="#second-hypothesis">2.7</a>, yielding per-source
+                        influence bounds that operate in all three regimes (privacy, measurement, and attribution)
+                        simultaneously.
+                    </p>
+
+                    <h3>Experimental Setup</h3>
+
+                    <p>
+                        The prototype evaluates five frontier language models on a multiple-choice subset of the
+                        Humanity’s Last Exam (HLE) benchmark <a href="#ref-60" class="cite">Phan et al., 2025</a>.
+                        HLE is a dataset of 2,500 expert-crafted questions contributed by nearly 1,000 subject-matter
+                        experts across more than 500 institutions, spanning mathematics, physics, biology, chemistry,
+                        computer science, philosophy, and other domains. Approximately 76% of HLE questions require
+                        short exact-match answers; the remaining ~600 are multiple-choice. The evaluation is restricted
+                        to the 513 multiple-choice questions for which all five models produced valid responses, as
+                        the one-hot prediction format required by the weighted voting mechanism
+                        (Equation \(\eqref{eq:weighted_votes}\)) naturally applies to discrete choice among labeled
+                        alternatives.<a href="#sidenote-5" class="sidenote-ref"><sup>5</sup></a>
+                        Each model is queried through the
+                        <a href="https://openrouter.ai">OpenRouter API</a>, and its predicted answer is recorded as
+                        a one-hot vector \(p_s \in \{0,1\}^{C_q}\) for each question \(q\) with cardinality \(C_q\)
+                        (the number of answer choices). The models and their individual accuracies are:
+                    </p>
+
+                    <div class="sidenote" id="sidenote-5">
+                        <p><sup>5</sup> All code, model predictions, and experimental results are available at
+                            <a href="https://github.com/iamtrask/deepvoting">github.com/iamtrask/deepvoting</a>.</p>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <caption>Individual model performance on the 513-question multiple-choice subset of HLE.</caption>
+                            <thead>
+                                <tr>
+                                    <th>Model (Source \(s\))</th>
+                                    <th>Correct</th>
+                                    <th>Accuracy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Gemini 3.1 Pro</td>
+                                    <td>228</td>
+                                    <td>44.4%</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude Opus 4</td>
+                                    <td>204</td>
+                                    <td>39.8%</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini 3.0 Pro</td>
+                                    <td>188</td>
+                                    <td>36.6%</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-5 Pro</td>
+                                    <td>155</td>
+                                    <td>30.2%</td>
+                                </tr>
+                                <tr>
+                                    <td>Kimi K2.5</td>
+                                    <td>152</td>
+                                    <td>29.6%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Each model serves as a source-specific function \(g_s\) in the deep voting framework.
+                        The prediction vector \(p_{s,q} = g_s(x_q)\) represents model \(s\)&rsquo;s one-hot prediction
+                        for question \(q\). The syntactic function \(f\) is implemented as weighted voting:
+                    </p>
+
+                    \begin{equation}\label{eq:weighted_votes}
+                    v_j(q) = \sum_{s \in \mathcal{S}} \gamma[s] \cdot p_{s,q,j}, \quad j = 1, \ldots, C_q
+                    \end{equation}
+
+                    <p>
+                        where \(\gamma[s] \in [\gamma_{\min}[s], \gamma_{\max}[s]]\) is the intelligence budget for
+                        source \(s\), and the ensemble prediction is \(\hat{y}(q) = \arg\max_j v_j(q)\).
+                    </p>
+
+                    <h3>Baseline: Non-Private Hedge Ensembling</h3>
+
+                    <p>
+                        The central challenge of deep voting is choosing the weights \(\gamma[s]\). If we knew in
+                        advance which models would perform well on which questions, we could assign optimal weights
+                        from the start. But we do not have access to future outcomes, so the weights must be learned
+                        from experience as queries arrive. This is a classic online learning problem: at each round,
+                        the ensemble must commit to a weighting before observing the correct answer, then update its
+                        beliefs based on the outcome. The literature on online convex optimization provides algorithms
+                        with strong regret guarantees for exactly this setting
+                        (<a href="#ref-59" class="cite">Freund and Schapire, 1997</a>;
+                        <a href="#ref-58" class="cite">Kalai and Vempala, 2005</a>).
+                    </p>
+
+                    <p>
+                        Before introducing privacy mechanisms, it is useful to establish the performance of non-private
+                        ensemble aggregation using the Hedge algorithm (multiplicative weights update)
+                        <a href="#ref-59" class="cite">Freund and Schapire, 1997</a>. Hedge maintains weights
+                        \(w_s^{(t)}\) for each model \(s\) at round \(t\), updating them multiplicatively based on
+                        observed losses:
+                    </p>
+
+                    \begin{equation}\label{eq:hedge_update}
+                    w_s^{(t+1)} = w_s^{(t)} \cdot (1 - \eta)^{\ell_s^{(t)}}, \quad \ell_s^{(t)} = \mathbf{1}[\hat{y}_s(q_t) \neq y^*(q_t)]
+                    \end{equation}
+
+                    <p>
+                        where \(\eta = 0.1\) is the learning rate and \(\ell_s^{(t)}\) is the 0-1 loss of model \(s\)
+                        on question \(q_t\). With 513 online rounds, the Hedge ensemble achieves <strong>50.29%</strong>
+                        accuracy (258/513), exceeding the best individual model (Gemini 3.1 Pro, 44.4%) by 5.9
+                        percentage points. This establishes the accuracy ceiling for any private variant, and the
+                        central question becomes what accuracy cost, if any, formal intelligence budgeting guarantees
+                        impose.
+                    </p>
+
+                    <h3>Private Aggregation: The Two-Phase FTPL Mechanism</h3>
+
+                    <p>
+                        Releasing either the Hedge weights or the full vote counts \(v(q)\) at each round would leak
+                        information about individual models&rsquo; predictions. The goal is to implement the
+                        intelligence budgets: each source \(s\) contributes with bounded influence
+                        \(\gamma[s] \in [\gamma_{\min}[s], \gamma_{\max}[s]]\), and the per-source cost of
+                        participation is quantified by the differential attribution. To build this mechanism, the
+                        prototype draws on two core primitives: the <em>exponential mechanism</em> for weight
+                        selection, and the <em>Gaussian Noisy Max</em> (GNMax) mechanism for private output release
+                        (<a href="#ref-16" class="cite">Papernot et al., 2018</a>). The DP machinery provides the
+                        formal accounting that makes intelligence budgets verifiable: each source&rsquo;s \(\epsilon\)
+                        is precisely the differential attribution cost of its participation.
+                    </p>
+
+                    <p><strong>Differential Privacy: Definitions and Intuition.</strong>
+                        The formal guarantees rest on differential privacy (DP), introduced by Dwork, McSherry,
+                        Nissim, and Smith.<a href="#sidenote-6" class="sidenote-ref"><sup>6</sup></a>
+                    </p>
+
+                    <div class="sidenote" id="sidenote-6">
+                        <p><sup>6</sup> C. Dwork, F. McSherry, K. Nissim, and A. Smith, &ldquo;Calibrating Noise to
+                            Sensitivity in Private Data Analysis,&rdquo; <em>Theory of Cryptography (TCC)</em>, 2006.
+                            The presentation here follows the standard textbook formulation: C. Dwork and A. Roth,
+                            <em>The Algorithmic Foundations of Differential Privacy</em>, 2014, Definition 3.1.</p>
+                    </div>
+
+                    <div class="definition-box">
+                        <h3>Differential Privacy</h3>
+                        <p>A randomized mechanism \(\mathcal{M}\) satisfies \((\epsilon, \delta)\)-differential privacy
+                            if, for all neighboring datasets \(D, D’\) differing in one record and all measurable sets
+                            \(S\) of outputs:</p>
+                        \[
+                        \Pr[\mathcal{M}(D) \in S] \leq e^{\epsilon} \cdot \Pr[\mathcal{M}(D’) \in S] + \delta
+                        \]
+                        <p>When \(\delta = 0\), the mechanism satisfies <em>pure</em> \(\epsilon\)-differential privacy.</p>
+                    </div>
+
+                    <p>
+                        The parameter \(\epsilon\) bounds how much any single record can affect the output distribution.
+                        An observer who sees the mechanism&rsquo;s output cannot reliably determine whether any
+                        particular record was present in the input, because the output distributions with and without
+                        that record are nearly indistinguishable. Smaller \(\epsilon\) means stronger privacy;
+                        \(\epsilon = 0\) would mean the output reveals nothing about any individual record (although it
+                        may still release information which is consistently present in a sufficiently large number of
+                        records; e.g. &ldquo;what causes cancer&rdquo; but not &ldquo;does patient X have cancer?&rdquo;).
+                    </p>
+
+                    <p>
+                        In the ensemble setting, &ldquo;neighboring datasets&rdquo; correspond to changing one
+                        model&rsquo;s prediction on one question. The goal is to ensure that the ensemble&rsquo;s
+                        published outputs (the predicted answers) do not reveal too much about any individual
+                        model&rsquo;s contribution.
+                    </p>
+
+                    <p><strong>Phase 1: Weight Calibration via Follow the Perturbed Leader.</strong>
+                        The mechanism replaces Hedge with Follow the Perturbed Leader (FTPL)
+                        <a href="#ref-58" class="cite">Kalai and Vempala, 2005</a>, an online learning algorithm that
+                        selects actions by perturbing cumulative utilities with random noise. At each calibration
+                        round \(t\), a model is selected by:
+                    </p>
+
+                    \begin{equation}\label{eq:ftpl}
+                    m^* = \arg\max_{m \in \mathcal{S}} \left\{ -L_m^{(t)} + \frac{Z_m}{\eta} \right\}, \quad Z_m \overset{\text{i.i.d.}}{\sim} \text{Gumbel}(0,1)
+                    \end{equation}
+
+                    <p>
+                        where \(L_m^{(t)} = \sum_{\tau=1}^{t} \ell_m^{(\tau)}\) is the cumulative loss of model \(m\)
+                        through round \(t\) and \(\eta > 0\) is the learning rate. Here \(\text{Gumbel}(0,1)\) denotes
+                        the standard Gumbel distribution with CDF \(F(z) = e^{-e^{-z}}\), sampled via the inverse CDF
+                        as \(Z = -\ln(-\ln(U))\) for \(U \sim \text{Uniform}(0,1)\).
+                    </p>
+
+                    <p>
+                        <em>Why Gumbel noise?</em> The choice of Gumbel perturbations is not arbitrary. By the
+                        Gumbel-max trick,<a href="#sidenote-7" class="sidenote-ref"><sup>7</sup></a> when each \(Z_m\)
+                        is an independent \(\text{Gumbel}(0,1)\) draw, the probability of selecting model \(m\)
+                        follows a Gibbs (softmax) distribution:
+                    </p>
+
+                    <div class="sidenote" id="sidenote-7">
+                        <p><sup>7</sup> The Gumbel-max trick states that if \(Z_1, \ldots, Z_K \overset{\text{i.i.d.}}{\sim} \text{Gumbel}(0,1)\),
+                            then \(\arg\max_k \{a_k + Z_k / \eta\}\) samples from the categorical distribution with
+                            \(\Pr[k] \propto \exp(\eta \, a_k)\). This result traces to extreme value theory
+                            (E.J. Gumbel, 1954) and the theory of discrete choice (R.D. Luce, 1959).</p>
+                    </div>
+
+                    \begin{equation}\label{eq:ftpl_gibbs}
+                    \Pr[\text{select } m] = \frac{\exp(-\eta \cdot L_m^{(t)})}{\sum_{m’} \exp(-\eta \cdot L_{m’}^{(t)})}
+                    \end{equation}
+
+                    <p>
+                        This distribution concentrates probability mass on models with low cumulative loss (strong past
+                        performance), with \(\eta\) controlling the concentration: larger \(\eta\) produces sharper
+                        distributions that favor the current leader, while smaller \(\eta\) produces more uniform
+                        distributions.
+                    </p>
+
+                    <p>
+                        <em>The exponential mechanism connection.</em> The distribution in Equation
+                        \(\eqref{eq:ftpl_gibbs}\) is precisely the <em>exponential mechanism</em> of McSherry and
+                        Talwar.<a href="#sidenote-8" class="sidenote-ref"><sup>8</sup></a> The exponential mechanism
+                        selects an option with probability proportional to
+                        \(\exp(\epsilon \cdot u(D, r) / (2\Delta u))\), where \(u(D, r)\) is the utility of option
+                        \(r\) on dataset \(D\) and \(\Delta u\) is the sensitivity. In the FTPL setting:
+                    </p>
+
+                    <div class="sidenote" id="sidenote-8">
+                        <p><sup>8</sup> F. McSherry and K. Talwar, &ldquo;Mechanism Design via Differential
+                            Privacy,&rdquo; <em>FOCS</em>, 2007, Theorem 6: the exponential mechanism preserves
+                            \((\epsilon, 0)\)-differential privacy. In the FTPL context, the utility function is
+                            \(u(D, m) = -L_m\), sensitivity is \(\Delta u = 1\), and the temperature \(1/\eta\)
+                            corresponds to \(2/\epsilon\). Solving gives \(\epsilon = 2\eta\).</p>
+                    </div>
+
+                    <ul>
+                        <li><em>Utility</em>: \(u(D, m) = -L_m\), assigning higher utility to models with lower
+                            cumulative loss.</li>
+                        <li><em>Sensitivity</em>: \(\Delta u = 1\), because changing one question&rsquo;s outcome
+                            changes one model&rsquo;s cumulative loss by at most 1.</li>
+                        <li><em>Matching terms</em>: FTPL selects \(m\) with probability
+                            \(\propto \exp(-\eta \cdot L_m) = \exp(\eta \cdot u(D,m))\). The exponential mechanism
+                            selects with probability \(\propto \exp(\epsilon \cdot u(D,m) / 2)\). Equating
+                            \(\eta = \epsilon / 2\) gives \(\epsilon = 2\eta\).</li>
+                    </ul>
+
+                    <p>
+                        The Gumbel perturbation that FTPL adds for online learning (to explore alternatives and
+                        achieve low regret) turns out to be exactly the noise that differential privacy requires.
+                        There is no additional privacy cost beyond what the learning algorithm already uses.
+                        With \(\eta = 0.1\), each calibration round costs only \(\epsilon = 0.2\) in pure differential
+                        privacy.
+                    </p>
+
+                    <p>
+                        To compute smooth ensemble weights rather than selecting a single model per round, the
+                        mechanism averages over \(N = 2{,}000\) independent Gumbel draws, obtaining
+                        \(\gamma[s] = \frac{1}{N} \sum_{i=1}^{N} \mathbf{1}[m^*_i = s]\). After \(T\) calibration
+                        questions, weights are frozen: \(\gamma_{\text{frozen}}[s] = \gamma[s]^{(T)}\). All subsequent
+                        computations using frozen weights incur no additional privacy cost from the FTPL mechanism,
+                        by the post-processing theorem of differential
+                        privacy.<a href="#sidenote-9" class="sidenote-ref"><sup>9</sup></a>
+                    </p>
+
+                    <div class="sidenote" id="sidenote-9">
+                        <p><sup>9</sup> Dwork and Roth (2014), Proposition 2.1: any deterministic function of the
+                            output of an \((\epsilon, \delta)\)-DP mechanism is itself \((\epsilon, \delta)\)-DP.
+                            Since frozen weights are derived from the FTPL output, further computations on them
+                            inherit the same guarantee without additional cost.</p>
+                    </div>
+
+                    <p><strong>Phase 2: Deployment via Confident-GNMax.</strong>
+                        During deployment (after calibration), the frozen weights define the ensemble. The remaining
+                        privacy question is how to release predictions without revealing too much about individual
+                        models&rsquo; votes. The Gaussian Noisy Max (GNMax) mechanism addresses this by releasing only
+                        the <em>index</em> of the highest noisy vote, rather than the full vote vector:
+                    </p>
+
+                    \begin{equation}\label{eq:gnmax}
+                    \hat{y}(q) = \arg\max_j \left\{ v_j(q) + \mathcal{N}(0, \sigma^2) \right\}
+                    \end{equation}
+
+                    <p>
+                        where \(v_j(q)\) is the weighted vote count from Equation \(\eqref{eq:weighted_votes}\) and
+                        \(\sigma > 0\) controls the noise scale. To further reduce privacy expenditure on queries where
+                        the ensemble has low confidence, the prototype applies the Confident-GNMax thresholding
+                        mechanism (<a href="#ref-16" class="cite">Papernot et al., 2018</a>):
+                    </p>
+
+                    \begin{equation}\label{eq:confident_gnmax}
+                    \hat{y}(q) = \begin{cases}
+                    \arg\max_j \left\{ v_j(q) + \mathcal{N}(0, \sigma^2) \right\} & \text{if } \max_j v_j(q) + \mathcal{N}(0, \sigma^2) \geq \mathcal{T} \\
+                    \bot & \text{otherwise}
+                    \end{cases}
+                    \end{equation}
+
+                    <p>
+                        where \(\mathcal{T} \geq 0\) is the confidence threshold and \(\bot\) denotes refusal to
+                        answer. Refused queries contribute zero privacy cost: the system reveals only that the
+                        ensemble was not sufficiently confident, which (because the confidence check itself uses noisy
+                        counts) leaks minimal information about any individual model.
+                    </p>
+
+                    <p><strong>Privacy Accounting via R&eacute;nyi Differential Privacy.</strong>
+                        The full mechanism involves multiple private operations: \(T\) rounds of FTPL weight selection
+                        (each satisfying \(0.2\)-DP) and up to \(Q\) rounds of GNMax during deployment. R&eacute;nyi
+                        differential privacy (RDP) provides substantially tighter composition by tracking privacy loss
+                        through R&eacute;nyi divergences, a family of information-theoretic measures parameterized by
+                        an order \(\alpha > 1\).<a href="#sidenote-10" class="sidenote-ref"><sup>10</sup></a>
+                    </p>
+
+                    <div class="sidenote" id="sidenote-10">
+                        <p><sup>10</sup> I. Mironov, &ldquo;R&eacute;nyi Differential Privacy,&rdquo; <em>IEEE CSF</em>,
+                            2017. RDP composes additively at each order \(\alpha\) (Proposition 1), and converts to
+                            standard \((\epsilon, \delta)\)-DP by optimizing over \(\alpha\) (Proposition 3).</p>
+                    </div>
+
+                    <div class="definition-box">
+                        <h3>R&eacute;nyi Differential Privacy</h3>
+                        <p>A randomized mechanism \(\mathcal{M}\) satisfies \((\alpha, \hat{\epsilon})\)-RDP if for all
+                            neighboring datasets \(D, D’\):</p>
+                        \[
+                        D_\alpha(\mathcal{M}(D) \| \mathcal{M}(D’)) = \frac{1}{\alpha - 1} \log \mathbb{E}\left[ \left( \frac{\Pr[\mathcal{M}(D) = o]}{\Pr[\mathcal{M}(D’) = o]} \right)^\alpha \right] \leq \hat{\epsilon}
+                        \]
+                        <p>where \(D_\alpha(\cdot \| \cdot)\) denotes the R&eacute;nyi divergence of order \(\alpha > 1\)
+                            (<a href="#ref-56" class="cite">Mironov, 2017</a>).</p>
+                    </div>
+
+                    <p>
+                        While standard DP bounds the worst-case multiplicative change in output probabilities
+                        (by \(e^{\epsilon}\)), RDP bounds a <em>soft average</em> of these changes, parameterized by
+                        \(\alpha\). The practical advantage of tracking RDP at multiple orders simultaneously is that
+                        composition remains additive: if mechanism \(\mathcal{M}_1\) satisfies
+                        \((\alpha, \epsilon_1)\)-RDP and \(\mathcal{M}_2\) satisfies
+                        \((\alpha, \epsilon_2)\)-RDP, their sequential composition satisfies
+                        \((\alpha, \epsilon_1 + \epsilon_2)\)-RDP.
+                    </p>
+
+                    <p>
+                        <em>Data-dependent GNMax bound.</em> For the GNMax mechanism, the RDP cost per query depends
+                        on the <em>margin</em> between the top two vote counts. Let
+                        \(\Delta(q) = v_{(1)}(q) - v_{(2)}(q)\) be this margin. The
+                        \((\alpha, \hat{\epsilon}_\alpha(q))\)-RDP cost
+                        satisfies:<a href="#sidenote-11" class="sidenote-ref"><sup>11</sup></a>
+                    </p>
+
+                    <div class="sidenote" id="sidenote-11">
+                        <p><sup>11</sup> Papernot et al. (2018), Theorem 6: the data-dependent RDP bound exploits the
+                            vote margin. When the plurality vote has a large margin, the Gaussian noise is unlikely to
+                            change the outcome, so privacy cost decreases exponentially with the squared margin.</p>
+                    </div>
+
+                    \begin{equation}\label{eq:gnmax_rdp}
+                    \hat{\epsilon}_\alpha(q) \leq \frac{\alpha}{2\sigma^2} \cdot \exp\!\left( -\frac{\Delta(q)^2}{8\sigma^2} \right)
+                    \end{equation}
+
+                    <p>
+                        The practical consequence is that when the ensemble strongly agrees (\(\Delta(q)\) large
+                        relative to \(\sigma\)), the privacy cost per query decreases <em>exponentially</em> with the
+                        squared margin. In a well-calibrated ensemble where the majority of queries have large margins,
+                        most deployment queries contribute near-zero privacy cost.
+                    </p>
+
+                    <p>
+                        <em>Full composition.</em> The total system RDP across \(T\) calibration rounds and the
+                        answered deployment queries composes additively at each order \(\alpha\):
+                    </p>
+
+                    \begin{equation}\label{eq:rdp_composition}
+                    \hat{\epsilon}_\alpha^{\text{total}} = \underbrace{\sum_{t=1}^{T} \left[ \hat{\epsilon}_\alpha^{\text{GNMax}}(q_t) + \epsilon_{\text{FTPL}} \right]}_{\text{Phase 1: calibration}} + \underbrace{\sum_{q \in \mathcal{Q}_{\text{answered}}} \hat{\epsilon}_\alpha^{\text{GNMax}}(q)}_{\text{Phase 2: deployment}}
+                    \end{equation}
+
+                    <p>
+                        The final \((\epsilon, \delta)\)-DP guarantee is obtained by converting the composed RDP bound
+                        to standard differential privacy, optimizing over the R&eacute;nyi order \(\alpha\):
+                    </p>
+
+                    \begin{equation}\label{eq:rdp_to_dp}
+                    \epsilon = \min_{\alpha > 1} \left\{ \hat{\epsilon}_\alpha^{\text{total}} + \frac{\ln(1/\delta)}{\alpha - 1} \right\}
+                    \end{equation}
+
+                    <p>
+                        The prototype evaluates this expression at 13 values of
+                        \(\alpha \in \{1.5, 2, 3, 4, 5, 8, 10, 16, 20, 32, 50, 64, 100\}\) and reports the minimum.
+                    </p>
+
+                    <h3>Individual Intelligence Budgets: Per-Source Privacy Accounting</h3>
+
+                    <p>
+                        The mechanism above provides a <em>system-level</em> privacy guarantee. To implement
+                        intelligence budgets, this section extends it to <em>per-source</em> privacy accounting that
+                        controls each model&rsquo;s individual influence on the ensemble output.
+                    </p>
+
+                    <div class="definition-box">
+                        <h3>Per-Source Sensitivity</h3>
+                        <p>In the weighted voting mechanism of Equation \(\eqref{eq:weighted_votes}\) with one-hot
+                            predictions \(p_s \in \{0,1\}^{C_q}\), the \(\ell_2\)-sensitivity of the vote vector
+                            \(v(q)\) to source \(s\)&rsquo;s prediction is:</p>
+                        \[
+                        \Delta_s = \gamma[s] \cdot \sqrt{2}
+                        \]
+                        <p><em>Proof.</em> If source \(s\) changes its prediction from one-hot vector \(e_j\) to
+                            \(e_k\) (\(j \neq k\)), the vote vector changes by \(\gamma[s] \cdot (e_k - e_j)\),
+                            which has \(\ell_2\)-norm \(\gamma[s] \cdot \sqrt{1^2 + 1^2} = \gamma[s]\sqrt{2}\).</p>
+                    </div>
+
+                    <p>
+                        Under the Gaussian mechanism with noise \(\mathcal{N}(0, \sigma^2 I)\), the standard RDP
+                        bound for \(\ell_2\)-sensitivity \(\Delta_s\) gives the per-source RDP cost at order
+                        \(\alpha\):
+                    </p>
+
+                    \begin{equation}\label{eq:per_source_rdp}
+                    \hat{\epsilon}_\alpha^{(s)}(q) = \frac{\alpha \cdot \Delta_s^2}{2\sigma^2} = \frac{\alpha \cdot \gamma[s]^2}{\sigma^2}
+                    \end{equation}
+
+                    <p>
+                        The intelligence budget \(\gamma[s]\) therefore directly controls the per-query privacy cost.
+                        The weight \(\gamma[s]\) simultaneously determines how much source \(s\) contributes to the
+                        prediction (the attribution semantics) and how much privacy source \(s\) expends (the privacy
+                        semantics), which is exactly the coupling that attribution-based control requires. The
+                        relationship is quadratic: doubling a source&rsquo;s influence quadruples its per-query
+                        privacy cost.
+                    </p>
+
+                    <div class="definition-box">
+                        <h3>Individual Intelligence Budget Mechanism</h3>
+                        <p>For each source \(s \in \mathcal{S}\), define:</p>
+                        <ul>
+                            <li>\(\gamma_{\min}[s] > 0\): minimum weight (attribution floor, ensuring source \(s\)
+                                always has at least this much influence)</li>
+                            <li>\(\gamma_{\max}[s] \leq 1\): maximum weight (privacy ceiling, ensuring source \(s\)
+                                never exceeds this influence)</li>
+                            <li>\(B(s) > 0\): total privacy budget (cumulative \(\epsilon\) limit over all queries)</li>
+                        </ul>
+                        <p>The per-query spend for source \(s\) at query \(q\) is
+                            \(\hat{\epsilon}_\alpha^{(s)}(q) = \alpha \cdot \gamma[s]^2 / \sigma^2\). The cumulative
+                            spend must satisfy:</p>
+                        \[
+                        \sum_{q=1}^{Q} \hat{\epsilon}_\alpha^{(s)}(q) \leq B(s)
+                        \]
+                        <p>When source \(s\) exhausts its budget, its weight collapses to \(\gamma_{\min}[s]\) and
+                            remaining sources&rsquo; weights are renormalized.</p>
+                    </div>
+
+                    <p>
+                        This mechanism exhibits all three ABC regimes simultaneously across different sources within
+                        the same ensemble:
+                    </p>
+
+                    <ul>
+                        <li><strong>Privacy regime</strong> (\(\gamma_{\max}[s]\) small, \(B(s)\) tight): Source \(s\)
+                            has minimal influence per query and may exhaust its budget, collapsing to
+                            \(\gamma_{\min}[s]\). This provides strong privacy guarantees.</li>
+                        <li><strong>Measurement regime</strong> (\(\gamma_{\max}[s]\) moderate, \(B(s)\) moderate):
+                            Source \(s\) contributes meaningfully but with tracked spend. The system can report exactly
+                            how much influence source \(s\) had on each prediction.</li>
+                        <li><strong>Attribution regime</strong> (\(\gamma_{\max}[s]\) large, \(B(s)\) generous):
+                            Source \(s\) dominates the ensemble while its influence remains bounded and auditable.</li>
+                    </ul>
+
+                    <h3>Experimental Results</h3>
+
+                    <p><strong>Per-Source Privacy&ndash;Accuracy Tradeoff.</strong>
+                        All privacy costs below are reported <em>per source</em>: the \(\epsilon\) that each data
+                        owner pays for participating in the ensemble, not a system-wide total. This is the metric that
+                        matters for a data owner deciding whether to contribute.
+                    </p>
+
+                    <p>
+                        A sweep across four ensemble sizes (top-2 through top-5 models by individual accuracy),
+                        calibration lengths \(T \in \{10, 25, 50, 75, 100, 200\}\), noise scales
+                        \(\sigma \in \{1, 2, 5, 10, 20\}\), and confidence thresholds
+                        \(\mathcal{T} \in \{0.0, 0.15, 0.30, 0.50\}\) produces 480 configurations.
+                    </p>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <caption>Per-source privacy&ndash;accuracy Pareto frontier (\(\eta = 0.1\),
+                                \(\delta = 10^{-5}\), \(\mathcal{T} = 0\)). \(\epsilon_{\max}\) and
+                                \(\epsilon_{\min}\) are the privacy cost to the highest- and lowest-weighted source
+                                respectively. Hedge is the non-private baseline for each subset.</caption>
+                            <thead>
+                                <tr>
+                                    <th>Ensemble</th>
+                                    <th>\(T\)</th>
+                                    <th>\(\sigma\)</th>
+                                    <th>Accuracy</th>
+                                    <th>\(\epsilon_{\max}\)</th>
+                                    <th>\(\epsilon_{\min}\)</th>
+                                    <th>Hedge</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Top-2</td>
+                                    <td>10</td>
+                                    <td>20</td>
+                                    <td>51.07%</td>
+                                    <td>4.3</td>
+                                    <td>3.7</td>
+                                    <td>51.07%</td>
+                                </tr>
+                                <tr>
+                                    <td>Top-3</td>
+                                    <td>10</td>
+                                    <td>20</td>
+                                    <td>48.73%</td>
+                                    <td>3.4</td>
+                                    <td>2.5</td>
+                                    <td>51.27%</td>
+                                </tr>
+                                <tr>
+                                    <td>Top-3</td>
+                                    <td>50</td>
+                                    <td>20</td>
+                                    <td>51.27%</td>
+                                    <td>8.4</td>
+                                    <td>6.2</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Top-4</td>
+                                    <td>50</td>
+                                    <td>20</td>
+                                    <td>48.34%</td>
+                                    <td>7.8</td>
+                                    <td>6.0</td>
+                                    <td>50.49%</td>
+                                </tr>
+                                <tr>
+                                    <td>Top-4</td>
+                                    <td>75</td>
+                                    <td>20</td>
+                                    <td>50.49%</td>
+                                    <td>11.6</td>
+                                    <td>8.3</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Top-5</td>
+                                    <td>25</td>
+                                    <td>20</td>
+                                    <td>45.42%</td>
+                                    <td>4.4</td>
+                                    <td>3.5</td>
+                                    <td>50.29%</td>
+                                </tr>
+                                <tr>
+                                    <td>Top-5</td>
+                                    <td>75</td>
+                                    <td>20</td>
+                                    <td>48.15%</td>
+                                    <td>11.1</td>
+                                    <td>8.2</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Top-5</td>
+                                    <td>100</td>
+                                    <td>20</td>
+                                    <td>50.10%</td>
+                                    <td>14.5</td>
+                                    <td>10.6</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/pareto_by_ensemble.png"
+                            alt="Per-source privacy-accuracy Pareto frontiers for ensembles of 2-5 models">
+                        <figcaption>Per-source privacy&ndash;accuracy Pareto frontiers for ensembles of 2&ndash;5 models
+                            (\(\mathcal{T} = 0\), all queries answered). X-axis is the <em>per-source</em>
+                            \(\epsilon\) for the worst-case (highest-weighted) data owner. Dashed lines show non-private
+                            Hedge baselines per subset. All subsets exceed the best individual model (44.4%, dotted line)
+                            at moderate per-source \(\epsilon\).</figcaption>
+                    </figure>
+
+                    <p>
+                        Three findings emerge. First, even the smallest ensemble (top-2) matches the non-private Hedge
+                        exactly (51.07%) at just \(\epsilon_{\max} = 4.3\) per source. Second, the per-source cost
+                        varies with weight: Gemini 3.1 Pro (the highest-weighted model) consistently pays the most,
+                        while lower-ranked models join at 15&ndash;30% lower cost. Third, a data owner can choose its
+                        operating point on the Pareto frontier: the top-3 ensemble beats the best individual model at
+                        \(\epsilon_{\max} = 3.4\) per source (+4.3pp accuracy gain), or matches the Hedge at
+                        \(\epsilon_{\max} = 8.4\).
+                    </p>
+
+                    <p><strong>Coverage Tradeoff.</strong>
+                        The Confident-GNMax threshold \(\mathcal{T}\) controls a coverage&ndash;privacy tradeoff:
+                        by refusing to answer queries where the ensemble lacks consensus, the mechanism reduces privacy
+                        spend while improving accuracy on answered queries.
+                    </p>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <caption>Coverage&ndash;privacy tradeoff for the top-5 ensemble. Raising the threshold
+                                \(\mathcal{T}\) reduces per-source \(\epsilon\) and improves accuracy on answered
+                                queries, at the cost of lower coverage.</caption>
+                            <thead>
+                                <tr>
+                                    <th>\(\mathcal{T}\)</th>
+                                    <th>Coverage</th>
+                                    <th>\(\epsilon_{\max}\)</th>
+                                    <th>Acc. (answered)</th>
+                                    <th>(\(T\), \(\sigma\))</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0.00</td>
+                                    <td>100%</td>
+                                    <td>2.4</td>
+                                    <td>43.86%</td>
+                                    <td>(10, 20)</td>
+                                </tr>
+                                <tr>
+                                    <td>0.15</td>
+                                    <td>54%</td>
+                                    <td>2.0</td>
+                                    <td>45.85%</td>
+                                    <td>(10, 20)</td>
+                                </tr>
+                                <tr>
+                                    <td>0.50</td>
+                                    <td>53%</td>
+                                    <td>2.0</td>
+                                    <td>45.42%</td>
+                                    <td>(10, 20)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/coverage_tradeoff.png"
+                            alt="Coverage-privacy tradeoff for the top-5 ensemble">
+                        <figcaption>Coverage&ndash;privacy tradeoff for the top-5 ensemble. Higher thresholds
+                            \(\mathcal{T}\) refuse uncertain queries (annotated coverage percentages), trading coverage
+                            for higher accuracy on answered queries and lower per-source \(\epsilon\).</figcaption>
+                    </figure>
+
+                    <p><strong>Per-Source Cost Structure.</strong>
+                        The pattern is consistent: <em>privacy cost tracks influence</em>. The highest-weighted model
+                        (Gemini 3.1 Pro) always pays the most, while each additional lower-ranked model joins at
+                        progressively lower cost. This is the mechanism working as designed: a source that contributes
+                        more influence expends more of its privacy budget, and a source seeking minimal privacy
+                        exposure can participate with a low weight and pay commensurately less.
+                    </p>
+
+                    <figure class="full-width">
+                        <img src="1411.3146/scaling_trend.png"
+                            alt="Per-source epsilon for each model at the best-accuracy configuration">
+                        <figcaption>Per-source \(\epsilon\) for each model at the best-accuracy configuration of each
+                            ensemble size (\(\mathcal{T} = 0\)). Privacy cost tracks influence: the highest-weighted
+                            source pays the most, while additional sources join at lower cost.</figcaption>
+                    </figure>
+
+                    <p>
+                        This cost structure has a natural economic interpretation. The per-source \(\epsilon\) is
+                        effectively the price a data owner pays for a given level of influence over predictions.
+                        A data owner deciding whether to contribute its model to an ensemble can choose where on this
+                        tradeoff to sit: higher weight buys more influence (and thus more credit, compensation, or
+                        attribution) at the cost of more privacy exposure, while lower weight preserves privacy at the
+                        cost of reduced influence.
+                    </p>
+
+                    <p><strong>Individual Budget Demonstration.</strong>
+                        To demonstrate the intelligence budget mechanism, heterogeneous budgets are assigned reflecting
+                        diverse stakeholder preferences:
+                    </p>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <caption>Per-model intelligence budget configuration (\(\sigma = 1.0\),
+                                \(\alpha_{\text{ref}} = 2\)). The per-query cost at maximum weight is
+                                \(\hat{\epsilon} = \alpha \cdot \gamma_{\max}^2 / \sigma^2\);
+                                &ldquo;Max Qs&rdquo; denotes the maximum queries sustainable at \(\gamma_{\max}\)
+                                before budget exhaustion.</caption>
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>\(\gamma_{\min}\)</th>
+                                    <th>\(\gamma_{\max}\)</th>
+                                    <th>\(B(s)\)</th>
+                                    <th>\(\hat{\epsilon}\)/query</th>
+                                    <th>Max Qs</th>
+                                    <th>Regime</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Gemini 3.1 Pro</td>
+                                    <td>0.10</td>
+                                    <td>0.60</td>
+                                    <td>100.0</td>
+                                    <td>0.720</td>
+                                    <td>138</td>
+                                    <td>Attribution</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude Opus 4</td>
+                                    <td>0.08</td>
+                                    <td>0.40</td>
+                                    <td>40.0</td>
+                                    <td>0.320</td>
+                                    <td>125</td>
+                                    <td>Measurement</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini 3.0 Pro</td>
+                                    <td>0.05</td>
+                                    <td>0.35</td>
+                                    <td>30.0</td>
+                                    <td>0.245</td>
+                                    <td>122</td>
+                                    <td>Measurement</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-5 Pro</td>
+                                    <td>0.03</td>
+                                    <td>0.20</td>
+                                    <td>10.0</td>
+                                    <td>0.080</td>
+                                    <td>125</td>
+                                    <td>Privacy</td>
+                                </tr>
+                                <tr>
+                                    <td>Kimi K2.5</td>
+                                    <td>0.02</td>
+                                    <td>0.15</td>
+                                    <td>5.0</td>
+                                    <td>0.045</td>
+                                    <td>111</td>
+                                    <td>Privacy</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        With \(T = 100\) calibration questions and \(\sigma = 1.0\), the individual DP mechanism
+                        produces the following dynamics:
+                    </p>
+
+                    <ol>
+                        <li><strong>Calibration (Q1&ndash;Q100):</strong> FTPL learns optimal weights within each
+                            model&rsquo;s \([\gamma_{\min}, \gamma_{\max}]\) band. Gemini 3.1 Pro quickly rises to its
+                            ceiling (\(\gamma \approx 0.63\) after normalization), reflecting its superior accuracy.
+                            Lower-performing models settle near their floors.</li>
+                        <li><strong>Budget exhaustion (Q100&ndash;Q300):</strong> Models with tight budgets
+                            progressively exhaust their spend. Kimi K2.5 exhausts at Q149 (spent 5.0/5.0), collapsing
+                            to \(\gamma_{\min} = 0.02\). Gemini 3.1 Pro, despite having the largest budget, exhausts at
+                            Q186 because its high weight (\(\gamma \approx 0.63\)) costs \(0.79\epsilon\) per query.</li>
+                        <li><strong>Graceful degradation:</strong> As each model collapses to \(\gamma_{\min}\),
+                            remaining active models&rsquo; weights increase through renormalization. Rather than failing
+                            catastrophically, the ensemble smoothly transitions from optimal weighting toward more
+                            uniform weighting as budgets deplete.</li>
+                    </ol>
+
+                    <p>
+                        The ensemble achieves <strong>49.12%</strong> accuracy under these individual constraints, only
+                        1.17 percentage points below the unconstrained Hedge, while providing per-source influence
+                        guarantees that no source exceeds its allocated budget.
+                    </p>
+
+                    <h3>Discussion</h3>
+
+                    <p>
+                        The constraints bind, and the architecture holds. Combining independently trained AI assets
+                        under formal per-source influence control produces an ensemble that exceeds the accuracy of
+                        every individual contributor, at a per-source privacy cost that is moderate and transparent.
+                    </p>
+
+                    <p>
+                        <em>Dual-purpose noise.</em> FTPL&rsquo;s Gumbel perturbation simultaneously provides
+                        regret-minimizing exploration (<a href="#ref-58" class="cite">Kalai and Vempala, 2005</a>) and
+                        \(\epsilon\)-differential privacy (<a href="#ref-57" class="cite">McSherry and Talwar, 2007</a>),
+                        avoiding the typical cost of adding privacy to online learning algorithms. This duality reflects
+                        a deeper alignment between the information-theoretic requirements of exploration and privacy:
+                        both require that the mechanism&rsquo;s output cannot be too sensitive to any single data point.
+                    </p>
+
+                    <p>
+                        <em>Data-dependent accounting.</em> The GNMax RDP bound ensures that high-consensus queries
+                        (which predominate when the ensemble is well-calibrated) cost exponentially less than worst-case
+                        bounds predict. In these experiments, the majority of deployment queries have near-zero RDP cost
+                        because the ensemble&rsquo;s margin \(\Delta(q)\) is large relative to \(\sigma\).
+                    </p>
+
+                    <p>
+                        <em>Influence bands.</em> The \([\gamma_{\min}, \gamma_{\max}]\) mechanism provides simultaneous
+                        upper and lower bounds on each source&rsquo;s influence, implementing ABC&rsquo;s core
+                        requirement of per-source control. The lower bound \(\gamma_{\min}\) guarantees attribution;
+                        the upper bound \(\gamma_{\max}\) constrains privacy exposure; and the budget \(B(s)\) limits
+                        total cumulative influence over time.
+                    </p>
+
+                    <p>
+                        <em>Scaling considerations.</em> The prototype is limited by its small ensemble size
+                        (\(|\mathcal{S}| = 5\)). In the PATE literature
+                        (<a href="#ref-16" class="cite">Papernot et al., 2018</a>), per-source costs decrease further
+                        as the number of teachers grows, because margins \(\Delta(q)\) increase with more agreeing
+                        voters while the sensitivity per teacher decreases. With hundreds of model slices, per-query
+                        costs would decrease by orders of magnitude, enabling per-source budgets of \(\epsilon < 1\)
+                        while answering thousands of queries.
+                    </p>
+
+                    <p>
+                        <em>Connection to the deep voting thesis.</em> Each of the five models in this prototype was
+                        trained independently on its own data, using its own compute infrastructure. Ensembling them is,
+                        in effect, combining their data and compute. The private ensemble achieves 50.1&ndash;51.3%
+                        accuracy on HLE&rsquo;s multiple-choice subset, surpassing all five constituent models. At the
+                        per-source level, this accuracy gain costs the worst-case data owner
+                        \(\epsilon = 4.3\) (top-2 ensemble) to \(\epsilon = 14.5\) (top-5 ensemble).
+                    </p>
+
+                    <p>
+                        These five models were trained on substantially overlapping subsets of publicly available
+                        internet data, and they represent a vanishingly small fraction of the 6+ orders of magnitude
+                        of siloed data and underutilized compute documented in
+                        Section <a href="#symptom">2.2</a>. The fact that ensembling even five models with overlapping
+                        training data already yields a +5.9 percentage point accuracy gain over the best individual
+                        model, <em>while respecting per-source privacy bounds</em>, suggests that the returns from
+                        accessing genuinely diverse, non-overlapping data through these budgeting mechanisms would be
+                        substantially greater.
+                    </p>
+
+                    <p>
+                        <em>From differential privacy to intelligence budgets.</em> The per-source \(\epsilon\) values
+                        reported throughout this section are not merely privacy parameters. They are the differential
+                        attribution costs, measured on the actual dataset: each source&rsquo;s \(\epsilon_s\) quantifies
+                        how much the ensemble&rsquo;s output distribution changes when that source is included versus
+                        excluded. This is the intelligence budget framework made concrete. A data owner considering
+                        whether to contribute a model to a deep voting ensemble can inspect these bounds in advance,
+                        calibrate the influence they are willing to spend, and verify after the fact that the mechanism
+                        honored the contract.
+                    </p>
+                </section>
+
+                <section id="deep-voting-path">
+                    <h2>Deep Voting: A Path to 6+ Orders of Magnitude</h2>
 
                     <figure class="full-width">
                         <img src="1411.3146/deep_learning_to_deep_voting_v3.png" alt="Deep Learning to Deep Voting">
                         <figcaption>Traditional open/closed-source deep learning systems (left) pool all data into a
                             deep learning model (i.e. by adding weight updates) which is later used for predictions,
-                            while
-                            deep voting systems (right) learn weight parameters which remain partitioned by source (i.e.
-                            concatenated), but which are learned in a way that they can be rapidly synthesized on the
-                            fly.
-                            Partitions (pictured above as pie slices) are rapidly synthesized to form a model used for a
-                            specific prediction. Darker lines/slices indicate information being used for a particular
-                            prediction.
-                            Lighter lines/slices indicate information not being used for a particular prediction. The
-                            circle
-                            on top of the slices represents a dense model capable of rapidly synthesizing slices in
-                            practice
-                            (which itself must be trained to do so). Metadata (which tracks the synthesis and subsequent
-                            use
-                            of slices for an AI prediction) enables attribution-based control (ABC).</figcaption>
+                            while deep voting systems (right) learn weight parameters which remain partitioned by source
+                            (i.e. concatenated), but which are learned in a way that they can be rapidly synthesized on
+                            the fly. Partitions (pictured above as pie slices) are rapidly synthesized to form a model
+                            used for a specific prediction. Darker lines/slices indicate information being used for a
+                            particular prediction. Lighter lines/slices indicate information not being used for a
+                            particular prediction. The circle on top of the slices represents a dense model capable of
+                            rapidly synthesizing slices in practice (which itself must be trained to do so). Metadata
+                            (which tracks the synthesis and subsequent use of slices for an AI prediction) enables
+                            attribution-based control (ABC).</figcaption>
                     </figure>
 
                     <p>Deep voting addresses the addition problem that blocks access to 6+ orders of magnitude
                         of data and compute. By preserving source attribution through concatenated representations
                         while enabling cross-source learning through shared components, deep voting architectures
                         demonstrate that the baseline tradeoffs between attribution, efficiency, and performance reflect
-                        architectural choices rather than fundamental constraints.</p>
-
-                    <p>
-                        The empirical evidence is substantial. RETRO and ATLAS achieve 25-50x parameter
-                        efficiency while maintaining performance. PATE reduces privacy-performance gaps from 10-
-                        20% to 0.7%. Git Re-Basin enables merging of independently trained models. Federated RAG
-                        improves both attribution and accuracy simultaneously. These systems operate at scale today,
-                        processing real workloads with working implementations.
-                    </p>
+                        architectural choices rather than fundamental constraints. Empirically, RETRO and ATLAS achieve
+                        25&ndash;50x parameter efficiency while maintaining performance. PATE reduces
+                        privacy-performance gaps from 10&ndash;20% to 0.7%. Git Re-Basin enables merging of
+                        independently trained models. Federated RAG improves both attribution and accuracy
+                        simultaneously. These systems operate at scale today, processing real workloads with working
+                        implementations.</p>
 
                     <p>
                         The implications for data access are direct. Current LLM training sets use approximately
-                        180TB of text data. Global digital data reaches 180 zettabytes (6-9 orders of magnitude larger).
-                        Vast institutional repositories remain inaccessible primarily due to attribution and control
-                        concerns (<a href="#ref-53" class="cite">Youssef et al., 2023</a>). Deep voting’s
-                        source-partitioned architecture provides the
-                        attribution mechanism these institutions require, establishing a viable technical path to unlock
-                        this siloed data
-                    </p>
-
-                    <p>
-                        Similarly, the implications for compute efficiency are substantial. The 6+ orders of magnitude
-                        of training inefficiency documented in Section <a href="#underutilized-compute">2.2.1</a> stems
-                        from retraining overhead, dense
-                        forward propagation, parameter redundancy, and catastrophic forgetting. Deep voting’s deferred
-                        synthesis architecture addresses each source: partitioned training enables selective retraining,
-                        inference-time synthesis enables sparse activation, source separation reduces redundancy, and
-                        explicit organization prevents catastrophic forgetting.
+                        180TB of text data. Global digital data reaches 180 zettabytes (6&ndash;9 orders of magnitude
+                        larger). Vast institutional repositories remain inaccessible primarily due to attribution and
+                        control concerns (<a href="#ref-53" class="cite">Youssef et al., 2023</a>). Deep voting&rsquo;s
+                        source-partitioned architecture provides the attribution mechanism these institutions require,
+                        establishing a viable technical path to unlock this siloed data. Similarly, the implications
+                        for compute efficiency are substantial. The 6+ orders of magnitude of training inefficiency
+                        documented in Section <a href="#underutilized-compute">2.2.1</a> stems from retraining overhead,
+                        dense forward propagation, parameter redundancy, and catastrophic forgetting. Deep voting&rsquo;s
+                        deferred synthesis architecture addresses each source: partitioned training enables selective
+                        retraining, inference-time synthesis enables sparse activation, source separation reduces
+                        redundancy, and explicit organization prevents catastrophic forgetting.
                     </p>
 
                     <p>
                         Deep voting addresses the addition problem. Source-partitioned representations preserve
                         attribution. Deferred synthesis enables efficiency. Shared components enable performance. The
-                        architecture has been demonstrated at scale across multiple systems and domains, and a clear
-                        direction for future empirical work has been presented.
+                        architecture has been demonstrated at scale across multiple systems and domains.
+                    </p>
+
+                    <p>
+                        The empirical prototype in the preceding section offers a concrete illustration of these
+                        dynamics. Five frontier language models, each trained independently by a different organization
+                        on its own data and compute, were ensembled under a mechanism that enforces per-source
+                        influence bounds through individual differential privacy budgets. The resulting ensemble
+                        exceeded the accuracy of every constituent model on the HLE benchmark by up to 6.9 percentage
+                        points, with per-source privacy costs of \(\epsilon = 3\)&ndash;\(15\) depending on influence
+                        level. The overhead imposed by influence management was measurably smaller than the accuracy
+                        gained from aggregation.
+                    </p>
+
+                    <p>
+                        The prototype operates at the very bottom of the scaling curve. These five models were trained
+                        on overlapping subsets of publicly available data, collectively representing a tiny fraction of
+                        the resources documented in Section <a href="#symptom">2.2</a>: the 6+ orders of magnitude of
+                        siloed training data (180 zettabytes vs. the ~180 TB consumed by current frontier models) and
+                        the orders-of-magnitude compute inefficiency from retraining, dense propagation, and
+                        catastrophic forgetting. If formal influence control over five sources with largely overlapping
+                        data already yields a considerable accuracy gain (+5.9pp even under per-source privacy
+                        constraints), the potential gains from hundreds or thousands of genuinely diverse sources
+                        (medical records, proprietary research, institutional archives, specialized sensor data),
+                        drawing on these 6+ orders of magnitude of untapped resources, would be far greater.
+                    </p>
+
+                    <p>
+                        The per-source cost structure also has a direct economic implication. Because each source&rsquo;s
+                        privacy cost is proportional to its influence weight, the intelligence budget mechanism creates
+                        a natural market in which data owners can calibrate across many ensembles how much influence
+                        they wish to contribute, treating their privacy budget as a resource to be allocated
+                        strategically. The fact that each source can see exactly what participation costs is precisely
+                        the kind of guarantee that would enable the institutional data holders documented in
+                        Section <a href="#symptom">2.2</a> to participate where they currently cannot.
                     </p>
 
                     <p>
                         However, solving the addition problem reveals a deeper challenge: the copy problem. Even
                         if one achieved perfect attribution through deep voting, data sources cannot enforce how their
                         contributions are used because whoever possesses a copy of the model retains unilateral control.
-                        Chapter 3 addresses this challenge, introducing techniques that enable attribution-based <em>control</em>
-                        rather than mere attribution-based <em></em>.
+                        Chapter 3 addresses this challenge, introducing techniques that enable attribution-based
+                        <em>control</em> rather than mere attribution-based <em>suggestions</em>.
                     </p>
                 </section>
 
@@ -4122,6 +5010,26 @@
                             <a href="https://doi.org/10.1007/s10182-022-00467-3"><span class="title">Statistical guarantees for
                                     sparse deep learning.</span></a> <span class="venue">AStA Advances in Statistical
                                 Analysis, 108(2), 231–258</span>.</li>
+                        <li id="ref-56"><span class="authors">Mironov, I.</span> (2017).
+                            <a href="https://doi.org/10.1109/CSF.2017.11"><span class="title">Rényi Differential
+                                    Privacy.</span></a> <span class="venue">IEEE 30th Computer Security Foundations
+                                Symposium (CSF), 263–275</span>.</li>
+                        <li id="ref-57"><span class="authors">McSherry, F., & Talwar, K.</span> (2007).
+                            <a href="https://doi.org/10.1109/FOCS.2007.66"><span class="title">Mechanism Design via
+                                    Differential Privacy.</span></a> <span class="venue">48th Annual IEEE Symposium on
+                                Foundations of Computer Science (FOCS), 94–103</span>.</li>
+                        <li id="ref-58"><span class="authors">Kalai, A., & Vempala, S.</span> (2005).
+                            <a href="https://doi.org/10.1016/j.jcss.2004.10.016"><span class="title">Efficient
+                                    Algorithms for Online Decision Problems.</span></a> <span class="venue">Journal of
+                                Computer and System Sciences, 71(3), 291–307</span>.</li>
+                        <li id="ref-59"><span class="authors">Freund, Y., & Schapire, R. E.</span> (1997).
+                            <a href="https://doi.org/10.1006/jcss.1997.1504"><span class="title">A Decision-Theoretic
+                                    Generalization of On-Line Learning and an Application to
+                                    Boosting.</span></a> <span class="venue">Journal of Computer and System Sciences,
+                                55(1), 119–139</span>.</li>
+                        <li id="ref-60"><span class="authors">Phan, L., et al.</span> (2025).
+                            <a href="https://arxiv.org/abs/2501.14249"><span class="title">Humanity's Last
+                                    Exam.</span></a> <span class="venue">arXiv:2501.14249</span>.</li>
                     </ol>
                 </section>
 
