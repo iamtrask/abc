@@ -35,14 +35,14 @@ This repo is maintained by Bennett Farkas on behalf of Andrew Trask. All changes
 - Right margin area for citation sidebar cards and sidenotes (visible at 1400px+)
 
 **Core files:**
-- `index.html` through `chapter5.html`, `appendix1.html`, `appendix2.html`, `about.html` — individual pages
+- `index.html` (Chapter I: Introduction), `chapter2.html` through `chapter5.html`, `appendix1.html`, `appendix2.html`, `references.html`, `about.html` — individual pages. There is no `chapter1.html`; `index.html` serves as Chapter I.
 - `styles.css` — all styling, responsive breakpoints at 768/1024/1200/1400/1600px
-- `main.js` — scroll spy, dynamic header, sidenote/track positioning, overlap prevention
-- `citation-card.js` — sidebar citation cards, sidenote cards, hover/highlight logic
+- `main.js` — scroll spy, dynamic header, sidenote/track positioning, overlap prevention, reference backlinks
+- `citation-card.js` — sidebar citation cards, sidenote cards, hover/highlight logic (IIFE, ~580 lines)
 - `thesis.txt` — original LaTeX source
 - `1411.3146/` — image assets (~200+ PNGs)
 
-**Content conventions:** Sections use anchor IDs for deep linking. Figures use `<figure>`/`<figcaption>`. Tables use `.data-table` class.
+**Content conventions:** Sections use anchor IDs for deep linking. Figures use `<figure>`/`<figcaption>`. Tables use `.data-table` class. Each chapter page has a `.chapter-nav` footer with prev/next links. `about.html` uses inline `<style>` for its timeline layout rather than `styles.css`.
 
 ## Reference System
 
@@ -52,7 +52,7 @@ A reference appears in up to **7 locations**. When editing or fixing a reference
 
 | Location | What to update |
 |----------|---------------|
-| `1411.3146/references.bib` | BibTeX entry (358 entries, each appears once) |
+| `1411.3146/references.bib` | BibTeX entry (357 entries, each appears once) |
 | Chapter HTML (`index.html`, `chapter2.html`, etc.) | `<li id="ref-N">` in the `<section class="references">` at the bottom |
 | Chapter HTML body text | `<a href="#ref-N" class="cite">Author et al., Year</a>` inline citations |
 | `data/chapter-map.json` | Mapping: `"chapter-slug": {"N": "bibtex_key"}` |
@@ -127,17 +127,41 @@ When correcting a URL, title, author name, or any metadata:
 
 **Sidenotes**: Also managed by `citation-card.js` on desktop — cloned into sidebar track cards alongside citations. Original sidenote `<div>` elements are hidden when tracks are active.
 
-**Positioning**: `main.js` `alignMarginItems()` handles initial track placement and overlap prevention between sidenotes and citation tracks. `citation-card.js` handles hover-triggered alignment via `translateY` on the track.
+**Positioning**: `main.js` `alignMarginItems()` handles initial track placement and overlap prevention between sidenotes and citation tracks (3-phase algorithm: position sidenotes, position citation tracks, resolve overlaps with 12px gap). `citation-card.js` handles hover-triggered alignment via `translateY` on the track.
+
+**Key breakpoint behavior**: Citation cards and sidebar sidenotes are completely disabled below 1400px. The TOC sidebar disappears below 1200px. Below 768px is a single-column mobile layout.
 
 ## Scripts
 
+**Core pipeline:**
+
 | Script | Purpose | Usage |
 |--------|---------|-------|
-| `build_ref_db.py` | Parse BibTeX + HTML → generate JSON databases | `python3 scripts/build_ref_db.py` |
+| `build_ref_db.py` | Parse BibTeX + HTML → generate `references.json`, `chapter-map.json`, `authors.json` | `python3 scripts/build_ref_db.py` |
 | `enrich_authors.py` | Add S2/Scholar profiles, headshots | `python3 scripts/enrich_authors.py --phase {papers,match,s2-authors,scholar,headshots}` |
 | `collect_screenshots.py` | Download page screenshots for references | `python3 scripts/collect_screenshots.py` |
-| `check_urls.py` | HTTP HEAD check all URLs in references.json | `python3 scripts/check_urls.py` |
+
+**Auditing and maintenance:**
+
+| Script | Purpose | Usage |
+|--------|---------|-------|
+| `audit_refs.py` | Full audit of HTML citations vs reference databases (8-point validation) | `python3 scripts/audit_refs.py` |
 | `audit_screenshots.py` | Compare screenshots on disk vs references.json | `python3 scripts/audit_screenshots.py` |
+| `check_urls.py` | HTTP HEAD check all URLs in references.json | `python3 scripts/check_urls.py` |
+
+**Claim verification pipeline** (extract → check URLs → verify):
+
+| Script | Purpose | Usage |
+|--------|---------|-------|
+| `extract_claims.py` | Extract 1–3 sentence claim contexts around each citation | `python3 scripts/extract_claims.py` |
+| `verify_claims.py` | Interactive claim-reference alignment verification | `python3 scripts/verify_claims.py` |
+
+**External Python dependencies** (no requirements.txt — install manually as needed):
+- `requests` — used by `collect_screenshots.py`, `enrich_authors.py`
+- `playwright` — used by `collect_screenshots.py` for web screenshots
+- `pymupdf` (`import fitz`) — used by `collect_screenshots.py` for PDF rendering
+- `Pillow` (`from PIL import Image`) — used by `audit_screenshots.py`
+- SerpAPI (via `urllib`, requires `SERPAPI_KEY` env var) — used by `enrich_authors.py` Phase 4
 
 ## Asset Directories
 
