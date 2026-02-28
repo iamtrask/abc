@@ -135,6 +135,37 @@
         var card = document.createElement('div');
         card.className = 'cite-sidebar-card is-hidden';
 
+        // Screenshot thumbnail
+        if (d.screenshot) {
+            var isBook = d.type === 'book';
+            var thumb = document.createElement('div');
+            thumb.className = 'cite-sidebar-thumb';
+            if (isBook) thumb.classList.add('is-book');
+            var thumbImg = document.createElement('img');
+            thumbImg.src = d.screenshot;
+            thumbImg.alt = '';
+            thumbImg.loading = 'lazy';
+            // Crop tall (portrait) screenshots to 4:3, but not books
+            if (!isBook) {
+                thumbImg.onload = function () {
+                    if (thumbImg.naturalHeight > thumbImg.naturalWidth) {
+                        thumb.classList.add('is-tall');
+                    }
+                };
+            }
+            if (d.url) {
+                var thumbLink = document.createElement('a');
+                thumbLink.href = d.url;
+                thumbLink.target = '_blank';
+                thumbLink.rel = 'noopener';
+                thumbLink.appendChild(thumbImg);
+                thumb.appendChild(thumbLink);
+            } else {
+                thumb.appendChild(thumbImg);
+            }
+            card.appendChild(thumb);
+        }
+
         // Title
         var titleDiv = document.createElement('div');
         titleDiv.className = 'cite-sidebar-title';

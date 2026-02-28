@@ -925,7 +925,7 @@ main {
     padding: 10px 12px;
     background: #fff;
     border: 1px solid #d0d0d0;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 0.78rem;
     line-height: 1.35;
     opacity: 0.35;
@@ -934,6 +934,46 @@ main {
                 box-shadow 0.25s ease, border-color 0.25s ease;
     cursor: default;
     pointer-events: auto;
+    overflow: hidden;
+}
+
+/* Screenshot thumbnail — paper preview style */
+.cite-sidebar-thumb {
+    margin: -10px -12px 0 -12px;
+    padding: 16px 20px 0 20px;
+    overflow: hidden;
+}
+
+.cite-sidebar-thumb img {
+    width: 100%;
+    display: block;
+    box-shadow: 0 0 8px rgba(67, 62, 86, 0.16);
+}
+
+.cite-sidebar-thumb a {
+    display: block;
+    cursor: pointer;
+}
+
+/* Crop tall screenshots to 4:3 from the top */
+.cite-sidebar-thumb.is-tall {
+    aspect-ratio: 4 / 3;
+}
+
+.cite-sidebar-thumb.is-tall img {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+}
+
+/* Book covers: show full image, smaller with more padding */
+.cite-sidebar-thumb.is-book {
+    padding: 16px 60px 0 60px;
+    background: #fafafa;
+}
+
+.cite-sidebar-thumb.is-book img {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
 
 .cite-sidebar-card.is-highlighted {
@@ -958,12 +998,19 @@ main {
     display: none;
 }
 
-/* Title */
+/* Title — matches Source Serif Pro 12px in Figma */
 .cite-sidebar-title {
     font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-    font-size: 11.5px;
+    font-size: 12px;
     line-height: 1.4;
     color: #0a0a0a;
+}
+
+/* Divider line between screenshot and title — matches title width */
+.cite-sidebar-thumb + .cite-sidebar-title {
+    margin-top: 0;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
 }
 
 .cite-sidebar-title a {
@@ -988,7 +1035,7 @@ main {
 .cite-sidebar-avatars {
     display: flex;
     align-items: center;
-    margin-top: 6px;
+    margin-top: 12px;
 }
 
 .cite-sidebar-av {
@@ -1052,9 +1099,9 @@ main {
 /* Author detail panel — only shown in expanded state */
 .cite-sidebar-detail {
     display: none;
-    padding-top: 8px;
+    padding-top: 12px;
     border-top: 1px solid #e8e8e8;
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 .cite-sidebar-card.is-expanded .cite-sidebar-detail.is-visible {
@@ -1074,8 +1121,8 @@ main {
 }
 
 .cite-sidebar-detail-photo {
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
@@ -1089,8 +1136,8 @@ main {
 
 .cite-sidebar-detail-name {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     color: #0a0a0a;
     line-height: 1.3;
 }
