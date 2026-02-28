@@ -57,11 +57,16 @@ document.addEventListener('scroll', updateHeader);
 window.addEventListener('resize', updateHeader);
 
 /**
- * Align side notes.
+ * Align margin items (sidenotes + citation sidebar cards).
+ *
+ * Phase 1: position each sidenote at its anchor's vertical offset.
+ * Phase 2: position each citation card at its anchor's vertical offset.
+ * Phase 3: unified overlap prevention across both types within each section.
  */
-function alignSidenotes() {
+function alignMarginItems() {
     if (window.matchMedia('(max-width: 1024px)').matches) return;
 
+    // Phase 1: position sidenotes at their anchor refs
     document.querySelectorAll('.sidenote-ref').forEach((ref) => {
         const targetId = ref.getAttribute('href');
         if (!targetId || !targetId.startsWith('#')) return;
@@ -76,18 +81,39 @@ function alignSidenotes() {
         const blockRect = block.getBoundingClientRect();
 
         const top = refRect.top - blockRect.top;
-
         sidenote.style.top = `${top}px`;
     });
 
-    document.querySelectorAll('section').forEach((section) => {
-        const sidenotes = Array.from(section.querySelectorAll('.sidenote'));
+    // Phase 2: position each track at its first visible card's anchor cite offset
+    document.querySelectorAll('.cite-sidebar-track').forEach((track) => {
+        const firstVisibleCard = track.querySelector('.cite-sidebar-card:not(.is-hidden)');
+        if (!firstVisibleCard) return;
 
-        if (sidenotes.length <= 1) return;
+        const anchorId = firstVisibleCard.getAttribute('data-anchor-id');
+        if (!anchorId) return;
+        const anchor = document.getElementById(anchorId);
+        if (!anchor) return;
+
+        const section = track.closest('section');
+        if (!section) return;
+
+        const anchorRect = anchor.getBoundingClientRect();
+        const sectionRect = section.getBoundingClientRect();
+
+        track.style.top = `${anchorRect.top - sectionRect.top}px`;
+    });
+
+    // Phase 3: overlap prevention between sidenotes and track containers
+    document.querySelectorAll('section').forEach((section) => {
+        const items = Array.from(
+            section.querySelectorAll('.sidenote, .cite-sidebar-track')
+        );
+
+        if (items.length <= 1) return;
 
         const GAP = 12;
 
-        sidenotes.sort((a, b) => {
+        items.sort((a, b) => {
             const topA = parseFloat(a.style.top) || 0;
             const topB = parseFloat(b.style.top) || 0;
             return topA - topB;
@@ -95,20 +121,23 @@ function alignSidenotes() {
 
         let lastBottom = -Infinity;
 
-        sidenotes.forEach((sn) => {
-            let top = parseFloat(sn.style.top) || 0;
-
-            const height = sn.getBoundingClientRect().height;
+        items.forEach((el) => {
+            let top = parseFloat(el.style.top) || 0;
+            const height = el.getBoundingClientRect().height;
 
             if (top < lastBottom + GAP) {
                 top = lastBottom + GAP;
-                sn.style.top = `${top}px`;
+                el.style.top = `${top}px`;
             }
 
             lastBottom = top + height;
         });
     });
 }
+
+// Alias for backward compat and expose for citation-card.js
+var alignSidenotes = alignMarginItems;
+window.realignMarginItems = alignMarginItems;
 
 function resizeSidenotes() {
     const main = document.querySelector('main');
@@ -127,6 +156,11 @@ function resizeSidenotes() {
 
     document.querySelectorAll('.sidenote').forEach((sn) => {
         sn.style.width = `${sidenoteWidth}px`;
+    });
+
+    // Also resize citation sidebar tracks
+    document.querySelectorAll('.cite-sidebar-track').forEach((track) => {
+        track.style.width = `${sidenoteWidth}px`;
     });
 }
 
