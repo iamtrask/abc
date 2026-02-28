@@ -603,7 +603,14 @@ def build_databases():
                 unmatched.append((slug, ref_num, ref))
                 print(f"    ref-{ref_num} → {synth_key} (UNMATCHED - synthetic)")
 
-    # Build references.json
+    # Build references.json (merge-safe: preserve enrichment data from existing file)
+    existing_refs = {}
+    refs_path = DATA_DIR / "references.json"
+    if refs_path.exists():
+        with open(refs_path, "r", encoding="utf-8") as f:
+            existing_refs = json.load(f)
+        print(f"\nLoaded existing references.json ({len(existing_refs)} entries) — preserving enrichment data")
+
     references = {}
     for bib_key, entry in all_matches.items():
         authors_raw = entry.get('author', '')
@@ -636,7 +643,9 @@ def build_databases():
         # Use title, falling back to journal for @misc news articles
         title_text = entry.get('title', '') or entry.get('journal', '')
 
-        references[bib_key] = {
+        # Start from existing entry to preserve enrichment fields (screenshot, etc.)
+        base = existing_refs.get(bib_key, {})
+        base.update({
             'title': _clean_latex(title_text),
             'authors': author_keys,
             'year': year,
@@ -645,10 +654,20 @@ def build_databases():
             'url': ref_url or None,
             'doi': entry.get('doi', None) or None,
             'type': classify_bib_type(entry),
-            'screenshot': None,
-        }
+        })
+        # Only set screenshot to None if this is a brand-new entry
+        if 'screenshot' not in base:
+            base['screenshot'] = None
+        references[bib_key] = base
 
-    # Build authors.json
+    # Build authors.json (merge-safe: preserve enrichment data from existing file)
+    existing_authors = {}
+    authors_path = DATA_DIR / "authors.json"
+    if authors_path.exists():
+        with open(authors_path, "r", encoding="utf-8") as f:
+            existing_authors = json.load(f)
+        print(f"Loaded existing authors.json ({len(existing_authors)} entries) — preserving enrichment data")
+
     authors = {}
     for bib_key, entry in all_matches.items():
         authors_raw = entry.get('author', '')
@@ -656,12 +675,17 @@ def build_databases():
         for first, last in parsed:
             akey = make_author_key(first, last)
             if akey and akey not in authors:
-                authors[akey] = {
-                    'displayName': make_display_name(first, last),
-                    'affiliation': None,
-                    'headshot': None,
-                    'links': {},
-                }
+                if akey in existing_authors:
+                    # Preserve all enrichment fields, only update displayName
+                    authors[akey] = existing_authors[akey]
+                    authors[akey]['displayName'] = make_display_name(first, last)
+                else:
+                    authors[akey] = {
+                        'displayName': make_display_name(first, last),
+                        'affiliation': None,
+                        'headshot': None,
+                        'links': {},
+                    }
 
     # Write JSON files
     DATA_DIR.mkdir(exist_ok=True)
