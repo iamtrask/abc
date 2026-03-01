@@ -26,7 +26,7 @@
     var chapter = '';
     var cards = [];         // all created card elements
     var tracks = [];        // all created track containers
-    var citeToCard = {};    // "sectionIndex:refNum" → card element
+    var realignTimer;       // debounce timer for observer-driven realignment
 
     /* ---- helpers ---- */
 
@@ -133,7 +133,7 @@
     function buildCard(r) {
         var d = r.d;
         var card = document.createElement('div');
-        card.className = 'cite-sidebar-card is-hidden';
+        card.className = 'cite-sidebar-card';
 
         // Screenshot thumbnail
         if (d.screenshot) {
@@ -302,8 +302,8 @@
         unhighlightTimer = setTimeout(doUnhighlight, 400);
     }
 
-    /** Highlight from cite hover — shift track so card aligns with cite */
-    function highlightFromCite(entry, cite) {
+    /** Highlight from cite hover — snap card's vertical center to cursor Y */
+    function highlightFromCite(entry, cite, cursorY) {
         cancelUnhighlight();
         if (activeEntry && activeEntry !== entry) doUnhighlight();
         activeEntry = entry;
@@ -314,22 +314,27 @@
             entry.citeLinks[i].classList.add('is-card-highlight');
         }
 
-        // Disable transition, reset transform, measure clean positions,
-        // then apply the correct offset and re-enable transition.
         var track = entry.track;
         if (track) {
+            // Reset to natural position instantly, then animate to target
             track.style.transition = 'none';
             track.style.transform = '';
-            track.offsetHeight;  // force reflow
+            track.offsetHeight;  // commit reset position
 
-            var citeRect = cite.getBoundingClientRect();
-            var cardRect = entry.card.getBoundingClientRect();
-            var dy = citeRect.top - cardRect.top;
+            var dy;
+            if (cursorY != null) {
+                var cardRect = entry.card.getBoundingClientRect();
+                var cardCenter = cardRect.top + cardRect.height / 2;
+                dy = cursorY - cardCenter;
+            } else {
+                var citeRect = cite.getBoundingClientRect();
+                var cardRect2 = entry.card.getBoundingClientRect();
+                dy = citeRect.top - cardRect2.top;
+            }
+
+            // Re-enable transition before applying offset so it animates in
+            track.style.transition = '';
             track.style.transform = dy ? 'translateY(' + dy + 'px)' : '';
-
-            requestAnimationFrame(function () {
-                track.style.transition = '';
-            });
         }
     }
 
@@ -355,7 +360,7 @@
 
     function buildSidenoteCard(sidenote, ref) {
         var card = document.createElement('div');
-        card.className = 'cite-sidebar-card cite-sidebar-sidenote is-hidden';
+        card.className = 'cite-sidebar-card cite-sidebar-sidenote';
 
         // Clone the sidenote content into the card
         var content = document.createElement('div');
@@ -399,7 +404,6 @@
 
                 if (seenRefs[refNum]) {
                     seenRefs[refNum].citeLinks.push(cite);
-                    citeToCard[cite.id || (cite.id = 'cite-sc-' + sectionIndex + '-' + refNum + '-' + seenRefs[refNum].citeLinks.length)] = seenRefs[refNum];
                     return;
                 }
 
@@ -415,7 +419,6 @@
 
                 var entry = { card: card, citeLinks: [cite], track: null };
                 seenRefs[refNum] = entry;
-                citeToCard[sectionIndex + ':' + refNum] = entry;
 
                 card.addEventListener('mouseenter', function () {
                     highlightFromCard(entry);
@@ -478,7 +481,12 @@
                     }
                 }
 
-                section.appendChild(track);
+                var marginCol = document.querySelector('.margin-column');
+                if (marginCol) {
+                    marginCol.appendChild(track);
+                } else {
+                    section.appendChild(track);
+                }
                 tracks.push(track);
             }
 
@@ -486,8 +494,8 @@
             Object.keys(seenRefs).forEach(function (refNum) {
                 var entry = seenRefs[refNum];
                 entry.citeLinks.forEach(function (cite) {
-                    cite.addEventListener('mouseenter', function () {
-                        highlightFromCite(entry, cite);
+                    cite.addEventListener('mouseenter', function (e) {
+                        highlightFromCite(entry, cite, e.clientY);
                     });
                     cite.addEventListener('mouseleave', function () {
                         scheduleUnhighlight();
@@ -500,8 +508,8 @@
                 if (item.type !== 'sidenote') return;
                 var entry = item.entry;
                 var ref = item.anchorEl;
-                ref.addEventListener('mouseenter', function () {
-                    highlightFromCite(entry, ref);
+                ref.addEventListener('mouseenter', function (e) {
+                    highlightFromCite(entry, ref, e.clientY);
                 });
                 ref.addEventListener('mouseleave', function () {
                     scheduleUnhighlight();
@@ -521,17 +529,37 @@
         // No realignment on scroll — track position is set once at init,
         // and highlightFromCite handles alignment on hover.
         var observer = new IntersectionObserver(function (entries) {
+            var changed = false;
             entries.forEach(function (entry) {
                 var card = entry.target._sidebarCard;
                 if (!card) return;
 
                 if (entry.isIntersecting) {
-                    card.classList.remove('is-hidden');
+                    if (card.classList.contains('is-hidden')) {
+                        card.classList.remove('is-hidden');
+                        changed = true;
+                    }
                 } else {
-                    card.classList.add('is-hidden');
-                    card.classList.remove('is-highlighted');
+                    if (!card.classList.contains('is-hidden')) {
+                        card.classList.add('is-hidden');
+                        card.classList.remove('is-highlighted');
+                        changed = true;
+                    }
                 }
             });
+            if (changed && window.realignMarginItems) {
+                clearTimeout(realignTimer);
+                realignTimer = setTimeout(function () {
+                    var mc = document.querySelector('.margin-column');
+                    if (mc) mc.classList.add('is-settling');
+                    setTimeout(function () {
+                        window.realignMarginItems();
+                        requestAnimationFrame(function () {
+                            if (mc) mc.classList.remove('is-settling');
+                        });
+                    }, 150);
+                }, 150);
+            }
         }, {
             rootMargin: '50% 0px 50% 0px',
             threshold: 0
@@ -555,14 +583,42 @@
         if (pg === 'references' || pg === 'about') return;
 
         // Only show sidebar cards on wide screens
-        if (window.innerWidth < 1400) return;
+        if (window.matchMedia('(max-width: 899px)').matches) return;
 
         createCards();
+
+        // Synchronously hide cards whose anchors are far from viewport;
+        // cards start visible so near-viewport ones show immediately.
+        var vh = window.innerHeight;
+        var margin = vh * 0.5;
+        cards.forEach(function (card) {
+            var anchorId = card.getAttribute('data-anchor-id');
+            if (!anchorId) return;
+            var anchor = document.getElementById(anchorId);
+            if (!anchor) return;
+            var rect = anchor.getBoundingClientRect();
+            if (rect.top < -margin || rect.top > vh + margin) {
+                card.classList.add('is-hidden');
+            }
+        });
+
         setupObserver();
+
+        // Defer alignment until after observer's first batch of callbacks
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                if (window.realignMarginItems) window.realignMarginItems();
+            });
+        });
+
+        // Clear highlight on scroll so tracks return to natural position
+        window.addEventListener('scroll', function () {
+            if (activeEntry) scheduleUnhighlight();
+        }, { passive: true });
 
         // Re-layout on resize; hide cards if screen becomes narrow
         window.addEventListener('resize', function () {
-            if (window.innerWidth < 1400) {
+            if (window.matchMedia('(max-width: 899px)').matches) {
                 cards.forEach(function (card) {
                     card.classList.add('is-hidden');
                 });

@@ -45,7 +45,7 @@ nav {
 
 /* Wrapper */
 .wrapper {
-    overflow: clip;
+    overflow-x: clip;
 }
 
 nav.is-hide {
@@ -69,19 +69,20 @@ nav a.active {
     border-bottom-color: #0a0a0a;
 }
 
-/* Layout with sidebar */
+/* Layout with sidebar — 3-column CSS Grid */
 .page-container {
-    display: flex;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 250px minmax(0, 720px) minmax(200px, 300px);
+    gap: 0 20px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 2rem;
     position: relative;
-    overflow: visible;
 }
 
 /* Table of Contents Sidebar */
 .toc-sidebar {
-    width: 250px;
-    flex-shrink: 0;
+    grid-column: 1;
     padding: 2rem 1rem 2rem 1.5rem;
     position: sticky;
     top: 60px;
@@ -147,11 +148,17 @@ nav a.active {
 
 /* Main content */
 main {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem 4rem;
-    flex-grow: 1;
+    grid-column: 2;
+    padding: 3rem 0 4rem;
     min-width: 0;
+}
+
+/* Right margin column */
+.margin-column {
+    grid-column: 3;
+    position: relative;
+    padding-top: 3rem;
+    overflow: visible;
 }
 
 /* Header */
@@ -437,19 +444,58 @@ em {
     font-style: italic;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .toc-sidebar {
-        width: 200px;
-        padding: 1.5rem 0.75rem 1.5rem 1rem;
+/* Responsive — 1200px: hide TOC, keep margin column (2-column layout) */
+@media (max-width: 1199px) {
+    .page-container {
+        grid-template-columns: minmax(0, 720px) minmax(180px, 260px);
+        padding: 0 1.5rem;
     }
 
-    .toc-sidebar a {
-        font-size: 0.8rem;
+    .toc-sidebar {
+        display: none;
+    }
+
+    main {
+        grid-column: 1;
+    }
+
+    .margin-column {
+        grid-column: 2;
     }
 }
 
-@media (max-width: 768px) {
+/* Responsive — 900px: single-column, hide margin */
+@media (max-width: 899px) {
+    .page-container {
+        display: block;
+        padding: 0;
+    }
+
+    .margin-column {
+        display: none;
+    }
+
+    main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+    }
+
+    .sidenote {
+        position: relative;
+        left: unset !important;
+        top: unset !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        transform: none;
+    }
+
+    .cite-sidebar-track {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
     html {
         font-size: 16px;
     }
@@ -461,14 +507,6 @@ em {
 
     nav a {
         font-size: 0.85rem;
-    }
-
-    .page-container {
-        display: block;
-    }
-
-    .toc-sidebar {
-        display: none;
     }
 
     main {
@@ -496,138 +534,9 @@ em {
     }
 }
 
-/* ASCII Art Decorations - Margin Style */
-
-/* Container for margin art - position relative to enable absolute children */
-main {
-    position: relative;
-    overflow: visible;
-}
-
-/* Margin ASCII art - scrolls with content, positioned in right margin */
-.ascii-art {
-    position: absolute;
-    left: calc(100% + 30px);
-    width: 140px;
-    font-family: 'Courier New', Consolas, monospace;
-    font-size: 8px;
-    line-height: 1.15;
-    color: #a0b0c0;
-    white-space: pre;
-    text-align: left;
-    opacity: 0.5;
-    transition: all 0.4s ease;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.ascii-art:hover {
-    color: #5a7a8a;
-    opacity: 1;
-}
-
-.ascii-art .caption {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #9ab;
-    font-family: 'Source Serif 4', Georgia, serif;
-}
-
-/* Floating animation */
-.ascii-art.float {
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-/* Pulse animation */
-.ascii-art.pulse {
-    animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%,
-    100% {
-        opacity: 0.6;
-    }
-    50% {
-        opacity: 0.9;
-    }
-}
-
-/* Gentle breathing for diagrams */
-.ascii-art.breathe {
-    animation: breathe 5s ease-in-out infinite;
-}
-
-@keyframes breathe {
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.65;
-    }
-    50% {
-        transform: scale(1.02);
-        opacity: 0.9;
-    }
-}
-
-/* Left margin variant */
-.ascii-art.left {
-    right: auto;
-    left: -280px;
-    text-align: right;
-}
-
 /* Hide old fixed margin art */
 .ascii-margin {
     display: none;
-}
-
-/* ASCII art in sidebar below TOC */
-.toc-sidebar .ascii-decoration {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #ddd;
-    font-family: 'Courier New', monospace;
-    font-size: 10px;
-    line-height: 1.2;
-    color: #8a9fb0;
-    white-space: pre;
-    text-align: center;
-    animation: pulse 5s ease-in-out infinite;
-}
-
-/* Responsive - hide margin art on smaller screens */
-@media (max-width: 1600px) {
-    .ascii-art {
-        left: calc(100% + 15px);
-        width: 120px;
-        font-size: 7px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .ascii-art {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .toc-sidebar .ascii-decoration {
-        display: none;
-    }
 }
 
 /* Data Tables */
@@ -804,6 +713,18 @@ main {
         display: none;
     }
 
+    .page-container {
+        display: block;
+    }
+
+    .toc-sidebar {
+        display: none;
+    }
+
+    .margin-column {
+        display: none;
+    }
+
     main {
         max-width: 100%;
     }
@@ -838,46 +759,7 @@ main {
     padding-left: 5px;
 }
 
-.sidenote:before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: 0;
-    width: 20%;
-    height: 1px;
-    background-color: currentColor;
-    transition: width 0.2s;
-}
-
-.sidenote:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 40%;
-    background-color: currentColor;
-    transition: height 0.2s;
-}
-
-.sidenote.is-highlighted:before {
-    width: 100%;
-}
-
-.sidenote.is-highlighted:after {
-    height: 100%;
-}
-
-@media (max-width: 1399px) {
-    .sidenote {
-        position: relative;
-        transform: none;
-        left: unset !important;
-        top: unset !important;
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-}
+/* Sidenote responsive fallback handled by 899px breakpoint above */
 
 /* Reference back-links and chapter links */
 .ref-backlink {
@@ -907,17 +789,20 @@ main {
 /* Citation Sidebar Cards (Google Comments style)                     */
 /* ------------------------------------------------------------------ */
 
-/* Track container — one per section, holds all cards in normal flow */
+/* Track container — positioned within .margin-column */
 .cite-sidebar-track {
     position: absolute;
-    left: calc(100% + 20px);
     top: 0;
-    width: 240px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 8px;
     z-index: 5;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, top 0.3s ease, opacity 0.15s ease;
+}
+
+.margin-column.is-settling .cite-sidebar-track {
+    opacity: 0.1;
 }
 
 .cite-sidebar-card {
@@ -1185,50 +1070,13 @@ main {
     margin-right: 2px;
 }
 
-/* L-shaped marker on sidenote cards */
-.cite-sidebar-sidenote::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 40%;
-    background-color: #999;
-    transition: height 0.2s;
-}
-
-.cite-sidebar-sidenote .cite-sidebar-sidenote-body::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: 0;
-    width: 20%;
-    height: 1px;
-    background-color: #999;
-    transition: width 0.2s;
-}
-
-.cite-sidebar-sidenote.is-highlighted::after {
-    height: 100%;
-    background-color: #0a0a0a;
-}
-
-.cite-sidebar-sidenote.is-highlighted .cite-sidebar-sidenote-body::before {
-    width: 100%;
-    background-color: #0a0a0a;
-}
-
 /* Highlighted cite link in body text — no padding to avoid layout shift */
 .cite.is-card-highlight {
     text-decoration: underline;
     text-decoration-color: #0066cc;
 }
 
-/* Hide sidebar cards on narrow screens and in print */
-@media (max-width: 1399px) {
-    .cite-sidebar-track { display: none !important; }
-}
-
+/* Hide sidebar cards in print (narrow-screen hiding handled by 899px breakpoint) */
 @media print {
     .cite-sidebar-track { display: none !important; }
 }

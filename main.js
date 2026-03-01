@@ -57,163 +57,89 @@ document.addEventListener('scroll', updateHeader);
 window.addEventListener('resize', updateHeader);
 
 /**
- * Align margin items (sidenotes + citation sidebar cards).
+ * Align margin items (citation sidebar tracks).
  *
- * Phase 1: position each sidenote at its anchor's vertical offset.
- * Phase 2: position each citation card at its anchor's vertical offset.
- * Phase 3: unified overlap prevention across both types within each section.
+ * Phase 1 (read): measure each track's target top from its first visible
+ *   card's anchor element.
+ * Phase 2 (write): apply all top values in one batch (no interleaved reads).
+ * Phase 3 (read): measure heights for overlap prevention.
+ * Phase 4 (write): adjust tops to prevent overlaps.
  */
 function alignMarginItems() {
-    if (window.matchMedia('(max-width: 1024px)').matches) return;
+    if (window.matchMedia('(max-width: 899px)').matches) return;
 
-    // Phase 1: position sidenotes at their anchor refs
-    // (Skip if sidenote has been moved into a track by citation-card.js)
-    document.querySelectorAll('.sidenote-ref').forEach((ref) => {
-        const targetId = ref.getAttribute('href');
-        if (!targetId || !targetId.startsWith('#')) return;
+    var marginCol = document.querySelector('.margin-column');
+    if (!marginCol) return;
 
-        const sidenote = document.querySelector(targetId);
-        if (!sidenote || sidenote.style.display === 'none') return;
+    var marginColRect = marginCol.getBoundingClientRect();
+    var trackEls = marginCol.querySelectorAll('.cite-sidebar-track');
+    if (!trackEls.length) return;
 
-        const block = ref.closest('.sidenote') || ref.closest('section');
-        if (!block) return;
+    // Phase 1 (read): collect target tops
+    var trackData = [];
+    for (var i = 0; i < trackEls.length; i++) {
+        var track = trackEls[i];
+        var firstVisible = track.querySelector('.cite-sidebar-card:not(.is-hidden)');
+        if (!firstVisible) { trackData.push(null); continue; }
 
-        const refRect = ref.getBoundingClientRect();
-        const blockRect = block.getBoundingClientRect();
+        var anchorId = firstVisible.getAttribute('data-anchor-id');
+        if (!anchorId) { trackData.push(null); continue; }
+        var anchor = document.getElementById(anchorId);
+        if (!anchor) { trackData.push(null); continue; }
 
-        const top = refRect.top - blockRect.top;
-        sidenote.style.top = `${top}px`;
-    });
+        var anchorRect = anchor.getBoundingClientRect();
+        trackData.push({ el: track, top: anchorRect.top - marginColRect.top });
+    }
 
-    // Phase 2: position each track at its first visible card's anchor cite offset
-    document.querySelectorAll('.cite-sidebar-track').forEach((track) => {
-        const firstVisibleCard = track.querySelector('.cite-sidebar-card:not(.is-hidden)');
-        if (!firstVisibleCard) return;
+    // Phase 2 (write): apply tops
+    for (var j = 0; j < trackData.length; j++) {
+        if (trackData[j]) trackData[j].el.style.top = trackData[j].top + 'px';
+    }
 
-        const anchorId = firstVisibleCard.getAttribute('data-anchor-id');
-        if (!anchorId) return;
-        const anchor = document.getElementById(anchorId);
-        if (!anchor) return;
-
-        const section = track.closest('section');
-        if (!section) return;
-
-        const anchorRect = anchor.getBoundingClientRect();
-        const sectionRect = section.getBoundingClientRect();
-
-        track.style.top = `${anchorRect.top - sectionRect.top}px`;
-    });
-
-    // Phase 3: overlap prevention between sidenotes and track containers
-    document.querySelectorAll('section').forEach((section) => {
-        const items = Array.from(
-            section.querySelectorAll('.sidenote, .cite-sidebar-track')
-        );
-
-        if (items.length <= 1) return;
-
-        const GAP = 12;
-
-        items.sort((a, b) => {
-            const topA = parseFloat(a.style.top) || 0;
-            const topB = parseFloat(b.style.top) || 0;
-            return topA - topB;
+    // Phase 3 (read): measure heights for overlap prevention
+    var items = [];
+    for (var k = 0; k < trackData.length; k++) {
+        if (!trackData[k]) continue;
+        items.push({
+            el: trackData[k].el,
+            top: trackData[k].top,
+            height: trackData[k].el.getBoundingClientRect().height
         });
+    }
 
-        let lastBottom = -Infinity;
+    if (items.length <= 1) return;
 
-        items.forEach((el) => {
-            let top = parseFloat(el.style.top) || 0;
-            const height = el.getBoundingClientRect().height;
+    items.sort(function (a, b) { return a.top - b.top; });
 
-            if (top < lastBottom + GAP) {
-                top = lastBottom + GAP;
-                el.style.top = `${top}px`;
-            }
-
-            lastBottom = top + height;
-        });
-    });
+    // Phase 4 (write): push down overlapping tracks
+    var GAP = 12;
+    var lastBottom = -Infinity;
+    for (var m = 0; m < items.length; m++) {
+        var it = items[m];
+        if (it.top < lastBottom + GAP) {
+            it.top = lastBottom + GAP;
+            it.el.style.top = it.top + 'px';
+        }
+        lastBottom = it.top + it.height;
+    }
 }
 
-// Alias for backward compat and expose for citation-card.js
-var alignSidenotes = alignMarginItems;
+// Expose for citation-card.js
 window.realignMarginItems = alignMarginItems;
 
-function resizeSidenotes() {
-    const main = document.querySelector('main');
-    if (!main) return;
-
-    const mainRect = main.getBoundingClientRect();
-    const viewportWidth = window.innerWidth;
-
-    const GAP = 20;
-    const availableRightSpace = viewportWidth - mainRect.right - GAP;
-
-    const MIN = 160;
-    const MAX = 340;
-
-    const sidenoteWidth = Math.max(MIN, Math.min(MAX, availableRightSpace));
-
-    document.querySelectorAll('.sidenote').forEach((sn) => {
-        sn.style.width = `${sidenoteWidth}px`;
-    });
-
-    // Also resize citation sidebar tracks
-    document.querySelectorAll('.cite-sidebar-track').forEach((track) => {
-        track.style.width = `${sidenoteWidth}px`;
-    });
-}
-
-function setupSidenoteHover() {
-    document.querySelectorAll('.sidenote-ref').forEach((ref) => {
-        const targetId = ref.getAttribute('href');
-        if (!targetId || !targetId.startsWith('#')) return;
-
-        const sidenote = document.querySelector(targetId);
-        if (!sidenote) return;
-
-        ref.addEventListener('mouseenter', () => {
-            sidenote.classList.add('is-highlighted');
-            ref.classList.add('is-highlighted');
-        });
-
-        ref.addEventListener('mouseleave', () => {
-            sidenote.classList.remove('is-highlighted');
-            ref.classList.remove('is-highlighted');
-        });
-
-        sidenote.addEventListener('mouseenter', () => {
-            sidenote.classList.add('is-highlighted');
-            ref.classList.add('is-highlighted');
-        });
-
-        sidenote.addEventListener('mouseleave', () => {
-            sidenote.classList.remove('is-highlighted');
-            ref.classList.remove('is-highlighted');
-        });
-    });
-}
-
-function initializeSidenotes() {
-    resizeSidenotes();
-    alignSidenotes();
-    setupSidenoteHover();
-}
-
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeSidenotes);
+    document.addEventListener('DOMContentLoaded', alignMarginItems);
 } else {
-    initializeSidenotes();
+    alignMarginItems();
 }
 
-window.addEventListener('load', initializeSidenotes);
+window.addEventListener('load', alignMarginItems);
 
 if (document.fonts) {
-    document.fonts.ready.then(initializeSidenotes);
+    document.fonts.ready.then(alignMarginItems);
 }
 
-window.addEventListener('resize', initializeSidenotes);
+window.addEventListener('resize', alignMarginItems);
 
 /**
  * Reference back-links: add numbered ↑ links from reference entries to every citation in text.
